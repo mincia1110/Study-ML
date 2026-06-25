@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>최신 ML/CV 논문 요약 — arXiv 2026</title>
+    <meta name="description" content="머신러닝, 컴퓨터 비전, LLM 최신 논문을 한국어로 요약한 컬렉션">
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body data-updated="2026-06-25">
+    <header class="site-header">
+      <a class="brand" href="#top">논문 요약</a>
+      <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false">메뉴</button>
+      <nav id="site-nav" class="site-nav" aria-label="주요 섹션">
+        <a href="#papers">논문 목록</a>
+        <a href="#about">소개</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">2026년 6월 4주차</p>
+          <h1>오늘의 ML/CV 논문</h1>
+          <p>
+            arXiv에 매일 올라오는 수많은 논문 중에서, 컴퓨터 비전과 LLM 분야의
+            읽을 만한 논문을 골라 한국어로 요약합니다.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#papers">논문 보기</a>
+          </div>
+        </div>
+        <img src="assets/hero-ml-cv.png" alt="신경망 그래프, 영상 인식 격자, 3D 포인트 클라우드를 보여주는 연구실 일러스트">
+      </section>
+
+      <section id="papers" class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">Papers</p>
+            <h2>논문 컬렉션</h2>
+          </div>
+          <p id="paper-count" class="count" aria-live="polite"></p>
+        </div>
+
+        <div class="search-wrap">
+          <input type="search" id="paper-search" class="search-input" placeholder="제목, 태그, 요약, 저자, arXiv ID 검색…" aria-label="논문 검색">
+        </div>
+
+        <div class="filters" aria-label="분야 필터" role="group">
+          <button class="chip active" type="button" data-filter="all">전체</button>
+          <button class="chip" type="button" data-filter="cv">CV</button>
+          <button class="chip" type="button" data-filter="llm">LLM</button>
+          <button class="chip" type="button" data-filter="multimodal">Multimodal</button>
+          <button class="chip" type="button" data-filter="saved">저장한 논문</button>
+        </div>
+
+        <div id="paper-grid" class="paper-grid">
+          <!-- rendered by app.js -->
+        </div>
+
+        <p class="curator-note">매일 자동 수집 · 사람 검토 가능한 요약 (<a href="docs/summary-guidelines.md">가이드라인</a>)<br>업데이트: <span id="updated-data"></span><span id="curator-source"> · 출처: arXiv</span></p>
+        <p class="curator-note curator-note-sub">요약은 LLM 또는 템플릿으로 생성됩니다. 정확성이 중요한 경우 원문을 확인하세요.</p>
+      </section>
+
+      <section id="about" class="section">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker">About</p>
+            <h2>이 페이지는 무엇인가요</h2>
+          </div>
+        </div>
+        <p>
+          arXiv에 매일 수백 건의 새 논문이 올라오지만, 그중 내 분야와 관련된 것을 골라 읽는 일은
+          점점 더 어려워지고 있습니다. 이 페이지는 컴퓨터 비전과 LLM에 집중해 읽을 만한 논문을
+          선별하고, 핵심을 한국어로 요약해 빠르게 파악할 수 있도록 돕기 위해 만들었습니다.
+        </p>
+        <p>
+          논문 데이터는 GitHub Actions로 매일 자동 수집되며(<code>.github/workflows/daily-papers.yml</code>),
+          요약은 GitHub Actions의 시크릿이 있으면 LLM으로, 없으면 규칙 기반 템플릿으로 생성됩니다 (<a href="docs/summary-guidelines.md">요약 가이드라인</a>).
+          브라우저에서 바로 열어 볼 수 있는 정적 페이지로, 별도의 서버나 API 키가 필요하지 않습니다.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Last updated: <time id="updated">2026-06-25</time></span>
+      <span>교육용 요약입니다. Thank you to arXiv for use of its open access interoperability.</span>
+    </footer>
+
+    <script src="data/papers.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
