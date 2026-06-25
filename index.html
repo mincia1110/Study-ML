@@ -60,7 +60,7 @@
         </div>
 
         <p class="curator-note">매일 자동 수집 · 사람 검토 가능한 요약 (<a href="docs/summary-guidelines.md">가이드라인</a>)<br>업데이트: <span id="updated-data"></span><span id="curator-source"> · 출처: arXiv</span></p>
-        <p class="curator-note curator-note-sub">요약은 LLM 또는 템플릿으로 생성됩니다. 정확성이 중요한 경우 원문을 확인하세요.</p>
+        <p class="curator-note curator-note-sub">요약은 자동 생성됩니다. 정확성이 중요한 경우 원문을 확인하세요.</p>
       </section>
 
       <section id="about" class="section">
@@ -76,9 +76,8 @@
           선별하고, 핵심을 한국어로 요약해 빠르게 파악할 수 있도록 돕기 위해 만들었습니다.
         </p>
         <p>
-          논문 데이터는 GitHub Actions로 매일 자동 수집되며(<code>.github/workflows/daily-papers.yml</code>),
-          요약은 GitHub Actions의 시크릿이 있으면 LLM으로, 없으면 규칙 기반 템플릿으로 생성됩니다 (<a href="docs/summary-guidelines.md">요약 가이드라인</a>).
-          브라우저에서 바로 열어 볼 수 있는 정적 페이지로, 별도의 서버나 API 키가 필요하지 않습니다.
+          논문 데이터는 매일 자동으로 갱신되며, 요약은 핵심만 빠르게 훑어볼 수 있도록 짧게 정리됩니다
+          (<a href="docs/summary-guidelines.md">요약 가이드라인</a>). 브라우저에서 바로 볼 수 있는 정적 페이지입니다.
         </p>
       </section>
     </main>
