@@ -3,10 +3,57 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2606.24874",
-    "title": "FLUX3D: High-Fidelity 3D Gaussian Generation with Diffusion-Aligned Sparse Representation",
-    "authors": "Haorui Ji et al.",
-    "published": "2026-06-23",
+    "id": "2606.25585",
+    "title": "FeVOS: Foresight Expression Video Object Segmentation",
+    "authors": "Kehan Lan, Kaining Ying, Henghui Ding",
+    "published": "2026-06-24",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "video"
+    ],
+    "summaryKo": "미래 사건을 예측하는 표현을 이용한 비디오 객체 분할 작업 FeVOS를 제안하고, 데이터셋과 MLLM 기반 모델 FeVOS-R1을 통해 해당 작업에서 최고 성능을 달성하고 기존 RVOS 작업에도 일반화됨을 보였다.",
+    "detail": {
+      "problem": "기존 Referring Video Object Segmentation (RVOS)은 관찰된 프레임 내의 사건이나 행동, 외형을 설명하는 표현에 초점을 맞춰, 미래 사건을 추론해야 하는 시나리오를 다루지 못한다. FeVOS는 이러한 한계를 극복하기 위해 아직 일어나지 않은 미래 사건을 질의하고 관찰된 프레임에서 객체 마스크를 예측하는 새로운 작업을 정의한다.",
+      "method": "968개의 비디오 클립, 14,525개의 예측 표현(foresight expressions), 2,904개의 사고 사슬 주석으로 구성된 FeVOS 데이터셋을 구축하고, 지도 학습 미세 조정과 강화 학습의 2단계 파이프라인으로 학습된 MLLM 기반 모델 FeVOS-R1을 개발한다.",
+      "takeaway": "FeVOS-R1은 FeVOS 벤치마크에서 최첨단 성능을 달성하고, 기존 RVOS 벤치마크에도 강한 일반화 능력을 보여주어 예측 추론 기반 비디오 인식 연구의 가능성을 제시한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.25585v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25585v1.pdf"
+  },
+  {
+    "id": "2606.25905",
+    "title": "SurgAtlas: A Large-Scale Surgical Video-Language Dataset with 2,391 Hours of Open and Minimally Invasive Surgery",
+    "authors": "Filippos Bellos et al.",
+    "published": "2026-06-24",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "multimodal",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "SurgAtlas는 2,391시간 분량의 15,291개 공개 및 최소 침습 수술 비디오를 포함하는 가장 큰 수술 비디오-언어 데이터셋이며, 공개 수술을 대규모로 포함하고 다양한 주석과 전문가 검증 QA 쌍을 제공한다.",
+    "detail": {
+      "problem": "기존 수술 비디오-언어 데이터셋은 규모가 작고 공개 수술을 포함하지 않으며, 주석 체계가 다양하지 않고 표준 벤치마크가 부족하다.",
+      "method": "SurgAtlas는 YouTube에서 수집한 비디오를 기반으로, LLM 기반 자동 다단계 주석 파이프라인과 점진적 VQA 생성 프레임워크를 통해 세그먼트 수준 캡션, 단계/단계별 설명, 비디오 수준 설명, 추론 QA 쌍 등을 계층적 분류 체계로 구성한다. 또한 Qwen3-VL-8B를 2단계 캡셔닝-명령 파이프라인으로 미세 조정하여 평가한다.",
+      "takeaway": "SurgAtlas는 가장 큰 수술 비디오-언어 데이터셋이자 공개 수술을 대규모로 포함한 최초의 데이터셋으로, 다양한 주석과 공개 수술 비디오 이해를 위한 표준 벤치마크를 제공한다. 미세 조정된 모델은 여러 수술 벤치마크에서 경쟁력 있는 성능을 보여주었으며, 이 데이터셋은 향후 대규모 멀티모달 수술 AI 시스템 사전 학습에 기여할 수 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.25905v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25905v1.pdf"
+  },
+  {
+    "id": "2606.26029",
+    "title": "TriViewBench: Controlled Complexity Scaling for Multi-View Structural Reasoning in MLLMs",
+    "authors": "Yu-Yang Chen, Lan-Zhe Guo",
+    "published": "2026-06-24",
     "category": "cv",
     "categories": [
       "cs.CV",
@@ -14,292 +61,239 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "diffusion",
       "3d",
-      "embedding",
       "multimodal"
     ],
-    "summaryKo": "FLUX3D: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
+    "summaryKo": "본 연구는 합성 3D 장면을 활용한 통제된 삼시점 시각 추론 벤치마크 TriViewBench를 통해 다중모달 대규모 언어 모델(MLLM)이 구조적 복잡성 증가에 따라 체계적으로 성능이 저하되며, 객체 계수 및 전역 복원 과제에서 특히 심각한 한계를 보이고, 사고 사슬 프롬프팅의 효과가 미미함을 발견하였다.",
     "detail": {
-      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
-      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
-      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
+      "problem": "다중모달 대규모 언어 모델(MLLM)은 표준 시각 질문 응답 벤치마크에서 강력한 성능을 보이지만, 통제된 구조적 복잡성 하에서의 확장성에 대한 이해는 부족하다.",
+      "method": "합성 3D 장면에서 객체 수와 가림 정도를 명시적으로 매개변수화한 삼시점 시각 추론 벤치마크 TriViewBench를 제안한다. 벤치마크는 1,923개의 장면과 14,000개 이상의 질문-응답 쌍으로 구성되며 네 가지 복잡도 수준과 세 가지 추론 범주(지역 결정, 객체 계수, 전역 복원)를 포함한다. 18개의 공개 및 비공개 MLLM을 통일된 프롬프트 프로토콜로 평가하였다.",
+      "takeaway": "18개 모든 모델이 예외 없이 동일한 능력 계층 구조(지역 결정 > 객체 계수 > 전역 복원)를 보였으며, 복잡도 증가에 따라 성능이 단조 감소하였다. 객체 계수 오류 분석에서는 단일 시점 과제의 가림으로 인한 과소 계수와 다중 시점 과제의 시점 간 동일성 혼동으로 인한 과대 계수라는 두 가지 독립적인 실패 모드가 확인되었다. 사고 사슬(CoT) 프롬프팅의 전반적인 효과는 거의 없었으며(-0.16%), 전역 복원에 대한 효과는 모델 능력에 크게 의존하여, 병목이 추론 전략보다는 시점 간 공간 표현에 있음을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24874v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24874v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.26029v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.26029v1.pdf"
   },
   {
-    "id": "2606.24441",
-    "title": "S1-Omni-Image: A Unified Model for Scientific Image Understanding, Generation, and Editing",
-    "authors": "Qingxiao Li et al.",
-    "published": "2026-06-23",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "medical",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "S1-Omni-Image: 컴퓨터 비전 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
-      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
-      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.24441v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24441v1.pdf"
-  },
-  {
-    "id": "2606.24155",
-    "title": "MedBench v5: A Dynamic, Process-Oriented, and Hallucination-Aware Benchmark for Clinical Multimodal Models",
-    "authors": "Ding Jinru et al.",
-    "published": "2026-06-23",
+    "id": "2606.25651",
+    "title": "MedGuards: Multi-Agent System for Reliable Medical Error Detection and Correction",
+    "authors": "Congbo Ma et al.",
+    "published": "2026-06-24",
     "category": "multimodal",
     "categories": [
       "cs.CL"
     ],
     "tags": [
-      "benchmark",
       "agents",
       "medical",
-      "multimodal",
+      "benchmark",
       "detection"
     ],
-    "summaryKo": "MedBench v5: 멀티모달 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
+    "summaryKo": "MedGuards는 전문화된 에이전트와 신뢰도 기반 중재 메커니즘을 사용하여 의료 텍스트의 오류를 탐지·수정하는 다중 에이전트 인컨텍스트 학습 프레임워크로, 추가 학습 없이도 여러 임상 노트 데이터셋에서 효과를 입증했다.",
     "detail": {
-      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
-      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
-      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
+      "problem": "LLM이 의료 분야에 사용되면서 생성된 텍스트의 오류 탐지 및 수정이 중요해졌지만, 기존 자동 검사나 휴리스틱 기반 방법은 보지 못한 데이터셋에 일반화되지 못하는 문제가 있다.",
+      "method": "MedGuards는 오류를 탐지, 위치 파악, 수정하는 전문화된 에이전트들과 신뢰도 기반 중재 메커니즘을 갖춘 다중 에이전트 인컨텍스트 학습 프레임워크이다. 또한, 참조 텍스트 내 핵심 키워드의 정확한 생성을 고려하는 새로운 평가지표 KPCS를 도입한다.",
+      "takeaway": "네 개의 다국어 임상 노트 데이터셋 실험에서 다양한 모델과 지표에 걸쳐 유의미한 성능 향상을 보였으며, 코드를 공개하여 재현성을 확보했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24155v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24155v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.25651v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25651v1.pdf"
   },
   {
-    "id": "2606.24602",
-    "title": "ViTexQA: A Multi-Frame Temporal Perception Dataset for Video Text Question Answering",
-    "authors": "Zhentao Guo et al.",
-    "published": "2026-06-23",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "video",
-      "multimodal",
-      "benchmark"
-    ],
-    "summaryKo": "ViTexQA: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.24602v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24602v1.pdf"
-  },
-  {
-    "id": "2606.24759",
-    "title": "UniDrive: A Unified Vision-Language and Grounding Framework for Interpretable Risk Understanding in Autonomous Driving",
-    "authors": "Xiaowei Gao et al.",
-    "published": "2026-06-23",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "autonomous-driving",
-      "multimodal"
-    ],
-    "summaryKo": "UniDrive: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.24759v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24759v1.pdf"
-  },
-  {
-    "id": "2606.24797",
-    "title": "EG-VQA: Benchmarking Verifiable Video Question Answering with Grounded Temporal Evidence",
-    "authors": "Linpeng Huang et al.",
-    "published": "2026-06-23",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "generation"
-    ],
-    "summaryKo": "EG-VQA: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.24797v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24797v1.pdf"
-  },
-  {
-    "id": "2606.24286",
-    "title": "AVOC: Enhancing Hour-Level Audio-Video Understanding in Omni-Modal LLMs via Retrieval-Inspired Token Compression",
-    "authors": "Yijing Chen et al.",
-    "published": "2026-06-23",
+    "id": "2606.26079",
+    "title": "Same Evidence, Different Answer: Auditing Order Sensitivity in Multimodal Large Language Models",
+    "authors": "Akshay Paruchuri, Sanmi Koyejo, Ehsan Adeli",
+    "published": "2026-06-24",
     "category": "multimodal",
     "categories": [
       "cs.CL",
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "retrieval",
-      "multimodal"
-    ],
-    "summaryKo": "AVOC: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.24286v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24286v1.pdf"
-  },
-  {
-    "id": "2606.24083",
-    "title": "CAVEWOMAN: How Large Language Models Behave Under Linguistic Input and Output Compression",
-    "authors": "Morayo Danielle Adeyemi, Ryan A. Rossi, Franck Dernoncourt",
-    "published": "2026-06-23",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
+      "cs.CV",
       "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "CAVEWOMAN: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "본 논문은 다중모달 대규모 언어 모델(MLLM)의 순서 민감도를 평가하기 위해 Facet-Probe라는 감사 도구를 제안하고, 18개 최신 모델이 모두 순서 변화에 취약함을 발견했다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "표준 MLLM 벤치마크는 각 항목을 단일 순서로만 평가하여 순서를 변경했을 때 답변이 달라지는 현상을 간과하며, 이는 새로운 AI 평가 지침이 요구하는 기본적인 신뢰성 속성이다.",
+      "method": "Facet-Probe는 5가지 순서 유형(옵션, 증거 청크, 문서 순위, 이미지 세트, 혼합 양식)에 걸쳐 18개 MLLM의 순서 영향을 측정하고, 베이지안 항목반응 모델로 순서 노이즈와 편향을 분리하며, 동일 순서 제어를 통해 무작위 출력 변동 수준을 추정한다.",
+      "takeaway": "18개 모든 MLLM이 순서에 불변하지 않았으며(변동률 24~50%), 가장 우수한 모델도 13.4%의 변동을 보였다. 프롬프트 수준의 완화는 양식에 의존적이어서 텍스트와 시각 추론 간에 전이되지 않아, 훈련 시간 또는 구조적 접근의 필요성을 시사하며, 순서 변동률을 MLLM의 표준 보고 축으로 제안한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24083v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24083v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.26079v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.26079v1.pdf"
   },
   {
-    "id": "2606.24346",
-    "title": "PETRA: Transforming Web Text for Petroleum-Engineering Domain Adaptation",
-    "authors": "Kirill Dubovikov et al.",
-    "published": "2026-06-23",
+    "id": "2606.25338",
+    "title": "Hybrid-IR: Dual-Path Hybrid Retrieval with Iterative Reasoning for Complex Medical Question Answering",
+    "authors": "Sheng Wan et al.",
+    "published": "2026-06-24",
     "category": "llm",
     "categories": [
-      "cs.IR",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
+      "medical",
       "retrieval",
-      "embedding",
       "generation"
     ],
-    "summaryKo": "PETRA: LLM 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "summaryKo": "의료 질문 응답을 위해 그래프 기반 검색과 밀집 검색을 결합하고 반복적 검색-추론 메커니즘을 사용하는 하이브리드 검색-증강 생성 프레임워크 Hybrid-IR을 제안한다.",
     "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+      "problem": "의료 QA에서 LLM의 환각과 지식 부족 문제를 RAG로 완화할 수 있지만, 단일 검색 경로로는 세부 의미와 구조화된 지식을 동시에 포착하기 어렵고 정적 검색 전략은 심층 추론을 지원하기에 부족하다.",
+      "method": "구조화된 지식 탐색을 위한 그래프 기반 검색과 세부 의미 매칭을 위한 밀집 검색을 통합한 이중 경로 검색 프레임워크 Hybrid-IR을 제안하며, 반복적 검색-추론 루프를 통해 추론 궤적을 점진적으로 개선한다.",
+      "takeaway": "세 가지 의료 QA 벤치마크에서 Hybrid-IR의 효과를 입증하였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24346v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24346v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.25338v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25338v1.pdf"
   },
   {
-    "id": "2606.24597",
-    "title": "Qwen-AgentWorld: Language World Models for General Agents",
-    "authors": "Yuxin Zuo et al.",
-    "published": "2026-06-23",
+    "id": "2606.25568",
+    "title": "Riazi-8B: An Urdu Large Language Model for Mathematical Reasoning",
+    "authors": "Azher Ali et al.",
+    "published": "2026-06-24",
     "category": "llm",
     "categories": [
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents"
+      "generation"
     ],
-    "summaryKo": "Qwen-AgentWorld: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "summaryKo": "본 논문은 우르두어 언어 적응과 수학적 추론 중심 미세 조정을 결합하여 저자원 언어인 우르두어에서도 효과적인 수학적 추론이 가능한 Riazi-8B 모델을 제안한다.",
     "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+      "problem": "최신 LLM은 수학적 추론 능력이 뛰어나지만 영어 중심의 학습 자원과 벤치마크에 의존하여 우르두어와 같은 저자원 언어에서는 성능이 크게 저하된다. 우르두어에는 추론 중심 데이터와 적응된 모델이 부족하여 다단계 수학 문제 해결의 적용이 제한적이다.",
+      "method": "Riazi-8B는 우르두어 위키피디아로 계속 사전 학습하고 GSM8K에서 파생된 우르두어 연쇄 사고 데이터로 지도 미세 조정하는 2단계 적응 과정을 통해 개발되었다.",
+      "takeaway": "MGSM-Urdu 평가에서 Riazi-8B는 기존 우르두어 명령어 튜닝 모델보다 정답 정확도, 추론 품질, 응답 완전성, 우르두어 생성에서 일관된 개선을 보였다. 이러한 결과는 언어 적응과 추론 중심 미세 조정의 결합이 저자원 언어로 수학적 추론 능력을 확장하는 효과적인 전략임을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24597v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24597v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.25568v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25568v1.pdf"
   },
   {
-    "id": "2606.24623",
-    "title": "Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: Achieving Confidentiality Without Compromising Contextual Fidelity",
-    "authors": "Yuanhe Zhao et al.",
-    "published": "2026-06-23",
+    "id": "2606.25757",
+    "title": "OPERA: Aligning Open-Ended Reasoning via Objective Perplexity-based Reinforcement Learning",
+    "authors": "Wenxuan Jiang et al.",
+    "published": "2026-06-24",
     "category": "llm",
     "categories": [
-      "cs.CL",
+      "cs.CL"
+    ],
+    "tags": [
+      "code-generation",
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "OPERA는 perplexity 동역학 기반 내재 보상과 데이터 합성 방법을 통해 개방형 추론 작업에서 강화 학습 정렬을 효과적으로 수행하는 프레임워크이다.",
+    "detail": {
+      "problem": "강화 학습(RL)은 수학 및 코드 생성 같은 객관적 추론 작업에는 효과적이지만, 창작과 같은 개방형 작업에서는 LLM 평가자 보상 모델의 스타일 편향과 위치 불일치로 인해 불안정한 감독 문제가 발생한다.",
+      "method": "제안하는 OPERA는 외부 평가자 대신 perplexity 동역학에서 추출한 내재 보상 신호를 사용하며, 콜드 스타트 단계에서 유도 단어와 perplexity 우선순위 롤아웃을 활용한 데이터 합성 방법을 도입하여 20,000개의 고품질 추론 궤적 데이터셋을 구축한다.",
+      "takeaway": "Qwen3-8B에 적용하여 오픈소스 모델 중 최고 성능을 달성했으며, 일부 개방형 작업에서 Gemini2.5 및 MiniMax-M2.5와 같은 독점 모델과 동등하거나 이를 능가하는 결과를 보여주었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.25757v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25757v1.pdf"
+  },
+  {
+    "id": "2606.25592",
+    "title": "VPA-Guard: Defending and Benchmarking Image-to-Video Generation Against Visual Prompt Attacks",
+    "authors": "Yining Sun et al.",
+    "published": "2026-06-24",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 이미지-비디오 생성 모델에서 시각적 프롬프트 공격의 취약성을 평가하는 최초의 체계적인 벤치마크 VVA-Bench를 제시하고, 이를 방어하기 위한 검색 증강 및 자기 진화적 방어 프레임워크 VPA-Guard를 제안한다.",
+    "detail": {
+      "problem": "기존 안전 벤치마크는 텍스트 기반 및 이미지 콘텐츠 기반 탈옥에 집중되어 있어, 암시적 시각적 프롬프트 공격은 충분히 연구되지 않았다. 또한 이미지-비디오 생성 모델이 무해해 보이는 시각적 단서를 유해한 시간적 명령으로 해석하여 위험한 비디오를 생성할 수 있다.",
+      "method": "본 연구는 시각적 프롬프트 공격을 체계적으로 평가하는 벤치마크 VVA-Bench와, 소수 샷 추론을 통해 잠재적 악의적 의도를 식별하는 검색 증강 및 자기 진화적 방어 프레임워크 VPA-Guard를 제안한다.",
+      "takeaway": "VVA-Bench 실험 결과, 최신 모델들이 시각적 프롬프트 공격에 매우 취약하여 공격 성공률이 Wan 2.7에서 100%, Veo 3.1에서 74.8%에 달했다. VPA-Guard는 공격 성공률을 평균 44.2%, 유해성 점수를 73.4% 감소시키면서 합법적인 사용자 편집의 유틸리티를 유지한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.25592v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25592v1.pdf"
+  },
+  {
+    "id": "2606.25701",
+    "title": "Falcon: Functional Assembly and Language for Compositional Reasoning in X-ray",
+    "authors": "Yonathan Michael et al.",
+    "published": "2026-06-24",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "Falcon은 X-ray 수하물 검사에서 구성적 위협 추론 문제를 해결하기 위해 분할 인식 영역 특징을 구조화된 안전 상태로 추상화하여 언어 모델에 주입하는 멀티모달 프레임워크로, 기존 모델이 외형에는 적응하지만 구성적 추론에 어려움을 겪는 반면 Falcon은 기능적 근거와 일관된 위협 평가를 개선한다.",
+    "detail": {
+      "problem": "기존 시각-언어 모델은 개체 중심이라 안전이 중요한 X-ray 수하물 검사에서 위협이 공간적으로 분산된 구성 요소 간의 기능적 호환성에서 발생하는 점을 포착하지 못한다. 본 논문은 위험을 독립적인 탐지 결과가 아닌 지역 간 관계적 속성으로 모델링하는 구성적 위협 추론으로 공식화한다.",
+      "method": "Falcon은 분할 인식 영역 특징을 구성 요소 존재 여부, 쌍별 기능적 호환성, 장면 수준 위험으로 구성된 구조화된 안전 상태로 추상화하여 언어 모델에 명시적 중간 인터페이스로 주입한다.",
+      "takeaway": "실험에서 기존 멀티모달 모델은 외형에는 적응하지만 구성적 안전 추론에 어려움을 겪었으며, Falcon은 기능적 근거와 일관된 위협 평가를 개선하였다. 또한 Falcon-X 벤치마크를 통해 구성적 안전 추론을 멀티모달 시스템의 새로운 평가 패러다임으로 확립한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.25701v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25701v1.pdf"
+  },
+  {
+    "id": "2606.25894",
+    "title": "Enhancing Brain MRI Anomaly Detection and Reasoning with ROI Rethink and Synthetic Data",
+    "authors": "Shangkun Li et al.",
+    "published": "2026-06-24",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
       "cs.AI"
     ],
     "tags": [
-      "agents",
-      "privacy",
-      "retrieval",
       "benchmark",
-      "generation"
+      "medical",
+      "detection"
     ],
-    "summaryKo": "Privacy-Preserving RAG via Multi-Agent Semantic Rewriting: LLM 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
+    "summaryKo": "BrReMark는 뇌 MRI 진단에서 ROI 마킹과 합성 데이터 증강을 도입하여 이상 탐지 및 진단 추론 성능을 향상시키고 외부 분포 데이터에서 거짓 양성을 크게 줄였다.",
     "detail": {
-      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
-      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
-      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
+      "problem": "기존 의학 비전-언어 모델은 단일 패스 추론으로 진단을 생성하여 어떤 영역이 진단을 지지하는지 제시하지 못하며, 이는 감사 불가능 및 정상 스캔에서의 환각 현상을 초래한다.",
+      "method": "BrReMark는 잠재적 이상에 대한 가설을 생성하고 바운딩 박스 마킹으로 근거를 제시한 후, 마킹된 증거를 재검토하여 결론을 검증한다. 훈련은 구조화된 추론 궤적에 대한 지도 미세 조정과 위치 정확도 및 진단 추론에 대한 보상을 사용한 강화 학습을 결합하고, 도메인 무작위화 기반 병리 합성 증강을 통해 일반화 성능을 높인다.",
+      "takeaway": "내부 벤치마크에서 mAP50이 0.74%에서 37.54%로 향상되었고, 임상 F1 21.57%, 진단 정확도 45.26%를 달성했다. NOVA OOD 벤치마크에서는 최첨단 대비 거짓 양성을 45.7% 감소시켜 드문 병리에 대한 환각 감소를 입증했으며, 명시적 가설-검증 근거 제시가 신뢰할 수 있는 개방형 뇌 MRI 진단의 실용적 방법임을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24623v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24623v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.25894v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25894v1.pdf"
   },
   {
-    "id": "2606.24775",
-    "title": "Are We Ready For An Agent-Native Memory System?",
-    "authors": "Wei Zhou et al.",
+    "id": "2606.25206",
+    "title": "RAVEN: Long-Horizon Reasoning &amp; Navigation with a Visuo-Spatio-Temporal Memory",
+    "authors": "Yixun Hu et al.",
     "published": "2026-06-23",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.DB",
-      "cs.IR"
+      "cs.RO",
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "retrieval"
+      "video",
+      "retrieval",
+      "embedding"
     ],
-    "summaryKo": "Are We Ready For An Agent-Native Memory System?: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "summaryKo": "RAVEN은 장기 로봇 배치를 위해 시각 임베딩을 공간 및 시간 정보와 함께 벡터 데이터베이스에 저장하여 질문 응답 및 내비게이션을 수행하는 에이전트 메모리 시스템이다.",
     "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+      "problem": "장기 로봇 운용을 위해서는 미세한 시각 의미를 보존하고 공간 및 시간에 기반한 관측을 기록하며 효율적인 저장 및 검색이 가능한 메모리 시스템이 필요하다.",
+      "method": "RAVEN은 시각 임베딩을 자세 및 시간 정보와 함께 벡터 데이터베이스에 저장하고, 공간 지도에서 검색을 기반으로 질문에 답하고 목표로 내비게이션한다. 이미지-텍스트 캡셔닝을 피하고 정확한 의미, 공간, 시간 검색을 가능하게 한다.",
+      "takeaway": "RAVEN은 여러 시뮬레이션 및 실제 비디오 QA 벤치마크에서 캡션 기반 메모리 시스템을 일관되게 능가하고 최첨단 VLM과 장기 과제에서 10배 낮은 검색 비용으로 성능을 맞췄다. 또한 실제 로봇에 적용하여 대형 실내 환경에서 장기 내비게이션을 성공적으로 수행했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.24775v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.24775v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.25206v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.25206v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-06-24T21:57:30.405Z",
+  "collectedAt": "2026-06-25T13:36:57.678Z",
   "source": "arXiv",
-  "note": "Auto-collected by scripts/collect-papers.mjs. Summaries are template-generated, not LLM-produced. See docs/summary-guidelines.md."
+  "note": "Auto-collected by scripts/collect-papers.mjs. Summaries use LLM when OPENCODE_GO_API_KEY is available, otherwise template fallback. See docs/summary-guidelines.md.",
+  "summarizer": "deepseek-v4-flash via opencode-go"
 };
