@@ -4,6 +4,7 @@
 import { writeFileSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
+import assert from 'node:assert/strict';
 
 /**
  * collect-papers.mjs — arXiv daily paper collector.
@@ -87,6 +88,30 @@ function extractAuthors(entry) {
   if (names.length === 0) return 'Unknown';
   if (names.length <= 3) return names.join(', ');
   return names[0] + ' et al.';
+}
+
+function parsePreviousPaperIds(source) {
+  const match = source.match(/window\.PAPERS\s*=\s*(\[[\s\S]*?\]);\s*window\.PAPER_METADATA/);
+  if (!match) return new Set();
+  try {
+    return new Set(JSON.parse(match[1]).map(p => p.id).filter(Boolean));
+  } catch (_) {
+    return new Set();
+  }
+}
+
+function readPreviousPaperIds() {
+  try {
+    return parsePreviousPaperIds(readFileSync(OUTPUT_PATH, 'utf-8'));
+  } catch (_) {
+    return new Set();
+  }
+}
+
+function selectFreshFirst(papers, previousIds, limit = MAX_PAPERS) {
+  const fresh = papers.filter(p => !previousIds.has(p.id));
+  const backfill = papers.filter(p => previousIds.has(p.id));
+  return [...fresh, ...backfill].slice(0, limit);
 }
 
 /* ── scoring ── */
@@ -255,10 +280,11 @@ async function collectPapers() {
     }
   }
 
-  // Sort first, then summarize only the top N
-  const sorted = [...seen.values()]
-    .sort((a, b) => (b._score - a._score) || (b.published > a.published ? 1 : -1))
-    .slice(0, MAX_PAPERS);
+  // Sort first, then prefer papers not shown in the previous generated page.
+  const sorted = selectFreshFirst(
+    [...seen.values()].sort((a, b) => (b._score - a._score) || (b.published > a.published ? 1 : -1)),
+    readPreviousPaperIds(),
+  );
 
   // Generate tags (keyword-based) for each
   for (const p of sorted) {
@@ -324,6 +350,14 @@ function serialize(papers) {
 /* ── main ── */
 
 async function main() {
+  if (process.argv.includes('--self-test')) {
+    const previous = parsePreviousPaperIds('window.PAPERS = [{"id":"a"},{"id":"b"}];\n\nwindow.PAPER_METADATA = {};');
+    assert.deepEqual([...previous], ['a', 'b']);
+    assert.deepEqual(selectFreshFirst([{ id: 'a' }, { id: 'c' }, { id: 'b' }, { id: 'd' }], previous, 3).map(p => p.id), ['c', 'd', 'a']);
+    console.log('self-test passed');
+    return;
+  }
+
   const dryRun = process.argv.includes('--dry-run');
 
   console.error(USE_LLM ? `Using LLM: ${OPENCODE_GO_MODEL}` : 'No API key found; using template summaries');
