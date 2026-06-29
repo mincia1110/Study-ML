@@ -3,296 +3,312 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2606.26387",
-    "title": "Staying VIGILant: Mitigating Visual Laziness via Counterfactual Visual Alignment in MLLMs",
-    "authors": "Xi Xiao et al.",
-    "published": "2026-06-24",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.CL",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "멀티모달 대규모 언어 모델(MLLM)의 '시각적 나태함' 문제를 해결하기 위해 반사실적 시각 정렬을 통해 시각 입력과 응답 간 상호 정보량을 최대화하는 강화학습 기반 프레임워크 VIGIL을 제안한다.",
-    "detail": {
-      "problem": "MLLM은 시각적 증거를 올바르게 인코딩하지만 언어적 사전 지식에 과의존하는 '시각적 나태함'으로 인해 시각적 입력과 상충되는 환각을 생성한다. 기존 정렬 방법들은 언어적 단서를 최적화하여 이러한 편향을 강화한다.",
-      "method": "VIGIL은 강화학습 기반 후훈련 프레임워크로, 시각적 입력과 생성 응답 간의 상호 정보량을 최대화하는 기하학적 제약을 도입한다. 텍스트-시각 주의가 마스킹된 반사실적 맹목 상태에서도 모델이 부적절하게 확신하는 '맹목적 확신' 사례를 페널티로 부여하여 인과적 시각 기반을 강화한다.",
-      "takeaway": "VIGIL은 환각 및 추론 벤치마크에서 최신 정렬 방법들을 일관되게 능가하며 텍스트 전용 성능을 저하시키지 않는다. 또한 25%의 선호도 데이터만으로도 최고 성능 방법의 전체 데이터 성능에 도달하고, 명시적 바운딩 박스 없이도 공간적 기반 능력이 나타난다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.26387v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.26387v1.pdf"
-  },
-  {
-    "id": "2606.26466",
-    "title": "Soft Token Alignment for Cross-Lingual Reasoning",
-    "authors": "Jiayi He et al.",
-    "published": "2026-06-25",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding",
-      "generation"
-    ],
-    "summaryKo": "다국어 대규모 언어 모델의 언어 간 추론 불일치 문제를 해결하기 위해, 영어를 기준으로 소프트 토큰 표현을 정렬하는 보조 목표인 SOLAR를 제안하며, 네 가지 다국어 추론 벤치마크에서 최대 17.7%p의 성능 향상을 달성했다.",
-    "detail": {
-      "problem": "다국어 대규모 언어 모델은 언어에 따라 추론과 답변이 일관되지 않게 생성되며, 언어별 어휘 선택으로 인해 의미적으로 동등한 추론 경로가 언어 간에 분기된다.",
-      "method": "SOLAR는 영어를 기준으로 소프트 토큰 표현을 정렬하는 미세 조정 보조 목표이다. 소프트 토큰은 어휘 임베딩에 대한 확률 가중 혼합으로, 언어 간 의미적으로 관련된 토큰의 정보를 집계한 연속 표현을 사용한다.",
-      "takeaway": "네 가지 다국어 추론 벤치마크에서 SOLAR는 기본 모델 대비 최대 17.7%p, 표준 미세 조정 대비 최대 3.8%p의 정확도 향상을 보였으며, 저자원 언어에서 가장 큰 개선을 보였다. 또한 최종 층의 언어 간 유사성을 강화하고 언어 클러스터 분리를 줄여, 소프트 토큰 정렬이 다국어 추론에서 공유 의미 구조를 보존하는 데 도움이 됨을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.26466v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.26466v1.pdf"
-  },
-  {
-    "id": "2606.26566",
-    "title": "Adversarial Diffusion Across Modalities: A Fusion Survey of Attacks, Defenses, and Evaluation for Text, Vision, and Vision-Language Models",
-    "authors": "Abrar Alotaibi, Moataz Ahmed",
-    "published": "2026-06-25",
-    "category": "multimodal",
-    "categories": [
-      "cs.CR",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "survey"
-    ],
-    "summaryKo": "이 논문은 텍스트, 이미지, 비전-언어 모델에 대한 확산 기반 적대적 공격과 방어 연구를 하나의 개념적 프레임워크로 통합하고, LLM 측면에 초점을 맞춰 분류 체계, 평가 기준 및 연구 의제를 제시하는 설문 조사이다.",
-    "detail": {
-      "problem": "적대적 평가 연구는 텍스트/LLM, 이미지 분류기, 비전-언어 모델, 방어라는 네 분야로 분리되어 진행되어 왔으며, 각기 다른 용어, 위협 모델, 벤치마크를 사용하여 통합된 이해가 부족하다.",
-      "method": "네 분야를 단일 개념 프레임워크로 통합하고, 확산 역할의 6분류 체계와 위협 모델 축, 5차원 평가 프레임워크를 제안하며, 공격자-방어자 이중 관점에서 50편의 논문과 비확산 기준선을 분석한다.",
-      "takeaway": "LLM 관련 문헌의 5가지 반복적 약점을 식별하고 향후 연구 의제를 제시하였으나, 본 리뷰는 PRISMA를 따르지 않는 서술적 리뷰로서 재현 가능성에 한계가 있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.26566v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.26566v1.pdf"
-  },
-  {
-    "id": "2606.26986",
-    "title": "ReaORE: Reasoning-Guided Progressive Open Relation Extraction Empowered by Large Reasoning Models",
-    "authors": "Xin Lin et al.",
-    "published": "2026-06-25",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "embedding",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 대규모 추론 모델을 활용한 점진적 개방형 관계 추출 프레임워크 ReaORE를 제안하며, 기존 방법들의 일반화 및 식별 한계를 극복하고 두 데이터셋에서 우수한 성능을 달성함.",
-    "detail": {
-      "problem": "개방형 관계 추출(OpenRE)은 보이지 않는 관계 유형을 추출해야 하는 과제로, 현재 클러스터링 기반 방법은 관계 레이블을 생성할 수 없고 일반화가 낮으며, LLM 기반 직접 생성은 혼동 관계를 구별하는 능력이 부족함.",
-      "method": "ReaORE는 두 단계로 구성됨: (i) 관계 필터링 단계에서는 다각적 추론을 통해 초기 관계 집합을 생성하고 임베딩 유사도로 보완 및 필터링하며, (ii) 관계 예측 단계에서는 세부 비교 추론을 통해 목표 관계를 예측하여 혼동 관계를 더 잘 구별함.",
-      "takeaway": "대표적인 두 개방형 관계 추출 데이터셋에서 실험한 결과, ReaORE가 기존 기준 모델들을 능가하는 성능을 보임."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.26986v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.26986v1.pdf"
-  },
-  {
-    "id": "2606.27275",
-    "title": "How Surprising Is Historical Italian to Language Models? Tokenization Tax, Comprehension Tax, and a Simple Mitigation",
-    "authors": "Maria Levchenko",
-    "published": "2026-06-25",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.DL"
-    ],
-    "tags": [
-      "retrieval",
-      "embedding",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "역사적 텍스트에 대한 언어 모델의 어려움을 토큰화 비용, 예측 불확실성, 의미적 견고성, 맥락 민감성의 네 차원으로 분해하는 진단 프레임워크를 제안하고, 17세기 이탈리아어의 예측 불확실성이 높지만 의미 표현은 강건하며, 간단한 시간적 맥락 프롬프트로 역사적 놀라움을 약 60% 감소시킬 수 있음을 입증한다.",
-    "detail": {
-      "problem": "역사적 언어에 대한 대규모 언어 모델(LLM)의 처리 능력이 제대로 이해되지 않고 있으며, 역사적 어려움이 단일 장벽으로 간주되어 철자 변이, 언어적 거리, 사전학습 노출이 혼동된다.",
-      "method": "본 논문은 토큰화 비용, 예측 불확실성(놀라움), 의미적 견고성, 맥락 민감성의 네 차원으로 난이도를 분해하는 진단 프레임워크를 제안하고, 17세기 이탈리아어, 19세기 이탈리아어, 18세기 러시아어 데이터셋을 사용하여 평가했다.",
-      "takeaway": "17세기 이탈리아어는 현대어보다 평균 2.4배 더 놀랍지만 임베딩 유사도는 0.85 이상으로 유지되어 의미 표현이 강건함을 보여주며, 간단한 시간적 맥락 프롬프트로 역사적 놀라움을 약 60% 감소시킬 수 있다. 이는 생성 응용을 신중히 적용하면 디지털 도서관이 LLM을 의미 검색 작업에 안전하게 사용할 수 있음을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.27275v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27275v1.pdf"
-  },
-  {
-    "id": "2606.26904",
-    "title": "Confidence-Aware Tool Orchestration for Robust Video Understanding",
-    "authors": "Yangfan He, Yujin Choi, Jaehong Yoon",
-    "published": "2026-06-25",
+    "id": "2606.27922",
+    "title": "Reflect-R1: Evidence-Driven Reflection for Self-Correction in Long Video Understanding",
+    "authors": "Shuimu Chen et al.",
+    "published": "2026-06-26",
     "category": "cv",
     "categories": [
       "cs.CV",
       "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "autonomous-driving",
+      "multimodal"
+    ],
+    "summaryKo": "Reflect-R1은 긴 비디오 이해를 위해 객관적인 시각적 증거를 동적으로 검색하는 직관, 검증, 중재의 3단계 파이프라인과 단계 분리 강화학습 알고리즘(SD-GRPO)을 통해 자가 교정을 수행하여 최첨단 성능을 달성한 프레임워크이다.",
+    "detail": {
+      "problem": "현재 다중 모달 반성 메커니즘은 내부 매개변수에 의존한 폐쇄 루프 자기 반성으로 인해 객관적 외부 증거가 부족하여 오류 교정에 실패하며, 강화학습 적용 시 심각한 정책 결합과 전용 훈련 데이터 부족 문제가 있다.",
+      "method": "Reflect-R1은 직관, 검증, 중재의 3단계 파이프라인을 통해 객관적 시각적 증거를 동적으로 검색하여 초기 직관을 검증하고 여러 시간적 검색을 자율적으로 수행하여 갈등을 해결함으로써 환각 루프를 차단하며, 단계 분리 강화학습 알고리즘(SD-GRPO)으로 정책 결합을 극복하고 120K 샘플 데이터셋을 구축하였다.",
+      "takeaway": "VideoMME 및 LongVideoBench 등의 벤치마크에서 최첨단 성능을 달성하였으며, 실제 교정률을 크게 향상시키고 객관적 증거에 엄격히 기반한 진정한 자가 교정을 가능하게 하였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.27922v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27922v1.pdf"
+  },
+  {
+    "id": "2606.27999",
+    "title": "HumanMoveVQA: Can Video MLLMs reason about human movement in videos?",
+    "authors": "Pulkit Gera et al.",
+    "published": "2026-06-26",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "3d",
+      "video",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 인간의 움직임 궤적 및 방향 추론을 평가하기 위한 새로운 벤치마크인 HumanMoveVQA를 제안하며, 기존 멀티모달 대규모 언어 모델(MLLM)이 복잡한 인간 동작을 이해하는 데 있어 근본적인 한계를 보임을 보여줍니다.",
+    "detail": {
+      "problem": "기존 MLLM은 복잡한 인간의 움직임을 단순한 의미론적 레이블로 축소하며, 기존 벤치마크는 시간에 따른 공간에서의 전역적 인간 움직임(궤적 및 방향) 추론을 제대로 평가하지 못하는 문제를 해결하고자 합니다.",
+      "method": "외부 시점(exocentric perspective)에서 전역 궤적과 방향 추론을 평가하기 위해 HumanMoveVQA를 제안합니다. 첫 번째 프레임에 고정된 세계 좌표계를 사용하여 2D 비디오 관찰을 세계 좌표계와 일관된 3D 모션 트랙으로 변환하는 확장 가능한 다단계 파이프라인을 통해 7가지 추론 범주에 걸쳐 1만 개 이상의 구조화된 질문-답변 쌍을 생성합니다.",
+      "takeaway": "최신 독점 모델들이 인간 동작 이해에 있어 심각한 능력 격차를 보였으며, 오픈소스 모델을 대상으로 한 세계 좌표계 기반의 미세 조정을 통해 이 문제가 개선 가능함을 입증했습니다. 이 벤치마크는 차세대 움직임 인식 비디오 이해 모델 개발을 위한 기하학적 기반을 제공합니다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.27999v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27999v1.pdf"
+  },
+  {
+    "id": "2606.28049",
+    "title": "AirGroundBench: Probing Spatial Intelligence in Multimodal Large Models under Heterogeneous Multi-View Embodied Collaboration",
+    "authors": "Haotian Li et al.",
+    "published": "2026-06-26",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "video"
+      "3d",
+      "multimodal"
     ],
-    "summaryKo": "본 논문은 동영상 추론 언어 모델의 맹목적 신뢰 문제를 해결하기 위해 프레임별 신뢰도를 추론 과정에 통합하는 Robust-TO 프레임워크를 제안하며, 깨끗한 입력과 왜곡된 입력 모두에서 높은 정확도와 강건성을 입증하였다.",
+    "summaryKo": "AirGroundBench는 UAV-UGV 협업 환경에서 멀티모달 대규모 언어 모델의 이질적 다중 시점 공간 지능을 평가하기 위한 진단 벤치마크로, 모델들이 공간 인식에서는 좋은 성능을 보이나 시점 간 정렬과 변환 추론에 어려움을 겪고 이것이 순차적 의사 결정으로 전파됨을 보여준다.",
     "detail": {
-      "problem": "비디오 추론 언어 모델은 모든 입력 프레임이 동일하게 신뢰할 수 있다고 가정하는 맹목적 신뢰 문제(Blind Trust Problem)를 겪으며, 이로 인해 모션 블러, 눈부심, 가림 등의 현실적인 변형 상황에서 15-30%p의 정확도 하락이 발생한다.",
-      "method": "제안하는 Robust-TO는 각 프레임의 신뢰성을 추론의 모든 단계에 명시적으로 통합하는 에이전트 기반 비디오 이해 프레임워크이다. 다양한 시각적 지각 도구를 통합 증거 인터페이스로 구성하며, 신뢰도-관련성 점수로 프레임을 선택하고 세 단계(고/중/저)의 증거 합성과 신뢰도-비용 GRPO 보상을 통해 정확성, 증거 신뢰도, 효율성을 최적화한다.",
-      "takeaway": "Robust-TO는 두 비디오 추론 벤치마크의 8개 과제에서 깨끗한 입력 시 56.4% 평균 정확도를 달성하여 가장 강력한 공개 baseline보다 10.6%p 높고 Gemini-2.5-Pro(46.2%)를 능가한다. 다섯 가지 현실적인 왜곡 유형에서도 54.3% 평균 정확도를 유지하며 모든 비교 방법 중 가장 작은 깨끗함-왜곡 간 정확도 하락을 보인다."
+      "problem": "기존 MLLM의 공간 이해 평가는 단일 에이전트, 단일 시점에 국한되어 있어, 규모 불일치, 비대칭 폐색, 기준 좌표계 불일치가 존재하는 UAV-UGV 협업 환경에서의 기하학적 일관성 있는 공간 이해 능력을 체계적으로 평가하지 못한다.",
+      "method": "AirGroundBench는 11개의 고충실도 시뮬레이션 환경에서 1,021쌍의 동기화된 공중-지면 관찰 데이터를 기반으로 약 62,000개의 이중 시점 객관식 VQA 인스턴스와 115개의 폐루프 VLN 에피소드를 구축하고, 공간 인식, 시점 간 정렬, 공간 변환 및 추론, 구현 의사 결정의 네 가지 능력 차원에 걸친 10개 작업 유형과 정밀 공간 주석을 제공한다.",
+      "takeaway": "13개 MLLM 평가 결과, 모델들은 공간 인식 작업에서는 비교적 우수하지만 시점 간 정렬 및 변환 중심 추론에 취약하며, 이러한 결함이 VLN에서의 순차적 의사 결정으로 이어진다. 이중 시점 입력이 단일 시점 대비 성능 향상을 보이나 인간 수준과의 격차가 존재하며, 이는 기하학적 일관성이 현재 MLLM의 핵심 한계임을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.26904v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.26904v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.28049v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.28049v1.pdf"
   },
   {
-    "id": "2606.27128",
-    "title": "FlameVQA: A Physically-Grounded UAV Wildfire VQA Benchmark with Radiometric Thermal Supervision",
-    "authors": "Mobin Habibpour et al.",
-    "published": "2026-06-25",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.RO"
-    ],
-    "tags": [
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "FlameVQA는 UAV 기반 산불 지능을 위해 RGB 영상과 복사열 TIFF를 결합한 다중 선택 시각 질문 응답 벤치마크로, 여섯 가지 운영 능력 그룹에 걸쳐 34개의 질문을 포함하며, 현재 MLLM이 연기와 커버리지 추정에서 한계를 보여 도메인 적응이 필요함을 밝힌다.",
-    "detail": {
-      "problem": "UAV 기반 산불 모니터링에서 RGB 영상만으로는 연기, 규모 변화, 폐색 등으로 인해 신뢰할 수 있는 추론이 어렵다.",
-      "method": "FlameVQA는 FLAME 3 데이터셋의 RGB와 복사열 TIFF 쌍을 활용한 온도 기반 추론이 가능한 다중 선택 질문 응답 벤치마크로, MLLM 보조 주석과 결정론적 열 규칙 및 교차 질문 일관성 검사를 결합하고 사람이 검증하였다.",
-      "takeaway": "주요 결과로 명시적 교차 모달 단서가 있을 때 강력한 성능을 보였으나, 심한 연기 아래에서의 존재 감지와 연소 면적 추정에서 눈에 띄는 실패가 있었으며, 이는 현재 MLLM이 재해 및 산불 모니터링을 위해 도메인 특화 적응이 필요함을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.27128v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27128v1.pdf"
-  },
-  {
-    "id": "2606.27277",
-    "title": "EO-WM: A Physically Informed World Model for Probabilistic Earth Observation Forecasting",
-    "authors": "Junwei Luo et al.",
-    "published": "2026-06-25",
-    "category": "cv",
+    "id": "2606.27926",
+    "title": "Verifiable Geometry Problem Solving: Solver-Driven Autoformalization and Theorem Proposing",
+    "authors": "Can Li et al.",
+    "published": "2026-06-26",
+    "category": "multimodal",
     "categories": [
       "cs.AI",
+      "cs.CL",
       "cs.CV"
     ],
     "tags": [
-      "benchmark",
-      "diffusion",
-      "video"
+      "agents",
+      "multimodal"
     ],
-    "summaryKo": "EO-WM은 기상 조건 변화 하의 지표면 예측을 위해 물리적 정보를 조건화에 통합한 비디오 확산 트랜스포머로, 불확실성과 날씨 반응성 측면에서 기존 방법의 한계를 개선한다.",
+    "summaryKo": "SD-GPS는 기하 문제 해결에서 자동 정형화와 정리 예측의 병목을 해결하기 위해 솔버 중심의 프레임워크를 도입하여, 실행 가능성을 학습 신호로 삼고 보조 정리를 제안 및 검증함으로써 기존 방법들을 능가하는 성능을 달성했다.",
     "detail": {
-      "problem": "지구 관측 예측은 부분 관측과 미관측 지표 상태로 인해 불확실성이 존재하는 날씨 기반 세계 모델링 문제로, 기존 결정론적 방법은 불확실성을 단일 예측으로 축소하고 확산 기반 방법은 날씨 변수를 차별화하지 않으며, 벤치마크는 재구성 정확도에 초점을 맞추고 날씨 변화에 따른 예측 반응성을 평가하지 않는다.",
-      "method": "EO-WM은 다중분광 지구 관측 예측을 위한 비디오 확산 트랜스포머로, 기후학적 기준선, 날씨 이상, 누적 물리적 스트레스 신호를 분리된 조건화 경로로 표현하는 물리적 정보 기반 조건화 프레임워크를 도입하고, 극한 여름 벤치마크와 계절 일치 쌍 벤치마크를 통해 날씨 반응성을 진단한다.",
-      "takeaway": "EO-WM은 NDVI 감소 진폭 예측 오차를 5.63% 감소시키고 방향성 적중률을 7.80% 향상시켰으며, 표준 픽셀 수준 지표에서도 경쟁력을 유지한다. 모델과 벤치마크는 오픈소스로 공개될 예정이다."
+      "problem": "기존 신경-기호적 기하 문제 해결에서는 자동 정형화가 정적 과제로 처리되어 솔버와의 호환성이 떨어지고, 고정된 규칙 라이브러리로 인해 정리 예측 단계에서 연역적 막다른 골목에 자주 부딪히는 병목이 있다.",
+      "method": "제안하는 SD-GPS는 두 가지 핵심 구성 요소를 갖는다. Solver-Driven Autoformalization은 QwenVL3-2B에 지도 학습과 실행 가능성 기반 강화 학습을 결합하여 실행 가능성을 주요 훈련 신호로 사용한다. Verified Theorem Proposing은 증명 상태를 인식하는 에이전트가 로컬 보조 정리를 제안하고, 이를 기호 검증을 통해 걸러내어 건전성을 보장한다.",
+      "takeaway": "Geometry3K와 PGPS9K 데이터셋에서의 실험 결과, SD-GPS는 다양한 작업에서 기존 MLLM, 신경망, 신경-기호 방법들보다 일관되게 우수한 성능을 보였으며, 다중 모달 인식과 기호 실행의 연결이 기하 추론을 크게 개선함을 확인했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.27277v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27277v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.27926v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27926v1.pdf"
   },
   {
-    "id": "2606.27307",
-    "title": "See &amp; Sniff: Learning Visuo-Olfactory Representations",
-    "authors": "Seongyu Kim et al.",
+    "id": "2606.27330",
+    "title": "Empowering GUI Agents via Autonomous Experience Exploration and Hindsight Experience Utilization for Task Planning",
+    "authors": "Tianyi Men et al.",
     "published": "2026-06-25",
     "category": "multimodal",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
+      "agents",
+      "privacy",
+      "autonomous-driving",
       "multimodal"
     ],
-    "summaryKo": "이 논문은 시각-후각 짝 데이터 부족 문제를 해결하기 위해, 냄새와 의미적으로 일치하는 웹 이미지를 합성적으로 짝지은 데이터셋과 자가 지도 학습 기반 시각-후각 표현 학습 프레임워크를 제안하여 후각 분류, 교차 모달 검색 및 냄새 위치 파악에서 성능을 입증하였다.",
+    "summaryKo": "소형 오픈소스 MLLM의 계획 및 일반화 한계를 극복하기 위해 자율 경험 탐색과 사후 경험 활용을 통한 PEEU 방법을 제안하고, 7B 모델이 32B 모델을 능가하는 성능을 입증하였다.",
     "detail": {
-      "problem": "현대 다중모달 모델은 시각과 언어, 오디오, 촉각 등을 통합하지만, 시각-후각 짝 데이터 부족으로 후각은 거의 탐구되지 않았다.",
-      "method": "냄새 정체성이 시맨틱 범주 내에서 시각적 변환에 불변한다는 통찰을 활용하여, 후각 전용 샘플과 웹 이미지를 합성적으로 짝지은 확장 가능한 데이터셋 SmellNet-V를 구축하고, 국소 정렬을 통한 자가 지도 학습 프레임워크 See & Sniff를 제안하여 시각-후각 표현을 학습하고 냄새 saliency map을 생성한다.",
-      "takeaway": "제안 방법은 후각 단독 분류에서 기준 대비 7% 향상되었으며, 교차 모달 검색 및 냄새 위치 파악 작업으로 일반화되어 시각-후각 학습의 새로운 방향을 제시한다."
+      "problem": "상업용 대형 모델에 비해 비용 효율적이고 개인 정보를 보호하는 작은 오픈소스 MLLM은 계획 능력이 약하고 웹사이트 간 일반화가 제한적이다.",
+      "method": "PEEU 방법은 자율적으로 환경을 탐색하여 경험을 발견하고 사후 경험을 활용하여 고수준 훈련 데이터를 합성하며, TDHAF를 통해 작업 세분성 수준별 구성적 일반화를 분석한다.",
+      "takeaway": "7B 규모의 PEEU 모델이 30.6% 정확도로 Qwen2.5-VL-32B를 능가했으며, 저수준 기술 습득이 고수준 계획 능력을 보장하지 않고 고수준 작업 훈련이 더 강력한 분포 외 일반화를 제공함을 확인했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.27307v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27307v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.27330v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27330v1.pdf"
   },
   {
-    "id": "2606.27317",
-    "title": "OctoSense: Self-Supervised Learning for Multimodal Robot Perception",
-    "authors": "Anthony Bisulco et al.",
+    "id": "2606.28002",
+    "title": "Dialogue to Detection: A Multimodal Hybrid NLP Pipeline for Insurance Fraud Detection",
+    "authors": "Muhammad Shakeel Akram et al.",
+    "published": "2026-06-26",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "eess.AS"
+    ],
+    "tags": [
+      "agents",
+      "retrieval",
+      "embedding",
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "FNOL 환경을 재현한 합성 멀티모달 데이터와 NLP 파이프라인을 통해 보험 사기 조기 탐지를 수행하는 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "FNOL 단계에서의 보험 사기 탐지는 비공개 텍스트 전용 데이터셋에 의존하여 멀티모달 방법의 발전이 제한되는 문제가 있다.",
+      "method": "FNOL 환경을 재현한 합성 멀티모달 프레임워크를 제안하여 대화 전사와 양자 오디오를 생성하고, ASR 및 화자 분리를 수행한 후 NER, 정규식 기반 특징 추출, LLM-RAG 검색, 화자 임베딩을 규칙 기반 위험 점수에 결합하여 사기 지표를 플래그한다.",
+      "takeaway": "데이터셋 검증과 구성 요소 평가를 통해 안정성과 전이 가능성을 확인하였으며, 텍스트 기반을 넘어선 재현 가능한 멀티모달 사기 탐지 기준선을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.28002v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.28002v1.pdf"
+  },
+  {
+    "id": "2606.27974",
+    "title": "ProMSA:Progressive Multimodal Search Agents for Knowledge-Based Visual Question Answering",
+    "authors": "ZhengXian Wu et al.",
+    "published": "2026-06-26",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "agents",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "ProMSA는 지식 기반 시각 질문 응답을 위해 점진적으로 멀티모달 검색을 수행하는 에이전트를 제안하며, 고정된 검색 파이프라인의 한계를 극복하고 강화학습으로 최적화하여 E-VQA 및 InfoSeek에서 성능 향상을 달성한 방법이다.",
+    "detail": {
+      "problem": "기존 KB-VQA 방법들은 고정된 검색-생성 파이프라인과 정적 top-k 설정을 사용하여 추론 중 적응이 불가능하다.",
+      "method": "ProMSA는 이미지-질문 쌍이 주어지면 에이전트가 반복적으로 이미지 검색, 텍스트 검색, 또는 중단을 선택하며, 명시적인 도구 호출 예산과 중복 제거를 통해 불필요한 검색을 방지한다. 학습은 거부 샘플링 SFT로 유효한 도구 사용 형식을 학습한 후, TN-GSPO라는 시퀀스 수준 강화학습 목표로 최적화한다.",
+      "takeaway": "E-VQA와 InfoSeek 실험에서 강력한 RAG 및 에이전트 기준선 대비 일관된 성능 향상을 보였으며, 검색 정확도와 최종 정확도가 개선되었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.27974v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27974v1.pdf"
+  },
+  {
+    "id": "2606.28215",
+    "title": "HAT-4D: Lifting Monocular Video for 4D Multi-Object Interactions via Human-Agent Collaboration",
+    "authors": "Jiaxin Li et al.",
+    "published": "2026-06-26",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.GR"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "3d",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "HAT-4D는 인간-에이전트 협업을 통해 단일 비디오에서 다중 객체의 3D 기하학, 시간적 역학 및 물리적 상호작용을 재구성하는 최초의 에이전틱 프레임워크이다.",
+    "detail": {
+      "problem": "기존의 모노큘러 4D 재구성 방법은 주로 단일 객체에 초점을 맞추며, 다중 객체 상호작용에서 발생하는 심각한 가림과 복잡한 동역학을 처리하는 데 실패한다.",
+      "method": "HAT-4D는 VLMs와 다단계 인간-인-더-루프 피드백 메커니즘을 통합하여 깊이 모호성과 상호작용 유발 가림을 해결하고, 값비싼 멀티카메라 장비 없이 물리적으로 타당한 자산을 생성한다. 또한 확장 가능한 데이터 엔진 역할을 하여 개방형 벤치마크 MVOIK-4D와 물리적 타당성 및 시간적 일관성에 중점을 둔 새로운 평가 프로토콜을 제공한다.",
+      "takeaway": "광범위한 실험을 통해 HAT-4D는 대부분의 평가 지표에서 최첨단 성능을 달성하고 의미적 정렬에서 경쟁력을 유지한다. 소량의 인간 피드백이 상호작용 재구성을 개선하며, 생성된 데이터는 미세 조정 시 기준선 성능을 효과적으로 향상시킨다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.28215v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.28215v1.pdf"
+  },
+  {
+    "id": "2606.27608",
+    "title": "Qwen-Image-2.0-RL Technical Report",
+    "authors": "Yixian Xu et al.",
     "published": "2026-06-25",
     "category": "cv",
     "categories": [
       "cs.CV",
-      "cs.RO"
-    ],
-    "tags": [
-      "video",
-      "multimodal",
-      "benchmark"
-    ],
-    "summaryKo": "OctoSense는 다중 모달 센서 플랫폼과 데이터셋을 기반으로 후기 융합 마스크드 오토인코더를 통한 자기 지도 학습을 제안하여, 기존 이미지 기반 모델보다 다양한 로봇 인식 작업에서 더 나은 성능과 강건함을 보인다.",
-    "detail": {
-      "problem": "다중 모달 센서 데이터는 각기 다른 표현, 주파수, 지연 시간 및 잡음을 가지므로, 이들을 효과적으로 활용하는 자기 지도 학습 방법이 필요하다.",
-      "method": "모달리티별 토크나이저를 사용하여 센서의 시공간적 특성을 처리하고, 추론 시 모달리티별 토큰을 캐싱하여 효율적으로 새로운 측정값을 통합하는 후기 융합 마스크드 오토인코더를 제안한다.",
-      "takeaway": "제안된 방법은 NVIDIA 5090에서 6.68ms, Orin NX에서 112ms의 빠른 추론 속도를 보이며, 광학 흐름, 깊이, 의미 분할, 자세 추정 작업에서 이미지 기반 모델보다 우수한 성능을 보이고, 야간이나 센서 열화 상황에서도 강건하게 예측한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.27317v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27317v1.pdf"
-  },
-  {
-    "id": "2606.27332",
-    "title": "RoPEMover: Depth-Aware Object Relocation via Positional Embeddings",
-    "authors": "Ipek Oztas et al.",
-    "published": "2026-06-25",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "3d",
-      "embedding"
-    ],
-    "summaryKo": "RoPEMover는 깊이 인식 회전 위치 임베딩을 이용하여 확산 변환기에서 객체를 기하학적으로 일관되게 재배치하며, 최소한의 실제 지도 학습으로 최첨단 성능을 달성하는 방법이다.",
-    "detail": {
-      "problem": "단일 이미지에서 객체를 이동하려면 폐색 처리, 새로운 영역 생성, 그림자 및 조명 일관성 유지 등 기하학적으로 일관된 공간 재배치가 필요하지만, 기존 방법은 장면 수준의 일관성을 유지하지 못한다.",
-      "method": "제안 방법은 확산 변환기의 회전 위치 임베딩(RoPE)이 정의하는 구조화된 공간 필드를 깊이 정보를 포함하는 3D 표현으로 확장하여 조작함으로써 객체의 일관된 변위와 장면 업데이트를 가능하게 한다. 모델은 합성 데이터와 소량의 실제 이미지를 파라미터 효율적 미세 조정으로 학습된다.",
-      "takeaway": "최소한의 실제 지도 학습만으로도 큰 공간 변위에서 객체 정체성을 보존하고, 새롭게 드러난 영역에 그럴듯한 콘텐츠를 생성하며, 그림자와 조명 등 장면 의존적 효과를 일관되게 업데이트하여, 객체 이동 벤치마크에서 모든 평가 지표에 대해 최첨단 성능을 달성한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.27332v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27332v1.pdf"
-  },
-  {
-    "id": "2606.27345",
-    "title": "RayPE: Ray-Space Positional Encoding for 3D-Aware Video Generation",
-    "authors": "Minghao Yin et al.",
-    "published": "2026-06-25",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
+      "cs.LG"
     ],
     "tags": [
       "diffusion",
-      "3d",
-      "video",
-      "benchmark",
       "generation"
     ],
-    "summaryKo": "RayPE는 비디오 확산 트랜스포머에서 플뤼커 좌표를 이용한 광선 공간 위치 인코딩으로 3D 인식 비디오 생성을 개선한다.",
+    "summaryKo": "본 기술 보고서는 강화학습(RLHF)과 온-폴리시 증류(OPD)를 활용하여 Qwen-Image-2.0 확산 모델의 시각적 품질과 명령 수행 능력을 개선한 Qwen-Image-2.0-RL을 제안한다.",
     "detail": {
-      "problem": "최신 비디오 확산 트랜스포머는 (u,v,t) 축의 RoPE를 사용하여 카메라 샘플링 그리드만을 인코딩할 뿐 장면의 3D 구조를 반영하지 못한다.",
-      "method": "RayPE는 각 토큰의 6차원 플뤼커 좌표를 자가 주의의 쿼리와 키에 덧셈적으로 주입하며, 쿼리/키 반전 배치를 통해 주의 점수가 내용, 기하, 교차 항으로 분해된다. 또한 다양한 카메라 이동 규모에 대처하기 위해 방향과 모멘트 크기를 분리하고, 로그 크기의 학습된 함수로 게이팅하며, RMSNorm으로 정규화한다.",
-      "takeaway": "이 모듈은 사전 학습된 비디오 DiT에 0.1% 미만의 파라미터만 추가하며, 영초기화로 사전 학습 가중치에서 시작하여 네 데이터셋 혼합 훈련에서 카메라 제어성, 프레임 간 3D 일관성 및 전반적 비디오 품질을 향상시킨다."
+      "problem": "기존 Qwen-Image-2.0 모델의 시각적 품질과 텍스트-이미지 생성 및 이미지 편집에서의 명령 수행 능력을 향상시키는 것이 목표이다.",
+      "method": "신뢰할 수 있는 보상 신호를 위해 작업별 복합 보상 모델을 구축하고, GRPO 기반 강화학습 프레임워크와 혼합 CFG, 프롬프트 큐레이션, 보정 기법을 도입한다. 또한 온-폴리시 증류를 통해 텍스트-이미지 생성과 이미지 편집 정책을 통합한다.",
+      "takeaway": "Qwen-Image-Bench에서 57.84점(+2.61), 텍스트-이미지 아레나에서 Elo 1193(+78), 이미지 편집 아레나에서 Elo 1349(+93)를 달성하여, 심미적 품질, 프롬프트 준수도, 편집 정확도에서 일관된 개선을 입증했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.27345v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.27345v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.27608v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27608v1.pdf"
+  },
+  {
+    "id": "2606.27023",
+    "title": "Just how sure are you? Improving Verbalized Uncertainty Calibration in Medical VQA",
+    "authors": "Eren Senoglu et al.",
+    "published": "2026-06-25",
+    "category": "multimodal",
+    "categories": [
+      "cs.LG",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "medical",
+      "multimodal"
+    ],
+    "summaryKo": "의료 VQA에서 다중모달 대규모 언어 모델의 과신 문제를 해결하기 위해 이미지-텍스트 정렬 및 보정 항을 포함한 복합 손실 함수로 미세조정하여 언어화된 불확실성 보정을 개선하는 방법을 제안한다.",
+    "detail": {
+      "problem": "다중모달 대규모 언어 모델이 의료 시각 질문 응답에서 실제 정답 여부와 무관하게 과신된 출력을 생성하며, 기존 언어화된 신뢰도 보정 방법은 텍스트 전용 모델을 대상으로 개발되어 의료 이미지 이해의 다중모달 특성을 고려하지 못한다.",
+      "method": "Brier 스타일 보정 항, 극단값으로의 붕괴를 방지하는 앵커 정규화기, 대조적 이미지-텍스트 정렬 항, KL 기반 모델 안정화 항으로 구성된 복합 손실 함수를 사용하여 MLLM을 미세조정하며, 상위 K KL 발산 정규화기로 응답 능력을 보호한다.",
+      "takeaway": "세 가지 의료 VQA 벤치마크와 두 가지 아키텍처(MedGemma 4B IT, Qwen2 VL 7B Instruct)에서 보정 오차를 60% 이상, 식별 성능을 26% 이상 개선하고 예측 정확도를 유지했으며, 프롬프트 기반, 샘플링 기반, 학습 기반 방법보다 우수하고 손실 함수의 각 구성 요소 필요성을 절제 실험으로 확인했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.27023v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27023v1.pdf"
+  },
+  {
+    "id": "2606.27187",
+    "title": "HarmVideoBench: Benchmarking Harmful Video Understanding in Large Multimodal Models",
+    "authors": "Jiajun Wu et al.",
+    "published": "2026-06-25",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "multimodal"
+    ],
+    "summaryKo": "대규모 다중 모드 모델의 유해 동영상 이해 평가를 위한 다계층 진단 벤치마크 HarmVideoBench와 성능 향상 방법 BCR을 제안한다.",
+    "detail": {
+      "problem": "기존 유해 동영상 벤치마크는 이진 분류 태스크에 집중하여 다계층적 특성과 설명적 근거를 무시하고, 모델이 표면적 단서를 통해 올바르게 분류할 수 있는 한계가 있다.",
+      "method": "HarmVideoBench는 1379개의 비디오와 4137개의 객관식 질문으로 구성되어 관찰 가능 증거, 클립 내 의미, 클립 외 추론의 세 가지 차원에서 유해성을 평가한다. 또한 BCR 방법은 추론 경계를 예측하고 필요할 때만 맥락을 검색하여 모델의 이해를 향상시킨다.",
+      "takeaway": "19개 선도 모델 평가 결과, BCR 방법이 기본 모델의 매크로 평균 성능을 61.7%에서 84.4%로 크게 향상시켜 최고 성능을 달성했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.27187v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27187v1.pdf"
+  },
+  {
+    "id": "2606.27499",
+    "title": "DMV-Bench: Diagnosing Long-Horizon Multimodal Agents' Visual Memory with Incidental Cue Injection",
+    "authors": "Yujin Tang et al.",
+    "published": "2026-06-25",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "autonomous-driving",
+      "multimodal"
+    ],
+    "summaryKo": "본 논문은 멀티모달 에이전트의 시각적 기억을 평가하는 최초의 대화형 벤치마크 DMV-Bench를 소개하고, 이중 부호화 이론에 기반한 DualMem 아키텍처를 제안하여 다양한 체인 길이에서 기존 방법들보다 우수한 성능을 보였다.",
+    "detail": {
+      "problem": "기존 에이전트 메모리 연구는 텍스트에 집중되어 있으며, 상호작용 환경에서 에이전트가 기록한 내용이 아닌 시각적 정보를 기억해야 하는 상황을 평가하는 벤치마크가 부족하다.",
+      "method": "DMV-Bench는 1,000개의 제품 변형이 있는 가구 전자상거래 카탈로그를 기반으로 구축되었으며, 각 제품 이미지에 고유한 우발적 단서가 포함되어 에이전트가 특정 제품을 기억하고 URL로 이동하도록 요구한다. 또한 이중 부호화 이론에서 영감을 받아 시각적 및 언어적 코드를 병렬로 유지하는 DualMem 메모리 아키텍처를 제안한다.",
+      "takeaway": "DualMem은 Gemini 2.5 Flash 및 Qwen2.5-VL-7B에서 모든 체인 길이(5, 10, 15, 50)에 대해 캡션 베이스라인 및 세 가지 최신 멀티모달 에이전트 메모리 시스템보다 우수한 성능을 보였으며, 이러한 우위는 메모리 뱅크 크기 및 인코딩 위치 편향에 대한 통제 실험에서도 유지되었다. 또한 시각적 채널이 단서를 종단 간 전달하고 언어 채널은 더 작은 쿼리-근거 역할을 수행하는 비대칭 이중 부호화 방식을 확인하였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.27499v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.27499v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-06-28T04:48:29.980Z",
+  "collectedAt": "2026-06-29T04:56:48.264Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. Summaries use LLM when OPENCODE_GO_API_KEY is available, otherwise template fallback. See docs/summary-guidelines.md.",
   "summarizer": "deepseek-v4-flash via opencode-go"
