@@ -3,131 +3,238 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2606.29824",
-    "title": "Neural Procedural Memory: Empowering LLM Agents with Implicit Activation Steering",
-    "authors": "Chengfeng Zhao et al.",
-    "published": "2026-06-29",
-    "category": "llm",
+    "id": "2606.31966",
+    "title": "MECoBench: A Systematic Study of Multimodal Agent Collaboration in Embodied Environments",
+    "authors": "Qingyun Liu et al.",
+    "published": "2026-06-30",
+    "category": "multimodal",
     "categories": [
+      "cs.MA",
+      "cs.AI",
       "cs.CL",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "autonomous-driving",
-      "retrieval",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "본 논문은 훈련 없이 대조 경험에서 추출한 조종 벡터를 통해 암묵적 활성화 조종으로 에이전트 메모리를 구현하는 Neural Procedural Memory (NPM)을 제안하여, 명시적 지시문 기반 방법의 텍스트-행동 단절 문제를 해결한다.",
+    "summaryKo": "MECoBench는 시각적 환경에서 다중 모달 에이전트 협업을 체계적으로 평가하기 위한 벤치마크로, 다양한 MLLM 실험을 통해 협업의 효과와 한계를 분석한다.",
     "detail": {
-      "problem": "대규모 언어 모델(LLM)을 자율 에이전트로 전환하기 위해 필요한 지속적인 절차적 메모리가 부재하며, 기존의 검색 증강 생성(RAG) 기반 명시적 텍스트 지침 주입 방식은 텍스트와 행동 간의 괴리를 초래하여 올바른 작업 실행에 필요한 내부 표현을 활성화하지 못한다.",
-      "method": "NPM은 학습이 필요 없는 프레임워크로서, 과거 대조 경험에서 절차적 기술을 증류하여 활성화 공간의 조종 벡터로 표현하고, 이를 통해 작업 관련 신경 메커니즘을 직접 활성화하여 작업 실행을 안내한다.",
-      "takeaway": "네 가지 에이전트 벤치마크에서 NPM은 명시적 텍스트 지침을 사용하는 기준 방법과 유사한 성능을 보였으며, 암묵적 조종과 명시적 워크플로를 결합하면 상호 보완적 이점이 있어 더 강건한 작업 실행이 가능함을 확인했다. 또한, 조종 벡터는 일관된 작업 논리를 인코딩하여 활성화 공간 내에서 조직된 구조를 형성한다."
+      "problem": "최근 다중 모달 대규모 언어 모델(MLLM)은 임베디드 에이전트로서 잠재력이 있지만, 시각적 환경에서의 협업 능력은 충분히 연구되지 않았다.",
+      "method": "MECoBench는 다양한 실제 작업, 두 가지 협업 구조, 세 가지 협업 모드를 포함하는 평가 플랫폼과 함께 다중 모달 임베디드 협업 벤치마크를 도입하여 여러 MLLM에 대한 광범위한 실험을 수행한다.",
+      "takeaway": "협업은 일반적으로 임베디드 작업 완료를 향상시키나, 그 이점은 협업 이득과 조정 복잡성 간의 균형에 달려 있다. 통신이 협업 이득에 필수적이며, 최적의 협업 모드는 팀 규모와 모델 성능에 따라 달라진다. 또한 협업은 잡음이 있는 사전 정보나 탐색 조건에서 강건성을 향상시킨다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.29824v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.29824v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.31966v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31966v1.pdf"
   },
   {
-    "id": "2606.30312",
-    "title": "DialogPII: A multilingual dataset of synthetic dialog transcripts to detect personal information",
-    "authors": "Roland Roller et al.",
-    "published": "2026-06-29",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "privacy",
-      "medical",
-      "detection"
-    ],
-    "summaryKo": "DialogPII는 개인정보 탐지를 위한 다국어 합성 대화 전사 데이터셋으로, 8개 시나리오, 19개 엔터티 유형, 11개 언어를 포함하며 LLM 기반 생성, 수동 검수, 음성 변환 및 전사 과정을 통해 구축되었다.",
-    "detail": {
-      "problem": "대화 데이터의 책임 있는 공유를 위해서는 개인 식별 및 민감 정보 탐지와 제거가 필수적이며, 자동 비식별화 시스템 개발이 필요하다.",
-      "method": "제안하는 DialogPII는 대규모 언어 모델을 이용하여 8개 상호작용 시나리오, 11개 언어에 걸친 합성 대화를 반자동 생성하고, 수동 검수 및 지역화를 수행했다. 이후 TTS 음성 합성과 Whisper 전사를 거쳐 자동 주석 투영과 수동 교정으로 정렬된 텍스트 및 음성 자원을 구축했다.",
-      "takeaway": "주요 결과로 다국어 기준 NER 모델을 공개하고, 주석자 간 일치도, 번역 품질, 주석 투영 평가, 트랜스포머 기반 시퀀스 레이블링 실험을 통해 데이터셋을 검증했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30312v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30312v1.pdf"
-  },
-  {
-    "id": "2606.30124",
-    "title": "SciIR: A Large-scale Training Dataset and Benchmark for Scientific Image Reasoning Generation",
-    "authors": "Zhiyuan Ma et al.",
-    "published": "2026-06-29",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 과학 이미지 생성의 추론 능력 향상을 위해 대규모 데이터셋(SciIR-82k)과 벤치마크(SciIR-Bench)를 제안하고, 미세 조정 모델이 유의미한 성능 향상을 보임을 입증한다.",
-    "detail": {
-      "problem": "기존 Text-to-Image 모델은 과학적 이미지 생성에 필요한 엄격한 의미 정렬과 논리적 추론을 수행하는 데 한계가 있다.",
-      "method": "Peirce의 기호학 삼원조에 기반하여 과학적 추론을 세 가지 차원으로 공식화하고, 최신 논문에서 수집한 80,000개 이상의 고품질 과학 이미지-텍스트 쌍으로 구성된 SciIR-82k 데이터셋을 구축했다. 또한 세 가지 기호학 수준에 맞춰 과학적 정확성을 과정 지향적인 질문으로 평가하는 SciIR-Bench를 제안한다.",
-      "takeaway": "실험 결과 현재 모델들의 과학적 추론 능력이 부족함을 확인했으며, SciIR-82k로 미세 조정한 Qwen-Image-SciIR 모델은 SciIR-Bench에서 35%에서 43%로 성능이 향상되어 과학 이미지 생성의 기반을 마련했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30124v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30124v1.pdf"
-  },
-  {
-    "id": "2606.30514",
-    "title": "3D Scene-Adaptive Trajectory-Controllable Human Image Animation with Camera Movement",
-    "authors": "Deyin Liu et al.",
-    "published": "2026-06-29",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "3d",
-      "video",
-      "generation"
-    ],
-    "summaryKo": "재구성된 3D 환경에서 인간 동작 및 카메라 궤적을 제어할 수 있는 장면 적응형 인간 이미지 애니메이션 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "기존 애니메이션 방법들은 변화된 카메라 시점에서 자연스러운 장면 내 궤적 제어 가능한 인간 동작 합성에 어려움이 있다.",
-      "method": "지면 적응형 3D 모션 리타겟팅 접근법으로 동작 궤적 제어를 용이하게 하고, 시점 적응형 잠재 융합 메커니즘을 통해 포인트 클라우드 기하학적 사전 정보를 생성 과정에 주입하여 카메라 제어 하에 시점 변화를 정밀하게 안내한다.",
-      "takeaway": "두 표준 인간 이미지 애니메이션 벤치마크 데이터셋에서 실험한 결과, 관련 비디오 생성 지표에서 최신 방법들보다 뛰어난 성능을 보였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30514v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30514v1.pdf"
-  },
-  {
-    "id": "2606.30201",
-    "title": "SHOVIR: A Benchmark for Evaluating Vision Shortcut Learning in Radiology Report Generation",
-    "authors": "Filippo Ruffini et al.",
-    "published": "2026-06-29",
+    "id": "2606.31825",
+    "title": "Breaking Failure Cascades: Step-Aware Reinforcement Learning for Medical Multimodal Reasoning",
+    "authors": "Junha Jung et al.",
+    "published": "2026-06-30",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.CL"
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "medical",
+      "multimodal"
+    ],
+    "summaryKo": "MRPO는 단계별 과정 보상을 사용하여 의료 멀티모달 추론에서 초기 오류의 연쇄를 차단하고 추론 과정과 최종 답변 정확도를 향상시키는 강화학습 알고리즘이다.",
+    "detail": {
+      "problem": "기존 의료 멀티모달 대규모 언어 모델의 사후 훈련은 최종 답변 정확도나 시퀀스 수준 선호도에 의존하여 희소한 신용 할당 문제가 있으며, 조기 추론 실패로 인한 연쇄 오류가 의료 VQA에서 부정확한 예측의 주요 원인이다.",
+      "method": "MRPO는 단계별 과정 보상을 통합한 강화학습 알고리즘으로, 최종 답변이 틀린 경우 초기의 부적절한 추론 단계 토큰에 지수적으로 더 큰 패널티를 할당하여 실패 연쇄를 차단한다.",
+      "takeaway": "MRPO는 여러 백본에서 GRPO 및 최근 RL 기준선을 일관되게 능가했으며, Qwen3-VL-8B-Instruct에서 HuatuoGPT-Vision-34B보다 2.79점 높은 성능을 보였고, 조기 추론 실패를 64.0%에서 13.0%로 감소시켰다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31825v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31825v1.pdf"
+  },
+  {
+    "id": "2606.31054",
+    "title": "ADAPT: Attention Dynamics Alignment with Preference Tuning for Faithful MLLMs",
+    "authors": "Zhiyuan Yao et al.",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.MM"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "ADAPT는 멀티모달 대규모 언어 모델(MLLM)의 할루시네이션 문제를 해결하기 위해 텍스트-이미지 교차 어텐션 동역학을 직접 조정하는 주의 기반 프레임워크로, 여러 할루시네이션 벤치마크에서 최첨단 성능을 달성하며 할루시네이션 비율을 40-60% 감소시킨다.",
+    "detail": {
+      "problem": "멀티모달 대규모 언어 모델(MLLM)은 제공된 이미지와 일치하지 않는 내용을 생성하는 할루시네이션 문제에 심각하게 제약을 받는다. 본 논문에서는 생성 중 텍스트-이미지 교차 어텐션의 점진적 저하가 할루시네이션의 내부 신호임을 밝혀내고, 기존의 결과 중심적 완화 전략이 이 실패 모드를 명시적으로 다루지 않는다고 지적한다.",
+      "method": "ADAPT(Attention Dynamics Alignment with Preference Tuning)는 텍스트-이미지 교차 어텐션 동역학을 직접 제어하는 주의 기반 프레임워크로, 세 가지 핵심 구성 요소를 포함한다: 초기 디코딩 단계에서 정제되어 안정적인 공간적 근거를 제공하는 교차 어텐션 시각적 앵커, 온라인에서 어텐션 드리프트를 감지하고 교정하는 어텐션 감독 추론 메커니즘, 그리고 시각적으로 근거 있는 반응을 선호하도록 정렬하는 시각적 어텐션 유도 DPO(Visual Attention Guidance DPO).",
+      "takeaway": "ADAPT의 각 구성 요소는 할루시네이션 감소에 기여하며, 전체 프레임워크는 여러 할루시네이션 벤치마크에서 새로운 최고 결과를 달성하고 주류 백본에서 40-60%의 할루시네이션 감소율을 보이면서 일반적인 멀티모달 성능을 유지한다. 이 연구는 모델의 내부 텍스트-이미지 교차 어텐션 행동을 탐구함으로써 할루시네이션 완화에 대한 주의 기반 관점을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31054v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31054v1.pdf"
+  },
+  {
+    "id": "2606.31179",
+    "title": "HealthAgentBench: A Unified Benchmark Suite of Realistic Agentic Healthcare Environments for Challenging Frontier AI Agents",
+    "authors": "Qianchu Liu et al.",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "medical"
+    ],
+    "summaryKo": "HealthAgentBench는 환자 여정 전반의 54개 의료 에이전트 과제(7개 범주)로 구성된 벤치마크로, 최첨단 AI 에이전트를 평가한 결과 가장 강력한 에이전트(Codex GPT-5.5)도 약 42% 성공률을 기록할 정도로 어렵고 현실적인 과제들을 제공한다.",
+    "detail": {
+      "problem": "AI 에이전트가 복잡한 장기 추론에 능숙해짐에 따라, 실제 의료 애플리케이션으로의 진전을 정확히 평가할 수 있는 종합적이고 현실적인 벤치마크가 부족하다.",
+      "method": "본 연구는 환자 여정 전체와 다양한 데이터 양식을 포괄하는 54개의 종단 간 임상 워크플로우 과제(7개 범주)로 구성된 HealthAgentBench를 제안한다. 각 과제는 최소한의 지침만으로 에이전트가 원시 의료 데이터를 탐색하고 복잡한 환경에서 다단계 솔루션을 실행하도록 설계되었다.",
+      "takeaway": "최첨단 에이전트 평가 결과, 전체 성공률이 낮았으며 가장 강력한 Codex GPT-5.5도 42%에 불과했다. EHR 데이터 기반 연구 모델링 파이프라인 자동 개발에서는 가능성을 보였으나, 의료 영상 처리와 대규모 탐색 공간 및 구성적 추론이 필요한 과제에서는 모든 에이전트가 어려움을 겪었다. 이는 HealthAgentBench가 도전적이며 향후 발전 가능성이 큰 벤치마크임을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31179v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31179v1.pdf"
+  },
+  {
+    "id": "2606.31745",
+    "title": "JL1-CC&amp;QA: Extending the JL1-CD Benchmark with Change Captioning and Question Answering",
+    "authors": "Ziyuan Liu et al.",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
       "generation",
       "detection"
     ],
-    "summaryKo": "본 논문은 방사선 보고서 생성에서 시각적 단축 학습을 평가하기 위한 SHOVIR 벤치마크를 제안하며, 높은 보고서 품질이 진단 진술의 시각적 근거를 보장하지 않음을 보여준다.",
+    "summaryKo": "JL1-CD 데이터셋에 변화 설명(CC)과 변화 질의응답(QA) 주석을 추가한 다중 작업 벤치마크 JL1-CC&QA를 소개한다.",
     "detail": {
-      "problem": "현재 방사선 보고서 생성(RRG)의 평가 프로토콜은 보고서 수준 지표에 의존하여 개별 진단 진술이 실제 영상의 병리적 증거에 기반하는지 테스트하지 않는다. 이로 인해 모델이 학습된 사전 지식이나 허위 상관관계(시각적 단축)를 이용하여 경쟁력 있는 점수를 얻을 수 있다.",
-      "method": "SHOVIR은 두 개의 흉부 X선 데이터셋(MIMIC-CXR, PadChest-GR)에 박스 단위 CheXpert 레이블을 추가하고, 영상 수준 및 질병 수준의 가림 실험을 통해 깨끗한 영상 대비 지역적 변형에서의 예측 차이를 분석한다. 이를 통해 직접적 단축(시각적 증거 제거 후에도 소견 유지)과 맥락적 단축(표적 영역은 온전하나 동반 병변 가림 시 검출 저하)을 분리한다.",
-      "takeaway": "8개의 최신 비전-언어 모델 평가 결과, 단축 행동은 아키텍처와 데이터셋에 따라 크게 달랐다. 가장 높은 기준 보고서 품질을 보인 모델이 공간적 근거에서 반드시 최고는 아니었으며, 이는 현재 RRG 평가의 맹점을 드러내고 영역 인식 평가 프로토콜의 필요성을 제기한다."
+      "problem": "기존 원격 탐사 변화 탐지(CD)는 픽셀 수준의 이진 분할에 초점을 맞춰 변화 위치만 식별하고, 변화의 내용과 원인은 설명하지 못하는 의미적 격차가 있다.",
+      "method": "이 격차를 해소하기 위해 JL1-CD 데이터셋에 변화 설명(CC)과 변화 질의응답(QA) 주석 계층을 추가한 JL1-CC&QA 멀티태스크 벤치마크를 구축했다. 모든 주석은 다중 모드 대규모 언어 모델 생성, 비전 기반 LLM 판단, 인간 전문가 검증의 3단계 파이프라인을 통해 생성되었다.",
+      "takeaway": "JL1-CC는 17,021개의 품질 검증된 캡션을, JL1-QA는 8가지 질문 유형에 걸쳐 20,060개의 질문-답변 쌍을 제공한다. 초록에서는 이 데이터셋의 구체적인 성능 평가 결과나 한계는 논의되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.30201v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30201v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.31745v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31745v1.pdf"
   },
   {
-    "id": "2606.29863",
-    "title": "KbSD: Knowledge Boundary aware Self-Distillation for Behavioral Calibration in Agentic Search",
-    "authors": "Tao Feng, Xinke Jiang, Chao Wu",
-    "published": "2026-06-29",
+    "id": "2606.31875",
+    "title": "SENSE-VAD: Sentient and Semantic Video Anomaly Detection for Autonomous Driving",
+    "authors": "Nghia T. Nguyen, Lokman Bekit, Yasin Yilmaz",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "autonomous-driving",
+      "generation"
+    ],
+    "summaryKo": "SENSE-VAD는 자율주행 자동차가 직면하는 사회적으로 복잡한 이상 상황(예: 보호자에게서 도망치는 아이, 끌려가는 사람 등)을 탐지하기 위해 설계된 최초의 합성 비디오 이상 탐지 벤치마크로, CARLA 시뮬레이터와 언리얼 엔진을 사용하여 다양한 이상 시나리오를 생성하고 프레임 단위 레이블을 제공한다.",
+    "detail": {
+      "problem": "자율주행차는 움직임 통계만으로는 포착하기 어려운 객체 간 관계에 의해 위험이 결정되는 사회적으로 복잡한 상황을 탐지해야 하지만, 기존 이상 탐지기는 이러한 사회적 맥락의 이상을 탐지하지 못한다.",
+      "method": "SENSE-VAD는 CARLA와 언리얼 엔진을 사용하여 개인 행동, 집단 행동, 사람-물체 상호작용, 자전거 상호작용, 차량 및 에이전트 등 여러 범주에 걸쳐 사회적 이상 시나리오를 합성으로 생성하고, 각 프레임에 이진 레이블을 주석으로 추가한다. 또한 실제 정상 및 이상 동영상을 제공하여 시뮬레이션-실제 전이를 평가할 수 있게 한다.",
+      "takeaway": "최신 이상 탐지 기준 모델을 평가한 결과, 사회적으로 복잡한 이상은 기존 방법으로 해결되지 않는 별개의 도전 과제임을 확인했다. 데이터셋, 주석, 생성 코드는 공개된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31875v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31875v1.pdf"
+  },
+  {
+    "id": "2606.31148",
+    "title": "PruneGround: Plug-and-play Spatial Pruning for 3D Visual Grounding",
+    "authors": "Duc Cao Dinh et al.",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "3d",
+      "detection"
+    ],
+    "summaryKo": "PruneGround는 3D 시각적 접지(3DVG)를 위한 플러그 앤 플레이 프레임워크로, 언어 기반 공간 가지치기, 다중 뷰 설명 재구성, LLM 기반 접지기를 활용하여 전체 장면 추론의 비효율성과 모호성을 개선한다.",
+    "detail": {
+      "problem": "3DVG는 자연어 설명을 바탕으로 3D 장면 내 대상 객체를 찾는 작업이며, 기존 방법은 전체 장면을 추론하여 모호한 예측과 높은 계산 비용을 초래한다. 특히 많은 참조 표현이 전체 장면이 아닌 국부적 공간 영역에 의존한다는 점에 착안하였다.",
+      "method": "제안하는 PruneGround는 (1) 언어 유도 공간 가지치기(LGSP)로 고정된 VLM을 사용하여 언어 관련 영역을 식별하고 공간 계산을 줄이며, (2) 다중 뷰 기반 설명 재구성(MCDR)으로 복잡한 표현을 단순화하고 공간 단서를 보강하고, (3) LLM-Grounder로 가지치기된 영역 내에서 포인트 클라우드와 언어 표현을 정렬하여 접지 모델로 변환한다.",
+      "takeaway": "이 방법은 ScanRefer의 세 가지 설정 모두와 Nr3D/Sr3D의 10개 설정 중 9개에서 최첨단 성능을 달성했다. 코드와 모델은 공개되어 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31148v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31148v1.pdf"
+  },
+  {
+    "id": "2606.31270",
+    "title": "Learning from Failure: Inference-Time Self-Improvement for Computer-Use Agents",
+    "authors": "Xueqiao Sun et al.",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.CY",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "multimodal"
+    ],
+    "summaryKo": "컴퓨터 사용 에이전트의 자기 개선 과정에서 폐기되던 실패 궤적을 LLM으로 진단하고 코드 패치로 전환하는 실패 기반 자기 개선 루프를 제안하여, OpenCUA-72B 모델의 OSWorld 성공률을 추가 훈련 없이 42.3%에서 48.9%로 향상시켰다.",
+    "detail": {
+      "problem": "기존의 컴퓨터 사용 에이전트 자기 개선 방법은 검증 가능한 환경에서 성공 궤적만을 활용하고, 모델의 약점에 대한 풍부한 정보를 담고 있는 실패 궤적을 폐기한다는 한계가 있다.",
+      "method": "본 연구는 성공 기반 파이프라인을 보완하는 데이터 중심의 실패 기반 자기 개선 루프를 탐구한다. LLM을 사용하여 실패 모드를 진단하고, 추론 시간 해결책을 제안하며, 인간의 가벼운 검증을 거친 코드 패치를 생성하여 에이전트를 업그레이드한다.",
+      "takeaway": "최첨단 OpenCUA-72B 모델을 OSWorld 벤치마크에서 평가한 결과, 추가 훈련 비용 없이 적은 추론 오버헤드만으로 성공률이 6.6%p 향상되었다. 이는 실패 기반 자기 개선이 성공 기반 파이프라인의 실행 가능한 보완책임을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31270v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31270v1.pdf"
+  },
+  {
+    "id": "2606.31741",
+    "title": "STEB: Style Text Embedding Benchmark",
+    "authors": "Rafael Rivera Soto, Anna Wegmann, Cristina Aggazzotti",
+    "published": "2026-06-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "embedding",
+      "detection"
+    ],
+    "summaryKo": "스타일 텍스트 임베딩의 평가가 표준화되지 않은 문제를 해결하기 위해 96개 데이터셋, 7개 언어를 포함하는 포괄적인 오픈소스 벤치마크 STEB를 제안하며, 실험 결과 의미론적 임베딩은 스타일 작업에 실패하고 보편적으로 우수한 스타일 임베딩은 존재하지 않음을 보였다.",
+    "detail": {
+      "problem": "의미론적 임베딩은 MTEB로 엄격히 평가되지만, 스타일 임베딩의 평가는 각 연구가 자체적인 작업과 데이터셋에 의존하여 파편화되어 있다.",
+      "method": "이 문제를 해결하기 위해 7개 언어, 96개 데이터셋을 포함한 포괄적인 오픈소스 스타일 텍스트 임베딩 벤치마크(STEB)를 도입하여 평가를 표준화한다.",
+      "takeaway": "주요 결과는 의미론적 임베딩이 스타일 작업에서 일관되게 실패하며, 모든 작업에서 보편적으로 우수한 스타일 임베딩은 없다는 것이다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31741v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31741v1.pdf"
+  },
+  {
+    "id": "2606.31916",
+    "title": "Theory of Mind and Persuasion Beyond Conversation: Assessing the Capacity of LLMs to Induce Belief States via Planning and Action",
+    "authors": "Ben Slater et al.",
+    "published": "2026-06-30",
     "category": "llm",
     "categories": [
       "cs.CL"
@@ -135,163 +242,68 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "retrieval"
+      "autonomous-driving"
     ],
-    "summaryKo": "본 논문은 에이전틱 검색에서 지식 경계 교정의 보상 희소성을 해결하기 위해 밀집 토큰 수준 감독과 사분면 적응 최적화를 사용하는 자기 증류 프레임워크 KbSD를 제안하며, 작업 정확도와 환각 완화를 개선한다.",
+    "summaryKo": "본 연구는 기존의 수동적 질의응답 방식에서 벗어나, LLM 에이전트가 대화 없이 행동 계획을 통해 다른 에이전트의 믿음 상태를 유도하는 '비대화형 계획 기반 마음 이론(NCP-ToM)' 능력을 평가하는 새로운 프레임워크(NCP-ExploreToM)를 제안하고, 최첨단 모델과 인간의 성능을 비교 분석한 결과를 제시한다.",
     "detail": {
-      "problem": "기존 강화 학습 기반 방법은 동적 검색 환경에서 매개변수 기억 의존, 검색 증거 활용, 응답 거절 등의 지식 경계 교정 시 이진 보상만을 제공하여 희소 보상 문제가 발생하며, 이로 인해 올바른 추론 과정을 학습하기 어렵다.",
-      "method": "KbSD는 학생과 동일 구조의 교사에 명시적 지식 경계 신호(파라메트릭 확실성, 검색 품질, 정답)를 주어 교정된 추론 데모를 생성하고, 정보 비대칭 자기 증류를 통해 밀집 토큰 수준 감독을 제공한다. 또한 지식 상태별 이질적 추론 분포를 고려하여 역 KL, 순방향 KL, 파레토 최적 양방향 KL을 사분면에 적응적으로 적용하는 증류 목적 함수를 도입한다.",
-      "takeaway": "여러 벤치마크 실험에서 KbSD는 강력한 기준선 대비 작업 정확도와 환각 완화에서 일관된 향상을 보였으며, 특히 희소 보상이 가장 덜 유용한 까다로운 사분면에서 가장 큰 성능 이득을 얻었다."
+      "problem": "기존 LLM의 마음 이론(ToM) 평가는 수동적 질의응답(QA) 형식에 국한되어 있으나, 점차 자율적으로 배치되는 LLM 에이전트는 대화를 통한 설득이 아닌 행동을 통해 타인의 특정 믿음 상태를 유도할 수 있어야 하며(NCP-ToM), 이는 조작이나 허위 정보 생성의 위험성도 내포한다.",
+      "method": "NCP-ExploreToM 프레임워크를 통해 기존 태스크 구조를 변형하여, 모델에 특정 믿음 상태 목표를 주고 이를 달성하기 위해 물체를 이동시키거나 캐릭터를 방으로 안내하는 비대화형 행동을 요구하는 태스크를 설계했으며, GPT-5, Gemini 2.5 Pro, Claude 4 시리즈 등 6개의 최첨단 모델과 인간 참가자 집단을 총 600개의 태스크 인스턴스에서 평가했다.",
+      "takeaway": "GPT-5는 약 80%의 성공률로 인간 참가자보다 높은 성능을 보였지만 맥락에 대한 강건성은 여전히 인간보다 부족했으며, 모든 모델이 인간과 마찬가지로 거짓된 믿음보다 올바른 믿음을 유도하는 과제에서 더 좋은 성능을 보여 정렬(alignment) 노력에 긍정적인 신호를 제공했으나, 이는 자율적 사회 에이전트의 안전성과 정렬을 이해하기 위한 에이전틱 평가의 필요성을 강조한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.29863v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.29863v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.31916v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31916v1.pdf"
   },
   {
-    "id": "2606.30244",
-    "title": "Semantic-Driven Scale and Spatial Selection for Efficient Cross-Modal Alignment in Referring Remote Sensing Image Segmentation",
-    "authors": "Kun Li et al.",
-    "published": "2026-06-29",
+    "id": "2606.31599",
+    "title": "Token-Sparse Medical Multimodal Reasoning via Dual-Stream Reinforcement Learning",
+    "authors": "Kaitao Chen et al.",
+    "published": "2026-06-30",
     "category": "cv",
     "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "embedding",
-      "multimodal",
-      "benchmark"
-    ],
-    "summaryKo": "본 논문은 원격 탐사 영상 분할을 위해 파라미터 효율적인 미세 조정 기반의 이중 인코더 어댑터 구조(S4ECA)를 제안하여 백본 파라미터의 2.4%만 업데이트하면서 최첨단 성능을 달성하였다.",
-    "detail": {
-      "problem": "기존 RRSIS 모델은 전체 미세 조정에 의존하여 계산 비용이 높고 사전 학습된 모델의 일반화 능력을 약화시킬 수 있다. 또한 기존 PET 프레임워크는 단일 모달 최적화에 초점을 맞추어 교차 모달 의존성을 포착하지 못하고 자연 장면과 항공 이미지 간의 도메인 차이를 극복하지 못한다.",
-      "method": "본 논문에서는 의미 기반의 규모 및 공간 선택을 통한 효율적 교차 모달 정렬(S4ECA)을 제안한다. 이중 인코더 어댑터 구조를 사용하여 텍스트 어댑터는 학습 가능한 쿼리로 언어 프록시를 추출하고, 시각 어댑터는 다중 규모 밀도 추출기와 언어 기반 규모 및 공간 선택 메커니즘을 통해 관련 시각적 맥락을 동적으로 강조하여 정밀한 교차 모달 정렬을 수행한다.",
-      "takeaway": "백본 파라미터의 2.4%만 업데이트하여 RRSIS-D와 RefSegRS 데이터셋에서 최첨단 성능을 달성하여 효율성과 정밀성을 입증했다. 초록에서는 이 방법의 한계에 대해 논의하지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30244v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30244v1.pdf"
-  },
-  {
-    "id": "2606.30378",
-    "title": "OmniCoT: A Benchmark for Global and Multi-Step Panoramic Reasoning",
-    "authors": "Haocong He et al.",
-    "published": "2026-06-29",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "OmniCoT는 파노라마 이미지의 전역적 증거를 활용한 다단계 추론을 평가하고 훈련하기 위한 벤치마크 및 방법론이다.",
-    "detail": {
-      "problem": "기존 파노라마 벤치마크는 단순한 로컬 단서나 한두 단계 추론에 치중하여 파노라마의 360° 전역적 시야를 활용한 복잡한 다단계 추론 능력을 평가하지 못한다.",
-      "method": "OmniCoT는 평가용 OmniCoT-B(6.7K), 실제 세계 데이터 OmniCoT-Real(1K), 훈련용 OmniCoT-T(14.3K)와 함께 체인오브생각 주석 및 OmniCoT-R1 훈련 전략(SFT+GRPO)을 제안하여 파노라마 공간에서 전역적 일관성을 강화한다.",
-      "takeaway": "OmniCoT는 파노라마 공간 추론의 난이도를 재정립하고 MLLM의 전역적 다단계 추론 능력 발전을 촉진할 것으로 기대된다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30378v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30378v1.pdf"
-  },
-  {
-    "id": "2606.30552",
-    "title": "Training Vision-Language-Action Models with Dense Embodied Chain-of-Thought Supervision",
-    "authors": "Haoyang Li et al.",
-    "published": "2026-06-29",
-    "category": "cv",
-    "categories": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 고밀도 Embodied Chain-of-Thought(ECoT) 감독을 사용하여 교차-임보디먼트 표현을 정렬하는 26억 파라미터의 VLA 모델 ZR-0을 제안하며, 다양한 시뮬레이션 및 실제 환경에서 강력한 성능을 입증한다.",
-    "detail": {
-      "problem": "로봇 플랫폼 간 저수준 상태와 행동 공간의 근본적인 차이로 인해 비전-언어-행동(VLA) 모델의 교차-임보디먼트 전이가 어렵다.",
-      "method": "ZR-0은 사전 훈련된 VLM(System 2)이 구조화된 ECoT 추론을 생성하고, Diffusion Transformer 기반 행동 전문가(System 1)가 플로우 매칭을 통해 연속적 행동 청크를 생성하는 이중 스트림 아키텍처를 사용하며, 추론 시 ECoT 생성을 생략할 수 있다.",
-      "takeaway": "단일 암(LIBERO), 양팔(RoboTwin 2.0), 휴머노이드(RoboCasa GR-1) 등 다양한 시뮬레이션 벤치마크와 실제 xArm 플랫폼 실험에서 강력한 성능을 보였으며, 코드와 모델 체크포인트가 공개되었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30552v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30552v1.pdf"
-  },
-  {
-    "id": "2606.30638",
-    "title": "Open-Vocabulary and Referring Segmentation for 3D Gaussians Using 2D Detectors",
-    "authors": "Jameel Hassan, Yasiru Ranasinghe, Vishal Patel",
-    "published": "2026-06-29",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "3d",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 2D 객체 검출기의 개방형 어휘 및 참조 표현 기능을 활용하여 3D 가우시안 장면에서 개방형 어휘 분할과 참조 표현 접지를 동시에 수행하는 GaussDet를 제안한다.",
-    "detail": {
-      "problem": "기존 3DGS 기반 언어 이해 방법은 인스턴스 그룹화에 사전 정의된 인스턴스 수가 필요하거나 하향식 그룹화의 노이즈 문제가 있고, CLIP 특징에 의존하여 단순 명사구만 이해 가능하여 복잡한 공간 추론 및 참조 표현 해석이 불가능하다.",
-      "method": "GaussDet는 개별 가우시안의 인스턴스 특징을 학습하여 3D 인스턴스 그룹을 형성하고, 다중 뷰 2D 검출 결과로부터 의미 투표를 집계하여 각 인스턴스에 대한 시각-집계 의미 레이블 분포(VASD)를 생성한다. 이를 통해 간단한 언어 질의에서 복잡한 참조 표현 접지로의 제로샷 확장이 가능하다.",
-      "takeaway": "GaussDet는 LeRF-OVS, ScanNet에서의 개방형 어휘 분할과 Ref-LeRF에서의 참조 표현 접지 과제에서 기존 방법보다 일관된 성능 향상을 보였으며, 특히 엄격한 제로샷 설정에서 참조 표현 접지에서 16.7% mIoU 향상을 달성했다. 논문에서 추가적인 한계는 제시되지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.30638v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30638v1.pdf"
-  },
-  {
-    "id": "2606.29894",
-    "title": "SABER-Math: Automated Benchmark for Information Retrieval Evaluation in Mathematics",
-    "authors": "Nikolay Georgiev et al.",
-    "published": "2026-06-29",
-    "category": "llm",
-    "categories": [
-      "cs.IR",
-      "cs.AI",
-      "cs.CL",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval",
-      "embedding"
-    ],
-    "summaryKo": "수학 정보 검색 평가를 위한 최초의 완전 자동화 벤치마크인 SABER-Math를 제안하며, 283K개의 고등학교 수준 수학 문제를 기반으로 LLM을 활용해 세 단계로 재순위화 과제를 구축하고 다양한 검색 모델을 평가한 결과, 최신 임베딩 모델이 고전적 모델보다 우수하지만 대수학·미적분 같은 기호 중심 영역에서는 어려움을 겪으며 일반 IR 벤치마크로는 수학 성능을 신뢰할 수 없음을 보였다.",
-    "detail": {
-      "problem": "에이전트 AI 시스템이 복잡한 수학 과제를 처리하며 정보 검색(IR)에 의존하지만, 적절한 검색기 선택이 어렵고 기존 IR 벤치마크는 세밀한 수학적 관련성을 포착하지 못해 관련 문서에 불이익을 준다.",
-      "method": "SABER-Math는 283K개의 고등학교 수준 수학 문제와 해답을 시작으로, LLM으로 해결 요약과 수학 주제를 추출하고 온톨로지 주제 기반 및 어휘 해결 요약 기반 유사도를 이용해 질의별 관련 문서를 발견한 후 스위스 스타일 LLM 선호 토너먼트로 세분화된 관련성 점수를 생성하는 완전 자동화 벤치마크이다.",
-      "takeaway": "최신 임베딩 모델이 고전적 및 수학 특화 검색 시스템을 능가하지만, 대수학과 미적분과 같은 기호 중심 영역에서는 강력한 시스템도 어려움을 겪으며, 일반 IR 벤치마크(MTEB)는 특히 최신 임베딩 모델의 수학 성능을 신뢰성 있게 예측하지 못해 수학 특화 벤치마크의 필요성을 보여준다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2606.29894v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.29894v1.pdf"
-  },
-  {
-    "id": "2606.30062",
-    "title": "Little Brains, Big Feats: Exploring Compact Language Models",
-    "authors": "Dari Baturova et al.",
-    "published": "2026-06-29",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
+      "cs.CV",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "generation"
+      "medical",
+      "multimodal"
     ],
-    "summaryKo": "본 연구는 RAG 시스템 내 생성 단계에서 소형 언어 모델의 성능을 조사하고, GPU 없이 온디바이스에서 실행 가능함을 입증하였다.",
+    "summaryKo": "의료 영상의 희소한 시각 증거 문제를 해결하기 위해 이중 스트림 강화 학습 기반의 ViToS 프레임워크를 제안하여, 시각 토큰을 효과적으로 줄이면서 추론 성능을 크게 향상시킨 논문.",
     "detail": {
-      "problem": "대규모 언어 모델이 주목받는 반면 소형 언어 모델은 상대적으로 주목을 덜 받지만 다양한 도메인에서 유용하다. 본 연구는 RAG 시스템에서 소형 언어 모델의 생성 성능을 평가하는 문제를 다룬다.",
-      "method": "공개 및 독점 데이터셋을 사용하여 다양한 주제와 질문 유형에 걸쳐 소형 언어 모델을 벤치마킹하는 방법을 사용하였다.",
-      "takeaway": "RAG 시스템에서 소형 언어 모델을 사용할 경우 GPU 없이 온디바이스에서 합리적인 시간 내에 실행 가능함을 보여주었다."
+      "problem": "의료 영상은 임상 결정에 필요한 시각적 증거가 매우 희소하여, 기존 비전-언어 모델의 멀티모달 추론이 어렵다.",
+      "method": "ViToS는 하나의 정책 모델로 접지와 토큰 희소 추론을 수행하는 이중 스트림 RL 프레임워크이며, 교차 피드백 순차 최적화를 통해 결합된 정책 학습의 그래디언트 충돌을 방지한다.",
+      "takeaway": "시각 토큰을 원본 대비 77%로 줄이면서 Lingshu-7B에서 108.27%, HuatuoGPT-Vision-7B에서 104.16%의 상대 성능을 달성하여 추론 속도 향상과 우수한 성능을 보였으며, 효율적인 의료 멀티모달 추론 패러다임을 제시한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.30062v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.30062v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2606.31599v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31599v1.pdf"
+  },
+  {
+    "id": "2606.31672",
+    "title": "WorldRoamBench: An Open-World Benchmark for Long-Horizon Stability of Interactive World Models",
+    "authors": "Ting-Bing Xu et al.",
+    "published": "2026-06-30",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "3d"
+    ],
+    "summaryKo": "본 논문은 상호작용 가능한 세계 모델의 장기 안정성 평가를 위해 액션, 비전, 물리, 메모리 네 차원에서 설계된 새로운 벤치마크인 WorldRoamBench를 제안한다.",
+    "detail": {
+      "problem": "기존 벤치마크는 궤적 수준에서만 행동 실행을 평가하고 메모리와 상호작용 물리를 무시한다.",
+      "method": "WorldRoamBench는 600개 이상의 테스트 케이스로 구성되며, 프레임 단위 행동 메트릭, 세그먼트 기반 드리프트 메트릭, 제어 가능성에 기반한 물리 평가, 행동 분리 메모리 평가 등을 포함한다.",
+      "takeaway": "10개 이상의 오픈/클로즈드 소스 모델을 평가한 결과 모든 차원을 만족하는 모델은 없었으며, 최고 성능도 중간 수준에 그쳤다. 이 벤치마크의 발전은 안정적이고 물리적으로 정확하며 메모리에 충실한 상호작용 세계 모델로 나아가는 단계이다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2606.31672v1",
+    "pdfUrl": "https://arxiv.org/pdf/2606.31672v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-06-30T04:23:45.774Z",
+  "collectedAt": "2026-07-01T04:52:16.218Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. Summaries use LLM when OPENCODE_GO_API_KEY is available, otherwise template fallback. See docs/summary-guidelines.md.",
   "summarizer": "deepseek-v4-flash via opencode-go"
