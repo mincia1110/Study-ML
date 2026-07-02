@@ -307,6 +307,6 @@ window.PAPERS = [
 window.PAPER_METADATA = {
   "collectedAt": "2026-07-02T04:19:46.564Z",
   "source": "arXiv",
-  "note": "Auto-collected by scripts/collect-papers.mjs. Summaries use LLM when OPENCODE_GO_API_KEY is available, otherwise template fallback. See docs/summary-guidelines.md.",
-  "summarizer": "deepseek-v4-flash via opencode-go"
+  "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
+  "summarizer": "llm"
 };
