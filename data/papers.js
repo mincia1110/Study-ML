@@ -3,185 +3,160 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.01131",
-    "title": "Autonomous Scientific Discovery via Iterative Meta-Reflection",
-    "authors": "Bingchen Zhao, Sara Beery, Oisin Mac Aodha",
-    "published": "2026-07-01",
+    "id": "2607.01595",
+    "title": "Safe and Adaptive Cloud Healing: Verifying LLM-Generated Recovery Plans with a Neural-Symbolic World Model",
+    "authors": "Junyan Tan et al.",
+    "published": "2026-07-02",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
-      "benchmark",
       "autonomous-driving",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "DiscoPER는 LLM 기반의 자율적 과학 발견 프레임워크로, 반복적인 메타 반성을 통해 개방형 연구를 수행하며, iNatDisco 벤치마크에서 9개 중 8개의 패턴을 복원하여 기존 방법을 능가했다.",
-    "detail": {
-      "problem": "기존의 자율 과학 발견 시스템은 제한된 검색 공간에서 작동하거나 사전 정의된 연구 질문이 필요하여 진정한 개방형 탐구가 어렵고, 누적된 발견을 종합하여 복잡하고 상호 연결된 현상을 밝혀내지 못한다.",
-      "method": "DiscoPER는 대규모 언어 모델(LLM)을 기반으로, 사전 연구 목표 없이 동적으로 코드를 생성하고 실행하여 데이터셋을 탐색하며, 통계 검정으로 발견의 타당성을 검증한다. 또한 주기적으로 축적된 발견을 분석하는 2차 추론(메타 반성)을 통해 검색 공간의 미개척 영역으로 가설 탐색을 유도하고, 도구 사용을 통해 이미지와 같은 멀티모달 정보를 처리한다.",
-      "takeaway": "iNatDisco 벤치마크 평가에서 DiscoPER는 9개의 알려진 패턴 중 8개를 복원하고 72.7%의 가설 지지율을 기록하여 고전적 인과 발견 및 LLM 기반 기준선보다 우수했다. 추가 실험은 더 많은 데이터에서 성능이 향상되고 메타 반성의 이점을 확인했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.01131v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.01131v1.pdf"
-  },
-  {
-    "id": "2607.00464",
-    "title": "MolSafeEval: A Benchmark for Uncovering Safety Risks in AI-Generated Molecules",
-    "authors": "Tong Xu et al.",
-    "published": "2026-07-01",
-    "category": "multimodal",
-    "categories": [
-      "cs.LG",
-      "cs.CL"
-    ],
-    "tags": [
       "benchmark",
       "generation",
       "detection"
     ],
-    "summaryKo": "MolSafeEval은 AI 생성 분자의 안전 위험을 평가하기 위한 벤치마크로, 이질적인 안전 지식을 구조화된 분자 안전 지식 그래프로 통합하고 대규모 언어 모델 기반 추론을 통해 생성 화합물의 유해 특징을 체계적으로 탐지 및 설명하며, 네 가지 생성 작업 유형에 대한 표준 데이터셋과 평가 프로토콜을 제공한다.",
+    "summaryKo": "이 논문은 PASE라는 프레임워크를 제안하여, LLM으로 복구 계획을 생성하고 신경-기호 세계 모델로 검증하며 DRL 기반 메타-프롬프트 최적화로 계획을 개선하여 클라우드 시스템의 고장 복구 시간을 40% 이상 단축하고 탐지 정확도를 향상시켰다.",
     "detail": {
-      "problem": "현재 분자 생성 벤치마크는 작업 복잡성, 분자 신규성, 물성 정합성에 중점을 두지만 AI 생성 분자의 잠재적 안전 위험을 간과하고 있으며, 많은 생성 모델이 독성, 반응성 또는 기타 유해 특성을 가진 분자를 생성할 수 있는 위험이 존재한다.",
-      "method": "MolSafeEval은 독성 데이터베이스 및 위험 규칙 등 다양한 안전 지식을 분자 안전 지식 그래프로 통합하고, 이를 기반으로 대규모 언어 모델이 생성 화합물의 안전하지 않은 특징을 체계적으로 탐지하고 설명할 수 있게 한다. 또한 분자 생성 모델을 조건부 생성, 물성 최적화, 표적 단백질 기반 설계, 텍스트 기반 생성의 네 가지 유형으로 분류하고 각각에 대한 표준 데이터셋과 안전 평가 프로토콜을 제공한다.",
-      "takeaway": "MolSafeEval은 현재 분자 생성 접근법의 안전 취약점을 체계적으로 드러내며, 분자 모델 벤치마킹에 새로운 시각을 제공하고 더 안전하고 신뢰할 수 있는 분자 설계를 위한 필수적인 지침을 제공한다."
+      "problem": "기존 LLM과 DRL을 사용한 클라우드 고장 복구 방법은 순차적이고 느슨하게 결합된 아키텍처로 인해 LLM의 생성 및 추론 능력을 충분히 활용하지 못한다.",
+      "method": "PASE는 복구를 신경-기호 프로그램 합성으로 간주하여, LLM이 의미적 원시 연산 라이브러리에서 구조화된 복구 계획을 생성하고, 신경-기호 세계 모델이 시뮬레이션을 통해 계획의 실행 가능성을 검증하며, DRL로 훈련된 메타-프롬프트 최적화기가 LLM의 계획 생성을 최적화한다.",
+      "takeaway": "실제 클라우드 결함 주입 데이터셋 실험에서 PASE는 최신 방법보다 평균 시스템 복구 시간을 40% 이상 줄이고 미지의 결함 시나리오에서 탐지 정확도를 향상시켰다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.00464v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00464v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.01595v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.01595v1.pdf"
   },
   {
-    "id": "2607.01232",
-    "title": "Is One Layer Enough? Training A Single Transformer Layer Can Match Full-Parameter RL Training",
-    "authors": "Zijian Zhang et al.",
-    "published": "2026-07-01",
-    "category": "llm",
-    "categories": [
-      "cs.LG",
-      "cs.CL"
-    ],
-    "tags": [
-      "agents",
-      "code-generation",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "단일 트랜스포머 층만 학습시켜도 전체 파라미터 강화학습 훈련의 대부분의 성능 향상을 얻을 수 있으며, 때로는 더 나은 결과를 보인다는 것을 체계적으로 보여줌.",
-    "detail": {
-      "problem": "기존 접근법은 강화학습(RL) 후처리 시 모든 층이 유사하게 기여한다고 가정하여 모든 파라미터를 동일하게 업데이트하지만, 층별 RL 적응 분포에 대한 이해가 부족한 문제가 있음.",
-      "method": "트랜스포머 층을 개별적으로 학습시켰을 때 전체 RL 성능 향상 중 얼마를 회복하는지 측정하는 층 기여도(layer contribution) 개념을 도입하여 체계적인 층별 연구를 수행.",
-      "takeaway": "RL 이득은 소수의 층, 특히 중간 층에 집중되어 있으며, 단일 층 학습으로 전체 파라미터 RL 훈련에 필적하거나 능가하는 결과를 얻을 수 있음을 발견함. 이러한 패턴은 다양한 모델군, RL 알고리즘, 작업 영역에서 일관되게 관찰됨."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.01232v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.01232v1.pdf"
-  },
-  {
-    "id": "2607.00726",
-    "title": "AV-SyncBench: Decoupled Benchmarking of Temporal and Semantic Audio-Visual Synchronization",
-    "authors": "Tianhong Zhou et al.",
-    "published": "2026-07-01",
+    "id": "2607.02516",
+    "title": "Alignment Is All You Need For X-to-4D Generation",
+    "authors": "Qiaowei Miao et al.",
+    "published": "2026-07-02",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.SD"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "multimodal",
-      "generation",
-      "detection"
-    ],
-    "summaryKo": "AV-SyncBench는 기존 평가의 차원 편향을 해결하기 위해 시간적 및 의미적 오디오-비주얼 동기화를 분리 평가하는 최초의 벤치마크로, 실제 비디오 3,269개와 38,390개 샘플로 구성되며 다섯 가지 대표 모델의 특징 품질을 정량화한다.",
-    "detail": {
-      "problem": "기존 오디오-비주얼 특징 추출 모델 평가 프로토콜은 의미적 일치나 시간적 오프셋 탐지 중 한 가지에만 초점을 맞추는 차원 편향이 있었고, 데이터 구성이 결합되어 시간적 및 의미적 일관성을 독립적으로 평가할 수 없었다.",
-      "method": "AV-SyncBench는 실제 비디오(Voice, Music, Sound)를 기반으로 10개 시나리오와 5개 과제에 걸쳐 시간적 평가와 의미적 평가를 완전히 분리한 최초의 벤치마크이다. 데이터는 자동 필터링과 수동 검증을 통해 화면 내 음원을 보장하며, 3,269개 비디오와 38,390개 샘플로 구성된다.",
-      "takeaway": "벤치마크를 통해 다섯 개의 대표 모델을 평가하여 정렬 및 다운스트림 작업에 대한 특징 품질을 정량화했지만, 구체적인 한계점은 초록에서 논의되지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.00726v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00726v1.pdf"
-  },
-  {
-    "id": "2607.00832",
-    "title": "Pano2World: End-to-End 3D Generation via Unified Multi-View Sequences",
-    "authors": "Zhenjia Li, Jinrang Jia, Yifeng Shi",
-    "published": "2026-07-01",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "diffusion",
       "3d",
       "video",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "Pano2World는 단일 실내 파노라마를 입력으로 받아 자유 시점 탐색이 가능한 3D 가우시안 장면을 직접 출력하는 종단간 방법으로, 기존 접근법의 오류 누적 및 유연성 부족 문제를 해결하고 다중 위치 파노라마 새로운 시점 합성에서 우수한 성능을 달성한다.",
+    "summaryKo": "Align4D는 다양한 입력 양식에서 일관된 비디오-3D 쌍을 생성하는 X-to-4D 프레임워크로, 객체 거리 정렬, 모션-기하학 공동 정렬, 비동기 최적화 세 가지 기술을 통해 최첨단 품질과 일관성을 달성한다.",
     "detail": {
-      "problem": "단일 파노라마를 3D 표현으로 변환하는 기존 방법들은 반복적 시점 완성 과정에서 오류가 누적되거나 비디오 생성 모델의 연속적 궤적 제약으로 인해 여러 방향을 동시에 다루는 데 유연성이 부족하다.",
-      "method": "Pano2World는 입력 파노라마로부터 조악한 3D 가우시안 프록시를 재구성하고 적응적으로 샘플링된 근처 시점의 가이던스 파노라마를 렌더링한 후, View-Aware Attention Routing을 통해 모든 대상 시점을 동시에 노이즈 제거하며, 정보 손실을 방지하기 위해 잠재 특징 어댑터(Latent Feature Adapter)를 도입한다.",
-      "takeaway": "Pano2World는 다중 위치 파노라마 새로운 시점 합성 벤치마크에서 기존 방법들을 크게 능가하는 성능을 보인다."
+      "problem": "생성형 확산 모델은 멀티모달 제어 하에 고품질 이미지, 비디오, 3D 콘텐츠 합성에 뛰어나지만, 사용자 정의 입력 양식에서 4D 생성(X-to-4D)은 다양한 데이터셋 구축 비용과 기존 방법의 확장성 부족으로 어려움이 있다.",
+      "method": "Align4D는 모든 입력 양식을 비디오-3D 쌍으로 변환하는 프레임워크로, 비디오로 4D 모션을 안내하고 3D 데이터로 4D 형상을 만든다. 세 가지 핵심 기술로 객체 거리 정렬(VAOD/MAOD), 모션-기하학 공동 정렬, 비동기 최적화를 사용한다.",
+      "takeaway": "X4D 및 Consistent4D 데이터셋에서의 실험 결과, Align4D는 X-to-4D 생성에서 최첨단 품질과 일관성을 달성했다. 또한 벤치마킹을 위한 X4D 데이터셋을 제안했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.00832v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00832v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02516v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02516v1.pdf"
   },
   {
-    "id": "2607.00491",
-    "title": "MindEdit-Bench: Benchmarking Object-Level Counterfactual Spatial Reasoning in VLMs from In-the-Wild Photos",
-    "authors": "Leyuan Yu et al.",
-    "published": "2026-07-01",
+    "id": "2607.02504",
+    "title": "Reasoning LLM Improves Speaker Recognition in Long-form TV Dramas",
+    "authors": "Yuxuan Li et al.",
+    "published": "2026-07-02",
     "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "3d"
-    ],
-    "summaryKo": "본 논문은 기존 VLM 벤치마크가 관찰적 공간 추론에 치우친 한계를 넘어, 물체의 가상 이동이나 회전 같은 반사실적 추론 능력을 평가하는 MindEdit-Bench를 제안한다.",
-    "detail": {
-      "problem": "기존 VLM 벤치마크는 대부분 입력 이미지에 이미 드러난 공간 관계를 설명하는 관찰적 추론만 평가하고, 가상의 물체 조작에 따른 결과를 예측하는 반사실적 추론은 측정하지 못한다.",
-      "method": "MindEdit-Bench는 실제 스마트폰으로 촬영한 세 장의 실내 사진으로부터 3D 장면 그래프를 자동 추출하는 파이프라인을 통해 구축되며, 네 가지 관찰적 추론 과제와 두 가지 새로운 반사실적 추론 과제(공간 편집 L4, 교차 시점 가시성 편집 L5)로 구성된다.",
-      "takeaway": "15개 VLM 평가 결과 과제별 평균 정확도가 8%-31%로 인간(81%-97%)에 크게 미치지 못했으며, 구조화된 응답 공간 분석을 통해 모델이 카메라 깊이 축 추론에 약하고 어려운 가시성 편집 문제에서 퇴행 행동을 보이는 등 비균일한 오류 양상이 확인되었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.00491v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00491v1.pdf"
-  },
-  {
-    "id": "2607.00341",
-    "title": "DiscoLoop: Looping Discrete Embeddings and Continuous Hidden States for Multi-hop Reasoning",
-    "authors": "Hengyu Fu et al.",
-    "published": "2026-07-01",
-    "category": "llm",
     "categories": [
       "cs.CL",
       "cs.AI",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "autonomous-driving",
+      "multimodal"
+    ],
+    "summaryKo": "이 논문은 장편 드라마의 화자 인식을 위해 대규모 벤치마크 DramaSR-532K와 대규모 추론 모델 기반 방법 DramaSR-LRM을 제안하며, 특히 짧은 발화에서 성능이 크게 향상됨을 보여준다.",
+    "detail": {
+      "problem": "장편 TV 드라마에서 복잡한 줄거리 이해를 위해 각 발화를 정확한 캐릭터에 귀속시키는 화자 인식 문제를 해결하고자 한다.",
+      "method": "청각, 언어, 시각 정보를 통합한 532K개의 주석 대화 줄과 900개 이상의 고유 캐릭터로 구성된 대규모 벤치마크 DramaSR-532K를 구축하고, 대규모 추론 모델(LRM)을 기반으로 멀티모달 도구 사용을 통해 맥락 증거를 자율적으로 종합하는 DramaSR-LRM 접근법을 제안한다.",
+      "takeaway": "제안 방법은 기존 기준선을 크게 능가하며, 특히 음향 생체인식이 신뢰할 수 없는 짧은 발화에서 두드러진 성능 향상을 보인다. (모든 데이터와 코드는 공개 예정)"
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02504v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02504v1.pdf"
+  },
+  {
+    "id": "2607.02371",
+    "title": "VisionAId: An Offline-First Multimodal Android Assistant for People with Visual Impairment, Featuring Personalized Object Retrieval",
+    "authors": "Cristian-Gabriel Florea, Stelian Spînu",
+    "published": "2026-07-02",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "retrieval",
+      "embedding",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "시각 장애인의 자립을 돕기 위해 개인 물체 검색을 지원하는 오프라인 우선 멀티모달 안드로이드 어시스턴트 VisionAId를 제안한다.",
+    "detail": {
+      "problem": "전 세계 2억 8500만 명 이상의 시각 장애인은 장애물 회피, 개인 물건 찾기, 얼굴 인식, 화폐 구별 등 일상 작업에서 자율성을 유지하는 데 어려움을 겪는다. 기존 보조 앱은 미리 정의된 범주만 인식하거나, 클라우드 의존도가 높거나, 전용 하드웨어가 필요하다.",
+      "method": "VisionAId는 상용 스마트폰을 실시간 시각 보조 도구로 변환하며, 6가지 온디바이스 딥러닝 모델(미터법 단안 깊이 추정, 인스턴스 분할, 시각 및 얼굴 임베딩, 얼굴 검출, 맞춤형 지폐 검출기)을 ONNX Runtime으로 통합하고 선택적으로 클라우드 LLM(Google Gemini Flash)을 사용한다. 핵심 기여는 사용자가 물체를 여러 각도로 촬영하면 해당 특정 인스턴스를 환경에서 찾아 증강현실 마커, 공간 음향, 거리 비례 햅틱으로 안내하는 퓨샷 개인 물체 검색 파이프라인이다.",
+      "takeaway": "INT8 양자화를 통해 깊이 추정 지연 시간이 약 1200ms에서 491ms로 감소했고, 맞춤형 지폐 검출기의 mAP@50은 0.986, 3m 이내 미터법 깊이 오차는 1cm 미만으로 교정되었다. 모든 피드백은 루마니아어 음성 합성, 음성 명령, 진동 등의 다중 모드로 제공된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02371v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02371v1.pdf"
+  },
+  {
+    "id": "2607.02007",
+    "title": "EduArt: An educational-level benchmark for evaluating art history knowledge in large language models",
+    "authors": "Gianmarco Spinaci, Lukas Klic, Giovanni Colavizza",
+    "published": "2026-07-02",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal"
+    ],
+    "summaryKo": "본 논문은 미술사 교육 수준의 다중 형식 벤치마크 EduArt를 제안하고, 객관식 같은 단일 형식 평가가 대규모 언어 모델의 미술사 지식 활용 능력을 과대평가하며, 지식과 지식 활용 능력이 별개의 능력임을 실증적으로 보여준다.",
+    "detail": {
+      "problem": "기존 일반 벤치마크는 개별 학문 분야에서의 모델 행동을 거의 드러내지 못하며, 기존 미술사 평가는 합성 질문에 의존하거나 문항별 속성을 분석하지 않고 단일 형식을 사용해 모델의 실제 능력을 과대평가하는 경향이 있다.",
+      "method": "제안하는 EduArt는 이탈리아 고등학교와 미국 AP 미술사 시험에서 수집한 871개의 인간 작성 문제로 구성된 교육 수준의 미술사 지식 및 시각적 추론 벤치마크이다. 2개 언어와 7가지 형식을 포함하며, 12개 다중 모드 언어 모델을 답변 전용 조건과 정당화 조건에서 평가하고 고전검사이론과 로지스틱 회귀를 통해 분석했다.",
+      "takeaway": "벤치마크는 높은 심리측정적 속성을 보였으나(변별도 평균 0.514), 객관식 정확도는 6개 모델에서 포화되어 최첨단 모델 간 구분이 어려웠다. 반면, 형식은 정확도의 강력한 예측 변수였으며, 객관식에서 94% 이상을 기록한 모델이 빈칸 채우기(최고 23.9%)나 오류 식별(6.2%)에서는 성능이 급락했다. 이는 미술사 지식과 지식 활용 능력이 별개이며, 단일 형식 벤치마크가 모델의 신뢰성 있는 능력을 과대평가함을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02007v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02007v1.pdf"
+  },
+  {
+    "id": "2607.01647",
+    "title": "AgenticDataBench: A Comprehensive Benchmark for Data Agents",
+    "authors": "Zhaoyan Sun et al.",
+    "published": "2026-07-02",
+    "category": "llm",
+    "categories": [
+      "cs.DB",
+      "cs.AI",
+      "cs.CL",
       "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "embedding"
+      "agents",
+      "generation"
     ],
-    "summaryKo": "DiscoLoop는 이산 임베딩과 연속 은닉 상태를 모두 반복 전달하는 루핑 아키텍처를 통해 멀티홉 추론에서 높은 성능을 달성하고 실제 언어 모델링에도 효과적임을 보여준다.",
+    "summaryKo": "LLM 기반 데이터 에이전트의 포괄적인 평가를 위해 실제 데이터와 데이터 과학 스킬을 활용한 벤치마크인 AgenticDataBench를 제안한다.",
     "detail": {
-      "problem": "표준 비순환 트랜스포머는 단일 순방향 패스 내에서 다단계 추론을 수행할 때 깊이-국소 저장 문제가 발생하며, 루프 트랜스포머는 이를 완화하지만 여전히 표현적 병목 현상으로 인해 일반화가 불완전하다.",
-      "method": "DiscoLoop는 루프가 이산 임베딩 채널과 연속 은닉 상태 채널을 모두 전달하도록 설계하여 브리지 엔터티의 디코딩 가능성과 은닉 상태 간의 정렬 문제를 해결한다.",
-      "takeaway": "기호적 및 합성 언어 멀티홉 추론 과제에서 더 적은 훈련 단계로 거의 완벽한 정확도를 달성했으며, 실제 사전 훈련에서도 루프 트랜스포머 기준선보다 낮은 훈련 손실과 강력한 벤치마크 성능을 보여주었다."
+      "problem": "데이터 과학 워크플로우 자동화를 위한 LLM 기반 데이터 에이전트가 등장했지만, 다양한 시나리오에서 세밀하게 평가할 수 있는 종합 벤치마크가 부족하다.",
+      "method": "15개 수직 도메인의 실제 데이터와 스택 오버플로우에서 추출한 데이터 과학 스킬을 바탕으로 작업을 구성하고, 실제 작업이 없는 도메인을 위해 LLM 기반 작업 생성을 도입하여 AgenticDataBench를 구축했다.",
+      "takeaway": "최신 데이터 에이전트를 평가하여 스킬 수준의 인사이트를 제공했으며, 벤치마크와 테스트베드를 오픈소스로 공개했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.00341v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00341v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.01647v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.01647v1.pdf"
   },
   {
-    "id": "2607.00895",
-    "title": "Beyond Document Grounding: Span-Level Hallucination Detection over Code, Tool Output, and Documents",
-    "authors": "Ádám Kovács et al.",
-    "published": "2026-07-01",
+    "id": "2607.01883",
+    "title": "PairCoder++: Pair Programming as a Universal Paradigm for Verified Code-Driven Multimodal and Structured-Artifact Generation",
+    "authors": "Junhao Chen et al.",
+    "published": "2026-07-02",
     "category": "multimodal",
     "categories": [
       "cs.CL"
@@ -189,123 +164,142 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "retrieval",
-      "generation",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 코드, 도구 출력, 구조화된 문서 등 다양한 입력에 걸친 스팬 수준 할루시네이션 탐지를 위한 통합 벤치마크를 구축하고, 미세 조정된 Qwen3.5-2B 탐지기가 기존 탐지기나 제로샷 LLM 평가자보다 크게 뛰어난 성능을 보임을 입증한다.",
-    "detail": {
-      "problem": "기존 할루시네이션 탐지는 자연어 문서 증거에 주로 평가되었으나, 점점 더 많은 시스템이 코드, 도구 출력, 구조화된 문서 등 다양한 구조적 입력에 의존하고 있어 이에 대한 탐지 방법이 필요하다.",
-      "method": "올바른 근거 응답에서 시작하여 정확한 문자 위치로 할루시네이션을 주입하는 방식으로 통합 벤치마크를 구축하고, Qwen3.5-2B 모델을 미세 조정하여 스팬 수준 탐지기로 사용한다.",
-      "takeaway": "제안한 탐지기는 통합 테스트 세트에서 0.689, 코드 에이전트 데이터에서 0.60의 스팬 F1을 기록하여 LettuceDetect-large (0.17) 및 최고 제로샷 LLM (0.22)을 크게 능가하며, 기존 자연어 벤치마크에서도 경쟁력 있는 성능(81.8 RAGTruth 예제 F1, 0.724 PsiloQA IoU)을 유지한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.00895v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00895v1.pdf"
-  },
-  {
-    "id": "2607.01002",
-    "title": "Logit-Contribution Scoring Identifies Non-Literal Retrieval Heads",
-    "authors": "Aryo Pradipta Gema, Beatrice Alex, Pasquale Minervini",
-    "published": "2026-07-01",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval",
-      "embedding",
-      "detection"
-    ],
-    "summaryKo": "LOCOS는 OV 회로 출력을 정답 토큰의 언임베딩 방향으로 투영하여 비문자적 검색 헤드를 식별하는 쓰기 인식 검출기로, 적은 헤드 제거로 검색 성능을 급감시킨다.",
-    "detail": {
-      "problem": "기존 어텐션 헤드 검출기는 문자적 일치(읽기 위치와 생성 토큰 일치)를 기준으로 평가하여 OV 회로를 통한 쓰기 효과를 무시하므로, 문맥에서 의미를 종합하는 비문자적 검색 헤드를 식별하지 못한다.",
-      "method": "LOCOS는 각 헤드의 OV 회로 출력을 정답 토큰의 언임베딩 방향으로 투영한 점수를 계산하고, 단일 순전파 내에서 관련(needle) 위치와 비관련(off-needle) 위치의 기여도를 대조하여 중요도를 측정한다.",
-      "takeaway": "Qwen3·Gemma-3·OLMo-3.1 세 모델군에서 LOCOS 상위 헤드를 평균 제거하면 NoLiMa의 ROUGE-L이 기존 검출기보다 낮은 헤드 수로 붕괴된다. Qwen3-8B에서 50개 헤드 제거 시 ROUGE-L이 0.401→0.000(기존 최강 기준선 0.292)이며, 동일 제거가 MuSiQue(0.55→0.08)·BABI-Long(0.62→0.20)에도 성능 저하를 일으키나 매개변수 기억 회상과 산술 추론 성능은 유지된다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.01002v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.01002v1.pdf"
-  },
-  {
-    "id": "2607.00746",
-    "title": "GaussianFusion: Unified 3D Gaussian Representation for Multi-Modal Fusion Perception",
-    "authors": "Xiao Zhao et al.",
-    "published": "2026-07-01",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
       "3d",
       "multimodal",
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "GaussianFusion은 3D 가우시안 표현을 사용하여 BEV의 한계를 극복하고 다중 모달 특징을 통합하는 태스크에 구애받지 않는 3D 인식 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "기존 BEV 표현은 이산적인 격자 구조로 인해 세부 정보 손실이 발생하고 다중 모달 특징 정렬 및 상호 정보 상호작용에 제한이 있다.",
-      "method": "본 논문은 BEV 패러다임에서 벗어나 3D 가우시안 표현을 기반으로 다중 모달 특징을 통합하는 새로운 프레임워크를 제안한다. 순방향 투영 기반의 다중 모달 가우시안 초기화 모듈과 주의 메커니즘으로 가우시안 속성을 반복적으로 업데이트하는 공유 크로스 모달 인코더를 설계하며, 태스크에 구애받지 않고 다양한 3D 인식 태스크를 지원한다.",
-      "takeaway": "nuScenes 데이터셋에서 3D 객체 검출에서 BEVFusion 대비 NDS 2.6% 향상을 보였으며, 3D 의미 점유 예측 변형은 GaussFormer 대비 30%의 가우시안만 사용하여 1.55 mIoU 향상과 450% 속도 향상을 달성하였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.00746v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00746v1.pdf"
-  },
-  {
-    "id": "2607.00861",
-    "title": "TrajLoc: Trajectory-Attention Localization for Multi-Object Motion Control",
-    "authors": "Omer Sela et al.",
-    "published": "2026-07-01",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.GR"
-    ],
-    "tags": [
-      "video",
-      "embedding",
-      "benchmark",
       "generation"
     ],
-    "summaryKo": "여러 객체의 움직임 제어를 위한 이미지-투-비디오 생성에서 각 객체 토큰의 교차-어텐션 가중치를 가우시안 히트맵으로 대체하여 개별 공간 제약을 적용하는 TrajLoc 방법을 제안하며, 기존 방법 대비 시각적 충실도와 궤적 준수를 크게 향상시켰다.",
+    "summaryKo": "PairCoder는 드라이버와 내비게이터 역할을 교대하는 두 에이전트 페어 프로그래밍을 통해 툴체인 피드백을 활용하여 검증된 코드 기반 생성물 생성을 개선하는 방법이다.",
     "detail": {
-      "problem": "이미지-투-비디오 생성에서 여러 객체의 동작을 제어할 때 객체 식별을 유지하면서 각각의 궤적을 따르게 하는 것은 객체 수가 증가하고 경로가 교차하거나 가려질 때 어려워진다. 기존 방법들은 여러 궤적을 공유된 밀집 조건 신호에 얽어매어 복잡한 장면에서 객체 수준의 대응 관계를 유지하기 어렵다.",
-      "method": "TrajLoc은 각 객체 토큰의 교차-어텐션 가중치를 프레임별 목표 위치를 중심으로 한 가우시안 히트맵으로 대체하여 개별 객체 수준의 공간 제약을 강제한다. 또한 학습된 임베딩으로 궤적과 깊이를 전달하고 첫 프레임 외형을 객체 토큰 대신 인코딩하여 식별성을 유지한다.",
-      "takeaway": "여섯 개의 데이터셋 평가에서 최대 20개의 동시 제어 객체와 분포 외 실제 장면에 대해 일관된 시각적 충실도 및 궤적 준수 향상을 보였다. 두 가지 다른 아키텍처(CogVideoX 5B, WaN 2.1 14B)에서 가장 강력한 기준선 대비 PSNR +4.3dB, 궤적 종점 오류 51% 감소를 달성했다."
+      "problem": "대규모 언어 모델이 코드를 통해 구조화된 결과물(차트, 과학적 그림, 벡터 그래픽 등)을 생성할 때, 단일 패스 추론은 컴파일러, 렌더러 등 결과물의 존재 여부를 결정하는 툴체인이 모델에 보이지 않아 취약하다.",
+      "method": "PairCoder는 드라이버 에이전트가 프로그램을 작성하고 내비게이터 에이전트가 진단, 실행 결과, 현재 생성물과 목표의 렌더링 등의 검증 증거를 바탕으로 검토하며, 오류가 지속되면 두 에이전트가 역할을 교체한다.",
+      "takeaway": "17개 공개 벤치마크와 여러 모델에서 PairCoder는 검증 가능한 대부분의 지표를 크게 개선했으나, 툴체인이 약한 오라클을 제공할 때는 성능이 비슷하거나 약간 하락했다. 비용은 단일 모델 대비 약 2.9~9.2배(평균 약 7배)이지만, 검증된 코드 기반 생성을 위한 신뢰할 수 있는 방법론을 제시한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.00861v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00861v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.01883v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.01883v1.pdf"
   },
   {
-    "id": "2607.00889",
-    "title": "DeWorldSG: Depth-Aware 3D Semantic Scene Graph Generation via World-Model Priors",
-    "authors": "Seok-Young Kim et al.",
-    "published": "2026-07-01",
+    "id": "2607.02032",
+    "title": "PACE: A Proxy for Agentic Capability Evaluation",
+    "authors": "Yueqi Song et al.",
+    "published": "2026-07-02",
+    "category": "llm",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "code-generation",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 고비용의 에이전트 벤치마크 평가를 대체하기 위해, 소수의 비에이전트 평가 인스턴스로 에이전트 성능을 정확히 예측하는 프레임워크 PACE를 제안한다.",
+    "detail": {
+      "problem": "LLM 에이전트 벤치마크(SWE-Bench, GAIA 등) 평가는 높은 비용과 시간이 소요되며 복잡한 인프라가 필요하다. 본 연구는 빠르고 저렴한 비에이전트 LLM 벤치마크 결과를 사용하여 에이전트 성능을 예측할 수 있는지 탐구한다.",
+      "method": "PACE는 비에이전트 평가 인스턴스 풀에서 회귀 모델을 사용해 에이전트 벤치마크 점수를 가장 잘 예측하는 소규모 부분 집합을 선택한다. 인스턴스 선택은 타겟 관련성 기반 로컬 선택과 전역 정보 기반 글로벌 선택을 결합하여 수행된다.",
+      "takeaway": "실험 결과, PACE-Bench는 14개 모델, 4개 에이전트 벤치마크, 19개 비에이전트 벤치마크에서 LOOCV 평균 절대 오차 4% 미만, Spearman 상관계수 0.80 이상, 쌍별 모델 순위 정확도 약 85%를 달성했으며, 전체 에이전트 평가 비용의 1% 미만이 소요된다. 이는 전체 에이전트 평가 없이도 모델 개발, 선택, 라우팅 과정에서 신뢰할 수 있는 성능 추정을 가능하게 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02032v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02032v1.pdf"
+  },
+  {
+    "id": "2607.02074",
+    "title": "Comprehensive Robustness Analysis of LiDAR-based 3D Object Detection in Autonomous Driving",
+    "authors": "Adwait Chandorkar et al.",
+    "published": "2026-07-02",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "3d",
+      "autonomous-driving",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 LiDAR 기반 3D 객체 탐지 모델의 적대적 강건성을 구조적 및 예측적 요소로 평가하는 포괄적 프레임워크를 제안하고, 최신 모델도 이전 모델만큼 취약함을 보여준다.",
+    "detail": {
+      "problem": "기존 LiDAR 기반 3D 객체 탐지 모델의 적대적 강건성 연구는 부족하며, 평가 지표가 mAP에 의존하여 구조적·예측적 요소를 간과한다.",
+      "method": "포인트 클라우드 밀도 및 위치(구조적)와 오분류, 위치 오차, 자차 거리(예측적)의 다섯 가지 요소를 기반으로 적대적 강건성을 평가하는 프레임워크를 제안하고, LiDAR 전용 공격을 사용해 최신 모델을 실증 분석한다.",
+      "takeaway": "고용량의 복셀 기반 탐지기가 구조적 좌표 섭동에 더 취약하고, 앵커 없는 탐지기의 강건성이 낮다. 최신 모델도 이전 모델과 동등하게 취약하므로, 탐지 정확도와 함께 강건성을 고려한 평가 기준이 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02074v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02074v1.pdf"
+  },
+  {
+    "id": "2607.02099",
+    "title": "X-Splat: Gaussian Splatting for 3D CBCT Generation from Single Panoramic Radiograph",
+    "authors": "Tomasz Szczepański et al.",
+    "published": "2026-07-02",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
     ],
     "tags": [
       "3d",
       "benchmark",
       "generation"
     ],
-    "summaryKo": "DeWorldSG는 RGB-D 시퀀스로부터 공간-시간적으로 강건한 3D 의미 장면 그래프를 생성하는 프레임워크로, 깊이 가이드 필터링, 확률적 3D 노드 표현, 세계 모델(V-JEPA 2) 사전 정보를 통해 객체 및 술어 예측에서 최첨단 성능을 달성한다.",
+    "summaryKo": "X-Splat은 단일 파노라마 방사선 사진에서 3D CBCT 치과 볼륨을 생성하는 최초의 가우시안 스플래팅 프레임워크로, 기존 방법보다 우수한 해부학적 구조 복원 성능을 보인다.",
     "detail": {
-      "problem": "기존 방법들은 불안정한 3D 객체 표현과 프레임별 추론으로 인한 관계 누락으로 인해 신뢰할 수 있는 3D 장면 그래프를 구성하는 데 어려움을 겪는다.",
-      "method": "DeWorldSG는 깊이 가이드 필터링을 통해 객체 수준의 기하학적 3D 가우시안 분포를 추정하고, 각 객체를 단일 투영점이 아닌 확률적 3D 노드로 표현한다. 또한 프레임별 추론으로 인한 관계 희소성을 완화하기 위해 객체 쌍 간 시공간 증거를 집계하고, 세계 모델(V-JEPA 2)에서 파생된 맥락적 사전 정보를 사용하여 관계를 정제한다.",
-      "takeaway": "3DSSG 및 ReplicaSSG 데이터셋 실험에서 객체 및 술어 예측 모두 최첨단 성능을 달성했으며, 시간적으로 일관된 장면 구조를 생성한다. 특히 기존 최첨단 방법 대비 삼중항 재현율 77.4%, 술어 재현율 23.2% 향상되어 로봇 조작 및 증강 현실 애플리케이션에 적합하다. 코드와 모델은 오픈소스로 공개되었다."
+      "problem": "단일 PXR로부터 3D 치과 CBCT를 생성하는 문제는 매우 조건이 부족하여 깊이 해부학 정보가 손실되며, 기존 생성 방법은 과도하게 평활화된 기하학이나 해부학적으로 부정확한 결과를 생성한다.",
+      "method": "X-Splat은 파노라마 촬영 기하학을 활용하여 학습 가능한 가우시안 프리미티브를 X선 경로를 따라 초기화하고 Beer-Lambert 법칙 기반 재투영 및 다중 시점 감독으로 조정하며, 잔차 리파이너를 통해 데이터셋 수준의 해부학적 사전 정보를 추가한다. 합성 PXR-CBCT 쌍으로 학습된다.",
+      "takeaway": "X-Splat은 NeRF 및 GAN 기반 기준선을 능가하며, 개별 치아, 피질 경계, 폐포 구조 및 하악관을 복원한다. 또한 세분화 기반 기하학 인식 메트릭을 도입하여 악안면 해부학에 대한 PXR 기반 생성의 첫 번째 평가를 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.00889v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.00889v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02099v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02099v1.pdf"
+  },
+  {
+    "id": "2607.02220",
+    "title": "DetailAnywhere: Fashion Detail Generation via Cross-Modal Feature Alignment Distillation",
+    "authors": "Zijun Li et al.",
+    "published": "2026-07-02",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "diffusion",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "이 논문은 포커스 마커가 있는 참조 이미지에서 해당 영역의 사실적인 클로즈업 뷰를 생성하는 패션 디테일 생성 작업을 제안하고, CFAD와 강화 학습을 통해 이 작업에서 최첨단 성능을 달성한 DetailAnywhere를 소개한다.",
+    "detail": {
+      "problem": "온라인 의류 구매 시 소비자는 칼라, 소맷부리, 직물 질감과 같은 특정 디테일 영역을 살펴보고 싶어 하지만, 기존 방법은 이러한 설정을 명시적으로 연구하지 않았다. 이에 저자들은 포커스 조건을 갖춘 패션 디테일 생성(Fashion Detail Generation)이라는 새로운 작업을 공식화하고, 41개 카테고리에 걸쳐 40K 이상의 인간 검증 참조-디테일 쌍을 포함하는 첫 번째 벤치마크 FDBench를 출시했다.",
+      "method": "제안된 CFAD(Cross-modal Feature Alignment Distillation)는 미세 조정된 DINOv3 교사 모델을 활용하여 다중 모드 확산 트랜스포머의 두 분기를 이중 분기 증류를 통해 공유 의미 공간에서 정렬한다. 또한, 세 가지 품질 축을 따라 이미지 쌍을 공동으로 평가하는 일관성 보상 모델을 도입하고 강화 학습을 통해 생성을 최적화한다.",
+      "takeaway": "DetailAnywhere는 모든 지표와 인간 평가에서 모든 최첨단 오픈소스 방법을 크게 능가하는 성능을 보였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02220v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02220v1.pdf"
+  },
+  {
+    "id": "2607.02269",
+    "title": "AnyGroundBench: A Specialized-Domain Benchmark for Video Grounding in Vision-Language Models",
+    "authors": "Rintaro Otsubo et al.",
+    "published": "2026-07-02",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video"
+    ],
+    "summaryKo": "AnyGroundBench는 특수 도메인에서의 시공간 비디오 그라운딩 도메인 적응 능력을 평가하기 위한 벤치마크로, 최신 VLM들은 해당 도메인에서 제로샷 및 맥락 내 학습 모두에 실패함을 밝혔다.",
+    "detail": {
+      "problem": "현재 VLM의 시공간 비디오 그라운딩(STVG) 평가는 일상적인 일반 도메인에서의 제로샷 평가에 국한되어, 특수 분야에서의 실제 응용과 괴리가 있다. 드문 시각 개념과 복잡한 시공간 역학을 다루는 도메인 적응 능력 평가가 필요하다.",
+      "method": "다섯 가지 특수 도메인(동물, 산업, 스포츠, 수술, 공공 안전)을 대상으로 AnyGroundBench를 제안한다. 새로 촬영한 비디오와 기존 데이터셋을 결합하고 고밀도 시공간 주석을 제공하며, 도메인 적응 측정을 위한 훈련 하위 집합을 포함한다.",
+      "takeaway": "15개 최신 VLM을 평가한 결과, 특수 도메인에 대한 제로샷 및 맥락 내 학습 기반 적응 모두 실패했으며, 이는 시공간 추론의 근본적인 결함을 드러낸다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02269v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02269v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-02T04:19:46.564Z",
+  "collectedAt": "2026-07-04T03:59:32.333Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
