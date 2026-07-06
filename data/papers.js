@@ -3,9 +3,34 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.02290",
-    "title": "DisciplineGen-1M: A Large-Scale Dataset for Multidisciplinary Visual Generation and Editing",
-    "authors": "Zhaokai Wang et al.",
+    "id": "2607.01595",
+    "title": "Safe and Adaptive Cloud Healing: Verifying LLM-Generated Recovery Plans with a Neural-Symbolic World Model",
+    "authors": "Junyan Tan et al.",
+    "published": "2026-07-02",
+    "category": "multimodal",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "autonomous-driving",
+      "benchmark",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "PASE는 LLM으로 복구 계획을 생성하고 신경-기호 월드 모델로 검증하며 DRL로 프롬프트를 최적화하여 클라우드 장애 복구 시간을 40% 이상 단축하고 탐지 정확도를 향상시킨 자기 치유 프레임워크이다.",
+    "detail": {
+      "problem": "기존 클라우드 장애 복구 방법은 LLM과 DRL을 통합하지만 느슨하게 결합되어 LLM의 생성 및 추론 능력을 충분히 활용하지 못하며, 정해진 행동 공간을 넘는 적응적 복구가 어렵다.",
+      "method": "PASE는 복구를 신경-기호 프로그램 합성으로 간주하여, LLM을 계획 합성 엔진으로 사용해 의미론적 기본 요소로부터 구조화된 계획을 생성하고, 신경-기호 월드 모델이 시뮬레이션을 통해 계획을 검증하며, DRL로 훈련된 메타-프롬프트 최적화기가 LLM의 계획을 안내하는 프롬프트를 생성한다.",
+      "takeaway": "실제 클라우드 장애 주입 데이터셋 실험에서 PASE는 최신 방법보다 평균 시스템 복구 시간을 40% 이상 단축하고 알려지지 않은 장애 시나리오에서의 탐지 정확도를 향상시켰다. 이는 LLM 기반 추론과 모델 기반 검증 및 메타 학습 안내를 통합하여 자율 시스템 관리를 발전시킨다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.01595v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.01595v1.pdf"
+  },
+  {
+    "id": "2607.02516",
+    "title": "Alignment Is All You Need For X-to-4D Generation",
+    "authors": "Qiaowei Miao et al.",
     "published": "2026-07-02",
     "category": "cv",
     "categories": [
@@ -13,68 +38,75 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "diffusion",
+      "3d",
+      "video",
+      "multimodal"
     ],
-    "summaryKo": "본 논문은 수학, 물리, 화학 등 10개 학문 분야를 포괄하는 백만 규모의 다학제 데이터셋 DisciplineGen-1M과, 학문 정보를 반영한 추론-생성 모델을 제안하여 지식 기반 텍스트-이미지 생성 및 편집 성능을 향상시켰다.",
+    "summaryKo": "Align4D는 다양한 입력 모달리티에서 일관된 4D(비디오-3D 쌍) 생성을 가능하게 하는 정렬 기반 프레임워크로, 객체 거리 정렬, 모션-지오메트리 공동 정렬, 비동기 최적화를 통해 최첨단 품질과 일관성을 달성한다.",
     "detail": {
-      "problem": "기존 이미지 생성 및 편집 모델은 자연 이미지에서는 뛰어난 성능을 보이지만, 학문적 개념, 기호 구조, 정확한 공간 관계가 필요한 지식 집약적 다이어그램에서는 정확성과 신뢰성이 떨어진다는 문제가 있다.",
-      "method": "본 연구는 벡터 그래픽스 렌더링, OCR 기반 편집, 프로그램적 합성, 대규모 텍스트-이미지 필터링을 결합한 확장 가능한 파이프라인을 통해 DisciplineGen-1M 데이터셋을 구축하고, 이를 바탕으로 학문 정보를 반영한 추론-생성 모델을 도입한다.",
-      "takeaway": "학문 관련 벤치마크(GenExam, GRADE)에서 오픈소스 대비 큰 성능 향상을 보였으며, 일반 추론 벤치마크(WISE, RISE)에서도 전이 가능성을 확인했다. 이는 대규모 구조화된 학문 시각 데이터가 이미지 생성을 미적 타당성에서 검증 가능한 지식 기반 창작으로 나아가게 하는 핵심 요소임을 시사한다."
+      "problem": "사용자 정의 모달리티에서 4D 생성(X-to-4D)은 다양한 데이터셋 구축의 높은 비용과 기존 방법의 확장성 제한으로 인해 여전히 어렵다.",
+      "method": "Align4D는 비디오를 사용하여 4D 모션을 안내하고 3D 데이터를 사용하여 4D 형상을 형성하며, 세 가지 주요 기술(비디오 정렬 및 다시점 정렬 객체 거리 탐색(VAOD/MAOD)을 통한 객체 거리 정렬, 동기화된 비디오와 3D 입력을 통한 모션-지오메트리 공동 정렬, 가우시안 속성과 변형 네트워크 학습을 분리하는 비동기 최적화)을 도입한다.",
+      "takeaway": "X4D 및 Consistent4D 데이터셋에서의 실험을 통해 X-to-4D 생성에서 최첨단 품질과 일관성을 입증했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.02290v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02290v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02516v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02516v1.pdf"
   },
   {
-    "id": "2607.01431",
-    "title": "IsoSci: A Benchmark of Isomorphic Cross-Domain Science Problems for Evaluating Reasoning versus Knowledge Retrieval in LLMs",
-    "authors": "Samir Abdaljalil, Erchin Serpedin, Hasan Kurban",
-    "published": "2026-07-01",
-    "category": "llm",
+    "id": "2607.02504",
+    "title": "Reasoning LLM Improves Speaker Recognition in Long-form TV Dramas",
+    "authors": "Yuxuan Li et al.",
+    "published": "2026-07-02",
+    "category": "multimodal",
     "categories": [
       "cs.CL",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "autonomous-driving",
+      "multimodal"
+    ],
+    "summaryKo": "본 논문은 장편 TV 드라마에서 화자 인식을 위해 대규모 벤치마크 DramaSR-532K와 대규모 추론 모델 기반의 DramaSR-LRM을 제안하고, 실험에서 기존 방법 대비 우수한 성능, 특히 짧은 발화에서 큰 향상을 보였다.",
+    "detail": {
+      "problem": "장편 TV 드라마의 종합적 비디오 이해에서 복잡한 줄거리를 파악하기 위해 각 발화를 정확하게 캐릭터에 귀속시키는 화자 인식이 중요한 과제이며, 이는 청각, 언어, 시각 단서를 통합해야 하는 어려움이 있다.",
+      "method": "두 가지 주요 기여를 제안한다: (1) 532K개의 주석 달린 대화 줄과 900개 이상의 고유 캐릭터를 포함하는 대규모 벤치마크 DramaSR-532K, (2) 대규모 추론 모델(LRM)을 기반으로 멀티모달 도구 사용을 통해 맥락적 증거를 자율적으로 수집하고 다양한 입력을 종합하여 높은 정확도의 귀속을 달성하는 DramaSR-LRM.",
+      "takeaway": "DramaSR-LRM은 기존 기준선을 크게 능가하며, 특히 음성 생체 인식이 본질적으로 신뢰할 수 없는 짧은 발화에서 뛰어난 성능을 보인다. 모든 데이터와 코드는 공개될 예정이다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02504v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02504v1.pdf"
+  },
+  {
+    "id": "2607.02371",
+    "title": "VisionAId: An Offline-First Multimodal Android Assistant for People with Visual Impairment, Featuring Personalized Object Retrieval",
+    "authors": "Cristian-Gabriel Florea, Stelian Spînu",
+    "published": "2026-07-02",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
       "cs.AI"
     ],
     "tags": [
-      "benchmark",
-      "retrieval"
+      "retrieval",
+      "embedding",
+      "multimodal",
+      "detection"
     ],
-    "summaryKo": "본 논문은 대규모 언어 모델(LLM)의 추론 능력과 도메인 지식 검색을 분리하여 평가하기 위해 동형 교차 도메인 과학 문제 쌍으로 구성된 벤치마크(ISOSCI)를 제안하며, 실험 결과 추론 모드의 성능 향상 대부분이 지식에 의존적임을 보여준다.",
+    "summaryKo": "VisionAId는 온디바이스 딥러닝과 선택적 클라우드 LLM을 결합한 안드로이드 앱으로, 개인 물체 검색을 위한 퓨삿 파이프라인을 통해 시각 장애인의 실시간 시각 보조를 제공한다.",
     "detail": {
-      "problem": "LLM 평가에서 추론 능력과 도메인 지식 검색을 분리하지 못하면 실제 추론 능력의 향상을 정확히 측정하기 어렵다. 기존 벤치마크는 이 두 요소를 혼동할 수 있다.",
-      "method": "ISOSCI는 동일한 논리 구조를 가지지만 서로 다른 도메인 지식을 요구하는 과학 문제 쌍을 제공하여, 추론 능력 향상이 구조적으로 불변인지 아니면 지식에 의존적인지 통제된 방식으로 평가할 수 있게 한다.",
-      "takeaway": "5개 모델 패밀리, 10개 모델 쌍 실험에서 추론 모드 성능 향상의 91.3%가 지식 의존적인 것으로 나타났으며(Wilson 95% CI [82.3%, 96.0%]), chain-of-thought 추론이 단기 절차적 과학 문제 해결을 향상시킨다는 가정에 도전한다. 또한, 고성능 모델에서 추론 토글 적용 시 모든 도메인에서 정확도 향상이 5% 미만이었고, 추론 특화 모델(o3-mini)이 GPQA Diamond에서는 +19.2%p의 성능 향상을 보였지만 ISOSCI에서는 -24.7%p로 낮은 성능을 보여, 벤치마크 선택이 추론 유용성에 대한 결론을 결정함을 시사한다."
+      "problem": "전 세계 2억 8500만 명 이상의 시각 장애인은 장애물 회피, 개인 물건 찾기, 얼굴 인식, 화폐 취급 등 일상 작업에서 자율성에 제약을 받으며, 기존 보조 앱은 사전 정의된 범주 인식에 한정되거나 클라우드 의존도가 높거나 전용 하드웨어가 필요한 한계가 있다.",
+      "method": "본 논문에서는 ONNX Runtime으로 구동되는 6개의 온디바이스 딥러닝 모델(미터법 단안 깊이 추정, 인스턴스 분할, 시각 및 얼굴 임베딩, 얼굴 검출, 맞춤 지폐 검출기)과 선택적 클라우드 LLM(Google Gemini Flash)을 통합한 안드로이드 앱 VisionAId를 제안한다. 핵심 기여는 사용자가 물체를 여러 각도에서 촬영하면 해당 특정 인스턴스를 환경에서 찾아 증강 현실 마커, 공간 음향, 거리 비례 햅틱으로 안내하는 퓨삿 개인 물체 검색 파이프라인이다.",
+      "takeaway": "참조 기기(Samsung Galaxy S21 Ultra)에서 INT8 양자화로 깊이 추정 지연 시간이 약 1200ms에서 491ms로 감소했으며, 맞춤 지폐 검출기는 mAP@50 0.986을 기록했고, 3m 이내에서 미터법 깊이 오차가 1cm 미만으로 보정되었다. 모든 피드백은 루마니아어 음성 합성, 음성 명령, 진동 등 멀티모달로 제공된다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.01431v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.01431v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02371v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02371v1.pdf"
   },
   {
-    "id": "2607.01978",
-    "title": "Multimodal Knowledge Edit-Scoped Generalization for Online Recursive MLLM Editing",
-    "authors": "Siyuan Li et al.",
-    "published": "2026-07-02",
-    "category": "multimodal",
-    "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "온라인 멀티모달 지식 편집에서 편집의 전파 경계를 제어하기 위해 편집 범위 일반화(Edit-Scoped Generalization)를 정식화하고, 이를 구현한 범위 인식 편집기 ScopeEdit를 제안한다.",
-    "detail": {
-      "problem": "기존 온라인 멀티모달 지식 편집기는 각 편집의 의미적 경계를 거의 제어하지 못하여, 인스턴스 수준의 성공이 유효한 교차모달 변형으로 전이되지 않거나 관련 없는 입력으로 누설되는 범위 격차(scope gap)가 발생한다.",
-      "method": "본 논문은 각 업데이트를 양식-로컬 흡수 브랜치와 증거-게이트 공유 일반화 브랜치로 분해하고, 직교 저차원 공간에서 범위 분리 쓰기 기하를 수행하며 셔먼-모리슨 순환을 통해 가지별 전제조건자를 유지하여 일정한 편집당 오버헤드를 가지는 ScopeEdit를 제안한다.",
-      "takeaway": "광범위한 실험을 통해 ScopeEdit가 편집 신뢰성, 안정성 및 온라인 효율성을 유지하면서 범위 내 교차모달 전이와 범위 외 지역성 간의 균형을 일관되게 개선함을 보였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.01978v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.01978v1.pdf"
-  },
-  {
-    "id": "2607.02490",
-    "title": "Visually Grounded Self-Reflection for Vision-Language Models via Reinforcement Learning",
-    "authors": "Liyan Tang, Fangcong Yin, Greg Durrett",
+    "id": "2607.02007",
+    "title": "EduArt: An educational-level benchmark for evaluating art history knowledge in large language models",
+    "authors": "Gianmarco Spinaci, Lukas Klic, Giovanni Colavizza",
     "published": "2026-07-02",
     "category": "multimodal",
     "categories": [
@@ -85,67 +117,95 @@ window.PAPERS = [
       "benchmark",
       "multimodal"
     ],
-    "summaryKo": "시각-언어 모델의 자기 반성 능력을 향상시키기 위해 경로 마스킹과 경험 재생 버퍼를 활용한 강화 학습 프레임워크 VRRL을 제안하며, 분포 외 정확도를 크게 개선하였다.",
+    "summaryKo": "본 논문은 미술사 지식과 시각적 추론을 평가하기 위해 인간이 작성한 질문으로 구성된 교육 수준의 벤치마크 EduArt를 소개하며, 다양한 형식 평가를 통해 언어 모델의 성능이 형식에 크게 의존함을 밝히고 단일 형식 벤치마크의 한계를 지적한다.",
     "detail": {
-      "problem": "기존 대규모 시각-언어 모델은 자기 반성 과정에서 시각 입력을 제대로 활용하지 못하여, 특히 분포 외 이미지에 대해 오류를 효과적으로 수정하지 못하는 문제가 있다.",
-      "method": "VRRL은 강화 학습 기반 훈련 프레임워크로, 무작위 경로 접두사 마스킹을 통해 중간 예측 오류로부터의 회복을 강조하고, 경험 재생 버퍼를 활용하여 다양한 실패 상황에 노출시킴으로써 시각적 근거에 기반한 자기 반성을 유도한다.",
-      "takeaway": "VRRL은 표준 강화 학습 및 반성 지향 미세 조정 기준선보다 분포 외 정확도를 크게 향상시켰으며, 특히 표와 차트가 포함된 시각적 근거 과제와 공간 탐색 벤치마크에서 효과를 입증했다."
+      "problem": "기존 미술 분야 평가는 합성 질문에 의존하고 항목 수준의 특성을 보고하지 않으며, 일반 벤치마크만으로는 학문 분야 내에서의 모델 행동을 세부적으로 파악하기 어렵다.",
+      "method": "EduArt는 871개의 인간 작성 질문으로 구성된 교육 수준의 벤치마크로, 두 언어와 일곱 가지 형식을 포함하며 12개 모델을 답변 전용 조건과 동기 부여 조건에서 평가하고 고전 검사 이론과 로지스틱 회귀를 사용하여 특성을 분석한다.",
+      "takeaway": "EduArt는 강력한 심리측정 특성을 보였으나, 다중 선택 정확도는 여러 모델에서 포화 상태였고 형식이 정확도의 강력한 예측 변수였다. 동기 부여 조건은 주로 부정적인 영향을 미쳤으며, 이는 미술사 지식과 그 활용 능력이 별개의 능력임을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.02490v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02490v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02007v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02007v1.pdf"
   },
   {
-    "id": "2607.01829",
-    "title": "Pre-Flight: A Benchmark for Evaluating Large Language Models on Aviation Operational Knowledge",
-    "authors": "Alex Brooker, Tim Hughes",
+    "id": "2607.01647",
+    "title": "AgenticDataBench: A Comprehensive Benchmark for Data Agents",
+    "authors": "Zhaoyan Sun et al.",
     "published": "2026-07-02",
     "category": "llm",
     "categories": [
+      "cs.DB",
       "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "대형 언어 모델의 항공 운영 지식을 평가하기 위해 300문항의 객관식 벤치마크 Pre-Flight를 제시하고, 최신 모델도 전문가 수준(약 95%)에 크게 미치지 못하는 82.7%의 정확도를 보임을 실험으로 보인다.",
-    "detail": {
-      "problem": "일반 목적 벤치마크는 항공 운영 특화 지식에 대한 모델의 안전하고 정확한 추론 능력을 측정하지 못하며, 규제가 엄격하고 안전이 중요한 항공 분야에서 이는 심각한 격차로 작용한다.",
-      "method": "국제 표준과 공항 지상 운영 자료에서 300개의 객관식 문제를 추출하고, 항공 교통 관리, 지상 운영, 상업 비행 경험을 가진 실무자가 문제를 작성 및 검토한 오픈소스 벤치마크 Pre-Flight를 구축하여 Inspect 평가 프레임워크로 다양한 LLM을 평가한다.",
-      "takeaway": "2026년 출시된 최신 모델이 82.7%를 기록한 반면, 컨퍼런스에서 항공 전문가를 대상으로 한 낮은 표본 퀴즈에서 얻은 비공식 전문가 기준은 약 95%로 상당한 차이가 지속되며, 이는 안전 중요도가 낮은 항공 운영에서도 생성형 AI의 책임 있는 배포를 위해 도메인 특화 평가가 필수적임을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.01829v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.01829v1.pdf"
-  },
-  {
-    "id": "2607.02469",
-    "title": "TestEvo-Bench: An Executable and Live Benchmark for Test and Code Co-Evolution",
-    "authors": "Jiale Amber Wang, Kaiyuan Wang, Pengyu Nie",
-    "published": "2026-07-02",
-    "category": "llm",
-    "categories": [
-      "cs.SE",
-      "cs.AI",
-      "cs.CL"
+      "cs.CL",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
       "agents",
       "generation"
     ],
-    "summaryKo": "TestEvo-Bench는 실제 커밋 기록과 실행 기반 평가를 제공하는 테스트-코드 공진화 벤치마크로, 최신 에이전트가 높은 성공률을 보이나 최근 작업과 제한된 비용에서는 성능이 저하된다는 한계를 드러냈다.",
+    "summaryKo": "LLM 기반 데이터 에이전트를 종합적으로 평가하기 위해, 다양한 도메인과 세분화된 실제 데이터 및 스킬 기반 태스크로 구성된 AgenticDataBench 벤치마크를 제안한다.",
     "detail": {
-      "problem": "기존 벤치마크는 코드 변경에서 테스트를 분리하고 정적 메타데이터에 의존하여, 테스트 자동화 에이전트가 코드 변경을 테스트 스위트에 어떻게 반영해야 하는지 이해하는지 평가하기 어렵다.",
-      "method": "TestEvo-Bench는 소프트웨어 저장소에서 마이닝한 공진화 작업을 기반으로 테스트 생성과 업데이트 두 트랙을 제공하며, 실제 커밋 기록에 환경 설정을 포함시켜 통과율, 커버리지, 변형 점수 등 실행 기반 지표로 평가한다. 또한 각 작업의 타임스탬프를 기록하고 정기적으로 새로운 작업을 추가하여 데이터 유출 위험을 줄인다.",
-      "takeaway": "네 가지 최신 에이전트 실험 결과, 테스트 생성에서 최대 77.5%, 업데이트에서 74.6%의 성공률을 기록했으나, 가장 최근 작업에서는 성공률이 현저히 낮았고 제한된 비용 하에서는 크게 감소했다."
+      "problem": "데이터 과학 자동화에 LLM 기반 데이터 에이전트가 유망하지만, 다양한 시나리오와 세분화된 수준에서 이들을 평가할 수 있는 종합적인 벤치마크가 부재하다.",
+      "method": "15개 수직 도메인의 실제 태스크와 Stack Overflow에서 추출한 데이터 과학 스킬을 활용하여 중복을 제거하고, 부족한 도메인을 위해 LLM 기반 태스크 생성을 적용하였으며, 스킬 구성의 다양성을 극대화하는 태스크를 선정하여 벤치마크를 구축하고 최신 데이터 에이전트를 평가하였다.",
+      "takeaway": "평가를 통해 데이터 에이전트의 세분화된 스킬 수준 성능 인사이트를 도출하였으며, 벤치마크와 테스트베드를 오픈소스로 공개하였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.02469v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02469v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.01647v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.01647v1.pdf"
   },
   {
-    "id": "2607.02018",
-    "title": "UnderOneFacade: Worldwide Facade Semantic Segmentation Benchmark Dataset",
-    "authors": "Yi Wang et al.",
+    "id": "2607.01883",
+    "title": "PairCoder++: Pair Programming as a Universal Paradigm for Verified Code-Driven Multimodal and Structured-Artifact Generation",
+    "authors": "Junhao Chen et al.",
+    "published": "2026-07-02",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "3d",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "PairCoder는 코드를 통해 구조화된 아티팩트를 생성하는 과정에서 도구 체인(컴파일러, 렌더러, 시뮬레이터)의 피드백을 활용하는 두 에이전트 쌍 프로그래밍 프레임워크로, 17개 공개 벤치마크에서 검증 가능한 아티팩트의 성능을 향상시켰다.",
+    "detail": {
+      "problem": "구조화된 아티팩트(차트, 과학적 그림, 벡터 그래픽, CAD 모델, 3D 장면 등)는 코드를 통해 생성되지만, 단일 패스 추론은 취약하다. 그 이유는 아티팩트의 존재 여부를 결정하는 컴파일러, 렌더러, 시뮬레이터와 같은 도구 체인이 모델에 보이지 않기 때문이다.",
+      "method": "PairCoder는 두 에이전트(Driver와 Navigator)가 쌍 프로그래밍을 수행하는 방법을 제안한다. Driver가 코드를 작성하고 Navigator가 진단, 실행 결과, 대상과 현재 아티팩트의 렌더링 등 검증 증거를 바탕으로 코드를 검토하며, 오류가 지속되면 역할을 교체한다.",
+      "takeaway": "3개 공급업체의 7개 모델과 17개 벤치마크에서 PairCoder는 실행 가능성뿐만 아니라 전체 공식 평가 지표에서 검증 가능한 거의 모든 벤치마크의 성능을 향상시켰다(예: Blender 장면 실행 가능성 0.20→0.78, TikZ 컴파일률 모든 모델에서 10~30포인트 상승). 비용은 단일 모델의 2.9~9.2배(전체 약 7배)이며, 향상은 도구 체인이 유익한 오라클을 제공하고 기준선에 여유가 있을 때 집중되고, 오라클이 약한 경우 동등하거나 약간 후퇴한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.01883v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.01883v1.pdf"
+  },
+  {
+    "id": "2607.02032",
+    "title": "PACE: A Proxy for Agentic Capability Evaluation",
+    "authors": "Yueqi Song et al.",
+    "published": "2026-07-02",
+    "category": "llm",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "code-generation",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 비용이 많이 드는 LLM 에이전트 벤치마크 평가를 대신하여, 기존의 비에이전트 평가 인스턴스 중에서 선별된 소수의 원자적 평가로 구성된 대리 벤치마크를 통해 에이전트 성능을 정확히 예측하는 PACE 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "SWE-Bench, GAIA와 같은 에이전트 벤치마크 평가는 막대한 비용과 시간이 소요되며 복잡한 인프라가 필요하다.",
+      "method": "PACE는 기존의 비에이전트 평가 인스턴스 풀에서 에이전트 벤치마크 점수를 가장 잘 예측하는 소규모 부분 집합을 선택하여 대리 벤치마크를 구축하며, 대상 관련성 지역 선택과 전역 정보 전역 선택이라는 두 가지 보완적 인스턴스 선택 전략을 결합한다.",
+      "takeaway": "14개 모델, 4개 에이전트 벤치마크, 19개 비에이전트 벤치마크 실험에서 PACE-Bench는 전체 에이전트 평가 비용의 1% 미만으로 예측 평균 절대 오차 4% 미만, 스피어만 상관계수 0.80 이상, 쌍별 순위 정확도 약 85%를 달성했다. 이는 전체 에이전트 평가 없이도 모델 개발, 선택, 라우팅 시 신뢰할 수 있는 성능 추정을 가능하게 하지만, 완전한 평가가 아닌 근사치라는 한계가 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02032v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02032v1.pdf"
+  },
+  {
+    "id": "2607.02074",
+    "title": "Comprehensive Robustness Analysis of LiDAR-based 3D Object Detection in Autonomous Driving",
+    "authors": "Adwait Chandorkar et al.",
     "published": "2026-07-02",
     "category": "cv",
     "categories": [
@@ -153,69 +213,46 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "3d"
+      "3d",
+      "autonomous-driving",
+      "detection"
     ],
-    "summaryKo": "UnderOneFacade는 27억 개의 주석 포인트로 구성된 대규모 다국적 3D 파사드 분할 벤치마크로, 현재 모델들이 미세 건축 요소 인식과 지리적 일반화에 어려움을 겪고 있음을 입증한다.",
+    "summaryKo": "LiDAR 기반 3D 객체 탐지 모델의 적대적 강건성을 구조적 및 예측적 요인으로 평가하는 종합적 프레임워크를 제안하고, 최신 모델도 여전히 취약함을 실증적으로 보여준다.",
     "detail": {
-      "problem": "기존 파사드 분할 데이터셋은 지리적 범위가 좁고, 의미 체계가 일관되지 않으며 정밀도가 부족하여 전역적으로 일반화 가능한 3D 분할 모델 개발을 저해한다.",
-      "method": "센티미터 정밀도의 포인트 클라우드에 계층적이고 조화된 건축 기반 의미 레이블을 부여한 2.7B 포인트 규모의 UnderOneFacade 데이터셋을 구축하고, 대표적인 포인트·그래프·트랜스포머 기반 모델을 체계적으로 평가한다.",
-      "takeaway": "최고 성능 모델도 LoFG3 세부 벤치마크에서 IoU 33에 그쳐 미세 요소 인식과 지역 간 일반화에 한계를 보이며, 데이터셋과 평가 코드, 사전 학습 모델은 출판 시 공개 예정이다."
+      "problem": "LiDAR-only 3D 객체 탐지 모델의 적대적 강건성 연구가 부족하고, 기존 평가는 mAP만 사용하여 구조적·예측적 요소를 간과한다.",
+      "method": "점군 밀도와 위치(구조적 요인), 오분류, 위치 오차, 자차 거리(예측적 요인)를 포함한 평가 프레임워크를 제안하고, 최신 및 레거시 모델에 대해 적대적 공격을 수행하여 실증 분석을 진행한다.",
+      "takeaway": "고용량 복셀 기반 검출기가 Pillar 기반보다 구조적 좌표 교란에 더 취약하고, 비앵커 기반 검출기의 강건성이 낮아 학습 기법 재고가 필요하다. 최신 모델도 이전 모델과 유사한 취약성을 보여, 강건성을 고려한 평가 벤치마크 개선이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.02018v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02018v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02074v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02074v1.pdf"
   },
   {
-    "id": "2607.02045",
-    "title": "PWM-ArtGen: Part World Model for Articulated Object Generation",
-    "authors": "Wentao Zheng, Ancong Wu",
+    "id": "2607.02099",
+    "title": "X-Splat: Gaussian Splatting for 3D CBCT Generation from Single Panoramic Radiograph",
+    "authors": "Tomasz Szczepański et al.",
     "published": "2026-07-02",
     "category": "cv",
     "categories": [
       "cs.CV"
     ],
     "tags": [
-      "diffusion",
       "3d",
       "benchmark",
       "generation"
     ],
-    "summaryKo": "단일 이미지에서 관절체 3D 객체 생성 시 운동학적 구조 예측 문제를 해결하기 위해, 시각적 역학과 운동학적 매개변수의 결합 분포를 학습하는 통합 Part World Model인 PWM-ArtGen을 제안하고, 독립적 확산 타임스텝으로 액션 확산과 이미지 확산을 결합하여 주석 없는 데이터를 활용하며, 19.7k 쌍의 데이터셋을 구축하여 기존 방법 대비 우수한 성능과 제로샷 일반화를 달성했다.",
+    "summaryKo": "X-Splat은 단일 파노라마 방사선사진에서 3D 치과 CBCT 체적을 생성하기 위해 가우시안 스플래팅을 도입한 최초의 프레임워크로, 기존 방법보다 우수한 해부학적 재구성 성능을 달성한다.",
     "detail": {
-      "problem": "단일 이미지에서 관절체 3D 객체 생성의 주요 과제는 기저의 운동학적 구조를 정확히 예측하는 것이다. 기존 방법은 정적 이미지에서 운동학적 매개변수를 직접 추론하거나 시각적 역학을 생성하여 추정하는 두 단계 접근법을 사용하는데, 이는 동적 관계 부재 또는 오차 누적 문제가 있으며, 주석 데이터의 규모와 다양성 부족으로 복잡한 실제 객체로의 일반화가 제한된다.",
-      "method": "본 논문에서는 시각적 역학과 운동학적 매개변수의 결합 분포를 학습하는 통합 Part World Model인 PWM-ArtGen을 제안한다. 이 모델은 독립적인 확산 타임스텝으로 액션 확산과 이미지 확산을 결합하여 시각적 분기의 공동 학습을 가능하게 하며, 운동학적 주석이 없는 19.7k 쌍의 포토리얼리스틱 데이터셋을 추가로 구축하여 활용한다.",
-      "takeaway": "PWM-ArtGen은 정지 상태에서 기존 기준 모델들을 크게 능가하며, 분포 외 객체에 대해 강력한 제로샷 일반화를 보여준다."
+      "problem": "단일 PXR에서 3D 치과 체적을 생성하는 것은 파노라마 획득 시 3D 감쇠 정보가 2D로 통합되어 깊이 해상도가 손실되는 과소결정 문제이며, 기존 NeRF 또는 GAN 기반 방법은 과도하게 평활화된 형상이나 해부학적으로 일관성 없는 환영을 생성하는 한계가 있다.",
+      "method": "X-Splat은 알려진 파노라마 획득 형상을 생성 발판으로 사용하여 학습 가능한 비등방성 가우시안 프리미티브를 X-선 경로를 따라 초기화하고, 단일 피드포워드 패스에서 Beer-Lambert 법칙 기반 재투영 및 다중 시점 방사선학적 감독으로 조정한다. 이후 경량 잔차 리파이너가 데이터셋 수준의 해부학적 사전 지식을 추가한다.",
+      "takeaway": "X-Splat은 NeRF 및 GAN 기반 베이스라인을 능가하며, 이전 방법이 재구성하지 못한 하악관을 포함하여 개별 치아, 피질 경계, 치조 구조를 복원한다. 최초로 PXR 기반 생성의 악안면 해부학 평가를 수행했으며, 합성 데이터로 훈련되었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.02045v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02045v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02099v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02099v1.pdf"
   },
   {
-    "id": "2607.02055",
-    "title": "Beyond the Performance Illusion: Structure-Aware Stratified Partitioning and Curriculum Distributionally Robust Optimization for Spatially Correlated Domains",
-    "authors": "Prathamesh Patil, Arpit Jain, Aswanth Krishnan",
-    "published": "2026-07-02",
-    "category": "cv",
-    "categories": [
-      "cs.LG",
-      "cs.AI",
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "medical"
-    ],
-    "summaryKo": "시공간 상관 도메인에서 기존 무작위 데이터 분할의 문제를 지적하고, 구조 인식 계층화 분할(SASP)과 커리큘럼 분포 강건 최적화(CDRO)를 통해 일반화 성능과 신뢰도 보정을 개선하는 통합 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "시공간적으로 상관된 도메인(항공 감시, 정밀 농업, 의료 영상 등)에서 무작위 데이터 분할이 독립 항등 분포 가정을 위반하여 데이터 누수와 은닉 계층화 문제를 일으킨다.",
-      "method": "구조 인식 계층화 분할(SASP)을 통해 시공간 누수를 줄이고 클래스 균형을 유지하는 검증 분할을 생성하고, 커리큘럼 분포 강건 최적화(CDRO)를 통해 엄격한 분할 하에서 최적화를 안정화시키는 통합 프레임워크를 제안한다.",
-      "takeaway": "여러 벤치마크에서 일반화 성능이 향상되고 신뢰도 보정이 개선되었으며, 기존 무작위 분할 평가에서는 숨겨져 있던 실패 모드가 드러났다. 논문에서 명시적인 한계는 언급되지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.02055v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02055v1.pdf"
-  },
-  {
-    "id": "2607.02091",
-    "title": "Multimodal Fusion for Fine-Grained Classification of Breast Fibroadenoma and Phyllodes Tumors",
-    "authors": "Chuxi Nan et al.",
+    "id": "2607.02220",
+    "title": "DetailAnywhere: Fashion Detail Generation via Cross-Modal Feature Alignment Distillation",
+    "authors": "Zijun Li et al.",
     "published": "2026-07-02",
     "category": "cv",
     "categories": [
@@ -223,68 +260,46 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 유방 섬유선종과 엽상종양의 미세 분류를 위해 초음파 영상, 임상 속성, 진단 기술을 결합한 다중 모달 융합 프레임워크를 제안하고, FAPT-M 데이터셋을 구축하여 기존 방법보다 우수한 성능을 달성했다.",
-    "detail": {
-      "problem": "유방 섬유선종(FA)과 엽상종양(PT)은 B 모드 초음파에서 영상이 매우 유사하여 양성 및 경계성 PT가 FA로 오분류되기 쉬우며, 기존 컴퓨터 보조 진단 방법은 단일 모달 영상 특징에 의존하여 임상 및 텍스트 정보를 충분히 활용하지 못한다.",
-      "method": "이를 해결하기 위해 910명의 환자로 구성된 FAPT-M 데이터셋을 구축하고, DenseNet 기반 시각 인코딩, CLIP 기반 텍스트 인코딩, 경량 임상 인코딩을 통합한 프레임워크를 제안한다. 또한 임상 조건부 적응 변조, 교차 모달 트랜스포머 융합, 이중 경로 표현 학습을 도입하여 특징 정렬과 다중 모달 상호작용을 개선한다.",
-      "takeaway": "환자 수준 5겹 교차 검증에서 정확도 77.64%, F1 점수 73.38%, AUC 89.74%를 달성하여 CNN, 트랜스포머, 비전-언어 기반 베이스라인을 능가했다. 소거 연구와 클래스 균형 평가는 세 가지 모달리티 융합의 기여와 주요 구성 요소의 중요성을 확인했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.02091v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02091v1.pdf"
-  },
-  {
-    "id": "2607.02127",
-    "title": "Population-Scale Segmentation of Penile Tissue in DIXON MRI using Deep Learning for Quantitative Phenotyping in Male Reproductive Health",
-    "authors": "Jan Ernsting et al.",
-    "published": "2026-07-02",
-    "category": "cv",
-    "categories": [
-      "eess.IV",
-      "cs.CV",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "3d"
-    ],
-    "summaryKo": "이 논문은 심층 학습을 이용해 DIXON MRI에서 음경 조직을 인구 규모로 자동 분할하는 방법을 제시하며, UK Biobank 참가자 34,412명에 적용하여 높은 정확도와 재현성을 입증했다.",
-    "detail": {
-      "problem": "음경 크기 평가는 주로 외부 길이나 둘레 측정에 의존해 왔으며, 내부 부분을 평가할 수 없고 표준화가 어렵다. MRI로 전체 음경을 평가할 수 있지만, 인구 규모의 자동 분할 방법은 이전에 확립되지 않았다.",
-      "method": "전문가 주석 데이터셋(n=145, 13,050 슬라이스)을 구축하고 3D nnU-Net을 최적화하여 다채널 DIXON MRI에서 전체 음경을 분할하는 딥러닝 프레임워크를 개발했다. 독립 테스트셋에서 Dice 0.92, Hausdorff 거리 3.58의 성능을 보였으며, UK Biobank 34,412명에 적용하여 종단 평가에서 높은 재현성(r=0.87)을 확인했다.",
-      "takeaway": "자동화된 전체 음경 분할이 인구 규모에서 가능함을 보였고, 모델 가중치를 공개하여 추후 비뇨기 영상 및 남성 생식 건강 연구에 기여할 수 있다. 제한점으로는 DIXON MRI에 특화되어 있으며, 다른 인구 집단이나 MRI 시퀀스에 대한 일반화 검증이 추가로 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.02127v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02127v1.pdf"
-  },
-  {
-    "id": "2607.02479",
-    "title": "EAGLE-360: Embodied Active Global-to-Local Exploration in 360$^\\circ$",
-    "authors": "Jingtao Xu et al.",
-    "published": "2026-07-02",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
+      "diffusion",
       "multimodal",
-      "benchmark",
-      "detection"
+      "generation"
     ],
-    "summaryKo": "EAGLE-360은 360° 파노라마 환경에서 능동적 시각 탐색을 위해 전역-지역 탐색 프레임워크를 제안하며, 기존 방법 대비 정확도가 약 8배 향상되고 탐색 효율성이 크게 개선된 새로운 최첨단 성능을 달성했다.",
+    "summaryKo": "본 논문은 패션 디테일 생성 작업을 공식화하고 벤치마크(FDBench)를 구축하였으며, 교차 모달 특징 정렬 증류(CFAD)를 통해 최첨단 성능을 달성한 DetailAnywhere 모델을 제안한다.",
     "detail": {
-      "problem": "기존 MLLM은 파노라마의 극 왜곡과 연속적인 원통형 토폴로지를 효과적으로 모델링하지 못하여 표적 탐지 정확도가 저하되고, 단편적인 지역 시점에 의존하는 기존 방법은 전역 파노라마 사전 정보 부족으로 근시안적이고 비효율적인 탐색과 오류 복구에 어려움을 겪는다.",
-      "method": "EAGLE-360은 전역 사전 정보를 활용하여 초기 전체적 관점을 수립하고 반복적으로 추론하며 탐색 공간을 점진적으로 축소한다. 또한 RoPE Rolling 위치 인코딩을 적용하여 파노라마의 연속적 토폴로지를 모델링하고, SFT와 GRPO를 통합한 훈련 파이프라인을 통해 복잡한 공간 추론과 도구 호출 능력을 효과적으로 유도한다.",
-      "takeaway": "제안 방법은 360° 시각 탐색에서 새로운 최첨단 성능을 수립하며, 기본 모델 대비 정확도가 약 8배 향상되고 탐색 효율성이 크게 개선되었다."
+      "problem": "소비자는 의류 구매 시 특정 부위(칼라, 소매, 직물 질감 등)를 자세히 확인하기 원하지만, 기존 생성 모델은 이러한 설정을 명시적으로 다루지 않았으며, 제품 참조 이미지의 포커스 마커와 해당 부위의 사실적인 클로즈업 뷰 사이의 의미적 대응 관계를 정밀한 프롬프트 없이 연결해야 하는 독특한 문제가 있다.",
+      "method": "제안하는 CFAD는 미세 조정된 DINOv3 교사 모델을 이용하여 멀티모달 확산 트랜스포머의 두 분기를 공유 의미 공간에 정렬하는 이중 분기 증류를 수행하고, 생성된 디테일과 참조 이미지 간의 일관성을 개선하기 위해 세 가지 품질 축으로 이미지 쌍을 평가하는 일관성 보상 모델을 통해 강화 학습으로 최적화한다.",
+      "takeaway": "DetailAnywhere는 모든 평가 지표와 인간 평가에서 모든 최신 오픈소스 방법들을 크게 능가했으며, 41개 카테고리에 걸쳐 40K 이상의 검증된 참조-디테일 쌍을 포함하는 첫 번째 벤치마크 FDBench를 공개했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.02479v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.02479v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.02220v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02220v1.pdf"
+  },
+  {
+    "id": "2607.02269",
+    "title": "AnyGroundBench: A Specialized-Domain Benchmark for Video Grounding in Vision-Language Models",
+    "authors": "Rintaro Otsubo et al.",
+    "published": "2026-07-02",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video"
+    ],
+    "summaryKo": "AnyGroundBench는 시공간 비디오 그라운딩의 평가 패러다임을 제로샷에서 도메인 적응으로 전환하기 위해 제안된 벤치마크로, 다섯 가지 전문 분야에서 15개의 최신 VLM을 평가한 결과 이들 모델이 제로샷 및 맥락 내 학습 기반 적응 모두에서 실패함을 밝혔다.",
+    "detail": {
+      "problem": "현재 STVG 평가는 일반 생활 데이터셋에서의 제로샷 평가에 한정되어 있어, 전문 분야에서 발생하는 희소한 시각 개념과 복잡한 시공간 역학을 반영하지 못한다. 따라서 도메인 적응 능력을 측정할 수 있는 평가 체계가 필요하다.",
+      "method": "AnyGroundBench는 다섯 가지 전문 분야(동물, 산업, 스포츠, 수술, 공공 안전)를 대상으로 하며, 새로 촬영한 비디오와 기존 데이터셋을 결합하고 고밀도 시공간 주석과 훈련용 하위 집합을 제공하여 도메인 적응성을 체계적으로 측정한다.",
+      "takeaway": "15개 최신 VLM을 평가한 결과, 전문 분야에 대한 제로샷 및 맥락 내 학습 기반 적응 모두에서 실패함을 보여주었으며, 이는 시공간 추론의 근본적인 한계를 드러낸다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.02269v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.02269v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-05T04:18:04.276Z",
+  "collectedAt": "2026-07-06T04:26:54.671Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
