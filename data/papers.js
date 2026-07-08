@@ -3,309 +3,305 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.05311",
-    "title": "Deep Learning for Semen Analysis in Male Infertility: Computer Vision, Multimodal Fusion, and Clinical Translation",
-    "authors": "Runwei Guan et al.",
+    "id": "2607.05614",
+    "title": "BaFCo: A Document Understanding Benchmark for Complex Bangla Form Comprehension",
+    "authors": "Abu Tyeb Azad et al.",
     "published": "2026-07-06",
-    "category": "cv",
+    "category": "multimodal",
     "categories": [
+      "cs.CL",
+      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "privacy",
-      "video",
-      "multimodal",
-      "detection"
+      "multimodal"
     ],
-    "summaryKo": "이 리뷰 논문은 남성 불임 진단을 위한 정자 분석에서 딥러닝과 컴퓨터 비전 기술의 적용 현황과 다중 모달 융합 및 임상적 전환 과제를 종합적으로 제시한다.",
+    "summaryKo": "이 논문은 방글라어 문서 이해를 위한 벤치마크 데이터셋 BaFCo를 소개하고, 최신 멀티모달 대규모 언어 모델의 방글라 양식 이해 능력의 한계를 평가한다.",
     "detail": {
-      "problem": "전통적인 정자 분석은 노동 집약적이고 운영자 의존적이며 관찰자 간 변동성이 커서 객관적이고 재현 가능한 계산 접근법이 필요하다.",
-      "method": "정자 검출, 운동성 평가, 형태 분류 등 작업별 딥러닝 방법을 검토하고, 공개 데이터셋, 벤치마크, 다중 모달 융합 전략과 함께 데이터 부족, 도메인 변화, 주석 불일치 등의 배치 장벽을 논의한다.",
-      "takeaway": "이 리뷰는 AI 기반 정자 분석의 발전과 임상 전환을 위한 표준화, 검증, 규제 승인 등 해결되지 않은 과제를 강조한다."
+      "problem": "저자원 언어인 방글라어의 문서 이해 연구는 고품질 주석 데이터의 부족으로 제한적이다. 본 연구는 이러한 격차를 해소하기 위해 BaFCo 데이터셋을 제안한다.",
+      "method": "BaFCo는 농업, 교육, 금융, 토지 관리 등 다양한 분야의 방글라데시 정부 양식 200개를 수집하고, 26개의 세부 엔티티 유형과 5개의 대분류 엔티티 유형으로 구성된 주석 스키마를 정의한다. 최신 MLLM들을 제로샷 및 사고 사슬 프롬프트로 평가한다.",
+      "takeaway": "평가 결과, 현재의 MLLM들은 방글라 양식 이해, 특히 세부 엔티티 위치 파악에 한계가 있음이 드러났다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.05311v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05311v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.05614v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.05614v1.pdf"
   },
   {
-    "id": "2607.04433",
-    "title": "Autonomous Information Seeking: A Roadmap for Agentic Recommender Systems",
-    "authors": "Xinyu Lin et al.",
-    "published": "2026-07-05",
-    "category": "llm",
+    "id": "2607.05956",
+    "title": "Integrating knowledge graphs and multilingual scholarly corpora for domain-adaptive LLMs in SSH",
+    "authors": "Adam Faci et al.",
+    "published": "2026-07-07",
+    "category": "multimodal",
     "categories": [
-      "cs.IR",
+      "cs.AI",
       "cs.CL"
-    ],
-    "tags": [
-      "agents",
-      "privacy",
-      "autonomous-driving",
-      "multimodal",
-      "survey"
-    ],
-    "summaryKo": "이 논문은 대규모 언어 모델 기반 에이전트를 추천 시스템에 통합하는 최신 연구를 포괄적으로 개관하며, 자율성 수준에 따른 분류 체계와 세 가지 핵심 패러다임을 제시하고, 평가 방법론 및 해결되지 않은 과제를 논의한다.",
-    "detail": {
-      "problem": "기존의 정적이고 순위 기반인 추천 시스템에서 벗어나 자율적이고 상호작용적인 에이전트 기반 추천 시스템으로의 전환을 체계적으로 이해하고 분류할 필요성이 제기되었다.",
-      "method": "자율성 수준에 기반한 분류 체계와 세 가지 패러다임(에이전트 지원 추천, 에이전트 자체 추천, 에이전트 사용자 시뮬레이터)을 제시하고, 각 패러다임의 아키텍처와 평가 방법론을 분석하며, 개방형 과제를 논의한다.",
-      "takeaway": "에이전트 추천 시스템에 대한 통일된 기반을 제공하고 자율적이고 신뢰할 수 있는 추천 에이전트 개발을 위한 기회를 제시하나, 평가 방법론은 추론 품질, 사용자 경험, 시스템 동작 포착에 한계가 있으며 궤적 수준 평가, 에이전트 기여도 분석, 사용자 시뮬레이션 보정 등의 과제가 남아있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.04433v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.04433v1.pdf"
-  },
-  {
-    "id": "2607.05352",
-    "title": "Multiplayer Interactive World Models with Representation Autoencoders",
-    "authors": "Anthony Hu et al.",
-    "published": "2026-07-06",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "tags": [
-      "diffusion",
-      "agents",
-      "video",
-      "benchmark"
-    ],
-    "summaryKo": "본 논문은 매우 동적인 다중 에이전트 환경을 위한 최초의 멀티플레이어 세계 모델을 제안하며, 50억 파라미터 잠재 확산 모델을 통해 실시간으로 안정적인 장기 롤아웃을 달성하고 설계 선택 및 스케일링에 따른 행동 변화를 분석한다.",
-    "detail": {
-      "problem": "기존의 단일 에이전트 세계 모델은 다른 에이전트를 환경의 일부로 취급했지만, 본 연구는 다중 에이전트 환경에서 각 플레이어의 행동 스트림에 조건화하여 장면 변화를 올바른 플레이어에게 귀속시키고 임의의 행동 조합에서 일관성을 유지하는 멀티플레이어 세계 모델을 필요로 한다.",
-      "method": "10000시간의 Rocket League 게임 플레이 데이터(공개 봇 수집)로 훈련된 50억 파라미터 잠재 확산 모델을 사용하여 단일 Nvidia B200 GPU에서 초당 20프레임으로 4인 경기를 실시간 생성하며, 비디오 코덱, 생성 목적 함수, 멀티플레이어 조건화 방식 등의 설계 선택을 체계적으로 조사한다.",
-      "takeaway": "짧은 클립으로 훈련되었음에도 롤아웃이 훈련 시간을 크게 초과하여 안정적으로 유지되며(최소 5분, 실제로는 수 시간), 모델 및 데이터 규모에 따른 행동 변화와 물리적 이해를 평가하는 평가 지표를 개발했다. 데이터셋, 전체 훈련 및 추론 코드베이스, 라이브 데모를 공개한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05352v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05352v1.pdf"
-  },
-  {
-    "id": "2607.04425",
-    "title": "UI-MOPD: Multi-Platform On-Policy Distillation for Continual GUI Agent Learning",
-    "authors": "Niu Lian et al.",
-    "published": "2026-07-05",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.CV",
-      "cs.LG",
-      "cs.MM"
-    ],
-    "tags": [
-      "agents",
-      "multimodal",
-      "benchmark"
-    ],
-    "summaryKo": "UI-MOPD는 다중 플랫폼 GUI 에이전트의 지속적 학습을 위해 멀티 티처 온-폴리시 증류를 도입하여 플랫폼별 행동 사전을 공유 정책으로 전이하고, 기존 플랫폼 능력을 유지하면서 새 플랫폼에 적응하는 방법이다.",
-    "detail": {
-      "problem": "고품질 크로스 플랫폼 인터랙션 궤적의 부족과 플랫폼별 상이한 인터랙션 관습으로 인해 공동 학습에서 행동 패턴 혼합 및 파국적 망각 등이 발생하는 문제를 해결하고자 한다.",
-      "method": "고품질 크로스 플랫폼 GUI 데이터셋 Uni-GUI를 구축하고, 멀티 티처 온-폴리시 증류를 연속 학습에 도입한 UI-MOPD를 제안한다. UI-MOPD는 환경에 따라 플랫폼별 티처를 동적으로 선택하고 플랫폼 조건부 증류를 통해 행동 사전을 공유 정책으로 전이하여 기존 능력 유지와 새 플랫폼 적응을 동시에 달성한다.",
-      "takeaway": "OSWorld와 MobileWorld 실험에서 각각 38.2%와 12.0%의 작업 성공률을 기록하여 교차 플랫폼 능력 유지와 새 플랫폼 적응의 균형에서 효과적임을 입증했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.04425v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.04425v1.pdf"
-  },
-  {
-    "id": "2607.05196",
-    "title": "Unified Audio Intelligence Without Regressing on Text Intelligence",
-    "authors": "Zhifeng Kong et al.",
-    "published": "2026-07-06",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG",
-      "cs.SD",
-      "eess.AS"
-    ],
-    "tags": [
-      "agents",
-      "embedding",
-      "multimodal",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "Audex는 텍스트 전용 MoE LLM을 기반으로 단일 트랜스포머 디코더를 사용하여 오디오와 텍스트를 통합적으로 처리하며, 텍스트 성능 저하 없이 다양한 오디오 작업에서 최첨단 성능을 달성한 통합 오디오-텍스트 LLM이다.",
-    "detail": {
-      "problem": "오디오 지능(오디오/음성 이해, 추론, 생성)을 위해서는 오디오와 텍스트 모달리티의 통합이 필요하지만, 통합 모델은 텍스트 성능을 저하시키는 경우가 많다. 본 연구는 텍스트 지능을 희생하지 않으면서 오디오 지능을 강화한 통합 오디오-텍스트 LLM을 개발하는 것을 목표로 한다.",
-      "method": "Audex는 강력한 텍스트 전용 MoE LLM(Nemotron-Cascade-2-30B-A3B) 위에 단일 트랜스포머 디코더 아키텍처를 사용하여 구축되었다. 오디오 입력을 인코딩하여 텍스트 임베딩 공간으로 투영하고, 텍스트 토큰과 양자화된 오디오 출력 토큰을 생성 시 일관되게 처리하며, 대규모 오디오-텍스트 데이터셋(1574억 오디오 토큰, 3205억 텍스트 토큰)을 사용한 다단계 지도 학습 후 텍스트 전용 Cascade RL 및 다중 도메인 온폴리시 증류를 적용하여 훈련되었다.",
-      "takeaway": "Audex는 오디오 이해, 음성 인식 및 번역, 텍스트-음성 변환, 오디오 생성, 음성-음성 생성에서 최첨단 성능을 제공하며, 텍스트 전용 LLM 백본의 추론, 정렬, 지식, 장문맥, 에이전트 기능을 거의 또는 전혀 저하시키지 않고 유지한다. 모델 체크포인트는 공개 연구를 위해 공개되었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05196v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05196v1.pdf"
-  },
-  {
-    "id": "2607.04872",
-    "title": "EventCoT: Event-centric Video Chain-of-thought for Reasoning Temporal Localization",
-    "authors": "Youngkil Song et al.",
-    "published": "2026-07-06",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "embedding"
-    ],
-    "summaryKo": "EventCoT는 추론적 시간적 위치 찾기를 위한 최초의 이벤트 중심 비디오 체인-오브-쏘트 프레임워크로, 이벤트 토큰화와 임베딩 매칭을 통해 소수의 시각 토큰으로 최고 성능을 달성했다.",
-    "detail": {
-      "problem": "추론적 시간적 위치 찾기(Reasoning Temporal Localization)는 답변 자체에 해당 시간 구간을 포함해야 하므로, 높은 수준의 추론과 정확한 시간 구간 파악을 동시에 수행해야 하는 어려운 과제이다.",
-      "method": "EventCoT는 먼저 입력 비디오를 이벤트 중심으로 토큰화하여 간결한 이벤트 토큰으로 변환하고, 질문 관련 이벤트를 효율적으로 식별한다. 그런 다음 식별된 이벤트 내에서 추론을 통해 답변을 생성하며, 플레이스홀더 토큰과 시각적 임베딩 간의 매칭을 통해 시간 구간을 정확히 지정한다.",
-      "takeaway": "EventCoT는 ActivityNet-RTL에서 최고 성능을 달성했으며, 이전 연구보다 훨씬 적은 시각 토큰을 사용한다. 또한 ReXTime 벤치마크에서 강력한 제로-샷 결과를 보여준다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.04872v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.04872v1.pdf"
-  },
-  {
-    "id": "2607.04912",
-    "title": "Graph Representation Learning of Longitudinal Medical Imaging Trajectories for Treatment Response Prediction",
-    "authors": "Johannes Kiechle et al.",
-    "published": "2026-07-06",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "3d",
-      "medical"
-    ],
-    "summaryKo": "유방암 환자의 신보조 항암화학요법에 대한 병리학적 완전 반응(pCR) 예측을 위해, 시점 간 관계 모델링과 자기지도 학습을 통합한 3D 시공간 그래프 신경망 프레임워크를 제안하고 ISPY-2 데이터셋에서 높은 성능을 보였다.",
-    "detail": {
-      "problem": "유방암 환자에서 신보조 항암화학요법에 대한 치료 반응은 환자마다 크게 달라 개인화된 예측 모델이 필요하지만, 효과적인 치료 결정을 내리는 것이 여전히 어렵다.",
-      "method": "본 연구는 종단적 DCE-MRI 데이터를 기반으로 시점 간의 관계를 모델링하는 그래프 신경망과 세 가지 새로운 자기지도 학습 목적 함수를 통합한 3D 시공간 프레임워크를 제안한다.",
-      "takeaway": "제안된 방법은 ISPY-2 데이터셋에서 여러 분류 지표에 걸쳐 비전 및 자기지도 학습 기준선을 크게 능가했으며, 시점 수와 스캔 간 시간 차이의 영향을 체계적으로 평가했다. 또한 코드와 데이터셋 큐레이션 라이브러리를 공개하여 재현 가능한 연구를 촉진할 예정이다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.04912v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.04912v1.pdf"
-  },
-  {
-    "id": "2607.05089",
-    "title": "TimeThink: Reasoning with Time for Video LLMs",
-    "authors": "Handong Li et al.",
-    "published": "2026-07-06",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "video"
-    ],
-    "summaryKo": "TimeThink은 비디오 언어 모델의 추론 과정에서 시간적 증거 발견을 명시적으로 안내하는 강화 학습 프레임워크이다.",
-    "detail": {
-      "problem": "기존 비디오 언어 모델은 강화 학습으로 추론 능력을 향상시켰으나, 최종 예측만 보상하는 결과 기반 보상을 사용하여 중간 추론 단계에서 시간적 증거를 발견하는 방법에 대한 지침이 부족하다.",
-      "method": "TimeThink은 각 추론 단계가 비디오의 후보 시간 구간을 참조하는 시간적 단서 단계를 기본 최적화 단위로 삼고, 단계별 시간적 과정 보상과 과정-결과 공동 최적화 목표를 도입한다. 또한 자동으로 시간적 증거 구간을 추출한 데이터셋 TimeThink-RFT-20K를 구축하여 확장 가능한 학습을 가능하게 한다.",
-      "takeaway": "비디오 추론, 시간적 근거 찾기, 일반 비디오 이해 벤치마크 실험에서 TimeThink은 시간적 위치 파악과 추론 성능을 모두 일관되게 개선하였으며, 오픈소스 비디오 강화 학습 모델 중 최첨단 성능을 달성했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05089v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05089v1.pdf"
-  },
-  {
-    "id": "2607.05263",
-    "title": "Learning Probabilistic Embeddings for Unsupervised Action Segmentation",
-    "authors": "Shuai Li, Duc Manh Vu, Juergen Gall",
-    "published": "2026-07-06",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "video",
-      "embedding",
-      "benchmark"
-    ],
-    "summaryKo": "본 논문은 긴 동영상에서 비지도 시간적 행동 분할을 수행하기 위해, 기존 결정론적 임베딩 대신 확률적 임베딩을 학습하여 지역 최적해에 빠지는 문제를 해결하는 방법을 제안한다.",
-    "detail": {
-      "problem": "긴 동영상에서의 비지도 시간적 행동 분할 문제를 다룬다. 기존 방법들은 결정론적 임베딩을 사용하는 반복적 의사 레이블 추정 과정에서 지역 최적해에 빠지기 쉽다.",
-      "method": "프레임 표현에 대해 가우시안 분포로 모델링된 확률적 임베딩을 학습하고, 의사 레이블 추정 전에 분포에서 샘플링을 수행한다. 최적 수송(Optimal Transport)을 사용하여 의사 레이블을 생성하고 표현 학습을 교차적으로 수행한다.",
-      "takeaway": "여러 행동 분할 데이터셋에서 최신 방법들과 비슷하거나 더 나은 성능을 달성했다. 결정론적 임베딩 기반 방법과 비교하여 MoF는 최대 20.7%, F1-score는 최대 19.0% 향상되었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05263v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05263v1.pdf"
-  },
-  {
-    "id": "2607.05319",
-    "title": "Steering Optimisation Trajectories in Diffusion Representation Learning",
-    "authors": "Rajat Rasal et al.",
-    "published": "2026-07-06",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion"
-    ],
-    "summaryKo": "본 논문은 확산 오토인코더의 재구성과 분리 표현 간 상충 관계가 최적화 동역학에 의해 결정됨을 분석하고, 이를 제어하기 위해 게이트 잔차 U-Net과 노이즈 수준 노출 커리큘럼을 활용하는 SteeringDRL을 제안한다.",
-    "detail": {
-      "problem": "확산 오토인코더가 유사한 이미지 품질을 유지하면서도 서로 다른 잠재 구조를 학습하는 이유를 최적화 동역학 측면에서 추적하고, 학습 초기에 재구성 우선 체제와 분리 표현 우선 체제라는 두 가지 궤적이 존재함을 밝힌다.",
-      "method": "확산 U-Net의 지름길 경로를 표적으로 삼고 초기 노이즈 수준 노출을 제어하여 재구성-분리 표현 상충 관계를 조정할 수 있다는 가설을 바탕으로, 게이트 잔차 U-Net과 노이즈 수준 노출 커리큘럼을 결합한 SteeringDRL 훈련 방법을 제안한다.",
-      "takeaway": "SteeringDRL은 분리 표현 벤치마크에서 표현 품질을 향상시키고 시드 민감도를 감소시켰으며, 객체 중심 학습의 공간적 분리 표현으로 확장되어 합성 및 실제 데이터셋에서 분할 품질을 개선했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05319v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05319v1.pdf"
-  },
-  {
-    "id": "2607.05382",
-    "title": "Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation",
-    "authors": "Haozhe Wang et al.",
-    "published": "2026-07-06",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 시각 생성 모델이 훈련 데이터에 없는 지식을 요구하는 사용자 요청에 대해 환각을 생성하는 세계 지식 병목 현상을 해결하기 위해, 생성기 특화 지식 경계를 진화시키는 teach-then-search 공동 학습 프레임워크를 제안하고 평가 벤치마크(SearchGen-Bench)와 데이터셋을 구축하였다.",
-    "detail": {
-      "problem": "시각 생성 모델은 고정된 학습 코퍼스로 인해 새로운 캐릭터, 트렌드, 이벤트 등 개방형 시각 세계의 장기-꼬리 지식 요청에 대해 오류를 생성한다. 제안된 SearchGen-Bench에서 최첨단 공개 생성기는 100점 만점에 21-28점에 그쳐 기존 벤치마크에서 드러나지 않은 40점의 성능 붕괴를 보였다.",
-      "method": "생성기의 내재화 가능 지식과 외부 컨텍스트가 필요한 지식 간의 경계는 사전에 명시하기 어렵지만, teach-then-search 공동 학습 프레임워크를 통해 발견 가능함을 보인다. 최소 버전의 공동 학습만으로도 단조적 성능 향상을 보이며, 이는 반복적 자기 개선의 기초를 마련한다.",
-      "takeaway": "제안된 프레임워크는 시각 생성 모델이 세계 지식 기반 요청을 처리할 수 있도록 개선하며, 생성기 특화 지식 경계의 진화 가능성을 입증한다. 연구진은 전체 데이터셋, 공동 학습 코퍼스, 검색 코퍼스를 재현 가능한 도구로 공개하여 향후 연구를 지원한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05382v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05382v1.pdf"
-  },
-  {
-    "id": "2607.04071",
-    "title": "Beyond Multilingual Averages: MTEB-PT, a Benchmark for Portuguese Sentence Encoders",
-    "authors": "Lucas Hideki Takeuchi Okamura, Alexandre Alcoforado, Anna Helena Reali Costa",
-    "published": "2026-07-05",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
     ],
     "tags": [
       "benchmark",
       "retrieval",
-      "embedding"
+      "embedding",
+      "detection"
     ],
-    "summaryKo": "MTEB-PT는 포르투갈어 문장 인코더 평가를 위한 벤치마크로, 다국어 순위가 포르투갈어 성능을 신뢰할 수 없으며 언어별 미세 조정이 특히 STS에서 효과적임을 보여준다.",
+    "summaryKo": "본 논문은 사회 과학 및 인문학(SSH) 연구를 위한 대규모 언어 모델(LLM) 적응의 진행 중인 사용 사례를 제시하며, 정량적 및 정성적 평가와 법적·윤리적 준수 체계를 통해 도메인 민감형 생성형 AI의 신뢰성과 인식론적 책임을 확보하는 방안을 탐구한다.",
     "detail": {
-      "problem": "포르투갈어는 널리 사용되지만 텍스트 임베딩 평가에서 소외되어, 다국어 지표에 의존한 모델 선택이 실제 포르투갈어 성능을 반영하지 못하는 문제가 있다.",
-      "method": "MMTEB 하위 집합으로 14개 데이터셋의 MTEB-PT 벤치마크를 구축하고, 17개 임베딩 모델을 평가하였으며, 3개 모델을 포르투갈어 대비 학습 및 MRL로 미세 조정하였다.",
-      "takeaway": "포르투갈어 성능은 작업 유형에 크게 의존하며, 다국어 순위는 신뢰할 수 없고, 단일 모델이 모든 작업에서 우세하지 않다. 언어별 미세 조정은 특히 적응 데이터와 유사한 작업 유형에서 성능을 향상시키며, STS에서 가장 큰 이득을 보이고 검색 및 차원 축소 상황에서도 경쟁력이 있다."
+      "problem": "LLM의 과학 연구 통합은 SSH 분야에서 방법론적, 인식론적, 규제적 도전을 제기하며, 특히 학문적 다양성, 다국어 접근, 결과 평가의 문제가 두드러진다.",
+      "method": "LLMs4EU 프로젝트와 ALT-EDIC 인프라 내에서 기초 모델을 SSH 연구 관행(질의응답, 문서 비교 분석, 문헌 검토)에 맞게 적응시키고, LLMs4EU 프로토콜에 따라 정량적 벤치마킹(검색, 요약, 추적 가능성, 환각 탐지)과 디지털 인문학 전문가 패널의 정성적 평가를 통합하며, 연구 인프라와 법적·윤리적 준수 프레임워크 내에서 모델을 배치한다.",
+      "takeaway": "이 사용 사례는 도메인에 민감하고 규제를 인식하는 생성형 AI가 신뢰성과 인식론적 책임을 유지하면서 SSH 학문을 지원할 수 있는 가능성을 탐색하며, 정량적·정성적 평가와 규제 준수를 통합한 접근법을 제시한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.04071v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.04071v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.05956v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.05956v1.pdf"
+  },
+  {
+    "id": "2607.06452",
+    "title": "From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b",
+    "authors": "Taeyun Roh et al.",
+    "published": "2026-07-07",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "agents",
+      "medical",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 BioASQ 14b Task B를 위해 질문 유형(예/아니오, 사실형, 목록형)에 따라 다른 추론 절차를 선택하는 LLM 기반 프레임워크를 제안하며, 공식 평가에서 경쟁력 있는 성능을 보이고 Batch 4의 사실형 하위 과제에서 1위를 차지했다.",
+    "detail": {
+      "problem": "생의학 질의응답은 과학 문헌에서 정확한 정보를 추출하고 여러 문서의 증거를 통합해야 하지만, 질문 유형에 따라 최적의 추론 방식이 다르다는 점을 간과할 수 있다.",
+      "method": "제안하는 프레임워크는 예/아니오 질문에는 스니펫 셔플링과 자기 반성, 사실형 질문에는 전체 스니펫 입력과 사고 사슬 기반 맥락 학습, 목록형 질문에는 다중 에이전트 협업 방식을 적용하여 질문 유형별로 맞춤형 추론을 수행한다.",
+      "takeaway": "공식 BioASQ 14b 평가에서 여러 배치에 걸쳐 경쟁력 있는 성능을 보였으며, 특히 Batch 4의 사실형 하위 과제에서 1위를 기록하여 질문 유형별 추론과 앙상블 예측, 에이전트 기반 검증의 효과를 입증했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06452v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06452v1.pdf"
+  },
+  {
+    "id": "2607.05994",
+    "title": "SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation",
+    "authors": "Shenbo Xie et al.",
+    "published": "2026-07-07",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "video",
+      "embedding",
+      "multimodal",
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 인간-객체 상호작용 비디오 생성에서 고비용의 밀집 시간적 안내 대신, 소수의 키프레임과 MLLM 기반 모션 프라이어를 활용하여 주석 비용을 줄이고 동작 다양성을 향상시키는 희소 시간적 제어 프레임워크 SparseCtrl-HOI를 제안한다.",
+    "detail": {
+      "problem": "기존의 인간-객체 상호작용 비디오 생성 방법은 프레임별 손-객체 자세 시퀀스와 같은 밀집 시간적 안내에 의존하여 주석 비용이 높고 동작 합성의 다양성을 저해한다.",
+      "method": "SparseCtrl-HOI는 TiRoPE 메커니즘으로 키프레임을 시간적으로 고정하고, MLLM을 활용한 모션 프라이어 주입 모듈로 중간 프레임의 동역학을 제어하여 논리적이고 물리적으로 타당한 전환을 생성한다.",
+      "takeaway": "제안 방법은 주석 오버헤드를 크게 줄이면서도 우수한 라이브 스트리밍 전자상거래 비디오를 합성함을 입증하였으며, 고품질의 SparseHOI-5K 데이터셋을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.05994v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.05994v1.pdf"
+  },
+  {
+    "id": "2607.06216",
+    "title": "MoWorld: A Flash World Model",
+    "authors": "Team Moxin et al.",
+    "published": "2026-07-07",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "diffusion",
+      "3d",
+      "video",
+      "autonomous-driving",
+      "generation"
+    ],
+    "summaryKo": "MoWorld는 고비용 GPU 없이도 최대 50 FPS의 실시간 상호작용이 가능하면서도 비용 효율적이고 높은 성능을 갖춘 플래시 월드 모델을 제안한다.",
+    "detail": {
+      "problem": "기존 월드 모델은 실시간 추론과 대규모 배포에 필요한 효율성과 실용성이 부족하며, 고성능 GPU에 의존적이다.",
+      "method": "MoWorld는 확장 가능한 3D 데이터 엔진, 교차 프레임 커리큘럼 사전 학습, 효율적 디노이징 스텝 증류, 혼합 정밀도 병렬 추론 프레임워크로 구성된 종단 간 파이프라인을 통해 비용 효율적인 실시간 추론을 가능하게 한다.",
+      "takeaway": "MoWorld는 최대 50 FPS의 실시간 상호작용과 영화 수준의 화질을 NPU에서 달성하며, 추론 비용을 기존 모델 대비 30-50%로 줄이고 다양한 평가에서 우수한 성능을 보인다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06216v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06216v1.pdf"
+  },
+  {
+    "id": "2607.05927",
+    "title": "CMDR: Contextual Multimodal Document Retrieval",
+    "authors": "Ryota Tanaka, Taku Hasegawa, Kyosuke Nishida",
+    "published": "2026-07-07",
+    "category": "multimodal",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "embedding",
+      "multimodal"
+    ],
+    "summaryKo": "본 논문은 문서 맥락을 고려한 다중 모달 문서 검색을 위해 CMDR-Embed와 CMCL을 제안하고, 실험을 통해 비맥락적 임베딩보다 우수한 성능을 보여 맥락 인식 다중 모달 임베딩의 중요성을 입증한다.",
+    "detail": {
+      "problem": "기존 다중 모달 문서 검색은 단순 어휘/의미 일치에 초점을 맞추고 페이지를 독립적으로 인코딩하여 여러 페이지에 걸친 정보를 필요로 하는 질의에 필요한 문서 맥락을 간과한다.",
+      "method": "본 논문에서는 문서 맥락을 명시적으로 통합하기 위해 여러 페이지를 공동으로 인코딩하고 공유 맥락 표현에서 페이지 수준 임베딩을 도출하는 CMDR-Embed와, 맥락 모델링과 페이지 수준 구분 능력의 균형을 맞추는 대조 학습 목표 CMCL을 제안한다.",
+      "takeaway": "실험 결과 CMDR-Embed가 비맥락적 임베딩보다 크게 우수하여 문서 검색에서 맥락 인식 다중 모달 임베딩의 중요성을 입증했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.05927v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.05927v1.pdf"
+  },
+  {
+    "id": "2607.06008",
+    "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
+    "authors": "Hongliang Li et al.",
+    "published": "2026-07-07",
+    "category": "llm",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "generation"
+    ],
+    "summaryKo": "PolyWorkBench는 다국어 장기 작업 워크플로에서 LLM 에이전트의 성능을 평가하기 위한 벤치마크로, 다국어 환경이 단일 언어 환경에 비해 에이전트의 성능을 크게 저하시킴을 실험적으로 보여준다.",
+    "detail": {
+      "problem": "기존 벤치마크는 단일 언어 환경을 가정하지만, 실제 업무에서는 다양한 언어의 입력과 출력이 하나의 워크플로 내에서 혼합되어 사용되며, 다국어성과 에이전트 실행 간의 상호작용은 충분히 연구되지 않았다.",
+      "method": "본 연구에서는 PolyWorkBench를 제안하여 상업, 지식 작업, 법률 분석, 현지화, 제조 등 5개 도메인의 67개 과제를 통해 에이전트가 다국어 입력을 처리하고 반복적 추론과 도구 사용 및 구조적 출력을 수행하도록 하며, 구조적 채점, 실행 가능 검증, LLM 기반 의미 평가를 결합한 하이브리드 평가 프레임워크를 도입한다.",
+      "takeaway": "최신 LLM 에이전트는 다국어 워크플로 설정에서 단일 언어 환경에 비해 성능이 현저히 저하되었으며, 이는 추론과 실행 과정에서 언어 변이가 복합적으로 작용하기 때문임을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06008v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06008v1.pdf"
+  },
+  {
+    "id": "2607.06097",
+    "title": "PVCap: Towards Accurate 3D Dense Captioning via PseudoCap and VoxelCapNet",
+    "authors": "Xiaopei Wu et al.",
+    "published": "2026-07-07",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "3d",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 기존 3D 밀집 캡셔닝의 공간적 배치 다양성 부족과 단순 네트워크 구조 문제를 해결하기 위해 PseudoCap 데이터 증강과 VoxelCapNet 복셀 특징 기반 캡션 네트워크를 제안하여 ScanRefer와 Nr3D에서 최고 성능을 달성하였다.",
+    "detail": {
+      "problem": "기존 3D 밀집 캡셔닝 방법들은 데이터 증강 시 전역 강체 변환만 사용하여 다양한 공간적 배치를 생성하지 못하며, 백본 및 검출 헤드에 단순한 네트워크를 사용하여 의미 정보 추출이 부족하다.",
+      "method": "PVCap은 PseudoCap을 통해 인스턴스 무작위 혼합으로 다양한 공간적 배치를 가진 의사 프레임을 생성하고 교사-학생 프레임워크로 의사 캡션 레이블을 얻어 데이터를 증강하며, VoxelCapNet은 복셀 특징과 이에 적응된 캡션 헤드를 사용하여 캡셔닝 성능을 향상시킨다.",
+      "takeaway": "PVCap은 ScanRefer와 Nr3D에서 CIDEr@0.5IoU 기준 각각 11.41%, 13.99% 향상된 최고 성능을 기록하였으며, VoxelCapNet은 향후 연구를 위한 경쟁력 있는 기준선을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06097v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06097v1.pdf"
+  },
+  {
+    "id": "2607.06254",
+    "title": "VendorBench-100: A Unified Cross-Paradigm Benchmark for Deepfake Image Detection",
+    "authors": "Sharayu N. Deshmukh et al.",
+    "published": "2026-07-07",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "detection"
+    ],
+    "summaryKo": "VendorBench-100은 딥페이크 이미지 탐지의 세 가지 패러다임(상용 API, 비전-언어 모델, 오픈소스 탐지기)을 통일된 프로토콜로 평가하는 벤치마크로, MCC와 ROC-AUC 간의 지표 불일치를 주요 발견으로 제시한다.",
+    "detail": {
+      "problem": "딥페이크 이미지 탐지는 상용 API, 제로샷 비전-언어 모델, 오픈소스 탐지기라는 세 가지 패러다임으로 제공되지만, 공통 평가 프로토콜이 부재하여 직접 비교가 어렵다.",
+      "method": "VendorBench-100은 36개 대표 모델을 단일 적대적 100-이미지 코퍼스, 통합 출력 스키마, 공통 평가 프레임워크로 평가한다. 클래스 불균형에 대처하기 위해 MCC를 주요 순위 지표로 사용하고 ROC-AUC를 추가로 보고하며, 8가지 에지 케이스 군으로 구성된 분류 체계를 통해 현실적인 시나리오에 중점을 둔다.",
+      "takeaway": "상용 API가 중간 성능에서 가장 강력했으며, 비전 LLM과 오픈소스 탐지기가 뒤를 이었지만, 개별 오픈소스 모델은 최고 비전 LLM과 경쟁력을 유지했다. 더 중요하게는, ROC-AUC(순위 능력)와 MCC(동작점 품질) 간의 일관된 차이가 발견되어, 강한 점수 판별이 신뢰할 수 있는 기본 임계값 결정을 보장하지 않음을 보여주었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06254v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06254v1.pdf"
+  },
+  {
+    "id": "2607.06374",
+    "title": "VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery",
+    "authors": "Jiazi Wang et al.",
+    "published": "2026-07-07",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "agents",
+      "3d",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "VaseMuseum은 고대 그리스 도기 디지털 박물관을 위해 비전-언어 모델의 신뢰성 문제를 해결하는 경량 모듈식 멀티모달 에이전트 프레임워크로, 2D/3D 유물 인식, 외부 지식 검색, 소스 및 응답 수준 제어, 학습 없는 GRPO 선택 메커니즘을 통해 인용 타당성을 높이고 환각을 줄이며 모호한 상황에서 중립적 답변을 생성한다.",
+    "detail": {
+      "problem": "고대 그리스 도기와 같은 문화유산 도메인에서 비전-언어 모델(VLM)을 활용한 개방형 해석은 세부적인 2D/3D 시각 증거를 전문적인 큐레이터 지식에 근거해야 하지만, 검색 과정에서 취약한 출처와 검증 불가능한 참조가 도입될 수 있다. 또한 증거가 불완전하거나 모호할 때 VLM은 확신에 찬 오답을 생성하는 문제가 있다.",
+      "method": "VaseMuseum은 멀티모달 인지, 3D 인식 추론, 외부 지식 검색 및 추론 시간 신뢰성 제어를 지원하는 VaseAgent를 통해, 생성 전 권위 있는 웹 및 박물관 지식 소스에서 다양하고 검증 가능한 증거를 선택하는 소스 수준 제어와 생성 후 증거 풀을 기반으로 주장을 확인하고 불충분한 증거 시 중립적 답변을 유도하는 응답 수준 제어를 적용한다. 또한 학습 없는 GRPO 방식 선택 메커니즘을 통해 유효한 참조와 보정된 확신을 가진 응답을 선호한다.",
+      "takeaway": "실제적인 디지털 박물관 시뮬레이션 실험에서 VaseMuseum은 기존 검색 기반 VLM 대비 인용 타당성을 개선하고, 지식 집약적 질의에 대한 환각을 줄이며, 모호한 상황에서 더 중립적인 답변을 생성했다. 한계점으로는 현재까지 시뮬레이션 환경에서만 평가되어 실제 환경에서의 추가 검증이 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06374v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06374v1.pdf"
+  },
+  {
+    "id": "2607.06402",
+    "title": "What Images Cannot Say: Language-Guided Olfactory Representation Learning",
+    "authors": "Eleftherios Tsonis, Xi Wang, Vicky Kalogeiton",
+    "published": "2026-07-07",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [
+      "retrieval",
+      "embedding",
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "SCENT는 언어 안내를 통해 시각적 맥락 정보를 활용하여 후각 표현을 학습하고 시각-후각 정렬을 개선하는 다중모달 프레임워크이다.",
+    "detail": {
+      "problem": "전자코 측정값과 시각 장면을 정렬하는 것은 후각 신호가 이미지에 직접 보이지 않는 환경적 맥락 요인에서 비롯되기 때문에 어렵다.",
+      "method": "SCENT는 시각-언어 모델(VLM)을 사용하여 시각 장면의 객체, 환경 맥락 및 가능한 냄새 단서를 설명하는 텍스트를 생성하고, 이를 의미적 안내로 삼아 전자코 신호를 시각 및 텍스트 표현과 정렬된 공유 임베딩 공간에 매핑하는 후각 인코더를 학습시킨다. 또한 언어 안내 잠재 분해를 통해 객체 특정 냄새와 맥락적 환경 기여를 분리한다.",
+      "takeaway": "New York Smells 데이터셋 실험에서 SCENT는 냄새-이미지 및 냄새-텍스트 검색에서 최첨단 성능을 달성했으며, 해석 가능한 후각 표현을 통해 복잡한 냄새 혼합을 분리할 수 있음을 보여주었다. 이는 맥락적 의미 정보가 다중모달 학습에서 후각 인식을 구축하는 데 중요함을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06402v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06402v1.pdf"
+  },
+  {
+    "id": "2607.06420",
+    "title": "HoloCount: A Holistic Visual Counting Benchmark for MLLMs",
+    "authors": "Jinhong Deng, Limeng Qiao, Guanglu Wan",
+    "published": "2026-07-07",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal"
+    ],
+    "summaryKo": "HoloCount는 시각적 계수에 대한 종합적인 벤치마크로, 의미론적 계수, 분석적 계수, 강건성 테스트의 세 가지 계층적 수준을 통해 MLLM의 성능을 평가하며, 인식에서 복잡한 추론 및 역경 조건으로 전환될수록 성능이 크게 저하된다는 결정적인 격차를 밝혀낸다.",
+    "detail": {
+      "problem": "기존의 시각적 계수 벤치마크는 단순화된 맥락에서의 기본 인식에 초점을 맞추어, 논리적 제약이나 적대적 조건에서 발생하는 복잡한 실패 모드를 포착하지 못한다. 또한 MLLM은 정량적 정밀도가 부족하여 수치적 환각 문제를 겪고 있다.",
+      "method": "HoloCount는 세 가지 수준의 계층적 분류 체계(의미론적 계수, 분석적 계수, 강건성 테스트)를 기반으로 한 종합적이고 진단적으로 풍부한 벤치마크이다. 이를 통해 MLLM의 계수 능력을 다양한 측면에서 체계적으로 평가한다.",
+      "takeaway": "20개 이상의 최신 MLLM을 평가한 결과, 최고 성능 모델조차 인식 기반 과제에서 복잡한 분석적 추론 및 역경 조건으로 전환됨에 따라 성능이 크게 저하되는 결정적인 격차가 발견되었다. 이 연구는 현재 MLLM의 계수 능력에 대한 체계적인 분석을 제공하며, 더 견고하고 신뢰할 수 있는 다중 모달 시스템 개발을 위한 로드맵을 제시한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.06420v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06420v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-07T04:14:37.244Z",
+  "collectedAt": "2026-07-08T03:38:56.597Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
