@@ -3,305 +3,307 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.05614",
-    "title": "BaFCo: A Document Understanding Benchmark for Complex Bangla Form Comprehension",
-    "authors": "Abu Tyeb Azad et al.",
-    "published": "2026-07-06",
+    "id": "2607.07673",
+    "title": "MedPMC: A Systematic Framework for Scaling High-Fidelity Medical Multimodal Data for Foundation Models",
+    "authors": "Hyunjae Kim et al.",
+    "published": "2026-07-08",
     "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.CV"
+      "cs.CV",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "multimodal"
+      "medical",
+      "retrieval",
+      "multimodal",
+      "detection"
     ],
-    "summaryKo": "이 논문은 방글라어 문서 이해를 위한 벤치마크 데이터셋 BaFCo를 소개하고, 최신 멀티모달 대규모 언어 모델의 방글라 양식 이해 능력의 한계를 평가한다.",
+    "summaryKo": "MedPMC는 610만 편의 PubMed Central 논문에서 1100만 쌍의 고충실도 의료 이미지-텍스트 데이터를 자동으로 구축하고, 이를 통해 학습된 모델이 다양한 의료 벤치마크와 임상 환경에서 기존 대비 유의미한 성능 향상을 달성한 체계적인 프레임워크이다.",
     "detail": {
-      "problem": "저자원 언어인 방글라어의 문서 이해 연구는 고품질 주석 데이터의 부족으로 제한적이다. 본 연구는 이러한 격차를 해소하기 위해 BaFCo 데이터셋을 제안한다.",
-      "method": "BaFCo는 농업, 교육, 금융, 토지 관리 등 다양한 분야의 방글라데시 정부 양식 200개를 수집하고, 26개의 세부 엔티티 유형과 5개의 대분류 엔티티 유형으로 구성된 주석 스키마를 정의한다. 최신 MLLM들을 제로샷 및 사고 사슬 프롬프트로 평가한다.",
-      "takeaway": "평가 결과, 현재의 MLLM들은 방글라 양식 이해, 특히 세부 엔티티 위치 파악에 한계가 있음이 드러났다."
+      "problem": "의료 멀티모달 기초 모델 개발은 대규모 고품질 임상 데이터 부족으로 제약을 받으며, 기존 PubMed Central 기반 데이터셋은 충실도, 재현성 및 임상 검증이 부족한 문제가 있다.",
+      "method": "MedPMC는 허용 라이선스 문헌을 자동으로 처리하여 고충실도 의료 이미지-텍스트 쌍을 추출·정제하는 지속 가능한 프레임워크로, 초기 스크리닝 F1 93.2, 캡션 정렬 F1 81.4 등의 구성 요소 평가 결과와 95.3%의 의학적 관련성(수동 검토)을 보였다.",
+      "takeaway": "MedPMC로 학습된 CLIP 스타일 모델은 26개 벤치마크에서 평균 제로샷 AUC 7.1%p 향상, 의료 VQA에서 최대 16.9%p 개선, 임상 피부과 검색 Recall@5 11.7%p 향상을 보였으며, 이는 고충실도 문헌 큐레이션이 의료 멀티모달 기초 모델을 효과적으로 강화함을 입증한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.05614v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05614v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.07673v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07673v1.pdf"
   },
   {
-    "id": "2607.05956",
-    "title": "Integrating knowledge graphs and multilingual scholarly corpora for domain-adaptive LLMs in SSH",
-    "authors": "Adam Faci et al.",
-    "published": "2026-07-07",
+    "id": "2607.06963",
+    "title": "Large Language Models (LLMs) and Generative AI in Cybersecurity and Privacy: A Survey of Dual-Use Risks, AI-Generated Malware, Explainability, and Defensive Strategies",
+    "authors": "Kiarash Ahi, Saeed Valizadeh",
+    "published": "2026-07-08",
     "category": "multimodal",
     "categories": [
+      "cs.CR",
       "cs.AI",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "embedding",
-      "detection"
+      "diffusion",
+      "privacy",
+      "code-generation",
+      "survey"
     ],
-    "summaryKo": "본 논문은 사회 과학 및 인문학(SSH) 연구를 위한 대규모 언어 모델(LLM) 적응의 진행 중인 사용 사례를 제시하며, 정량적 및 정성적 평가와 법적·윤리적 준수 체계를 통해 도메인 민감형 생성형 AI의 신뢰성과 인식론적 책임을 확보하는 방안을 탐구한다.",
+    "summaryKo": "본 설문 조사는 LLM 및 생성형 AI의 사이버 보안에서의 이중 사용 위험과 방어 전략을 포괄적으로 검토하고, 실제 사례 연구와 70개 이상의 문헌을 바탕으로 책임 있는 배포를 위한 권장 사항을 제시한다.",
     "detail": {
-      "problem": "LLM의 과학 연구 통합은 SSH 분야에서 방법론적, 인식론적, 규제적 도전을 제기하며, 특히 학문적 다양성, 다국어 접근, 결과 평가의 문제가 두드러진다.",
-      "method": "LLMs4EU 프로젝트와 ALT-EDIC 인프라 내에서 기초 모델을 SSH 연구 관행(질의응답, 문서 비교 분석, 문헌 검토)에 맞게 적응시키고, LLMs4EU 프로토콜에 따라 정량적 벤치마킹(검색, 요약, 추적 가능성, 환각 탐지)과 디지털 인문학 전문가 패널의 정성적 평가를 통합하며, 연구 인프라와 법적·윤리적 준수 프레임워크 내에서 모델을 배치한다.",
-      "takeaway": "이 사용 사례는 도메인에 민감하고 규제를 인식하는 생성형 AI가 신뢰성과 인식론적 책임을 유지하면서 SSH 학문을 지원할 수 있는 가능성을 탐색하며, 정량적·정성적 평가와 규제 준수를 통합한 접근법을 제시한다."
+      "problem": "LLM 기반 악성 코드가 2021년 2%에서 2025년 50%로 급증하는 등 위협 환경이 고도로 자동화됨에 따라, 이에 대응할 차세대 보안 프레임워크가 필요하게 되었다.",
+      "method": "70편 이상의 학술 논문, 산업 보고서, 기술 문서를 검토하고 Google Play Protect, Microsoft Defender, AWS 등 주요 플랫폼의 사례 연구를 종합하여, 제로데이 탐지, DevSecOps, 연합 학습, 합성 콘텐츠 분석, 설명 가능한 AI 등 유용 및 악성 응용을 망라한 포괄적 설문 조사를 수행했다.",
+      "takeaway": "주요 결과로 AI 생성 악성 코드의 급증 추세와 다양한 실제 사례에서 얻은 통찰을 바탕으로 모델 워터마킹, 적대적 방어, 산업 간 협력 등 책임 있는 LLM 배포를 위한 실용적 권장 사항을 도출하였으며, 이 연구는 AI와 사이버 보안 교차 분야 연구의 새로운 기준을 제시한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.05956v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05956v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.06963v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06963v1.pdf"
   },
   {
-    "id": "2607.06452",
-    "title": "From Voting to Agent Collaboration: Answer-Type-Aware LLM Pipelines for BioASQ 14b",
-    "authors": "Taeyun Roh et al.",
+    "id": "2607.07117",
+    "title": "Tree-of-Thoughts Reasoning for Text-to-Image In-Context Learning",
+    "authors": "Stepanida Alekseeva, Jenifer Kalafatovich, Seong-Whan Lee",
+    "published": "2026-07-08",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "텍스트-이미지 인컨텍스트 학습(T2I-ICL)에서 다단계 추론과 선택을 통해 프롬프트 모호성과 구성적 오류를 완화하는 Tree-of-Thoughts (ToT) 추론 프레임워크를 제안하여 추가 학습 없이 더 일관된 이미지 생성을 달성하였다.",
+    "detail": {
+      "problem": "텍스트-이미지 인컨텍스트 학습(T2I-ICL)에서 최신 멀티모달 대규모 언어 모델은 제한된 구성적 추론 능력과 프롬프트 구성에 대한 민감성으로 인해 어려움을 겪는다.",
+      "method": "본 연구는 여러 후보 가설을 생성, 평가, 선택하는 다단계 추론 및 선택 계층을 포함한 Tree-of-Thoughts (ToT) 추론 프레임워크를 제안한다. 이는 대안적 추론 분기를 탐색하고 일관된 해석을 선택하여 프롬프트 모호성과 구성적 오류를 완화한다.",
+      "takeaway": "CoBSAT 벤치마크에서의 정성적 및 정량적 평가 결과, 제안된 구조적 다중 분기 추론이 기준 방법 및 Chain-of-Thought 프롬프팅 전략보다 추가 훈련이나 파인튜닝 없이 더 일관되고 의미적으로 정렬된 이미지 생성을 보여주었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.07117v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07117v1.pdf"
+  },
+  {
+    "id": "2607.06641",
+    "title": "Healthier LLMs: Retrieval-Augmented Generation for Public Health Question Answering",
+    "authors": "Felix Feldman et al.",
     "published": "2026-07-07",
     "category": "llm",
     "categories": [
       "cs.CL",
-      "cs.AI"
+      "cs.AI",
+      "cs.LG"
     ],
     "tags": [
-      "agents",
-      "medical",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 BioASQ 14b Task B를 위해 질문 유형(예/아니오, 사실형, 목록형)에 따라 다른 추론 절차를 선택하는 LLM 기반 프레임워크를 제안하며, 공식 평가에서 경쟁력 있는 성능을 보이고 Batch 4의 사실형 하위 과제에서 1위를 차지했다.",
-    "detail": {
-      "problem": "생의학 질의응답은 과학 문헌에서 정확한 정보를 추출하고 여러 문서의 증거를 통합해야 하지만, 질문 유형에 따라 최적의 추론 방식이 다르다는 점을 간과할 수 있다.",
-      "method": "제안하는 프레임워크는 예/아니오 질문에는 스니펫 셔플링과 자기 반성, 사실형 질문에는 전체 스니펫 입력과 사고 사슬 기반 맥락 학습, 목록형 질문에는 다중 에이전트 협업 방식을 적용하여 질문 유형별로 맞춤형 추론을 수행한다.",
-      "takeaway": "공식 BioASQ 14b 평가에서 여러 배치에 걸쳐 경쟁력 있는 성능을 보였으며, 특히 Batch 4의 사실형 하위 과제에서 1위를 기록하여 질문 유형별 추론과 앙상블 예측, 에이전트 기반 검증의 효과를 입증했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.06452v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06452v1.pdf"
-  },
-  {
-    "id": "2607.05994",
-    "title": "SparseCtrl-HOI: Sparse Temporal Control for Human-Object Interaction Video Generation",
-    "authors": "Shenbo Xie et al.",
-    "published": "2026-07-07",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "video",
-      "embedding",
-      "multimodal",
       "benchmark",
+      "medical",
+      "retrieval",
+      "embedding",
       "generation"
     ],
-    "summaryKo": "본 논문은 인간-객체 상호작용 비디오 생성에서 고비용의 밀집 시간적 안내 대신, 소수의 키프레임과 MLLM 기반 모션 프라이어를 활용하여 주석 비용을 줄이고 동작 다양성을 향상시키는 희소 시간적 제어 프레임워크 SparseCtrl-HOI를 제안한다.",
+    "summaryKo": "이 논문은 공중 보건 질의응답을 위해 검색 증강 생성(RAG)을 체계적으로 평가하고, 하이브리드 검색이 성능을 향상시키며 검색된 맥락이 작은 모델도 큰 모델에 필적하게 만듦을 보여주고, 자유 형식 응답 평가를 위한 루브릭 기반 LLM 평가자를 제안한다.",
     "detail": {
-      "problem": "기존의 인간-객체 상호작용 비디오 생성 방법은 프레임별 손-객체 자세 시퀀스와 같은 밀집 시간적 안내에 의존하여 주석 비용이 높고 동작 합성의 다양성을 저해한다.",
-      "method": "SparseCtrl-HOI는 TiRoPE 메커니즘으로 키프레임을 시간적으로 고정하고, MLLM을 활용한 모션 프라이어 주입 모듈로 중간 프레임의 동역학을 제어하여 논리적이고 물리적으로 타당한 전환을 생성한다.",
-      "takeaway": "제안 방법은 주석 오버헤드를 크게 줄이면서도 우수한 라이브 스트리밍 전자상거래 비디오를 합성함을 입증하였으며, 고품질의 SparseHOI-5K 데이터셋을 제공한다."
+      "problem": "대규모 언어 모델(LLM)은 의료 질의응답 벤치마크에서 좋은 성과를 내지만, 공중 보건 분야에서는 할루시네이션과 공식 지침의 빠른 변화로 인해 사용이 제한된다.",
+      "method": "본 연구는 영국 정부 공중 보건 지침에서 추출한 7,929개 질문으로 구성된 PubHealthBench를 검색 증강 환경으로 확장하고, 밀집, 희소, 하이브리드 검색을 다양한 임베딩 모델과 코퍼스 변형으로 비교 평가했다. 또한 사실 충실도, 완전성, 명확성, 사실적 일관성을 포함한 루브릭 기반 LLM 평가자를 도입하여 자유 형식 응답을 평가하고 이중 인간 주석과 비교 검증했다.",
+      "takeaway": "검색된 맥락을 제공하면 다양한 LLM에서 다중 선택 정확도가 크게 향상되어 작은 오픈웨이트 모델이 검색 없이 사용된 더 큰 모델을 능가할 수 있으며, 하이브리드 검색이 재현율과 순위 품질을 일관되게 개선했다. LLM 평가자는 충실도와 완전성에서 인간과 높은 일치를 보였으나, 사실적 일관성과 명확성은 덜 신뢰할 수 있어 대규모 해석 시 주의가 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.05994v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05994v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.06641v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.06641v1.pdf"
   },
   {
-    "id": "2607.06216",
-    "title": "MoWorld: A Flash World Model",
-    "authors": "Team Moxin et al.",
-    "published": "2026-07-07",
+    "id": "2607.07708",
+    "title": "Accurate, Interdisciplinary and Transparent Structure-property Understanding with Deep Native Structural Reasoning",
+    "authors": "Chen Tang et al.",
+    "published": "2026-07-08",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CE",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal"
+    ],
+    "summaryKo": "SciReasoner는 단백질, 소분자, 무기 결정에 걸쳐 구조-성질 관계를 추론할 수 있는 다중모드 과학 기초 모델로, 구조 정보를 분할하여 추론 단위로 사용함으로써 정확한 예측과 해석 가능한 과학적 추론을 동시에 달성한다.",
+    "detail": {
+      "problem": "생물학, 화학, 재료과학에서 구조-성질 관계를 기계적으로 설명하기 위해 인공지능을 적용할 때, 과학적 원리와 물리적 제약 조건을 반영한 구조 정보의 표현과 추론이 공동 과제로 제기된다.",
+      "method": "이 논문은 좌표, 위상, 주기적 연결성을 통합 구조 인식 어휘로 이산화하여 구조 토큰을 추론 중 조사 가능한 증거 단위로 사용하는 다중모드 과학 기초 모델 SciReasoner를 제안한다.",
+      "takeaway": "SciReasoner는 86개 벤치마크 중 67개 작업에서 최고 성능을 달성했으며, 이중 맹검 전문가 평가에서 추론 과정이 우수하거나 최첨단 대형 언어 모델과 유사한 것으로 평가되었다(98%). 이를 통해 과학적 제약 조건 하에서 구조를 추론 가능한 기반으로 제공하여 정확한 예측과 해석 가능한 과학적 추론을 연결한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.07708v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07708v1.pdf"
+  },
+  {
+    "id": "2607.07027",
+    "title": "Latent graph encoding of multimodal neuroimaging features with generative AI architectures",
+    "authors": "Ishaan Batta, Meenu Ajith, Vince Calhoun",
+    "published": "2026-07-08",
     "category": "cv",
     "categories": [
+      "cs.LG",
+      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "diffusion",
-      "3d",
-      "video",
-      "autonomous-driving",
+      "multimodal",
+      "benchmark",
       "generation"
     ],
-    "summaryKo": "MoWorld는 고비용 GPU 없이도 최대 50 FPS의 실시간 상호작용이 가능하면서도 비용 효율적이고 높은 성능을 갖춘 플래시 월드 모델을 제안한다.",
+    "summaryKo": "본 연구는 구조적 및 기능적 MRI 특징을 위한 다중 모드 생성 프레임워크를 통해 그래프 인코딩 기반의 다중 모드 그래프 VAE(gMMVAE)를 제안하며, 이는 다양한 생성 변형 모델들보다 생성 충실도, 재구성 품질, 효율성, 잠재 공간 식별력에서 우수한 성능을 보여준다.",
     "detail": {
-      "problem": "기존 월드 모델은 실시간 추론과 대규모 배포에 필요한 효율성과 실용성이 부족하며, 고성능 GPU에 의존적이다.",
-      "method": "MoWorld는 확장 가능한 3D 데이터 엔진, 교차 프레임 커리큘럼 사전 학습, 효율적 디노이징 스텝 증류, 혼합 정밀도 병렬 추론 프레임워크로 구성된 종단 간 파이프라인을 통해 비용 효율적인 실시간 추론을 가능하게 한다.",
-      "takeaway": "MoWorld는 최대 50 FPS의 실시간 상호작용과 영화 수준의 화질을 NPU에서 달성하며, 추론 비용을 기존 모델 대비 30-50%로 줄이고 다양한 평가에서 우수한 성능을 보인다."
+      "problem": "생성 모델이 복잡한 신경영상 데이터의 인코딩을 가능하게 하지만, 뇌의 구조적 및 기능적 특성을 연구하기 위해 최적의 아키텍처 프레임워크와 적절한 인코딩 및 잠재 공간 과정의 개발이 필요하다.",
+      "method": "본 연구는 구조적 회백질 용량(GMV)과 정적 기능적 네트워크 연결성(sFNC) 특징을 사용하여 VAE, 트랜스포머, GAN, 확산 모델을 포함한 생성 프레임워크를 체계적으로 평가하고, 기능적 연결성을 그래프 인코딩하여 저차원 잠재 공간으로 변환하는 다중 모드 그래프 VAE(gMMVAE)를 제안한다.",
+      "takeaway": "gMMVAE는 생성 충실도, 재구성 품질, 효율성, 잠재 공간 식별력에서 다른 생성 변형 모델보다 우수하여, 강건한 다중 모드 신경영상 분석에 잠재력을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.06216v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06216v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.07027v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07027v1.pdf"
   },
   {
-    "id": "2607.05927",
-    "title": "CMDR: Contextual Multimodal Document Retrieval",
-    "authors": "Ryota Tanaka, Taku Hasegawa, Kyosuke Nishida",
-    "published": "2026-07-07",
-    "category": "multimodal",
+    "id": "2607.07192",
+    "title": "Prototype-Anchored Generalized Manifold Regression for Unknown-Domain Object Detection",
+    "authors": "Zihao Zhang et al.",
+    "published": "2026-07-08",
+    "category": "cv",
     "categories": [
-      "cs.IR",
-      "cs.AI",
-      "cs.CL",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "embedding",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 문서 맥락을 고려한 다중 모달 문서 검색을 위해 CMDR-Embed와 CMCL을 제안하고, 실험을 통해 비맥락적 임베딩보다 우수한 성능을 보여 맥락 인식 다중 모달 임베딩의 중요성을 입증한다.",
-    "detail": {
-      "problem": "기존 다중 모달 문서 검색은 단순 어휘/의미 일치에 초점을 맞추고 페이지를 독립적으로 인코딩하여 여러 페이지에 걸친 정보를 필요로 하는 질의에 필요한 문서 맥락을 간과한다.",
-      "method": "본 논문에서는 문서 맥락을 명시적으로 통합하기 위해 여러 페이지를 공동으로 인코딩하고 공유 맥락 표현에서 페이지 수준 임베딩을 도출하는 CMDR-Embed와, 맥락 모델링과 페이지 수준 구분 능력의 균형을 맞추는 대조 학습 목표 CMCL을 제안한다.",
-      "takeaway": "실험 결과 CMDR-Embed가 비맥락적 임베딩보다 크게 우수하여 문서 검색에서 맥락 인식 다중 모달 임베딩의 중요성을 입증했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.05927v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.05927v1.pdf"
-  },
-  {
-    "id": "2607.06008",
-    "title": "PolyWorkBench: Benchmarking Multilingual Long-Horizon LLM Agents",
-    "authors": "Hongliang Li et al.",
-    "published": "2026-07-07",
-    "category": "llm",
-    "categories": [
-      "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "generation"
-    ],
-    "summaryKo": "PolyWorkBench는 다국어 장기 작업 워크플로에서 LLM 에이전트의 성능을 평가하기 위한 벤치마크로, 다국어 환경이 단일 언어 환경에 비해 에이전트의 성능을 크게 저하시킴을 실험적으로 보여준다.",
-    "detail": {
-      "problem": "기존 벤치마크는 단일 언어 환경을 가정하지만, 실제 업무에서는 다양한 언어의 입력과 출력이 하나의 워크플로 내에서 혼합되어 사용되며, 다국어성과 에이전트 실행 간의 상호작용은 충분히 연구되지 않았다.",
-      "method": "본 연구에서는 PolyWorkBench를 제안하여 상업, 지식 작업, 법률 분석, 현지화, 제조 등 5개 도메인의 67개 과제를 통해 에이전트가 다국어 입력을 처리하고 반복적 추론과 도구 사용 및 구조적 출력을 수행하도록 하며, 구조적 채점, 실행 가능 검증, LLM 기반 의미 평가를 결합한 하이브리드 평가 프레임워크를 도입한다.",
-      "takeaway": "최신 LLM 에이전트는 다국어 워크플로 설정에서 단일 언어 환경에 비해 성능이 현저히 저하되었으며, 이는 추론과 실행 과정에서 언어 변이가 복합적으로 작용하기 때문임을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.06008v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06008v1.pdf"
-  },
-  {
-    "id": "2607.06097",
-    "title": "PVCap: Towards Accurate 3D Dense Captioning via PseudoCap and VoxelCapNet",
-    "authors": "Xiaopei Wu et al.",
-    "published": "2026-07-07",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "3d",
+      "diffusion",
       "generation",
       "detection"
     ],
-    "summaryKo": "본 논문은 기존 3D 밀집 캡셔닝의 공간적 배치 다양성 부족과 단순 네트워크 구조 문제를 해결하기 위해 PseudoCap 데이터 증강과 VoxelCapNet 복셀 특징 기반 캡션 네트워크를 제안하여 ScanRefer와 Nr3D에서 최고 성능을 달성하였다.",
+    "summaryKo": "본 논문은 단일 도메인 일반화 객체 검출을 위해 시뮬레이션 기반 방법의 한계를 극복하고, 의미적 다양체로부터 벗어난 특징을 원천 다양체로 교정하는 다양체 회귀 방법(MR-DCoT)을 제안한다.",
     "detail": {
-      "problem": "기존 3D 밀집 캡셔닝 방법들은 데이터 증강 시 전역 강체 변환만 사용하여 다양한 공간적 배치를 생성하지 못하며, 백본 및 검출 헤드에 단순한 네트워크를 사용하여 의미 정보 추출이 부족하다.",
-      "method": "PVCap은 PseudoCap을 통해 인스턴스 무작위 혼합으로 다양한 공간적 배치를 가진 의사 프레임을 생성하고 교사-학생 프레임워크로 의사 캡션 레이블을 얻어 데이터를 증강하며, VoxelCapNet은 복셀 특징과 이에 적응된 캡션 헤드를 사용하여 캡셔닝 성능을 향상시킨다.",
-      "takeaway": "PVCap은 ScanRefer와 Nr3D에서 CIDEr@0.5IoU 기준 각각 11.41%, 13.99% 향상된 최고 성능을 기록하였으며, VoxelCapNet은 향후 연구를 위한 경쟁력 있는 기준선을 제공한다."
+      "problem": "기존의 시뮬레이션 기반 방법들은 데이터 증강이나 텍스트 프롬프트를 통해 학습 분포를 확장하지만, 유한한 시뮬레이션으로 실제 세계의 다양한 변화를 모두 포괄할 수 없어 합성 스타일에 과적합되고 복잡한 구조적 변형에 대한 강건성이 부족하다.",
+      "method": "MR-DCoT는 먼저 Visual-Text Dual Chain-of-Thought 모듈을 사용하여 VLM 기반 의미 진화와 확산 기반 구조적 교란을 결합해 구조화된 off-manifold 하드 예제를 생성한 후, 클래스별 프로토타입 앵커링을 통해 이탈된 특징을 소스 의미적 다양체로 투영하는 교정 연산자를 학습한다.",
+      "takeaway": "악천후 탐지, 실사-아트 일반화, 제로샷 의미 분할 등 세 가지 보완적 벤치마크에서의 실험을 통해 제안 방법의 효과성과 다양성을 입증하였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.06097v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06097v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.07192v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07192v1.pdf"
   },
   {
-    "id": "2607.06254",
-    "title": "VendorBench-100: A Unified Cross-Paradigm Benchmark for Deepfake Image Detection",
-    "authors": "Sharayu N. Deshmukh et al.",
-    "published": "2026-07-07",
+    "id": "2607.07219",
+    "title": "Vision Foundation Models in Radiology: A Scoping Review of Data, Methodology, Evaluation and Clinical Translation",
+    "authors": "Alejandro Vergara-Richart et al.",
+    "published": "2026-07-08",
     "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "detection"
-    ],
-    "summaryKo": "VendorBench-100은 딥페이크 이미지 탐지의 세 가지 패러다임(상용 API, 비전-언어 모델, 오픈소스 탐지기)을 통일된 프로토콜로 평가하는 벤치마크로, MCC와 ROC-AUC 간의 지표 불일치를 주요 발견으로 제시한다.",
-    "detail": {
-      "problem": "딥페이크 이미지 탐지는 상용 API, 제로샷 비전-언어 모델, 오픈소스 탐지기라는 세 가지 패러다임으로 제공되지만, 공통 평가 프로토콜이 부재하여 직접 비교가 어렵다.",
-      "method": "VendorBench-100은 36개 대표 모델을 단일 적대적 100-이미지 코퍼스, 통합 출력 스키마, 공통 평가 프레임워크로 평가한다. 클래스 불균형에 대처하기 위해 MCC를 주요 순위 지표로 사용하고 ROC-AUC를 추가로 보고하며, 8가지 에지 케이스 군으로 구성된 분류 체계를 통해 현실적인 시나리오에 중점을 둔다.",
-      "takeaway": "상용 API가 중간 성능에서 가장 강력했으며, 비전 LLM과 오픈소스 탐지기가 뒤를 이었지만, 개별 오픈소스 모델은 최고 비전 LLM과 경쟁력을 유지했다. 더 중요하게는, ROC-AUC(순위 능력)와 MCC(동작점 품질) 간의 일관된 차이가 발견되어, 강한 점수 판별이 신뢰할 수 있는 기본 임계값 결정을 보장하지 않음을 보여주었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.06254v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06254v1.pdf"
-  },
-  {
-    "id": "2607.06374",
-    "title": "VaseMuseum: Digital Intelligent Museum for Ancient Greek Pottery",
-    "authors": "Jiazi Wang et al.",
-    "published": "2026-07-07",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "agents",
-      "3d",
-      "retrieval",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "VaseMuseum은 고대 그리스 도기 디지털 박물관을 위해 비전-언어 모델의 신뢰성 문제를 해결하는 경량 모듈식 멀티모달 에이전트 프레임워크로, 2D/3D 유물 인식, 외부 지식 검색, 소스 및 응답 수준 제어, 학습 없는 GRPO 선택 메커니즘을 통해 인용 타당성을 높이고 환각을 줄이며 모호한 상황에서 중립적 답변을 생성한다.",
-    "detail": {
-      "problem": "고대 그리스 도기와 같은 문화유산 도메인에서 비전-언어 모델(VLM)을 활용한 개방형 해석은 세부적인 2D/3D 시각 증거를 전문적인 큐레이터 지식에 근거해야 하지만, 검색 과정에서 취약한 출처와 검증 불가능한 참조가 도입될 수 있다. 또한 증거가 불완전하거나 모호할 때 VLM은 확신에 찬 오답을 생성하는 문제가 있다.",
-      "method": "VaseMuseum은 멀티모달 인지, 3D 인식 추론, 외부 지식 검색 및 추론 시간 신뢰성 제어를 지원하는 VaseAgent를 통해, 생성 전 권위 있는 웹 및 박물관 지식 소스에서 다양하고 검증 가능한 증거를 선택하는 소스 수준 제어와 생성 후 증거 풀을 기반으로 주장을 확인하고 불충분한 증거 시 중립적 답변을 유도하는 응답 수준 제어를 적용한다. 또한 학습 없는 GRPO 방식 선택 메커니즘을 통해 유효한 참조와 보정된 확신을 가진 응답을 선호한다.",
-      "takeaway": "실제적인 디지털 박물관 시뮬레이션 실험에서 VaseMuseum은 기존 검색 기반 VLM 대비 인용 타당성을 개선하고, 지식 집약적 질의에 대한 환각을 줄이며, 모호한 상황에서 더 중립적인 답변을 생성했다. 한계점으로는 현재까지 시뮬레이션 환경에서만 평가되어 실제 환경에서의 추가 검증이 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.06374v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06374v1.pdf"
-  },
-  {
-    "id": "2607.06402",
-    "title": "What Images Cannot Say: Language-Guided Olfactory Representation Learning",
-    "authors": "Eleftherios Tsonis, Xi Wang, Vicky Kalogeiton",
-    "published": "2026-07-07",
-    "category": "multimodal",
     "categories": [
       "cs.CV",
       "cs.AI",
       "cs.LG"
     ],
     "tags": [
-      "retrieval",
-      "embedding",
-      "multimodal",
       "benchmark"
     ],
-    "summaryKo": "SCENT는 언어 안내를 통해 시각적 맥락 정보를 활용하여 후각 표현을 학습하고 시각-후각 정렬을 개선하는 다중모달 프레임워크이다.",
+    "summaryKo": "본 범위 지정 리뷰는 방사선 영상 데이터로 훈련된 비전 파운데이션 모델(VFM)의 데이터, 방법론, 평가 및 임상 전환 현황을 분석하여 유망한 전이성과 함께 임상 전환의 제약 요인을 제시한다.",
     "detail": {
-      "problem": "전자코 측정값과 시각 장면을 정렬하는 것은 후각 신호가 이미지에 직접 보이지 않는 환경적 맥락 요인에서 비롯되기 때문에 어렵다.",
-      "method": "SCENT는 시각-언어 모델(VLM)을 사용하여 시각 장면의 객체, 환경 맥락 및 가능한 냄새 단서를 설명하는 텍스트를 생성하고, 이를 의미적 안내로 삼아 전자코 신호를 시각 및 텍스트 표현과 정렬된 공유 임베딩 공간에 매핑하는 후각 인코더를 학습시킨다. 또한 언어 안내 잠재 분해를 통해 객체 특정 냄새와 맥락적 환경 기여를 분리한다.",
-      "takeaway": "New York Smells 데이터셋 실험에서 SCENT는 냄새-이미지 및 냄새-텍스트 검색에서 최첨단 성능을 달성했으며, 해석 가능한 후각 표현을 통해 복잡한 냄새 혼합을 분리할 수 있음을 보여주었다. 이는 맥락적 의미 정보가 다중모달 학습에서 후각 인식을 구축하는 데 중요함을 시사한다."
+      "problem": "방사선 영상 분야에서 VFM의 정의, 개발 및 평가가 이질적이며, 임상 전환에 제약이 있다.",
+      "method": "2017년 1월부터 2026년 3월까지의 동료 검토 연구 중 방사선 영상 데이터만으로 훈련된 파운데이션 모델을 대상으로 PRISMAScR 범위 지정 리뷰를 수행하여 67개의 연구를 포함하고 데이터 규모와 이질성, 아키텍처 및 사전 학습 확장성, 다운스트림 전이성과 일반화의 세 가지 축으로 매핑하였다.",
+      "takeaway": "데이터셋은 주로 뇌 MRI, 흉복부 CT, 흉부 X-ray를 포함하며, 트랜스포머 기반 자기 지도 학습(마스크 이미지 모델링, 대조 학습, 다단계 접근법)이 우세했다. 평가는 분할 및 분류에 집중되었고, 교차 센터/스캐너/해부학/모달리티 검증은 불완전했으며, FUTURE-AI 원칙과의 정합성도 고르지 않았다. 전반적으로 방사선 특화 VFM은 전이성이 유망하나, 제한된 데이터 대표성, 이질적 벤치마크, 불완전한 보고, 불충분한 배포 지향 평가로 인해 임상 전환이 제약된다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.06402v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06402v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.07219v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07219v1.pdf"
   },
   {
-    "id": "2607.06420",
-    "title": "HoloCount: A Holistic Visual Counting Benchmark for MLLMs",
-    "authors": "Jinhong Deng, Limeng Qiao, Guanglu Wan",
-    "published": "2026-07-07",
+    "id": "2607.07322",
+    "title": "HAJJv2-CrowdCount: Zero-Shot Benchmark for Dense Crowd Counting",
+    "authors": "Reem AlYabis et al.",
+    "published": "2026-07-08",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "detection"
+    ],
+    "summaryKo": "HAJJv2-CrowdCount는 Hajj 군중 계수 벤치마크로, 세 가지 제로샷 방법을 평가한 결과 밀집 장면에서 포인트 기반 방법이 더 강건함을 보여준다.",
+    "detail": {
+      "problem": "Hajj 비디오의 군중 계수는 기울어진 촬영 각도, 심한 폐색, 높은 밀도로 인해 기존 모델의 가정이 위배되며, 세부적인 초 단위 주석이 포함된 공개 벤치마크가 부족하다.",
+      "method": "HAJJv2 테스트 비디오에 대해 초 단위 사람 주석을 추가한 HAJJv2-CrowdCount 데이터셋을 구축하고, 개방형 어휘 검출기(YOLO-World), 포인트 기반 계수기(APGCC), 분할 기반 계수기(SAM3Count)를 포함한 세 가지 제로샷 패러다임을 벤치마킹했다.",
+      "takeaway": "SAM3Count가 전체 평균 절대 오차(MAE 70.4)에서 가장 낮았지만, 가장 밀집된 프레임에서는 포인트 기반 APGCC(MAE 114.9)가 검출 및 분할 기반 방법(MAE 300 이상)보다 훨씬 강건하여 의사결정에 중요한 성능 역전이 발생했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.07322v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07322v1.pdf"
+  },
+  {
+    "id": "2607.07383",
+    "title": "MMAgent-R$^2$: Learning to Rerank and Reject for Agentic mRAG",
+    "authors": "Tao Zhang et al.",
+    "published": "2026-07-08",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "agents",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "MMAgent-R^2은 시각적 재순위화와 능동적 거절을 내부 검증 메커니즘으로 통합한 에이전틱 mRAG 프레임워크로, KB-VQA에서 시각적으로 유사한 개체의 구별 문제를 해결하고 여러 데이터셋에서 최고 성능을 달성했다.",
+    "detail": {
+      "problem": "기존 mRAG 방법은 전역 시각 특징에 의존하여 시각적으로 유사한 개체를 구별하지 못하고, 오검색된 방해 요소가 후보군에 포함되어 이후 과정으로 오류가 전파된다.",
+      "method": "MMAgent-R^2은 시각적 재순위화를 통해 쿼리와 후보 이미지를 직접 비교하여 유사 개체 중 대상을 정확히 찾고, 능동적 거절로 신뢰할 수 없는 결과를 폐기하고 추가 후보를 검색하는 내부 검증을 수행한다. 또한 단계별 검증 보상과 GRPO 훈련을 통해 검색, 검증, 답변 생성을 공동 최적화한다.",
+      "takeaway": "InfoSeek, E-VQA, MMhops 데이터셋에서 최고 성능을 보였으며, 특히 까다로운 검색 시나리오와 다중 이미지 다중 홉 추론에서 뛰어난 성능을 보였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.07383v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07383v1.pdf"
+  },
+  {
+    "id": "2607.07416",
+    "title": "VCDP: Variation-Conditioned Distributional Proxy Learning for Semi-Supervised Medical Image Segmentation",
+    "authors": "Zimu Zhang et al.",
+    "published": "2026-07-08",
     "category": "cv",
     "categories": [
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "multimodal"
+      "3d",
+      "medical",
+      "embedding"
     ],
-    "summaryKo": "HoloCount는 시각적 계수에 대한 종합적인 벤치마크로, 의미론적 계수, 분석적 계수, 강건성 테스트의 세 가지 계층적 수준을 통해 MLLM의 성능을 평가하며, 인식에서 복잡한 추론 및 역경 조건으로 전환될수록 성능이 크게 저하된다는 결정적인 격차를 밝혀낸다.",
+    "summaryKo": "VCDP는 반지도 3D 의료 영상 분할을 위해 각 클래스를 가우시안 분포와 변이 프로토타입으로 표현하고 변이 조건부 호환성 점수를 활용하여 추가 추론 비용 없이 복잡한 해부학적 구조의 분할 성능을 향상시키는 플러그 앤 플레이 정규화 모듈이다.",
     "detail": {
-      "problem": "기존의 시각적 계수 벤치마크는 단순화된 맥락에서의 기본 인식에 초점을 맞추어, 논리적 제약이나 적대적 조건에서 발생하는 복잡한 실패 모드를 포착하지 못한다. 또한 MLLM은 정량적 정밀도가 부족하여 수치적 환각 문제를 겪고 있다.",
-      "method": "HoloCount는 세 가지 수준의 계층적 분류 체계(의미론적 계수, 분석적 계수, 강건성 테스트)를 기반으로 한 종합적이고 진단적으로 풍부한 벤치마크이다. 이를 통해 MLLM의 계수 능력을 다양한 측면에서 체계적으로 평가한다.",
-      "takeaway": "20개 이상의 최신 MLLM을 평가한 결과, 최고 성능 모델조차 인식 기반 과제에서 복잡한 분석적 추론 및 역경 조건으로 전환됨에 따라 성능이 크게 저하되는 결정적인 격차가 발견되었다. 이 연구는 현재 MLLM의 계수 능력에 대한 체계적인 분석을 제공하며, 더 견고하고 신뢰할 수 있는 다중 모달 시스템 개발을 위한 로드맵을 제시한다."
+      "problem": "기존 반지도 3D 의료 영상 분할 방법은 일관성 정규화, 의사 레이블링, 공동 학습 등을 통해 예측 수준의 강건성을 향상시키지만, 작은 장기나 애매한 경계 영역과 같이 큰 클래스 내 변이를 가진 해부학적 구조에 대해서는 특징 공간 조직화가 불충분하다.",
+      "method": "VCDP는 각 클래스를 공유 의미론을 위한 학습 가능한 가우시안 분포와 세분화된 내부 패턴을 위한 여러 변이 프로토타입으로 표현하고, 분포 유사성과 소프트 변이 집계를 융합한 변이 조건부 호환성 점수를 통해 복셀 임베딩이 전역 장기 식별과 지역 해부학적 변이에 정렬되도록 유도한다. 이 모듈은 훈련 중에만 디코더 특징에 부착되고 추론 시 제거되어 추가 비용이 없다.",
+      "takeaway": "다중 장기 분할 벤치마크 실험에서 VCDP는 대부분의 평가된 기준선을 개선했으며, 특히 작고 애매하며 변이가 큰 장기에서 두드러진 성능 향상을 보였다. 본 방법은 훈련 전용 모듈로 추가 추론 비용이 들지 않는 장점이 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.06420v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.06420v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.07416v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07416v1.pdf"
+  },
+  {
+    "id": "2607.07548",
+    "title": "Think Big, Search Small: Where Capacity Matters in Hierarchical Search Agents?",
+    "authors": "Qinnan Cai, Yibo Zhao, Xiang Li",
+    "published": "2026-07-08",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "retrieval",
+      "generation"
+    ],
+    "summaryKo": "동일한 규모의 단일 모델로 모든 역할을 수행하는 기존 다중 에이전트 검색 시스템과 달리, 위임과 실행 역할의 모델 용량을 분리하여 체계적으로 변화시킨 실험을 통해 위임 역할에 용량을 집중하는 것이 성능 병목을 해결하는 핵심임을 밝혔다.",
+    "detail": {
+      "problem": "기존의 대규모 언어 모델 기반 검색 에이전트는 다중 에이전트 구조를 사용하지만 모든 역할에 동일한 규모의 모델을 할당하여, 역할별 모델 용량 분배의 영향을 탐구하지 않았다.",
+      "method": "계층적 검색을 작업 분해를 담당하는 위임 역할과 검색 및 증거 추출을 담당하는 실행 역할로 분해하고, 답변 생성 역할은 고정한 채 다섯 개의 멀티홉 QA 벤치마크에서 위임과 실행 축의 용량을 체계적으로 변화시키는 실험을 수행했다.",
+      "takeaway": "역할 분해가 단일 에이전트 기준선보다 항상 우수하며(EM 4.5~8.6%p 향상), 위임 모델 확장 시 EM이 약 11%p 개선된 반면 실행 모델 확장 시에는 약 2.6%p에 그쳐 분해 능력이 병목임을 확인했다. 또한, 품질 필터링된 궤적 증류로 학습한 1.7B 실행 모델이 최첨단 하위 에이전트와 유사한 정확도를 유지하면서 토큰 사용량을 37% 줄여 파레토 프론티어를 개선했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.07548v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.07548v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-08T03:38:56.597Z",
+  "collectedAt": "2026-07-09T04:09:38.113Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
