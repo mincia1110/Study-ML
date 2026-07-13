@@ -3,308 +3,305 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.08497",
-    "title": "Cognitive-structured Multimodal Agent for Multimodal Understanding, Generation, and Editing",
-    "authors": "Feng Wang et al.",
-    "published": "2026-07-09",
+    "id": "2607.09142",
+    "title": "MedRealMM: A Real-World Multimodal Benchmark for Chinese Online Medical Consultation",
+    "authors": "Runhan Shi et al.",
+    "published": "2026-07-10",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
       "cs.AI",
       "cs.CL",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "autonomous-driving",
-      "retrieval",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 시각적 토큰 폭발과 불안정한 교차 턴 참조 문제를 해결하기 위해 외부화된 일화적 시각 기억과 선택적 재활성화를 사용하는 인지 구조 다중 모달 에이전트를 제안하며, 8B 규모의 에이전트가 20-턴 세션에서 91.4%의 검색 정확도를 달성하고 추론 시간을 절반으로 줄였다.",
-    "detail": {
-      "problem": "기존 통합 다중 모달 모델은 모든 과거 시각 및 텍스트 입력을 공유 컨텍스트 윈도우에 반복적으로 입력하여 시각적 토큰이 폭발하고 교차 턴 참조가 불안정해져 장기 다중 모달 대화를 수행하기 어렵다.",
-      "method": "시각 정보를 외부화하여 일화적 시각 기억에 저장하고 추론 중 관련 에피소드를 선택적으로 재활성화하는 인지 구조 다중 모달 에이전트를 제안한다. 에이전트는 지각 추상화 엔진, 인지 검색 엔진, 다중 모달 실행 제어기로 구성되며, 턴 수준 검색 감독 부재를 해결하기 위해 통합 시나리오 엔진으로 학습 데이터를 생성하고 강화 학습을 통해 최적화한다.",
-      "takeaway": "8B 에이전트가 20-턴 세션에서 91.4%의 검색 정확도를 달성하여 32B 기준선보다 8.2% 높았으며, 턴당 추론 시간이 23.1초에서 12.7초로 거의 절반으로 줄었다. 구조화된 기억과 모듈식 의사 결정이 단일 매개변수 확장보다 확장 가능하고 효율적인 패러다임을 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08497v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08497v1.pdf"
-  },
-  {
-    "id": "2607.08375",
-    "title": "WCog-VLA: A Dual-Level World-Cognitive Vision-Language-Action Model for End-to-End Autonomous Driving",
-    "authors": "Xuerun Yan et al.",
-    "published": "2026-07-09",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "agents",
-      "3d",
-      "autonomous-driving"
-    ],
-    "summaryKo": "WCog-VLA는 의미론적 세계 예측과 생성적 세계 진화를 결합하여 능동적 자율 주행을 실현하는 새로운 이중 수준 세계 인지 VLA 프레임워크이다.",
-    "detail": {
-      "problem": "기존 VLA 기반 자율 주행 모델은 종합적인 세계 인지가 부족하거나 단편적인 세계 예측으로 인해 반응적 주행에 그치는 한계가 있다.",
-      "method": "의미론적 수준에서 3D 공간 인식과 에이전트 토큰을 통합하여 세계 동역학을 포착하고 게임 이론적 사고 사슬 추론(Game-CoT)을 가능하게 하며, 생성 수준에서는 정렬 분리 확산 변환기(ADDT)를 도입하여 물리적으로 타당한 다중 에이전트 궤적을 합성하고 장면 표현 정렬을 통해 잡음 제거 단계를 줄여 추론을 가속화한다. 또한 85k 개의 Game-CoT 주석 데이터셋을 구축하였다.",
-      "takeaway": "NAVSIM 벤치마크에서 PDMS 점수 92.9로 최고 성능(state-of-the-art)을 달성하였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08375v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08375v1.pdf"
-  },
-  {
-    "id": "2607.08745",
-    "title": "AUTOPILOT VQA: Benchmarking Vision-Language Models for Incident-Centric Dashcam Understanding",
-    "authors": "Siddharth Damodharan et al.",
-    "published": "2026-07-09",
-    "category": "cv",
-    "categories": [
-      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "autonomous-driving",
-      "multimodal"
+      "medical",
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "자율주행에서 안전에 중요한 사건 추론 능력을 평가하기 위해 대시캠 비디오 기반의 사고 중심 VQA 벤치마크인 AUTOPILOT-VQA를 제안한다.",
+    "summaryKo": "본 논문은 실제 중국 온라인 의료 상담 데이터를 기반으로 한 대규모 멀티모달 벤치마크 MedRealMM을 제안하며, 임상적으로 중요한 순간의 다음 응답 생성 과제를 통해 LLM을 평가한 결과, 현재 최첨단 모델이 여전히 의사 수준에 미치지 못하고 안전 관련 오류 회피가 주요 병목임을 보여준다.",
     "detail": {
-      "problem": "최근 비전-언어 모델의 발전에도 불구하고, 안전에 중요한 사건에 대한 모델의 신뢰할 수 있는 추론 능력을 평가하는 것은 여전히 어려운 과제이다.",
-      "method": "이를 해결하기 위해 실제 주행 사고 및 준사고를 기반으로 한 구조화된 질문으로 구성된 AUTOPILOT-VQA 데이터셋을 제안하며, 날씨, 도로 상태, 교통 환경 등 다양한 안전 관련 범주를 포함하여 객체 인식을 넘어 시간적 맥락과 안전 추론을 요구한다.",
-      "takeaway": "이 벤치마크는 CVPR 2026 대회의 일환으로 공개되어 자율주행 시스템의 신뢰성을 평가하는 표준화된 평가 기준을 제공하며, 더 해석 가능하고 강건하며 안전을 고려한 비전-언어 시스템 개발을 지원할 것으로 기대된다."
+      "problem": "기존 벤치마크는 합성 대화나 환자 시뮬레이터에 의존하고 환자 업로드 의료 이미지를 생략하며, 다지선다형 또는 어휘 일치 지표를 사용하여 임상 품질을 제대로 반영하지 못한다.",
+      "method": "MedRealMM은 MCCP 추출 프레임워크를 통해 실제 비식별화된 환자-의사 상호작용에서 임상적으로 까다로운 지점을 식별하고, 이를 이전 텍스트-이미지 맥락을 유지한 다음 응답 생성 과제로 변환하며, 의사가 검증한 사례별 루브릭을 제공한다.",
+      "takeaway": "이미지 정보가 임상 성능에 필수적이며, 현재 최첨단 LLM은 온라인 의사 응답 수준에 미치지 못하고, 일부 모델은 긍정 기준을 충족하지만 더 많은 부정 기준을 유발하여 안전 민감 오류 회피가 핵심 과제임을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.08745v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08745v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.09142v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09142v1.pdf"
   },
   {
-    "id": "2607.08705",
-    "title": "HumanForge: A Human-Centric Deepfake Video Benchmark with Multi-Agent Forgery Rationales",
-    "authors": "Wenbo Xu et al.",
-    "published": "2026-07-09",
+    "id": "2607.09078",
+    "title": "Toward Active Object Detection for UAVs in the Wild: A Large-Scale Dataset, Benchmark and Method",
+    "authors": "Tianpeng Liu et al.",
+    "published": "2026-07-10",
     "category": "multimodal",
     "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "agents",
-      "video",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 인간 중심의 딥페이크 비디오 생성을 위한 통합 벤치마크인 HumanForge와 자동 데이터 구축 및 주석 생성을 위한 다중 에이전트 파이프라인 Gen2Anno를 제안합니다.",
-    "detail": {
-      "problem": "비디오 확산 모델의 발전으로 사실적인 인간 중심 비디오 생성이 가능해졌지만, 기존 벤치마크는 주로 얼굴 교체나 전역적 텍스트-비디오 합성에 초점을 맞추어 인간-사물 및 인간-인간 상호작용과 다중 모달 정렬을 간과합니다.",
-      "method": "본 논문은 대규모 다중 패러다임 인간 중심 비디오 위조 데이터셋 HumanForge를 제안하고, LangGraph 기반의 모듈식 능동 다중 에이전트 파이프라인인 Gen2Anno를 활용하여 수동 레이블링 없이 18K 이상의 고품질 비디오 세그먼트와 구조화된 대조적 옴니 주석을 생성합니다.",
-      "takeaway": "최신 전통적 탐지기와 대규모 멀티모달 모델(LMM)을 사용한 광범위한 벤치마킹에서 HumanForge가 제로샷 일반화와 세분화된 추론에 상당한 어려움을 제공함을 보여주었으며, 코드와 데이터셋은 공개될 예정입니다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08705v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08705v1.pdf"
-  },
-  {
-    "id": "2607.08741",
-    "title": "ARDY: Autoregressive Diffusion with Hybrid Representation for Interactive Human Motion Generation",
-    "authors": "Kaifeng Zhao et al.",
-    "published": "2026-07-09",
-    "category": "cv",
-    "categories": [
-      "cs.GR",
       "cs.CV",
-      "cs.LG",
       "cs.RO"
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "3d",
-      "video",
-      "embedding"
+      "agents",
+      "embedding",
+      "detection"
     ],
-    "summaryKo": "ARDY는 하이브리드 표현과 두 단계 자동회귀 트랜스포머 디노이저를 사용하여 온라인 텍스트 프롬프트와 유연한 운동학적 제약 조건을 통해 고품질 3D 인간 모션을 실시간 생성하는 스트리밍 생성 프레임워크이다.",
+    "summaryKo": "본 논문은 UAV-지상 능동 객체 탐지(UGAOD)를 위한 최초의 대규모 실제 데이터셋과 벤치마크를 구축하고, JEPA 기반 세계 모델을 활용한 AOD-JEPA 방법을 제안하여 기존 심층 강화 학습 기반 정책의 일반화 문제를 해결하고 우수성을 입증하였다.",
     "detail": {
-      "problem": "최근 오프라인 모션 생성 방법은 텍스트와 운동학적 제약 조건을 통한 정밀한 제어가 가능하지만 대화형 설정에 필요한 추론 속도가 부족하다. 반면 기존 온라인 방법은 실시간 합성이 가능하지만 제어 가능성이 떨어지거나 복잡한 텍스트 의미와 장기 목표를 처리하는 데 어려움이 있다.",
-      "method": "ARDY는 명시적 루트 특징과 잠재 신체 임베딩을 결합한 하이브리드 표현을 사용하며, 가변 히스토리 컨텍스트를 갖춘 두 단계 자동회귀 트랜스포머 디노이저를 제안한다. 대규모 모션 캡처 데이터셋에서 텍스트 레이블과 운동학적 제약 조건으로 직접 학습되어 온라인 프롬프팅과 유연한 장기 목표를 지원하는 제어 가능한 생성을 기본적으로 학습한다.",
-      "takeaway": "HumanML3D 및 Bones Rigplay 데이터셋에서의 광범위한 평가를 통해 높은 모션 품질과 제약 조건 준수를 입증했으며, 동적 텍스트 제어, 다양한 키프레임 포즈 제약, 경로 추종 및 마우스/키보드를 통한 대화형 보행 제어를 특징으로 하는 대화형 데모를 통해 방법의 실용적 다용성을 보여주었다."
+      "problem": "UAV 객체 탐지는 가림 현상이나 대상 픽셀 부족 등의 문제에 직면하며, 능동 객체 탐지(AOD)가 이를 해결할 수 있는 새로운 패러다임이지만 UAV 기반 AOD 연구는 고품질 데이터셋과 벤치마크 부재로 인해 충분히 이루어지지 못하고 있다.",
+      "method": "121,000장의 다중 시점 파노라마 다중 대상 항공 이미지와 121만 개의 지역 단일 대상 슬라이스로 구성된 대규모 실제 데이터셋 ATRNet-LUDO를 구축하고, 이를 기반으로 AOD 정책 학습 방법 평가용 벤치마크를 확립했다. 또한 JEPA(결합 임베딩 예측 아키텍처)로 세계 모델을 구성하여 상태 표현 학습을 강화하고 AOD 특화 사전 지식을 통합한 AOD-JEPA를 제안했다.",
+      "takeaway": "광범위한 실험을 통해 AOD-JEPA의 효과와 우수성을 검증했으며, 벤치마크 평가에서 기존 DRL 기반 AOD 정책이 훈련과 테스트 성능 간 큰 일반화 격차를 보임을 확인하여 해결의 필요성을 강조했다. 데이터셋과 벤치마크는 향후 UGAOD 연구 발전에 기여할 것으로 기대된다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.08741v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08741v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.09078v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09078v1.pdf"
   },
   {
-    "id": "2607.08080",
-    "title": "MASTE: A Multi-Agent Pipeline for Zero-Shot Aspect Sentiment Triplet Extraction",
-    "authors": "Ao Hong et al.",
-    "published": "2026-07-09",
-    "category": "llm",
+    "id": "2607.09654",
+    "title": "Evolution of Accuracy and Visual-Cognitive Errors in a Decade of Vision-Language AI Models",
+    "authors": "Shravan Murlidaran, Miguel P. Eckstein",
+    "published": "2026-07-10",
+    "category": "cv",
     "categories": [
-      "cs.CL"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "generation"
+      "multimodal",
+      "detection"
     ],
-    "summaryKo": "MASTE는 다중 에이전트 파이프라인을 통해 대규모 언어 모델의 제로샷 관점-의견-감정 삼중 추출(ASTE) 성능을 향상시키는 방법을 제안한다.",
+    "summaryKo": "본 논문은 복잡한 사회적 행동을 포함하는 CSB 데이터셋을 도입하여 10년간의 시각-언어 모델의 발전을 정확도와 다섯 가지 시각-인지 오류 유형 측면에서 평가하고, MLLM이 단순 및 복잡한 장면 간 정확도 차이를 해소했지만 공간 의존 오류가 여전히 존재함을 보여준다.",
     "detail": {
-      "problem": "기존의 대규모 언어 모델은 ASTE 작업에서 단일 생성 과정으로 범위 경계, 의견 그룹화, 감정 극성을 동시에 결정해야 하므로 효과성이 제한된다. 퓨샷 학습이나 사고 사슬 프롬프팅 같은 일반적인 개선 방법은 레이블이 있는 학습 데이터나 정교한 프롬프트에 의존하여 제로샷 배포에서 사용하기 어렵다.",
-      "method": "MASTE는 ASTE를 네 가지 순차적 단계로 분해하고, 각 단계마다 특화된 에이전트가 이전 출력에 조건화되어 작업을 수행한다. 이 설계는 완전히 학습이 필요 없는 제로샷 ASTE를 가능하게 하고 다양한 백본과 데이터셋에 일반화된다.",
-      "takeaway": "네 개의 ASTE 벤치마크에 대한 광범위한 실험에서 MASTE는 동일한 백본을 사용한 제로샷 및 사고 사슬 LLM 기준선보다 훨씬 뛰어난 성능을 보였으며, 레이블이 지정된 삼중 데이터를 전혀 사용하지 않고 완전 지도 방법에 근접하는 성능을 달성했다."
+      "problem": "기존 시각-언어 모델 평가는 MS-COCO 같은 단순한 장면에 국한되어 복잡한 사회적 상호작용을 반영하지 못했으며, 모델의 오류 유형에 대한 분석이 부족했다.",
+      "method": "복잡한 사회적 상호작용을 담은 100장의 이미지로 구성된 CSB 데이터셋을 구축하고, 2017년부터 2025년까지의 VLM(Pre-MLLM 4개, MLLM 5개)과 20명의 인간 설명을 정확도와 다섯 가지 시각-인지 오류 유형(객체 탐지, 인식, 환각, 장면 이해, 공간 의존성)을 기준으로 평가했다.",
+      "takeaway": "CSB 데이터셋에서 MS-COCO보다 더 큰 정확도 향상이 나타났으며, Pre-MLLM은 하위 인간 설명보다 낮은 반면 MLLM은 상위 인간 설명과 유사한 성능을 보였다. MLLM은 단순 장면과 복잡한 장면 간의 정확도 차이를 해소하고 공간 의존 오류를 제외한 모든 오류 유형을 거의 제거했다. 탐지, 인식, 환각 오류가 장면 설명 정확도에 가장 큰 영향을 미쳤다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.08080v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08080v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.09654v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09654v1.pdf"
   },
   {
-    "id": "2607.08093",
-    "title": "CausalDS: Benchmarking Causal Reasoning in Data-Science Agents",
-    "authors": "Andrej Leban, Yuekai Sun",
-    "published": "2026-07-09",
+    "id": "2607.09024",
+    "title": "Video Generation Models are General-Purpose Vision Learners",
+    "authors": "Letian Wang et al.",
+    "published": "2026-07-10",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "diffusion",
+      "3d",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "텍스트-비디오 생성 모델을 사전 학습 백본으로 활용하여 다양한 비전 작업을 수행하는 일반 목적 모델 GenCeption을 제안하며, 이는 여러 작업에서 최첨단 성능과 데이터 효율성 및 일반화 능력을 보인다.",
+    "detail": {
+      "problem": "컴퓨터 비전에서 NLP의 next-token prediction과 같은 일반 목적 기초 모델을 가능하게 할 사전 학습 촉매제가 필요하다.",
+      "method": "사전 학습된 텍스트-비디오 생성 확산 모델을 기반으로 한 피드포워드 인식 모델 GenCeption을 제안한다. 이 모델은 텍스트 명령어에 따라 깊이 추정, 표면 법선 추정, 카메라 자세 추정, 표현 참조 분할, 3D 키포인트 예측 등 다양한 비전 작업을 수행한다.",
+      "takeaway": "GenCeption은 다양한 비전 작업에서 전문 모델과 동등하거나 더 나은 성능을 보였으며, 대안 사전 학습 패러다임보다 우수한 결과를 냈다. 또한 7~500배 적은 훈련 데이터로도 최고 수준 모델과 유사한 성능을 보이는 데이터 효율성과 확장성의 초기 징후를 보였고, 합성 데이터 학습만으로 실제 영상 및 분포 외 객체에 일반화되는 흥미로운 특성을 나타냈다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09024v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09024v1.pdf"
+  },
+  {
+    "id": "2607.09629",
+    "title": "4DR360: State Reasoning for Joint 3D Detection and Occupancy Prediction in 4D Radar-Camera Full-Scene Perception",
+    "authors": "Xiaokai Bai et al.",
+    "published": "2026-07-10",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "3d",
+      "autonomous-driving",
+      "benchmark",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 4D 레이더-카메라를 이용한 360° 전방위 장면 인식을 위해 의미적 점유를 지속적인 상태로 모델링하는 4DR360 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "기존 레이더-카메라 방법은 주로 객체 검출에 최적화되어 있으며, 검출과 점유 예측을 동시에 수행하는 이중 작업 시스템은 상호작용이 제한적이다. 또한 4D 레이더의 희소한 특성으로 인해 레이더-카메라 융합이 필요하다.",
+      "method": "4DR360은 교차 모달 상태 추론 패러다임을 따르며, 상태 기반 BEV 향상(SBE)과 도플러 기반 시간 융합(DTF)을 통해 점유 상태를 단계적으로 모델링하고 조잡함에서 정밀함으로 특징을 집계한다.",
+      "takeaway": "실험은 정확성, 강건성, 절제 연구, 효율성을 포함한 단일 평가 프레임워크에서 수행되었으며, 코드와 레이블은 추후 공개될 예정이다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09629v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09629v1.pdf"
+  },
+  {
+    "id": "2607.09114",
+    "title": "Event Stream based Multi-Modal Video Anomaly Detection: A Benchmark Dataset and Algorithms",
+    "authors": "Peipei Zhu et al.",
+    "published": "2026-07-10",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.MM"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "embedding",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 가시광선 비디오만 사용하는 기존 비디오 이상 탐지(VAD)의 조명 변화, 빠른 움직임, 복잡한 배경 등의 한계를 극복하기 위해 이벤트 스트림을 추가로 활용하는 EVAD 프레임워크를 제안하고, 대규모 가시광선-이벤트 벤치마크 데이터셋을 구축하여 우수한 성능을 입증한다.",
+    "detail": {
+      "problem": "가시광선 비디오만 사용하는 기존 비디오 이상 탐지(VAD)는 조명 변화, 빠른 움직임, 복잡한 배경과 같은 까다로운 조건에서 취약하다.",
+      "method": "EVAD는 생체 모방 이벤트 카메라의 이벤트 스트림을 가시광선 비디오와 결합하여 활용하는 프레임워크이다. 또한 63억 개의 이벤트와 376,368개의 프레임으로 구성된 대규모 벤치마크 데이터셋을 구축하고, 대조적 멀티모달 사전학습과 적응형 융합 모듈을 설계한다.",
+      "takeaway": "EVAD는 여러 벤치마크와 제안된 TJUTCM Pha 데이터셋에서 기존 방법들을 일관되게 능가하여, 실제 환경에서 이벤트 기반 센싱이 비디오 이상 탐지에 효과적임을 입증하였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09114v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09114v1.pdf"
+  },
+  {
+    "id": "2607.09267",
+    "title": "REMIND: RE-Identification with Memory for INDoor Navigation",
+    "authors": "Pablo Diaz-Pereda et al.",
+    "published": "2026-07-10",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "video",
+      "benchmark",
+      "detection"
+    ],
+    "summaryKo": "REMIND는 실내 환경에서 장기간 객체 재식별을 위한 온라인 추적기로, 단일 RGB 영상을 사용하여 기존 방법보다 높은 IDF1 성능을 달성한다.",
+    "detail": {
+      "problem": "실내 모바일 로봇이 긴 시간 간격, 시점 변화, 조명 변화에도 불구하고 객체를 재식별해야 하는 문제를 해결. 기존의 다중 객체 추적, 재식별, 비디오 객체 분할 방법들은 장기 재식별이나 전역 정체성 일관성에 한계가 있음.",
+      "method": "REMIND는 카메라 자세나 깊이 없이 단일 RGB 영상으로 일반 실내 객체를 장기간 재식별하는 온라인 추적기임. 인간의 시각 인지에 착안하여, DINOv3 특징, 이중 저장소 다중 프로토타입 외관 메모리, 부분 및 배경 기술자, 이웃 맥락 추론, 모호성 인식 헝가리안 할당을 결합함.",
+      "takeaway": "자체 구축 데이터셋에서 90.35% IDF1로 최신 비디오 객체 분할 기준보다 20포인트, 추적-검출 기준보다 36포인트 이상 높은 성능을 보였음. ScanNet++에서는 대부분 최고 성능을 기록했으나 한 설정(전체 장면 종단 간 검출)에서는 추적-검출 기준에 근소하게 뒤졌으며, 모든 장면을 완료하여 GPU 메모리 문제를 해결함."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09267v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09267v1.pdf"
+  },
+  {
+    "id": "2607.09428",
+    "title": "Multimodal Scenario Similarity Search for Autonomous Driving",
+    "authors": "Tamás Matuszka, András Tamásy, Balázs Szolár",
+    "published": "2026-07-10",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "tags": [
+      "agents",
+      "autonomous-driving",
+      "retrieval",
+      "embedding",
+      "multimodal"
+    ],
+    "summaryKo": "본 논문은 자율주행 시나리오 검색을 위해 시각적 정보와 궤적 기반 표현을 결합한 멀티모달 프레임워크를 제안하며, 두 정보의 상호보완성이 검색 성능을 향상시킴을 보여준다.",
+    "detail": {
+      "problem": "대규모 자율주행 데이터셋에서 유사한 시나리오를 효율적으로 검색할 필요가 있지만, 기존 방법은 시각 또는 모션 기반 표현에 의존하여 각각의 장단점을 이해하기 어렵다.",
+      "method": "본 연구는 통합 검색 파이프라인 내에서 시각적 표현과 궤적 기반 표현(Exo-Trajectory 및 ScenarioFormer)을 결합한 멀티모달 프레임워크를 제안하며, 대조 학습을 통해 궤적 표현을 학습한다.",
+      "takeaway": "궤적 표현은 움직임 중심 이벤트에서 강력한 검색 성능을 보이고 시각적 임베딩은 외형 정보가 유용할 때 뛰어나며, 둘을 결합하면 검색 품질이 일관되게 향상된다. 이는 자율주행 데이터 마이닝, 데이터셋 큐레이션, 시나리오 기반 검증에 멀티모달 검색 시스템의 필요성을 입증한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09428v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09428v1.pdf"
+  },
+  {
+    "id": "2607.09503",
+    "title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility",
+    "authors": "Filippo Ziliotto et al.",
+    "published": "2026-07-10",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "3d"
+    ],
+    "summaryKo": "VGGT가 동시가시성을 창발적으로 부호화함을 발견하고, 이를 활용한 경량 혼합전문가 헤드(Co-VGGT)로 RGB 입력만으로 동시가시성 분류에서 큰 폭의 성능 향상을 달성하였다.",
+    "detail": {
+      "problem": "3차원 재구성 및 로봇 위치 추정의 근본 과제인 이미지 쌍 간의 동시가시성 판별은 특히 겹침이 적은 상황에서 어려움이 있다.",
+      "method": "기하학 기반 기초 모델 VGGT의 계층적 표현(초기 층은 3D 장면, 후기 층은 동시가시성 추론에 특화)에서 동시가시성 정보가 내재되어 있음을 발견하고, VGGT는 고정시킨 채 각 층을 적응적으로 가중치 부여하는 경량 혼합전문가 헤드(Co-VGGT, 750만 파라미터 미만)만을 학습하여 RGB 입력으로 동시가시성을 분류한다.",
+      "takeaway": "Co-VisiON 벤치마크에서 인간 주석 기준을 능가하고 이전 연구 대비 쌍별(pairwise) 25% 이상, 다중시점(multiview) 10% 이상 성능을 향상시켰으며, 예측이 잘 보정되어(ECE=0.030) 후처리 없이 SfM/SLAM 파이프라인에 직접 활용할 수 있음을 보였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09503v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09503v1.pdf"
+  },
+  {
+    "id": "2607.09583",
+    "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
+    "authors": "Mohammad Dabaja, Turgay Celik",
+    "published": "2026-07-10",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 SAM 3의 원격 탐사 영상에 대한 제로샷 및 원샷 능력을 평가하고, 시각적 및 텍스트 프롬프트 간의 교차 모달 간섭을 발견하여 SAM 3의 한계와 파라미터 효율적 미세 조정의 필요성을 제시한다.",
+    "detail": {
+      "problem": "대규모 기반 모델인 SAM 3가 지구 관측 영상의 복잡한 기하학적 구조에 대해 분포 외 일반화를 얼마나 잘 수행하는지 아직 정량화되지 않았다.",
+      "method": "SAM 3의 분리된 이진 존재 헤드를 제로샷 분류기로 재구성하고, 다섯 가지 구성에서 텍스트 및 시각적 프롬프트 방식을 체계적으로 분리하여 정렬 메커니즘을 진단한다. 또한, 훈련 없이 일반화 제로샷 작업을 평가하는 새로운 프록시 평가 프로토콜을 제안한다.",
+      "takeaway": "SAM 3는 과적합을 피하고 분할 작업에서 높은 조화 평균 점수를 달성하지만, 서브픽셀 해상도 한계와 오버헤드 의미 사각지대에 의해 근본적으로 제약된다. 이는 멀티모달 디코더의 파라미터 효율적 지리공간 미세 조정이 필요함을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09583v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09583v1.pdf"
+  },
+  {
+    "id": "2607.09094",
+    "title": "PRecG: Legal Precedent Retrieval with Graph Neural Networks and Rhetorical Role Segmentation",
+    "authors": "Devanshu Verma et al.",
+    "published": "2026-07-10",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "embedding"
+    ],
+    "summaryKo": "본 논문은 법률 문서의 수사학적 역할에 기반한 세그먼트 분할과 그래프 신경망을 활용하여 판례 검색 성능을 향상시키는 PRecG 파이프라인을 제안한다.",
+    "detail": {
+      "problem": "기존의 자동 판례 검색 방법들은 법률 문서를 단일 텍스트로 취급하여 수사학적 구조를 무시함으로써, 법적 개념과 개체가 문서 내 역할에 따라 달라지는 맥락적 중요성을 구분하지 못하는 문제가 있다.",
+      "method": "PRecG는 각 문서를 문장의 수사학적 역할에 따라 세그먼트로 분해하고, 각 세그먼트에 대해 지식 그래프를 구축하여 개체의 맥락적 표현을 학습한 후, 이를 집계하여 세그먼트 수준 및 문서 수준 임베딩을 생성한 뒤 문서 간 유사도를 계산한다.",
+      "takeaway": "인도 법률 벤치마크 데이터셋에서의 실험을 통해 최신 기준 모델들과 비교하여 효과를 입증하였으며, 초록에 명시된 한계는 없다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.09094v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09094v1.pdf"
+  },
+  {
+    "id": "2607.09349",
+    "title": "Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation",
+    "authors": "Cedric Caruzzo, Donggeun Yoo, Tae Soo Kim",
+    "published": "2026-07-10",
     "category": "llm",
     "categories": [
-      "cs.AI",
       "cs.CL",
+      "cs.AI",
       "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "agents",
+      "medical",
+      "retrieval",
       "generation"
     ],
-    "summaryKo": "CausalDS는 실제 데이터 분포를 반영한 구조적 인과 모델에서 생성된 합성 데이터와 스토리를 바탕으로, 인과 추론의 세 단계(관찰, 개입, 반사실)와 데이터 과학 코딩, 답변 기권 등을 통해 데이터 과학 에이전트의 인과 추론 능력을 포괄적으로 평가하는 벤치마크이다.",
+    "summaryKo": "본 논문은 임상 검색-증강 생성(RAG) 시스템에서 검색된 증거가 잘못된 개체에 귀속되는 '기만적 근거(Deceptive Grounding)' 실패를 정의하고, 다양한 모델과 실제 시스템에서의 발생률을 측정하며, 개체-귀속 검증이 이를 효과적으로 탐지할 수 있음을 보여준다.",
     "detail": {
-      "problem": "기존 벤치마크는 인과 추론이나 데이터 분석 중 하나에만 초점을 맞추거나, 인과 평가 데이터셋이 제한된 템플릿에서 생성되어 다양성이 부족했다.",
-      "method": "CausalDS는 각 인스턴스에 대해 샘플링된 구조적 인과 모델에서 관측 데이터를 생성하고, 실제 도메인에 기반한 자연어 스토리를 합성한다. 또한 인과 추론의 모든 단계(1~3단계)에서 불완전 관측을 반영한 코딩 과제와 답변 기권 평가를 포함한다.",
-      "takeaway": "이 벤치마크는 상징적 인과 추론, 데이터 과학, 불확실성 정량화, 기권, 도구 사용/코딩을 종합적으로 평가할 수 있으며, 완전히 합성된 생성을 통해 실제 데이터의 구조적 특성을 유지하면서도 '인과적 앵무새' 위험을 줄인다."
+      "problem": "기존 RAG 평가는 모델 주장이 검색 문서에 사실적으로 근거하는지만 확인할 뿐, 검색된 증거가 올바른 개체(예: 쿼리된 약물)에 귀속되는지는 확인하지 않는다. 이로 인해 실제로는 약물 Y에 대한 임상 증거를 약물 X에 대한 증거로 제시하는 '기만적 근거' 오류가 발생할 수 있다.",
+      "method": "13개 모델을 대상으로 통제된 요인 실험을 통해 DG 발생률을 체계적으로 측정하고, 개체별 임상 증거를 제거하는 제거 실험을 통해 메커니즘을 분석했다. 또한 실제 배포된 RAG 시스템에서 740개 약물-질병 쌍에 대한 생산 측정을 수행했다.",
+      "takeaway": "DG는 교란 조건에서 8~87% 범위로 발생하며, 의학 및 생의학 미세조정 모델에서 최대 86.7%로 도메인 특화가 오히려 실패를 심화시켰다. 개체 특이적 증거 제거 시 DG가 완전히 사라지고 허위 생성으로 대체되었으며, 실제 시스템에서 7.8%의 DG가 관찰되었다. 개체-귀속 검증은 DG 탐지에 97.0% 정밀도와 98.7% 재현율을 보였으나, 기존 평가 프레임워크는 이를 구현하지 않은 한계가 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.08093v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08093v1.pdf"
-  },
-  {
-    "id": "2607.08763",
-    "title": "OpenCoF: Learning to Reason Through Video Generation",
-    "authors": "Xinyan Chen et al.",
-    "published": "2026-07-09",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "generation"
-    ],
-    "summaryKo": "OpenCoF는 다양한 시간적 감독과 명시적 추론 토큰을 통해 비디오 생성 기반 추론(Chain-of-Frame)을 향상시키는 프레임워크로, 새로운 데이터셋과 미세 조정된 모델을 통해 여러 비디오 추론 벤치마크에서 기준선 대비 상당한 성능 향상을 달성했다.",
-    "detail": {
-      "problem": "기존 비디오 생성 모델은 일반 비디오 코퍼스로 학습되어 연속된 프레임을 통한 추론(Chain-of-Frame)을 위한 다양한 감독과 전용 설계가 부족하다.",
-      "method": "OpenCoF는 11개 작업군을 포함하는 OpenCoF-17K 데이터셋과 이를 기반으로 미세 조정된 Wan-CoF 모델을 제안하며, 시각적 및 텍스트 추론 토큰을 추가하여 저수준 시각 단서와 고수준 의미적 사전 정보를 각각 포착하게 한다.",
-      "takeaway": "Wan-CoF는 네 가지 비디오 추론 벤치마크에서 기준선 대비 상당한 성능 향상을 보였으며, 강력한 비디오 추론에는 광범위한 시간적 감독과 중간 추론 상태를 조직화하는 명시적 메커니즘이 모두 필요함을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08763v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08763v1.pdf"
-  },
-  {
-    "id": "2607.08768",
-    "title": "UniClawBench: A Universal Benchmark for Proactive Agents on Real-World Tasks",
-    "authors": "Zhekai Chen et al.",
-    "published": "2026-07-09",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 실세계 환경에서 작동하는 능동형 에이전트를 평가하기 위한 최초의 역량 기반 벤치마크인 UniClawBench를 소개한다.",
-    "detail": {
-      "problem": "기존 벤치마크는 샌드박스 환경과 단일 턴 평가에 의존하며, 시나리오 기반 태스크 분류가 여러 모델 역량을 혼합하여 에이전트 실패의 근본 원인을 파악하기 어렵다.",
-      "method": "UniClawBench는 다섯 가지 기본 모델 역량(기술 사용, 탐색, 장문 맥락 추론, 다중 모드 이해, 플랫폼 간 조정)을 기반으로 400개의 이중 언어 실제 태스크를 설계하고, 라이브 Docker 컨테이너에서 세분화된 체크포인트로 평가하며, 실행 에이전트, 숨은 감독 에이전트, 사용자 에이전트로 구성된 폐쇄 루프 평가 전략을 사용한다.",
-      "takeaway": "다양한 모델과 프레임워크에 대한 포괄적 비교를 통해 기본 모델 역량과 에이전트 프레임워크 설계가 실제 환경에서 성능에 어떻게 공동으로 영향을 미치는지를 보여준다. 또한, 향후 연구를 위해 벤치마크와 코드를 공개한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08768v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08768v1.pdf"
-  },
-  {
-    "id": "2607.08182",
-    "title": "LEEVLA: Seeing What Matters in Latent Environment Evolution for Vision-Language-Action",
-    "authors": "Qi Lyu et al.",
-    "published": "2026-07-09",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "LEEVLA는 비전-언어-행동 모델에서 작업에 중요한 증거에 주목하고 잠재 세계 표현의 구조적 진화를 보존하기 위해 드리프트 유도 동적 우선순위화 및 구조화된 특징 흐름 생성을 도입하는 아키텍처이다.",
-    "detail": {
-      "problem": "기존의 VLA 모델들은 모든 시각적 토큰을 동일하게 처리하고 인간이 선택한 요소로 추론하여 작업에 중요한 증거를 강조하지 못하고 복잡한 동적 시나리오를 다루는 데 어려움이 있다.",
-      "method": "LEEVLA는 드리프트 유도 동적 우선순위화(DGDP)로 주목할 영역을 안내하고 구조화된 특징 흐름 생성(SFFG)으로 잠재 공간에서 우선순위가 정해진 특징이 어떻게 진화해야 하는지를 모델링하는 '어디서-어떻게' 훈련 프레임워크를 제안한다.",
-      "takeaway": "VLA 벤치마크 실험에서 LEEVLA는 기존 방법을 일관되게 능가하며, 명시적인 작업 증거 안내와 구조화된 잠재 추론이 확장 가능한 VLA에 중요함을 확인했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08182v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08182v1.pdf"
-  },
-  {
-    "id": "2607.08191",
-    "title": "Dual-Correlation Hypergraph Network for Unaligned RGBT Video Object Detection and A Large-scale Benchmark",
-    "authors": "Qishun Wang et al.",
-    "published": "2026-07-09",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "multimodal",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 RGBT 비디오 객체 검출에서 공간적 불일치를 해결하기 위해 이중 상관 하이퍼그래프 네트워크(DHNet)를 제안하고, 대규모 벤치마크 데이터셋 DVT-VOD1000을 구축하여 최첨단 검출 정확도를 달성한다.",
-    "detail": {
-      "problem": "RGBT 비디오 객체 검출에서 RGBT 이미지 쌍 간 공간적 불일치가 일반적으로 존재하며, 이를 해결하기 위한 대규모의 다양한 장면을 포함하는 벤치마크 데이터셋이 부족하다.",
-      "method": "제안하는 DHNet은 패치 기반 공간 정렬 모듈(PSAM)로 다중 모달 특징을 정렬하고, 이중 하이퍼그래프 융합 모듈(DHFM)을 통해 시간적 및 다중 모달 상관관계를 학습한다. 또한, 1,000개의 비디오 시퀀스로 구성된 대규모 RGBT VOD 데이터셋 DVT-VOD1000을 구축한다.",
-      "takeaway": "VT-VOD50과 DVT-VOD1000 데이터셋에서의 실험을 통해 DHNet이 최첨단 검출 정확도를 달성함을 입증하였으며, 데이터셋과 소스 코드는 공개될 예정이다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08191v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08191v1.pdf"
-  },
-  {
-    "id": "2607.08434",
-    "title": "DeltaV: Thinking with Visual State Updates in Unified Large Multimodal Models",
-    "authors": "Pengjie Wang et al.",
-    "published": "2026-07-09",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "DeltaV는 통합 대규모 다중 모드 모델에서 시각적 상태 업데이트를 통해 전체 이미지 생성 대신 증분 업데이트 토큰을 예측하여 시각적 토큰 중복을 줄이고 다중 모드 추론을 향상시키는 방법을 제안한다.",
-    "detail": {
-      "problem": "기존 통합 대규모 다중 모드 모델(ULMM)은 추론 과정에서 각 시각적 상태를 전체 이미지로 생성하여 시각적 토큰 중복이 발생하고, 추론에 중요한 상태 전환에 대한 학습 신호가 약하다.",
-      "method": "DeltaV는 이전 시각적 상태를 기반으로 시각적 변화만 캡처하는 소형 업데이트 토큰을 예측하고, TSIM 라우터를 통해 변화량에 따라 토큰 수를 조절한다. 또한 다양한 추론을 위한 대규모 StructCoT 데이터셋을 구축한다.",
-      "takeaway": "DeltaV는 시각적 토큰을 평균 55.6% 줄이면서도 재구성 충실도를 유지하고, 다중 모드 추론 성능을 3.3% 향상시킨다. DeltaV-2B는 더 큰 오픈소스 모델 및 동급 모델 대비 각각 최대 8.4%, 5.9% 우수한 성능을 보인다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.08434v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.08434v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.09349v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.09349v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-12T03:47:03.387Z",
+  "collectedAt": "2026-07-13T03:51:35.214Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
