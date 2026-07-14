@@ -3,305 +3,300 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.09142",
-    "title": "MedRealMM: A Real-World Multimodal Benchmark for Chinese Online Medical Consultation",
-    "authors": "Runhan Shi et al.",
-    "published": "2026-07-10",
-    "category": "multimodal",
+    "id": "2607.11862",
+    "title": "Evidence-Backed Video Question Answering",
+    "authors": "Shijie Wang et al.",
+    "published": "2026-07-13",
+    "category": "cv",
     "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "medical",
-      "multimodal",
+      "video",
       "generation"
     ],
-    "summaryKo": "본 논문은 실제 중국 온라인 의료 상담 데이터를 기반으로 한 대규모 멀티모달 벤치마크 MedRealMM을 제안하며, 임상적으로 중요한 순간의 다음 응답 생성 과제를 통해 LLM을 평가한 결과, 현재 최첨단 모델이 여전히 의사 수준에 미치지 못하고 안전 관련 오류 회피가 주요 병목임을 보여준다.",
+    "summaryKo": "본 논문은 비디오 질문 응답에서 의미적 답변과 함께 정확한 시공간 증거(시간적 세그먼트 및 밀집 객체 추적 분할 마스크릿)를 출력하는 E-VQA(Evidence-Backed Video Question Answering)를 제안하고, 대규모 데이터셋 기반 파인튜닝을 통해 설명 가능한 비디오 이해의 강력한 기준선을 마련한다.",
     "detail": {
-      "problem": "기존 벤치마크는 합성 대화나 환자 시뮬레이터에 의존하고 환자 업로드 의료 이미지를 생략하며, 다지선다형 또는 어휘 일치 지표를 사용하여 임상 품질을 제대로 반영하지 못한다.",
-      "method": "MedRealMM은 MCCP 추출 프레임워크를 통해 실제 비식별화된 환자-의사 상호작용에서 임상적으로 까다로운 지점을 식별하고, 이를 이전 텍스트-이미지 맥락을 유지한 다음 응답 생성 과제로 변환하며, 의사가 검증한 사례별 루브릭을 제공한다.",
-      "takeaway": "이미지 정보가 임상 성능에 필수적이며, 현재 최첨단 LLM은 온라인 의사 응답 수준에 미치지 못하고, 일부 모델은 긍정 기준을 충족하지만 더 많은 부정 기준을 유발하여 안전 민감 오류 회피가 핵심 과제임을 시사한다."
+      "problem": "현재 비디오 거대 언어 모델(Video LLM)은 검증 가능한 시각적 근거 없이 텍스트 답변만 제공하는 블랙박스로 작동하며, 기존 설명 가능성 방법은 텍스트 설명이나 희소 경계 상자에 의존하여 가림이나 비강체 변형 같은 복잡한 비디오 역학을 포착하기 어렵다.",
+      "method": "의미적 답변과 함께 시간적 세그먼트와 밀집 객체 추적 분할 마스크릿을 증거로 출력하는 E-VQA 작업을 제안하고, 최초의 인간 검증 픽셀 수준 근거 벤치마크(ST-Evidence)와 16만 규모의 자동 생성 데이터셋(ST-Evidence-Instruct)을 통해 고수준 추론과 세분화된 근거를 연결한다.",
+      "takeaway": "파인튜닝 결과 크기가 일치하는 UniPixel 기준선 대비 큰 성능 향상(7B 모델에서 t-mean +27.2, J&F +13.8)을 보였으며, 설명 가능하고 증거 기반의 비디오 이해를 위한 강력한 기준선을 확립했지만, 평가 결과 QA 정확도와 실제 시각적 인식 사이의 분리 현상이 확인되어 규모 확대만으로는 이 문제를 해결할 수 없음을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.09142v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09142v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.11862v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11862v1.pdf"
   },
   {
-    "id": "2607.09078",
-    "title": "Toward Active Object Detection for UAVs in the Wild: A Large-Scale Dataset, Benchmark and Method",
-    "authors": "Tianpeng Liu et al.",
-    "published": "2026-07-10",
+    "id": "2607.11523",
+    "title": "Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos",
+    "authors": "Gong Sitong et al.",
+    "published": "2026-07-13",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.RO"
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "embedding",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 UAV-지상 능동 객체 탐지(UGAOD)를 위한 최초의 대규모 실제 데이터셋과 벤치마크를 구축하고, JEPA 기반 세계 모델을 활용한 AOD-JEPA 방법을 제안하여 기존 심층 강화 학습 기반 정책의 일반화 문제를 해결하고 우수성을 입증하였다.",
-    "detail": {
-      "problem": "UAV 객체 탐지는 가림 현상이나 대상 픽셀 부족 등의 문제에 직면하며, 능동 객체 탐지(AOD)가 이를 해결할 수 있는 새로운 패러다임이지만 UAV 기반 AOD 연구는 고품질 데이터셋과 벤치마크 부재로 인해 충분히 이루어지지 못하고 있다.",
-      "method": "121,000장의 다중 시점 파노라마 다중 대상 항공 이미지와 121만 개의 지역 단일 대상 슬라이스로 구성된 대규모 실제 데이터셋 ATRNet-LUDO를 구축하고, 이를 기반으로 AOD 정책 학습 방법 평가용 벤치마크를 확립했다. 또한 JEPA(결합 임베딩 예측 아키텍처)로 세계 모델을 구성하여 상태 표현 학습을 강화하고 AOD 특화 사전 지식을 통합한 AOD-JEPA를 제안했다.",
-      "takeaway": "광범위한 실험을 통해 AOD-JEPA의 효과와 우수성을 검증했으며, 벤치마크 평가에서 기존 DRL 기반 AOD 정책이 훈련과 테스트 성능 간 큰 일반화 격차를 보임을 확인하여 해결의 필요성을 강조했다. 데이터셋과 벤치마크는 향후 UGAOD 연구 발전에 기여할 것으로 기대된다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09078v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09078v1.pdf"
-  },
-  {
-    "id": "2607.09654",
-    "title": "Evolution of Accuracy and Visual-Cognitive Errors in a Decade of Vision-Language AI Models",
-    "authors": "Shravan Murlidaran, Miguel P. Eckstein",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 복잡한 사회적 행동을 포함하는 CSB 데이터셋을 도입하여 10년간의 시각-언어 모델의 발전을 정확도와 다섯 가지 시각-인지 오류 유형 측면에서 평가하고, MLLM이 단순 및 복잡한 장면 간 정확도 차이를 해소했지만 공간 의존 오류가 여전히 존재함을 보여준다.",
-    "detail": {
-      "problem": "기존 시각-언어 모델 평가는 MS-COCO 같은 단순한 장면에 국한되어 복잡한 사회적 상호작용을 반영하지 못했으며, 모델의 오류 유형에 대한 분석이 부족했다.",
-      "method": "복잡한 사회적 상호작용을 담은 100장의 이미지로 구성된 CSB 데이터셋을 구축하고, 2017년부터 2025년까지의 VLM(Pre-MLLM 4개, MLLM 5개)과 20명의 인간 설명을 정확도와 다섯 가지 시각-인지 오류 유형(객체 탐지, 인식, 환각, 장면 이해, 공간 의존성)을 기준으로 평가했다.",
-      "takeaway": "CSB 데이터셋에서 MS-COCO보다 더 큰 정확도 향상이 나타났으며, Pre-MLLM은 하위 인간 설명보다 낮은 반면 MLLM은 상위 인간 설명과 유사한 성능을 보였다. MLLM은 단순 장면과 복잡한 장면 간의 정확도 차이를 해소하고 공간 의존 오류를 제외한 모든 오류 유형을 거의 제거했다. 탐지, 인식, 환각 오류가 장면 설명 정확도에 가장 큰 영향을 미쳤다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09654v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09654v1.pdf"
-  },
-  {
-    "id": "2607.09024",
-    "title": "Video Generation Models are General-Purpose Vision Learners",
-    "authors": "Letian Wang et al.",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "diffusion",
-      "3d",
       "video",
-      "generation"
-    ],
-    "summaryKo": "텍스트-비디오 생성 모델을 사전 학습 백본으로 활용하여 다양한 비전 작업을 수행하는 일반 목적 모델 GenCeption을 제안하며, 이는 여러 작업에서 최첨단 성능과 데이터 효율성 및 일반화 능력을 보인다.",
-    "detail": {
-      "problem": "컴퓨터 비전에서 NLP의 next-token prediction과 같은 일반 목적 기초 모델을 가능하게 할 사전 학습 촉매제가 필요하다.",
-      "method": "사전 학습된 텍스트-비디오 생성 확산 모델을 기반으로 한 피드포워드 인식 모델 GenCeption을 제안한다. 이 모델은 텍스트 명령어에 따라 깊이 추정, 표면 법선 추정, 카메라 자세 추정, 표현 참조 분할, 3D 키포인트 예측 등 다양한 비전 작업을 수행한다.",
-      "takeaway": "GenCeption은 다양한 비전 작업에서 전문 모델과 동등하거나 더 나은 성능을 보였으며, 대안 사전 학습 패러다임보다 우수한 결과를 냈다. 또한 7~500배 적은 훈련 데이터로도 최고 수준 모델과 유사한 성능을 보이는 데이터 효율성과 확장성의 초기 징후를 보였고, 합성 데이터 학습만으로 실제 영상 및 분포 외 객체에 일반화되는 흥미로운 특성을 나타냈다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09024v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09024v1.pdf"
-  },
-  {
-    "id": "2607.09629",
-    "title": "4DR360: State Reasoning for Joint 3D Detection and Occupancy Prediction in 4D Radar-Camera Full-Scene Perception",
-    "authors": "Xiaokai Bai et al.",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "3d",
-      "autonomous-driving",
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 4D 레이더-카메라를 이용한 360° 전방위 장면 인식을 위해 의미적 점유를 지속적인 상태로 모델링하는 4DR360 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "기존 레이더-카메라 방법은 주로 객체 검출에 최적화되어 있으며, 검출과 점유 예측을 동시에 수행하는 이중 작업 시스템은 상호작용이 제한적이다. 또한 4D 레이더의 희소한 특성으로 인해 레이더-카메라 융합이 필요하다.",
-      "method": "4DR360은 교차 모달 상태 추론 패러다임을 따르며, 상태 기반 BEV 향상(SBE)과 도플러 기반 시간 융합(DTF)을 통해 점유 상태를 단계적으로 모델링하고 조잡함에서 정밀함으로 특징을 집계한다.",
-      "takeaway": "실험은 정확성, 강건성, 절제 연구, 효율성을 포함한 단일 평가 프레임워크에서 수행되었으며, 코드와 레이블은 추후 공개될 예정이다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09629v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09629v1.pdf"
-  },
-  {
-    "id": "2607.09114",
-    "title": "Event Stream based Multi-Modal Video Anomaly Detection: A Benchmark Dataset and Algorithms",
-    "authors": "Peipei Zhu et al.",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.MM"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "embedding",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 가시광선 비디오만 사용하는 기존 비디오 이상 탐지(VAD)의 조명 변화, 빠른 움직임, 복잡한 배경 등의 한계를 극복하기 위해 이벤트 스트림을 추가로 활용하는 EVAD 프레임워크를 제안하고, 대규모 가시광선-이벤트 벤치마크 데이터셋을 구축하여 우수한 성능을 입증한다.",
-    "detail": {
-      "problem": "가시광선 비디오만 사용하는 기존 비디오 이상 탐지(VAD)는 조명 변화, 빠른 움직임, 복잡한 배경과 같은 까다로운 조건에서 취약하다.",
-      "method": "EVAD는 생체 모방 이벤트 카메라의 이벤트 스트림을 가시광선 비디오와 결합하여 활용하는 프레임워크이다. 또한 63억 개의 이벤트와 376,368개의 프레임으로 구성된 대규모 벤치마크 데이터셋을 구축하고, 대조적 멀티모달 사전학습과 적응형 융합 모듈을 설계한다.",
-      "takeaway": "EVAD는 여러 벤치마크와 제안된 TJUTCM Pha 데이터셋에서 기존 방법들을 일관되게 능가하여, 실제 환경에서 이벤트 기반 센싱이 비디오 이상 탐지에 효과적임을 입증하였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09114v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09114v1.pdf"
-  },
-  {
-    "id": "2607.09267",
-    "title": "REMIND: RE-Identification with Memory for INDoor Navigation",
-    "authors": "Pablo Diaz-Pereda et al.",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "video",
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "REMIND는 실내 환경에서 장기간 객체 재식별을 위한 온라인 추적기로, 단일 RGB 영상을 사용하여 기존 방법보다 높은 IDF1 성능을 달성한다.",
-    "detail": {
-      "problem": "실내 모바일 로봇이 긴 시간 간격, 시점 변화, 조명 변화에도 불구하고 객체를 재식별해야 하는 문제를 해결. 기존의 다중 객체 추적, 재식별, 비디오 객체 분할 방법들은 장기 재식별이나 전역 정체성 일관성에 한계가 있음.",
-      "method": "REMIND는 카메라 자세나 깊이 없이 단일 RGB 영상으로 일반 실내 객체를 장기간 재식별하는 온라인 추적기임. 인간의 시각 인지에 착안하여, DINOv3 특징, 이중 저장소 다중 프로토타입 외관 메모리, 부분 및 배경 기술자, 이웃 맥락 추론, 모호성 인식 헝가리안 할당을 결합함.",
-      "takeaway": "자체 구축 데이터셋에서 90.35% IDF1로 최신 비디오 객체 분할 기준보다 20포인트, 추적-검출 기준보다 36포인트 이상 높은 성능을 보였음. ScanNet++에서는 대부분 최고 성능을 기록했으나 한 설정(전체 장면 종단 간 검출)에서는 추적-검출 기준에 근소하게 뒤졌으며, 모든 장면을 완료하여 GPU 메모리 문제를 해결함."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09267v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09267v1.pdf"
-  },
-  {
-    "id": "2607.09428",
-    "title": "Multimodal Scenario Similarity Search for Autonomous Driving",
-    "authors": "Tamás Matuszka, András Tamásy, Balázs Szolár",
-    "published": "2026-07-10",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.LG"
-    ],
-    "tags": [
-      "agents",
-      "autonomous-driving",
-      "retrieval",
-      "embedding",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 자율주행 시나리오 검색을 위해 시각적 정보와 궤적 기반 표현을 결합한 멀티모달 프레임워크를 제안하며, 두 정보의 상호보완성이 검색 성능을 향상시킴을 보여준다.",
-    "detail": {
-      "problem": "대규모 자율주행 데이터셋에서 유사한 시나리오를 효율적으로 검색할 필요가 있지만, 기존 방법은 시각 또는 모션 기반 표현에 의존하여 각각의 장단점을 이해하기 어렵다.",
-      "method": "본 연구는 통합 검색 파이프라인 내에서 시각적 표현과 궤적 기반 표현(Exo-Trajectory 및 ScenarioFormer)을 결합한 멀티모달 프레임워크를 제안하며, 대조 학습을 통해 궤적 표현을 학습한다.",
-      "takeaway": "궤적 표현은 움직임 중심 이벤트에서 강력한 검색 성능을 보이고 시각적 임베딩은 외형 정보가 유용할 때 뛰어나며, 둘을 결합하면 검색 품질이 일관되게 향상된다. 이는 자율주행 데이터 마이닝, 데이터셋 큐레이션, 시나리오 기반 검증에 멀티모달 검색 시스템의 필요성을 입증한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09428v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09428v1.pdf"
-  },
-  {
-    "id": "2607.09503",
-    "title": "What VGGT Knows About Overlap: Probing Geometric Foundation Models for Co-Visibility",
-    "authors": "Filippo Ziliotto et al.",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "3d"
-    ],
-    "summaryKo": "VGGT가 동시가시성을 창발적으로 부호화함을 발견하고, 이를 활용한 경량 혼합전문가 헤드(Co-VGGT)로 RGB 입력만으로 동시가시성 분류에서 큰 폭의 성능 향상을 달성하였다.",
-    "detail": {
-      "problem": "3차원 재구성 및 로봇 위치 추정의 근본 과제인 이미지 쌍 간의 동시가시성 판별은 특히 겹침이 적은 상황에서 어려움이 있다.",
-      "method": "기하학 기반 기초 모델 VGGT의 계층적 표현(초기 층은 3D 장면, 후기 층은 동시가시성 추론에 특화)에서 동시가시성 정보가 내재되어 있음을 발견하고, VGGT는 고정시킨 채 각 층을 적응적으로 가중치 부여하는 경량 혼합전문가 헤드(Co-VGGT, 750만 파라미터 미만)만을 학습하여 RGB 입력으로 동시가시성을 분류한다.",
-      "takeaway": "Co-VisiON 벤치마크에서 인간 주석 기준을 능가하고 이전 연구 대비 쌍별(pairwise) 25% 이상, 다중시점(multiview) 10% 이상 성능을 향상시켰으며, 예측이 잘 보정되어(ECE=0.030) 후처리 없이 SfM/SLAM 파이프라인에 직접 활용할 수 있음을 보였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09503v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09503v1.pdf"
-  },
-  {
-    "id": "2607.09583",
-    "title": "Promptable Concept Segmentation from Above: Evaluating SAM 3's Zero-Shot and One-Shot Capabilities in Remote Sensing",
-    "authors": "Mohammad Dabaja, Turgay Celik",
-    "published": "2026-07-10",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 SAM 3의 원격 탐사 영상에 대한 제로샷 및 원샷 능력을 평가하고, 시각적 및 텍스트 프롬프트 간의 교차 모달 간섭을 발견하여 SAM 3의 한계와 파라미터 효율적 미세 조정의 필요성을 제시한다.",
-    "detail": {
-      "problem": "대규모 기반 모델인 SAM 3가 지구 관측 영상의 복잡한 기하학적 구조에 대해 분포 외 일반화를 얼마나 잘 수행하는지 아직 정량화되지 않았다.",
-      "method": "SAM 3의 분리된 이진 존재 헤드를 제로샷 분류기로 재구성하고, 다섯 가지 구성에서 텍스트 및 시각적 프롬프트 방식을 체계적으로 분리하여 정렬 메커니즘을 진단한다. 또한, 훈련 없이 일반화 제로샷 작업을 평가하는 새로운 프록시 평가 프로토콜을 제안한다.",
-      "takeaway": "SAM 3는 과적합을 피하고 분할 작업에서 높은 조화 평균 점수를 달성하지만, 서브픽셀 해상도 한계와 오버헤드 의미 사각지대에 의해 근본적으로 제약된다. 이는 멀티모달 디코더의 파라미터 효율적 지리공간 미세 조정이 필요함을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.09583v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09583v1.pdf"
-  },
-  {
-    "id": "2607.09094",
-    "title": "PRecG: Legal Precedent Retrieval with Graph Neural Networks and Rhetorical Role Segmentation",
-    "authors": "Devanshu Verma et al.",
-    "published": "2026-07-10",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
       "retrieval",
       "embedding"
     ],
-    "summaryKo": "본 논문은 법률 문서의 수사학적 역할에 기반한 세그먼트 분할과 그래프 신경망을 활용하여 판례 검색 성능을 향상시키는 PRecG 파이프라인을 제안한다.",
+    "summaryKo": "연속 자기중심 비디오에서 사용자의 시간적 맥락을 추론하여 사전 예방적 도움을 제공하는 시스템 Vinci2와, 학습 없는 메모리 증강 에이전트 EgoMemo 및 대규모 벤치마크 EgoServe를 제안한다.",
     "detail": {
-      "problem": "기존의 자동 판례 검색 방법들은 법률 문서를 단일 텍스트로 취급하여 수사학적 구조를 무시함으로써, 법적 개념과 개체가 문서 내 역할에 따라 달라지는 맥락적 중요성을 구분하지 못하는 문제가 있다.",
-      "method": "PRecG는 각 문서를 문장의 수사학적 역할에 따라 세그먼트로 분해하고, 각 세그먼트에 대해 지식 그래프를 구축하여 개체의 맥락적 표현을 학습한 후, 이를 집계하여 세그먼트 수준 및 문서 수준 임베딩을 생성한 뒤 문서 간 유사도를 계산한다.",
-      "takeaway": "인도 법률 벤치마크 데이터셋에서의 실험을 통해 최신 기준 모델들과 비교하여 효과를 입증하였으며, 초록에 명시된 한계는 없다."
+      "problem": "기존 어시스턴트는 사용자 질문을 수동적으로 기다리거나 모든 이벤트에 반응하며, 사용자의 과거 이력, 현재 활동 및 실제 도움 필요성을 고려하지 못한다. 따라서 누적된 시간적 맥락을 기반으로 개입 시점과 필요성을 결정하는 사전 예방적 도움 문제를 해결하고자 한다.",
+      "method": "Vinci2 시스템의 일부로, 학습 없이 다중 시간 척도 요약, 의미 지식 그래프, 시각 임베딩 아카이브의 세 가지 메모리 표현을 유지하며 각 시간 단계에서 검색 증강 추론을 통해 도움 제공 여부를 판단하고 맥락에 부합하는 응답을 생성하는 EgoMemo 에이전트를 제안한다. 또한, 10개 서비스 범주에 걸쳐 4가지 시간적 메모리 범위(즉시 안전 경고부터 장기 습관 코칭까지)의 3,000개 이상 서비스 인스턴스로 구성된 첫 번째 대규모 사전 예방적 도움 벤치마크 EgoServe를 구축하였다.",
+      "takeaway": "EgoMemo는 EgoServe에서 강력한 기준 성능을 확립하고 기존 자기중심 비디오 벤치마크에서도 경쟁력 있는 성능을 보인다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.09094v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09094v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.11523v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11523v1.pdf"
   },
   {
-    "id": "2607.09349",
-    "title": "Deceptive Grounding: Entity Attribution Failure in Clinical Retrieval-Augmented Generation",
-    "authors": "Cedric Caruzzo, Donggeun Yoo, Tae Soo Kim",
-    "published": "2026-07-10",
+    "id": "2607.11199",
+    "title": "DynEval: Holistic Evaluations of T2I Generative Models in the Wild",
+    "authors": "Shyam Marjit et al.",
+    "published": "2026-07-13",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "diffusion",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 텍스트-이미지 생성 모델의 정밀한 평가를 위해 텍스트-이미지 정렬과 이미지 품질을 동시에 평가하는 동적 평가 프레임워크 DynEval을 제안하며, 대규모 데이터셋과 커리큘럼 학습을 통해 경량 평가기를 구축하여 기존 평가기보다 인간 판단과의 상관관계가 높음을 보인다.",
+    "detail": {
+      "problem": "기존의 자동 평가기는 고정된 프롬프트 세트에 의존하여 부분적 프롬프트 불일치, 구성 오류, 시각적으로 그럴듯하지만 의미적으로 부정확한 생성과 같은 미묘한 실패 모드를 포착하는 데 어려움이 있다.",
+      "method": "DiffusionDB의 인간 작성 프롬프트를 활용하여 GenDB(50만 쌍)와 DynEvalInstruct(25만 삼중항) 데이터셋을 구축하고, 큰 교사 비전-언어 모델의 평가 능력을 커리큘럼 학습을 통해 경량 평가기(DynEval-2B/4B)로 증류한다.",
+      "takeaway": "제안된 평가기는 11개 벤치마크에서 기존 평가기보다 인간 판단과의 전체 상관관계가 높았으며, 36개 T2I 모델의 42개 하위 범주와 9개 의미 차원에 걸친 세분화된 분석을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11199v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11199v1.pdf"
+  },
+  {
+    "id": "2607.11560",
+    "title": "Technical Report on the CVPR 2026@AdvML Workshop Challenge",
+    "authors": "Tianyuan Zhang et al.",
+    "published": "2026-07-13",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "agents",
+      "autonomous-driving",
+      "multimodal"
+    ],
+    "summaryKo": "이 보고서는 CVPR 2026@AdvML 워크샵의 자율주행 비전-언어 에이전트에 대한 적대적 멀티모달 공격 챌린지의 설계, 평가 및 제출된 방법들의 공통 패턴을 제시한다.",
+    "detail": {
+      "problem": "자율주행 VLA가 안전에 중요한 추론을 수행할 때 참조 정답에서 벗어난 응답을 유도하는 적대적 이미지 및 접미사 텍스트 공격을 생성하는 과제를 다룬다.",
+      "method": "DriveLM 스타일의 다중 시각 질의응답을 기반으로 각 장면은 6개 동기화 카메라 이미지와 구조화된 질문-응답 쌍으로 구성되며, 참가자들은 이미지 충실도를 유지하고 텍스트 비용을 제한하면서 모델 응답을 왜곡하는 적대적 이미지와 접미사 텍스트를 생성한다. 챌린지는 두 단계로 진행되며, 2단계에서는 전이성 평가를 위해 숨겨진 블랙박스 모델이 추가된다.",
+      "takeaway": "주요 패턴으로 이미지 측 공격이 선호되고, 장면 수준 다중 시점 최적화가 단일 시점보다 효과적이며, QA 유형과 그래프 구조가 공격 예산 할당에 유용하고, 특징 공간 목표가 블랙박스 전이성을 향상시킨다. 또한 카메라 이미지의 타이포그래피 콘텐츠가 지속적인 취약점임이 드러났으며, 이는 향후 강건성 평가와 방어 설계에 실용적 참고 자료를 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11560v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11560v1.pdf"
+  },
+  {
+    "id": "2607.11562",
+    "title": "MonkeyOCRv2: A Visual-Text Foundation Model for Document AI",
+    "authors": "Yuliang Liu et al.",
+    "published": "2026-07-13",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "MonkeyOCRv2는 113M 이미지로 구성된 대규모 문서 코퍼스와 이미지-텍스트 생성 및 픽셀 수준 재구성을 결합한 사전 학습을 통해 문서 분석 및 이해 작업에서 기존 인코더를 능가하는 시각-텍스트 기반 모델이다.",
+    "detail": {
+      "problem": "주류 시각 인코더는 자연 이미지에 사전 학습되어 문서 이미지의 밀집된 텍스트와 세밀한 문자 획을 효과적으로 처리하지 못하므로 문서 지향 적응이 필요하다.",
+      "method": "17개 언어, 1억 1300만 이미지의 가장 큰 문서 이미지 사전 학습 코퍼스인 MonkeyDoc v2를 구축하고, 이미지-텍스트 생성(시각 표현과 텍스트 내용 정렬)과 픽셀 수준 문서 재구성(문자 획 및 레이아웃 세부 정보 보존)을 공동으로 학습하는 사전 학습 전략을 제안한다.",
+      "takeaway": "다섯 가지 문서 분석 작업에서 기존 인코더를 대체했을 때 일관된 성능 향상을 보였으며, 멀티모달 대규모 언어 모델의 비전 인코더로 사용될 때 0.7B 문서 파싱 모델이 MDPBench에서 오픈소스 최첨단을 달성하고, 문서 이해 모델에서 CLIP, DINO, SAM을 능가한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11562v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11562v1.pdf"
+  },
+  {
+    "id": "2607.11844",
+    "title": "Beyond the Single Camera: Agentic Multi-View Reasoning in Sports Video Understanding",
+    "authors": "Kerui Chen et al.",
+    "published": "2026-07-13",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 다중 시점 스포츠 비디오 이해를 위한 벤치마크 SportMV-Bench와 에이전틱 프레임워크 SportMV-Agent를 제안하며, 기존 MLLM 대비 14.46% 상대적 성능 향상을 보인다.",
+    "detail": {
+      "problem": "단일 시점에 특화된 기존 MLLM은 스포츠 비디오의 폐색, 빠른 움직임, 복잡한 상호작용을 효과적으로 처리하지 못하며, 다중 시점 정보를 활용한 평가 벤치마크가 부재하다.",
+      "method": "SportMV-Bench는 LLM 기반 생성, MLLM 검증, 사람 필터링을 결합한 파이프라인으로 구축되었으며, SportMV-Agent는 능동적 시점 선택, 지각 도구 실행, 증거 기반 추론의 반복 루프를 수행한다.",
+      "takeaway": "현재 MLLM의 병목은 논리 추론이나 도메인 지식이 아닌 세부 시각 인식과 시점 선택에 있으며, SportMV-Agent는 이러한 한계를 극복하여 가장 강력한 MLLM 기준선보다 유의미한 성능 향상을 달성하였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11844v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11844v1.pdf"
+  },
+  {
+    "id": "2607.11341",
+    "title": "The In-Car Sign Language Corpus (ICSL): A Multi-Modal Resource for Constrained-Space Sign Language Recognition",
+    "authors": "Raviteja Boddu et al.",
+    "published": "2026-07-13",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "3d",
+      "video",
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "본 논문은 차량 내부와 같은 제한된 공간에서의 수어 인식 문제를 해결하기 위해 브라질 수어(Libras)를 위한 다중 모달 데이터셋(ICSL)을 제시하며, 청각 장애인의 대중교통 접근성 향상을 목표로 한다.",
+    "detail": {
+      "problem": "공유 모빌리티 서비스에서 수어 사용의 어려움과 실제 차량 내부 환경에서의 수어 인식(SLR) 연구가 아직 충분히 이루어지지 않았다.",
+      "method": "고정밀 실험실 모션 캡처(MoCap) 데이터와 2D 카메라 및 3D ToF 센서를 활용한 실제 차량 내 다중 모달 녹음을 포함하는 브라질 수어(Libras) 데이터셋을 구축하고, 사용 사례, 설정, 수집 프로토콜, 메타데이터 구조, 어휘 및 비어휘 요소에 대한 주석을 제공한다.",
+      "takeaway": "150만 프레임 이상의 동기화된 다중 모달 데이터를 확보하였으며, 제한되고 가려지며 정면이 아닌 차량 내 환경에서의 수어 인식 연구를 위한 기반을 마련하였다. 이 데이터셋은 강인한 SLR 모델 및 도메인 적응 연구를 가능하게 하여 차량 내 접근성 향상에 기여할 수 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11341v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11341v1.pdf"
+  },
+  {
+    "id": "2607.11267",
+    "title": "Enhancing LLMs through human feedback: a journey towards self-improvement",
+    "authors": "Tatiana Pelc et al.",
+    "published": "2026-07-13",
+    "category": "llm",
+    "categories": [
+      "cs.IR",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "autonomous-driving",
+      "retrieval",
+      "generation"
+    ],
+    "summaryKo": "본 연구는 사용자 피드백을 체계적으로 활용하여 주 Retrieval Augmented Generation (RAG) 시스템의 성능을 개선하기 위해 보조 피드백 RAG 시스템을 통합하는 방법을 제안하고, 세 가지 벤치마크 데이터셋에서 LLM-as-a-Judge 평가를 통해 효과를 입증하였다.",
+    "detail": {
+      "problem": "정보 검색 시스템에서 사용자 피드백을 통한 적응 및 개선 능력이 중요해지고 있지만, 기존 RAG 시스템은 피드백을 효과적으로 활용하지 못하는 문제가 있다.",
+      "method": "본 연구는 인간 피드백을 지속적으로 수집, 분류, 추론 워크플로에 통합하는 인간-루프(human-in-the-loop) 방식을 채택한 보조 피드백 RAG 시스템을 주 RAG 시스템에 전략적으로 통합함으로써 응답의 정확성, 관련성, 전반적 품질을 향상시키고자 한다.",
+      "takeaway": "세 가지 일반 및 맞춤 도메인 지식 벤치마크 데이터셋에 대한 엄격한 테스트와 LLM-as-a-Judge 평가 전략을 통해 제안 방법의 효과를 검증하였으며, 이는 피드백 기반 RAG 시스템의 발전 가능성을 보여주고 적응형 정보 검색 기술 연구의 선례를 마련한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11267v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11267v1.pdf"
+  },
+  {
+    "id": "2607.11683",
+    "title": "RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM",
+    "authors": "Mikhail Komarov et al.",
+    "published": "2026-07-13",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "medical",
+      "retrieval",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "RAGU는 단일 추출 패스의 문제(잡음 엔터티, 취약 검색)를 해결하기 위해 추출과 통합을 분리한 다단계 GraphRAG 엔진으로, 언어 기술에 최적화된 소형 LLM(Meno-Lite-0.1)을 사용하여 대형 모델과 경쟁 가능한 성능을 보인다.",
+    "detail": {
+      "problem": "기존 GraphRAG 시스템은 단일 추출 패스를 사용하여 지식 그래프를 구축하기 때문에 잡음이 많은 엔터티와 취약한 검색 문제가 발생한다.",
+      "method": "RAGU는 2단계 유형 추출, DBSCAN 기반 중복 제거, LLM 요약, Leiden 커뮤니티 탐지를 통해 추출과 통합을 분리하며, 언어 기술에 특화된 7B 크기의 Meno-Lite-0.1 모델을 훈련하여 사용한다.",
+      "takeaway": "RAGU는 지식 그래프 구축에서 Qwen2.5-32B 대비 12.5% 향상되었고 영어 GraphRAG 작업에서는 동등한 성능을 보였으며, 의료 GraphRAG-Bench에서 최고 증거 재현율(0.84)을 달성했다. 또한 multi-hop factoid QA에서 HippoRAG2의 우위가 답변 형식 인공물임을 밝히고, 단일 GPU에서 실행 가능한 오픈소스 소프트웨어로 제공된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11683v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11683v1.pdf"
+  },
+  {
+    "id": "2607.11849",
+    "title": "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
+    "authors": "Lingkai Kong et al.",
+    "published": "2026-07-13",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 고급 수학 증명 생성 및 검증을 평가하기 위한 벤치마크 제품군 AdvancedMathBench를 제안하고, 실험 결과 최첨단 모델이 여전히 낮은 성능을 보여 상당한 개선 여지가 있음을 보여준다.",
+    "detail": {
+      "problem": "기존 벤치마크는 고급 수학 분야의 범위가 제한적이고 평가가 최종 답변 위주여서 추론 과정의 타당성을 제대로 평가하지 못한다.",
+      "method": "AdvancedMathBench는 대학 및 박사 자격시험 수준의 296개 문제를 포함하는 증명 생성 벤치마크(ProverBench)와 전문가 주석 기반의 자동 검증 파이프라인, 그리고 888개의 모델 생성 증명 궤적으로 구성된 검증 벤치마크(VerifierBench)를 포함한다.",
+      "takeaway": "최고 성능 모델(GPT-5.5-xhigh)도 증명 생성에서 75.8(UGD) 및 66.1(QE)에 그쳤으며, 검증에서는 Balanced F1이 65.1로 낮은 진음성율을 보여 오류 탐지가 주요 병목임을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11849v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11849v1.pdf"
+  },
+  {
+    "id": "2607.11873",
+    "title": "A Durability and Cross-Language Transfer Benchmark for a Validated Teaching-Feedback Classification Protocol",
+    "authors": "Esteban U. Vega Barajas",
+    "published": "2026-07-13",
     "category": "llm",
     "categories": [
       "cs.CL",
-      "cs.AI",
       "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "medical",
-      "retrieval",
+      "embedding",
       "generation"
     ],
-    "summaryKo": "본 논문은 임상 검색-증강 생성(RAG) 시스템에서 검색된 증거가 잘못된 개체에 귀속되는 '기만적 근거(Deceptive Grounding)' 실패를 정의하고, 다양한 모델과 실제 시스템에서의 발생률을 측정하며, 개체-귀속 검증이 이를 효과적으로 탐지할 수 있음을 보여준다.",
+    "summaryKo": "검증된 교수 평가 피드백 분류 프로토콜의 내구성과 언어 간 전이를 평가한 결과, 프로토콜은 견고하지만 모델 선택은 배포 결정에 달려 있다.",
     "detail": {
-      "problem": "기존 RAG 평가는 모델 주장이 검색 문서에 사실적으로 근거하는지만 확인할 뿐, 검색된 증거가 올바른 개체(예: 쿼리된 약물)에 귀속되는지는 확인하지 않는다. 이로 인해 실제로는 약물 Y에 대한 임상 증거를 약물 X에 대한 증거로 제시하는 '기만적 근거' 오류가 발생할 수 있다.",
-      "method": "13개 모델을 대상으로 통제된 요인 실험을 통해 DG 발생률을 체계적으로 측정하고, 개체별 임상 증거를 제거하는 제거 실험을 통해 메커니즘을 분석했다. 또한 실제 배포된 RAG 시스템에서 740개 약물-질병 쌍에 대한 생산 측정을 수행했다.",
-      "takeaway": "DG는 교란 조건에서 8~87% 범위로 발생하며, 의학 및 생의학 미세조정 모델에서 최대 86.7%로 도메인 특화가 오히려 실패를 심화시켰다. 개체 특이적 증거 제거 시 DG가 완전히 사라지고 허위 생성으로 대체되었으며, 실제 시스템에서 7.8%의 DG가 관찰되었다. 개체-귀속 검증은 DG 탐지에 97.0% 정밀도와 98.7% 재현율을 보였으나, 기존 평가 프레임워크는 이를 구현하지 않은 한계가 있다."
+      "problem": "기존에 개발된 교수 평가 피드백 분류 프로토콜은 2019년 수준의 고정 표현에 의존하는데, 표현 방법이 발전하고 다른 언어에 적용될 때에도 경쟁력을 유지하는지 검증이 필요하다.",
+      "method": "원본 스페인어 데이터에 대해 세 가지 표현 세대(희소 어휘 특징, 고정 트랜스포머 임베딩, 프롬프트 기반 대규모 언어 모델)를 재실험하고, 감정 분류 작업을 영어로 전이하여 45,000개 댓글의 균형 코퍼스로 평가했다.",
+      "takeaway": "프로토콜은 내구성이 있었다. 2026년 최첨단 모델이 가장 어려운 스페인어 작업에서 최고의 주제별 F1을 기록했지만, 감정 분류에서는 저비용 모델과 차이가 없었고 영어에서도 유의미한 차이가 없었으며, 따라서 모델 선택은 방법의 속성이 아니라 배포 결정에 가깝다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.09349v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.09349v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.11873v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11873v1.pdf"
+  },
+  {
+    "id": "2607.11287",
+    "title": "A Unified Framework for Comprehensive Cardiac CT Segmentation and Phenotyping: Human-in-the-Loop Data Annotation, Vision Foundation Model Development, Multicenter Evaluation and Clinical Validation",
+    "authors": "Pooya Mohammadi Kazaj et al.",
+    "published": "2026-07-13",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "CT 영상에서 심장 구조의 종합적 분할 및 표현형 분석을 위해 인간 참여 주석 파이프라인, 심장 CT 증강 기법, 대규모 자기 지도 사전 훈련을 결합한 통합 프레임워크를 제안하며, 가장 큰 전문가 주석 데이터셋을 구축하여 여러 외부 데이터셋에서 기존 도구보다 우수한 성능을 입증하였다.",
+    "detail": {
+      "problem": "CT 기반 심장 구조 정량화는 데이터 부족보다는 측정의 확장성 부재로 일상적 임상 사용이 어렵다는 문제를 해결하고자 함.",
+      "method": "인간 참여 주석 파이프라인, 심장 CT 증강 기법, 60,000개의 레이블 없는 심장 CT 스캔으로 사전 훈련된 자기 지도 기반 모델을 결합한 통합 프레임워크를 개발하고, 14개 심장 구조에 대한 1598개 사례의 가장 큰 전문가 주석 데이터셋을 구축함.",
+      "takeaway": "5개 외부 데이터셋에서 기존 오픈소스 도구보다 정확하고 포괄적인 분할 성능을 보였으며, 자기 지도 사전 훈련은 특히 저데이터 환경에서 레이블링 효율성을 향상시킴. 데이터 품질과 사전 훈련이 정확도를 주도하며 아키텍처 간 성능 차이는 미미함. 인구 수준 표현형 분석으로 확장 가능하며, 데이터, 코드, 모델 등을 공개하여 재현 가능한 기반을 제공함."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.11287v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.11287v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-13T03:51:35.214Z",
+  "collectedAt": "2026-07-14T03:25:57.465Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
