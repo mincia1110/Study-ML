@@ -3,131 +3,113 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.11862",
-    "title": "Evidence-Backed Video Question Answering",
-    "authors": "Shijie Wang et al.",
-    "published": "2026-07-13",
-    "category": "cv",
+    "id": "2607.12787",
+    "title": "Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters?",
+    "authors": "Kaiwen Zheng et al.",
+    "published": "2026-07-14",
+    "category": "multimodal",
     "categories": [
+      "cs.AI",
+      "cs.CL",
       "cs.CV",
-      "cs.AI"
+      "cs.MM"
     ],
     "tags": [
       "benchmark",
       "video",
+      "multimodal",
       "generation"
     ],
-    "summaryKo": "본 논문은 비디오 질문 응답에서 의미적 답변과 함께 정확한 시공간 증거(시간적 세그먼트 및 밀집 객체 추적 분할 마스크릿)를 출력하는 E-VQA(Evidence-Backed Video Question Answering)를 제안하고, 대규모 데이터셋 기반 파인튜닝을 통해 설명 가능한 비디오 이해의 강력한 기준선을 마련한다.",
+    "summaryKo": "본 논문은 10억 개 이상의 파라미터를 가진 대규모 멀티모달 감정 언어 모델이 고품질 감정 인식에 필수적인지 의문을 제기하며, 지식 증류를 통해 경량화된 Light-MER 모델이 최첨단 성능을 달성하면서 추론 효율성을 크게 향상시킬 수 있음을 보여준다.",
     "detail": {
-      "problem": "현재 비디오 거대 언어 모델(Video LLM)은 검증 가능한 시각적 근거 없이 텍스트 답변만 제공하는 블랙박스로 작동하며, 기존 설명 가능성 방법은 텍스트 설명이나 희소 경계 상자에 의존하여 가림이나 비강체 변형 같은 복잡한 비디오 역학을 포착하기 어렵다.",
-      "method": "의미적 답변과 함께 시간적 세그먼트와 밀집 객체 추적 분할 마스크릿을 증거로 출력하는 E-VQA 작업을 제안하고, 최초의 인간 검증 픽셀 수준 근거 벤치마크(ST-Evidence)와 16만 규모의 자동 생성 데이터셋(ST-Evidence-Instruct)을 통해 고수준 추론과 세분화된 근거를 연결한다.",
-      "takeaway": "파인튜닝 결과 크기가 일치하는 UniPixel 기준선 대비 큰 성능 향상(7B 모델에서 t-mean +27.2, J&F +13.8)을 보였으며, 설명 가능하고 증거 기반의 비디오 이해를 위한 강력한 기준선을 확립했지만, 평가 결과 QA 정확도와 실제 시각적 인식 사이의 분리 현상이 확인되어 규모 확대만으로는 이 문제를 해결할 수 없음을 시사한다."
+      "problem": "대규모 멀티모달 감정 인식 모델(예: 7B 이상)은 높은 계산 비용과 낮은 추론 효율성으로 인해 로봇, 모바일 기기와 같은 자원 제약적 플랫폼에서의 실시간 배포가 어렵다.",
+      "method": "강력한 대규모 교사 모델의 지식을 10억 파라미터 미만의 경량 학생 모델로 전이하는 지식 증류 기반 Light-MER 프레임워크를 제안한다. 구체적으로, 슬라이스드 바서슈타인 거리와 은닉 상태 정렬을 결합한 최적 수송 손실 및 GRPO 기반 다중 보상 최적화 전략을 도입한다.",
+      "takeaway": "9개 벤치마크 데이터셋에 대한 실험에서 Light-MER은 최첨단 성능을 달성하고 추론 효율성을 크게 향상시켜, 소형 멀티모달 감정 언어 모델의 강력한 잠재력을 입증하였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11862v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11862v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12787v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12787v1.pdf"
   },
   {
-    "id": "2607.11523",
-    "title": "Vinci2: Providing Proactive Assistance in Continuous Egocentric Videos",
-    "authors": "Gong Sitong et al.",
-    "published": "2026-07-13",
-    "category": "multimodal",
+    "id": "2607.12310",
+    "title": "LakeQuest: A Three-Domain Benchmark for Grounded Question Answering across Data Lakes",
+    "authors": "Michael Solodko et al.",
+    "published": "2026-07-14",
+    "category": "llm",
     "categories": [
-      "cs.CV",
+      "cs.CL",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "video",
+      "medical",
       "retrieval",
-      "embedding"
+      "multimodal"
     ],
-    "summaryKo": "연속 자기중심 비디오에서 사용자의 시간적 맥락을 추론하여 사전 예방적 도움을 제공하는 시스템 Vinci2와, 학습 없는 메모리 증강 에이전트 EgoMemo 및 대규모 벤치마크 EgoServe를 제안한다.",
+    "summaryKo": "LakeQuest는 현실적인 데이터 레이크에서의 종단형 검색 및 합성 질의응답 시스템을 평가하기 위한 9,846쌍의 인간 검증 벤치마크로, 세 가지 도메인을 포함하며 소스 발견과 교차 모달 합성의 실패 모드를 드러냅니다.",
     "detail": {
-      "problem": "기존 어시스턴트는 사용자 질문을 수동적으로 기다리거나 모든 이벤트에 반응하며, 사용자의 과거 이력, 현재 활동 및 실제 도움 필요성을 고려하지 못한다. 따라서 누적된 시간적 맥락을 기반으로 개입 시점과 필요성을 결정하는 사전 예방적 도움 문제를 해결하고자 한다.",
-      "method": "Vinci2 시스템의 일부로, 학습 없이 다중 시간 척도 요약, 의미 지식 그래프, 시각 임베딩 아카이브의 세 가지 메모리 표현을 유지하며 각 시간 단계에서 검색 증강 추론을 통해 도움 제공 여부를 판단하고 맥락에 부합하는 응답을 생성하는 EgoMemo 에이전트를 제안한다. 또한, 10개 서비스 범주에 걸쳐 4가지 시간적 메모리 범위(즉시 안전 경고부터 장기 습관 코칭까지)의 3,000개 이상 서비스 인스턴스로 구성된 첫 번째 대규모 사전 예방적 도움 벤치마크 EgoServe를 구축하였다.",
-      "takeaway": "EgoMemo는 EgoServe에서 강력한 기준 성능을 확립하고 기존 자기중심 비디오 벤치마크에서도 경쟁력 있는 성능을 보인다."
+      "problem": "기존 질의응답 시스템은 깨끗하고 스키마가 정렬된 말뭉치에서는 뛰어나지만 실제 지식은 이질적이고 약하게 구조화된 데이터 레이크에 존재합니다. 현재 벤치마크는 이러한 노이즈가 있는 발견 과정을 추상화하여 종단형 성능을 평가하지 못합니다.",
+      "method": "LakeQuest는 9,846개의 QA 쌍으로 구성된 인간 검증 벤치마크로, AI/ML 메타데이터, 소매 금융, 다중 모달 생의학 약물 정보의 세 가지 도메인을 포함하며 각 질문에 정확하고 양식 인식 증거 포인터를 제공합니다. 이는 소스 발견을 교차 모달 합성에서 분리하여 평가할 수 있도록 설계되었습니다.",
+      "takeaway": "기준 평가(RAG, 에이전트 도구 사용 방법)에서는 높은 품질의 검색이 올바른 추론을 보장하지 않음을 보여주었습니다. 시스템은 메타데이터 그래프의 관계 연결, 은행 원장의 정책 근거, 생의학 맥락에서의 공동 표 형식 QA에 어려움을 겪어 미래 에이전트 QA 시스템에서 강건한 발견과 충실한 교차 파일 합성 메커니즘의 필요성을 강조합니다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11523v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11523v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12310v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12310v1.pdf"
   },
   {
-    "id": "2607.11199",
-    "title": "DynEval: Holistic Evaluations of T2I Generative Models in the Wild",
-    "authors": "Shyam Marjit et al.",
-    "published": "2026-07-13",
-    "category": "cv",
+    "id": "2607.12477",
+    "title": "Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence",
+    "authors": "Zhishan Zou et al.",
+    "published": "2026-07-14",
+    "category": "multimodal",
     "categories": [
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 텍스트-이미지 생성 모델의 정밀한 평가를 위해 텍스트-이미지 정렬과 이미지 품질을 동시에 평가하는 동적 평가 프레임워크 DynEval을 제안하며, 대규모 데이터셋과 커리큘럼 학습을 통해 경량 평가기를 구축하여 기존 평가기보다 인간 판단과의 상관관계가 높음을 보인다.",
-    "detail": {
-      "problem": "기존의 자동 평가기는 고정된 프롬프트 세트에 의존하여 부분적 프롬프트 불일치, 구성 오류, 시각적으로 그럴듯하지만 의미적으로 부정확한 생성과 같은 미묘한 실패 모드를 포착하는 데 어려움이 있다.",
-      "method": "DiffusionDB의 인간 작성 프롬프트를 활용하여 GenDB(50만 쌍)와 DynEvalInstruct(25만 삼중항) 데이터셋을 구축하고, 큰 교사 비전-언어 모델의 평가 능력을 커리큘럼 학습을 통해 경량 평가기(DynEval-2B/4B)로 증류한다.",
-      "takeaway": "제안된 평가기는 11개 벤치마크에서 기존 평가기보다 인간 판단과의 전체 상관관계가 높았으며, 36개 T2I 모델의 42개 하위 범주와 9개 의미 차원에 걸친 세분화된 분석을 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.11199v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11199v1.pdf"
-  },
-  {
-    "id": "2607.11560",
-    "title": "Technical Report on the CVPR 2026@AdvML Workshop Challenge",
-    "authors": "Tianyuan Zhang et al.",
-    "published": "2026-07-13",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
       "agents",
+      "video",
       "autonomous-driving",
       "multimodal"
     ],
-    "summaryKo": "이 보고서는 CVPR 2026@AdvML 워크샵의 자율주행 비전-언어 에이전트에 대한 적대적 멀티모달 공격 챌린지의 설계, 평가 및 제출된 방법들의 공통 패턴을 제시한다.",
+    "summaryKo": "이 논문은 UAV 임베디드 지능에서 자기 인식과 공간 인지를 통합적으로 평가하는 벤치마크 SIS-Bench를 제안하고, 움직임 인식 표현이 공간 및 자기 인식 성능을 향상시킴을 실험적으로 입증하였다.",
     "detail": {
-      "problem": "자율주행 VLA가 안전에 중요한 추론을 수행할 때 참조 정답에서 벗어난 응답을 유도하는 적대적 이미지 및 접미사 텍스트 공격을 생성하는 과제를 다룬다.",
-      "method": "DriveLM 스타일의 다중 시각 질의응답을 기반으로 각 장면은 6개 동기화 카메라 이미지와 구조화된 질문-응답 쌍으로 구성되며, 참가자들은 이미지 충실도를 유지하고 텍스트 비용을 제한하면서 모델 응답을 왜곡하는 적대적 이미지와 접미사 텍스트를 생성한다. 챌린지는 두 단계로 진행되며, 2단계에서는 전이성 평가를 위해 숨겨진 블랙박스 모델이 추가된다.",
-      "takeaway": "주요 패턴으로 이미지 측 공격이 선호되고, 장면 수준 다중 시점 최적화가 단일 시점보다 효과적이며, QA 유형과 그래프 구조가 공격 예산 할당에 유용하고, 특징 공간 목표가 블랙박스 전이성을 향상시킨다. 또한 카메라 이미지의 타이포그래피 콘텐츠가 지속적인 취약점임이 드러났으며, 이는 향후 강건성 평가와 방어 설계에 실용적 참고 자료를 제공한다."
+      "problem": "기존 UAV 분야의 접근 방식과 벤치마크는 환경 중심적이며 에이전트의 자기 인식을 명시적으로 평가하지 않는다는 문제가 있다.",
+      "method": "SIS-Bench는 공간과 자아의 두 차원과 지각, 기억, 추론의 세 수준으로 평가를 구성하며, 실제 UAV 영상과 전문가 검증을 통해 구축되었다. 또한, 광학 흐름과 시각 특징 융합을 통한 움직임 인식 표현을 제안하여 자기 관련 역학을 모델링한다.",
+      "takeaway": "실험 결과, 현재의 MLLM은 동적 및 에이전트 중심 과정 모델링에 근본적인 한계를 보이며, 공간 인지와 자기 인식 간 불균형과 인지 수준에 따른 성능 저하가 관찰되었다. 움직임 인식 모델링은 지각 및 기억 성능을 일관되게 향상시켰으며, 이는 자기 인식의 중요성을 강조한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11560v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11560v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12477v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12477v1.pdf"
   },
   {
-    "id": "2607.11562",
-    "title": "MonkeyOCRv2: A Visual-Text Foundation Model for Document AI",
-    "authors": "Yuliang Liu et al.",
-    "published": "2026-07-13",
+    "id": "2607.12375",
+    "title": "IQA-T1: Tool-based Visual Evidence Reasoning for Image Quality Assessment",
+    "authors": "Jinjian Wu et al.",
+    "published": "2026-07-14",
     "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI",
+      "eess.IV"
     ],
     "tags": [
       "benchmark",
-      "multimodal",
-      "generation",
-      "detection"
+      "autonomous-driving",
+      "multimodal"
     ],
-    "summaryKo": "MonkeyOCRv2는 113M 이미지로 구성된 대규모 문서 코퍼스와 이미지-텍스트 생성 및 픽셀 수준 재구성을 결합한 사전 학습을 통해 문서 분석 및 이해 작업에서 기존 인코더를 능가하는 시각-텍스트 기반 모델이다.",
+    "summaryKo": "제안하는 IQA-T1은 도구 기반 시각적 증거 추론을 통해 MLLM의 저수준 지각 인식 한계를 보완하여 해석 가능하고 일반화된 화질 평가를 달성한다.",
     "detail": {
-      "problem": "주류 시각 인코더는 자연 이미지에 사전 학습되어 문서 이미지의 밀집된 텍스트와 세밀한 문자 획을 효과적으로 처리하지 못하므로 문서 지향 적응이 필요하다.",
-      "method": "17개 언어, 1억 1300만 이미지의 가장 큰 문서 이미지 사전 학습 코퍼스인 MonkeyDoc v2를 구축하고, 이미지-텍스트 생성(시각 표현과 텍스트 내용 정렬)과 픽셀 수준 문서 재구성(문자 획 및 레이아웃 세부 정보 보존)을 공동으로 학습하는 사전 학습 전략을 제안한다.",
-      "takeaway": "다섯 가지 문서 분석 작업에서 기존 인코더를 대체했을 때 일관된 성능 향상을 보였으며, 멀티모달 대규모 언어 모델의 비전 인코더로 사용될 때 0.7B 문서 파싱 모델이 MDPBench에서 오픈소스 최첨단을 달성하고, 문서 이해 모델에서 CLIP, DINO, SAM을 능가한다."
+      "problem": "개방형 환경에서의 화질 평가(IQA)는 일반화와 해석 가능성이 제한적이며, 기존 MLLM 기반 방법은 의미론적 편향 내부 표현에 의존하여 저수준 지각 왜곡에 둔감하다.",
+      "method": "IQA-T1은 추론 과정에서 전문 분석 도구를 자율적으로 호출하여 노이즈 잔차 맵, 기울기 통계, 주파수 스펙트럼 등의 구조적 시각적 증거를 생성하고 이를 점진적으로 통합하는 프레임워크를 제안한다. 또한, 도구 기반 증거로 구성된 11k 멀티모달 추론 체인 데이터셋 Q-Tool을 구축하였다.",
+      "takeaway": "일곱 개의 IQA 벤치마크에서 데이터셋 전반에 걸쳐 최고의 종합 성능을 달성했으며, 해석 가능하고 증거에 기반한 화질 평가를 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11562v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11562v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12375v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12375v1.pdf"
   },
   {
-    "id": "2607.11844",
-    "title": "Beyond the Single Camera: Agentic Multi-View Reasoning in Sports Video Understanding",
-    "authors": "Kerui Chen et al.",
-    "published": "2026-07-13",
+    "id": "2607.12764",
+    "title": "EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval",
+    "authors": "Jiashi Lin et al.",
+    "published": "2026-07-14",
     "category": "multimodal",
     "categories": [
       "cs.CV"
@@ -135,168 +117,192 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "video",
+      "retrieval",
       "multimodal",
       "generation"
     ],
-    "summaryKo": "본 논문은 다중 시점 스포츠 비디오 이해를 위한 벤치마크 SportMV-Bench와 에이전틱 프레임워크 SportMV-Agent를 제안하며, 기존 MLLM 대비 14.46% 상대적 성능 향상을 보인다.",
+    "summaryKo": "EvoGraph-R1은 검색을 마르코프 결정 과정으로 공식화하여 에이전트가 하이퍼그래프를 동적으로 진화시키며 다중 모달 추론을 수행하는 자가 진화 GraphRAG 프레임워크이다.",
     "detail": {
-      "problem": "단일 시점에 특화된 기존 MLLM은 스포츠 비디오의 폐색, 빠른 움직임, 복잡한 상호작용을 효과적으로 처리하지 못하며, 다중 시점 정보를 활용한 평가 벤치마크가 부재하다.",
-      "method": "SportMV-Bench는 LLM 기반 생성, MLLM 검증, 사람 필터링을 결합한 파이프라인으로 구축되었으며, SportMV-Agent는 능동적 시점 선택, 지각 도구 실행, 증거 기반 추론의 반복 루프를 수행한다.",
-      "takeaway": "현재 MLLM의 병목은 논리 추론이나 도메인 지식이 아닌 세부 시각 인식과 시점 선택에 있으며, SportMV-Agent는 이러한 한계를 극복하여 가장 강력한 MLLM 기준선보다 유의미한 성능 향상을 달성하였다."
+      "problem": "기존 GraphRAG 방법은 정적 지식 그래프를 사용하여 텍스트 중심 단편화, 구조 경직성, 단일 패스 검색 등의 한계를 가지며, 이는 지식 집약적 추론의 상호작용적이고 반복적인 특성과 부합하지 않는다.",
+      "method": "검색을 마르코프 결정 과정(MDP)으로 공식화하고, 에이전트가 그래프 상태를 관찰하여 검색(GraphRetrieve), 확장(WebSearch), 편집(GraphEdit), 종료(Answer) 등의 행동을 수행한다. 이 과정을 통해 하이퍼그래프가 새로운 증거를 통합하고 오류를 수정하며 다중 홉 추론을 지원하도록 진화한다.",
+      "takeaway": "다중 모달 VQA 및 텍스트 QA 벤치마크 실험에서 기존 RAG 방법보다 정확성, 포괄성, 추적 가능성에서 향상된 성능을 보였다. 본 연구는 자가 진화 지식 그래프를 다양한 모달리티에 걸친 기본 패러다임으로 확립한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11844v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11844v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12764v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12764v1.pdf"
   },
   {
-    "id": "2607.11341",
-    "title": "The In-Car Sign Language Corpus (ICSL): A Multi-Modal Resource for Constrained-Space Sign Language Recognition",
-    "authors": "Raviteja Boddu et al.",
-    "published": "2026-07-13",
+    "id": "2607.12894",
+    "title": "Hy-Embodied-VLM-1.0: Efficient Physical-World Agents",
+    "authors": "Ziyi Wang et al.",
+    "published": "2026-07-14",
     "category": "multimodal",
     "categories": [
-      "cs.CL",
       "cs.CV"
     ],
     "tags": [
-      "3d",
-      "video",
+      "benchmark",
+      "agents",
       "multimodal",
-      "benchmark"
+      "generation"
     ],
-    "summaryKo": "본 논문은 차량 내부와 같은 제한된 공간에서의 수어 인식 문제를 해결하기 위해 브라질 수어(Libras)를 위한 다중 모달 데이터셋(ICSL)을 제시하며, 청각 장애인의 대중교통 접근성 향상을 목표로 한다.",
+    "summaryKo": "본 논문은 물리적 세계에서 효율적으로 작동하는 임베디드 에이전트를 위한 기초 모델 Hy-Embodied-VLM-1.0을 제안한다.",
     "detail": {
-      "problem": "공유 모빌리티 서비스에서 수어 사용의 어려움과 실제 차량 내부 환경에서의 수어 인식(SLR) 연구가 아직 충분히 이루어지지 않았다.",
-      "method": "고정밀 실험실 모션 캡처(MoCap) 데이터와 2D 카메라 및 3D ToF 센서를 활용한 실제 차량 내 다중 모달 녹음을 포함하는 브라질 수어(Libras) 데이터셋을 구축하고, 사용 사례, 설정, 수집 프로토콜, 메타데이터 구조, 어휘 및 비어휘 요소에 대한 주석을 제공한다.",
-      "takeaway": "150만 프레임 이상의 동기화된 다중 모달 데이터를 확보하였으며, 제한되고 가려지며 정면이 아닌 차량 내 환경에서의 수어 인식 연구를 위한 기반을 마련하였다. 이 데이터셋은 강인한 SLR 모델 및 도메인 적응 연구를 가능하게 하여 차량 내 접근성 향상에 기여할 수 있다."
+      "problem": "강력한 임베디드 에이전트를 구축하기 위해서는 다중 모달 인식과 이해뿐만 아니라, 행동 추론, 상황 적응 및 물리적 세계와의 상호작용 능력이 필요하다.",
+      "method": "행동 중심 능력 분류 체계(행동 관련 상태 이해, 행동 전이 추론, 순차적 및 적응적 추론)를 정의하고, 체계적인 데이터 파이프라인을 통해 사전 학습 및 후속 학습 데이터를 구성하였다. Hy3-A3B 언어 백본과 Hy-ViT2 비전 인코더를 기반으로 효율적인 Mixture-of-Experts 아키텍처를 사용하여 모델을 구축하였다.",
+      "takeaway": "Hy-Embodied-VLM-1.0은 38개 벤치마크 중 19개에서 동급 최고 성능을 달성하였고, Qwen3.6-A3B 및 Cosmos 3를 능가하였다. 이전 세대 모델 대비 평균 8.4% 향상되었으며, 3B 활성 파라미터만으로 32B 활성 파라미터 모델에 근접하는 성능을 보였다. 멀티 턴 상호작용 및 장기 추론이 필요한 에이전트 작업에서도 강력한 성능을 입증하였으나, 초록에서 명시적인 한계는 논의되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11341v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11341v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12894v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12894v1.pdf"
   },
   {
-    "id": "2607.11267",
-    "title": "Enhancing LLMs through human feedback: a journey towards self-improvement",
-    "authors": "Tatiana Pelc et al.",
-    "published": "2026-07-13",
-    "category": "llm",
+    "id": "2607.12497",
+    "title": "TerraLogic: A Benchmark for Hierarchical Geospatial Reasoning in Earth Observation",
+    "authors": "Yuhang Yan et al.",
+    "published": "2026-07-14",
+    "category": "multimodal",
     "categories": [
-      "cs.IR",
-      "cs.AI",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "autonomous-driving",
-      "retrieval",
-      "generation"
+      "agents"
     ],
-    "summaryKo": "본 연구는 사용자 피드백을 체계적으로 활용하여 주 Retrieval Augmented Generation (RAG) 시스템의 성능을 개선하기 위해 보조 피드백 RAG 시스템을 통합하는 방법을 제안하고, 세 가지 벤치마크 데이터셋에서 LLM-as-a-Judge 평가를 통해 효과를 입증하였다.",
+    "summaryKo": "본 논문은 원격 탐사에서 인지적 지리공간 추론의 부재를 해결하기 위해 545개의 계층 인식 작업을 포함한 TerraLogic 벤치마크와 계층적 도구 구성을 통한 오류 허용 추론 에이전트 HieraPlan을 제안한다.",
     "detail": {
-      "problem": "정보 검색 시스템에서 사용자 피드백을 통한 적응 및 개선 능력이 중요해지고 있지만, 기존 RAG 시스템은 피드백을 효과적으로 활용하지 못하는 문제가 있다.",
-      "method": "본 연구는 인간 피드백을 지속적으로 수집, 분류, 추론 워크플로에 통합하는 인간-루프(human-in-the-loop) 방식을 채택한 보조 피드백 RAG 시스템을 주 RAG 시스템에 전략적으로 통합함으로써 응답의 정확성, 관련성, 전반적 품질을 향상시키고자 한다.",
-      "takeaway": "세 가지 일반 및 맞춤 도메인 지식 벤치마크 데이터셋에 대한 엄격한 테스트와 LLM-as-a-Judge 평가 전략을 통해 제안 방법의 효과를 검증하였으며, 이는 피드백 기반 RAG 시스템의 발전 가능성을 보여주고 적응형 정보 검색 기술 연구의 선례를 마련한다."
+      "problem": "기존 원격 탐사 연구는 인식 중심 작업에 집중되어 있어 인지적 지리공간 추론이 충분히 탐구되지 않았다. TerraLogic은 이러한 격차를 해결하기 위해 설계된 지리공간 추론 벤치마크이다.",
+      "method": "본 논문은 TerraLogic 평가를 위해 도구 키트를 기능적 계층으로 구성하고 오류 허용 추론을 수행하는 HieraPlan 에이전트를 제안한다. HieraPlan은 구조적 추상화, 도구 실패로부터의 강건한 복구, 안정적인 장기 계획을 가능하게 한다.",
+      "takeaway": "실험 결과, 기존 방법들은 계층적 지리공간 추론에 어려움을 겪는 반면, HieraPlan은 추론, 교차 모달 일반화 및 오류 처리에서 개선된 강력한 기준선을 제공한다. 데이터셋과 에이전트 코드는 공개되어 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11267v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11267v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12497v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12497v1.pdf"
   },
   {
-    "id": "2607.11683",
-    "title": "RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM",
-    "authors": "Mikhail Komarov et al.",
-    "published": "2026-07-13",
-    "category": "multimodal",
+    "id": "2607.12602",
+    "title": "Decouple and Reason: Anatomically Guided Two-Stage Voxel-Level Grounding of Free-Text Findings in 3D Chest CT",
+    "authors": "Kwang-Hyun Uhm, Inhwa Son, Sung-Jea Ko",
+    "published": "2026-07-14",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
+      "benchmark",
+      "3d",
       "medical",
-      "retrieval",
-      "generation",
       "detection"
     ],
-    "summaryKo": "RAGU는 단일 추출 패스의 문제(잡음 엔터티, 취약 검색)를 해결하기 위해 추출과 통합을 분리한 다단계 GraphRAG 엔진으로, 언어 기술에 최적화된 소형 LLM(Meno-Lite-0.1)을 사용하여 대형 모델과 경쟁 가능한 성능을 보인다.",
+    "summaryKo": "본 논문은 3D 흉부 CT의 자유 텍스트 소견을 복셀 수준에서 정렬하기 위해 클래스에 구애받지 않는 병변 분할과 해부학적 가이드를 통한 텍스트-볼륨 추론으로 문제를 분해하는 2단계 프레임워크를 제안하며, ReXGroundingCT 벤치마크에서 전체 정렬 품질 최고 성능을 달성했다.",
     "detail": {
-      "problem": "기존 GraphRAG 시스템은 단일 추출 패스를 사용하여 지식 그래프를 구축하기 때문에 잡음이 많은 엔터티와 취약한 검색 문제가 발생한다.",
-      "method": "RAGU는 2단계 유형 추출, DBSCAN 기반 중복 제거, LLM 요약, Leiden 커뮤니티 탐지를 통해 추출과 통합을 분리하며, 언어 기술에 특화된 7B 크기의 Meno-Lite-0.1 모델을 훈련하여 사용한다.",
-      "takeaway": "RAGU는 지식 그래프 구축에서 Qwen2.5-32B 대비 12.5% 향상되었고 영어 GraphRAG 작업에서는 동등한 성능을 보였으며, 의료 GraphRAG-Bench에서 최고 증거 재현율(0.84)을 달성했다. 또한 multi-hop factoid QA에서 HippoRAG2의 우위가 답변 형식 인공물임을 밝히고, 단일 GPU에서 실행 가능한 오픈소스 소프트웨어로 제공된다."
+      "problem": "3D 볼륨의 복잡한 공간 구조와 자유 텍스트 소견의 이질성으로 인해 기존 종단간 방법은 3D 분할과 텍스트 정렬을 동시에 학습하기 어려워 최적의 정렬 성능을 내지 못한다.",
+      "method": "문제를 (1) 클래스에 구애받지 않는 병변 분할로 후보 영역을 추출하고 (2) 추출된 영역과 텍스트 간의 교차 양식 추론을 수행하는 두 단계로 분해한다. 추론 단계에서는 상대적 공간 좌표와 폐엽 사전 정보를 활용한 명시적 해부학적 가이드를 사용하여 공간적 모호성을 해결한다.",
+      "takeaway": "제안 방법은 ReXGroundingCT 벤치마크에서 전체 정렬 품질에서 최고 성능을 달성했으며, 검출과 추론의 분리가 3D 의료 시각적 정렬의 복잡성을 처리하는 효과적인 패러다임임을 입증했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11683v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11683v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12602v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12602v1.pdf"
   },
   {
-    "id": "2607.11849",
-    "title": "AdvancedMathBench: A Benchmark Suite for Advanced Mathematical Proof Generation and Verification",
-    "authors": "Lingkai Kong et al.",
-    "published": "2026-07-13",
+    "id": "2607.12630",
+    "title": "Instance-Enriched Semantic Maps for Visual Language Navigation",
+    "authors": "Jiho Hong et al.",
+    "published": "2026-07-14",
     "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.RO",
+      "cs.CV"
     ],
     "tags": [
-      "benchmark",
-      "generation",
-      "detection"
+      "agents",
+      "3d",
+      "retrieval"
     ],
-    "summaryKo": "본 논문은 고급 수학 증명 생성 및 검증을 평가하기 위한 벤치마크 제품군 AdvancedMathBench를 제안하고, 실험 결과 최첨단 모델이 여전히 낮은 성능을 보여 상당한 개선 여지가 있음을 보여준다.",
+    "summaryKo": "본 논문은 인스턴스 수준의 2.5D 의미 맵과 LLM 기반 질의 처리를 통해 시각 언어 내비게이션의 객체 세부 정보와 질의 강건성을 향상시키는 통합 프레임워크를 제안한다.",
     "detail": {
-      "problem": "기존 벤치마크는 고급 수학 분야의 범위가 제한적이고 평가가 최종 답변 위주여서 추론 과정의 타당성을 제대로 평가하지 못한다.",
-      "method": "AdvancedMathBench는 대학 및 박사 자격시험 수준의 296개 문제를 포함하는 증명 생성 벤치마크(ProverBench)와 전문가 주석 기반의 자동 검증 파이프라인, 그리고 888개의 모델 생성 증명 궤적으로 구성된 검증 벤치마크(VerifierBench)를 포함한다.",
-      "takeaway": "최고 성능 모델(GPT-5.5-xhigh)도 증명 생성에서 75.8(UGD) 및 66.1(QE)에 그쳤으며, 검증에서는 Balanced F1이 65.1로 낮은 진음성율을 보여 오류 탐지가 주요 병목임을 시사한다."
+      "problem": "기존 VLN 시스템은 인스턴스 수준의 객체 세부 정보가 부족하고 다양한 사용자 질의에 강건하지 못하여 복잡한 실내 환경에서의 신뢰할 수 있는 내비게이션에 한계가 있다.",
+      "method": "개방형 어휘 범주형 분할을 통해 2.5D 맵을 구축하고, LLM 기반 타겟 선택으로 질의를 동적 라우팅 및 융합하며, 3D 장면 그래프 대비 약 96% 저장 공간을 절감하는 Instance-Enriched Semantic Maps를 제안한다.",
+      "takeaway": "제안된 2.5D 표현은 예측 정규화 AUC에서 3D 베이스라인 대비 27% 이상 향상되었고, 내비게이션 실험에서 객체 검색 17% 이상, 내비게이션 성공률 23% 이상의 개선을 달성하였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11849v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11849v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12630v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12630v1.pdf"
   },
   {
-    "id": "2607.11873",
-    "title": "A Durability and Cross-Language Transfer Benchmark for a Validated Teaching-Feedback Classification Protocol",
-    "authors": "Esteban U. Vega Barajas",
-    "published": "2026-07-13",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding",
-      "generation"
-    ],
-    "summaryKo": "검증된 교수 평가 피드백 분류 프로토콜의 내구성과 언어 간 전이를 평가한 결과, 프로토콜은 견고하지만 모델 선택은 배포 결정에 달려 있다.",
-    "detail": {
-      "problem": "기존에 개발된 교수 평가 피드백 분류 프로토콜은 2019년 수준의 고정 표현에 의존하는데, 표현 방법이 발전하고 다른 언어에 적용될 때에도 경쟁력을 유지하는지 검증이 필요하다.",
-      "method": "원본 스페인어 데이터에 대해 세 가지 표현 세대(희소 어휘 특징, 고정 트랜스포머 임베딩, 프롬프트 기반 대규모 언어 모델)를 재실험하고, 감정 분류 작업을 영어로 전이하여 45,000개 댓글의 균형 코퍼스로 평가했다.",
-      "takeaway": "프로토콜은 내구성이 있었다. 2026년 최첨단 모델이 가장 어려운 스페인어 작업에서 최고의 주제별 F1을 기록했지만, 감정 분류에서는 저비용 모델과 차이가 없었고 영어에서도 유의미한 차이가 없었으며, 따라서 모델 선택은 방법의 속성이 아니라 배포 결정에 가깝다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.11873v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11873v1.pdf"
-  },
-  {
-    "id": "2607.11287",
-    "title": "A Unified Framework for Comprehensive Cardiac CT Segmentation and Phenotyping: Human-in-the-Loop Data Annotation, Vision Foundation Model Development, Multicenter Evaluation and Clinical Validation",
-    "authors": "Pooya Mohammadi Kazaj et al.",
-    "published": "2026-07-13",
+    "id": "2607.12752",
+    "title": "Hallo4D: Multi-Modal Hallucination Mitigation for Consistent Spatio-Temporal Generation",
+    "authors": "Hongbo Wang et al.",
+    "published": "2026-07-14",
     "category": "cv",
     "categories": [
       "cs.CV",
       "cs.AI"
     ],
     "tags": [
+      "diffusion",
+      "3d",
+      "multimodal",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "Hallo4D는 3D 및 4D 콘텐츠 생성에서 시공간 환각을 완화하기 위해 대규모 다중 모달 언어 모델(LMM)을 활용한 생성-탐지-교정 패러다임을 도입하는 통합 프레임워크이다.",
+    "detail": {
+      "problem": "최근 3D 생성 기술은 기하학적 일관성을 위한 명시적 메커니즘 부족으로 중복 구조나 정렬 오류 같은 공간적 환각이 발생하며, 4D 생성에서는 시점과 시간적 변화에 따른 일관성 유지가 어려워 떨림, 신원 깜빡임, 구조적 표류 등의 문제가 더 심각해진다.",
+      "method": "Hallo4D는 생성-탐지-교정 패러다임을 통해 다중 시점 및 다중 프레임 렌더링에서 LMM이 시공간 불일치를 식별하고 요약하게 하여, LMM 기반 선택기가 다중 모델 투표로 후보 교정을 평가하는 합의 기반 이미지 공간 일관성 최적화를 수행한다. 또한 움직임 인식 키프레임 샘플링, LMM 기반 초기화, 외형 정렬, 노출 인식 최적화 및 가시성 정리 등을 통해 시간적 일관성과 최적화 효율성을 개선한다.",
+      "takeaway": "광범위한 실험을 통해 Hallo4D는 다양한 3D 및 4D 생성 설정에서 강력한 기준 모델보다 일관되게 우수한 성능을 보였으며, 재학습이나 구조 변경 없이 확장 가능하고 일반화 가능한 일관성 인식 콘텐츠 생성 솔루션을 제공함을 입증했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.12752v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12752v1.pdf"
+  },
+  {
+    "id": "2607.12818",
+    "title": "Breaking Déjà Vu: Independent Auditing of Visual Place Recognition through Vision-Language Reasoning",
+    "authors": "Sania Waheed et al.",
+    "published": "2026-07-14",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "autonomous-driving",
+      "retrieval",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 비전-언어 모델(VLM)을 활용하여 시각적 위치 인식(VPR)의 검색 결과를 독립적으로 감사하는 사후 검증 프레임워크를 제안하고, 환경 변화에도 강건하게 거짓 루프 클로저를 줄일 수 있음을 실험적으로 보인다.",
+    "detail": {
+      "problem": "기존 VPR 시스템은 레이블된 검증 데이터로 튜닝된 고정 임계값에 의존하여 환경 변화 시 신뢰할 수 없으며, 안전이 중요한 로보틱스에서 거짓 루프 클로저가 SLAM의 궤적과 지도를 손상시킨다.",
+      "method": "제안하는 VPR Auditing은 사후 검증 프레임워크로, VLM이 쿼리와 후보 이미지를 함께 추론하여 인스턴스 수준의 매칭 여부를 판단하며, 아키텍처 특정 신뢰도나 데이터셋 종속 임계값 없이 동작한다.",
+      "takeaway": "6개 벤치마크, 5개 최신 VPR 방법, 4개 VLM 실험에서 VLM 기반 감사는 재현율(@1)을 평균 13.6% 향상시키고 거짓 수락률을 12%로 낮추며, 정밀도 95% 이상, 커버리지 75% 이상을 유지한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.12818v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12818v1.pdf"
+  },
+  {
+    "id": "2607.12911",
+    "title": "Open-KNEAD: Knowledge-grounded Nutrition Estimation via Agentic Decomposition",
+    "authors": "Bruce Coburn et al.",
+    "published": "2026-07-14",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "agents",
+      "privacy",
+      "retrieval",
+      "multimodal",
       "benchmark"
     ],
-    "summaryKo": "CT 영상에서 심장 구조의 종합적 분할 및 표현형 분석을 위해 인간 참여 주석 파이프라인, 심장 CT 증강 기법, 대규모 자기 지도 사전 훈련을 결합한 통합 프레임워크를 제안하며, 가장 큰 전문가 주석 데이터셋을 구축하여 여러 외부 데이터셋에서 기존 도구보다 우수한 성능을 입증하였다.",
+    "summaryKo": "Open-KNEAD는 지식 기반 에이전틱 분해를 통해 식사 이미지의 영양소 추정 정확도를 높이고, 로컬 배포 가능하며 추적 가능한 기록을 제공하는 훈련 없는 프레임워크이다.",
     "detail": {
-      "problem": "CT 기반 심장 구조 정량화는 데이터 부족보다는 측정의 확장성 부재로 일상적 임상 사용이 어렵다는 문제를 해결하고자 함.",
-      "method": "인간 참여 주석 파이프라인, 심장 CT 증강 기법, 60,000개의 레이블 없는 심장 CT 스캔으로 사전 훈련된 자기 지도 기반 모델을 결합한 통합 프레임워크를 개발하고, 14개 심장 구조에 대한 1598개 사례의 가장 큰 전문가 주석 데이터셋을 구축함.",
-      "takeaway": "5개 외부 데이터셋에서 기존 오픈소스 도구보다 정확하고 포괄적인 분할 성능을 보였으며, 자기 지도 사전 훈련은 특히 저데이터 환경에서 레이블링 효율성을 향상시킴. 데이터 품질과 사전 훈련이 정확도를 주도하며 아키텍처 간 성능 차이는 미미함. 인구 수준 표현형 분석으로 확장 가능하며, 데이터, 코드, 모델 등을 공개하여 재현 가능한 기반을 제공함."
+      "problem": "현대의 다중 모드 대규모 언어 모델은 식사 이미지에서 직접 영양소 추정이 가능하지만, 임상에서 요구하는 정확한 제공량 추정과 항목별 추적 가능한 기록을 동시에 제공하는 방법이 필요하다.",
+      "method": "Open-KNEAD는 각 분해된 식품 항목을 FNDDS 코드에 영양소 인식 검색으로 연결하고, 조리 과정에서 추가되는 에너지를 복구하는 레시피 사전 단계를 포함하는 훈련 없는 에이전틱 프레임워크이다.",
+      "takeaway": "Open-KNEAD는 여러 오픈 MLLM과 세 가지 요리에서 기존 방법 및 직접 추정보다 제공량 추정을 개선했으며, 특히 ACETADA 데이터셋에서 두 폐쇄 모델 대비 30% 및 53% 향상된 성능을 보였다. 모든 이미지를 로컬에서 처리하여 프라이버시를 보장하고 감사 가능한 기록을 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.11287v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.11287v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.12911v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.12911v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-14T03:25:57.465Z",
+  "collectedAt": "2026-07-15T03:23:41.312Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
