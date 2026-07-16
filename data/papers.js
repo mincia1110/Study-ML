@@ -3,36 +3,201 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.12787",
-    "title": "Do We Really Need Multimodal Emotion Language Models Larger Than 1B Parameters?",
-    "authors": "Kaiwen Zheng et al.",
-    "published": "2026-07-14",
-    "category": "multimodal",
+    "id": "2607.13860",
+    "title": "Towards Enhancing 3D Spatial Reasoning in Medical Multimodal Large Language Models",
+    "authors": "Zhuoyuan Fu et al.",
+    "published": "2026-07-15",
+    "category": "cv",
     "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.CV",
-      "cs.MM"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "multimodal",
-      "generation"
+      "3d",
+      "medical",
+      "multimodal"
     ],
-    "summaryKo": "본 논문은 10억 개 이상의 파라미터를 가진 대규모 멀티모달 감정 언어 모델이 고품질 감정 인식에 필수적인지 의문을 제기하며, 지식 증류를 통해 경량화된 Light-MER 모델이 최첨단 성능을 달성하면서 추론 효율성을 크게 향상시킬 수 있음을 보여준다.",
+    "summaryKo": "본 논문은 의료용 멀티모달 대규모 언어 모델(MLLM)의 3D 공간 추론 능력을 향상시키기 위해, 방사선 전문의의 진단 과정을 모방한 슬라이스 단위 데이터 합성 패러다임을 통해 구축된 구조화된 추론 데이터셋을 제안하고, 이를 활용한 지시 튜닝으로 2D 사전 학습 MLLM의 3D 체적 이해를 개선한 방법을 소개한다.",
     "detail": {
-      "problem": "대규모 멀티모달 감정 인식 모델(예: 7B 이상)은 높은 계산 비용과 낮은 추론 효율성으로 인해 로봇, 모바일 기기와 같은 자원 제약적 플랫폼에서의 실시간 배포가 어렵다.",
-      "method": "강력한 대규모 교사 모델의 지식을 10억 파라미터 미만의 경량 학생 모델로 전이하는 지식 증류 기반 Light-MER 프레임워크를 제안한다. 구체적으로, 슬라이스드 바서슈타인 거리와 은닉 상태 정렬을 결합한 최적 수송 손실 및 GRPO 기반 다중 보상 최적화 전략을 도입한다.",
-      "takeaway": "9개 벤치마크 데이터셋에 대한 실험에서 Light-MER은 최첨단 성능을 달성하고 추론 효율성을 크게 향상시켜, 소형 멀티모달 감정 언어 모델의 강력한 잠재력을 입증하였다."
+      "problem": "기존 MLLM은 2D 의료 영상 이해에는 성공적이었으나 3D 체적 영상으로의 확장은 높은 주석 비용과 데이터 불투명성으로 인해 어려움을 겪고 있다. 현재 데이터 형식(시각 질의응답 쌍이나 비구조적 임상 보고서)은 명시적인 임상 추론 과정을 포착하지 못한다.",
+      "method": "제안하는 방법은 방사선 전문의의 진단 워크플로우를 모방한 슬라이스 단위 데이터 합성 패러다임을 통해 순차적 공간 추적, 다중 슬라이스 공간 인식, 감별 진단 제외 등의 임상 원칙을 적용한 해석 가능한 사고사슬(CoT)을 생성하는 대규모 구조화된 추론 데이터셋을 구축하고, 이 데이터로 2D 사전 학습 MLLM을 지시 튜닝하여 체적 이해를 향상시킨다.",
+      "takeaway": "여러 3D 의료 벤치마크 평가에서 제안 방법이 2D 기준선 대비 유의미한 성능 향상을 보였으며, 제안된 모델은 강력한 공간 추론 능력을 갖추고 자원 집약적인 네이티브 3D 아키텍처와 견줄 만한 성능을 달성하여 성능 격차를 좁혔다. 이는 계산 비용이 많이 드는 3D 특화 사전 학습 없이도 깊은 체적 이해와 높은 해석 가능성을 제공하는 데이터 중심 전략의 효과를 입증한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.12787v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12787v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.13860v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13860v1.pdf"
   },
   {
-    "id": "2607.12310",
-    "title": "LakeQuest: A Three-Domain Benchmark for Grounded Question Answering across Data Lakes",
-    "authors": "Michael Solodko et al.",
+    "id": "2607.13881",
+    "title": "Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild",
+    "authors": "Ting Lei et al.",
+    "published": "2026-07-15",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "AgentHOI는 학습이 필요 없는 에이전트 기반 프레임워크로, 다중 모달 대규모 언어 모델의 일반화된 추론 능력을 활용하여 실제 환경에서 인간-객체 상호작용을 탐지한다.",
+    "detail": {
+      "problem": "기존 인간-객체 상호작용 탐지(HOID) 방법들은 미리 정의된 상호작용 범주에 대한 지도 학습에 의존하여 개방형 및 구성적 장면으로의 일반화가 어렵다. 최근 MLLM을 활용한 방법들은 판별적 표현만 추출하여 다중 모달 추론 능력을 충분히 활용하지 못한다.",
+      "method": "AgentHOI는 학습 없이 기반 모델의 다중 모달 추론 능력을 HOI 탐지에 전이하는 에이전트 프레임워크로, 상호작용 분류기를 학습하는 대신 맥락 인식 다중 라운드 추론과 다각적 상호작용 위치화 메커니즘을 통해 비전 모듈을 조정한다.",
+      "takeaway": "실험 결과, AgentHOI는 HOID 데이터 없이 학습되었음에도 불구하고 실제 환경에서 최신 지도 학습 및 약지도 학습 방법보다 우수한 성능을 달성했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13881v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13881v1.pdf"
+  },
+  {
+    "id": "2607.13712",
+    "title": "Groc-PO: Grounded Context Preference Optimization for Truthful Multimodal LLMs",
+    "authors": "Zhixiao Zheng et al.",
+    "published": "2026-07-15",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.MM"
+    ],
+    "tags": [
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "본 논문은 멀티모달 대규모 언어 모델(MLLM)의 신뢰성 문제를 해결하기 위해, 여러 근거 단계에 걸친 명시적인 선호도 최적화를 수행하는 Groc-PO 프레임워크와 GCPD 데이터셋을 제안한다.",
+    "detail": {
+      "problem": "기존의 선호도 기반 정렬 방법(예: DPO)은 최종 답변 수준에서만 선호도 최적화를 적용하여, 초기 근거 단계에서의 오류가 단계 간 전파되는 신용 할당 문제를 겪는다.",
+      "method": "Groc-PO는 객체 근거, 맥락 근거, 근거 추론의 세 단계로 구성된 근거 컨텍스트 선호도 데이터셋(GCPD)을 구축하고, 각 단계에 명시적인 선호도 감독을 제공하여 맥락 의존적 추론을 강화하고 단계 간 오류 전파를 완화한다.",
+      "takeaway": "실험 결과, Groc-PO는 표준 DPO 및 다른 강력한 기준선과 비교하여 환각 완화, 충실한 추론 및 전반적인 신뢰성에서 향상된 성능을 보인다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13712v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13712v1.pdf"
+  },
+  {
+    "id": "2607.13753",
+    "title": "Post-Training Shifts Confidence: A Three-Stage Analysis of How SFT, RL, and OPD Shape Pre-, Intra-, and Post-CoT Calibration",
+    "authors": "Shuhao Li et al.",
+    "published": "2026-07-15",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "본 연구는 SFT, RL, OPD와 같은 사후 훈련 방법이 사고 사슬 추론 단계별로 모델의 자신도에 미치는 영향을 분석하고, 위치 기반 자신도 전략(PosConf)을 통해 추론 중지 및 답변 집계 성능을 개선한다.",
+    "detail": {
+      "problem": "기존 평가는 최종 정답 정확도에 초점을 맞추며, 사후 훈련 방법이 추론 과정의 자신도에 미치는 영향을 간과한다.",
+      "method": "추론 전, 중, 후 세 단계로 자신도를 평가하는 프레임워크를 제안하고, 자신도의 위치 의존적 특성을 활용한 PosConf를 도입한다.",
+      "takeaway": "OPD는 추론 전 자신도, SFT는 조기 종료, RL은 추론 후 자신도에 가장 효과적이며, PosConf는 신뢰 구간의 자신도만 사용하여 majority voting 대비 6.1점, 조기 종료에서 최대 4.3점 향상시킨다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13753v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13753v1.pdf"
+  },
+  {
+    "id": "2607.13854",
+    "title": "SPyCE: Skill-Policy Co-evolution for Multimodal Agents",
+    "authors": "Ru Zhang, Weijie Qiu",
+    "published": "2026-07-15",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "retrieval",
+      "multimodal"
+    ],
+    "summaryKo": "SPyCE는 다중 모드 에이전트의 추론 궤적을 계층적 기술 라이브러리로 증류하고 정책 학습과 공진화시켜 재사용 가능한 도구 사용 패턴을 학습하는 프레임워크이다.",
+    "detail": {
+      "problem": "기존 강화학습 방법은 궤적을 스칼라 보상으로 축소하여 정책이 새로운 작업마다 재사용 가능한 패턴을 처음부터 학습해야 하고, 메모리 기반 방법은 경험을 저장하지만 테스트 시 검색에만 의존하며 정책이 패턴을 흡수하도록 업데이트하지 않는다.",
+      "method": "SPyCE는 궤적을 로컬 시각 연산을 캡처하는 실행 기술과 도구 사용을 조율하는 고수준 사전 지식을 인코딩하는 워크플로 기술로 구성된 계층적 기술 라이브러리로 증류하고, 강화학습 중 정책이 검색된 기술을 조건으로 롤아웃을 생성하며 정책의 유용한 롤아웃으로 기술 라이브러리를 업데이트하는 공진화 메커니즘을 사용한다.",
+      "takeaway": "8개 벤치마크 실험에서 SPyCE는 RL 기반 및 메모리 기반 기준을 모두 능가했다. 추가 분석은 계층적 기술 설계와 공진화 메커니즘 모두 중요함을 보여준다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13854v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13854v1.pdf"
+  },
+  {
+    "id": "2607.13539",
+    "title": "ThinkBLOX: 3D Indoor Scene Generation with Progressive Reasoning",
+    "authors": "Yuan Xiao et al.",
+    "published": "2026-07-15",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "tags": [
+      "3d",
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "ThinkBLOX는 VLM 기반 점진적 추론 프레임워크로, 3D 실내 장면 생성을 단계별 추론과 행동 과정으로 처리하여 물리적 타당성, 의미적 정합성 및 대화형 편집 가능성을 향상시킨다.",
+    "detail": {
+      "problem": "최근 VLM 기반 생성기들은 일회성(one-shot) 패러다임을 채택하여 대화형 편집 시 전역 재최적화나 완전 재구성이 필요하고, 물리적 또는 의미적으로 부적절한 배치를 초래할 수 있다.",
+      "method": "ThinkBLOX는 상태 조건화된 단계별 추론 및 행동 과정으로 배치 생성을 처리하는 VLM 기반 점진적 추론 프레임워크를 제안한다. 또한, 다중 솔루션 과제를 위해 계층 분리 GDPO 강화 학습 기법을 도입하여 정책 최적화를 안정화한다.",
+      "takeaway": "물리적 타당성, 의미적 정렬 및 대화형 편집 가능성에서 최신 일회성 및 반복적 기준을 능가하며, 전역/지역 생성 및 재배치 등 다양한 응용을 지원한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13539v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13539v1.pdf"
+  },
+  {
+    "id": "2607.13681",
+    "title": "Towards Spatial Supersensing in the Wild",
+    "authors": "Tianjun Gu et al.",
+    "published": "2026-07-15",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "multimodal"
+    ],
+    "summaryKo": "본 논문은 실제 세계의 긴 비디오에서 공간 초감각(spatial supersensing)을 평가하기 위한 대규모 벤치마크 VSI-Super-Wild를 제안하고, 현재 모델들이 시간에 따른 일관된 세계 상태 추적에 실패함을 드러낸다.",
+    "detail": {
+      "problem": "기존 공간 초감각 벤치마크는 무작위 단편 클립을 연결한 합성 장기 비디오에 의존하며 대부분 가정 장면에 한정되어 있어 실제 세계의 연속성과 다양성을 간과한다.",
+      "method": "저자들은 8개 장면 범주(총 442개 실제 비디오, 최대 4시간 이상의 장기 녹화 포함)로부터 수집한 6,980개의 인간 검증 질문-답변 쌍으로 구성된 VSI-Super-Wild 벤치마크를 도입하여 다양한 야외 장면에서 장기 시간적 지평에 걸친 공간 초감각을 평가한다.",
+      "takeaway": "VSI-Super-Wild에 대한 실험 결과, 모델들은 세계 상태 복잡성과 시간적 지평이 증가함에 따라 성능이 저하되며, 공간 붕괴(spatial collapse), 의미론적 지름길(semantic shortcuts), 불충분한 업데이트(insufficient update), 인스턴스 혼동(instance confusion)의 네 가지 실패 모드를 보인다. 이는 객체, 에이전트, 환경을 통합된 공간 세계 모델로 결합하는 메커니즘의 부재를 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13681v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13681v1.pdf"
+  },
+  {
+    "id": "2607.13792",
+    "title": "EgoProceVQA: A Novel Egocentric Procedural Understanding Task with Self-Skill-Exploration Agent",
+    "authors": "Junlong Li et al.",
+    "published": "2026-07-15",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 자기 중심적 절차적 비디오 이해를 평가하고 개선하기 위해 EgoProceVQA 태스크, EgoProceGen 데이터 생성 플랫폼, EgoProceAgent 자기 기술 탐색 에이전트 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "기존 자기 중심적 비디오 이해 평가는 절차적 이해를 다루지 못하며, MLLM의 VQA 패러다임에서 복잡한 키-단계 수준 추론이 부족하다.",
+      "method": "EgoProceVQA 태스크를 도입하여 여섯 가지 유형의 키-단계 중심 질문으로 절차적 추론을 평가한다. EgoProceGen 플랫폼을 개발하여 3,600개 질문 벤치마크를 구축하고, EgoProceAgent라는 자기 기술 탐색 에이전트 프레임워크를 제안하여 하위 기술 라이브러리를 통한 자기 탐색으로 절차적 이해를 향상시킨다.",
+      "takeaway": "기존 MLLM 및 에이전트는 절차적 이해에 개선 여지가 크다. EgoProceAgent는 오픈소스 모델 중 여러 작업에서 최고 성능을 달성하여 EgoProceVQA를 위한 통합 기반을 마련했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13792v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13792v1.pdf"
+  },
+  {
+    "id": "2607.13189",
+    "title": "RAGthoven at SemEval-2026 Task 1: A Multi-Stage Pipeline Walks Into a Benchmark and Barely Clears the Bar",
+    "authors": "Marek Šuppa et al.",
     "published": "2026-07-14",
     "category": "llm",
     "categories": [
@@ -42,267 +207,91 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "medical",
-      "retrieval",
-      "multimodal"
-    ],
-    "summaryKo": "LakeQuest는 현실적인 데이터 레이크에서의 종단형 검색 및 합성 질의응답 시스템을 평가하기 위한 9,846쌍의 인간 검증 벤치마크로, 세 가지 도메인을 포함하며 소스 발견과 교차 모달 합성의 실패 모드를 드러냅니다.",
-    "detail": {
-      "problem": "기존 질의응답 시스템은 깨끗하고 스키마가 정렬된 말뭉치에서는 뛰어나지만 실제 지식은 이질적이고 약하게 구조화된 데이터 레이크에 존재합니다. 현재 벤치마크는 이러한 노이즈가 있는 발견 과정을 추상화하여 종단형 성능을 평가하지 못합니다.",
-      "method": "LakeQuest는 9,846개의 QA 쌍으로 구성된 인간 검증 벤치마크로, AI/ML 메타데이터, 소매 금융, 다중 모달 생의학 약물 정보의 세 가지 도메인을 포함하며 각 질문에 정확하고 양식 인식 증거 포인터를 제공합니다. 이는 소스 발견을 교차 모달 합성에서 분리하여 평가할 수 있도록 설계되었습니다.",
-      "takeaway": "기준 평가(RAG, 에이전트 도구 사용 방법)에서는 높은 품질의 검색이 올바른 추론을 보장하지 않음을 보여주었습니다. 시스템은 메타데이터 그래프의 관계 연결, 은행 원장의 정책 근거, 생의학 맥락에서의 공동 표 형식 QA에 어려움을 겪어 미래 에이전트 QA 시스템에서 강건한 발견과 충실한 교차 파일 합성 메커니즘의 필요성을 강조합니다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12310v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12310v1.pdf"
-  },
-  {
-    "id": "2607.12477",
-    "title": "Self in Space: Benchmarking Self-Awareness and Spatial Cognition in UAV Embodied Intelligence",
-    "authors": "Zhishan Zou et al.",
-    "published": "2026-07-14",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "video",
       "autonomous-driving",
-      "multimodal"
-    ],
-    "summaryKo": "이 논문은 UAV 임베디드 지능에서 자기 인식과 공간 인지를 통합적으로 평가하는 벤치마크 SIS-Bench를 제안하고, 움직임 인식 표현이 공간 및 자기 인식 성능을 향상시킴을 실험적으로 입증하였다.",
-    "detail": {
-      "problem": "기존 UAV 분야의 접근 방식과 벤치마크는 환경 중심적이며 에이전트의 자기 인식을 명시적으로 평가하지 않는다는 문제가 있다.",
-      "method": "SIS-Bench는 공간과 자아의 두 차원과 지각, 기억, 추론의 세 수준으로 평가를 구성하며, 실제 UAV 영상과 전문가 검증을 통해 구축되었다. 또한, 광학 흐름과 시각 특징 융합을 통한 움직임 인식 표현을 제안하여 자기 관련 역학을 모델링한다.",
-      "takeaway": "실험 결과, 현재의 MLLM은 동적 및 에이전트 중심 과정 모델링에 근본적인 한계를 보이며, 공간 인지와 자기 인식 간 불균형과 인지 수준에 따른 성능 저하가 관찰되었다. 움직임 인식 모델링은 지각 및 기억 성능을 일관되게 향상시켰으며, 이는 자기 인식의 중요성을 강조한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12477v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12477v1.pdf"
-  },
-  {
-    "id": "2607.12375",
-    "title": "IQA-T1: Tool-based Visual Evidence Reasoning for Image Quality Assessment",
-    "authors": "Jinjian Wu et al.",
-    "published": "2026-07-14",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "eess.IV"
-    ],
-    "tags": [
-      "benchmark",
-      "autonomous-driving",
-      "multimodal"
-    ],
-    "summaryKo": "제안하는 IQA-T1은 도구 기반 시각적 증거 추론을 통해 MLLM의 저수준 지각 인식 한계를 보완하여 해석 가능하고 일반화된 화질 평가를 달성한다.",
-    "detail": {
-      "problem": "개방형 환경에서의 화질 평가(IQA)는 일반화와 해석 가능성이 제한적이며, 기존 MLLM 기반 방법은 의미론적 편향 내부 표현에 의존하여 저수준 지각 왜곡에 둔감하다.",
-      "method": "IQA-T1은 추론 과정에서 전문 분석 도구를 자율적으로 호출하여 노이즈 잔차 맵, 기울기 통계, 주파수 스펙트럼 등의 구조적 시각적 증거를 생성하고 이를 점진적으로 통합하는 프레임워크를 제안한다. 또한, 도구 기반 증거로 구성된 11k 멀티모달 추론 체인 데이터셋 Q-Tool을 구축하였다.",
-      "takeaway": "일곱 개의 IQA 벤치마크에서 데이터셋 전반에 걸쳐 최고의 종합 성능을 달성했으며, 해석 가능하고 증거에 기반한 화질 평가를 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12375v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12375v1.pdf"
-  },
-  {
-    "id": "2607.12764",
-    "title": "EvoGraph-R1: Self-Evolving Multimodal Knowledge Hypergraphs for Agentic Retrieval",
-    "authors": "Jiashi Lin et al.",
-    "published": "2026-07-14",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
       "retrieval",
-      "multimodal",
       "generation"
     ],
-    "summaryKo": "EvoGraph-R1은 검색을 마르코프 결정 과정으로 공식화하여 에이전트가 하이퍼그래프를 동적으로 진화시키며 다중 모달 추론을 수행하는 자가 진화 GraphRAG 프레임워크이다.",
+    "summaryKo": "RAGthoven은 다국어 유머 생성 작업을 위해 다단계 LLM 파이프라인과 RAG를 결합한 시스템으로, SemEval-2026 Task 1에서 베이스라인과 공동 1위를 기록했지만 에이전트 변형이 성능 향상으로 이어지지 않아 복잡한 엔지니어링의 효용이 제한적임을 보여주었다.",
     "detail": {
-      "problem": "기존 GraphRAG 방법은 정적 지식 그래프를 사용하여 텍스트 중심 단편화, 구조 경직성, 단일 패스 검색 등의 한계를 가지며, 이는 지식 집약적 추론의 상호작용적이고 반복적인 특성과 부합하지 않는다.",
-      "method": "검색을 마르코프 결정 과정(MDP)으로 공식화하고, 에이전트가 그래프 상태를 관찰하여 검색(GraphRetrieve), 확장(WebSearch), 편집(GraphEdit), 종료(Answer) 등의 행동을 수행한다. 이 과정을 통해 하이퍼그래프가 새로운 증거를 통합하고 오류를 수정하며 다중 홉 추론을 지원하도록 진화한다.",
-      "takeaway": "다중 모달 VQA 및 텍스트 QA 벤치마크 실험에서 기존 RAG 방법보다 정확성, 포괄성, 추적 가능성에서 향상된 성능을 보였다. 본 연구는 자가 진화 지식 그래프를 다양한 모달리티에 걸친 기본 패러다임으로 확립한다."
+      "problem": "이 논문은 영어, 스페인어, 중국어로 된 제약적 유머 생성 문제를 해결하려고 하며, 정교한 다단계 프롬프트 엔지니어링과 에이전트적 구조가 강력한 LLM에 얼마나 효과적인지 평가한다.",
+      "method": "RAGthoven은 유머 이론(무해한 위반 이론, 스크립트 기반 의미 이론)에 기반한 Planner, Writer, Reflector, Judge 파이프라인을 제안하고, Planner에 RAG를 추가했다. 또한 ReAct 스타일과 자율적 다중 분기 오케스트레이션의 두 가지 에이전트 변형을 실험했다.",
+      "takeaway": "RAGthoven은 세 언어에서 베이스라인과 공동 1위를 달성했지만, 에이전트 변형은 비에이전트 파이프라인보다 우수하지 않았으며, 스페인어를 제외한 언어에서는 베이스라인이 더 높은 Elo 점수를 기록했다. 이는 강력한 프론티어 모델 사용 시 복잡한 프롬프트 엔지니어링과 에이전트 구조의 이득이 언어에 따라 체감함을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.12764v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12764v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.13189v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13189v1.pdf"
   },
   {
-    "id": "2607.12894",
-    "title": "Hy-Embodied-VLM-1.0: Efficient Physical-World Agents",
-    "authors": "Ziyi Wang et al.",
+    "id": "2607.13248",
+    "title": "GSM-Plus-BN: A Perturbation-Based Benchmark for Bangla Mathematical Reasoning in Large Language Models",
+    "authors": "Bidyarthi Paul et al.",
     "published": "2026-07-14",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "이 논문은 변형된 벵골어 수학 데이터셋 GSM-Plus-BN을 구축하고 여섯 개의 오픈소스 LLM을 표준 및 사슬형 사고 프롬프팅으로 평가하여, GPT-OSS-20B가 표준 프롬프팅에서 가장 높은 정확도를 보이고 큰 모델이 변형에 강건하지만 모든 모델에서 영어 대비 성능 격차가 있음을 보여주며 새로운 자원과 기준선을 제공한다.",
+    "detail": {
+      "problem": "대규모 언어 모델의 수학적 추론 평가가 주로 영어에 편중되어, 벵골어와 같은 언어의 연구는 부족하고 교란된 데이터셋을 사용한 체계적 벤치마킹은 전무하여 모델의 강건성과 진정한 이해를 평가할 수 없는 문제가 있었다.",
+      "method": "영어 GSM-Plus 벤치마크로부터 변형된 벵골어 수학 데이터셋 GSM-Plus-BN을 도출하고 인간 번역가의 검증을 거쳤다. 1,000개의 시드 질문과 8,000개의 변형 샘플로 구성된 9,000개 평가 샘플로 여섯 개의 오픈소스 LLM을 표준 프롬프팅과 사슬형 사고 프롬프팅으로 평가했다.",
+      "takeaway": "GPT-OSS-20B가 표준 프롬프팅에서 시드 질문 정확도 96.08%로 최고였고, Llama-3.3-70B와 GPT-OSS-120B가 변형 유형 전반에서 강건했다. CoT 프롬프팅은 대부분의 모델에서 추론 성능을 크게 향상시켰으나, 모든 모델이 영어 벤치마크 대비 현저한 성능 격차를 보여 벵골어 변형 텍스트의 어려움을 드러냈다. 이 연구는 GSM-Plus-BN을 향후 벵골어 수학 추론 연구를 위한 새로운 자원과 기준선으로 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.13248v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13248v1.pdf"
+  },
+  {
+    "id": "2607.13311",
+    "title": "Finding the Right Tables and Columns: A Benchmark and Corpus-Adaptive Embeddings for SQL Schema Retrieval",
+    "authors": "Qingcheng Zeng et al.",
+    "published": "2026-07-14",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "multimodal",
+      "retrieval",
+      "embedding",
       "generation"
     ],
-    "summaryKo": "본 논문은 물리적 세계에서 효율적으로 작동하는 임베디드 에이전트를 위한 기초 모델 Hy-Embodied-VLM-1.0을 제안한다.",
+    "summaryKo": "본 논문은 SQL 스키마 검색을 위한 벤치마크를 구축하고, 코퍼스 적응형 미세 조정을 통해 작은 모델로도 큰 모델에 필적하는 검색 성능을 달성하여 스키마 연결을 독립적인 검색 과제로 확립하였다.",
     "detail": {
-      "problem": "강력한 임베디드 에이전트를 구축하기 위해서는 다중 모달 인식과 이해뿐만 아니라, 행동 추론, 상황 적응 및 물리적 세계와의 상호작용 능력이 필요하다.",
-      "method": "행동 중심 능력 분류 체계(행동 관련 상태 이해, 행동 전이 추론, 순차적 및 적응적 추론)를 정의하고, 체계적인 데이터 파이프라인을 통해 사전 학습 및 후속 학습 데이터를 구성하였다. Hy3-A3B 언어 백본과 Hy-ViT2 비전 인코더를 기반으로 효율적인 Mixture-of-Experts 아키텍처를 사용하여 모델을 구축하였다.",
-      "takeaway": "Hy-Embodied-VLM-1.0은 38개 벤치마크 중 19개에서 동급 최고 성능을 달성하였고, Qwen3.6-A3B 및 Cosmos 3를 능가하였다. 이전 세대 모델 대비 평균 8.4% 향상되었으며, 3B 활성 파라미터만으로 32B 활성 파라미터 모델에 근접하는 성능을 보였다. 멀티 턴 상호작용 및 장기 추론이 필요한 에이전트 작업에서도 강력한 성능을 입증하였으나, 초록에서 명시적인 한계는 논의되지 않았다."
+      "problem": "기존 SQL 검색 연구는 자연어 질문에 해당하는 SQL 문장을 찾는 데 집중되었으나, 더 근본적인 문제인 데이터베이스 내 필요한 테이블과 컬럼을 식별하는 스키마 검색이 간과되었고, 기존의 임베딩 모델은 이 작업에 효과적으로 전이되지 않았다.",
+      "method": "타겟 스키마 코퍼스에서 자연어 질의를 합성하고, 세분화 인식 하드 네거티브를 마이닝한 후, 305M 파라미터 임베더를 대조 학습으로 미세 조정하는 코퍼스 적응형 미세 조정을 제안한다.",
+      "takeaway": "제안 방법은 평균 recall@10을 60.4에서 75.6으로, nDCG@10을 51.9에서 68.0으로 향상시켰고, 305M 모델은 1B 미만 파라미터 모델 중 최고 성능을 기록하며 4-8B 규모의 최신 임베더와 경쟁력을 보였다. 동일한 방식으로 8B 임베더도 추가 성능 향상을 이루었으며, 실험을 통해 이러한 이득이 데이터 암기가 아닌 전이 가능한 스키마 검색 능력에서 비롯됨을 확인하고, 스키마 연결을 독립적인 검색 과제로 정립하였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.12894v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12894v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.13311v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13311v1.pdf"
   },
   {
-    "id": "2607.12497",
-    "title": "TerraLogic: A Benchmark for Hierarchical Geospatial Reasoning in Earth Observation",
-    "authors": "Yuhang Yan et al.",
-    "published": "2026-07-14",
+    "id": "2607.13977",
+    "title": "Constraint-Aware Counterfactual Editing for Aspect-Based Sentiment Analysis",
+    "authors": "S M Rafiuddin, Vamsi Krishna Pavuluri, Atriya Sen",
+    "published": "2026-07-15",
     "category": "multimodal",
     "categories": [
-      "cs.CV"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents"
-    ],
-    "summaryKo": "본 논문은 원격 탐사에서 인지적 지리공간 추론의 부재를 해결하기 위해 545개의 계층 인식 작업을 포함한 TerraLogic 벤치마크와 계층적 도구 구성을 통한 오류 허용 추론 에이전트 HieraPlan을 제안한다.",
-    "detail": {
-      "problem": "기존 원격 탐사 연구는 인식 중심 작업에 집중되어 있어 인지적 지리공간 추론이 충분히 탐구되지 않았다. TerraLogic은 이러한 격차를 해결하기 위해 설계된 지리공간 추론 벤치마크이다.",
-      "method": "본 논문은 TerraLogic 평가를 위해 도구 키트를 기능적 계층으로 구성하고 오류 허용 추론을 수행하는 HieraPlan 에이전트를 제안한다. HieraPlan은 구조적 추상화, 도구 실패로부터의 강건한 복구, 안정적인 장기 계획을 가능하게 한다.",
-      "takeaway": "실험 결과, 기존 방법들은 계층적 지리공간 추론에 어려움을 겪는 반면, HieraPlan은 추론, 교차 모달 일반화 및 오류 처리에서 개선된 강력한 기준선을 제공한다. 데이터셋과 에이전트 코드는 공개되어 있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12497v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12497v1.pdf"
-  },
-  {
-    "id": "2607.12602",
-    "title": "Decouple and Reason: Anatomically Guided Two-Stage Voxel-Level Grounding of Free-Text Findings in 3D Chest CT",
-    "authors": "Kwang-Hyun Uhm, Inhwa Son, Sung-Jea Ko",
-    "published": "2026-07-14",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "3d",
-      "medical",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 3D 흉부 CT의 자유 텍스트 소견을 복셀 수준에서 정렬하기 위해 클래스에 구애받지 않는 병변 분할과 해부학적 가이드를 통한 텍스트-볼륨 추론으로 문제를 분해하는 2단계 프레임워크를 제안하며, ReXGroundingCT 벤치마크에서 전체 정렬 품질 최고 성능을 달성했다.",
-    "detail": {
-      "problem": "3D 볼륨의 복잡한 공간 구조와 자유 텍스트 소견의 이질성으로 인해 기존 종단간 방법은 3D 분할과 텍스트 정렬을 동시에 학습하기 어려워 최적의 정렬 성능을 내지 못한다.",
-      "method": "문제를 (1) 클래스에 구애받지 않는 병변 분할로 후보 영역을 추출하고 (2) 추출된 영역과 텍스트 간의 교차 양식 추론을 수행하는 두 단계로 분해한다. 추론 단계에서는 상대적 공간 좌표와 폐엽 사전 정보를 활용한 명시적 해부학적 가이드를 사용하여 공간적 모호성을 해결한다.",
-      "takeaway": "제안 방법은 ReXGroundingCT 벤치마크에서 전체 정렬 품질에서 최고 성능을 달성했으며, 검출과 추론의 분리가 3D 의료 시각적 정렬의 복잡성을 처리하는 효과적인 패러다임임을 입증했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12602v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12602v1.pdf"
-  },
-  {
-    "id": "2607.12630",
-    "title": "Instance-Enriched Semantic Maps for Visual Language Navigation",
-    "authors": "Jiho Hong et al.",
-    "published": "2026-07-14",
-    "category": "multimodal",
-    "categories": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "tags": [
-      "agents",
-      "3d",
-      "retrieval"
-    ],
-    "summaryKo": "본 논문은 인스턴스 수준의 2.5D 의미 맵과 LLM 기반 질의 처리를 통해 시각 언어 내비게이션의 객체 세부 정보와 질의 강건성을 향상시키는 통합 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "기존 VLN 시스템은 인스턴스 수준의 객체 세부 정보가 부족하고 다양한 사용자 질의에 강건하지 못하여 복잡한 실내 환경에서의 신뢰할 수 있는 내비게이션에 한계가 있다.",
-      "method": "개방형 어휘 범주형 분할을 통해 2.5D 맵을 구축하고, LLM 기반 타겟 선택으로 질의를 동적 라우팅 및 융합하며, 3D 장면 그래프 대비 약 96% 저장 공간을 절감하는 Instance-Enriched Semantic Maps를 제안한다.",
-      "takeaway": "제안된 2.5D 표현은 예측 정규화 AUC에서 3D 베이스라인 대비 27% 이상 향상되었고, 내비게이션 실험에서 객체 검색 17% 이상, 내비게이션 성공률 23% 이상의 개선을 달성하였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12630v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12630v1.pdf"
-  },
-  {
-    "id": "2607.12752",
-    "title": "Hallo4D: Multi-Modal Hallucination Mitigation for Consistent Spatio-Temporal Generation",
-    "authors": "Hongbo Wang et al.",
-    "published": "2026-07-14",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "diffusion",
-      "3d",
-      "multimodal",
       "generation",
       "detection"
     ],
-    "summaryKo": "Hallo4D는 3D 및 4D 콘텐츠 생성에서 시공간 환각을 완화하기 위해 대규모 다중 모달 언어 모델(LMM)을 활용한 생성-탐지-교정 패러다임을 도입하는 통합 프레임워크이다.",
+    "summaryKo": "본 논문은 기존 반사실적 생성 방법이 문장 수준 레이블 전환에 초점을 맞춰 측면 수준에서 유효하지 않은 편집을 생성하는 문제를 해결하기 위해, 제약 조건 인식 검증 편집 프레임워크(CAVE-ABSA)를 제안한다.",
     "detail": {
-      "problem": "최근 3D 생성 기술은 기하학적 일관성을 위한 명시적 메커니즘 부족으로 중복 구조나 정렬 오류 같은 공간적 환각이 발생하며, 4D 생성에서는 시점과 시간적 변화에 따른 일관성 유지가 어려워 떨림, 신원 깜빡임, 구조적 표류 등의 문제가 더 심각해진다.",
-      "method": "Hallo4D는 생성-탐지-교정 패러다임을 통해 다중 시점 및 다중 프레임 렌더링에서 LMM이 시공간 불일치를 식별하고 요약하게 하여, LMM 기반 선택기가 다중 모델 투표로 후보 교정을 평가하는 합의 기반 이미지 공간 일관성 최적화를 수행한다. 또한 움직임 인식 키프레임 샘플링, LMM 기반 초기화, 외형 정렬, 노출 인식 최적화 및 가시성 정리 등을 통해 시간적 일관성과 최적화 효율성을 개선한다.",
-      "takeaway": "광범위한 실험을 통해 Hallo4D는 다양한 3D 및 4D 생성 설정에서 강력한 기준 모델보다 일관되게 우수한 성능을 보였으며, 재학습이나 구조 변경 없이 확장 가능하고 일반화 가능한 일관성 인식 콘텐츠 생성 솔루션을 제공함을 입증했다."
+      "problem": "측면 기반 감성 분석(ABSA)에서 유효한 반사실적 예제는 대상 측면의 감성만 뒤집고 다른 측면의 감성, 의미, 유창성, 사실 일관성을 유지해야 하므로 생성 및 평가가 까다롭다. 기존 방법은 문장 수준 레이블 전환에 집중하여 측면-무효 편집이나 의미적 변질을 초래한다.",
+      "method": "CAVE-ABSA는 대상 측면의 의견 범위를 식별하고 제어된 반사실적 재작성 및 수리 모듈로 후보를 정제한 후, 측면 수준 검증, 의미 유사도, AMR 기반 구조 보존, 편집 최소성, 유창성, 모순 탐지 등으로 필터링한다.",
+      "takeaway": "제안 프레임워크는 검증된 반사실적 ABSA 데이터셋을 구축하여 강건성 평가와 데이터 증강에 활용할 수 있다. 생성과 검증의 명시적 분리를 통해 의미 있는 측면-국소 반사실적을 생성하고 ABSA 모델의 측면 기반 감성 추론 여부를 테스트하는 원칙적 접근법을 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.12752v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12752v1.pdf"
-  },
-  {
-    "id": "2607.12818",
-    "title": "Breaking Déjà Vu: Independent Auditing of Visual Place Recognition through Vision-Language Reasoning",
-    "authors": "Sania Waheed et al.",
-    "published": "2026-07-14",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "autonomous-driving",
-      "retrieval",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 비전-언어 모델(VLM)을 활용하여 시각적 위치 인식(VPR)의 검색 결과를 독립적으로 감사하는 사후 검증 프레임워크를 제안하고, 환경 변화에도 강건하게 거짓 루프 클로저를 줄일 수 있음을 실험적으로 보인다.",
-    "detail": {
-      "problem": "기존 VPR 시스템은 레이블된 검증 데이터로 튜닝된 고정 임계값에 의존하여 환경 변화 시 신뢰할 수 없으며, 안전이 중요한 로보틱스에서 거짓 루프 클로저가 SLAM의 궤적과 지도를 손상시킨다.",
-      "method": "제안하는 VPR Auditing은 사후 검증 프레임워크로, VLM이 쿼리와 후보 이미지를 함께 추론하여 인스턴스 수준의 매칭 여부를 판단하며, 아키텍처 특정 신뢰도나 데이터셋 종속 임계값 없이 동작한다.",
-      "takeaway": "6개 벤치마크, 5개 최신 VPR 방법, 4개 VLM 실험에서 VLM 기반 감사는 재현율(@1)을 평균 13.6% 향상시키고 거짓 수락률을 12%로 낮추며, 정밀도 95% 이상, 커버리지 75% 이상을 유지한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12818v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12818v1.pdf"
-  },
-  {
-    "id": "2607.12911",
-    "title": "Open-KNEAD: Knowledge-grounded Nutrition Estimation via Agentic Decomposition",
-    "authors": "Bruce Coburn et al.",
-    "published": "2026-07-14",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "agents",
-      "privacy",
-      "retrieval",
-      "multimodal",
-      "benchmark"
-    ],
-    "summaryKo": "Open-KNEAD는 지식 기반 에이전틱 분해를 통해 식사 이미지의 영양소 추정 정확도를 높이고, 로컬 배포 가능하며 추적 가능한 기록을 제공하는 훈련 없는 프레임워크이다.",
-    "detail": {
-      "problem": "현대의 다중 모드 대규모 언어 모델은 식사 이미지에서 직접 영양소 추정이 가능하지만, 임상에서 요구하는 정확한 제공량 추정과 항목별 추적 가능한 기록을 동시에 제공하는 방법이 필요하다.",
-      "method": "Open-KNEAD는 각 분해된 식품 항목을 FNDDS 코드에 영양소 인식 검색으로 연결하고, 조리 과정에서 추가되는 에너지를 복구하는 레시피 사전 단계를 포함하는 훈련 없는 에이전틱 프레임워크이다.",
-      "takeaway": "Open-KNEAD는 여러 오픈 MLLM과 세 가지 요리에서 기존 방법 및 직접 추정보다 제공량 추정을 개선했으며, 특히 ACETADA 데이터셋에서 두 폐쇄 모델 대비 30% 및 53% 향상된 성능을 보였다. 모든 이미지를 로컬에서 처리하여 프라이버시를 보장하고 감사 가능한 기록을 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.12911v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.12911v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.13977v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.13977v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-15T03:23:41.312Z",
+  "collectedAt": "2026-07-16T03:31:45.007Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
