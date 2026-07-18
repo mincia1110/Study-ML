@@ -5,6 +5,9 @@ import { writeFileSync, readFileSync } from 'node:fs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
+import { collectCitationRecommendations, extractArxivIdFromWork, buildOpenAlexUrl } from './lib/openalex.mjs';
+import { CITATION_MODES, citationWindow, selectCitationPapers } from './lib/recommend.mjs';
+import { parsePreviousPapers, readPreviousPapers, reusableSummary } from './lib/paper-cache.mjs';
 
 /**
  * collect-papers.mjs — arXiv daily paper collector.
@@ -36,6 +39,7 @@ const CAT_QUERIES = [
 const MAX_RESULTS = 50;
 const MAX_PAPERS = 12;
 const OUTPUT_PATH = 'data/papers.js';
+const OPENALEX_API_KEY = process.env.OPENALEX_API_KEY || '';
 
 const OPENCODE_GO_URL = process.env.OPENCODE_GO_BASE_URL || 'https://opencode.ai/zen/go/v1/chat/completions';
 const OPENCODE_GO_MODEL = process.env.OPENCODE_GO_MODEL || 'deepseek-v4-flash';
@@ -91,21 +95,13 @@ function extractAuthors(entry) {
 }
 
 function parsePreviousPaperIds(source) {
-  const match = source.match(/window\.PAPERS\s*=\s*(\[[\s\S]*?\]);\s*window\.PAPER_METADATA/);
-  if (!match) return new Set();
-  try {
-    return new Set(JSON.parse(match[1]).map(p => p.id).filter(Boolean));
-  } catch (_) {
-    return new Set();
-  }
+  return new Set(parsePreviousPapers(source).map(p => p.id).filter(Boolean));
 }
 
-function readPreviousPaperIds() {
-  try {
-    return parsePreviousPaperIds(readFileSync(OUTPUT_PATH, 'utf-8'));
-  } catch (_) {
-    return new Set();
-  }
+function latestPreviousIds(previousPapers) {
+  return new Set(previousPapers
+    .filter(p => !Array.isArray(p.recommendationModes) || p.recommendationModes.includes('latest'))
+    .map(p => p.id));
 }
 
 function selectFreshFirst(papers, previousIds, limit = MAX_PAPERS) {
@@ -241,53 +237,152 @@ async function fetchEntries(query) {
   return xml.split('<entry>').slice(1);
 }
 
-async function collectPapers() {
+async function fetchEntriesByIds(ids) {
+  const entries = [];
+  for (let offset = 0; offset < ids.length; offset += 50) {
+    const batch = ids.slice(offset, offset + 50);
+    const params = new URLSearchParams({ id_list: batch.join(','), max_results: String(batch.length) });
+    const res = await fetch(`${ARXIV_API}?${params}`);
+    if (!res.ok) throw new Error(`arXiv API error ${res.status} for citation metadata`);
+    entries.push(...(await res.text()).split('<entry>').slice(1));
+  }
+  return entries;
+}
+
+function paperFromEntry(raw) {
+  const id = extractArxivId(raw);
+  const title = extractTag(raw, 'title').replace(/\s+/g, ' ');
+  if (!id || !title) return null;
+  const published = extractTag(raw, 'published').substring(0, 10);
+  const abstract = extractTag(raw, 'summary').replace(/\s+/g, ' ');
+  const categories = extractCategories(raw);
+  return {
+    id,
+    title,
+    authors: extractAuthors(raw),
+    published,
+    category: inferCategory(categories, title, abstract),
+    categories,
+    abstract,
+    tags: [],
+    summaryKo: '',
+    detail: {},
+    sourceUrl: `https://arxiv.org/abs/${id}v1`,
+    pdfUrl: `https://arxiv.org/pdf/${id}v1.pdf`,
+    _score: computeScore(title, abstract, categories),
+  };
+}
+
+function addRecommendation(paper, mode, rank) {
+  if (!paper.recommendationModes) paper.recommendationModes = [];
+  if (!paper.recommendationModes.includes(mode)) paper.recommendationModes.push(mode);
+  if (!paper.recommendationRanks) paper.recommendationRanks = {};
+  paper.recommendationRanks[mode] = rank;
+}
+
+function restorePreviousCitationPapers(selectedById, previousPapers) {
+  for (const previous of previousPapers) {
+    const modes = (previous.recommendationModes || []).filter(mode => mode !== 'latest');
+    if (modes.length === 0) continue;
+    const current = selectedById.get(previous.id);
+    if (current) {
+      for (const mode of modes) addRecommendation(current, mode, previous.recommendationRanks?.[mode] || 999);
+      if (!current.metrics && previous.metrics) current.metrics = previous.metrics;
+    } else {
+      selectedById.set(previous.id, structuredClone(previous));
+    }
+  }
+}
+
+async function collectPapers(options = {}) {
+  const previousPapers = readPreviousPapers(OUTPUT_PATH);
+  const previousById = new Map(previousPapers.map(p => [p.id, p]));
   const seen = new Map(); // id -> paper
 
   for (const catQ of CAT_QUERIES) {
     const entries = await fetchEntries(catQ);
     for (const raw of entries) {
-      const id = extractArxivId(raw);
-      if (!id || seen.has(id)) continue;
-
-      const title = extractTag(raw, 'title').replace(/\s+/g, ' ');
-      const published = extractTag(raw, 'published').substring(0, 10);
-      const abstract = extractTag(raw, 'summary').replace(/\s+/g, ' ');
-      const categories = extractCategories(raw);
-      const authors = extractAuthors(raw);
-
-      if (!title) continue;
-
-      const score = computeScore(title, abstract, categories);
-      const category = inferCategory(categories, title, abstract);
-
-      // Keep abstract for LLM use; strip later before output
-      seen.set(id, {
-        id,
-        title,
-        authors,
-        published,
-        category,
-        categories,
-        abstract,
-        tags: [],
-        summaryKo: '',
-        detail: {},
-        sourceUrl: `https://arxiv.org/abs/${id}v1`,
-        pdfUrl: `https://arxiv.org/pdf/${id}v1.pdf`,
-        _score: score,
-      });
+      const paper = paperFromEntry(raw);
+      if (paper && !seen.has(paper.id)) seen.set(paper.id, paper);
     }
   }
 
   // Sort first, then prefer papers not shown in the previous generated page.
-  const sorted = selectFreshFirst(
+  const latest = selectFreshFirst(
     [...seen.values()].sort((a, b) => (b._score - a._score) || (b.published > a.published ? 1 : -1)),
-    readPreviousPaperIds(),
+    latestPreviousIds(previousPapers),
   );
+  latest.forEach((paper, index) => addRecommendation(paper, 'latest', index + 1));
+
+  const selectedById = new Map(latest.map(p => [p.id, p]));
+  let citationStatus = options.latestOnly ? 'disabled' : (OPENALEX_API_KEY ? 'ok' : 'missing-key');
+  let citationResult = { byMode: {}, windows: {}, queryCount: 0 };
+  const citationFallbackModes = [];
+
+  if (!options.latestOnly && OPENALEX_API_KEY) {
+    try {
+      citationResult = await collectCitationRecommendations(OPENALEX_API_KEY, { now: options.now });
+      for (const [mode, recommendations] of Object.entries(citationResult.byMode)) {
+        let effective = recommendations;
+        if (recommendations.length > 0 && recommendations.every(item => item.citationCount === 0)) {
+          const window = citationResult.windows[mode];
+          const fallback = latest.filter(item => item.published >= window.from && item.published <= window.to).slice(0, 6);
+          if (fallback.length > 0) {
+            effective = fallback.map((item, index) => ({ id: item.id, recommendationRank: index + 1, citationCount: 0 }));
+            citationFallbackModes.push(mode);
+          }
+        }
+        citationResult.byMode[mode] = effective;
+      }
+
+      const citationIds = [...new Set(Object.values(citationResult.byMode).flat().map(p => p.id))];
+      const missingIds = citationIds.filter(id => !selectedById.has(id));
+      const citationPapers = new Map();
+      if (missingIds.length > 0) {
+        for (const raw of await fetchEntriesByIds(missingIds)) {
+          const paper = paperFromEntry(raw);
+          if (paper) citationPapers.set(paper.id, paper);
+        }
+      }
+
+      for (const [mode, recommendations] of Object.entries(citationResult.byMode)) {
+        recommendations.forEach((recommendation, index) => {
+          const paper = selectedById.get(recommendation.id) || citationPapers.get(recommendation.id);
+          if (!paper) return;
+          addRecommendation(paper, mode, recommendation.recommendationRank || index + 1);
+          paper.metrics = {
+            citationCount: recommendation.citationCount || 0,
+            citationSource: 'openalex',
+            citationUpdatedAt: new Date().toISOString(),
+            ...(recommendation.openAlexId ? { openAlexId: recommendation.openAlexId } : {}),
+          };
+          selectedById.set(paper.id, paper);
+        });
+      }
+    } catch (error) {
+      citationStatus = 'stale-cache';
+      console.warn(`Citation collection failed: ${error.message}; preserving previous citation papers`);
+      restorePreviousCitationPapers(selectedById, previousPapers);
+    }
+  } else if (!options.latestOnly) {
+    restorePreviousCitationPapers(selectedById, previousPapers);
+  }
+
+  const sorted = [...selectedById.values()].sort((a, b) => {
+    const aRank = a.recommendationRanks?.latest || 999;
+    const bRank = b.recommendationRanks?.latest || 999;
+    return (aRank - bRank) || (b.published > a.published ? 1 : -1);
+  });
 
   // Generate tags (keyword-based) for each
   for (const p of sorted) {
+    const cached = reusableSummary(previousById.get(p.id));
+    if (cached) {
+      p.tags = cached.tags;
+      p.summaryKo = cached.summaryKo;
+      p.detail = cached.detail;
+      continue;
+    }
     const low = (p.title + ' ' + p.abstract).toLowerCase();
     const tagSet = new Set();
     const tagMap = {
@@ -307,6 +402,7 @@ async function collectPapers() {
 
   // Summarize: LLM if key present, template fallback otherwise
   for (const p of sorted) {
+    if (p.summaryKo && p.detail?.problem) continue;
     const category = p.category;
     const templateSum = generateSummary(p.title, p.abstract, p.categories, category);
     if (USE_LLM) {
@@ -331,18 +427,31 @@ async function collectPapers() {
     delete p._score;
   }
 
-  return sorted;
+  return {
+    papers: sorted,
+    metadata: {
+      citation: {
+        source: 'OpenAlex',
+        status: citationStatus,
+        queryCount: citationResult.queryCount,
+        windows: citationResult.windows,
+        fallbackModes: citationFallbackModes,
+      },
+    },
+  };
 }
 
 /* ── output ── */
 
-function serialize(papers) {
+function serialize(papers, extraMetadata = {}) {
   const json = JSON.stringify(papers, null, 2);
   const metadata = JSON.stringify({
     collectedAt: new Date().toISOString(),
     source: 'arXiv',
     note: 'Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.',
     summarizer: USE_LLM ? 'llm' : 'template',
+    recommendationVersion: 1,
+    ...extraMetadata,
   }, null, 2);
   return `// data/papers.js — Auto-generated by scripts/collect-papers.mjs\n// Run \`node scripts/collect-papers.mjs\` to regenerate.\n/* eslint-disable */\nwindow.PAPERS = ${json};\n\nwindow.PAPER_METADATA = ${metadata};\n`;
 }
@@ -354,21 +463,50 @@ async function main() {
     const previous = parsePreviousPaperIds('window.PAPERS = [{"id":"a"},{"id":"b"}];\n\nwindow.PAPER_METADATA = {};');
     assert.deepEqual([...previous], ['a', 'b']);
     assert.deepEqual(selectFreshFirst([{ id: 'a' }, { id: 'c' }, { id: 'b' }, { id: 'd' }], previous, 3).map(p => p.id), ['c', 'd', 'a']);
+    assert.deepEqual(citationWindow(7, new Date('2026-07-18T14:00:00Z')), { from: '2026-07-12', to: '2026-07-18' });
+    assert.deepEqual(selectCitationPapers([
+      { id: 'cv1', category: 'cv', published: '2026-07-01', citationCount: 10 },
+      { id: 'cv2', category: 'cv', published: '2026-07-02', citationCount: 9 },
+      { id: 'cv3', category: 'cv', published: '2026-07-03', citationCount: 8 },
+      { id: 'llm1', category: 'llm', published: '2026-07-01', citationCount: 7 },
+      { id: 'llm2', category: 'llm', published: '2026-07-02', citationCount: 6 },
+      { id: 'mm1', category: 'multimodal', published: '2026-07-01', citationCount: 5 },
+      { id: 'mm2', category: 'multimodal', published: '2026-07-02', citationCount: 4 },
+    ], { limit: 6, perCategory: 2, now: new Date('2026-07-18T00:00:00Z') }).map(p => p.id), ['cv1', 'cv2', 'llm1', 'llm2', 'mm1', 'mm2']);
+    assert.equal(extractArxivIdFromWork({ locations: [{ landing_page_url: 'https://arxiv.org/abs/2607.12345v2' }] }), '2607.12345');
+    assert.match(buildOpenAlexUrl({ apiKey: 'test', category: 'cv', from: '2026-07-12', to: '2026-07-18' }), /from_publication_date%3A2026-07-12/);
+    const fixture = JSON.parse(readFileSync('scripts/fixtures/openalex-works.json', 'utf-8'));
+    const fixtureResult = await collectCitationRecommendations('test', {
+      now: new Date('2026-07-18T00:00:00Z'),
+      fetcher: async url => {
+        const search = new URL(url).searchParams.get('search') || '';
+        const category = search.includes('computer vision') ? 'cv' : (search.includes('large language') ? 'llm' : 'multimodal');
+        return { results: fixture[category] };
+      },
+    });
+    assert.equal(fixtureResult.queryCount, 12);
+    assert.deepEqual(Object.keys(fixtureResult.byMode), Object.keys(CITATION_MODES));
+    assert.equal(fixtureResult.byMode.week.length, 6);
+    assert.deepEqual(fixtureResult.byMode.week.map(p => p.category), ['cv', 'cv', 'llm', 'llm', 'multimodal', 'multimodal']);
     console.log('self-test passed');
     return;
   }
 
   const dryRun = process.argv.includes('--dry-run');
+  const latestOnly = process.argv.includes('--latest-only');
 
   console.error(USE_LLM ? `Using LLM: ${OPENCODE_GO_MODEL}` : 'No API key found; using template summaries');
 
-  const papers = await collectPapers();
+  if (!OPENALEX_API_KEY && !latestOnly) console.error('No OPENALEX_API_KEY found; preserving cached citation recommendations');
+
+  const result = await collectPapers({ latestOnly });
+  const papers = result.papers;
 
   if (papers.length === 0) {
     console.error('Warning: no papers collected. Output will be empty.');
   }
 
-  const output = serialize(papers);
+  const output = serialize(papers, result.metadata);
 
   if (dryRun) {
     console.log(output);

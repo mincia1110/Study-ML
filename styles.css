@@ -114,6 +114,7 @@ a { color: var(--teal); }
 
 .button,
 .chip,
+.period-chip,
 .nav-toggle {
   min-height: 42px;
   border: 1px solid var(--teal);
@@ -128,12 +129,14 @@ a { color: var(--teal); }
 }
 
 .button.ghost,
-.chip {
+.chip,
+.period-chip {
   background: transparent;
   color: var(--teal);
 }
 
-.chip.active {
+.chip.active,
+.period-chip.active {
   background: var(--teal);
   color: white;
 }
@@ -169,6 +172,56 @@ h2 {
 }
 
 .filters { margin-bottom: 22px; }
+
+.recommendation-controls {
+  margin: 22px 0 18px;
+}
+
+.filter-label {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.periods {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.recommendation-note {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card-labels {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.citation-badge {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--amber-soft);
+  color: #7b4212;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 36px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+}
 
 .grid {
   display: grid;

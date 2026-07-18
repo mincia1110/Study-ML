@@ -2,6 +2,10 @@
   'use strict';
 
   var papers = window.PAPERS || [];
+  papers.forEach(function(p) {
+    if (!Array.isArray(p.recommendationModes)) p.recommendationModes = ['latest'];
+    if (!p.recommendationRanks) p.recommendationRanks = {};
+  });
 
   var saved;
   try {
@@ -28,9 +32,12 @@
     var label = saved.has(p.id) ? '\uC800\uC7A5 \uCDE8\uC18C' : '\uC800\uC7A5';
     var tags = p.tags.map(function(t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('');
     var categories = p.categories.map(function(c) { return '<span class="tag category-tag">' + esc(c) + '</span>'; }).join('');
+    var citation = p.metrics && Number(p.metrics.citationCount) > 0
+      ? '<span class="citation-badge">인용 ' + Number(p.metrics.citationCount).toLocaleString('ko-KR') + '회</span>'
+      : '';
     return '<article class="paper-card ' + p.category + '" data-paper-id="' + p.id + '" data-category="' + p.category + '">' +
       '<div class="card-header">' +
-        '<span class="card-category">' + catLabel[p.category] + '</span>' +
+        '<div class="card-labels"><span class="card-category">' + catLabel[p.category] + '</span>' + citation + '</div>' +
         '<span class="paper-id">' + p.id + '</span>' +
         '<button class="save-btn' + savedCls + '" type="button" data-id="' + p.id + '" aria-label="' + label + '">' + star + '</button>' +
       '</div>' +
@@ -54,11 +61,22 @@
   }
 
   function render() {
-    document.getElementById('paper-grid').innerHTML = papers.map(cardHTML).join('');
+    var selected = papers.filter(function(p) { return p.recommendationModes.indexOf(currentPeriod) !== -1; });
+    selected.sort(function(a, b) {
+      var aRank = a.recommendationRanks[currentPeriod] || 999;
+      var bRank = b.recommendationRanks[currentPeriod] || 999;
+      return aRank - bRank || (a.published < b.published ? 1 : -1);
+    });
+    document.getElementById('paper-grid').innerHTML = selected.length
+      ? selected.map(cardHTML).join('')
+      : '<p class="empty-state">이 기간에 표시할 추천 논문이 없습니다.</p>';
   }
 
   var currentFilter = 'all';
   var searchQuery = '';
+  var validPeriods = ['latest', 'week', 'month', 'sixMonths', 'year'];
+  var queryPeriod = new URLSearchParams(window.location.search).get('period');
+  var currentPeriod = validPeriods.indexOf(queryPeriod) !== -1 ? queryPeriod : 'latest';
 
   function updateCount() {
     var visible = document.querySelectorAll('.paper-card:not(.hidden)').length;
@@ -102,6 +120,42 @@
       chip.classList.add('active');
       currentFilter = chip.dataset.filter;
       applyFilters();
+    });
+  });
+
+  function updateRecommendationNote() {
+    var note = document.getElementById('recommendation-note');
+    if (!note) return;
+    if (currentPeriod === 'latest') {
+      note.textContent = 'arXiv 최신 후보에서 키워드 관련도와 신규 여부로 추천합니다.';
+      return;
+    }
+    var citation = window.PAPER_METADATA && window.PAPER_METADATA.citation;
+    if (!citation || citation.status === 'missing-key') {
+      note.textContent = 'OpenAlex API key가 없어 citation 추천을 갱신하지 못했습니다.';
+    } else if (citation.status === 'disabled') {
+      note.textContent = '이번 데이터 갱신에서는 citation 추천을 수집하지 않았습니다.';
+    } else if (citation.status === 'stale-cache') {
+      note.textContent = 'OpenAlex 응답 오류로 이전 citation 추천을 표시합니다.';
+    } else if ((citation.fallbackModes || []).indexOf(currentPeriod) !== -1) {
+      note.textContent = '아직 인용 집계가 충분하지 않아 최신 키워드 추천으로 보완했습니다.';
+    } else {
+      note.textContent = '해당 기간에 공개된 논문을 누적 인용 수 순으로 추천합니다.';
+    }
+  }
+
+  document.querySelectorAll('.period-chip').forEach(function(chip) {
+    chip.classList.toggle('active', chip.dataset.period === currentPeriod);
+    chip.addEventListener('click', function() {
+      currentPeriod = chip.dataset.period;
+      document.querySelectorAll('.period-chip').forEach(function(c) { c.classList.toggle('active', c === chip); });
+      var url = new URL(window.location.href);
+      if (currentPeriod === 'latest') url.searchParams.delete('period');
+      else url.searchParams.set('period', currentPeriod);
+      window.history.replaceState({}, '', url);
+      render();
+      applyFilters();
+      updateRecommendationNote();
     });
   });
 
@@ -162,6 +216,7 @@
     });
   }
 
+  updateRecommendationNote();
   render();
   applyFilters();
 })();

@@ -24,6 +24,7 @@ jobs:
         run: node scripts/collect-papers.mjs
         env:
           OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
 
       - name: Commit and push if changed
         uses: stefanzweifel/git-auto-commit-action@v5
