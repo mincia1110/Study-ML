@@ -13,21 +13,23 @@ jobs:
   collect:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: '20'
+          node-version: '24'
+          package-manager-cache: false
 
       - name: Collect papers
         run: node scripts/collect-papers.mjs
         env:
           OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
+          OPENCODE_GO_TIMEOUT_MS: '60000'
           OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
 
       - name: Commit and push if changed
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: 'auto: update arXiv paper data'
           commit_user_name: 'arXiv Collector Bot'

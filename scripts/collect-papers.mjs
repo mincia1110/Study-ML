@@ -43,6 +43,14 @@ const OPENALEX_API_KEY = process.env.OPENALEX_API_KEY || '';
 
 const OPENCODE_GO_URL = process.env.OPENCODE_GO_BASE_URL || 'https://opencode.ai/zen/go/v1/chat/completions';
 const OPENCODE_GO_MODEL = process.env.OPENCODE_GO_MODEL || 'deepseek-v4-flash';
+const DEFAULT_LLM_TIMEOUT_MS = 60_000;
+
+function positiveInteger(value, fallback) {
+  const parsed = Number.parseInt(value, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
+}
+
+const LLM_TIMEOUT_MS = positiveInteger(process.env.OPENCODE_GO_TIMEOUT_MS, DEFAULT_LLM_TIMEOUT_MS);
 
 // ponytail: read key from env first, fall back to opencodex config so local runs
 // "just work" without manual export. CI sets OPENCODE_GO_API_KEY as a secret.
@@ -193,7 +201,7 @@ function generateSummary(title, abstract, categories, category) {
 
 /* ── LLM summary via opencode-go (deepseek-v4-flash) ── */
 
-async function summarizeWithLLM(paper) {
+async function summarizeWithLLM(paper, options = {}) {
   const prompt = `다음 arXiv 논문을 한국어로 요약해라. JSON만 반환해라. 과장하지 말고 초록에 없는 내용은 만들지 마라.
 
 제목: ${paper.title}
@@ -204,27 +212,39 @@ async function summarizeWithLLM(paper) {
 형식:
 {"summaryKo":"한 문장 요약","detail":{"problem":"1-2문장: 해결하려는 문제","method":"1-2문장: 제안하는 방법","takeaway":"1-2문장: 주요 결과와 한계"}}`;
 
-  const res = await fetch(OPENCODE_GO_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: OPENCODE_GO_MODEL,
-      messages: [{ role: 'user', content: prompt }],
-      temperature: 0.3,
-    }),
-  });
-  if (!res.ok) throw new Error(`LLM API ${res.status}: ${await res.text().catch(() => '')}`);
-  const data = await res.json();
-  const raw = data?.choices?.[0]?.message?.content || '';
-  // extract JSON object from response (may be wrapped in markdown fences)
-  const match = raw.match(/\{[\s\S]*\}/);
-  if (!match) throw new Error('no JSON in LLM response');
-  const parsed = JSON.parse(match[0]);
-  if (!parsed.summaryKo || !parsed.detail?.problem) throw new Error('missing fields in LLM JSON');
-  return { summaryKo: parsed.summaryKo, detail: parsed.detail };
+  const timeoutMs = positiveInteger(options.timeoutMs, LLM_TIMEOUT_MS);
+  const fetcher = options.fetcher || fetch;
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const res = await fetcher(OPENCODE_GO_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: OPENCODE_GO_MODEL,
+        messages: [{ role: 'user', content: prompt }],
+        temperature: 0.3,
+      }),
+      signal: controller.signal,
+    });
+    if (!res.ok) throw new Error(`LLM API ${res.status}: ${await res.text().catch(() => '')}`);
+    const data = await res.json();
+    const raw = data?.choices?.[0]?.message?.content || '';
+    // extract JSON object from response (may be wrapped in markdown fences)
+    const match = raw.match(/\{[\s\S]*\}/);
+    if (!match) throw new Error('no JSON in LLM response');
+    const parsed = JSON.parse(match[0]);
+    if (!parsed.summaryKo || !parsed.detail?.problem) throw new Error('missing fields in LLM JSON');
+    return { summaryKo: parsed.summaryKo, detail: parsed.detail };
+  } catch (error) {
+    if (controller.signal.aborted) throw new Error(`LLM API timed out after ${timeoutMs}ms`, { cause: error });
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 /* ── arXiv feed fetch & parse ── */
@@ -488,6 +508,32 @@ async function main() {
     assert.deepEqual(Object.keys(fixtureResult.byMode), Object.keys(CITATION_MODES));
     assert.equal(fixtureResult.byMode.week.length, 6);
     assert.deepEqual(fixtureResult.byMode.week.map(p => p.category), ['cv', 'cv', 'llm', 'llm', 'multimodal', 'multimodal']);
+    const summaryFixture = {
+      summaryKo: '테스트 요약',
+      detail: { problem: '테스트 문제', method: '테스트 방법', takeaway: '테스트 시사점' },
+    };
+    assert.deepEqual(
+      await summarizeWithLLM({ title: 'Success test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
+        timeoutMs: 50,
+        fetcher: async () => ({
+          ok: true,
+          json: async () => ({ choices: [{ message: { content: JSON.stringify(summaryFixture) } }] }),
+        }),
+      }),
+      summaryFixture,
+    );
+    await assert.rejects(
+      summarizeWithLLM({ title: 'Timeout test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
+        timeoutMs: 5,
+        fetcher: async (_url, request) => ({
+          ok: true,
+          json: () => new Promise((resolve, reject) => {
+            request.signal.addEventListener('abort', () => reject(new Error('aborted')), { once: true });
+          }),
+        }),
+      }),
+      /LLM API timed out after 5ms/,
+    );
     console.log('self-test passed');
     return;
   }
@@ -495,7 +541,7 @@ async function main() {
   const dryRun = process.argv.includes('--dry-run');
   const latestOnly = process.argv.includes('--latest-only');
 
-  console.error(USE_LLM ? `Using LLM: ${OPENCODE_GO_MODEL}` : 'No API key found; using template summaries');
+  console.error(USE_LLM ? `Using LLM: ${OPENCODE_GO_MODEL} (timeout ${LLM_TIMEOUT_MS}ms)` : 'No API key found; using template summaries');
 
   if (!OPENALEX_API_KEY && !latestOnly) console.error('No OPENALEX_API_KEY found; preserving cached citation recommendations');
 
