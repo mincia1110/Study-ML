@@ -3,309 +3,309 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.17902",
-    "title": "Benchmarking Resource-Efficient LLMs for Research Topic Ontology Generation in the Biomedical Field",
-    "authors": "Tanay Aggarwal et al.",
-    "published": "2026-07-20",
+    "id": "2607.18772",
+    "title": "RF-Agent: A Practical Framework for Building Language Agents for RFIC Design",
+    "authors": "Yueqi Xing et al.",
+    "published": "2026-07-21",
     "category": "llm",
     "categories": [
-      "cs.DL",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "medical",
+      "agents",
+      "retrieval",
+      "embedding",
       "generation"
     ],
-    "summaryKo": "본 논문은 생의학 분야 연구 주제 온톨로지 생성을 위해 90억 파라미터 이하의 소형 오픈소스 LLM 다섯 개를 평가하여, 파인튜닝이 평균 F1 점수를 34.1% 포인트 향상시켜 소형 LLM의 추론 병목을 극복함을 보여준다.",
+    "summaryKo": "RF-Agent는 RF 회로 설계를 위해 교과서 기반 지식 증류를 통해 도메인 특화 데이터셋과 벤치마크를 구축하고, SFT 및 RAG 전략을 평가한 프레임워크이다.",
     "detail": {
-      "problem": "온톨로지와 같은 지식 조직 시스템은 과학 지식 구조화에 필수적이나 수동 큐레이션이 병목이며, 대규모 언어 모델의 자동 온톨로지 생성 능력은 복잡한 도메인 의미론에 대해 체계적 평가가 필요하다.",
-      "method": "MeSH-Rel-4K 데이터셋을 도입하고, 90억 파라미터 이하의 소형 오픈소스 LLM 다섯 개를 표준 프롬프팅, Chain-of-Thought 프롬프팅, 파인튜닝의 세 가지 적응 전략으로 생의학 개념 간 의미 관계 식별 성능을 평가한다.",
-      "takeaway": "파인튜닝은 평균 F1 점수를 34.1% 포인트 향상시켰으며, 직접 파인튜닝이 소형 LLM의 추론 병목을 효과적으로 극복하여 전문 생의학 온톨로지 구축 및 진화를 위한 정확하고 자동화된 방법론을 제공한다."
+      "problem": "대규모 언어 모델(LLM)이 전자 설계 자동화(EDA)에서 빠른 진전을 이끌었지만, RF 회로 설계에의 적용은 도메인 특화 데이터셋과 표준 벤치마크 부족으로 제한적이다.",
+      "method": "RF-Agent는 교과서 기반 지식 증류를 통해 이러한 문제를 해결한다. 다중 에이전트 QTSA 파이프라인을 이용해 7권의 RF 교과서로부터 11,000개 이상의 샘플로 구성된 최초의 RF 도메인 추론 데이터셋과 객관식 벤치마크를 생성했다.",
+      "takeaway": "도메인 특화 SFT는 특히 소형 및 중형 모델의 RF 추론을 크게 향상시켰으며, RAG 구성 중 의미 검색이 가장 좋은 성능을 보였다. 데이터셋과 벤치마크는 향후 LLM 기반 RF 회로 설계 연구를 위한 재사용 가능한 기반을 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.17902v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17902v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.18772v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.18772v1.pdf"
   },
   {
-    "id": "2607.18014",
-    "title": "SAMRI-3D: Adapting SAM2 for 3D MRI Segmentation with Global Volume Tokens",
-    "authors": "Zhao Wang et al.",
-    "published": "2026-07-20",
-    "category": "cv",
+    "id": "2607.19027",
+    "title": "Mitigating Modality and Language-Style Gaps for Zero-Shot Video Moment Retrieval",
+    "authors": "Jihyun Lee et al.",
+    "published": "2026-07-21",
+    "category": "multimodal",
     "categories": [
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "3d",
+      "video",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "Self-SiMS는 비디오 내 자기 유사성과 쿼리 인식 MLLM 추론을 통해 모달리티 및 언어 스타일 격차를 완화하여 제로샷 비디오 순간 검색에서 최첨단 성능을 달성한다.",
+    "detail": {
+      "problem": "기존 제로샷 비디오 순간 검색 방법은 쿼리-비디오 콘텐츠 유사성에 의존하여 모달리티 및 언어 스타일 격차로 인해 신뢰할 수 없는 구간 제안과 불안정한 결과를 초래한다.",
+      "method": "자기 유사성 기반 구간 제안 및 점수 계산(Self-SiMS)을 제안하여 비디오 내의 내재적 관계를 활용하고, 쿼리 인식 MLLM 기반 추론 단계를 도입하여 텍스트와 비디오 간의 정렬을 강화한다.",
+      "takeaway": "광범위한 실험을 통해 Self-SiMS가 ZMR 벤치마크에서 최첨단 성능을 달성했음을 보여준다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.19027v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19027v1.pdf"
+  },
+  {
+    "id": "2607.19261",
+    "title": "PathAgentBench: Benchmarking Evidence-Seeking Vision-Language Models on Whole-Slide Pathology Image",
+    "authors": "Dankai Liao et al.",
+    "published": "2026-07-21",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
       "medical",
-      "video"
+      "autonomous-driving",
+      "retrieval"
     ],
-    "summaryKo": "SAMRI-3D는 34개 데이터셋, 10,392개 볼륨의 대규모 MRI 전용 벤치마크를 구축하고, SAM2의 인코더를 고정한 채 디코더와 메모리 모듈만 미세 조정하며, 보이지 않는 경계를 위해 TSDF 목적 함수로 학습된 Global Volume Tokens를 도입하여 3D MRI 분할 성능을 향상시킨 방법이다.",
+    "summaryKo": "PathAgentBench는 전처리된 패치나 특징이 아닌 기가픽셀 전제 슬라이드 이미지에서 직접 증거를 수집해야 하는 병리학 비전-언어 모델을 평가하기 위한 새로운 벤치마크이며, 증거 획득과 추론 간의 현저한 격차를 드러낸다.",
     "detail": {
-      "problem": "기존 SAM 기반 의료 영상 분할 모델은 MRI를 일반적인 모달리티 중 하나로 간주하여 MRI 특화 모델링과 벤치마킹이 부족하였고, 특히 MRI의 낮은 연조직 대비로 인해 개별 슬라이스에서 경계가 보이지 않는 문제가 있었다.",
-      "method": "SAMRI-3D는 34개 데이터셋, 10,392개 볼륨으로 구성된 대규모 MRI 벤치마크를 구축하고, SAM2의 이미지 인코더는 고정한 채 경량 디코더와 메모리 모듈만 미세 조정한다. 또한 보이지 않는 경계를 위해 TSDF 재구성 목적 함수로 학습된 Global Volume Tokens를 도입하며, 추론 시에는 추가 비용 없이 사용된다.",
-      "takeaway": "SAMRI-3D는 평균 Dice 0.78을 기록하며 기존 최신 의료용 SAM 모델들을 통계적으로 유의미하게 능가하였고, 8개의 보류 데이터셋에서도 성능 저하 없이 일관된 결과를 보였다. TSDF 목적 함수는 슬라이스 대비가 가장 약한 영역에서 특히 효과적이었다."
+      "problem": "기존 병리학 벤치마크는 미리 잘린 패치나 추출된 특징을 사용하여 모델을 평가하기 때문에, 모델이 기가픽셀 WSI에서 직접 증거를 획득하는 능력을 제대로 테스트하지 못한다.",
+      "method": "PathAgentBench는 증거 해석, 검증, 획득, 통합의 네 가지 능력을 평가하며, 1,822개의 TCGA WSI와 17,135개의 진단 경로로 구성된 진단 트리 구조를 갖는다. 또한 자율적 슬라이드 탐색 평가를 위한 별도 코호트를 포함한다.",
+      "takeaway": "주요 모델은 다중 스케일 추론에서 93% 이상, 교차 모달 매칭에서 50% 이상의 정확도를 달성했지만, 진단 영역 위치 파악은 평균 IoU 0.09 미만으로 매우 낮았으며, 자율 탐색 시 고배율에서 히트율이 0.020으로 급감하여 증거 획득에 큰 한계를 보였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.18014v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.18014v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.19261v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19261v1.pdf"
   },
   {
-    "id": "2607.18080",
-    "title": "Sparse Evidence Can Suffice: Agentic Evidence Seeking for Multimodal Video Misinformation Detection",
-    "authors": "Haochen Zhao et al.",
-    "published": "2026-07-20",
+    "id": "2607.19235",
+    "title": "MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings",
+    "authors": "Ziyi Wang et al.",
+    "published": "2026-07-21",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "video",
-      "multimodal",
-      "detection"
-    ],
-    "summaryKo": "멀티모달 비디오 오정보 탐지에서 희소한 증거를 효과적으로 활용하기 위해, 에이전트가 증거를 탐색하고 간결한 패키지로 구성하여 검증하는 SIEVE 프레임워크를 제안하며, 우수한 성능과 투명성을 입증하였다.",
-    "detail": {
-      "problem": "기존 방법은 비디오 전체를 한 번에 처리하는 통합적 이해 방식을 사용하지만, 실제 오정보는 소수의 단서로 판단 가능한 희소 증거 구조를 가지므로, 전체 처리 시 중복이 발생하고 결정적 증거가 모호해진다는 문제가 있다.",
-      "method": "SIEVE는 증거 탐색 에이전트가 멀티모달 증거를 능동적으로 탐색하여 간결한 증거 패키지를 구성하고, 검증기가 이를 바탕으로 진위를 판단한다. 에이전트는 지도 학습 및 증거 인식 강화 학습으로 훈련되어 유용한 증거 획득을 촉진하고 불필요한 상호작용을 억제한다.",
-      "takeaway": "여러 비디오 오정보 탐지 벤치마크에서 기존 방법을 지속적으로 능가했으며, 간결한 증거 패키지로도 신뢰할 수 있는 검증이 가능함을 보였다. 또한, 증거 획득 과정이 명시적이고 검사 가능한 증적을 제공하여 탐지의 투명성과 근거 기반성을 향상시켰다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.18080v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.18080v1.pdf"
-  },
-  {
-    "id": "2607.17523",
-    "title": "Thinking in Video: Can Video Generators Really Reason About the Real World?",
-    "authors": "Yongheng Zhang et al.",
-    "published": "2026-07-20",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "video",
-      "generation"
-    ],
-    "summaryKo": "비디오 생성 모델의 인과적 추론 능력을 평가하기 위해 Causal-Generative Dual-Judge (CGDJ)를 제안하고, 명시적 인과 인식과 암묵적 생성 간의 괴리(인식-예측 격차)를 발견하여 현재 모델이 진정한 세계 이해보다는 외형 모방에 그친다는 한계를 밝힌 논문.",
-    "detail": {
-      "problem": "비디오 생성 모델이 실제 세계 역학을 추론하는 새로운 패러다임이 등장했지만, 생성된 영상이 인과적 이해 없이 기억된 외형을 반영할 가능성이 있으며 기존 평가 지표는 지각적 충실도와 의미적 논리를 분리하여 평가한다는 문제가 있다.",
-      "method": "이를 해결하기 위해 Causal-Generative Dual-Judge (CGDJ)를 제안한다. 이는 명시적 인과 인식(Explicit Causal Perception)을 통해 모델이 비디오 장면을 추론 문제로 읽는지 테스트하고, 암묵적 생성-예측 격차(Implicit Generative Perception-Prediction Gap)를 통해 인과적 결과를 일관된 미래 비디오로 렌더링하는지 평가한다.",
-      "takeaway": "대표적인 오픈소스 및 폐쇄형 생성기 평가 결과 명백한 인식-예측 격차가 나타났으며, 오픈소스 모델은 명시적 인과 인식이 거의 없음에도 그럴듯한 역학을 생성하는 반면 폐쇄형 고급 시스템은 더 강하지만 여전히 제한된 추론-생성 정렬을 보인다. 또한 오디오-시각적 불일치가 관찰되어 '세계 시뮬레이터' 내러티브에 도전한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.17523v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17523v1.pdf"
-  },
-  {
-    "id": "2607.18142",
-    "title": "O-VAD: Industrial Video Anomaly Detection through Object-Centric Tracking and Reasoning",
-    "authors": "Mei Yuan et al.",
-    "published": "2026-07-20",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
       "cs.CL",
-      "cs.MA"
-    ],
-    "tags": [
-      "agents",
-      "video",
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "O-VAD는 산업 이상 탐지를 위해 객체 상태 변화를 추적하고 추론하는 훈련 없는 에이전트 프레임워크로, 기존 방법들을 능가하며 해석 가능한 보고서를 제공한다.",
-    "detail": {
-      "problem": "기존 VLM 기반 방법은 일반 영역에서 개방형 이상 탐지가 가능하나, 산업 환경의 복잡한 객체 변환과 제약 조건에서 성능이 저하된다.",
-      "method": "본 방법은 인간 검사자처럼 객체의 시공간 동역학과 변환을 추적하고 객체별 시간적 상태 궤적을 추론하여 이상을 식별하는 훈련 없는 에이전트 프레임워크이다.",
-      "takeaway": "세 가지 IVAD 데이터셋 실험에서 최신 VLM, 에이전트 프레임워크, 미세 조정된 VAD 방법보다 우수한 성능을 보였으며, 이상 과정 및 유형에 대한 해석 가능한 보고서를 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.18142v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.18142v1.pdf"
-  },
-  {
-    "id": "2607.17994",
-    "title": "HAS: Highlight-guided Attention Steering for Multimodal LLM Video Summarization",
-    "authors": "Rui Chu, Yingjie Lao",
-    "published": "2026-07-20",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "video",
-      "retrieval",
-      "multimodal",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "본 논문은 비디오 요약에서 전역적 프레임 중요도를 반영하기 위해 연속적인 하이라이트 분포를 찾고 이를 MLLM의 주의 조정 벡터로 활용하는 HAS 방법을 제안하여, 하이라이트에 집중하면서도 덜 중요한 정보를 보존함으로써 요약 성능을 향상시켰다.",
+    "summaryKo": "MeetingToM은 다자간 회의에서 의사-합의(pseudo-consensus) 같은 복잡한 사회적 행동 추론을 평가하기 위해 설계된 벤치마크로, 다양한 수준의 사회적 세분성에서 멀티모달 LLM의 마음 이론(ToM) 능력을 체계적으로 분석하고 한계를 드러낸다.",
     "detail": {
-      "problem": "기존 비디오 요약 방법은 이산적으로 선택된 키프레임과 세그먼트 캡션에 의존하여 프레임 간 전역적 중요도를 고려하지 않고, 이로 인해 이해 일관성 저하와 중요한 정보 손실이 발생하며 MLLM의 잠재력을 충분히 활용하지 못한다.",
-      "method": "HAS는 먼저 비디오 전체에서 연속적인 프레임 수준 하이라이트 분포를 계산하고, 이 분포를 MLLM의 주의 조정 벡터로 적용하여 모델 추론 시 하이라이트 프레임에는 더 많은 주의를, 덜 중요한 프레임에는 덜 주의를 기울이게 함으로써 정보 손실을 최소화한다.",
-      "takeaway": "HAS는 다양한 벤치마크 실험에서 비디오 요약 작업에 대해 설득력 있는 성능을 보였다."
+      "problem": "기존 멀티모달 ToM 벤치마크는 명시적이고 외부에서 검증 가능한 신호에 치우쳐 잠재적 사회적 상태나 그룹 역학을 충분히 다루지 못하며, 특히 다자간 회의에서의 사회적 행동 추론 평가가 부족하다.",
+      "method": "MeetingToM은 회의 특화 현상인 의사-합의를 대상으로, 주제 수준 정신 상태 예측, 이자적 수준 청자 이해, 그룹 수준 합의 추론의 계층적 구조로 구성된 평가 프로토콜을 제공한다.",
+      "takeaway": "대표적인 MLLM에 대한 체계적 분석을 통해 비언어적 신호 통합, 숨겨진 태도 추론, 진정한 합의와 의사-합의 구별에 지속적인 한계가 있음을 밝히고, 회의 기반 ToM 연구의 핵심 과제를 강조한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.17994v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17994v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.19235v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19235v1.pdf"
   },
   {
-    "id": "2607.16872",
-    "title": "Trace-Based On-Policy Distillation for Masked Diffusion Language Models",
-    "authors": "Haolin Ren et al.",
-    "published": "2026-07-18",
+    "id": "2607.18825",
+    "title": "AILQA: Evaluating AI-Driven Legal Question Answering Systems for the Indian Legal System",
+    "authors": "Shubham Kumar Nigam et al.",
+    "published": "2026-07-21",
     "category": "llm",
     "categories": [
       "cs.CL",
       "cs.AI",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "generation"
-    ],
-    "summaryKo": "이 논문은 확산 언어 모델(dLLM)의 추론 능력을 향상시키기 위해 보상 추정 없이 교사 모델의 지식을 전수하는 온-정책 증류 방법(TOPD)을 제안한다.",
-    "detail": {
-      "problem": "기존의 확산 언어 모델에 대한 추론 중심 후훈련은 지도 학습의 경우 off-policy 마스크 상태에 의존하고 강화 학습은 희소 보상이나 가치 모델링을 필요로 하는 등 어려움이 있다.",
-      "method": "TOPD는 목표 dLLM의 노이즈 제거 궤적에서 온-정책 샘플링을 수행하고, 교사 모델의 토큰 분포를 활용하여 토큰 수준의 역방향 KL 발산 목표로 학습하여 밀집된 교사 감독을 제공한다.",
-      "takeaway": "수학 추론 벤치마크에서 TOPD는 SDAR-4B-Chat이 RL로 학습된 TraDo-4B-Instruct와 유사한 정확도를 달성하게 했으며, 정적 평가에서 +5.7, 동적 평가에서 +4.5의 향상을 보였다. 또한 RL 대비 롤아웃 라운드를 4배 줄여 모델-연산 속도를 약 96배 향상시켰다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.16872v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.16872v1.pdf"
-  },
-  {
-    "id": "2607.17535",
-    "title": "Salience Induction against Multi-Hop RAG Agents: Threat and Defense",
-    "authors": "Xingfu Zhou et al.",
-    "published": "2026-07-20",
-    "category": "llm",
-    "categories": [
-      "cs.CR",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval",
-      "generation"
-    ],
-    "summaryKo": "다중 홉 RAG 에이전트에서 정보의 사실성을 유지하면서도 추론을 왜곡하는 Salience Induction 공격을 식별하고, 사전 필터링 기반 방어인 Salience Normalization을 제안한다.",
-    "detail": {
-      "problem": "기존 방어는 내용 조작(거짓 사실 주입)이나 프롬프트 인젝션에 집중되어 있으나, 사실 정보 내에서도 위치, 강조, 구성 등을 조작하여 에이전트의 다중 홉 추론을 잘못된 방향으로 유도할 수 있다.",
-      "method": "Salience Induction을 여섯 가지 연산자 클래스로 정형화하고, 사실성과 은밀성을 만족하는 공격 문장을 생성하는 반복적 제안-검증 파이프라인을 구축하였다. 또한, 디코이가 포함된 다중 홉 RAG 벤치마크 SalientWiki-MH를 제안하고, 다섯 개의 프론티어 모델 패밀리와 세 가지 에이전트 구조에서 평가하였다.",
-      "takeaway": "30% 편집 예산에서 83.3%의 공격 성공률을 기록했으며, 기존 최고 방어 기법도 공격 성공률을 충분히 낮추지 못했다(75.7% 잔존). 제안한 Salience Normalization은 공격 성공률을 15.3%(표준 공격) 및 23.6%(적응형 공격)로 낮추었으며, 이는 사실성 유지와 명령어 제거만으로는 안전하지 않음을 보여준다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.17535v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17535v1.pdf"
-  },
-  {
-    "id": "2607.18006",
-    "title": "MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models",
-    "authors": "Martino M. L. Pulici et al.",
-    "published": "2026-07-20",
-    "category": "llm",
-    "categories": [
-      "cs.LG",
-      "cs.AI",
-      "cs.CL",
-      "cs.MA"
-    ],
-    "tags": [
-      "benchmark",
-      "agents"
-    ],
-    "summaryKo": "MADA-RL은 소형 언어 모델을 생성기와 비평가 역할로 분화하고 반사실적 비평가 이점을 사용한 학습 신호로 LoRA 기반 미세 조정을 통해 제한된 예산에서도 수학적 추론 성능을 향상시키는 프레임워크이다.",
-    "detail": {
-      "problem": "대규모 언어 모델은 강력한 추론 성능을 가지지만 학습 비용이 매우 높으며, 이는 특히 제한된 예산으로 학습되는 40억 파라미터 이하의 소형 모델에서 더욱 심각한 문제이다.",
-      "method": "MADA-RL은 소형 모델을 사후 학습 단계에서 생성기와 비평가 역할로 특화하고, 비평가의 보상에서 생성기 앙상블의 인스턴스별 정확도를 뺀 반사실적 비평가 이점(counterfactual critic advantage)이라는 동적 기준선을 통해 논쟁 인식 학습 신호(debate-aware learning signal)를 생성하여 학습한다. LoRA 어댑터만 미세 조정하여 파라미터 효율성을 확보하고, 배포 시에는 경량 다중 라운드 프로토콜을 사용한다.",
-      "takeaway": "다섯 가지 수학적 추론 벤치마크에서 MADA-RL은 DeepSeek-R1-Distill-Qwen-1.5B 모델의 정확도를 39.9%에서 41.9%로 2.0%p 향상시켰으며, 완전 미세 조정 기준 대비 16배 적은 학습 가능 파라미터로 정확도-파라미터 파레토 프론트에 도달했다. 그러나 더 큰 데이터셋으로 학습된 DeepScaleR, STILL-3 등의 가장 강력한 기준 모델에는 미치지 못하며 추론 시간 비용이 추가로 발생한다. 내부 제어 연구는 반사실적 이점이 비평가의 오류 교정 학습을 촉진하여 가장 높은 비평가 개선율을 달성했음을 보여준다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.18006v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.18006v1.pdf"
-  },
-  {
-    "id": "2607.17778",
-    "title": "CDIS: Cross-Dimensional Class-Agnostic 3D Instance Segmentation via 2D Mask Tracking and 3D-2D Projection Merging",
-    "authors": "Juno Kim et al.",
-    "published": "2026-07-20",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "3d"
-    ],
-    "summaryKo": "CDIS는 2D 마스크 추적과 3D-2D 투영 병합을 통해 별도의 3D 학습 없이 전역적으로 일관된 클래스 불가지론적 3D 인스턴스 분할을 수행하는 제로샷 프레임워크이다.",
-    "detail": {
-      "problem": "기존의 클래스 불가지론적 3D 인스턴스 분할 방법은 프레임별 2D 인스턴스 마스크를 3D로 투영하여 병합하는데, 이 과정에서 시간에 따른 객체 정체성이 유지되지 못하여 3D 인스턴스가 단편화되는 문제가 있다.",
-      "method": "CDIS는 프레임 간 2D 인스턴스 마스크를 명시적으로 추적하고 이를 3D 슈퍼포인트와 연관시켜 2D와 3D 사이의 피드백 루프를 생성한다. 이를 통해 시간적으로 안정적인 2D 트랙과 공간적으로 일관된 3D 영역을 연결하여 3D 학습 없이 전역적으로 일관된 3D 인스턴스 레이블을 생성한다.",
-      "takeaway": "벤치마크 데이터셋 실험에서 CDIS는 기존 최첨단 제로샷 방법보다 높은 정확도와 일관성을 달성했으며, 효율적이고 다양한 실제 환경으로 확장 가능하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.17778v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17778v1.pdf"
-  },
-  {
-    "id": "2607.17250",
-    "title": "EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World",
-    "authors": "Qing Zong et al.",
-    "published": "2026-07-19",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "generation"
-    ],
-    "summaryKo": "EvolvingWorld는 캐릭터와 세계의 공진화를 위한 개방형 스키마 프레임워크 및 벤치마크로, 장기적 시뮬레이션에서 일관된 발전을 유지하는 데 효과적임을 보인다.",
-    "detail": {
-      "problem": "기존의 대화형 문학 시뮬레이션 시스템은 캐릭터와 세계가 시간에 따라 함께 진화하는 과정을 포착하지 못하고, 정적 페르소나 모방이나 고립된 장면 생성에 그친다.",
-      "method": "EvolvingWorld는 캐릭터 에이전트와 LLM 기반 세계 모델로 구성된 개방형 스키마 프레임워크를 통해 장기적 시뮬레이션을 모델링하며, 7가지 훈련 가능한 작업, 57권의 책에서 구축한 데이터셋, 그리고 10개 차원의 LLM-as-Judge 평가 프로토콜을 포함한다.",
-      "takeaway": "실험 결과, EvolvingWorld는 장기적 시뮬레이션에서 캐릭터와 세계의 지속적이고 일관된 발전을 효과적으로 유지하여 성능을 향상시킨다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.17250v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17250v1.pdf"
-  },
-  {
-    "id": "2607.17538",
-    "title": "D-NOVA: In-Storage Retrieval Accelerator via Dual-Bound 3D NAND-Optimized Similarity Search with Vector Adaptation",
-    "authors": "Chang Eun Song et al.",
-    "published": "2026-07-20",
-    "category": "multimodal",
-    "categories": [
-      "cs.AR",
-      "cs.CL",
-      "cs.DB",
-      "cs.ET",
       "cs.IR"
     ],
     "tags": [
-      "3d",
+      "benchmark",
       "retrieval",
       "embedding",
       "generation"
     ],
-    "summaryKo": "D-NOVA는 3D NAND에 최적화된 새로운 거리 측정법(DTS)과 경량 대비적 어댑터를 활용하여 RAG의 밀집 벡터 검색 병목을 해결하는 인-스토리지 검색 가속기이다.",
+    "summaryKo": "본 연구는 인도 법률 질문응답 시스템 AILQA를 소개하고, RAG 패러다임의 효과성과 AIBE 평가 결과를 제시하며, 관련 한계와 향후 연구 방향을 논의한다.",
     "detail": {
-      "problem": "RAG의 밀집 벡터 검색은 큰 지연 시간과 에너지 오버헤드를 유발하며, 기존 인-스토리지 가속기는 메모리 외부 프로세서에 의존하여 대역폭 제한을 극복하지 못하고 추가적인 메모리 병목을 초래한다.",
-      "method": "D-NOVA는 역파일(IVF) 기반 계층적 검색 파이프라인을 NAND 메모리 어레이 내에 직접 구현하며, NAND 스트링에 맞춤화된 이중 경계 조밀 유사도 감지(DTS) 거리 측정법과 벡터를 DTS 친화적 도메인으로 매핑하는 경량 대비적 어댑터를 도입한다.",
-      "takeaway": "D-NOVA는 CPU 대비 최대 41.7배 빠르고 71배 에너지 효율적이며, 최신 인-스토리지 RAG 가속기 대비 최대 12.13배 높은 처리량과 1.26배 향상된 에너지 효율을 달성하여 완전한 인-스토리지 벡터 검색의 가능성을 보여준다."
+      "problem": "인도 법률 텍스트의 복잡성과 다양성으로 인해 법률 질문에 대한 정확하고 신뢰할 수 있는 응답을 생성하는 데 어려움이 존재한다.",
+      "method": "임베딩 및 생성 모델, 특히 최신 거대 언어 모델(LLM)을 활용하고, 검색 증강 생성(RAG) 방식을 통합한 AILQA 시스템을 개발하였다. 어휘 및 의미 평가 지표와 법률 전문가의 피드백을 통해 엄격한 평가를 수행하였으며, 전인도 변호사 시험(AIBE)을 활용하여 실용적 성능을 측정하였다.",
+      "takeaway": "RAG는 복잡한 법률 영역에서 답변 품질을 향상시키는 데 효과적이었으며, 일부 AI 생성 응답은 참조 답변보다 높은 평가를 받았으나 이는 특정 데이터셋과 평가 기준에 국한된 결과이다. 주요 한계로는 정확한 맥락의 필요성과 모델 할루시네이션 위험이 지적되었으며, 향후 연구 방향이 제안되었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.17538v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.17538v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.18825v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.18825v1.pdf"
+  },
+  {
+    "id": "2607.19011",
+    "title": "Computational Humor with Multimodal LLMs: Methods, Datasets, Evaluation, and Challenges",
+    "authors": "Tuo Liang et al.",
+    "published": "2026-07-21",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.MM"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "survey",
+      "generation"
+    ],
+    "summaryKo": "본 설문 논문은 다중 모달 유머(밈, 만화, 코믹스)에 대한 AI 연구를 인식, 해석 및 추론, 생성의 능력 중심 계층으로 체계화하고, 벤치마크 설계, 평가 프로토콜, 모델링 패러다임을 종합하며, 태스크 특화 융합 모델에서 대규모 다중 모달 모델로의 전환과 주요 장벽(평가 지름길, 문화·서사 범위 한계, 증거 기반 추론 부족, 안전 및 소유권 문제)을 강조한다.",
+    "detail": {
+      "problem": "AI 시스템은 밈, 만화, 코믹스의 다중 모달 유머를 이해하기 어려운데, 이는 유머가 문자 그대로의 장면 묘사보다 비문자적 기법, 공유된 문화 지식, 의사소통 의도에 의존하기 때문이다.",
+      "method": "본 논문은 시각적 유머 이해에 초점을 맞추고, 관련 문헌을 인식·해석 및 추론·생성의 능력 중심 계층 구조로 조직하며, 벤치마크 설계와 평가 프로토콜 및 모델링 패러다임을 종합적으로 검토하고, 다중 모달 정렬, 증거 기반 추론, 제어 생성을 바탕으로 한 대규모 모델 접근 방식으로의 패러다임 전환을 추적한다.",
+      "takeaway": "주요 장벽으로는 지름길 위주의 평가, 제한된 문화 및 서사 범위, 약한 증거 기반 추론, 미해결된 안전 및 소유권 문제가 제시된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.19011v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19011v1.pdf"
+  },
+  {
+    "id": "2607.19219",
+    "title": "Beyond Score Prediction: LLM-Based Essay Scoring and Feedback Generation via Reinforcement Learning with Rubric Rewards",
+    "authors": "Xuefeng Jin et al.",
+    "published": "2026-07-21",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "본 연구는 RLAES라는 강화 학습 기반 통합 LLM 프레임워크를 제안하여 에세이 채점과 피드백 생성을 공동 최적화한다.",
+    "detail": {
+      "problem": "기존 자동 에세이 채점 및 피드백 생성 연구는 프롬프트 엔지니어링이나 지도 미세 조정에 의존하며, 강화 학습 후훈련과 피드백 품질의 자동 평가에 대한 체계적인 연구가 부족하다.",
+      "method": "RLAES는 강화 학습을 통해 에세이 채점과 피드백 생성을 공동 최적화한다. 피드백 품질 측정을 위해 166개 루브릭 항목과 LLM-as-judge를 사용하는 Rubric-based Feedback Evaluation (RFE)을 도입하고, Adaptive Gated Feedback Optimization (AGFO)로 평가 오버헤드를 줄이며, Adjacent Contrastive Reasoning (ACR)로 점수 교정을 개선한다.",
+      "takeaway": "ASAP 벤치마크에서 LLM 기반 최고 성능(QWK 0.803)을 달성하였고, 피드백 품질은 GPT-5.5와 유사하며 점수 전용 RL에서의 피드백 저하를 피했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.19219v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19219v1.pdf"
+  },
+  {
+    "id": "2607.19038",
+    "title": "FilmWorld: Agentic Novel-to-Film Generation through Dynamic Cinematic World Modeling",
+    "authors": "Jialong Zuo et al.",
+    "published": "2026-07-21",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "FilmWorld는 소설을 영화로 변환하기 위해 동적 시네마틱 월드 모델링을 사용하는 에이전트 기반 시스템으로, 구성 및 진화 단계를 통해 추상적 문학 서사를 구체적인 시각적 내러티브로 변환하며, 기존 방법보다 내러티브 충실도와 장면 간 일관성에서 우수한 성능을 보인다.",
+    "detail": {
+      "problem": "소설을 영화로 변환하는 것은 추상적인 문학 산문을 장기간의 다양한 장면을 가진 시각적 내러티브로 변환해야 하는 어려운 과제이다. 기존 비디오 생성 모델은 짧은 단일 장면 클립에 국한되어 있어 이러한 장편 생성에 적합하지 않다.",
+      "method": "본 논문에서는 동적 시네마틱 월드 모델링을 제안하며, 이는 추상적이고 불완전한 문학 서사를 구체적이고 상태를 가진 지속적인 세계 개체로 구축하는 구성 단계와 플롯 진행에 따라 개체를 동적으로 업데이트하여 인과적 일관성을 유지하는 진화 단계로 분해된다. FilmWorld는 이 두 단계를 수행하기 위해 전문 에이전트 그룹이 협력하는 엔드투엔드 에이전트 시스템이다.",
+      "takeaway": "실험 결과, FilmWorld는 최신 비디오 생성 에이전트 시스템보다 일관되게 우수하며, 특히 내러티브 충실도와 장면 간 일관성에서 큰 향상을 보였다. 장편 생성의 평가 격차를 해소하기 위해 난이도 등급 벤치마크와 9가지 객관적 지표로 구성된 FilmEval 평가 프레임워크도 도입되었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.19038v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19038v1.pdf"
+  },
+  {
+    "id": "2607.19064",
+    "title": "Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing",
+    "authors": "Xinjie Zhang et al.",
+    "published": "2026-07-21",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.MM",
+      "eess.IV"
+    ],
+    "tags": [
+      "benchmark",
+      "diffusion",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "Mage-Flow는 효율적인 텍스트-이미지 생성 및 편집을 위해 설계된 소형 4B 규모의 생성 모델 제품군으로, 경량 고충실도 잠재 토크나이저(Mage-VAE)와 네이티브 해상도 멀티모달 확산 트랜스포머의 공동 설계를 통해 경쟁력 있는 성능과 빠른 추론 속도를 달성한다.",
+    "detail": {
+      "problem": "대규모 시각 생성 모델은 성능이 향상되고 있지만 학습, 미세 조정 및 배포 비용이 높은 문제가 존재한다.",
+      "method": "본 논문은 경량 고충실도 잠재 토크나이저(Mage-VAE)와 정류 흐름 정합으로 학습된 네이티브 해상도 멀티모달 확산 트랜스포머를 기반으로 하는 소형 4B 규모 생성 스택 Mage-Flow를 제안한다. 또한 Diffusion-NFT와 적대적 인식 안내를 통한 소수 단계 증류를 통해 프롬프트 따르기, 텍스트 렌더링, 미적 품질 및 편집 충실도를 개선하고 저지연 추론을 위한 4단계 Turbo 모델을 생성한다.",
+      "takeaway": "Mage-Flow 및 Mage-Flow-Edit는 표준 생성 및 편집 벤치마크에서 경쟁력 있는 성능을 달성했다. 특히 Turbo 변형은 단일 NVIDIA A100 GPU에서 1024^2 해상도 이미지 생성을 0.59초, 편집을 1.02초에 수행하며 작은 메모리 사용량을 유지하여 고해상도 생성 및 편집을 대화형으로 실용적으로 만든다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.19064v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.19064v1.pdf"
+  },
+  {
+    "id": "2607.18666",
+    "title": "Fusion Embedding: A Unified Embedding Space for Text, Image, Video, and Audio",
+    "authors": "Abdul Basit Tonmoy et al.",
+    "published": "2026-07-21",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.SD"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "retrieval",
+      "embedding",
+      "generation"
+    ],
+    "summaryKo": "Fusion Embedding은 기존의 비전-언어 임베딩 베이스를 고정한 채 오디오를 추가하여 텍스트, 이미지, 비디오, 오디오를 하나의 임베딩 공간으로 통합한 모델 제품군이다.",
+    "detail": {
+      "problem": "현재 텍스트/이미지/비디오 검색을 선도하는 비전-언어 기반 임베딩 모델은 오디오를 지원하지 않으며, 오디오-텍스트 검색은 다른 양식을 지원하지 않는 전문 시스템에 의존한다.",
+      "method": "Fusion Embedding은 1세대에서 16.4M 파라미터의 연결기만 훈련하고, 2세대에서는 44.2M 파라미터의 모달리티 게이트 적응기를 추가하여 오디오를 동결된 비전-언어 베이스에 정렬한다. 텍스트-오디오 정렬만으로 오디오-이미지 검색이 비지도 학습으로 출현한다.",
+      "takeaway": "두 세대 모두 단일 GPU로 수 시간 내 훈련되며, 일부 설계 선택(LLM을 이용한 캡션 재작성, 더 강한 오디오 타워 사용, 연결기 확장)이 검색 성능을 저하시키는 부정적 결과도 보고한다. 코드와 가중치는 공개되었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.18666v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.18666v1.pdf"
+  },
+  {
+    "id": "2607.18820",
+    "title": "CASE: Causal Alignment and Structural Enforcement for Improving Chain-of-Thought Faithfulness",
+    "authors": "Ziming Wang et al.",
+    "published": "2026-07-21",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "CASE는 훈련 시 인과적 정렬과 추론 시 구조적 강제를 통해 대규모 언어 모델의 체인 오브 사고(CoT) 추론이 최종 답변을 충실히 따르도록 하는 프레임워크이다.",
+    "detail": {
+      "problem": "기존의 autoregressive LLM은 명령어(Instruction)와 CoT 모두에 조건화되어 답변을 생성하기 때문에 명령어에서 답변으로의 직접적 단축 경로(shortcut)가 발생하여 CoT 추론이 답변을 충실히 지원하지 못하는 문제가 있다.",
+      "method": "CASE는 훈련 단계에서 역사실 CoT, 편향 명령어, 빈 명령어 데이터셋을 구축하고 선택적 손실 미세 조정을 통해 CoT-답변 의존성을 강화하고 명령어 단축을 억제한다. 추론 단계에서는 명령어 토큰에서 답변 토큰으로의 직접적 어텐션을 마스킹하여 모델이 생성된 CoT를 우회하지 못하게 한다.",
+      "takeaway": "세 가지 모델과 네 가지 벤치마크 실험에서 CASE는 가장 강력한 기준선 대비 CoT 충실도에서 평균 37% 상대적 개선을 보였으며, 교차 데이터셋 충실도 전이에서 더 강한 성능을 보이고 경쟁력 있는 평균 정확도를 유지했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.18820v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.18820v1.pdf"
+  },
+  {
+    "id": "2607.18955",
+    "title": "H$^2$SD: Hybrid Hindsight Self-Distillation",
+    "authors": "Qiye Cai et al.",
+    "published": "2026-07-21",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "code-generation",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 강화 학습에서의 희소 보상 문제를 해결하기 위해 궤적의 성공 여부에 따라 교사 모델을 차별적으로 활용하는 하이브리드 자기 증류 프레임워크 H$^2$SD를 제안한다.",
+    "detail": {
+      "problem": "기존의 검증 가능한 보상 강화 학습(RLVR)은 전체 궤적에 대해 스칼라 결과 보상을 할당하여 감독이 희소하고 토큰 수준의 신용 할당이 제한적이다. 또한 기존의 자기 증류 방법들은 정보 누출, 최적화 불안정, 또는 실패한 추론에 대한 명시적 수정 방향 부재 등의 한계를 가진다.",
+      "method": "H$^2$SD는 궤적의 정답 여부에 따라 교사 모델을 다르게 사용한다. 성공한 궤적의 경우 교사는 학생의 정답 응답과 재구성 지시를 받아 원본 토큰에 대한 확률로 갱신 크기를 조절하고, 실패한 궤적의 경우 교사는 주요 추론 단계와 검증된 답을 포함한 참조 힌트를 조건으로 하여 학생과 교사 간의 역방향 KL 발산을 최소화한다.",
+      "takeaway": "여러 도전적인 추론 벤치마크 실험에서 H$^2$SD는 안정적인 최적화와 효율적인 생성을 유지하면서 대표적인 RLVR, OPSD, RLSD 기준선을 일관되게 능가하는 성능을 보였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.18955v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.18955v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-21T03:37:05.899Z",
+  "collectedAt": "2026-07-22T03:36:02.890Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
