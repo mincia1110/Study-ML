@@ -3,289 +3,303 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.20833",
-    "title": "REFACT: Adaptive Fact Restatement for Compact and Faithful Chain-of-Thought Reasoning",
-    "authors": "Zhensheng Jin et al.",
+    "id": "2607.21071",
+    "title": "TransBiolab: A Real-World Multi-View Dataset of Cluttered Transparent Biomedical Objects",
+    "authors": "Ke Ma et al.",
     "published": "2026-07-23",
-    "category": "llm",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.MM",
+      "cs.RO"
+    ],
+    "tags": [
+      "benchmark",
+      "medical",
+      "autonomous-driving"
+    ],
+    "summaryKo": "TransBiolab은 혼잡한 투명 생물의료 물체들을 위한 실제 멀티뷰 RGB-D 데이터셋으로, 161,315프레임과 15가지 물체 유형에 대한 1.03M 인스턴스 주석을 포함하며, 분할, 깊이 추정, 6D 포즈 추정 및 멀티뷰 추론을 위한 벤치마크를 제공한다.",
+    "detail": {
+      "problem": "자율 생물의료 실험실에서 투명 플라스틱웨어의 시각적 인식이 중요해지고 있지만, 혼잡한 다중 물체 장면에서의 폐색 및 시점 의존적 외관 변화는 현대 시각 기반 모델에도 어려운 과제이며, 기존 투명 물체 데이터셋은 이러한 결합된 설정을 평가하지 않는다.",
+      "method": "이러한 격차를 해결하기 위해, 본 논문에서는 캘리브레이션된 멀티뷰 RGB-D 시퀀스로 구성된 TransBiolab 데이터셋을 제안한다. 이 데이터셋은 객체 범주, 프레임 내 물체 수, 카메라 시점의 세 가지 축을 따라 구성되며, 분할, 깊이 추정 및 완성, 6D 포즈 추정을 위한 벤치마크와 함께 시스템 수준의 로봇 조작 평가를 포함한다.",
+      "takeaway": "TransBiolab은 반복적인 투명 인스턴스, 혼잡한 배치, 멀티뷰 실험실 캡처에 초점을 맞추어 자율 실험실 조작에서의 분할, 깊이 추정, 6D 포즈 추정 및 멀티뷰 추론을 위한 자원을 제공하며, 기존 데이터셋보다 포괄적인 평가 환경을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.21071v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21071v1.pdf"
+  },
+  {
+    "id": "2607.21343",
+    "title": "M$^3$-Gen: Interpretable Multimodal Generation of Gene Expression Profiles Using Clinical and Imaging Data",
+    "authors": "Francesca Pia Panaccione, Carlo Sgaravatti, Marco Venere",
+    "published": "2026-07-23",
+    "category": "cv",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CV"
+    ],
+    "tags": [
+      "privacy",
+      "medical",
+      "embedding",
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "M³-Gen은 조직병리학 이미지와 임상 메타데이터를 조건으로 생성적 적대 신경망과 대조 학습을 활용하여 유전자 발현 프로필을 생성하고, 주의 메커니즘을 통해 해석 가능성을 제공하는 프레임워크이다.",
+    "detail": {
+      "problem": "유전자 발현 데이터 획득은 높은 비용과 개인정보 문제로 제약이 있어 다중 모달 연구 및 AI 응용에 사용이 제한적이며, 이종 생의학 데이터의 통합은 질병 이해에 중요하지만 어려움이 존재한다.",
+      "method": "M³-Gen은 임상 변수와 조직병리학 이미지로부터 대조 학습을 통해 통합 잠재 표현을 학습하고, 이 임베딩을 활용하여 생성적 적대 신경망이 생물학적으로 일관된 유전자 발현 프로필을 생성하도록 유도하며, 주의 기반 메커니즘으로 다중 모달을 통합하여 본질적인 해석 가능성을 제공한다.",
+      "takeaway": "TCGA 데이터셋 평가 결과, M³-Gen은 현실적이고 기능적으로 의미 있는 유전자 발현 데이터를 생성했으며, 주의 메커니즘을 통해 특정 유전자 발현 프로필 생성에 가장 큰 영향을 미친 조직병리학 이미지 영역을 식별할 수 있어 모델 결정의 해석이 가능하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.21343v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21343v1.pdf"
+  },
+  {
+    "id": "2607.21522",
+    "title": "GS-Agent: Creating 4D Physical Worlds With Generative Simulation",
+    "authors": "Hongxin Zhang et al.",
+    "published": "2026-07-23",
+    "category": "multimodal",
+    "categories": [
+      "cs.RO",
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "agents",
+      "3d",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "GS-Agent는 물리 엔진을 통합한 다중 에이전트 프레임워크로, 자연어 설명으로부터 물리적으로 그럴듯하고 제어 가능한 4D 세계를 자동 생성한다.",
+    "detail": {
+      "problem": "자연어로부터 동적이고 물리적으로 현실적인 4D 세계를 생성하는 것은 어려우며, 기존의 컴퓨터 그래픽스 방법은 수동 제작에 의존하고, 최신 생성 모델은 물리적 타당성과 제어 가능성에 한계가 있다.",
+      "method": "GS-Agent는 인간의 4D 세계 제작 방식을 모방하여 엔티티 관리와 렌더링 설정으로 작업을 분해하며, 전문성을 가진 여러 에이전트가 코드를 통해 물리 엔진과 상호작용하고 다중 모드 피드백을 활용해 협력적으로 4D 세계를 구축한다.",
+      "takeaway": "실험 결과 GS-Agent는 자연어를 액체, 변형체, 강체 간의 풍부한 상호작용을 포함한 다양하고 물리적으로 그럴듯한 4D 세계로 효과적으로 변환하며, 시네마틱 카메라 및 조명 제어를 달성한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.21522v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21522v1.pdf"
+  },
+  {
+    "id": "2607.21155",
+    "title": "CRAG-MM-Diagnostics: Enabling Stage-Wise Analysis of Knowledge-Intensive VQA",
+    "authors": "Hanseok Oh et al.",
+    "published": "2026-07-23",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "multimodal"
+    ],
+    "summaryKo": "CRAG-MM-Diagnostics는 지식 집약적 시각 질문 응답(KI-VQA) 시스템의 단계별 분석을 위한 진단 데이터셋으로, 지식 검색 및 추론이 주요 병목임을 밝히고 시각적 접지 모듈을 통합한 RAG 파이프라인이 성능을 향상시킴을 보인다.",
+    "detail": {
+      "problem": "기존 KI-VQA 벤치마크는 최종 정확도만 보고하여, 언어 기반 시각적 접지, 객체 식별, 지식 검색 및 추론 등 하위 문제 중 실패 원인을 파악할 수 없다.",
+      "method": "본 연구는 세 단계(언어 기반 시각적 접지, 객체 식별, 지식 검색 및 추론)를 분리 분석하는 CRAG-MM-Diagnostics를 제안하고, 완전 파라메트릭 및 검색 증강 VLM을 다양한 메타데이터로 평가한다.",
+      "takeaway": "지식 검색 및 추론이 주요 병목이나 VLM의 객체 식별 및 이미지 검색기의 텍스트 통합 문제도 확인되었다. 시각적 접지 모듈로 대상을 잘라낸 후 이미지 검색을 수행하는 RAG 파이프라인은 GPT-5와 Qwen의 정확도를 각각 13.3%p, 8.5%p 향상시켰다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.21155v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21155v1.pdf"
+  },
+  {
+    "id": "2607.20690",
+    "title": "Learning to Detect UI Principle Violations via Reinforcement Learning",
+    "authors": "Nishi Mehta et al.",
+    "published": "2026-07-22",
+    "category": "multimodal",
     "categories": [
       "cs.CL"
     ],
     "tags": [
-      "retrieval",
+      "agents",
+      "code-generation",
+      "benchmark",
       "generation"
     ],
-    "summaryKo": "REFACT는 추론 과정에서 필요한 근거를 적응적으로 재진술하도록 모델을 학습시켜, 긴 맥락 질문응답과 반사실적 추론의 충실성을 향상시키고 토큰 사용량을 줄이는 인용 프레임워크이다.",
+    "summaryKo": "본 연구는 강화학습을 활용하여 경량 비전-언어 모델이 생성된 웹 인터페이스의 UI 원칙 위반을 효과적으로 탐지하도록 학습시키는 방법을 제안한다.",
     "detail": {
-      "problem": "대규모 언어 모델은 긴 추론 과정에서 증거가 부족하거나 잡음이 있거나 파라메트릭 지식과 충돌할 때 맥락에서 벗어나는 경향이 있으며, 기존의 근거 접근 방식은 인용된 내용이 지역적 추론과 최종 답변에 충분한지 보장하지 못한다.",
-      "method": "REFACT는 추론 단계가 맥락적 근거를 필요로 하는 시점과 원천 사실을 재진술하는 세분성을 결정하도록 모델을 훈련시키며, 인용 효용 보상을 사용한 2단계 SFT-to-RL 파이프라인으로 최적화된다.",
-      "takeaway": "LongBench, LV-Eval, ConFiQA 실험에서 REFACT는 긴 맥락 QA와 반사실적 충실성을 개선하면서 토큰 소비를 크게 줄였으며, 더 적은 재진술 사실로 더 많은 답변 관련 증거를 보존하여 더 조밀한 추론 궤적을 생성한다."
+      "problem": "생성된 웹 인터페이스가 기능적으로는 올바르더라도 접근성, 기만적 디자인, 시각적 위계 등 UI 품질 원칙을 위반할 수 있으나, 기존 감사 방식은 비용, 범위, 확장성 사이에서 상충 관계를 보인다.",
+      "method": "19가지 인터페이스 품질 원칙을 통합하고, LLM 생성 Tailwind 페이지에 합성 위반을 주입하여 약 10,000개의 검증 데이터셋을 구축한 후, 4B 비전-언어 모델에 계속 강화학습을 적용하여 UI 원칙 위반 탐지 비판자를 학습시킨다.",
+      "takeaway": "micro-F1이 36%에서 84%로 향상되었고, 19개 원칙 중 13개에서 80% 이상의 F1을 달성했다. 이 비판자는 생성 인터페이스 감사, 저품질 데이터 필터링, 디자인 인식 코드 생성을 위한 보상 신호에 활용될 수 있으며, 데이터 생성 레시피와 프롬프트를 공개하여 재현성을 지원한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.20833v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.20833v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.20690v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.20690v1.pdf"
   },
   {
-    "id": "2607.21063",
-    "title": "QuantiBias: Benchmarking Quantization-Induced Bias in LLMs",
-    "authors": "Emilio Ferrara",
+    "id": "2607.21424",
+    "title": "An Evaluation Framework for Structured Audio Captions Validated by Controlled Perturbations",
+    "authors": "Liang-Yuan Wu et al.",
     "published": "2026-07-23",
     "category": "llm",
     "categories": [
       "cs.CL",
-      "cs.CY",
+      "cs.SD"
+    ],
+    "tags": [
+      "multimodal",
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 구조화된 오디오 캡션 평가를 위한 다축 평가 프레임워크를 제안하고, 제어된 섭동 테스트를 통해 그 신뢰성을 검증한다.",
+    "detail": {
+      "problem": "기존의 오디오 캡션 평가 지표는 평면적인 텍스트 출력에 초점을 맞추고 있어 다중 모달 속성을 신뢰성 있게 평가하지 못한다는 문제가 있다.",
+      "method": "AudioCards 데이터셋 기반으로 태그 집합, 설명, 논리적 추론, 수치 측정, 스펙트럼 프로필의 다섯 가지 축에서 평가하며, LLM 판별자와 결정론적 계산 메트릭을 결합하고, 제어된 섭동 테스트 프로토콜을 도입하여 신뢰성을 검증한다.",
+      "takeaway": "이 프레임워크는 의미를 보존하는 패러프레이즈와 실제 의미 및 음향적 훼손을 성공적으로 구별할 수 있음을 보여준다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.21424v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21424v1.pdf"
+  },
+  {
+    "id": "2607.21570",
+    "title": "MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education",
+    "authors": "Qian Wu et al.",
+    "published": "2026-07-23",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
       "cs.HC"
     ],
     "tags": [
       "benchmark",
+      "medical",
+      "multimodal",
       "generation"
     ],
-    "summaryKo": "이 논문은 양자화된 대규모 언어 모델이 표준 안전 검사를 통과하면서도 개방형 응답에서 고정관념 편향이 증가하며, 이를 탐지하기 위해 QuantiBias 벤치마크를 제안한다.",
+    "summaryKo": "MedGame은 대형 언어 모델을 활용하여 정적인 임상 사례를 의사 결정 중심의 구조화된 스토리텔링 게임으로 변환하는 의료 교육 프레임워크로, 태스크 특화 파인튜닝과 파일럿 연구를 통해 효과성을 입증했다.",
     "detail": {
-      "problem": "양자화된 모델이 표준 안전 평가를 통과하지만 개방형 질문에서 편향이 증가하며, 이는 기존 평가로는 포착되지 않는 문제를 해결하고자 한다.",
-      "method": "QuantiBias는 다국어 생성적 고정관념 탐침과 거부/다중 선택 통제를 결합하고, 추론 유무를 비교하며 생성물의 심각도를 평가하는 벤치마크이다.",
-      "takeaway": "양자화된 모델은 표준 검사를 통과하면서도 개방형 응답의 약 24-27%에서 고정관념을 보였으며, 추론 후 응답은 일부 모델군에서 편향을 줄였지만 다른 모델군에는 효과가 없었다. 양자화 수준에 따른 편향 증가 여부는 판별자에 따라 불확실하며, 따라서 양자화된 모델은 개방형 편향에 대해 재평가되어야 한다."
+      "problem": "기존 의료 교육용 LLM 시스템은 질문 응답이나 단일 턴 피드백 같은 국지적 상호작용에 초점을 맞추며, 전체 임상 사례를 의사 결정 중심 학습 경로로 구성하지 못한다.",
+      "method": "MedGame은 Medical Narrative Designer가 임상 사례 기반의 스토리라인을 생성하고 Story Director가 의존 관계를 고려한 멀티모달 조율 계획으로 변환하는 이중 엔진 설계를 사용하며, 5,000개 사례의 MedGame Bench를 구축하여 평가했다.",
+      "takeaway": "태스크 특화 파인튜닝이 오픈소스 LLM의 MedGame Bench 성능을 크게 향상시켜 상용 모델과의 격차를 줄였고, 파일럿 학습자 연구에서 MedGame이 텍스트 기반 대안보다 더 매력적이고 유용하다고 인식되었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21063v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21063v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.21570v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21570v1.pdf"
   },
   {
-    "id": "2607.21274",
-    "title": "A Comparative Evaluation of Embeddings and LLMs in a Greek Book Publisher Setting - The CUP Dataset",
-    "authors": "Katerina Papantoniou et al.",
-    "published": "2026-07-23",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval",
-      "embedding"
-    ],
-    "summaryKo": "CUP은 그리스어 도서 검색을 위한 868개 레코드와 104개 질의로 구성된 벤치마크로, 하이브리드 검색이 가장 우수하고 다국어 임베딩이 그리스어 특화 모델을 능가하며 질의 유형에 따라 방법 간 성능 차이가 있음을 보여준다.",
-    "detail": {
-      "problem": "그리스어 도서 검색 환경에서 다양한 검색 방법을 체계적으로 평가할 수 있는 벤치마크가 부족했다.",
-      "method": "868개의 카탈로그 레코드와 104개의 전문가 주석 질의로 구성된 CUP 데이터셋을 구축하고, BM25, sentence-transformers, 하이브리드, LLM 기반 검색 방법을 비교 평가했다.",
-      "takeaway": "다국어 임베딩이 그리스어 특화 모델보다 우수했고, 하이브리드 검색이 전반적으로 가장 좋은 성능을 보였다. BM25는 개체명 질의에 강점을 보인 반면, 밀집 및 하이브리드 방법은 자연어, 잡음, 교차언어, 개념 질의에서 향상되었다. LLM 기반 방법은 특정 상황에서 효과적이었지만 비용이 높거나 모델 의존적인 한계가 있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21274v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21274v1.pdf"
-  },
-  {
-    "id": "2607.21324",
-    "title": "GRADRAG: Cross-Component Prompt Adaptation for Coordinated Multi-Agent RAG",
-    "authors": "Paolo Pedinotti, Enrico Santus",
-    "published": "2026-07-23",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval",
-      "generation"
-    ],
-    "summaryKo": "GRADRAG는 다중 에이전트 RAG 파이프라인에서 구성 요소 간 조정을 위해 그래프 기반 평가 피드백 전파를 통해 프롬프트를 적응시키는 프레임워크이다.",
-    "detail": {
-      "problem": "기존 RAG 시스템은 여러 LLM 에이전트를 사용하지만 각 구성 요소를 개별적으로 최적화하여 파이프라인 전체의 조정이 부족하다.",
-      "method": "GRADRAG는 RAG 파이프라인을 계산 그래프로 모델링하고, 평가자가 생성된 답변과 증거를 비판하여 구조화된 피드백을 생성하며, 프롬프트 최적화기가 이를 사용하여 검색기, 그래프 구성기, 응답기 같은 상위 에이전트를 반복적으로 업데이트한다. 또한 평가자는 출력이 만족스러울 때 조기 중단을 트리거한다.",
-      "takeaway": "SQUALITY와 QMSUM 벤치마크에서 두 가지 검색 패러다임(평면 청크 검색 및 그래프 기반 검색) 모두에서 최종 생성기만 업데이트하는 기준선보다 일관되게 우수했으며, LLM 평가 쌍별 비교에서 12-15% 포인트의 순 선호도 마진을 달성했고, 대부분의 개선은 두 번의 반복 내에 이루어졌다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21324v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21324v1.pdf"
-  },
-  {
-    "id": "2607.21404",
-    "title": "MemTools: A Unified Research Framework for Interoperable Agent Memory",
-    "authors": "Chengfeng Zhao et al.",
-    "published": "2026-07-23",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "multimodal"
-    ],
-    "summaryKo": "MemTools는 에이전트 메모리 시스템의 상호운용성을 위한 통합 연구 프레임워크로, 선언적 데이터 계약을 통해 메모리 생애주기를 표준화하고 다양한 메모리 유형을 조정하는 통합 인터페이스를 제공한다.",
-    "detail": {
-      "problem": "기존 메모리 시스템은 구현 시 메모리 생애주기의 여러 단계가 결합되어 있고, 평가 로직이 특정 데이터셋에 종속되며, 이기종 메모리 유형 관리에 대한 지원이 제한되어 체계적인 연구가 어렵다.",
-      "method": "MemTools는 메모리 시스템 구성 요소를 배포 환경에서 분리하고, 선언적 데이터 계약으로 생애주기를 표준화하여 구성 요소의 상호 교체를 가능하게 한다. 또한 벤치마크 데이터셋과 실행 프로토콜을 직교적으로 분리하고, 기호, 신경, 다중모드 메모리 표현을 조정하는 통합 계산 인터페이스를 제공한다.",
-      "takeaway": "실험을 통해 MemTools가 시스템 간 구성 요소 통합, 평가 프로토콜 재구성, 이기종 메모리 조정을 가능하게 하여 메모리 설계 변수의 체계적인 분리와 분석을 지원함을 확인했다. 이는 에이전트 메모리 연구를 위한 실용적이고 확장 가능한 인프라를 제공함을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21404v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21404v1.pdf"
-  },
-  {
-    "id": "2607.21027",
-    "title": "GroupVideo: Multi-Identity Customized Text-to-Video Generation",
-    "authors": "Xinyang Song et al.",
+    "id": "2607.21105",
+    "title": "HalluScope: Fine-grained Hallucination Diagnosis for Multimodal Large Language Models",
+    "authors": "Weilin Jin et al.",
     "published": "2026-07-23",
     "category": "cv",
     "categories": [
       "cs.CV"
     ],
     "tags": [
-      "diffusion",
-      "video",
-      "multimodal",
       "benchmark",
-      "generation"
+      "multimodal",
+      "generation",
+      "detection"
     ],
-    "summaryKo": "GroupVideo는 여러 개인 사진을 활용하여 다중 정체성 맞춤형 비디오를 생성하는 프레임워크로, 비디오 확산 트랜스포머 기반의 다중 모달 정체성 정렬과 ID 위치 추정 모듈을 통해 정체성 일관성과 자연스러운 움직임을 달성한다.",
+    "summaryKo": "멀티모달 대규모 언어 모델의 환각 문제를 세밀하게 진단하기 위해 탐지, 분류, 설명 생성을 통합한 과제를 제안하고, 데이터셋과 진단 모델을 구축하여 최고 성능을 달성했으며, 진단 기반 피드백이 환각 교정에 효과적임을 입증했다.",
     "detail": {
-      "problem": "기존의 정체성 맞춤형 비디오 생성 방법은 주로 단일 정체성 시나리오에 국한되어 있으며, 다중 정체성 접근법은 얼굴 이미지를 단순히 연결함으로써 부자연스러운 표정과 움직임(복사-붙여넣기 현상) 및 정체성 혼란을 초래한다.",
-      "method": "GroupVideo는 비디오 확산 트랜스포머를 기반으로 시각적 정렬과 의미적 정렬을 포함하는 다중 모달 정체성 정렬을 도입하고, 공간적 안내를 제공하는 ID 위치 추정 모듈과 경계 상자 제약, 마스크 정규화 손실을 활용하여 정체성 혼합을 방지하고 훈련 효율성을 향상시킨다.",
-      "takeaway": "GroupVideo는 다중 인물 비디오 생성에서 일관된 정체성과 자연스러운 움직임을 보여주며 기존 방법보다 우수한 성능을 입증했으나, 한계점에 대한 구체적인 언급은 초록에 포함되어 있지 않다."
+      "problem": "기존의 환각 탐지 방법은 거친 수준의 탐지만 제공하여 환각 유형 이해와 완화에 충분한 진단 정보를 제공하지 못한다.",
+      "method": "이를 해결하기 위해 환각 탐지, 분류, 해석 가능한 설명 생성을 함께 수행하는 세밀한 진단 과제를 제안하고, 자동 데이터 생성 파이프라인을 개발하여 HalluScope-30K 데이터셋을 구축했으며, 다중 세분화 공동 보상 함수를 설계하여 HalluScope-4B와 HalluScope-8B 진단 모델을 학습시켰다.",
+      "takeaway": "제안된 모델은 MHALO 벤치마크와 세밀한 환각 분류 벤치마크에서 최고 성능을 달성했으며, 탐지와 분류가 공동 최적화 하에 상호 이점을 보였다. 또한 진단 설명을 활용한 피드백 실험에서 환각 교정에 효과적임을 확인했으며, 특히 Qwen3-VL-8B-Instruct와 LLaVA-1.5-7B에서 모든 기준선을 크게 능가했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21027v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21027v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.21105v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21105v1.pdf"
   },
   {
-    "id": "2607.21057",
-    "title": "Achieving Text-based Person Retrieval with Any Granularity",
-    "authors": "Jialong Zuo et al.",
+    "id": "2607.21401",
+    "title": "When Are Reasoning-Based Guardrails Not Efficient? ResponseGuard: A Fast Vision-Language Guard for Real-Time Moderation",
+    "authors": "Dongbin Na",
     "published": "2026-07-23",
-    "category": "multimodal",
+    "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "본 논문은 추론 과정 없이 단일 전방 패스로 비전-언어 모델의 응답을 실시간 검열하는 ResponseGuard를 제안하며, 기존 추론 기반 가드레일에 비해 응답 유해성 탐지에서 더 나은 성능과 훨씬 낮은 시간 비용을 달성한다.",
+    "detail": {
+      "problem": "최근 비전-언어 가드레일은 체인 오브 소트 추론을 통해 유해성을 판단하지만, 이는 많은 토큰 생성이 필요하여 느리고 무거워 실시간 스트리밍 응답 검열에 비효율적이다.",
+      "method": "ResponseGuard는 요청, 응답, 이미지의 단일 풀링 표현으로부터 유해성 판단을 한 번의 순전파로 수행하며, 추론 과정 없이 유해성을 탐지한다.",
+      "takeaway": "2B 크기의 ResponseGuard는 표준 멀티모달 가드레일 벤치마크에서 3B 추론 기반 가드보다 응답 유해성 탐지 성능이 우수하고 약 150배 빠르지만, 요청 유해성에서는 추론 기반이 여전히 앞선다. 이미지만 있는 경우의 성능 차이는 추론 부재보다 고정된 비전 인코더에서 기인할 수 있으며, 추론 기반 가드는 이미지에 거의 주의를 기울이지 않는 것으로 나타났다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.21401v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.21401v1.pdf"
+  },
+  {
+    "id": "2607.20372",
+    "title": "Notes to Self: Can LLMs Benefit from Experiential Abstractions?",
+    "authors": "Chang Liu, Xinyu Li, Artur Dubrawski",
+    "published": "2026-07-22",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
       "retrieval"
     ],
-    "summaryKo": "본 논문은 텍스트 기반 사람 검색에서 쿼리 세분화의 불확실성 문제를 해결하기 위해 다중 세분화 데이터셋, 평가 벤치마크, 그리고 CMAM 프레임워크를 포함한 체계적인 해결책을 제시한다.",
+    "summaryKo": "이 논문은 인간이 경험을 추상화하여 문제 해결에 활용하는 것처럼 대규모 언어 모델도 솔루션 트레이스에서 추출한 경험적 추상화를 통해 성능을 향상시킬 수 있는지 연구하고, 이를 통해 수학 및 논리 추론 성능이 개선됨을 보여준다.",
     "detail": {
-      "problem": "텍스트 기반 사람 검색에서 쿼리 세분화 수준(예: 대략적인 설명부터 세부적인 설명)의 불확실성은 기존 연구에서 충분히 다루어지지 않은 중요한 문제이며, 특히 대략적인 쿼리는 자연스럽게 여러 후보와 매칭될 수 있다.",
-      "method": "저자는 5단계 세분화 스펙트럼을 정립하고 모든 수준에서 주석이 달린 다중 세분화 데이터셋(UFine6926-MG)과 점진적 텍스트 및 교차 신원 레이블을 포함한 평가 벤치마크(MG-Eval)를 구축했다. 또한 직교 전문가 인식, 확률적 정렬, 세분화 일관 추론을 통해 세분화 인식 검색을 수행하는 CMAM 프레임워크를 제안했다.",
-      "takeaway": "CMAM은 모든 세분화 수준에서 기존 최첨단 방법들을 크게 능가했다. 이 연구는 더 실용적인 사람 검색 시스템을 위한 기초적인 벤치마크와 강력한 기준선을 제공한다."
+      "problem": "인간이 경험을 추상화하여 전략이나 주의 사항 등 재사용 가능한 형태로 문제 해결에 적용하는 것처럼, 대규모 언어 모델(LLM)도 이러한 경험적 추상화로부터 이점을 얻을 수 있는지 여부를 연구한다.",
+      "method": "MATH 훈련 세트의 LLM 솔루션 트레이스로부터 더 강력한 교사 모델 또는 LLM 자체가 자연어 추상화를 추출하여 검색 가능한 라이브러리를 구축한 후, (1) 추론 시 검색 및 (2) 추상화로 보강된 훈련 프롬프트를 사용한 강화 학습(RL)의 두 가지 활용 방식을 탐구한다.",
+      "takeaway": "경험적 추상화는 수학 및 논리 추론 벤치마크에서 LLM 성능을 향상시켰으며, LLM 스스로 추출한 추상화는 교사가 추출한 것과 유사한 성능을 보였고, 이 추상화 활용 프레임워크는 다른 데이터셋과 모델로 전이 가능함을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21057v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21057v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.20372v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.20372v1.pdf"
   },
   {
-    "id": "2607.21061",
-    "title": "MVEI &amp; EmObserver: Empowering MLLM-Oriented Visual Emotional Intelligence via Emotion Statement Judgement",
-    "authors": "Daiqing Wu et al.",
-    "published": "2026-07-23",
-    "category": "cv",
+    "id": "2607.20410",
+    "title": "LKValues: Aligning Large Language Models with Sri Lankan Societal Values",
+    "authors": "Nethmi Muthugala et al.",
+    "published": "2026-07-22",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "multimodal"
+      "embedding",
+      "survey"
     ],
-    "summaryKo": "본 논문은 다중모달 대규모 언어 모델(MLLM)의 시각적 감성 지능을 평가하기 위해 감성 진술 판단(ESJ) 형식, 대규모 데이터셋 INSETS-462k, 벤치마크 MVEI 및 감성 중심 MLLM EmObserver를 제안한다.",
+    "summaryKo": "LKValues는 스리랑카 사회적 가치를 반영한 최초의 설문 기반 리소스로, 싱할라어-영어 지시문 데이터와 평가 벤치마크를 구축하여 LLM의 문화적 편향 완화를 목표한다.",
     "detail": {
-      "problem": "전통적인 감성 이미지 콘텐츠 분석(AICA) 패러다임은 MLLM의 개방형 명령 기반 특성과 구조적 불일치가 있어 MLLM의 시각적 감성 지능에 대한 체계적 평가가 부재하며, 특히 가능한 응답 생략, 제한된 감성 분류, 맥락 요인 무시, 주석 작업의 고비용이라는 네 가지 한계가 있다.",
-      "method": "해결을 위해 입력의 표현력을 유지하면서 출력을 식별 판단으로 제한하는 감성 진술 판단(ESJ) 형식을 도입하고, 이를 대규모로 구현하는 INSETS 파이프라인을 개발하여 감성 극성, 감정 해석, 장면 맥락, 지각 주관성을 포함한 MVEI 벤치마크를 구축한다. 또한 ESJ에 최적화된 감성 중심 MLLM인 EmObserver를 다단계 학습 방식으로 구축한다.",
-      "takeaway": "MVEI를 통한 광범위한 MLLM 평가는 현재의 인공 시각적 감성 지능에 대한 세부 통찰을 제공하였으며, EmObserver는 여러 AICA 벤치마크에서 정확성, 일반화 및 추론 충실성을 입증했다. 결과적으로 ESJ, MVEI, EmObserver는 각각 실용적 형식, 포괄적 벤치마크, 고급 기준선을 확립했다."
+      "problem": "LLM의 가치 정렬이 서구에 편향되어 스리랑카와 같은 다언어 사회의 지역적 가치를 제대로 반영하지 못하며, 기존 벤치마크에 싱할라어 맥락을 고려한 평가가 부재하다.",
+      "method": "삼중 설문조사(205명)로 40개의 사회적 가치를 도출하고, 이 값을 바탕으로 뉴스 기반 15만 개 지시문 코퍼스(LKValuesIT)와 1000개 평가 벤치마크(LKValuesBench)를 구축했다. 오픈 및 독점 LLM을 평가하고 세 가지 베이스 모델을 파인튜닝했다.",
+      "takeaway": "최신 LLM도 저자원·문화적 가치 정렬에 취약함을 보였으며, LKValues 파인튜닝은 Qwen 계열에서 영어·싱할라어 성능을 개선하고 무효 출력과 언어 간 차이를 줄였으나, 효과는 모델 계열에 의존적이었다. 공개 데이터셋과 재현 가능한 파이프라인을 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21061v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21061v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.20410v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.20410v1.pdf"
   },
   {
-    "id": "2607.21072",
-    "title": "Show, Don't Tell: Evaluating Spatial Cognition in Generative Pixels Rather Than LLM Text",
-    "authors": "Xu Wang et al.",
-    "published": "2026-07-23",
-    "category": "multimodal",
+    "id": "2607.20638",
+    "title": "WaveformQA: Benchmarking LLM Temporal Reasoning on Digital Waveforms",
+    "authors": "Yichuan Liu, Daniel Cummings, Nick Vadlamudi",
+    "published": "2026-07-22",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.AI",
+      "cs.AR",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
+      "code-generation",
       "generation"
     ],
-    "summaryKo": "본 논문은 이미지 생성 모델의 공간 인식 평가를 위해 ProVisE 프레임워크와 SpatialGen-Bench를 제안하고, 텍스트 출력 VLM과 이미지 생성 모델의 공간 능력을 통합 평가하여 픽셀 공간 표현과 텍스트 기반 추론의 상호 보완적 강점을 발견하였다.",
+    "summaryKo": "WaveformQA는 디지털 파형 데이터에 대한 LLM의 시간적 추론 능력을 평가하는 오픈소스 벤치마크로, 360개 질문과 실제 하드웨어 동작 기반 파형을 제공하며, 실험 결과 LLM이 복잡한 시간적 추론에서 한계를 보이고 이벤트-시간 JSON 표현이 VCD 형식보다 추론 정확도를 향상시킴을 보여준다.",
     "detail": {
-      "problem": "기존 공간 추론 벤치마크는 좌표나 텍스트 응답을 요구하여 픽셀 공간에서 직접 공간 판단을 표현할 수 있는 이미지 생성 모델과의 인터페이스 불일치가 발생하며, 이로 인해 텍스트 출력 VLM과 동일한 과제 의미론 하에서 평가하기 어렵다.",
-      "method": "ProVisE(Protocolized Visual Evaluation)라는 벤치마크 비종속적 프레임워크를 제안하여 프로토콜로 제약된 시각적 답변을 이미지 생성 모델로부터 얻고 이를 원래 메트릭과 호환되는 구조화된 예측으로 파싱한다. 또한 새로운 벤치마크를 위한 작업별 프로토콜을 구성하고 검증하는 Agentic builder를 포함하며, 14개 하위 과제, 4가지 능력 수준, 다양한 답변 형식을 포함하는 470개 샘플의 진단용 벤치마크 SpatialGen-Bench를 도입한다.",
-      "takeaway": "이미지 생성 모델은 픽셀 공간에서 직접 공간 답변을 외부화할 수 있을 때 경쟁력이 있었지만, 텍스트 출력 VLM은 구성적 공간 추론에서 명확한 우위를 보였다. 이는 픽셀 공간 표현과 텍스트 기반 추론의 상호 보완적 강점을 나타내며, 이미지 생성 모델의 공간 인식 연구를 위한 메트릭 호환 테스트베드를 제공한다."
+      "problem": "디지털 파형에 대한 시간적 추론은 설계 검증의 중요한 병목이지만, 기존 벤치마크는 주로 HDL 코드 생성에 초점을 맞추고 파형을 보조적으로만 활용했다.",
+      "method": "본 논문은 360개의 질문과 프로그램적으로 생성된 정답을 포함하는 WaveformQA 벤치마크를 제안하며, 파형은 오픈소스 설계 구현에서 생성되어 재현 가능성과 실제 하드웨어 동작에 기반한다.",
+      "takeaway": "최첨단 LLM 평가 결과, 단순 질문에서는 합리적인 정확도를 보였지만 맥락 창 제한과 복잡한 시간적 추론 및 다단계 질문에서 성능이 저하되었으며, 이벤트-시간 JSON 표현이 표준 VCD 형식보다 추론 정확도를 향상시켰다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21072v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21072v1.pdf"
-  },
-  {
-    "id": "2607.21085",
-    "title": "Geo3R: Mitigating Spatial Reasoning Hallucination in Multimodal Large Language Models",
-    "authors": "Mingyu Wang et al.",
-    "published": "2026-07-23",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "3d",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 멀티모달 대규모 언어 모델(MLLM)의 공간 추론 환각을 완화하기 위해 기하학적 증거와 구조화된 3D 추론을 활용하는 훈련 없는 플러그 앤 플레이 프레임워크 Geo3R를 제안한다.",
-    "detail": {
-      "problem": "멀티모달 대규모 언어 모델은 2D 시각 표현과 3D 공간 현실 간의 근본적 차이로 인해 공간 추론에서 환각을 일으키며, 기존 완화 방법은 이러한 공간 추론 환각을 효과적으로 해결하지 못한다.",
-      "method": "Geo3R는 기하학적 증거와 구조화된 3D 추론을 통합한 훈련 없는 플러그 앤 플레이 프레임워크로, 원근 효과, 객체 방향, 시점 변화의 세 가지 시나리오에서 발생하는 공간 추론 환각을 완화한다.",
-      "takeaway": "세 벤치마크와 18개 과제에 대한 실험에서 Geo3R는 추가 훈련 없이도 다양한 MLLM의 공간 추론 환각을 크게 줄였으며, 기존 모델 및 방법보다 우수한 성능을 보였다. 다만, 이 프레임워크는 관계 환각의 하위 범주인 공간 추론 환각에 특화되어 있다는 한계가 있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21085v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21085v1.pdf"
-  },
-  {
-    "id": "2607.21300",
-    "title": "Unlearning Under Imbalance: Benchmarking Fairness in Multimodal LLM Unlearning",
-    "authors": "Lorenzo Orsingher et al.",
-    "published": "2026-07-23",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 불균형한 현실적인 삭제 요청을 평가하는 최초의 시각 질의응답 벤치마크 FAIRGET과 공정성을 유지하는 최초의 다중모달 대규모 언어 모델 언러닝 알고리즘 FAUN을 제안한다.",
-    "detail": {
-      "problem": "기존 언러닝 연구는 균등 분포된 가상 신원 데이터를 사용하지만, 실제로는 인구통계학적 그룹별로 불균형한 언러닝 요청이 발생할 수 있어 모델의 편향을 초래할 수 있다. 본 논문은 이러한 불균형 상황에서 언러닝의 공정성을 평가할 수 있는 벤치마크와 알고리즘의 부재를 해결한다.",
-      "method": "FAIRGET은 불균형하고 현실적인 삭제 요청을 시뮬레이션하는 시각 질의응답 벤치마크이며, FAUN은 편향 인식 활성화 조정 메커니즘을 통해 언러닝 데이터를 잊으면서도 모델의 공정성을 유지하는 알고리즘이다.",
-      "takeaway": "FAUN은 FAIRGET 및 기존 FIUBench 실험에서 언러닝 품질과 공정성 모두에서 우수한 성능을 보였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21300v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21300v1.pdf"
-  },
-  {
-    "id": "2607.21529",
-    "title": "ElasticTTT: Prior-Preserving Test-Time Tuning for Video Editing",
-    "authors": "Yueyi Liu et al.",
-    "published": "2026-07-23",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "diffusion",
-      "video",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 비디오 편집을 위한 시험 시간 튜닝에서 발생하는 사전 붕괴 문제를 해결하기 위해 생성 사전 분포를 보존하는 ElasticTTT 프레임워크를 제안하며, 최고 성능을 달성한다.",
-    "detail": {
-      "problem": "생성 모델의 분포 매핑 특성과 표준 TTT의 단일 지점 최적화 사이의 근본적 불일치로 인해 사전 붕괴가 발생하며, 모델이 텍스트 조건과 공간 잠재 변수를 무시하고 소스 비디오로 붕괴되거나 다른 영역의 특징을 혼동하게 된다.",
-      "method": "이를 해결하기 위해 ElasticTTT는 대상 분포 정규화, 대비 CFG, 비동기 노이즈 스케줄을 제안하여 생성 사전 분포를 보존하고 생성 탄력성을 회복한다.",
-      "takeaway": "이론적 분석과 실험을 통해 ElasticTTT가 기본 모델의 생성 사전을 성공적으로 보존하며, 원샷 비디오 편집에서 최고 성능을 달성함을 입증한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21529v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21529v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.20638v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.20638v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-25T03:34:20.712Z",
+  "collectedAt": "2026-07-26T03:48:59.784Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
