@@ -26,6 +26,12 @@
     return d.innerHTML;
   }
 
+  function titleHTML(title) {
+    return esc(title).replace(/\$\^\{([^{}$]+)\}\$|\$\^([^$\s]+)\$/g, function(_, braced, plain) {
+      return '<sup>' + (braced || plain) + '</sup>';
+    });
+  }
+
   function cardHTML(p) {
     var savedCls = saved.has(p.id) ? ' saved' : '';
     var star = saved.has(p.id) ? '\u2605' : '\u2606';
@@ -41,7 +47,7 @@
         '<span class="paper-id">' + p.id + '</span>' +
         '<button class="save-btn' + savedCls + '" type="button" data-id="' + p.id + '" aria-label="' + label + '">' + star + '</button>' +
       '</div>' +
-      '<h3 class="paper-title">' + esc(p.title) + '</h3>' +
+      '<h3 class="paper-title">' + titleHTML(p.title) + '</h3>' +
       '<p class="paper-authors">' + esc(p.published) + ' · ' + esc(p.authors) + '</p>' +
       '<div class="paper-tags">' + categories + tags + '</div>' +
       '<p class="paper-summary">' + esc(p.summaryKo) + '</p>' +

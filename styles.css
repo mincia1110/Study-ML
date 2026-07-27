@@ -503,6 +503,11 @@ tbody tr:nth-child(even) {
   font-weight: 700;
 }
 
+.paper-title sup {
+  font-size: 0.68em;
+  line-height: 0;
+}
+
 .paper-authors {
   margin: 0 0 10px;
   color: var(--muted);
