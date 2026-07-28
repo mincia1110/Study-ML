@@ -3,303 +3,309 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.21071",
-    "title": "TransBiolab: A Real-World Multi-View Dataset of Cluttered Transparent Biomedical Objects",
-    "authors": "Ke Ma et al.",
-    "published": "2026-07-23",
+    "id": "2607.24743",
+    "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
+    "authors": "Hangjie Yuan et al.",
+    "published": "2026-07-27",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "3d",
+      "medical",
+      "retrieval"
+    ],
+    "summaryKo": "본 논문에서는 의료 영상 이해를 위한 시각 중심의 다중 모달 거대 언어 모델 ClinFusion을 제안하며, 이는 2D/3D 의료 이미지 통합 및 임상 평가 프레임워크를 통해 다양한 벤치마크에서 최첨단 성능을 달성한다.",
+    "detail": {
+      "problem": "의료 분야에서 다중 모달 거대 언어 모델의 배포는 시각 중심의 과제로, 모델이 이질적인 2D 및 3D 의료 이미지에서 지식을 흡수해야 하며, 평가 프로토콜이 방사선 전문의의 임상 진료와 일치하고 정확하고 세분화된 사실성 기반 평가를 제공해야 한다는 문제가 있다.",
+      "method": "이를 해결하기 위해 ClinFusion을 제안하며, 2D와 3D 의료 이미지 이해를 통합하는 Cascade Spatial-Aware Locality Fusion 연산자를 갖는 구성적이고 계단식의 비전 인코더 아키텍처를 도입하고, 명령어 수행 평가를 위한 MedIF-Bench와 임상적으로 정렬된 보고서 생성 평가를 위한 관심 영역 기반 방법을 포함한 비전 기반 평가 프레임워크를 제안한다.",
+      "takeaway": "ClinFusion은 2D 및 3D 의료 벤치마크에서 최첨단 성능을 달성했으며, GPT-5.2 및 Gemini-3-Flash와 같은 강력한 독점 모델보다 우수한 성능을 보였고, 에이전트 도구 사용을 통한 증강이 가능하다. 맹검 평가에서 방사선 전문의가 ClinFusion의 보고서를 가장 높게 평가했으며, 제안된 관심 영역 기반 지표가 전문가 판단과 가장 강한 상관관계를 보임을 확인했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24743v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24743v1.pdf"
+  },
+  {
+    "id": "2607.24241",
+    "title": "FilmBench: A Film-Grade Benchmark for Cinematic Video Generation",
+    "authors": "Shengyi Wang et al.",
+    "published": "2026-07-27",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "수상 경력이 있는 영화의 멀티 샷 프롬프트와 전문 영화 언어 기반 평가 체계를 사용해 비디오 생성 모델을 평가하는 FilmBench를 제안하며, 평가 결과 기존 벤치마크보다 점수가 낮고 동적 미학과 멀티 샷 생성에서 특히 부족함을 보인다.",
+    "detail": {
+      "problem": "기존 비디오 생성 벤치마크는 웹 소스나 LLM 템플릿에서 프롬프트를 가져오고 훈련되지 않은 일반 멀티모달 모델로 평가하며, 평가 분류 체계가 전반적 시각 품질, 텍스트 정합성, 시간적 부드러움 같은 기초 수준에 머물러 전문 영화 제작 기준을 반영하지 못한다.",
+      "method": "FilmBench는 T2V 및 R2V 벤치마크로, (1) 전문 감독이 선정한 수상 영화 클립에서 역설계한 프롬프트를 사용하며 대부분(1,169개 중 1,056개)이 멀티 샷이고, (2) 3개 축, 12개 구성 요소, 35개(T2V)+3개(R2V) 세부 지표의 3단계 영화적 분류 체계로 평가하며, (3) 전문가 수준의 자동 평가 에이전트와 핵심 영화 언어 연산자 모음(FilmOps)을 오픈소스로 공개한다.",
+      "takeaway": "평가 에이전트는 모델 수준 스피어만 상관계수 0.95(T2V) 및 0.96(R2V)으로 인간 모델 순위를 재현한다. 모든 모델의 점수가 기존 웹 기반 벤치마크보다 현저히 낮으며, 동적 미학에서 일관된 격차가 있고 단일 샷에서 멀티 샷으로 갈수록 성능이 크게 하락하며, 약한 모델일수록 그 차이가 더 벌어진다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24241v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24241v1.pdf"
+  },
+  {
+    "id": "2607.24249",
+    "title": "SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation",
+    "authors": "Tarun R et al.",
+    "published": "2026-07-27",
     "category": "cv",
     "categories": [
       "cs.CV",
-      "cs.MM",
       "cs.RO"
     ],
     "tags": [
       "benchmark",
-      "medical",
+      "diffusion",
+      "3d",
       "autonomous-driving"
     ],
-    "summaryKo": "TransBiolab은 혼잡한 투명 생물의료 물체들을 위한 실제 멀티뷰 RGB-D 데이터셋으로, 161,315프레임과 15가지 물체 유형에 대한 1.03M 인스턴스 주석을 포함하며, 분할, 깊이 추정, 6D 포즈 추정 및 멀티뷰 추론을 위한 벤치마크를 제공한다.",
+    "summaryKo": "SILICA는 확산 모델의 사전 지식을 활용하여 유리 분할과 깊이 추정을 공동으로 예측하는 통합 파이프라인으로, 실제 유리 깊이 주석 없이도 제로샷 전이를 가능하게 하여 최첨단 모델 대비 약 20% 향상된 성능을 달성한다.",
     "detail": {
-      "problem": "자율 생물의료 실험실에서 투명 플라스틱웨어의 시각적 인식이 중요해지고 있지만, 혼잡한 다중 물체 장면에서의 폐색 및 시점 의존적 외관 변화는 현대 시각 기반 모델에도 어려운 과제이며, 기존 투명 물체 데이터셋은 이러한 결합된 설정을 평가하지 않는다.",
-      "method": "이러한 격차를 해결하기 위해, 본 논문에서는 캘리브레이션된 멀티뷰 RGB-D 시퀀스로 구성된 TransBiolab 데이터셋을 제안한다. 이 데이터셋은 객체 범주, 프레임 내 물체 수, 카메라 시점의 세 가지 축을 따라 구성되며, 분할, 깊이 추정 및 완성, 6D 포즈 추정을 위한 벤치마크와 함께 시스템 수준의 로봇 조작 평가를 포함한다.",
-      "takeaway": "TransBiolab은 반복적인 투명 인스턴스, 혼잡한 배치, 멀티뷰 실험실 캡처에 초점을 맞추어 자율 실험실 조작에서의 분할, 깊이 추정, 6D 포즈 추정 및 멀티뷰 추론을 위한 자원을 제공하며, 기존 데이터셋보다 포괄적인 평가 환경을 제공한다."
+      "problem": "표준 깊이 센서는 투명 표면에 대해 체계적으로 실패하며, 기존의 유리 인식 단안 깊이 추정 방법은 실제 유리 깊이 주석의 부족으로 인해 새로운 환경에 대한 제로샷 일반화가 어렵다.",
+      "method": "SILICA는 텍스트-이미지 확산 모델의 사전 지식을 활용하여 유리 분할과 깊이 추정을 공동으로 예측하는 통합 파이프라인이다. 상호 정보 교환을 통해 실제 유리 깊이 주석 없이도 강건한 공간 계층 구조를 구축하며, 예측된 분할 마스크를 사용하여 표준 센서의 잘못된 유리 깊이를 필터링하고 정확한 미터법 깊이를 복원한다.",
+      "takeaway": "Mirage 18k 데이터셋을 기반으로 한 실험에서 SILICA는 다양한 보지 못한 환경에서 제로샷 전이를 달성하며 최첨단 모델보다 약 20% 향상된 성능을 보여 투명 표면 인식의 새로운 기준을 제시한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21071v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21071v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.24249v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24249v1.pdf"
   },
   {
-    "id": "2607.21343",
-    "title": "M$^3$-Gen: Interpretable Multimodal Generation of Gene Expression Profiles Using Clinical and Imaging Data",
-    "authors": "Francesca Pia Panaccione, Carlo Sgaravatti, Marco Venere",
-    "published": "2026-07-23",
+    "id": "2607.24707",
+    "title": "ERUnderstand: Evaluating Vision-Language Models on Structured ER Diagrams",
+    "authors": "Ali Ansari et al.",
+    "published": "2026-07-27",
     "category": "cv",
     "categories": [
-      "cs.LG",
       "cs.AI",
-      "cs.CV"
+      "cs.CV",
+      "cs.DB"
     ],
     "tags": [
-      "privacy",
-      "medical",
-      "embedding",
+      "benchmark",
       "multimodal",
-      "benchmark"
+      "generation"
     ],
-    "summaryKo": "M³-Gen은 조직병리학 이미지와 임상 메타데이터를 조건으로 생성적 적대 신경망과 대조 학습을 활용하여 유전자 발현 프로필을 생성하고, 주의 메커니즘을 통해 해석 가능성을 제공하는 프레임워크이다.",
+    "summaryKo": "ERUnderstand는 2,960개의 ER 다이어그램으로 구성된 구조적 이해를 위한 첫 번째 대규모 벤치마크로, 최신 VLM들이 일반 요소는 잘 복구하지만 약한 개체, 다중값 속성, N항 관계에서는 성능이 급락함을 발견했다.",
     "detail": {
-      "problem": "유전자 발현 데이터 획득은 높은 비용과 개인정보 문제로 제약이 있어 다중 모달 연구 및 AI 응용에 사용이 제한적이며, 이종 생의학 데이터의 통합은 질병 이해에 중요하지만 어려움이 존재한다.",
-      "method": "M³-Gen은 임상 변수와 조직병리학 이미지로부터 대조 학습을 통해 통합 잠재 표현을 학습하고, 이 임베딩을 활용하여 생성적 적대 신경망이 생물학적으로 일관된 유전자 발현 프로필을 생성하도록 유도하며, 주의 기반 메커니즘으로 다중 모달을 통합하여 본질적인 해석 가능성을 제공한다.",
-      "takeaway": "TCGA 데이터셋 평가 결과, M³-Gen은 현실적이고 기능적으로 의미 있는 유전자 발현 데이터를 생성했으며, 주의 메커니즘을 통해 특정 유전자 발현 프로필 생성에 가장 큰 영향을 미친 조직병리학 이미지 영역을 식별할 수 있어 모델 결정의 해석이 가능하다."
+      "problem": "ER 다이어그램은 개념적 데이터베이스 설계의 핵심이지만, 대개 렌더링된 이미지로만 제공되어 AI 지원 데이터베이스 엔지니어링이 제한된다.",
+      "method": "2,960개의 다양한 도메인, 표기법, 복잡성 수준의 EER 구성을 포함하는 다이어그램을 수집하고 각각에 표준화된 기계 판독 가능 표현을 제공하여 세분화된 평가를 가능하게 하는 ERUnderstand 벤치마크를 구축했다.",
+      "takeaway": "최신 VLM 평가 결과, 일반 ERD 요소는 F1>0.74로 신뢰성 있게 복구되었지만, 약한 개체(0.28), 다중값 속성(0.14), N항 관계(0.07)에서는 성능이 급감했다. 추론 강화 모델은 15-25% 향상되었으나 언어적 사전 확률과 다이어그램 복잡성 증가에 민감했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21343v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21343v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.24707v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24707v1.pdf"
   },
   {
-    "id": "2607.21522",
-    "title": "GS-Agent: Creating 4D Physical Worlds With Generative Simulation",
-    "authors": "Hongxin Zhang et al.",
-    "published": "2026-07-23",
+    "id": "2607.24191",
+    "title": "StanceFlip: A Comprehensive Multi-Dimensional Benchmark for Multimodal Conversational Stance Flipping Forecasting",
+    "authors": "Heyan Chai et al.",
+    "published": "2026-07-27",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "StanceFlip은 다중 모달 대화에서 입장 변화 예측을 위한 포괄적인 벤치마크로, 다섯 가지 모달리티에 걸친 정적 상태 스냅샷 추출과 동적 입장 변화 추적을 위한 두 가지 하위 과제와 ConStaFF 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "기존 대화형 입장 탐지 벤치마크는 입장 반전을 포함한 신념의 동적 진화를 포착하지 못하고, 감정 상태와 논리적 추론을 분리하기 어려우며, 냉소와 같은 화용적 모호성을 해결하는 데 다중 모달 단서의 중요성을 간과하는 한계가 있다.",
+      "method": "이를 해결하기 위해 StanceFlip 벤치마크와 ConStaFF 프레임워크를 제안한다. StanceFlip은 다섯 가지 모달리티에 걸쳐 정적 상태 스냅샷(발화자, 대상, 감정, 정서, 입장, 근거)을 추출하는 다중 모달 입장 여섯짝 추출과 동적 입장 변화와 그 원인을 추적하는 입장 변화 귀인이라는 두 가지 하위 과제를 포함한다. ConStaFF는 대규모 언어 모델을 기반으로 하여 Thought-of-Stance 추론 프레임워크와 자기 반성적 검증 메커니즘을 통해 입장 추론을 수행한다.",
+      "takeaway": "광범위한 실험 결과, 제안 방법은 여섯짝 추출과 입장 변화 귀인 모두에서 강력한 다중 모달 대규모 언어 모델 기준선을 크게 능가하는 최고 성능을 달성했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24191v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24191v1.pdf"
+  },
+  {
+    "id": "2607.24313",
+    "title": "Energy Constrained Hierarchical Underwater Monitoring via Local Multi-Agent RAG",
+    "authors": "Mohamed Amine Janati, Laurent Gautier, Stéphane Barbot",
+    "published": "2026-07-27",
+    "category": "multimodal",
+    "categories": [
+      "cs.IR",
+      "cs.CV",
+      "cs.MA",
+      "cs.RO"
+    ],
+    "tags": [
+      "agents",
+      "retrieval",
+      "embedding",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 에너지 제약이 있는 수중 환경에서 항시 작동하는 저전력 엣지 센싱과 선택적 고성능 로컬 추론을 결합한 계층적 마스터-위성 구조의 수중 모니터링 아키텍처를 제안한다.",
+    "detail": {
+      "problem": "해양 생물 모니터링은 엄격한 에너지 제약, 열악한 수중 연결성, 원격지에서의 원시 다중 모드 데이터 전송 비용 문제에 직면해 있다.",
+      "method": "본 논문은 항시 작동하는 엣지 센싱(MAX78000/MAX78002 마이크로컨트롤러)과 선택적 고성능 로컬 추론(NVIDIA Jetson Orin NX)을 결합한 저소비 전력 수중 모니터링 아키텍처를 제안한다. 활성화된 Jetson은 로컬 다중 모드 파이프라인(데이터 수집, 시각적 대상 추출, 임베딩 기반 인덱싱, 종 식별, 검색 증강 추론, 자동 보고)을 실행하며, LangChain 기반 멀티 에이전트 프레임워크가 쿼리 라우팅, 분석, 에너지 관리, 하드웨어 재구성, 보고서 생성을 조정한다.",
+      "takeaway": "제안된 아키텍처는 시각 및 음향 모니터링 사례 연구를 통해 평가되었으며, 초저전력 연속 센싱과 로컬 다중 모드 지능을 연결하여 연구자 준비 지식을 생성하고 데이터를 압축하여 전송함으로써 에너지 사용과 통신 오버헤드를 최소화한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24313v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24313v1.pdf"
+  },
+  {
+    "id": "2607.24560",
+    "title": "EgoPlay: Event-Triggered Video Editing for Egocentric Streams",
+    "authors": "Jinjie Mai et al.",
+    "published": "2026-07-27",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "diffusion",
+      "video"
+    ],
+    "summaryKo": "EgoPlay는 자아 중심 동영상 스트림을 위한 이벤트 트리거 기반 비디오 편집 모델로, 이벤트 인식과 편집을 단일 종단간 모델로 학습하여 기존 방법들을 능가한다.",
+    "detail": {
+      "problem": "기존 방법은 별도의 이벤트 탐지기와 편집기를 연쇄적으로 사용했으나, EgoPlay는 이벤트 인식, 시간적 제약, 픽셀 수준 편집을 공동으로 학습하는 단일 모델을 제안하여 효율성을 높이고 음성 및 다중 이벤트 프롬프트를 처리한다.",
+      "method": "EgoPlay는 Ego4D에서 구축한 106K개의 이벤트 트리거 클립-프롬프트 쌍 데이터셋으로 사전 훈련된 V2V 확산 트랜스포머를 미세 조정하며, 이벤트 트리거 감독을 사용한 양방향 비디오 확산 편집기를 훈련하고 청크 단위 스트리밍 추론을 위한 인과 변형을 도출한다.",
+      "takeaway": "Ego4D 벤치마크에서 EgoPlay는 최신 지시 기반 자아 중심 비디오 편집 기준선인 EgoEdit 대비 편집 품질 17.7%, 시각적 품질 16.9%, 배경 일관성 16.4%의 상대적 향상을 보였으며, VLM 기반 탐지기-편집기 기준선 대비 절반 미만의 GPU 메모리로 유사한 향상을 달성했다. 또한 이벤트 인식 평가 프로토콜을 도입하여 사후 트리거 편집 품질, 사전 트리거 보존, 거짓 트리거 강건성을 측정한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24560v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24560v1.pdf"
+  },
+  {
+    "id": "2607.24730",
+    "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
+    "authors": "Krithi Shailya et al.",
+    "published": "2026-07-27",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "medical",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 KAN의 상징적 투명성을 활용하여 VLM 추론을 근거함으로써 의료 영상 분석에서 설명 가능성의 신뢰도를 높이는 KANEx 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "기존 흉부 X-ray 분류기는 시각-언어 모델(VLM)과 결합되어 자연어 설명을 생성하지만, 시각 모델의 불투명성을 해결하지 못해 임상의 신뢰를 저해한다.",
+      "method": "KAN의 본질적으로 해석 가능한 스플라인 기반 구성 요소를 사용하여 VLM 추론을 근거하는 KANEx 프레임워크와, 기울기 근사 없이 KAN 모델에서 직접 유도된 히트맵 생성 방법인 KAN-Map을 제안한다.",
+      "takeaway": "MIMIC-CXR 데이터셋 평가에서 KAN 기반 아키텍처는 기존 ResNet/ViT 대비 시맨틱 유사성과 충실도 높은 살리언시 맵을 보였으며, 시각적 위치 파악 및 하류 추론 품질을 10% 개선하였다. 이는 수학적으로 해석 가능한 단위로 언어 설명과 시각적 속성을 근거하는 것이 신뢰할 수 있는 의료 AI를 위한 필수 단계임을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24730v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24730v1.pdf"
+  },
+  {
+    "id": "2607.24744",
+    "title": "Data Pyramid for Embodied Manipulation",
+    "authors": "Yifan Ye et al.",
+    "published": "2026-07-27",
     "category": "multimodal",
     "categories": [
       "cs.RO",
-      "cs.AI",
-      "cs.CL",
       "cs.CV"
     ],
     "tags": [
       "agents",
-      "3d",
       "multimodal",
+      "benchmark",
       "generation"
     ],
-    "summaryKo": "GS-Agent는 물리 엔진을 통합한 다중 에이전트 프레임워크로, 자연어 설명으로부터 물리적으로 그럴듯하고 제어 가능한 4D 세계를 자동 생성한다.",
+    "summaryKo": "이 논문은 신체화된 조작을 위한 데이터 생태계를 다섯 가지 상호 보완적인 데이터 소스로 구성된 피라미드 구조로 체계화하고, 각 소스의 특성과 최신 기반 모델들의 데이터 구성 방식을 분석하며, 여섯 가지 미해결 과제를 논의한다.",
     "detail": {
-      "problem": "자연어로부터 동적이고 물리적으로 현실적인 4D 세계를 생성하는 것은 어려우며, 기존의 컴퓨터 그래픽스 방법은 수동 제작에 의존하고, 최신 생성 모델은 물리적 타당성과 제어 가능성에 한계가 있다.",
-      "method": "GS-Agent는 인간의 4D 세계 제작 방식을 모방하여 엔티티 관리와 렌더링 설정으로 작업을 분해하며, 전문성을 가진 여러 에이전트가 코드를 통해 물리 엔진과 상호작용하고 다중 모드 피드백을 활용해 협력적으로 4D 세계를 구축한다.",
-      "takeaway": "실험 결과 GS-Agent는 자연어를 액체, 변형체, 강체 간의 풍부한 상호작용을 포함한 다양하고 물리적으로 그럴듯한 4D 세계로 효과적으로 변환하며, 시네마틱 카메라 및 조명 제어를 달성한다."
+      "problem": "멀티모달 기반 모델은 인터넷 데이터를 통해 학습되지만, 신체화된 에이전트는 관찰과 물리적 상태 및 행동이 결합된 데이터를 필요로 하여 데이터 수집에 어려움이 있다.",
+      "method": "데이터 피라미드는 실제 로봇 데이터, UMI-스타일 데이터, 자기중심적/외부적 데이터, 시뮬레이션 데이터, 일반 시각-언어 데이터를 포함하며, 확장성과 로봇 정합성 간의 긴장 관계를 중심으로 각 소스의 품질, 다양성, 재사용성, 물리적 충실도를 특성화한다. 나아가 최근 신체화된 기반 모델(두뇌 모델, 시각-언어-행동 모델, 세계-행동 모델)의 데이터 구성을 분석하여 지각, 추론, 계획, 행동 생성, 세계 예측 능력과의 연관성을 설명한다.",
+      "takeaway": "데이터 구성이 모델의 다양한 능력과 어떻게 연관되는지 체계적으로 보여주고, 대규모 촉각 데이터셋, 실패 및 복구 데이터, 확장 가능한 수집 파이프라인 등 여섯 가지 중요한 미해결 과제를 식별하였다. 그러나 이는 개념적 프레임워크와 문헌 분석에 기반한 초기 연구로, 구체적인 데이터 혼합 방법이나 실질적 구현 방안을 제시하지는 못한다는 한계가 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21522v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21522v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.24744v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24744v1.pdf"
   },
   {
-    "id": "2607.21155",
-    "title": "CRAG-MM-Diagnostics: Enabling Stage-Wise Analysis of Knowledge-Intensive VQA",
-    "authors": "Hanseok Oh et al.",
-    "published": "2026-07-23",
+    "id": "2607.24542",
+    "title": "From transcription to semantic corpus analysis: unsupervised learning of sentence representations for ancient languages",
+    "authors": "Th{é}otime de la Selle",
+    "published": "2026-07-27",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CL",
+      "cs.DL",
+      "cs.IR"
     ],
     "tags": [
       "benchmark",
       "retrieval",
-      "multimodal"
+      "embedding",
+      "detection"
     ],
-    "summaryKo": "CRAG-MM-Diagnostics는 지식 집약적 시각 질문 응답(KI-VQA) 시스템의 단계별 분석을 위한 진단 데이터셋으로, 지식 검색 및 추론이 주요 병목임을 밝히고 시각적 접지 모듈을 통합한 RAG 파이프라인이 성능을 향상시킴을 보인다.",
+    "summaryKo": "본 논문은 고대 언어의 문장 표현을 위해 TSDAE와 대조적 문장 임베딩(CSE)이라는 두 가지 비지도 학습 전략을 제안하며, 교부 문헌 내 성서 인용 식별 과업에서 기존 모델들보다 우수한 성능을 달성하고, 적은 데이터로도 효과적임을 보여주었다.",
     "detail": {
-      "problem": "기존 KI-VQA 벤치마크는 최종 정확도만 보고하여, 언어 기반 시각적 접지, 객체 식별, 지식 검색 및 추론 등 하위 문제 중 실패 원인을 파악할 수 없다.",
-      "method": "본 연구는 세 단계(언어 기반 시각적 접지, 객체 식별, 지식 검색 및 추론)를 분리 분석하는 CRAG-MM-Diagnostics를 제안하고, 완전 파라메트릭 및 검색 증강 VLM을 다양한 메타데이터로 평가한다.",
-      "takeaway": "지식 검색 및 추론이 주요 병목이나 VLM의 객체 식별 및 이미지 검색기의 텍스트 통합 문제도 확인되었다. 시각적 접지 모듈로 대상을 잘라낸 후 이미지 검색을 수행하는 RAG 파이프라인은 GPT-5와 Qwen의 정확도를 각각 13.3%p, 8.5%p 향상시켰다."
+      "problem": "고대 언어에 대한 자동 텍스트 인식(ATR)은 방대하고 잡음이 많은 비정형 텍스트를 제공하지만, 기존 문장 임베딩 방법은 다국어 인코더의 성능 저하, 특화 모델의 비등방성 공간, 레이블 데이터 부재로 인해 고대 언어로의 전이가 어렵다.",
+      "method": "본 연구는 토큰 수준 언어 모델을 원시 문장만을 이용하여 코퍼스 특화 문장 인코더로 적응시키는 두 가지 완전 비지도 전략(TSDAE와 대조적 문장 임베딩)을 탐구하고, 라틴어와 고대 그리스어 교부 문헌의 성서 재사용 식별(이진 탐지 및 대응 검색)을 통해 평가한다.",
+      "takeaway": "적응된 인코더는 모든 기준선을 능가했다: TSDAE는 대규모 도메인 내 말뭉치에서 이진 탐지에서 우수했고, CSE는 대응 검색에서 우수했으며 4-8k개의 원시 문장만으로 최적 성능에 도달하고 저자/작품 간 전이와 잡음 텍스트에도 강건했다. 전체 파이프라인은 온라인 도구 Paraphrasis를 통해 제공된다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21155v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21155v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.24542v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24542v1.pdf"
   },
   {
-    "id": "2607.20690",
-    "title": "Learning to Detect UI Principle Violations via Reinforcement Learning",
-    "authors": "Nishi Mehta et al.",
-    "published": "2026-07-22",
+    "id": "2607.24098",
+    "title": "ReflexTrack: A Feedback-Driven Agent for Training-Free Referring Video Object Segmentation",
+    "authors": "Yuanjia Li et al.",
+    "published": "2026-07-27",
     "category": "multimodal",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "agents",
-      "code-generation",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "본 연구는 강화학습을 활용하여 경량 비전-언어 모델이 생성된 웹 인터페이스의 UI 원칙 위반을 효과적으로 탐지하도록 학습시키는 방법을 제안한다.",
-    "detail": {
-      "problem": "생성된 웹 인터페이스가 기능적으로는 올바르더라도 접근성, 기만적 디자인, 시각적 위계 등 UI 품질 원칙을 위반할 수 있으나, 기존 감사 방식은 비용, 범위, 확장성 사이에서 상충 관계를 보인다.",
-      "method": "19가지 인터페이스 품질 원칙을 통합하고, LLM 생성 Tailwind 페이지에 합성 위반을 주입하여 약 10,000개의 검증 데이터셋을 구축한 후, 4B 비전-언어 모델에 계속 강화학습을 적용하여 UI 원칙 위반 탐지 비판자를 학습시킨다.",
-      "takeaway": "micro-F1이 36%에서 84%로 향상되었고, 19개 원칙 중 13개에서 80% 이상의 F1을 달성했다. 이 비판자는 생성 인터페이스 감사, 저품질 데이터 필터링, 디자인 인식 코드 생성을 위한 보상 신호에 활용될 수 있으며, 데이터 생성 레시피와 프롬프트를 공개하여 재현성을 지원한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.20690v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.20690v1.pdf"
-  },
-  {
-    "id": "2607.21424",
-    "title": "An Evaluation Framework for Structured Audio Captions Validated by Controlled Perturbations",
-    "authors": "Liang-Yuan Wu et al.",
-    "published": "2026-07-23",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.SD"
-    ],
-    "tags": [
-      "multimodal",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 구조화된 오디오 캡션 평가를 위한 다축 평가 프레임워크를 제안하고, 제어된 섭동 테스트를 통해 그 신뢰성을 검증한다.",
-    "detail": {
-      "problem": "기존의 오디오 캡션 평가 지표는 평면적인 텍스트 출력에 초점을 맞추고 있어 다중 모달 속성을 신뢰성 있게 평가하지 못한다는 문제가 있다.",
-      "method": "AudioCards 데이터셋 기반으로 태그 집합, 설명, 논리적 추론, 수치 측정, 스펙트럼 프로필의 다섯 가지 축에서 평가하며, LLM 판별자와 결정론적 계산 메트릭을 결합하고, 제어된 섭동 테스트 프로토콜을 도입하여 신뢰성을 검증한다.",
-      "takeaway": "이 프레임워크는 의미를 보존하는 패러프레이즈와 실제 의미 및 음향적 훼손을 성공적으로 구별할 수 있음을 보여준다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21424v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21424v1.pdf"
-  },
-  {
-    "id": "2607.21570",
-    "title": "MedGame: Storytelling Gamification Empowered by Large Language Models for Medical Education",
-    "authors": "Qian Wu et al.",
-    "published": "2026-07-23",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.HC"
-    ],
-    "tags": [
-      "benchmark",
-      "medical",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "MedGame은 대형 언어 모델을 활용하여 정적인 임상 사례를 의사 결정 중심의 구조화된 스토리텔링 게임으로 변환하는 의료 교육 프레임워크로, 태스크 특화 파인튜닝과 파일럿 연구를 통해 효과성을 입증했다.",
-    "detail": {
-      "problem": "기존 의료 교육용 LLM 시스템은 질문 응답이나 단일 턴 피드백 같은 국지적 상호작용에 초점을 맞추며, 전체 임상 사례를 의사 결정 중심 학습 경로로 구성하지 못한다.",
-      "method": "MedGame은 Medical Narrative Designer가 임상 사례 기반의 스토리라인을 생성하고 Story Director가 의존 관계를 고려한 멀티모달 조율 계획으로 변환하는 이중 엔진 설계를 사용하며, 5,000개 사례의 MedGame Bench를 구축하여 평가했다.",
-      "takeaway": "태스크 특화 파인튜닝이 오픈소스 LLM의 MedGame Bench 성능을 크게 향상시켜 상용 모델과의 격차를 줄였고, 파일럿 학습자 연구에서 MedGame이 텍스트 기반 대안보다 더 매력적이고 유용하다고 인식되었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.21570v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21570v1.pdf"
-  },
-  {
-    "id": "2607.21105",
-    "title": "HalluScope: Fine-grained Hallucination Diagnosis for Multimodal Large Language Models",
-    "authors": "Weilin Jin et al.",
-    "published": "2026-07-23",
-    "category": "cv",
     "categories": [
       "cs.CV"
     ],
     "tags": [
-      "benchmark",
-      "multimodal",
-      "generation",
-      "detection"
+      "agents",
+      "video",
+      "multimodal"
     ],
-    "summaryKo": "멀티모달 대규모 언어 모델의 환각 문제를 세밀하게 진단하기 위해 탐지, 분류, 설명 생성을 통합한 과제를 제안하고, 데이터셋과 진단 모델을 구축하여 최고 성능을 달성했으며, 진단 기반 피드백이 환각 교정에 효과적임을 입증했다.",
+    "summaryKo": "ReflexTrack은 피드백 기반의 학습 없는 에이전트로, 공간 및 시간 수준에서 예측을 검증하여 Referring Video Object Segmentation의 신뢰성을 향상시킨다.",
     "detail": {
-      "problem": "기존의 환각 탐지 방법은 거친 수준의 탐지만 제공하여 환각 유형 이해와 완화에 충분한 진단 정보를 제공하지 못한다.",
-      "method": "이를 해결하기 위해 환각 탐지, 분류, 해석 가능한 설명 생성을 함께 수행하는 세밀한 진단 과제를 제안하고, 자동 데이터 생성 파이프라인을 개발하여 HalluScope-30K 데이터셋을 구축했으며, 다중 세분화 공동 보상 함수를 설계하여 HalluScope-4B와 HalluScope-8B 진단 모델을 학습시켰다.",
-      "takeaway": "제안된 모델은 MHALO 벤치마크와 세밀한 환각 분류 벤치마크에서 최고 성능을 달성했으며, 탐지와 분류가 공동 최적화 하에 상호 이점을 보였다. 또한 진단 설명을 활용한 피드백 실험에서 환각 교정에 효과적임을 확인했으며, 특히 Qwen3-VL-8B-Instruct와 LLaVA-1.5-7B에서 모든 기준선을 크게 능가했다."
+      "problem": "최근의 에이전트 기반 RVOS 방법들은 대부분 일회성 공간 기반 grounding과 마스크 전파에 의존하여 초기 프롬프트와 시간적 예측이 검증되지 않은 상태로 남아 있다.",
+      "method": "ReflexTrack은 마스크 기반 공간 정제(Mask-guided Spatial Refinement)를 통해 키프레임 프롬프트의 마스크를 평가하고 반복적으로 갱신하며, 비디오 수준 마스크 반성(Video-level Mask Reflection)을 통해 불안정한 구간을 찾아 보완 키프레임을 선택하고 후보 예측을 생성하여 검증된 개선이 있을 때만 갱신한다.",
+      "takeaway": "Ref-VPS에서 69.7 Q, ReasonVOS에서 67.2 J&F를 달성하여 예측 수준의 피드백이 학습 없는 RVOS의 신뢰성을 크게 향상시킴을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21105v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21105v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.24098v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24098v1.pdf"
   },
   {
-    "id": "2607.21401",
-    "title": "When Are Reasoning-Based Guardrails Not Efficient? ResponseGuard: A Fast Vision-Language Guard for Real-Time Moderation",
-    "authors": "Dongbin Na",
-    "published": "2026-07-23",
-    "category": "cv",
+    "id": "2607.24101",
+    "title": "LU-500: A Logo Benchmark for Concept Unlearning",
+    "authors": "Keyu Li et al.",
+    "published": "2026-07-27",
+    "category": "multimodal",
     "categories": [
       "cs.CV",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "multimodal",
-      "detection"
+      "agents"
     ],
-    "summaryKo": "본 논문은 추론 과정 없이 단일 전방 패스로 비전-언어 모델의 응답을 실시간 검열하는 ResponseGuard를 제안하며, 기존 추론 기반 가드레일에 비해 응답 유해성 탐지에서 더 나은 성능과 훨씬 낮은 시간 비용을 달성한다.",
+    "summaryKo": "이 논문은 기존 개념 삭제 연구에서 간과된 로고라는 지역적이고 의미적으로 얽힌 설정을 다루기 위해 Fortune Global 500 기업 로고로 구성된 LU-500 벤치마크를 제안하고, 명시적 및 암시적 추적을 통해 다양한 삭제 방법의 한계를 분석한다.",
     "detail": {
-      "problem": "최근 비전-언어 가드레일은 체인 오브 소트 추론을 통해 유해성을 판단하지만, 이는 많은 토큰 생성이 필요하여 느리고 무거워 실시간 스트리밍 응답 검열에 비효율적이다.",
-      "method": "ResponseGuard는 요청, 응답, 이미지의 단일 풀링 표현으로부터 유해성 판단을 한 번의 순전파로 수행하며, 추론 과정 없이 유해성을 탐지한다.",
-      "takeaway": "2B 크기의 ResponseGuard는 표준 멀티모달 가드레일 벤치마크에서 3B 추론 기반 가드보다 응답 유해성 탐지 성능이 우수하고 약 150배 빠르지만, 요청 유해성에서는 추론 기반이 여전히 앞선다. 이미지만 있는 경우의 성능 차이는 추론 부재보다 고정된 비전 인코더에서 기인할 수 있으며, 추론 기반 가드는 이미지에 거의 주의를 기울이지 않는 것으로 나타났다."
+      "problem": "기존 개념 삭제 평가는 주로 이미지 전체를 지배하는 대상(스타일, 객체 범주, 초상화 등)에 초점을 맞춰, 작은 지역적 표시에 전체 개념이 담긴 로고의 특수한 실패 모드를 간과한다. 또한 로고는 제품, 상점, 광고 등에서 단어 '로고' 없이도 암시적으로 유발될 수 있어 의미적 얽힘이 발생한다.",
+      "method": "Fortune Global 500 기업 로고를 기반으로 약 10,000개의 정제된 텍스트-이미지 쌍으로 구성된 LU-500 벤치마크와 명시적 추적(LUex-500) 및 암시적 맥락 추적(LUim-500)을 제안하고, 로컬 로고 제거와 전역 이미지 보존을 평가하는 다중 세부 평가 프로토콜을 정의한다.",
+      "takeaway": "실험 결과, 기존 추론 시간 방법(NP, SLD, SEGA)과 미세 조정 기반 방법(ESD, Forget-Me-Not) 모두 비대상 콘텐츠 변경 없이 로고 증거를 제거하는 데 어려움을 겪었다. 프롬프트 공간 다중 에이전트 베이스라인 ProLU는 로컬 제거를 개선했지만, 프롬프트 필터링만으로는 가중치 수준의 분리를 대체할 수 없음을 보여주었다. 또한 로고 면적, 위치, 구조적 복잡성에 대한 상관관계 분석은 향후 로고 삭제가 전역 개념 억제보다 SSIM 기반 제약 같은 공간 인식 제어를 필요로 함을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.21401v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.21401v1.pdf"
-  },
-  {
-    "id": "2607.20372",
-    "title": "Notes to Self: Can LLMs Benefit from Experiential Abstractions?",
-    "authors": "Chang Liu, Xinyu Li, Artur Dubrawski",
-    "published": "2026-07-22",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval"
-    ],
-    "summaryKo": "이 논문은 인간이 경험을 추상화하여 문제 해결에 활용하는 것처럼 대규모 언어 모델도 솔루션 트레이스에서 추출한 경험적 추상화를 통해 성능을 향상시킬 수 있는지 연구하고, 이를 통해 수학 및 논리 추론 성능이 개선됨을 보여준다.",
-    "detail": {
-      "problem": "인간이 경험을 추상화하여 전략이나 주의 사항 등 재사용 가능한 형태로 문제 해결에 적용하는 것처럼, 대규모 언어 모델(LLM)도 이러한 경험적 추상화로부터 이점을 얻을 수 있는지 여부를 연구한다.",
-      "method": "MATH 훈련 세트의 LLM 솔루션 트레이스로부터 더 강력한 교사 모델 또는 LLM 자체가 자연어 추상화를 추출하여 검색 가능한 라이브러리를 구축한 후, (1) 추론 시 검색 및 (2) 추상화로 보강된 훈련 프롬프트를 사용한 강화 학습(RL)의 두 가지 활용 방식을 탐구한다.",
-      "takeaway": "경험적 추상화는 수학 및 논리 추론 벤치마크에서 LLM 성능을 향상시켰으며, LLM 스스로 추출한 추상화는 교사가 추출한 것과 유사한 성능을 보였고, 이 추상화 활용 프레임워크는 다른 데이터셋과 모델로 전이 가능함을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.20372v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.20372v1.pdf"
-  },
-  {
-    "id": "2607.20410",
-    "title": "LKValues: Aligning Large Language Models with Sri Lankan Societal Values",
-    "authors": "Nethmi Muthugala et al.",
-    "published": "2026-07-22",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding",
-      "survey"
-    ],
-    "summaryKo": "LKValues는 스리랑카 사회적 가치를 반영한 최초의 설문 기반 리소스로, 싱할라어-영어 지시문 데이터와 평가 벤치마크를 구축하여 LLM의 문화적 편향 완화를 목표한다.",
-    "detail": {
-      "problem": "LLM의 가치 정렬이 서구에 편향되어 스리랑카와 같은 다언어 사회의 지역적 가치를 제대로 반영하지 못하며, 기존 벤치마크에 싱할라어 맥락을 고려한 평가가 부재하다.",
-      "method": "삼중 설문조사(205명)로 40개의 사회적 가치를 도출하고, 이 값을 바탕으로 뉴스 기반 15만 개 지시문 코퍼스(LKValuesIT)와 1000개 평가 벤치마크(LKValuesBench)를 구축했다. 오픈 및 독점 LLM을 평가하고 세 가지 베이스 모델을 파인튜닝했다.",
-      "takeaway": "최신 LLM도 저자원·문화적 가치 정렬에 취약함을 보였으며, LKValues 파인튜닝은 Qwen 계열에서 영어·싱할라어 성능을 개선하고 무효 출력과 언어 간 차이를 줄였으나, 효과는 모델 계열에 의존적이었다. 공개 데이터셋과 재현 가능한 파이프라인을 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.20410v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.20410v1.pdf"
-  },
-  {
-    "id": "2607.20638",
-    "title": "WaveformQA: Benchmarking LLM Temporal Reasoning on Digital Waveforms",
-    "authors": "Yichuan Liu, Daniel Cummings, Nick Vadlamudi",
-    "published": "2026-07-22",
-    "category": "llm",
-    "categories": [
-      "cs.AI",
-      "cs.AR",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "code-generation",
-      "generation"
-    ],
-    "summaryKo": "WaveformQA는 디지털 파형 데이터에 대한 LLM의 시간적 추론 능력을 평가하는 오픈소스 벤치마크로, 360개 질문과 실제 하드웨어 동작 기반 파형을 제공하며, 실험 결과 LLM이 복잡한 시간적 추론에서 한계를 보이고 이벤트-시간 JSON 표현이 VCD 형식보다 추론 정확도를 향상시킴을 보여준다.",
-    "detail": {
-      "problem": "디지털 파형에 대한 시간적 추론은 설계 검증의 중요한 병목이지만, 기존 벤치마크는 주로 HDL 코드 생성에 초점을 맞추고 파형을 보조적으로만 활용했다.",
-      "method": "본 논문은 360개의 질문과 프로그램적으로 생성된 정답을 포함하는 WaveformQA 벤치마크를 제안하며, 파형은 오픈소스 설계 구현에서 생성되어 재현 가능성과 실제 하드웨어 동작에 기반한다.",
-      "takeaway": "최첨단 LLM 평가 결과, 단순 질문에서는 합리적인 정확도를 보였지만 맥락 창 제한과 복잡한 시간적 추론 및 다단계 질문에서 성능이 저하되었으며, 이벤트-시간 JSON 표현이 표준 VCD 형식보다 추론 정확도를 향상시켰다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.20638v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.20638v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.24101v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24101v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-26T03:48:59.784Z",
+  "collectedAt": "2026-07-28T03:30:19.674Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
