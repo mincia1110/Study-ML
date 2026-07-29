@@ -3,309 +3,305 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.24743",
-    "title": "ClinFusion: A Vision-Centric Multimodal LLM System for Holistic Medical Understanding",
-    "authors": "Hangjie Yuan et al.",
+    "id": "2607.25489",
+    "title": "Agentic AI in medicine: architectures, applications, evaluation, and challenges for clinical translation",
+    "authors": "Zheng Tong et al.",
+    "published": "2026-07-28",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "medical",
+      "retrieval",
+      "multimodal"
+    ],
+    "summaryKo": "본 체계적 문헌 검토는 의학 분야에서 에이전트 AI의 범위와 평가 관행이 임상 요구에 부합하지 않음을 지적하고, 현재 증거 기반이 공개 벤치마크와 시뮬레이션 환경에 편중되어 있음을 보여준다.",
+    "detail": {
+      "problem": "의학에서 에이전트 AI의 범위가 명확하지 않으며, 현재 평가 방식이 임상 사용 요구와 일치하지 않는다.",
+      "method": "5개 전자 데이터베이스에서 1,649건의 기록을 체계적으로 검토하고, 목표 지향적 작업 실행, 도구 사용, 외부 자원 상호작용, 피드백 기반 개선 또는 다중 에이전트 협업 기준을 충족하는 557개의 연구를 선정하여 분석했다.",
+      "takeaway": "선정된 연구들은 공개 벤치마크, 시뮬레이션, 후향적 데이터셋, 소규모 전문가 평가에 주로 의존하며, 과정 신뢰성, 증거 추적 가능성, 불확실성, 안전성, 워크플로 영향 및 외부 타당성은 일관되게 평가되지 않았다. 임상 전환을 위해서는 명확한 정의, 재현 가능한 평가, 감사 가능한 감독, 상호운용 가능한 시스템 설계 및 실제 임상 워크플로에서의 전향적 검증이 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25489v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25489v1.pdf"
+  },
+  {
+    "id": "2607.25294",
+    "title": "CLBench-V: Evaluating Multimodal Context Learning from Grounding to Knowledge Acquisition",
+    "authors": "Lai Wei et al.",
+    "published": "2026-07-28",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal"
+    ],
+    "summaryKo": "멀티모달 컨텍스트 학습을 평가하는 벤치마크 CLBench-V를 제안하며, 세 가지 차원(컨텍스트 접지, 새로운 정보 적용, 새로운 지식 학습)에서 평가한 결과 최고 점수가 0.2847에 불과하여 아직 해결되지 않은 과제임을 보여준다.",
+    "detail": {
+      "problem": "기존 컨텍스트 학습 평가는 텍스트 컨텍스트에 주로 초점을 맞추었으나, 실제 과학, 금융, 공간 추론 등 다양한 실용 작업에서는 멀티모달 컨텍스트를 학습하는 능력이 필요하나 이에 대한 체계적인 평가가 부족하다.",
+      "method": "공개 벤치마크와 자동 구축 및 필터링을 통해 새로 생성한 데이터셋을 결합하여 멀티모달 컨텍스트 학습 능력을 컨텍스트 접지, 새로운 정보 적용, 새로운 지식 학습의 세 가지 차원에서 평가하는 벤치마크 CLBench-V를 제안한다.",
+      "takeaway": "여섯 가지 최신 멀티모달 모델을 3,443개 인스턴스로 평가한 결과 최고 점수는 0.2847로 낮아 멀티모달 컨텍스트 학습이 아직 충분히 수행되지 못했으며, InternVL3.5-30B-A3B는 컨텍스트 접지와 새로운 지식 학습에서, Qwen3.5-Plus는 새로운 정보 적용에서 가장 좋은 성능을 보였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25294v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25294v1.pdf"
+  },
+  {
+    "id": "2607.25642",
+    "title": "Instruction-based Image Editing: A Survey on Data, Models, Evaluation, and Applications",
+    "authors": "Xianghao Zang et al.",
+    "published": "2026-07-28",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "diffusion",
+      "survey",
+      "generation"
+    ],
+    "summaryKo": "이 논문은 명령 기반 이미지 편집(IIE)에 대한 체계적인 조사로, 데이터 구축, 모델 아키텍처, 평가 및 응용의 핵심 차원을 다루고 새로운 진단 벤치마크를 제안하며 오픈소스 솔루션의 능력과 한계를 비교 분석한다.",
+    "detail": {
+      "problem": "명령 기반 이미지 편집(IIE) 연구에 대한 체계적인 분류와 종합적 검토가 부족하며, 다양한 모델 세대에 걸친 기술적 이정표와 표준화된 평가 기준의 필요성이 대두되었다.",
+      "method": "IIE 연구를 작업 정의, 데이터 구축 방법론, GAN 기반에서 확산 및 자기회귀 패러다임으로의 모델 아키텍처 진화, 평가 지표 및 벤치마크 개발, 상용 솔루션의 다섯 가지 차원으로 분류하여 체계적으로 검토하고, 모델 성능의 여러 측면을 평가할 수 있는 포괄적인 진단 벤치마크(CDD-IIE Bench)를 제안한다.",
+      "takeaway": "모델 세대를 넘어 중요한 기술적 이정표를 확인했으며, 오픈소스 솔루션의 실증적 비교를 통해 각각의 능력과 한계를 강조했다. 또한 향후 연구 방향을 논의하여 IIE 분야의 발전을 위한 통찰을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25642v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25642v1.pdf"
+  },
+  {
+    "id": "2607.24904",
+    "title": "Mage-VL: An Efficient Codec-Native Streaming Multimodal Foundation Model",
+    "authors": "Senqiao Yang et al.",
     "published": "2026-07-27",
     "category": "multimodal",
     "categories": [
       "cs.CV",
+      "cs.CL"
+    ],
+    "tags": [
+      "3d",
+      "video",
+      "multimodal"
+    ],
+    "summaryKo": "Mage-VL은 비디오 코덱 방식을 모방한 효율적인 커스텀 토크나이저와 이중 시스템 아키텍처를 통해 실시간 스트리밍 멀티모달 이해를 가능하게 하는 기반 모델이다.",
+    "detail": {
+      "problem": "표준 시각-언어 모델(VLM)은 복잡한 오프라인 시각적 추론에는 뛰어나지만 간단한 스트리밍 인식 작업에는 비효율적이며 성능이 저조한 모라벡 역설을 겪는다.",
+      "method": "Mage-VL은 Mage-ViT라는 커스텀 토크나이저를 통해 균일 프레임 샘플링 대신 앵커(I) 프레임과 예측(P) 프레임 간의 모션 벡터와 잔차 에너지를 활용하여 동적이고 엔트로피가 높은 영역을 선택적으로 인코딩함으로써 시각적 토큰 소비를 75% 이상 줄인다. 또한 경량 System 1 이벤트 게이트와 인과적 System 2 디코더로 구성된 생체 모방 이중 시스템 구조를 통해 능동적 스트리밍 인식을 가능하게 한다.",
+      "takeaway": "Mage-VL-4B는 정적 태스크에서 Qwen3-VL-4B와 성능이 동등하면서 비디오 이해와 2D/3D 공간 추론에서 큰 향상을 보였고, 최대 3.5배의 추론 속도 향상을 달성했다. 또한 15B Phi-4-reasoning-vision 베이스라인을 종합적으로 능가했으며, 사전 훈련 데이터 효율성, 가변 해상도 스케일링 등 7가지 주요 경험적 발견을 제시했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.24904v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.24904v1.pdf"
+  },
+  {
+    "id": "2607.25522",
+    "title": "I2VShield: An Efficient Proactive Defense Framework against DiT-based Image-to-Video Models",
+    "authors": "Yimao Guo, Zuomin Qu, Wei Lu",
+    "published": "2026-07-28",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "diffusion",
+      "privacy",
+      "video",
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "I2VShield는 DiT 기반 이미지-투-비디오(I2V) 모델에 대한 효율적인 사전 방어 프레임워크로, 적대적 학습 기반 텍스트 적응형 섭동 생성과 멀티모달 주의 집중 붕괴 공격을 통해 계산 비용을 줄이면서 보호 성능을 제공한다.",
+    "detail": {
+      "problem": "기존의 I2V 모델에 대한 사전 방어는 주로 그래디언트 기반 적대적 공격에 의존하며, 이는 공격자(방어자)가 대용량 GPU 메모리를 보유해야 한다는 한계가 있다.",
+      "method": "본 논문에서는 생성적 적대 공격에 기반한 I2VShield를 제안한다. 이는 텍스트 적응형 섭동 생성 프레임워크(계산 오버헤드 완화 및 시각적 비가시성 유지)와 DiT 기반 I2V 모델의 취약점을 활용하는 비목표 멀티모달 주의 집중 붕괴(MAD) 공격으로 구성된다.",
+      "takeaway": "광범위한 실험을 통해 I2VShield는 다양한 데이터셋과 DiT 기반 I2V 모델에서 경쟁력 있는 보호 성능을 달성하며, 특히 시공간 일관성을 방해하고 계산 비용을 크게 감소시킨다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25522v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25522v1.pdf"
+  },
+  {
+    "id": "2607.25921",
+    "title": "Evaluating VLMs for Autonomous Agent-Driven Geometry Clipping Detection in Video Game QA",
+    "authors": "Carlos Celemin et al.",
+    "published": "2026-07-28",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video",
+      "autonomous-driving",
+      "detection"
+    ],
+    "summaryKo": "이 논문은 비디오 게임 QA에서 기하학 클리핑 탐지를 위해 비전-언어 모델(VLM)을 평가하며, 제로샷 프롬프트 설정에서 여섯 가지 VLM의 성능을 분석하고, 현재 VLM이 독립적인 버그 탐지기보다는 다단계 QA 파이프라인 내에서 고재현율 후보 필터로 적합하다는 결론을 내린다.",
+    "detail": {
+      "problem": "게임 QA에서 수동 주석 없이 자율 에이전트 기반 파이프라인을 통해 기하학 클리핑과 같은 이상 징후를 감지하는 것은 어려운 문제이다. 이 논문은 비전-언어 모델(VLM)을 활용하여 이 문제를 해결하고자 한다.",
+      "method": "커스텀 탐험 에이전트가 게임 레벨을 탐색하여 시각적 관찰을 수집하고 자동 주석 파이프라인이 프레임 수준의 클리핑 레이블을 제공한다. 여섯 가지 최신 VLM을 제로샷 프롬프트 방식으로 벤치마킹하고 네 가지 프롬프트 변형에 대한 민감도를 분석한다.",
+      "takeaway": "VLM이 기하학 클리핑의 시각적 단서를 포착할 수 있지만, 근접 기하학 및 부분 폐색과 같은 시각적으로 모호한 프레임에서 상당한 거짓 양성을 생성한다. Gemini-3.1-Flash가 가장 높은 정확도와 프롬프트 변형에 대한 강건성을 보였으며, 오픈소스 모델은 프롬프트 설계에 따라 정밀도-재현율이 크게 변동한다. 따라서 현재 VLM은 독립적인 버그 탐지기보다는 다단계 QA 파이프라인에서 고재현율 후보 필터로 사용하는 것이 적합하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25921v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25921v1.pdf"
+  },
+  {
+    "id": "2607.25926",
+    "title": "Face De-Identification: A Domain-Centric Survey from Capture to Processing",
+    "authors": "Hui Wei, Hao Yu, Guoying Zhao",
+    "published": "2026-07-28",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "privacy",
+      "video",
+      "survey"
+    ],
+    "summaryKo": "얼굴 비식별화(De-ID) 기술을 물리적, 센서, 디지털 도메인에 걸쳐 데이터 수집 파이프라인 전반을 통합적으로 개관한 서베이 논문.",
+    "detail": {
+      "problem": "개인 식별 정보를 제거하면서도 다운스트림 작업의 유용성을 유지해야 하는 얼굴 비식별화 문제를 다루며, 기존 접근법이 주로 후처리 방식에 집중된 반면 본 논문은 물리적, 센서, 디지털 도메인을 아우르는 통합적 관점의 필요성을 제기한다.",
+      "method": "물리적, 센서, 디지털의 세 가지 도메인 중심으로 현재 방법론과 기술 발전, 각 단계별 도전 과제를 체계적으로 분석하고, 기존 평가 프로토콜을 검토하여 표준화된 포괄적 벤치마크의 필요성을 강조하며 향후 연구 방향을 제시하는 서베이 접근법을 취한다.",
+      "takeaway": "주요 결과로 도메인별 분석을 통한 체계적 개관을 제공하고 표준화된 평가 기준의 필요성을 강조했으며, 주요 개방 문제와 새로운 연구 방향을 식별했다는 점이다. 본 서베이는 방법론 자체를 제안하기보다 기존 연구를 종합한 개요로서의 성격을 가진다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25926v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25926v1.pdf"
+  },
+  {
+    "id": "2607.25857",
+    "title": "Shieldstral",
+    "authors": "Antonia Calvi et al.",
+    "published": "2026-07-28",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "Shieldstral은 3B 파라미터의 정책 적응형 멀티모달 안전 분류기로, 콘텐츠 모더레이션을 이진 질문-응답 작업으로 구성하여 텍스트 안전 벤치마크에서 7배 더 큰 모델과 동등하거나 더 나은 성능을 보이고 멀티모달 안전 분류에서 최첨단 성능을 달성한다.",
+    "detail": {
+      "problem": "다양한 분류 체계를 가진 이질적인 안전 데이터셋을 통합하기 어렵고, 기존의 멀티모달 안전 분류는 대형 모델에 의존해야 하는 문제가 있다.",
+      "method": "Shieldstral은 콘텐츠 모더레이션을 이진 질문-응답 작업으로 재구성하여 다양한 안전 데이터셋을 하나의 훈련 프레임워크로 통합한다. 또한 약 54.1M 샘플의 데이터 수집 및 생성 레시피와 정책 적응성을 평가하기 위한 세분화된 평가 세트를 제시한다.",
+      "takeaway": "3B 파라미터의 작은 모델이 텍스트 안전 벤치마크에서 7배 더 큰 모델과 동등하거나 더 나은 성능을 보이고, 멀티모달 안전 분류에서 최첨단 성능을 달성하여 작은 적응형 모델의 효과성을 입증했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25857v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25857v1.pdf"
+  },
+  {
+    "id": "2607.25186",
+    "title": "MyoCardBench: A Real-World Data Benchmark for Evaluating Large Language Models in Clinically Authentic Cardiovascular Care Scenarios",
+    "authors": "Xiao Li et al.",
+    "published": "2026-07-28",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "medical",
+      "multimodal"
+    ],
+    "summaryKo": "본 연구는 심혈관 치료 전반을 포괄하는 실제 임상 데이터 기반 벤치마크인 MyoCardBench를 구축하고 여러 LLM의 성능을 평가하였다.",
+    "detail": {
+      "problem": "대부분의 의료 LLM 벤치마크는 시험 지식이나 단일 과제에 집중하여 심혈관 치료의 종단적, 다중 모드, 안전 중심 워크플로를 반영하지 못한다.",
+      "method": "MyoCardBench는 13개 작업별 데이터셋에서 2,263개 항목을 포함하며, 16명의 심장 전문의가 주석과 참조를 구축하고 7개 LLM이 제로샷 환경에서 15,841개 출력을 생성했다. 개방형 작업은 핵심 포인트 범위와 전체 임상 품질로 평가되었고, CardioEthics는 정확도로 평가되었다.",
+      "takeaway": "GPT-5.4가 가장 높은 종합 성능(62.55)을 보였고, CardioAuxReport(86.38)가 가장 높은 점수를, CardioECGRead(17.25)와 CardioEthics(17.34)가 가장 낮았다. 전반적 임상 품질과 핵심 포인트 범위 간 격차가 CardioComm, CardioEmergRescue, CardioTreatPlan에서 크게 나타나, 이 벤치마크가 모델 강점과 임상적 누락 및 개선 우선순위 식별을 위한 프레임워크를 제공함을 보여준다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.25186v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25186v1.pdf"
+  },
+  {
+    "id": "2607.25600",
+    "title": "Beyond Self-Knowledge: Propagating Uncertainty Across Reasoning and Retrieval in LLMs",
+    "authors": "Chandan Kumar Sah, Xiaoli Lian, Li Zhang",
+    "published": "2026-07-28",
+    "category": "llm",
+    "categories": [
+      "cs.IR",
       "cs.AI",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "3d",
-      "medical",
-      "retrieval"
-    ],
-    "summaryKo": "본 논문에서는 의료 영상 이해를 위한 시각 중심의 다중 모달 거대 언어 모델 ClinFusion을 제안하며, 이는 2D/3D 의료 이미지 통합 및 임상 평가 프레임워크를 통해 다양한 벤치마크에서 최첨단 성능을 달성한다.",
-    "detail": {
-      "problem": "의료 분야에서 다중 모달 거대 언어 모델의 배포는 시각 중심의 과제로, 모델이 이질적인 2D 및 3D 의료 이미지에서 지식을 흡수해야 하며, 평가 프로토콜이 방사선 전문의의 임상 진료와 일치하고 정확하고 세분화된 사실성 기반 평가를 제공해야 한다는 문제가 있다.",
-      "method": "이를 해결하기 위해 ClinFusion을 제안하며, 2D와 3D 의료 이미지 이해를 통합하는 Cascade Spatial-Aware Locality Fusion 연산자를 갖는 구성적이고 계단식의 비전 인코더 아키텍처를 도입하고, 명령어 수행 평가를 위한 MedIF-Bench와 임상적으로 정렬된 보고서 생성 평가를 위한 관심 영역 기반 방법을 포함한 비전 기반 평가 프레임워크를 제안한다.",
-      "takeaway": "ClinFusion은 2D 및 3D 의료 벤치마크에서 최첨단 성능을 달성했으며, GPT-5.2 및 Gemini-3-Flash와 같은 강력한 독점 모델보다 우수한 성능을 보였고, 에이전트 도구 사용을 통한 증강이 가능하다. 맹검 평가에서 방사선 전문의가 ClinFusion의 보고서를 가장 높게 평가했으며, 제안된 관심 영역 기반 지표가 전문가 판단과 가장 강한 상관관계를 보임을 확인했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24743v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24743v1.pdf"
-  },
-  {
-    "id": "2607.24241",
-    "title": "FilmBench: A Film-Grade Benchmark for Cinematic Video Generation",
-    "authors": "Shengyi Wang et al.",
-    "published": "2026-07-27",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "video",
-      "multimodal",
+      "retrieval",
       "generation"
     ],
-    "summaryKo": "수상 경력이 있는 영화의 멀티 샷 프롬프트와 전문 영화 언어 기반 평가 체계를 사용해 비디오 생성 모델을 평가하는 FilmBench를 제안하며, 평가 결과 기존 벤치마크보다 점수가 낮고 동적 미학과 멀티 샷 생성에서 특히 부족함을 보인다.",
+    "summaryKo": "본 논문은 언어 모델의 언어화된 자신감(verbalized confidence)을 검색 라우팅 신호로 활용하여 검색 증강 생성에서 불필요한 검색을 줄이는 BeyondUncertainty 방법을 제안하고, 검색량은 20.4% 줄이면서 F1 점수를 소폭 향상시켰지만 자신감 추정 과정에서 총 토큰 사용량이 28.2% 증가하는 상충 관계를 보인다.",
     "detail": {
-      "problem": "기존 비디오 생성 벤치마크는 웹 소스나 LLM 템플릿에서 프롬프트를 가져오고 훈련되지 않은 일반 멀티모달 모델로 평가하며, 평가 분류 체계가 전반적 시각 품질, 텍스트 정합성, 시간적 부드러움 같은 기초 수준에 머물러 전문 영화 제작 기준을 반영하지 못한다.",
-      "method": "FilmBench는 T2V 및 R2V 벤치마크로, (1) 전문 감독이 선정한 수상 영화 클립에서 역설계한 프롬프트를 사용하며 대부분(1,169개 중 1,056개)이 멀티 샷이고, (2) 3개 축, 12개 구성 요소, 35개(T2V)+3개(R2V) 세부 지표의 3단계 영화적 분류 체계로 평가하며, (3) 전문가 수준의 자동 평가 에이전트와 핵심 영화 언어 연산자 모음(FilmOps)을 오픈소스로 공개한다.",
-      "takeaway": "평가 에이전트는 모델 수준 스피어만 상관계수 0.95(T2V) 및 0.96(R2V)으로 인간 모델 순위를 재현한다. 모든 모델의 점수가 기존 웹 기반 벤치마크보다 현저히 낮으며, 동적 미학에서 일관된 격차가 있고 단일 샷에서 멀티 샷으로 갈수록 성능이 크게 하락하며, 약한 모델일수록 그 차이가 더 벌어진다."
+      "problem": "검색 증강 생성은 무분별한 검색으로 인해 관련 없는 증거를 도입하고 불필요한 계산을 초래한다.",
+      "method": "BeyondUncertainty는 블랙박스 언어 모델로부터 구조화된 임시 답변과 자신감 추정치를 얻은 후, 검증 데이터로 선택한 모델별 임계값을 적용하여 낮은 자신감 질문에만 TF-IDF 검색을 수행하고 다시 답변을 생성하며, 높은 자신감 질문은 임시 답변을 그대로 반환한다.",
+      "takeaway": "BeyondUncertainty는 항상 검색하는 방식보다 검색된 문단을 20.4% 줄이면서 평균 토큰 수준 F1 0.483(항상 검색 0.467, 검색 없음 0.401)을 달성했다. 또한, 동일 검색 비율 조건에서 무작위 할당보다 18개 설정 중 17개에서 더 나은 성능을 보였으나(F1 평균 0.024 향상), 자신감 추정 프롬프트로 인해 총 토큰 사용량이 28.2% 증가했다. 자신감은 절대적 확률로는 잘 보정되지 않았지만 검색 이점 예측에 어느 정도 유효했다(AUROC 0.628)."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.24241v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24241v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.25600v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25600v1.pdf"
   },
   {
-    "id": "2607.24249",
-    "title": "SILICA: Repurposing Diffusion Priors for Joint Glass Segmentation and Depth Estimation",
-    "authors": "Tarun R et al.",
-    "published": "2026-07-27",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.RO"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "3d",
-      "autonomous-driving"
-    ],
-    "summaryKo": "SILICA는 확산 모델의 사전 지식을 활용하여 유리 분할과 깊이 추정을 공동으로 예측하는 통합 파이프라인으로, 실제 유리 깊이 주석 없이도 제로샷 전이를 가능하게 하여 최첨단 모델 대비 약 20% 향상된 성능을 달성한다.",
-    "detail": {
-      "problem": "표준 깊이 센서는 투명 표면에 대해 체계적으로 실패하며, 기존의 유리 인식 단안 깊이 추정 방법은 실제 유리 깊이 주석의 부족으로 인해 새로운 환경에 대한 제로샷 일반화가 어렵다.",
-      "method": "SILICA는 텍스트-이미지 확산 모델의 사전 지식을 활용하여 유리 분할과 깊이 추정을 공동으로 예측하는 통합 파이프라인이다. 상호 정보 교환을 통해 실제 유리 깊이 주석 없이도 강건한 공간 계층 구조를 구축하며, 예측된 분할 마스크를 사용하여 표준 센서의 잘못된 유리 깊이를 필터링하고 정확한 미터법 깊이를 복원한다.",
-      "takeaway": "Mirage 18k 데이터셋을 기반으로 한 실험에서 SILICA는 다양한 보지 못한 환경에서 제로샷 전이를 달성하며 최첨단 모델보다 약 20% 향상된 성능을 보여 투명 표면 인식의 새로운 기준을 제시한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24249v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24249v1.pdf"
-  },
-  {
-    "id": "2607.24707",
-    "title": "ERUnderstand: Evaluating Vision-Language Models on Structured ER Diagrams",
-    "authors": "Ali Ansari et al.",
-    "published": "2026-07-27",
-    "category": "cv",
-    "categories": [
-      "cs.AI",
-      "cs.CV",
-      "cs.DB"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "ERUnderstand는 2,960개의 ER 다이어그램으로 구성된 구조적 이해를 위한 첫 번째 대규모 벤치마크로, 최신 VLM들이 일반 요소는 잘 복구하지만 약한 개체, 다중값 속성, N항 관계에서는 성능이 급락함을 발견했다.",
-    "detail": {
-      "problem": "ER 다이어그램은 개념적 데이터베이스 설계의 핵심이지만, 대개 렌더링된 이미지로만 제공되어 AI 지원 데이터베이스 엔지니어링이 제한된다.",
-      "method": "2,960개의 다양한 도메인, 표기법, 복잡성 수준의 EER 구성을 포함하는 다이어그램을 수집하고 각각에 표준화된 기계 판독 가능 표현을 제공하여 세분화된 평가를 가능하게 하는 ERUnderstand 벤치마크를 구축했다.",
-      "takeaway": "최신 VLM 평가 결과, 일반 ERD 요소는 F1>0.74로 신뢰성 있게 복구되었지만, 약한 개체(0.28), 다중값 속성(0.14), N항 관계(0.07)에서는 성능이 급감했다. 추론 강화 모델은 15-25% 향상되었으나 언어적 사전 확률과 다이어그램 복잡성 증가에 민감했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24707v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24707v1.pdf"
-  },
-  {
-    "id": "2607.24191",
-    "title": "StanceFlip: A Comprehensive Multi-Dimensional Benchmark for Multimodal Conversational Stance Flipping Forecasting",
-    "authors": "Heyan Chai et al.",
-    "published": "2026-07-27",
-    "category": "multimodal",
+    "id": "2607.25933",
+    "title": "Evaluating Multi-Turn Multimodal Diagnostic Reasoning on Challenging Real-World Clinical Cases",
+    "authors": "Rui Yang et al.",
+    "published": "2026-07-28",
+    "category": "llm",
     "categories": [
       "cs.CL",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "multimodal",
-      "detection"
-    ],
-    "summaryKo": "StanceFlip은 다중 모달 대화에서 입장 변화 예측을 위한 포괄적인 벤치마크로, 다섯 가지 모달리티에 걸친 정적 상태 스냅샷 추출과 동적 입장 변화 추적을 위한 두 가지 하위 과제와 ConStaFF 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "기존 대화형 입장 탐지 벤치마크는 입장 반전을 포함한 신념의 동적 진화를 포착하지 못하고, 감정 상태와 논리적 추론을 분리하기 어려우며, 냉소와 같은 화용적 모호성을 해결하는 데 다중 모달 단서의 중요성을 간과하는 한계가 있다.",
-      "method": "이를 해결하기 위해 StanceFlip 벤치마크와 ConStaFF 프레임워크를 제안한다. StanceFlip은 다섯 가지 모달리티에 걸쳐 정적 상태 스냅샷(발화자, 대상, 감정, 정서, 입장, 근거)을 추출하는 다중 모달 입장 여섯짝 추출과 동적 입장 변화와 그 원인을 추적하는 입장 변화 귀인이라는 두 가지 하위 과제를 포함한다. ConStaFF는 대규모 언어 모델을 기반으로 하여 Thought-of-Stance 추론 프레임워크와 자기 반성적 검증 메커니즘을 통해 입장 추론을 수행한다.",
-      "takeaway": "광범위한 실험 결과, 제안 방법은 여섯짝 추출과 입장 변화 귀인 모두에서 강력한 다중 모달 대규모 언어 모델 기준선을 크게 능가하는 최고 성능을 달성했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24191v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24191v1.pdf"
-  },
-  {
-    "id": "2607.24313",
-    "title": "Energy Constrained Hierarchical Underwater Monitoring via Local Multi-Agent RAG",
-    "authors": "Mohamed Amine Janati, Laurent Gautier, Stéphane Barbot",
-    "published": "2026-07-27",
-    "category": "multimodal",
-    "categories": [
-      "cs.IR",
-      "cs.CV",
-      "cs.MA",
-      "cs.RO"
-    ],
-    "tags": [
-      "agents",
-      "retrieval",
-      "embedding",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 에너지 제약이 있는 수중 환경에서 항시 작동하는 저전력 엣지 센싱과 선택적 고성능 로컬 추론을 결합한 계층적 마스터-위성 구조의 수중 모니터링 아키텍처를 제안한다.",
-    "detail": {
-      "problem": "해양 생물 모니터링은 엄격한 에너지 제약, 열악한 수중 연결성, 원격지에서의 원시 다중 모드 데이터 전송 비용 문제에 직면해 있다.",
-      "method": "본 논문은 항시 작동하는 엣지 센싱(MAX78000/MAX78002 마이크로컨트롤러)과 선택적 고성능 로컬 추론(NVIDIA Jetson Orin NX)을 결합한 저소비 전력 수중 모니터링 아키텍처를 제안한다. 활성화된 Jetson은 로컬 다중 모드 파이프라인(데이터 수집, 시각적 대상 추출, 임베딩 기반 인덱싱, 종 식별, 검색 증강 추론, 자동 보고)을 실행하며, LangChain 기반 멀티 에이전트 프레임워크가 쿼리 라우팅, 분석, 에너지 관리, 하드웨어 재구성, 보고서 생성을 조정한다.",
-      "takeaway": "제안된 아키텍처는 시각 및 음향 모니터링 사례 연구를 통해 평가되었으며, 초저전력 연속 센싱과 로컬 다중 모드 지능을 연결하여 연구자 준비 지식을 생성하고 데이터를 압축하여 전송함으로써 에너지 사용과 통신 오버헤드를 최소화한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24313v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24313v1.pdf"
-  },
-  {
-    "id": "2607.24560",
-    "title": "EgoPlay: Event-Triggered Video Editing for Egocentric Streams",
-    "authors": "Jinjie Mai et al.",
-    "published": "2026-07-27",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "video"
-    ],
-    "summaryKo": "EgoPlay는 자아 중심 동영상 스트림을 위한 이벤트 트리거 기반 비디오 편집 모델로, 이벤트 인식과 편집을 단일 종단간 모델로 학습하여 기존 방법들을 능가한다.",
-    "detail": {
-      "problem": "기존 방법은 별도의 이벤트 탐지기와 편집기를 연쇄적으로 사용했으나, EgoPlay는 이벤트 인식, 시간적 제약, 픽셀 수준 편집을 공동으로 학습하는 단일 모델을 제안하여 효율성을 높이고 음성 및 다중 이벤트 프롬프트를 처리한다.",
-      "method": "EgoPlay는 Ego4D에서 구축한 106K개의 이벤트 트리거 클립-프롬프트 쌍 데이터셋으로 사전 훈련된 V2V 확산 트랜스포머를 미세 조정하며, 이벤트 트리거 감독을 사용한 양방향 비디오 확산 편집기를 훈련하고 청크 단위 스트리밍 추론을 위한 인과 변형을 도출한다.",
-      "takeaway": "Ego4D 벤치마크에서 EgoPlay는 최신 지시 기반 자아 중심 비디오 편집 기준선인 EgoEdit 대비 편집 품질 17.7%, 시각적 품질 16.9%, 배경 일관성 16.4%의 상대적 향상을 보였으며, VLM 기반 탐지기-편집기 기준선 대비 절반 미만의 GPU 메모리로 유사한 향상을 달성했다. 또한 이벤트 인식 평가 프로토콜을 도입하여 사후 트리거 편집 품질, 사전 트리거 보존, 거짓 트리거 강건성을 측정한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24560v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24560v1.pdf"
-  },
-  {
-    "id": "2607.24730",
-    "title": "KANEx: Translating Kolmogorov-Arnold Networks' Interpretability to Medical Explainability",
-    "authors": "Krithi Shailya et al.",
-    "published": "2026-07-27",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
       "medical",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 KAN의 상징적 투명성을 활용하여 VLM 추론을 근거함으로써 의료 영상 분석에서 설명 가능성의 신뢰도를 높이는 KANEx 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "기존 흉부 X-ray 분류기는 시각-언어 모델(VLM)과 결합되어 자연어 설명을 생성하지만, 시각 모델의 불투명성을 해결하지 못해 임상의 신뢰를 저해한다.",
-      "method": "KAN의 본질적으로 해석 가능한 스플라인 기반 구성 요소를 사용하여 VLM 추론을 근거하는 KANEx 프레임워크와, 기울기 근사 없이 KAN 모델에서 직접 유도된 히트맵 생성 방법인 KAN-Map을 제안한다.",
-      "takeaway": "MIMIC-CXR 데이터셋 평가에서 KAN 기반 아키텍처는 기존 ResNet/ViT 대비 시맨틱 유사성과 충실도 높은 살리언시 맵을 보였으며, 시각적 위치 파악 및 하류 추론 품질을 10% 개선하였다. 이는 수학적으로 해석 가능한 단위로 언어 설명과 시각적 속성을 근거하는 것이 신뢰할 수 있는 의료 AI를 위한 필수 단계임을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24730v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24730v1.pdf"
-  },
-  {
-    "id": "2607.24744",
-    "title": "Data Pyramid for Embodied Manipulation",
-    "authors": "Yifan Ye et al.",
-    "published": "2026-07-27",
-    "category": "multimodal",
-    "categories": [
-      "cs.RO",
-      "cs.CV"
-    ],
-    "tags": [
-      "agents",
-      "multimodal",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "이 논문은 신체화된 조작을 위한 데이터 생태계를 다섯 가지 상호 보완적인 데이터 소스로 구성된 피라미드 구조로 체계화하고, 각 소스의 특성과 최신 기반 모델들의 데이터 구성 방식을 분석하며, 여섯 가지 미해결 과제를 논의한다.",
-    "detail": {
-      "problem": "멀티모달 기반 모델은 인터넷 데이터를 통해 학습되지만, 신체화된 에이전트는 관찰과 물리적 상태 및 행동이 결합된 데이터를 필요로 하여 데이터 수집에 어려움이 있다.",
-      "method": "데이터 피라미드는 실제 로봇 데이터, UMI-스타일 데이터, 자기중심적/외부적 데이터, 시뮬레이션 데이터, 일반 시각-언어 데이터를 포함하며, 확장성과 로봇 정합성 간의 긴장 관계를 중심으로 각 소스의 품질, 다양성, 재사용성, 물리적 충실도를 특성화한다. 나아가 최근 신체화된 기반 모델(두뇌 모델, 시각-언어-행동 모델, 세계-행동 모델)의 데이터 구성을 분석하여 지각, 추론, 계획, 행동 생성, 세계 예측 능력과의 연관성을 설명한다.",
-      "takeaway": "데이터 구성이 모델의 다양한 능력과 어떻게 연관되는지 체계적으로 보여주고, 대규모 촉각 데이터셋, 실패 및 복구 데이터, 확장 가능한 수집 파이프라인 등 여섯 가지 중요한 미해결 과제를 식별하였다. 그러나 이는 개념적 프레임워크와 문헌 분석에 기반한 초기 연구로, 구체적인 데이터 혼합 방법이나 실질적 구현 방안을 제시하지는 못한다는 한계가 있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24744v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24744v1.pdf"
-  },
-  {
-    "id": "2607.24542",
-    "title": "From transcription to semantic corpus analysis: unsupervised learning of sentence representations for ancient languages",
-    "authors": "Th{é}otime de la Selle",
-    "published": "2026-07-27",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL",
-      "cs.DL",
-      "cs.IR"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval",
-      "embedding",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 고대 언어의 문장 표현을 위해 TSDAE와 대조적 문장 임베딩(CSE)이라는 두 가지 비지도 학습 전략을 제안하며, 교부 문헌 내 성서 인용 식별 과업에서 기존 모델들보다 우수한 성능을 달성하고, 적은 데이터로도 효과적임을 보여주었다.",
-    "detail": {
-      "problem": "고대 언어에 대한 자동 텍스트 인식(ATR)은 방대하고 잡음이 많은 비정형 텍스트를 제공하지만, 기존 문장 임베딩 방법은 다국어 인코더의 성능 저하, 특화 모델의 비등방성 공간, 레이블 데이터 부재로 인해 고대 언어로의 전이가 어렵다.",
-      "method": "본 연구는 토큰 수준 언어 모델을 원시 문장만을 이용하여 코퍼스 특화 문장 인코더로 적응시키는 두 가지 완전 비지도 전략(TSDAE와 대조적 문장 임베딩)을 탐구하고, 라틴어와 고대 그리스어 교부 문헌의 성서 재사용 식별(이진 탐지 및 대응 검색)을 통해 평가한다.",
-      "takeaway": "적응된 인코더는 모든 기준선을 능가했다: TSDAE는 대규모 도메인 내 말뭉치에서 이진 탐지에서 우수했고, CSE는 대응 검색에서 우수했으며 4-8k개의 원시 문장만으로 최적 성능에 도달하고 저자/작품 간 전이와 잡음 텍스트에도 강건했다. 전체 파이프라인은 온라인 도구 Paraphrasis를 통해 제공된다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.24542v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24542v1.pdf"
-  },
-  {
-    "id": "2607.24098",
-    "title": "ReflexTrack: A Feedback-Driven Agent for Training-Free Referring Video Object Segmentation",
-    "authors": "Yuanjia Li et al.",
-    "published": "2026-07-27",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "agents",
-      "video",
       "multimodal"
     ],
-    "summaryKo": "ReflexTrack은 피드백 기반의 학습 없는 에이전트로, 공간 및 시간 수준에서 예측을 검증하여 Referring Video Object Segmentation의 신뢰성을 향상시킨다.",
+    "summaryKo": "이 논문은 기존 평가의 한계를 극복하기 위해 실제 임상 사례 기반의 다중 턴 진단 추론 벤치마크 ClinMM-Bench를 제안하고, 15개 MLLM 평가 결과 진단 정확도와 추론 질에서 모두 한계가 있음을 발견했다.",
     "detail": {
-      "problem": "최근의 에이전트 기반 RVOS 방법들은 대부분 일회성 공간 기반 grounding과 마스크 전파에 의존하여 초기 프롬프트와 시간적 예측이 검증되지 않은 상태로 남아 있다.",
-      "method": "ReflexTrack은 마스크 기반 공간 정제(Mask-guided Spatial Refinement)를 통해 키프레임 프롬프트의 마스크를 평가하고 반복적으로 갱신하며, 비디오 수준 마스크 반성(Video-level Mask Reflection)을 통해 불안정한 구간을 찾아 보완 키프레임을 선택하고 후보 예측을 생성하여 검증된 개선이 있을 때만 갱신한다.",
-      "takeaway": "Ref-VPS에서 69.7 Q, ReasonVOS에서 67.2 J&F를 달성하여 예측 수준의 피드백이 학습 없는 RVOS의 신뢰성을 크게 향상시킴을 보여준다."
+      "problem": "기존 MLLM 평가는 단일 턴 또는 고립된 과제에 의존하여 점진적 정보 공개, 진단 가설의 동적 업데이트, 임상 추론의 지속적 개선 등 실제 임상 진료의 복잡성을 반영하지 못한다.",
+      "method": "8개 전문 분야의 1,089개 실제 임상 사례와 3,760개 의료 영상으로 구성된 다중 턴 임상 진단 평가 벤치마크 ClinMM-Bench를 구축하고, 진단 정확도와 추론 질을 평가하는 2단계 평가 프레임워크로 15개 MLLM을 평가했다.",
+      "takeaway": "독점 모델이 가장 높은 진단 정확도를 보였지만 완전히 정확한 진단 비율은 모든 모델에서 제한적이었고, 추론 질 측면에서 모델들은 그럴듯한 진단 방향을 식별 가능했으나 신뢰할 수 있는 진단 추론 생성에는 한계가 있었다. 오류 분석 결과 정보 통합 실패, 지식 매핑 오류, 인식 오류, 조기 종결, 시각적 환각의 5가지 실패 유형이 식별되었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.24098v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24098v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.25933v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25933v1.pdf"
   },
   {
-    "id": "2607.24101",
-    "title": "LU-500: A Logo Benchmark for Concept Unlearning",
-    "authors": "Keyu Li et al.",
-    "published": "2026-07-27",
-    "category": "multimodal",
+    "id": "2607.25947",
+    "title": "A Cost-Effective Multimodal LLM Reasoning Framework for Question Answering over Irregular Clinical Time Series",
+    "authors": "Frank Nie et al.",
+    "published": "2026-07-28",
+    "category": "llm",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents"
+      "embedding",
+      "multimodal"
     ],
-    "summaryKo": "이 논문은 기존 개념 삭제 연구에서 간과된 로고라는 지역적이고 의미적으로 얽힌 설정을 다루기 위해 Fortune Global 500 기업 로고로 구성된 LU-500 벤치마크를 제안하고, 명시적 및 암시적 추적을 통해 다양한 삭제 방법의 한계를 분석한다.",
+    "summaryKo": "본 논문은 불규칙한 임상 시계열 데이터의 질의응답을 위한 비용 효율적인 멀티모달 LLM 추론 프레임워크 ClinPRISM을 제안하며, 16개의 시계열 토큰만으로 홀드아웃 평가 벤치마크에서 최고 성능을 달성하고 평균 0.15초의 추론 지연 시간을 보인다.",
     "detail": {
-      "problem": "기존 개념 삭제 평가는 주로 이미지 전체를 지배하는 대상(스타일, 객체 범주, 초상화 등)에 초점을 맞춰, 작은 지역적 표시에 전체 개념이 담긴 로고의 특수한 실패 모드를 간과한다. 또한 로고는 제품, 상점, 광고 등에서 단어 '로고' 없이도 암시적으로 유발될 수 있어 의미적 얽힘이 발생한다.",
-      "method": "Fortune Global 500 기업 로고를 기반으로 약 10,000개의 정제된 텍스트-이미지 쌍으로 구성된 LU-500 벤치마크와 명시적 추적(LUex-500) 및 암시적 맥락 추적(LUim-500)을 제안하고, 로컬 로고 제거와 전역 이미지 보존을 평가하는 다중 세부 평가 프로토콜을 정의한다.",
-      "takeaway": "실험 결과, 기존 추론 시간 방법(NP, SLD, SEGA)과 미세 조정 기반 방법(ESD, Forget-Me-Not) 모두 비대상 콘텐츠 변경 없이 로고 증거를 제거하는 데 어려움을 겪었다. 프롬프트 공간 다중 에이전트 베이스라인 ProLU는 로컬 제거를 개선했지만, 프롬프트 필터링만으로는 가중치 수준의 분리를 대체할 수 없음을 보여주었다. 또한 로고 면적, 위치, 구조적 복잡성에 대한 상관관계 분석은 향후 로고 삭제가 전역 개념 억제보다 SSIM 기반 제약 같은 공간 인식 제어를 필요로 함을 시사한다."
+      "problem": "불규칙한 임상 시계열(ICTS)에 대한 질의응답은 중요하지만, 기존의 멀티모달 시계열 대규모 언어 모델은 임상 관측의 희소성, 비동시성, 불규칙한 샘플링 패턴을 모델링하는 데 적합하지 않다.",
+      "method": "이를 해결하기 위해 ClinPRISM은 불규칙성 인식 다중 스케일 인코더, 시간적 증거 증류기, 점진적 정렬 전략을 포함한 프레임워크를 제안하며, 30,000개의 임상 시계열과 41,000개의 명령어 튜닝 인스턴스를 구축하여 40억 파라미터 LLM 백본을 학습시킨다.",
+      "takeaway": "ClinPRISM은 홀드아웃 평가 벤치마크에서 최고 수준의 성능을 달성하며, 16개의 시계열 토큰만을 사용하고 평균 0.15초의 추론 지연 시간을 보여 효율적이다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.24101v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.24101v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.25947v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.25947v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-28T03:30:19.674Z",
+  "collectedAt": "2026-07-29T03:31:07.402Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
