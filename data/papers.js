@@ -3,83 +3,135 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.26885",
-    "title": "SCALPEL: Semantic Cross-modal Alignment via LLM-Powered Encoder Learning for Medical Vision-Language Representation",
-    "authors": "Yunzhan Fu et al.",
-    "published": "2026-07-29",
+    "id": "2607.28300",
+    "title": "MonoVoc: Decoupling Geometry and Semantics for Lightweight Monocular Open-Vocabulary 3D Gaussians",
+    "authors": "Pouya Ardekhani et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "3d",
+      "video",
+      "retrieval",
+      "embedding",
+      "benchmark"
+    ],
+    "summaryKo": "본 논문은 단안 비디오 시퀀스에서 기하 재구성과 의미 통합을 분리해 객체 수준의 개방형 어휘 3D 가우시안 맵을 경량 생성하는 훈련 없는 파이프라인을 제안한다.",
+    "detail": {
+      "problem": "기존 3D 가우시안 프레임워크는 다중 시점 촬영 요구, 장면별 최적화 비용, 고밀도 언어 특징 저장으로 인한 메모리 과부하 문제가 있다.",
+      "method": "3D 기하 재구성과 의미 통합을 명시적으로 분리하고, 기하는 독립적으로 추출하며 의미는 가벼운 모듈식 사후 처리를 통해 객체 수준으로 통합한다. 입력은 표준 단안 비디오 시퀀스이다.",
+      "takeaway": "Replica 데이터셋 평가에서 렌더링 충실도와 분할 정확도를 유지하면서 메모리 사용량을 SOTA 대비 한 자릿수로 줄였다. 초록에는 별도의 제한 사항이 명시되어 있지 않다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28300v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28300v1.pdf"
+  },
+  {
+    "id": "2607.28394",
+    "title": "Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer",
+    "authors": "Weiquan Lin et al.",
+    "published": "2026-07-30",
     "category": "multimodal",
     "categories": [
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "medical",
+      "video",
       "retrieval",
-      "multimodal"
+      "survey",
+      "generation"
     ],
-    "summaryKo": "SCALPEL은 의료 영상-언어 표현 학습을 위해 생성형 LLM을 등방성 인코더로 변환하고 비대칭 정렬 전략과 해부학-부정 인식 목적 함수를 사용하는 프레임워크이다.",
+    "summaryKo": "대규모 파운데이션 모델의 사전 지식을 손-물체 상호작용(HOI)의 재구성, 생성, 로봇 적용에 체계적으로 연결한 최초의 서베이 논문이다.",
     "detail": {
-      "problem": "기존 의료 VLP 프레임워크는 경량 텍스트 인코더의 제한된 표현 능력과 LLM 통합 시 발생하는 표현 붕괴, 메모리 과부하, 해부학적 측면성 및 부정어를 무시하는 의료 환각 문제를 겪는다.",
-      "method": "SCALPEL은 임상 보고서 대비 미세조정으로 LLM을 등방성 인코더로 만들고, 오프라인 특성 캐싱을 활용한 비대칭 정렬로 효율적 학습을 수행하며, 측면성 혼동이나 잘못된 부정을 명시적으로 페널티하는 해부학-부정 인식 목적 함수를 도입한다.",
-      "takeaway": "SCALPEL은 MIMIC-CXR, CheXpert, IU X-Ray 데이터셋에서 크로스모달 검색, 제로샷 질병 분류, 의료 VQA 태스크에서 최첨단 성능을 달성했다."
+      "problem": "손-물체 상호작용은 손의 관절, 물체 기하, 접촉, 의미, 역학을 동시에 추론해야 하며 시각적 불확실성이 큰 어려운 과제이다. 기존 연구들은 파운데이션 모델을 단순히 사용한다고만 기술할 뿐, 어떤 지식이 어느 단계에 도입되고 어떤 불확실성을 줄이는지 체계적으로 정리하지 못했다.",
+      "method": "여섯 개의 HOI 작업(재구성 및 생성)으로 문헌을 분류하고, 기하·의미·시각의 세 계열로 나뉜 여덟 가지 파운데이션 모델 하위 사전 지식 택소노미를 제안한다. 이 택소노미를 바탕으로 각 사전 지식이 HOI 파이프라인과 작업에서 어떻게 표현·주입·적응되는지 분석하고, HOI 지식이 로봇 학습에 활용되는 방식과 데이터셋·평가 프로토콜도 정리한다.",
+      "takeaway": "본 서베이는 HOI 파운데이션 모델 연구를 체계적으로 정리하고 일반화 가능한 HOI 시스템을 위한 방향을 제시한다. 한계와 미래 방향을 논의하며, 지속적으로 새로운 방법과 벤치마크를 수집하는 저장소를 운영한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.26885v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26885v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28394v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28394v1.pdf"
   },
   {
-    "id": "2607.26769",
-    "title": "See2Think: Do Multimodal Models Really Use Intermediate Visual States?",
-    "authors": "Siyu Yan et al.",
-    "published": "2026-07-29",
-    "category": "cv",
+    "id": "2607.28609",
+    "title": "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
+    "authors": "Qiushi Sun et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
     "categories": [
-      "cs.CV",
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents"
+    ],
+    "summaryKo": "컴퓨터 사용 에이전트(CUA)의 궤적을 평가하는 비전-언어 모델(VLM) 심사자의 신뢰성을 표준화된 벤치마크로 검증하고, 저비용 오픈 보상 모델(OS-Shepherd)을 제안한 논문.",
+    "detail": {
+      "problem": "CUA 궤적이 지시를 수행했는지 검증하는 데 VLM 심사자가 점점 사용되지만, 이들이 과연 신뢰할 만한지는 체계적으로 검토되지 않았다.",
+      "method": "다양한 플랫폼과 에이전트 백본의 실제 궤적으로 구성된 OSReward 벤치마크와 어려운 사례 위주의 OSReward-Hard, 정밀 평가용 OSReward-Multi를 구축하고, 이 위에서 VLM 심사자를 종합 평가했다. 또한 100K 규모의 추론 주석 말뭉치 OS-Shepherd-100K를 공개하고 이를 활용해 OS-Shepherd(9B, 35B) 보상 모델을 학습시켰다.",
+      "takeaway": "최신 VLM들도 이상적인 심사자에는 못 미쳤으며 실패를 성공으로 잘못 판정하는 관대함 편향이 공통적으로 나타났다. OS-Shepherd는 상용 심사자 수준의 신뢰성을 약 30~60% 낮은 비용으로 제공했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28609v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28609v1.pdf"
+  },
+  {
+    "id": "2607.27654",
+    "title": "From Single- to Cross-Document: Benchmarking Multi-Granularity Event Analysis of Large Language Models",
+    "authors": "Tao Wen et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "3d",
-      "multimodal"
+      "retrieval",
+      "generation",
+      "detection"
     ],
-    "summaryKo": "다중모달 대규모 언어 모델의 추론 과정에서 중간 시각적 상태의 실제 활용 여부를 평가하는 See2Think 프레임워크를 제안하며, 시각적 추론이 모델과 환경에 강하게 의존하고 충실한 렌더링이 주요 병목임을 밝힌 연구.",
+    "summaryKo": "MiGUE-Bench는 단일 문서부터 교차 문서까지의 다중 세분화 이벤트 분석에서 대규모 언어 모델의 성능을 체계적으로 평가하기 위한 벤치마크이다.",
     "detail": {
-      "problem": "기존 벤치마크는 제한된 작업 범위와 부분적으로 텍스트로 해결 가능한 샘플, 그리고 중간 시각적 상태의 생성 및 사용 과정을 진단하지 않고 최종 답변만 평가하는 한계가 있어, 다중모달 모델이 추론 시 중간 시각적 상태를 실제로 의존하는지 불분명하다.",
-      "method": "See2Think는 2D 구조, 3D 장면, 실제 세계 추론을 포괄하는 12개 작업 범주의 1,200개 개방형 시각 의존 문제를 포함한 See2ThinkBench와, 네 가지 통제된 추론 환경에서 텍스트 생각, 시각적 행동, 렌더링 상태 및 후속 추론을 기록하는 Visual Action-of-Thought (VAoT)로 구성된 통합 평가 프레임워크이다.",
-      "takeaway": "주요 결과로, 시각적 추론은 모델과 환경에 따라 강하게 의존하며 어떤 단일 설정도 모든 작업에서 일관된 우위를 보이지 않는다. 프로세스 분석은 모델이 일반적으로 적절한 시각적 연산을 선택하지만 충실한 렌더링이 가장 명확한 병목이며, 높은 피드백 수용이 정확도 향상으로 이어지지 않음을 보여준다. 한계로, 왜곡된 피드백에 대한 통제된 개입 실험에서 정확도가 10% 이상 하락하여 시각적 상태에 대한 행동 의존성을 확인하였다."
+      "problem": "기존 벤치마크는 문서 세분화, 과제 설계, 데이터 소스가 제한적이어서 대규모 언어 모델의 이벤트 분석 능력에 대한 종합적 이해가 부족하다.",
+      "method": "LLM 기반 자기 교정 주석 프레임워크인 MiGUE-Pipeline을 개발하여 고품질 이벤트 데이터를 확장 가능하게 구축하고, 이벤트 탐지, 관계 추론, 구조 귀납, 미래 예측의 네 가지 핵심 과제를 통해 원자적 이벤트부터 복잡한 교차 문서 서사까지 모델 능력을 평가한다.",
+      "takeaway": "최신 LLM과 검색 증강 생성(RAG) 방법에 대한 광범위한 실험을 통해 현재 성능 경계를 확인하고 주요 결함을 식별하여, 향후 어려운 이벤트 분석 과제에서 LLM 개선을 위한 통찰을 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.26769v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26769v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.27654v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27654v1.pdf"
   },
   {
-    "id": "2607.27155",
-    "title": "OmegaUse-OfficeVal: Benchmarking LLM Agents on Long-Horizon Office-Suite Tasks with Economic Grounding",
-    "authors": "Jingbo Zhou et al.",
-    "published": "2026-07-29",
-    "category": "llm",
+    "id": "2607.27959",
+    "title": "FiRE: Enhancing MLLMs with Fine-Grained Context Learning for Complex Image Retrieval",
+    "authors": "Bohan Hou et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
     "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.HC"
+      "cs.CV",
+      "cs.IR"
     ],
     "tags": [
+      "retrieval",
+      "multimodal",
       "benchmark",
-      "agents",
-      "privacy"
+      "generation"
     ],
-    "summaryKo": "기존 LLM 에이전트 벤치마크의 한계를 극복하기 위해, 경제적 근거를 갖춘 장기 오피스 스위트 작업 평가 벤치마크 OmegaUse-OfficeVal을 제안한다.",
+    "summaryKo": "본 논문은 MLLM의 미세한 문맥 모델링과 분리된 파인튜닝 목표를 도입해 복잡한 이미지 검색 성능을 향상시키는 FiRE를 제안한다.",
     "detail": {
-      "problem": "기존 벤치마크는 LLM 에이전트가 오피스 스위트 워크플로우를 합리적인 비용으로 수행할 수 있는지 평가하는 데 한계가 있다.",
-      "method": "실무자 제안 요청에서 개인정보 보호 과정을 거쳐 추출한 100개의 장기 작업으로 구성된 OmegaUse-OfficeVal을 제안한다. 각 작업은 인간 노동 시간과 작업 가격 프록시라는 경제적 신호를 가지며, 세부 루브릭 기반 코드 검증기로 안정적인 평가를 수행한다.",
-      "takeaway": "평가 결과, 모든 LLM은 인간 작업자보다 상당히 저렴하고 빠르지만, 아직 인간 수준의 결과물 품질에는 도달하지 못했다."
+      "problem": "기존 MLLM 기반 이미지 검색 연구는 복잡한 작업(긴 텍스트-이미지 검색, 시각 대화 검색, 구성적 이미지 검색)에서 성능 향상을 위해 필요한 미세한 문맥 모델링과 분리된 파인튜닝 목표를 간과한다.",
+      "method": "자동 미세한 다중모달 quintuple 데이터셋 구축 파이프라인과 두 단계(미세한 문맥 추론 지향, 미세한 검색 지향)의 다중모달 파인튜닝 전략을 제안한다.",
+      "takeaway": "다섯 개 데이터셋의 zero-shot 검색 실험에서 기존 방법보다 우수한 성능을 보였으며, 더 가벼운 MLLM 백본으로 달성했다. 초록에는 별도의 한계가 명시되어 있지 않다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.27155v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27155v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.27959v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27959v1.pdf"
   },
   {
-    "id": "2607.27201",
-    "title": "Mental World Modeling",
-    "authors": "Hao Fei, Yiran Zhao",
-    "published": "2026-07-29",
+    "id": "2607.28156",
+    "title": "RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning",
+    "authors": "Jingxiang Fan, Junbao Zhuo, Bochao Zou",
+    "published": "2026-07-30",
     "category": "multimodal",
     "categories": [
       "cs.CL"
@@ -87,205 +139,170 @@ window.PAPERS = [
     "tags": [
       "agents",
       "video",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "기존 멀티모달 장기 메모리 에이전트는 저장 내용에만 초점을 맞추고 검색 실패에 대응하지 못하는 문제를 해결하기 위해, 과거 작업 궤적에서 재사용 가능한 검색 지식을 학습하는 반성적 검색 메모리(RRM)를 제안한다.",
+    "detail": {
+      "problem": "장기 비디오 이해에서 외부 메모리를 사용하지만, 검색이 부정확하거나 반복적으로 실패할 때 이를 진단하고 향후 검색 전략을 수정할 메커니즘이 부족하다.",
+      "method": "RRM은 엔터티 중심 멀티모달 메모리 그래프에 반성적 경험 메모리를 추가하여 과거 작업 궤적으로부터 절차적 검색 지식을 추출하고, 생애주기 관리로 메모리 중복과 노이즈를 줄인다.",
+      "takeaway": "M3-Bench-Robot, M3-Bench-Web, Video-MME-Long에서 기존 최신 기법들을 일관되게 능가하여 반성적 검색 메모리의 효과를 입증했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28156v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28156v1.pdf"
+  },
+  {
+    "id": "2607.28545",
+    "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
+    "authors": "Albert Gong et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.SE"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "detection"
+    ],
+    "summaryKo": "ORCA-bench는 실제 운영 환경과 유사한 온콜 근본 원인 분석 과제를 통해 최첨단 코딩 에이전트의 성능을 평가한 벤치마크로, 최고 에이전트도 중간 난이도에서 25.3%의 정확도에 그친다.",
+    "detail": {
+      "problem": "대규모 언어 모델은 코드 작성·수정·검색은 가능하지만, 모호한 사용자 보고에서 시작해 메트릭·로그·트레이스·소스 코드를 종합적으로 추론해야 하는 온콜 근본 원인 분석(RCA)을 제대로 수행하는지 평가하는 벤치마크가 부재하다.",
+      "method": "OpenTelemetry로 계측된 마이크로서비스 시스템과 6일간의 메트릭·로그·트레이스를 실제 텔레메트리 인터페이스(Prometheus, Jaeger, OpenSearch, Grafana)로 제공하고, 보고서 특이성·탐지 시간·동시 발생 장애 시나리오를 체계적으로 변형한 1,079개의 RCA 태스크를 구성한 ORCA-bench를 제안한다.",
+      "takeaway": "5개 최첨단 에이전트 평가 결과 최고 RCA 정확도는 중간 난이도 25.3%, 어려움 10.0%였고, 가장 약한 모델은 40%의 사고 보고서에서 그럴듯하지 않은 근본 원인을 환각했다. 소스 코드 접근을 제거하면 모든 지표가 하락했으며, 이 결과는 선별된 공개 테스트베드에서 얻은 것이므로 실제 생산 시스템에서는 더 큰 격차가 있을 것으로 보아 하한선으로 간주된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28545v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28545v1.pdf"
+  },
+  {
+    "id": "2607.28164",
+    "title": "S-Avatar: Diffusion-Guided Gaussian Head Avatars from a Single Image",
+    "authors": "Hail Song et al.",
+    "published": "2026-07-30",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.GR"
+    ],
+    "tags": [
+      "diffusion",
+      "3d",
       "benchmark",
       "generation"
     ],
-    "summaryKo": "본 논문은 세계 모델에 정신 상태를 통합하는 정신 세계 모델링(MWM) 프레임워크를 제안하고, MENTIS라는 훈련 없는 기준선을 통해 인간 의사 결정 예측에 정신 상태 모델링이 필수적임을 실험적으로 입증한다.",
+    "summaryKo": "단일 이미지에서 확산 모델 기반 3D 가우시안 스플래팅 생성과 FLAME 정합 및 바인딩 템플릿을 통해 실시간으로 애니메이션 가능한 사실적인 3D 머리 아바타를 재구성하는 방법을 제안한다.",
     "detail": {
-      "problem": "기존 세계 모델은 물리적 측면(무엇이 어디에 있고 어떻게 진화할지)만 다루지만, 인간 행동은 숨겨진 정신 상태(믿음, 욕구, 의도, 감정, 사회적 허용 가능성)에 의해 결정되므로 물리적 장면만 추적하는 모델은 행동 예측에 실패한다.",
-      "method": "정신 변수를 세계 모델의 핵심 요소로 만드는 일반 이론적 프레임워크 MWM을 제안하고, 이를 훈련 없이 완전히 분석 가능한 기준선 MENTIS로 구현한다. MENTIS는 상태 파싱, 대상별 부분 관찰 생성, 행동 분해, 결합된 물리-정신 전이, 가지 수준 가치 평가로 과정을 분해한다.",
-      "takeaway": "텍스트, 이미지, 비디오 스토리를 포함한 의사 결정 시나리오 데이터셋에서 8가지 최신 LLM 기반 세계 모델 실험을 통해 정신 상태 명시적 모델링이 인간 의사 결정 예측에 필수적임을 보였으며, 추가 분석으로 현재 정신 세계 모델링의 병목 지점을 노출하였다."
+      "problem": "단일 이미지에서 3D 머리 아바타를 재구성할 때 기존 방법은 보지 못한 시점에서 3D 일관성을 유지하기 어렵다.",
+      "method": "확산 기반 3D 가우시안 스플래팅 생성 모듈로 고해상도 3DGS를 만들고, FLAME 파라미터와 공간 변환을 최적화하여 정합한 뒤, 초기 스플랫과 FLAME 간의 공간 관계를 담은 바인딩 템플릿으로 3DGS를 변형하여 실시간 렌더링한다.",
+      "takeaway": "공개 데이터셋 평가에서 최신 방법보다 새로운 시점 및 표정 생성의 사실성과 일관성에서 우수한 성능을 보였으며, VR/AR용 아바타 생성에 기여할 수 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.27201v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27201v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28164v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28164v1.pdf"
   },
   {
-    "id": "2607.26595",
-    "title": "SpatialQ: Understanding 3D Gaussian Splatting Scene Quality via Visual-based MLLM",
-    "authors": "Jingxuan Su et al.",
-    "published": "2026-07-29",
-    "category": "cv",
+    "id": "2607.28227",
+    "title": "Qwen-UI-Agent Technical Report: Toward Next-Generation Real-World Centric Foundation GUI Agents",
+    "authors": "Hanzhang Zhou et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
     "categories": [
+      "cs.AI",
       "cs.CV"
     ],
     "tags": [
-      "3d",
-      "multimodal"
+      "benchmark",
+      "agents",
+      "autonomous-driving",
+      "generation"
     ],
-    "summaryKo": "3D Gaussian Splatting 장면의 품질 평가를 위해 3차원 인식 표현 학습과 멀티모달 대규모 언어 모델 기반 추론을 결합한 SpatialQ 프레임워크를 제안한다.",
+    "summaryKo": "Qwen-UI-Agent는 모바일, 컴퓨터 사용, 웹, DeepSearch 환경을 아우르는 실제 세계 중심의 기반 GUI 에이전트로, 모바일 벤치마크에서 최고 성능을 달성하고 컴퓨터·브라우저 사용 작업에서 최첨단 모델들과 경쟁력을 보인다.",
     "detail": {
-      "problem": "3DGS 장면의 품질은 렌더링된 뷰의 지각적 충실도 외에도 공간 구조와 뷰 간 일관성 등 장면 수준 요소에 의존하지만, 기존 IQA 방법은 2D 단서에 의존하고 일반 MLLM은 안정적인 품질 회귀가 어려워 신뢰할 수 있는 평가가 어렵다.",
-      "method": "VGGT 기반 인코더에 품질 헤드를 추가하여 다중 뷰 이미지의 교차 뷰 일관성 및 깊이/포인트 클라우드 기하 정보를 통합한 3차원 인식 품질 표현 학습을 수행하고, 원본 이미지, 깊이 맵, 포인트 클라우드 렌더링, 카메라 파라미터를 Qwen 기반 MLLM에 공급하여 근거 기반의 멀티모달 추론을 수행한다.",
-      "takeaway": "제안된 방법은 외관 기반 특징을 넘어 구조를 인식하는 품질 표현 학습과 안정적인 품질 회귀를 위한 근거 기반 멀티모달 추론을 가능하게 하여 기존 2D IQA 및 일반 MLLM의 신뢰성 한계를 극복한다."
+      "problem": "GUI 에이전트를 실제 기기에서 안정적으로 작동시키고, 플랫폼 간 워크플로를 수행하며, 장기 과제를 완료하고, 능동적 서비스와 자율적 개선까지 가능하게 하는 것을 목표로 한다.",
+      "method": "다양한 샌드박스 환경과 대규모 실제 기기 모바일 런타임을 결합하고, GUI 조작과 CLI 실행을 하나의 통합 행동 공간에서 처리하며 배치 행동을 생성한다. AutoResearch 방식의 데이터 플라이휠과 10,000개 이상의 동시 환경을 활용한 온라인 강화학습, 그리고 모바일·컴퓨터에서 상태 유지 워크플로와 능동적 서비스 개시를 지원하는 경량 하네스 계층을 사용한다.",
+      "takeaway": "모바일 사용 벤치마크에서 MobileWorld 82.1%, MobileWorld-Real 92.2%, AndroidDaily 97.5%로 최고 성능을 기록했고, 컴퓨터 사용에서 OSWorld-Verified 79.5%, OSWorld-v2 40.0% 부분 진행 점수, 브라우저 사용 WebArena 73.6%, GUI 그라운딩 ScreenSpot-Pro 81.5%를 달성해 Opus 4.8, Gemini 3.1 Pro, GPT-5.6 Sol 등 최첨단 모델과 견줄 만한 성능을 보였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.26595v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26595v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28227v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28227v1.pdf"
   },
   {
-    "id": "2607.26886",
-    "title": "Hearsay: Vision-Language Medical Diagnoses Without an Image",
-    "authors": "Siddharth Vohra",
-    "published": "2026-07-29",
+    "id": "2607.28312",
+    "title": "ObjectStream: Latent Objects as Memory Anchors for Streaming Video Understanding",
+    "authors": "Mingkang Dong et al.",
+    "published": "2026-07-30",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.AI",
-      "cs.CL",
-      "cs.CY"
-    ],
-    "tags": [
-      "medical"
-    ],
-    "summaryKo": "본 연구는 최첨단 비전-언어 모델이 의료 이미지 없이도 인구통계 정보만으로 진단을 조작(confabulate)하며, 이 조작이 환자의 인구통계에 따라 체계적으로 변화함을 보여준다.",
-    "detail": {
-      "problem": "비전-언어 모델(VLM)이 실제 의료 이미지를 제공하지 않았음에도 인구통계 설명자만으로 진단을 조작하는 문제를 제기하고, 이 조작이 인구통계에 따라 구조화되어 나타나는 편향을 규명하고자 한다.",
-      "method": "Claude Opus-4.7, GPT-5.4, Gemini-3.1-Pro 모델에 흉부 X-ray, 뇌 MRI, 피부과 영역에서 인구통계 설명자만을 제공하고 이미지 없이 질의하여 진단 변화를 분석한다.",
-      "takeaway": "인구통계에 따라 진단이 체계적으로 달라지며, Claude는 특정 인구통계에 집중된 편향을, GPT는 더 광범위한 편향을 보인다. 산문에서는 이미지 부재를 인정하면서 구조화된 진단 필드에서는 질병을 명명하는 이중적 응답과 단어 변경에 따른 실패 양상 변화가 발견되었으며, 이는 신뢰할 수 있는 VLM 배포를 위해 구조화된 출력 감사와 단어 민감도 평가가 필수적임을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.26886v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26886v1.pdf"
-  },
-  {
-    "id": "2607.26368",
-    "title": "Diagnosing Fine-Grained Inconsistency Classification in Financial Disclosure Text",
-    "authors": "Aman Kumar et al.",
-    "published": "2026-07-29",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
       "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding"
-    ],
-    "summaryKo": "본 논문은 금융 공시 텍스트에서 발생하는 다양한 유형의 불일치를 세분화하여 분류하는 문제를 연구하고, 여러 모델 아키텍처를 비교하여 압축된 지도 학습 인코더의 효율성과 증거 위치 파악의 중요성을 제시한다.",
-    "detail": {
-      "problem": "금융 공시 텍스트에는 수치, 시간, 참조, 사실, 규범 등 다양한 유형의 진술이 포함되어 있으며, 단순한 불일치 탐지를 넘어 유형별 분류가 필요하다. 본 연구는 11개의 불일치 레이블을 가진 SBID-FD 데이터셋을 사용하여 세분화된 불일치 분류 문제를 다룬다.",
-      "method": "5,940개 인스턴스 스냅샷을 기반으로 임베딩 분류기, 미세 조정 인코더, 증거 기반 분류기, 프롬프트 기반 LLM, LoRA 적응 생성 모델을 공통 평가 프로토콜로 비교한다. 정답 증거 스팬 제공 여부에 따른 성능 변화와 클래스별 분석을 통해 위치 파악 오류와 유형 판별 오류를 분리하여 평가한다.",
-      "takeaway": "미세 조정된 3억 파라미터 인코더가 61.9%의 정확도로 LoRA 적응 90억 파라미터 모델(61.5%) 및 GPT-5.4(61.3%)와 유사한 성능을 보여 실용적 효율성을 입증했다. 정답 증거 제공 시 65.3%로 향상되나 자동 예측 증거는 그 이점을 일부만 회복하여 증거 위치 파악이 병목임을 시사하며, 참조 불일치는 위치 파악에 민감하고 사실 및 논리 불일치는 증거가 있어도 어려워, 증거 추출과 추론 능력 모두의 개선이 필요함을 보인다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.26368v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26368v1.pdf"
-  },
-  {
-    "id": "2607.26760",
-    "title": "Metis: Memory Foundation Model",
-    "authors": "Zeyu Zhang et al.",
-    "published": "2026-07-29",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.LG"
-    ],
-    "tags": [
-      "agents",
-      "autonomous-driving",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 외부 모듈에 의존하던 에이전트 메모리를 기반 모델에 내재화하는 메모리 파운데이션 모델 개념을 최초로 정립하고, 프로토타입인 Metis를 제안하여 새로운 구조와 학습 방법을 통해 네이티브 메모리 능력을 입증한다.",
-    "detail": {
-      "problem": "기존 AI 에이전트의 메모리는 주로 외부 모듈을 통해 구현되며, 기반 모델 자체에 내재된 네이티브 메모리 능력은 거의 탐구되지 않았다.",
-      "method": "Metis는 기반 모델 내에 영속적이고 동적으로 진화하는 메모리 상태를 도입하고, 메모리 어텐션을 통해 과거 정보를 압축 및 접근한다. 대규모 메모리 특화 데이터와 다중 최적화 목표를 사용한 중간 학습(mid-training)을 통해 메모리 절차를 습득하며, 온라인 메모리 갱신은 그래디언트 없이 순전파만으로 수행된다.",
-      "takeaway": "실험을 통해 Metis가 네이티브 메모리 능력을 가지고 있음을 보였으며, 강점, 한계 및 행동에 대한 상세한 분석이 제공된다. 추론 시 모든 학습된 가중치는 고정되고 메모리 상태는 표준 순전파 계산을 통해 자율적으로 변환되며, 향후 연구를 위해 프로젝트와 모델 체크포인트가 공개되었다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.26760v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26760v1.pdf"
-  },
-  {
-    "id": "2607.26952",
-    "title": "Credit Cards, Confusion, Computation, and Consequences: What Can We Uncover About Language Model Reasoning?",
-    "authors": "Arnav Hiray et al.",
-    "published": "2026-07-29",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "본 논문은 실제 신용카드 계약서에서 추출한 수치 추론 벤치마크 CreditCardQA를 도입하고, Program-of-Thought 프롬프팅이 특히 기본 추론 능력이 약한 모델의 성능을 향상시키며, 오류가 산술보다 금융 규칙 오적용이나 조건 이해 부족에서 발생함을 밝힌다.",
-    "detail": {
-      "problem": "실제 신용카드 계약서를 기반으로 한 금융 리터러시 수치 추론 벤치마크가 부재하여, 언어 모델이 금융 규칙과 조건을 올바르게 적용하는지 평가하기 어렵다.",
-      "method": "CreditCardQA 데이터셋을 구축하고, 다양한 언어 및 추론 모델을 Chain-of-Thought와 Program-of-Thought 프롬프팅으로 평가한 후 오류 분석과 난이도 분석을 수행하였다.",
-      "takeaway": "Program-of-Thought 프롬프팅은 일관된 성능 향상을 보였으며, 특히 기본 추론 능력이 약한 모델에서 오픈소스와 폐쇄소스 간 격차를 좁혔다. 오류는 주로 금융 규칙 오적용, 조건 누락, 계약 조건 오해에서 발생하며, 비교·조건부 논리·금전적 제약이 특히 어려웠다. 또한 연체료나 소액 잔액과 같은 에지 케이스는 저소득층이나 금융 취약 계층에 불균형적으로 영향을 미칠 수 있음을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.26952v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26952v1.pdf"
-  },
-  {
-    "id": "2607.26977",
-    "title": "TREK: A Travel Reasoning and Evaluation Kit for LLM Agents in Complex Trip Planning",
-    "authors": "Jinhu Qi et al.",
-    "published": "2026-07-29",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents"
-    ],
-    "summaryKo": "TREK는 LLM 에이전트의 복잡한 여행 계획 수립 능력을 평가하기 위해, 다중 제약 조건 하에서 실행 가능한 일정 생성 및 결정론적 평가를 제공하는 벤치마크이다.",
-    "detail": {
-      "problem": "기존 벤치마크는 여행 계획의 각 속성을 개별적으로 평가하고 소프트 또는 LLM 기반 평가를 사용하여 실행 가능성을 보장하지 못하며 재현성과 감사 가능성이 부족하다.",
-      "method": "TREK는 800개의 다중 제약 과제와 212,530개 레코드의 합성 지식 베이스를 기반으로, 결정론적 규칙 기반 평가기와 사람이 검증한 황금 기준을 제공하여 완전히 재현 가능한 평가를 가능하게 한다.",
-      "takeaway": "15개 LLM 에이전트 평가 결과, 가장 강력한 모델(GPT-5.6)도 해결 가능한 과제의 46.2%만 완전히 실행 가능한 계획을 생성했으며, 여행자의 명시되지 않은 니즈 충족이 주요 병목으로 드러났다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.26977v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26977v1.pdf"
-  },
-  {
-    "id": "2607.27056",
-    "title": "Setoka: A Benchmark for Hierarchical User Understanding in Personalized Agents over Heterogeneous Data",
-    "authors": "Lingyang Zeng et al.",
-    "published": "2026-07-29",
-    "category": "llm",
-    "categories": [
-      "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "privacy",
-      "retrieval"
-    ],
-    "summaryKo": "Setoka는 개인화 에이전트의 계층적 사용자 이해를 평가하기 위한 벤치마크로, 인지 및 성격 심리학 이론에 기반한 네 가지 이해 수준에서 이종 데이터를 합성하여 평가한 결과, 기존 시스템이 단순 사실 검색을 넘어서는 통합 및 추상화에 어려움을 보임을 발견했다.",
-    "detail": {
-      "problem": "기존 메모리 벤치마크는 대화 기록에서 명시적으로 언급된 정보를 검색할 수 있는지만 평가하여 더 깊은 사용자 이해를 평가하지 못하며, 이종 데이터에서 계층적 사용자 이해를 평가할 수 있는 벤치마크가 부재하다.",
-      "method": "Setoka는 인지 및 성격 심리학 이론에 기반하여 의미 기억, 일화 기억, 행동 패턴, 성격 특성의 네 가지 사용자 이해 수준을 정의하고, 심리측정학 기반 파이프라인으로 합성된 이종 데이터와 쿼리를 생성하여 개인화 에이전트를 평가한다.",
-      "takeaway": "평가 결과, 기존 시스템은 의미 기억 검색에서는 좋은 성능을 보였으나 일화 기억, 특히 행동 패턴 및 성격 특성 이해에서는 성능이 크게 저하되었다. 이는 사용자 이해가 단순 사실 검색으로 해결될 수 없으며, 장기적 사용자 행동에 대한 교차 소스 통합 및 추상화 메커니즘이 필요함을 시사한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.27056v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27056v1.pdf"
-  },
-  {
-    "id": "2607.26518",
-    "title": "EgoSafe: A First-Person Mobile-Captured Benchmark for Visual Safety Understanding",
-    "authors": "Yuyun Chen et al.",
-    "published": "2026-07-29",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "video"
     ],
-    "summaryKo": "본 논문은 1인칭 시점 영상에서의 안전 이해를 위한 벤치마크인 EgoSafe-Bench를 제안하며, 최신 대규모 시각-언어 모델들이 높은 설명 능력과 인과 추론 능력 간에 큰 괴리(지각-추론 분리)를 보임을 실험적으로 입증한다.",
+    "summaryKo": "ObjectStream은 학습 없이 잠재 객체를 메모리 앵커로 사용하여 스트리밍 비디오 이해의 효율성과 성능을 동시에 향상시키는 프레임워크이다.",
     "detail": {
-      "problem": "실세계 시각적 안전 이해는 단순한 객체 인식을 넘어 인식적 불확실성 하에서의 인과 추론을 요구하지만, 기존 평가는 3인칭 감시 카메라 영상과 이진 분류에 치중하여 이러한 인지적 격차를 드러내지 못한다. 최신 LVLM들은 표면적 상관관계에 의존하는 경향이 있어 1인칭 동적 환경에서의 법의학적 논리 추론에 취약하다.",
-      "method": "이를 해결하기 위해 3,000개의 1인칭 비디오 클립과 계층적 추론 평가(HRE) 프로토콜을 기반으로 한 12,000개의 평가 샘플로 구성된 EgoSafe-Bench를 제안한다. HRE는 초기 특징 고정에서 사각지대 추론 및 의도 추론으로 이어지는 엄격한 추론 궤적을 강제하여 논리적 일관성을 평가하고 지름길 예측을 억제한다.",
-      "takeaway": "주요 실험 결과, 최신 LVLM들(Qwen3-VL, Gemini, VideoLLaMA 3)은 높은 설명 점수를 보였으나 인과 추론과 논리적 폐쇄성에서는 현저한 취약성을 드러내는 '지각-추론 분리' 현상이 관찰되었다. 본 연구는 논리적으로 강건한 비디오 이해 시스템 개발을 위한 도전적 데이터셋과 체계적 평가 프레임워크를 제공한다."
+      "problem": "스트리밍 비디오 이해에서 미래 질문이 알려지기 전에 유용한 시각적 증거를 지속적으로 유지해야 하지만, 기존 방법은 토큰 중요도나 시간적 중복성 등을 기준으로 맥락을 관리할 뿐 객체 중심으로 조직화하지 않는다.",
+      "method": "ObjectStream은 동결된 Video-LLM 표현에서 공간적으로 응집된 잠재 객체를 유도하고, 프레임 간 연결을 통해 지속적인 앵커로 만들며, 제한된 메모리 예산 내에서 객체 이력, 일시적 변화, 최근 맥락을 보존한다.",
+      "takeaway": "온라인 스트리밍 평가에서 Qwen2.5-VL-7B의 OVO-Bench Real-Time Visual Perception 점수를 10.0점 향상시키고, 피크 GPU 메모리와 TTFT를 약 50% 줄였으며, 오프라인 장기 비디오 벤치마크에서는 82.5%의 시각 토큰을 버리면서도 전체 토큰 기준선을 능가했다. 초록에 한계는 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.26518v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.26518v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28312v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28312v1.pdf"
+  },
+  {
+    "id": "2607.28595",
+    "title": "Beacon: Knowing When and How to Perform Agentic Visual Reasoning",
+    "authors": "Qixun Wang et al.",
+    "published": "2026-07-30",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "multimodal"
+    ],
+    "summaryKo": "에이전트형 시각 추론에서 도구 사용의 필요성 인식(모드 적응성)과 실제 효과(도구 효과)를 분석하고, 강화학습 기반의 Beacon 모델을 통해 적응적 도구 호출과 도구 사용 능력을 향상시켜 전반적 성능을 개선한 연구.",
+    "detail": {
+      "problem": "기존 에이전트형 시각 추론 모델은 도구가 정말 필요한 경우에만 사용하지 못해 불필요한 계산 비용이 발생하고, 쉬운 문제에서는 도구 사용으로 인한 오히려 성능 저하가 발생한다.",
+      "method": "강화학습 단계에서 필요성 인식 적응 보상(Necessity-Aware Adaptive Reward)과 힌트 기반 능력 확장 메커니즘(Hint-Guided Capability Expansion)을 제안하여 과제 필요성에 따라 도구 호출을 적응적으로 결정하고, 가장 어려운 문제에 대한 도구 사용 능력을 강화한다.",
+      "takeaway": "다양한 벤치마크 실험에서 Beacon이 전반적 성능, 모드 적응성, 도구 효과 모두에서 큰 향상을 보였다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28595v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28595v1.pdf"
+  },
+  {
+    "id": "2607.28627",
+    "title": "ReToken: One Token to Improve Vision-Language Models for Visual Retrieval",
+    "authors": "Yao Xiao et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "retrieval",
+      "embedding"
+    ],
+    "summaryKo": "긴 시각적 맥락에서의 성능 저하와 GPU 메모리 제약을 해결하기 위해, 질의 관련 시각 토큰을 선택하는 단일 학습 임베딩 ReToken을 제안한다.",
+    "detail": {
+      "problem": "긴 시각적 맥락에서는 방해 요소가 많아질수록 비전-언어 모델의 성능이 저하되고, 모든 토큰을 한 번에 처리하면 GPU 메모리 한계로 계산이 불가능하다.",
+      "method": "ReToken은 명시적 검색 대상으로 학습된 단일 학습 가능 임베딩으로, 미리 채워진 시각 KV 캐시에서 질의와 관련된 희소한 시각 토큰을 선택한다. 소규모 이미지-QA 데이터셋만으로 학습된다.",
+      "takeaway": "Visual Haystacks에서 Qwen3VL-8B는 13.4점, InternVL3.5는 12.4점 향상되었고, LVBench에서는 장기 비디오로 제로샷 전이되어 Qwen3VL-8B가 8.0점 향상되었다. 경량 설계 덕분에 학습과 장기 비디오 추론이 H100 하나로 가능하며, 초록에 별도의 한계는 명시되어 있지 않다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28627v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28627v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-30T03:19:01.523Z",
+  "collectedAt": "2026-07-31T03:43:08.160Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
