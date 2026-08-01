@@ -3,259 +3,246 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.28300",
-    "title": "MonoVoc: Decoupling Geometry and Semantics for Lightweight Monocular Open-Vocabulary 3D Gaussians",
-    "authors": "Pouya Ardekhani et al.",
+    "id": "2607.27652",
+    "title": "Harness-G: A Graph-Structured Harness for Search Agents",
+    "authors": "Yanning Hou et al.",
     "published": "2026-07-30",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "3d",
-      "video",
-      "retrieval",
-      "embedding",
-      "benchmark"
-    ],
-    "summaryKo": "본 논문은 단안 비디오 시퀀스에서 기하 재구성과 의미 통합을 분리해 객체 수준의 개방형 어휘 3D 가우시안 맵을 경량 생성하는 훈련 없는 파이프라인을 제안한다.",
-    "detail": {
-      "problem": "기존 3D 가우시안 프레임워크는 다중 시점 촬영 요구, 장면별 최적화 비용, 고밀도 언어 특징 저장으로 인한 메모리 과부하 문제가 있다.",
-      "method": "3D 기하 재구성과 의미 통합을 명시적으로 분리하고, 기하는 독립적으로 추출하며 의미는 가벼운 모듈식 사후 처리를 통해 객체 수준으로 통합한다. 입력은 표준 단안 비디오 시퀀스이다.",
-      "takeaway": "Replica 데이터셋 평가에서 렌더링 충실도와 분할 정확도를 유지하면서 메모리 사용량을 SOTA 대비 한 자릿수로 줄였다. 초록에는 별도의 제한 사항이 명시되어 있지 않다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.28300v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28300v1.pdf"
-  },
-  {
-    "id": "2607.28394",
-    "title": "Hand-Object Interaction in the Age of Large Foundation Models:Reconstruction, Generation, and Embodied Transfer",
-    "authors": "Weiquan Lin et al.",
-    "published": "2026-07-30",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "retrieval",
-      "survey",
-      "generation"
-    ],
-    "summaryKo": "대규모 파운데이션 모델의 사전 지식을 손-물체 상호작용(HOI)의 재구성, 생성, 로봇 적용에 체계적으로 연결한 최초의 서베이 논문이다.",
-    "detail": {
-      "problem": "손-물체 상호작용은 손의 관절, 물체 기하, 접촉, 의미, 역학을 동시에 추론해야 하며 시각적 불확실성이 큰 어려운 과제이다. 기존 연구들은 파운데이션 모델을 단순히 사용한다고만 기술할 뿐, 어떤 지식이 어느 단계에 도입되고 어떤 불확실성을 줄이는지 체계적으로 정리하지 못했다.",
-      "method": "여섯 개의 HOI 작업(재구성 및 생성)으로 문헌을 분류하고, 기하·의미·시각의 세 계열로 나뉜 여덟 가지 파운데이션 모델 하위 사전 지식 택소노미를 제안한다. 이 택소노미를 바탕으로 각 사전 지식이 HOI 파이프라인과 작업에서 어떻게 표현·주입·적응되는지 분석하고, HOI 지식이 로봇 학습에 활용되는 방식과 데이터셋·평가 프로토콜도 정리한다.",
-      "takeaway": "본 서베이는 HOI 파운데이션 모델 연구를 체계적으로 정리하고 일반화 가능한 HOI 시스템을 위한 방향을 제시한다. 한계와 미래 방향을 논의하며, 지속적으로 새로운 방법과 벤치마크를 수집하는 저장소를 운영한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.28394v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28394v1.pdf"
-  },
-  {
-    "id": "2607.28609",
-    "title": "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
-    "authors": "Qiushi Sun et al.",
-    "published": "2026-07-30",
-    "category": "multimodal",
-    "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "agents"
-    ],
-    "summaryKo": "컴퓨터 사용 에이전트(CUA)의 궤적을 평가하는 비전-언어 모델(VLM) 심사자의 신뢰성을 표준화된 벤치마크로 검증하고, 저비용 오픈 보상 모델(OS-Shepherd)을 제안한 논문.",
-    "detail": {
-      "problem": "CUA 궤적이 지시를 수행했는지 검증하는 데 VLM 심사자가 점점 사용되지만, 이들이 과연 신뢰할 만한지는 체계적으로 검토되지 않았다.",
-      "method": "다양한 플랫폼과 에이전트 백본의 실제 궤적으로 구성된 OSReward 벤치마크와 어려운 사례 위주의 OSReward-Hard, 정밀 평가용 OSReward-Multi를 구축하고, 이 위에서 VLM 심사자를 종합 평가했다. 또한 100K 규모의 추론 주석 말뭉치 OS-Shepherd-100K를 공개하고 이를 활용해 OS-Shepherd(9B, 35B) 보상 모델을 학습시켰다.",
-      "takeaway": "최신 VLM들도 이상적인 심사자에는 못 미쳤으며 실패를 성공으로 잘못 판정하는 관대함 편향이 공통적으로 나타났다. OS-Shepherd는 상용 심사자 수준의 신뢰성을 약 30~60% 낮은 비용으로 제공했다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.28609v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28609v1.pdf"
-  },
-  {
-    "id": "2607.27654",
-    "title": "From Single- to Cross-Document: Benchmarking Multi-Granularity Event Analysis of Large Language Models",
-    "authors": "Tao Wen et al.",
-    "published": "2026-07-30",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval",
-      "generation",
-      "detection"
-    ],
-    "summaryKo": "MiGUE-Bench는 단일 문서부터 교차 문서까지의 다중 세분화 이벤트 분석에서 대규모 언어 모델의 성능을 체계적으로 평가하기 위한 벤치마크이다.",
-    "detail": {
-      "problem": "기존 벤치마크는 문서 세분화, 과제 설계, 데이터 소스가 제한적이어서 대규모 언어 모델의 이벤트 분석 능력에 대한 종합적 이해가 부족하다.",
-      "method": "LLM 기반 자기 교정 주석 프레임워크인 MiGUE-Pipeline을 개발하여 고품질 이벤트 데이터를 확장 가능하게 구축하고, 이벤트 탐지, 관계 추론, 구조 귀납, 미래 예측의 네 가지 핵심 과제를 통해 원자적 이벤트부터 복잡한 교차 문서 서사까지 모델 능력을 평가한다.",
-      "takeaway": "최신 LLM과 검색 증강 생성(RAG) 방법에 대한 광범위한 실험을 통해 현재 성능 경계를 확인하고 주요 결함을 식별하여, 향후 어려운 이벤트 분석 과제에서 LLM 개선을 위한 통찰을 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.27654v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27654v1.pdf"
-  },
-  {
-    "id": "2607.27959",
-    "title": "FiRE: Enhancing MLLMs with Fine-Grained Context Learning for Complex Image Retrieval",
-    "authors": "Bohan Hou et al.",
-    "published": "2026-07-30",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.IR"
-    ],
-    "tags": [
-      "retrieval",
-      "multimodal",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "본 논문은 MLLM의 미세한 문맥 모델링과 분리된 파인튜닝 목표를 도입해 복잡한 이미지 검색 성능을 향상시키는 FiRE를 제안한다.",
-    "detail": {
-      "problem": "기존 MLLM 기반 이미지 검색 연구는 복잡한 작업(긴 텍스트-이미지 검색, 시각 대화 검색, 구성적 이미지 검색)에서 성능 향상을 위해 필요한 미세한 문맥 모델링과 분리된 파인튜닝 목표를 간과한다.",
-      "method": "자동 미세한 다중모달 quintuple 데이터셋 구축 파이프라인과 두 단계(미세한 문맥 추론 지향, 미세한 검색 지향)의 다중모달 파인튜닝 전략을 제안한다.",
-      "takeaway": "다섯 개 데이터셋의 zero-shot 검색 실험에서 기존 방법보다 우수한 성능을 보였으며, 더 가벼운 MLLM 백본으로 달성했다. 초록에는 별도의 한계가 명시되어 있지 않다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.27959v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27959v1.pdf"
-  },
-  {
-    "id": "2607.28156",
-    "title": "RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning",
-    "authors": "Jingxiang Fan, Junbao Zhuo, Bochao Zou",
-    "published": "2026-07-30",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
       "cs.CL"
     ],
     "tags": [
+      "benchmark",
       "agents",
-      "video",
       "retrieval",
-      "multimodal",
       "generation"
     ],
-    "summaryKo": "기존 멀티모달 장기 메모리 에이전트는 저장 내용에만 초점을 맞추고 검색 실패에 대응하지 못하는 문제를 해결하기 위해, 과거 작업 궤적에서 재사용 가능한 검색 지식을 학습하는 반성적 검색 메모리(RRM)를 제안한다.",
+    "summaryKo": "Harness-G: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "장기 비디오 이해에서 외부 메모리를 사용하지만, 검색이 부정확하거나 반복적으로 실패할 때 이를 진단하고 향후 검색 전략을 수정할 메커니즘이 부족하다.",
-      "method": "RRM은 엔터티 중심 멀티모달 메모리 그래프에 반성적 경험 메모리를 추가하여 과거 작업 궤적으로부터 절차적 검색 지식을 추출하고, 생애주기 관리로 메모리 중복과 노이즈를 줄인다.",
-      "takeaway": "M3-Bench-Robot, M3-Bench-Web, Video-MME-Long에서 기존 최신 기법들을 일관되게 능가하여 반성적 검색 메모리의 효과를 입증했다."
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28156v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28156v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.27652v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27652v1.pdf"
   },
   {
-    "id": "2607.28545",
-    "title": "ORCA-bench: How Ready Are Language Model Agents for Oncall?",
-    "authors": "Albert Gong et al.",
+    "id": "2607.27773",
+    "title": "ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory",
+    "authors": "Yongye Su et al.",
     "published": "2026-07-30",
-    "category": "multimodal",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "retrieval"
+    ],
+    "summaryKo": "ChronoMem: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.27773v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27773v1.pdf"
+  },
+  {
+    "id": "2607.27783",
+    "title": "Reasoning Consensus: Structural Ensembling of LLM Reasoning via Weighted DAG Aggregation",
+    "authors": "Amruta Parulekar et al.",
+    "published": "2026-07-30",
+    "category": "llm",
     "categories": [
       "cs.CL",
       "cs.AI",
-      "cs.SE"
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "Reasoning Consensus: LLM 분야의 최근 연구로, LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬다.",
+      "method": "논문은 모델 구조, 학습 목표, 평가 프로토콜 또는 에이전트 워크플로를 개선하는 방법을 제안한다.",
+      "takeaway": "LLM 논문은 벤치마크 성능이 실제 사용성을 모두 보장하지 않으므로, 비용과 실패 조건을 같이 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.27783v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27783v1.pdf"
+  },
+  {
+    "id": "2607.28077",
+    "title": "LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models",
+    "authors": "Shuang Liang et al.",
+    "published": "2026-07-30",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "LEEPS: LLM 분야의 최근 연구로, LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬다.",
+      "method": "논문은 모델 구조, 학습 목표, 평가 프로토콜 또는 에이전트 워크플로를 개선하는 방법을 제안한다.",
+      "takeaway": "LLM 논문은 벤치마크 성능이 실제 사용성을 모두 보장하지 않으므로, 비용과 실패 조건을 같이 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28077v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28077v1.pdf"
+  },
+  {
+    "id": "2607.28146",
+    "title": "Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game",
+    "authors": "Niklas Bauer et al.",
+    "published": "2026-07-30",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "detection"
+      "medical"
     ],
-    "summaryKo": "ORCA-bench는 실제 운영 환경과 유사한 온콜 근본 원인 분석 과제를 통해 최첨단 코딩 에이전트의 성능을 평가한 벤치마크로, 최고 에이전트도 중간 난이도에서 25.3%의 정확도에 그친다.",
+    "summaryKo": "Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game: LLM 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "대규모 언어 모델은 코드 작성·수정·검색은 가능하지만, 모호한 사용자 보고에서 시작해 메트릭·로그·트레이스·소스 코드를 종합적으로 추론해야 하는 온콜 근본 원인 분석(RCA)을 제대로 수행하는지 평가하는 벤치마크가 부재하다.",
-      "method": "OpenTelemetry로 계측된 마이크로서비스 시스템과 6일간의 메트릭·로그·트레이스를 실제 텔레메트리 인터페이스(Prometheus, Jaeger, OpenSearch, Grafana)로 제공하고, 보고서 특이성·탐지 시간·동시 발생 장애 시나리오를 체계적으로 변형한 1,079개의 RCA 태스크를 구성한 ORCA-bench를 제안한다.",
-      "takeaway": "5개 최첨단 에이전트 평가 결과 최고 RCA 정확도는 중간 난이도 25.3%, 어려움 10.0%였고, 가장 약한 모델은 40%의 사고 보고서에서 그럴듯하지 않은 근본 원인을 환각했다. 소스 코드 접근을 제거하면 모든 지표가 하락했으며, 이 결과는 선별된 공개 테스트베드에서 얻은 것이므로 실제 생산 시스템에서는 더 큰 격차가 있을 것으로 보아 하한선으로 간주된다."
+      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
+      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
+      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28545v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28545v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28146v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28146v1.pdf"
   },
   {
-    "id": "2607.28164",
-    "title": "S-Avatar: Diffusion-Guided Gaussian Head Avatars from a Single Image",
-    "authors": "Hail Song et al.",
+    "id": "2607.28166",
+    "title": "Where and When to Commit: Candidate-Aware Decoding for Diffusion Language Models",
+    "authors": "Chia-Ming Lee et al.",
     "published": "2026-07-30",
-    "category": "cv",
+    "category": "llm",
     "categories": [
-      "cs.CV",
-      "cs.GR"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
       "diffusion",
-      "3d",
-      "benchmark",
       "generation"
     ],
-    "summaryKo": "단일 이미지에서 확산 모델 기반 3D 가우시안 스플래팅 생성과 FLAME 정합 및 바인딩 템플릿을 통해 실시간으로 애니메이션 가능한 사실적인 3D 머리 아바타를 재구성하는 방법을 제안한다.",
+    "summaryKo": "Where and When to Commit: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "단일 이미지에서 3D 머리 아바타를 재구성할 때 기존 방법은 보지 못한 시점에서 3D 일관성을 유지하기 어렵다.",
-      "method": "확산 기반 3D 가우시안 스플래팅 생성 모듈로 고해상도 3DGS를 만들고, FLAME 파라미터와 공간 변환을 최적화하여 정합한 뒤, 초기 스플랫과 FLAME 간의 공간 관계를 담은 바인딩 템플릿으로 3DGS를 변형하여 실시간 렌더링한다.",
-      "takeaway": "공개 데이터셋 평가에서 최신 방법보다 새로운 시점 및 표정 생성의 사실성과 일관성에서 우수한 성능을 보였으며, VR/AR용 아바타 생성에 기여할 수 있다."
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28164v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28164v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28166v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28166v1.pdf"
   },
   {
-    "id": "2607.28227",
-    "title": "Qwen-UI-Agent Technical Report: Toward Next-Generation Real-World Centric Foundation GUI Agents",
-    "authors": "Hanzhang Zhou et al.",
+    "id": "2607.28319",
+    "title": "Fairness Pruning: Locating Demographic Bias in GLU-MLP Layers via Differential Activations",
+    "authors": "Pere Martra, Eugenio Martínez Cámara, Alfonso Ureña López",
     "published": "2026-07-30",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.AI",
-      "cs.CV"
+      "cs.CL",
+      "cs.CY",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "autonomous-driving",
       "generation"
     ],
-    "summaryKo": "Qwen-UI-Agent는 모바일, 컴퓨터 사용, 웹, DeepSearch 환경을 아우르는 실제 세계 중심의 기반 GUI 에이전트로, 모바일 벤치마크에서 최고 성능을 달성하고 컴퓨터·브라우저 사용 작업에서 최첨단 모델들과 경쟁력을 보인다.",
+    "summaryKo": "Fairness Pruning: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "GUI 에이전트를 실제 기기에서 안정적으로 작동시키고, 플랫폼 간 워크플로를 수행하며, 장기 과제를 완료하고, 능동적 서비스와 자율적 개선까지 가능하게 하는 것을 목표로 한다.",
-      "method": "다양한 샌드박스 환경과 대규모 실제 기기 모바일 런타임을 결합하고, GUI 조작과 CLI 실행을 하나의 통합 행동 공간에서 처리하며 배치 행동을 생성한다. AutoResearch 방식의 데이터 플라이휠과 10,000개 이상의 동시 환경을 활용한 온라인 강화학습, 그리고 모바일·컴퓨터에서 상태 유지 워크플로와 능동적 서비스 개시를 지원하는 경량 하네스 계층을 사용한다.",
-      "takeaway": "모바일 사용 벤치마크에서 MobileWorld 82.1%, MobileWorld-Real 92.2%, AndroidDaily 97.5%로 최고 성능을 기록했고, 컴퓨터 사용에서 OSWorld-Verified 79.5%, OSWorld-v2 40.0% 부분 진행 점수, 브라우저 사용 WebArena 73.6%, GUI 그라운딩 ScreenSpot-Pro 81.5%를 달성해 Opus 4.8, Gemini 3.1 Pro, GPT-5.6 Sol 등 최첨단 모델과 견줄 만한 성능을 보였다."
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28227v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28227v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28319v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28319v1.pdf"
   },
   {
-    "id": "2607.28312",
-    "title": "ObjectStream: Latent Objects as Memory Anchors for Streaming Video Understanding",
-    "authors": "Mingkang Dong et al.",
+    "id": "2607.28397",
+    "title": "GLM-RAG: Graph Language Models for Graph-Based Retrieval-Augmented Generation",
+    "authors": "Maya Arseven et al.",
     "published": "2026-07-30",
-    "category": "multimodal",
+    "category": "llm",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.IR"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "generation"
+    ],
+    "summaryKo": "GLM-RAG: LLM 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
+      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
+      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28397v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28397v1.pdf"
+  },
+  {
+    "id": "2607.27952",
+    "title": "LAST: The Last Query Token Guides Visual Token Pruning for Edge-Cloud Collaborative MLLM Inference",
+    "authors": "Feng Yang et al.",
+    "published": "2026-07-30",
+    "category": "cv",
     "categories": [
       "cs.CV",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "video"
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "ObjectStream은 학습 없이 잠재 객체를 메모리 앵커로 사용하여 스트리밍 비디오 이해의 효율성과 성능을 동시에 향상시키는 프레임워크이다.",
+    "summaryKo": "LAST: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "스트리밍 비디오 이해에서 미래 질문이 알려지기 전에 유용한 시각적 증거를 지속적으로 유지해야 하지만, 기존 방법은 토큰 중요도나 시간적 중복성 등을 기준으로 맥락을 관리할 뿐 객체 중심으로 조직화하지 않는다.",
-      "method": "ObjectStream은 동결된 Video-LLM 표현에서 공간적으로 응집된 잠재 객체를 유도하고, 프레임 간 연결을 통해 지속적인 앵커로 만들며, 제한된 메모리 예산 내에서 객체 이력, 일시적 변화, 최근 맥락을 보존한다.",
-      "takeaway": "온라인 스트리밍 평가에서 Qwen2.5-VL-7B의 OVO-Bench Real-Time Visual Perception 점수를 10.0점 향상시키고, 피크 GPU 메모리와 TTFT를 약 50% 줄였으며, 오프라인 장기 비디오 벤치마크에서는 82.5%의 시각 토큰을 버리면서도 전체 토큰 기준선을 능가했다. 초록에 한계는 명시되지 않았다."
+      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
+      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
+      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28312v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28312v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.27952v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.27952v1.pdf"
   },
   {
-    "id": "2607.28595",
-    "title": "Beacon: Knowing When and How to Perform Agentic Visual Reasoning",
-    "authors": "Qixun Wang et al.",
+    "id": "2607.28154",
+    "title": "OPLD: On-Policy Latent Distillation for Multimodal Reasoning",
+    "authors": "Shoutai Zhu et al.",
     "published": "2026-07-30",
     "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal"
+    ],
+    "summaryKo": "OPLD: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
+      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
+      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.28154v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28154v1.pdf"
+  },
+  {
+    "id": "2607.28225",
+    "title": "FaithEyes: Towards Faithful Tool Use via Multi-Agent Process-Image Verification",
+    "authors": "Haoqing Wang et al.",
+    "published": "2026-07-30",
+    "category": "multimodal",
     "categories": [
       "cs.CV"
     ],
@@ -264,45 +251,44 @@ window.PAPERS = [
       "agents",
       "multimodal"
     ],
-    "summaryKo": "에이전트형 시각 추론에서 도구 사용의 필요성 인식(모드 적응성)과 실제 효과(도구 효과)를 분석하고, 강화학습 기반의 Beacon 모델을 통해 적응적 도구 호출과 도구 사용 능력을 향상시켜 전반적 성능을 개선한 연구.",
+    "summaryKo": "FaithEyes: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "기존 에이전트형 시각 추론 모델은 도구가 정말 필요한 경우에만 사용하지 못해 불필요한 계산 비용이 발생하고, 쉬운 문제에서는 도구 사용으로 인한 오히려 성능 저하가 발생한다.",
-      "method": "강화학습 단계에서 필요성 인식 적응 보상(Necessity-Aware Adaptive Reward)과 힌트 기반 능력 확장 메커니즘(Hint-Guided Capability Expansion)을 제안하여 과제 필요성에 따라 도구 호출을 적응적으로 결정하고, 가장 어려운 문제에 대한 도구 사용 능력을 강화한다.",
-      "takeaway": "다양한 벤치마크 실험에서 Beacon이 전반적 성능, 모드 적응성, 도구 효과 모두에서 큰 향상을 보였다."
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28595v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28595v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28225v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28225v1.pdf"
   },
   {
-    "id": "2607.28627",
-    "title": "ReToken: One Token to Improve Vision-Language Models for Visual Retrieval",
-    "authors": "Yao Xiao et al.",
+    "id": "2607.28243",
+    "title": "EgoGenesis: Egocentric World-Action Modeling with Online Anchored Projective Memory and Action-3D RoPE",
+    "authors": "Zexuan Yan et al.",
     "published": "2026-07-30",
-    "category": "multimodal",
+    "category": "cv",
     "categories": [
       "cs.CV",
-      "cs.AI",
-      "cs.LG"
+      "cs.AI"
     ],
     "tags": [
-      "benchmark",
+      "3d",
       "video",
-      "retrieval",
-      "embedding"
+      "embedding",
+      "generation"
     ],
-    "summaryKo": "긴 시각적 맥락에서의 성능 저하와 GPU 메모리 제약을 해결하기 위해, 질의 관련 시각 토큰을 선택하는 단일 학습 임베딩 ReToken을 제안한다.",
+    "summaryKo": "EgoGenesis: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
     "detail": {
-      "problem": "긴 시각적 맥락에서는 방해 요소가 많아질수록 비전-언어 모델의 성능이 저하되고, 모든 토큰을 한 번에 처리하면 GPU 메모리 한계로 계산이 불가능하다.",
-      "method": "ReToken은 명시적 검색 대상으로 학습된 단일 학습 가능 임베딩으로, 미리 채워진 시각 KV 캐시에서 질의와 관련된 희소한 시각 토큰을 선택한다. 소규모 이미지-QA 데이터셋만으로 학습된다.",
-      "takeaway": "Visual Haystacks에서 Qwen3VL-8B는 13.4점, InternVL3.5는 12.4점 향상되었고, LVBench에서는 장기 비디오로 제로샷 전이되어 Qwen3VL-8B가 8.0점 향상되었다. 경량 설계 덕분에 학습과 장기 비디오 추론이 H100 하나로 가능하며, 초록에 별도의 한계는 명시되어 있지 않다."
+      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
+      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
+      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28627v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28627v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28243v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28243v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-07-31T03:43:08.160Z",
+  "collectedAt": "2026-08-01T03:41:15.632Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
