@@ -3,245 +3,251 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2607.27652",
-    "title": "Harness-G: A Graph-Structured Harness for Search Agents",
-    "authors": "Yanning Hou et al.",
+    "id": "2607.28609",
+    "title": "OSReward: Instituting Standardized Evaluation for Cross-Platform Computer-Use Reward Models",
+    "authors": "Qiushi Sun et al.",
     "published": "2026-07-30",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval",
-      "generation"
-    ],
-    "summaryKo": "Harness-G: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.27652v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27652v1.pdf"
-  },
-  {
-    "id": "2607.27773",
-    "title": "ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory",
-    "authors": "Yongye Su et al.",
-    "published": "2026-07-30",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval"
-    ],
-    "summaryKo": "ChronoMem: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.27773v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27773v1.pdf"
-  },
-  {
-    "id": "2607.27783",
-    "title": "Reasoning Consensus: Structural Ensembling of LLM Reasoning via Weighted DAG Aggregation",
-    "authors": "Amruta Parulekar et al.",
-    "published": "2026-07-30",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
       "cs.AI",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "Reasoning Consensus: LLM 분야의 최근 연구로, LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬다.",
-      "method": "논문은 모델 구조, 학습 목표, 평가 프로토콜 또는 에이전트 워크플로를 개선하는 방법을 제안한다.",
-      "takeaway": "LLM 논문은 벤치마크 성능이 실제 사용성을 모두 보장하지 않으므로, 비용과 실패 조건을 같이 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.27783v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27783v1.pdf"
-  },
-  {
-    "id": "2607.28077",
-    "title": "LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models",
-    "authors": "Shuang Liang et al.",
-    "published": "2026-07-30",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
+      "cs.CL",
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "agents"
     ],
-    "summaryKo": "LEEPS: LLM 분야의 최근 연구로, LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬 논문이다.",
+    "summaryKo": "OSReward: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬다.",
-      "method": "논문은 모델 구조, 학습 목표, 평가 프로토콜 또는 에이전트 워크플로를 개선하는 방법을 제안한다.",
-      "takeaway": "LLM 논문은 벤치마크 성능이 실제 사용성을 모두 보장하지 않으므로, 비용과 실패 조건을 같이 봐야 한다."
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28077v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28077v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28609v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28609v1.pdf"
   },
   {
-    "id": "2607.28146",
-    "title": "Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game",
-    "authors": "Niklas Bauer et al.",
-    "published": "2026-07-30",
-    "category": "llm",
+    "id": "2607.29066",
+    "title": "Semantics of Subterfuge: Benchmarking Legal Deception Detection Against General-domain State-of-the-Art",
+    "authors": "Theekshana Samaradiwakara, Nisansa de Silva, George C. Lobb",
+    "published": "2026-07-31",
+    "category": "multimodal",
     "categories": [
       "cs.CL",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "medical"
+      "survey",
+      "detection"
     ],
-    "summaryKo": "Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game: LLM 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
-      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
-      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.28146v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28146v1.pdf"
-  },
-  {
-    "id": "2607.28166",
-    "title": "Where and When to Commit: Candidate-Aware Decoding for Diffusion Language Models",
-    "authors": "Chia-Ming Lee et al.",
-    "published": "2026-07-30",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "diffusion",
-      "generation"
-    ],
-    "summaryKo": "Where and When to Commit: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "Semantics of Subterfuge: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
       "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
       "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
       "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28166v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28166v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.29066v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29066v1.pdf"
   },
   {
-    "id": "2607.28319",
-    "title": "Fairness Pruning: Locating Demographic Bias in GLU-MLP Layers via Differential Activations",
-    "authors": "Pere Martra, Eugenio Martínez Cámara, Alfonso Ureña López",
-    "published": "2026-07-30",
-    "category": "llm",
+    "id": "2607.29025",
+    "title": "Evaluation-Verification Reward for Consistent Multi-Reference Image Editing",
+    "authors": "Yingmao Miao et al.",
+    "published": "2026-07-31",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.CY",
-      "cs.LG"
+      "cs.CV"
+    ],
+    "tags": [
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "Evaluation-Verification Reward for Consistent Multi-Reference Image Editing: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.29025v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29025v1.pdf"
+  },
+  {
+    "id": "2607.29033",
+    "title": "SAM+D: Parameter-Efficient Dimensional Lifting of SAM-Family Models via Depth-Routed LoRA and Depth Shifting",
+    "authors": "Yu Song et al.",
+    "published": "2026-07-31",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "3d",
+      "medical",
+      "video"
     ],
-    "summaryKo": "Fairness Pruning: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "SAM+D: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "detail": {
+      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
+      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
+      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.29033v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29033v1.pdf"
+  },
+  {
+    "id": "2607.29222",
+    "title": "Is It Time for the Renaissance of Salient Object Detection in the Era of MLLMs?",
+    "authors": "Wenzhuo Zhao et al.",
+    "published": "2026-07-31",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "Is It Time for the Renaissance of Salient Object Detection in the Era of MLLMs?: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
       "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
       "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
       "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28319v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28319v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.29222v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29222v1.pdf"
   },
   {
-    "id": "2607.28397",
-    "title": "GLM-RAG: Graph Language Models for Graph-Based Retrieval-Augmented Generation",
-    "authors": "Maya Arseven et al.",
-    "published": "2026-07-30",
+    "id": "2607.29602",
+    "title": "FriendBench: Benchmarking Dyadic Familiarity Inference in Humans and Multimodal Large Language Models",
+    "authors": "Jeffrey M. Girard et al.",
+    "published": "2026-07-31",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV",
+      "cs.HC"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "multimodal"
+    ],
+    "summaryKo": "FriendBench: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "detail": {
+      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
+      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
+      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.29602v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29602v1.pdf"
+  },
+  {
+    "id": "2607.29019",
+    "title": "GoldenRetriever: Non-Interactive Homomorphic Encrypted Retrieval for Privacy-Preserving RAG",
+    "authors": "Yang Gao et al.",
+    "published": "2026-07-31",
     "category": "llm",
     "categories": [
-      "cs.AI",
+      "cs.CR",
       "cs.CL",
       "cs.IR"
     ],
     "tags": [
       "benchmark",
+      "privacy",
       "retrieval",
       "generation"
     ],
-    "summaryKo": "GLM-RAG: LLM 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "summaryKo": "GoldenRetriever: LLM 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
+      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
+      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28397v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28397v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.29019v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29019v1.pdf"
   },
   {
-    "id": "2607.27952",
-    "title": "LAST: The Last Query Token Guides Visual Token Pruning for Edge-Cloud Collaborative MLLM Inference",
-    "authors": "Feng Yang et al.",
-    "published": "2026-07-30",
+    "id": "2607.29250",
+    "title": "Data Turnstile: A Scalable Open Framework for Function-Calling Data Generation",
+    "authors": "Goutham Ramakrishnan, Megha Sharma",
+    "published": "2026-07-31",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "privacy",
+      "generation"
+    ],
+    "summaryKo": "Data Turnstile: LLM 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
+      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
+      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.29250v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29250v1.pdf"
+  },
+  {
+    "id": "2607.29539",
+    "title": "ARB: A Matched Authorship-Rewriting Benchmark Dataset for AI-Text Detector Evaluation",
+    "authors": "Gaetano Perrone, Simon Pietro Romano",
+    "published": "2026-07-31",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "ARB: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2607.29539v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29539v1.pdf"
+  },
+  {
+    "id": "2607.28991",
+    "title": "CAER: Conflict-Aware Evidence Routing with Dual Prefix Experts for Multimodal Large Language Models",
+    "authors": "Zixuan Liu et al.",
+    "published": "2026-07-31",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "multimodal",
-      "generation"
+      "generation",
+      "detection"
     ],
-    "summaryKo": "LAST: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
+    "summaryKo": "CAER: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
-      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
-      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.27952v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.27952v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.28991v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.28991v1.pdf"
   },
   {
-    "id": "2607.28154",
-    "title": "OPLD: On-Policy Latent Distillation for Multimodal Reasoning",
-    "authors": "Shoutai Zhu et al.",
-    "published": "2026-07-30",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "OPLD: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
-      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
-      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.28154v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28154v1.pdf"
-  },
-  {
-    "id": "2607.28225",
-    "title": "FaithEyes: Towards Faithful Tool Use via Multi-Agent Process-Image Verification",
-    "authors": "Haoqing Wang et al.",
-    "published": "2026-07-30",
+    "id": "2607.29200",
+    "title": "UltraSAM3: A Concept-Driven Foundation Model for Universal Ultrasound Image Segmentation",
+    "authors": "Bo Xu et al.",
+    "published": "2026-07-31",
     "category": "multimodal",
     "categories": [
       "cs.CV"
@@ -249,46 +255,46 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "multimodal"
+      "medical"
     ],
-    "summaryKo": "FaithEyes: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "summaryKo": "UltraSAM3: 멀티모달 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
+      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
+      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28225v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28225v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.29200v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29200v1.pdf"
   },
   {
-    "id": "2607.28243",
-    "title": "EgoGenesis: Egocentric World-Action Modeling with Online Anchored Projective Memory and Action-3D RoPE",
-    "authors": "Zexuan Yan et al.",
-    "published": "2026-07-30",
+    "id": "2607.29541",
+    "title": "The K-Space Signature: Frequency-Domain Representation Learning for Medical Deepfake Detection",
+    "authors": "Riccardo Raciti et al.",
+    "published": "2026-07-31",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "3d",
-      "video",
-      "embedding",
-      "generation"
+      "privacy",
+      "medical",
+      "benchmark",
+      "detection"
     ],
-    "summaryKo": "EgoGenesis: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "The K-Space Signature: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
+      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
+      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2607.28243v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.28243v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2607.29541v1",
+    "pdfUrl": "https://arxiv.org/pdf/2607.29541v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-08-01T03:41:15.632Z",
+  "collectedAt": "2026-08-03T03:44:44.794Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
