@@ -3,214 +3,36 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2608.02148",
-    "title": "Douyin Multimodal Embedding Model Technical Report",
-    "authors": "Haonan Chen et al.",
-    "published": "2026-08-03",
+    "id": "2608.03979",
+    "title": "Video-DeepResearch: Towards the Next-Generation Multimodal Deepresearch Agent",
+    "authors": "Zhen Fang et al.",
+    "published": "2026-08-04",
     "category": "multimodal",
     "categories": [
-      "cs.IR",
-      "cs.CL",
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
+      "benchmark",
       "agents",
       "video",
-      "retrieval",
-      "embedding",
-      "multimodal"
-    ],
-    "summaryKo": "Douyin Multimodal Embedding Model Technical Report: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02148v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02148v1.pdf"
-  },
-  {
-    "id": "2608.01794",
-    "title": "Illuminating Visual Identity in Universal Multimodal Embeddings",
-    "authors": "Jiawei Cao et al.",
-    "published": "2026-08-03",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval",
-      "embedding",
-      "multimodal"
-    ],
-    "summaryKo": "Illuminating Visual Identity in Universal Multimodal Embeddings: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.01794v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.01794v1.pdf"
-  },
-  {
-    "id": "2608.02583",
-    "title": "UEmbed: Unified Sparse and Dense Multimodal Embeddings",
-    "authors": "Tingyu Song et al.",
-    "published": "2026-08-03",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL",
-      "cs.IR"
-    ],
-    "tags": [
-      "agents",
-      "retrieval",
-      "embedding",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "UEmbed: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02583v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02583v1.pdf"
-  },
-  {
-    "id": "2608.02150",
-    "title": "PhyCheck: Fine-Grained Evidence-Grounded Dataset for Physical Law Understanding in Video-LLMs",
-    "authors": "Zhongjie Ba et al.",
-    "published": "2026-08-03",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "video"
-    ],
-    "summaryKo": "PhyCheck: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02150v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02150v1.pdf"
-  },
-  {
-    "id": "2608.02470",
-    "title": "Grounding Agentic VLMs with Dedicated Segmentation for Fine-Grained Vehicle Damage Assessment",
-    "authors": "Vishwajeet Shivaji Hogale, Anjali Pai, Nitya Ravi",
-    "published": "2026-08-03",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "agents",
-      "generation",
-      "detection"
-    ],
-    "summaryKo": "Grounding Agentic VLMs with Dedicated Segmentation for Fine-Grained Vehicle Damage Assessment: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02470v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02470v1.pdf"
-  },
-  {
-    "id": "2608.02505",
-    "title": "Abduction Without a Body? Representational Grounding and the Abduction Loop for Scientific Hypothesis Generation",
-    "authors": "Michael Farmer",
-    "published": "2026-08-03",
-    "category": "multimodal",
-    "categories": [
-      "cs.AI",
-      "cs.CV",
-      "cs.IR"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "Abduction Without a Body? Representational Grounding and the Abduction Loop for Scientific Hypothesis Generation: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02505v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02505v1.pdf"
-  },
-  {
-    "id": "2608.02145",
-    "title": "UniqueSplat: View-conditioned 3D Gaussian Splatting for Generalizable 3D Reconstruction",
-    "authors": "Haixu Song et al.",
-    "published": "2026-08-03",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "3d",
-      "embedding",
-      "benchmark"
-    ],
-    "summaryKo": "UniqueSplat: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
-      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
-      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02145v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02145v1.pdf"
-  },
-  {
-    "id": "2608.02449",
-    "title": "MoRAL: Sensor-Grounded BEV Reasoning for Compact VLMs toward Edge-Oriented Autonomous Driving",
-    "authors": "Ambarish Govindarajulu Kaliamurthi, Kaikai Liu",
-    "published": "2026-08-03",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.RO"
-    ],
-    "tags": [
-      "3d",
       "autonomous-driving",
-      "multimodal",
-      "generation"
+      "retrieval"
     ],
-    "summaryKo": "MoRAL: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
+    "summaryKo": "Video-DeepResearch: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
     "detail": {
-      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
-      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
-      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
+      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
+      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
+      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.02449v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02449v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.03979v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03979v1.pdf"
   },
   {
-    "id": "2608.02358",
-    "title": "ScrambleToolBench: Agents Search Exhaustively Even When Their Own Map Points to the Next Step",
-    "authors": "Vernon Toh et al.",
-    "published": "2026-08-03",
+    "id": "2608.03154",
+    "title": "ANCHOR-RE: An Agentic Neuro-Symbolic Framework for Grounded Biomedical Relation Extraction",
+    "authors": "Shufan Ming et al.",
+    "published": "2026-08-04",
     "category": "llm",
     "categories": [
       "cs.CL"
@@ -218,92 +40,268 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "autonomous-driving"
+      "medical",
+      "generation"
     ],
-    "summaryKo": "ScrambleToolBench: LLM 분야의 최근 연구로, 자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬 논문이다.",
+    "summaryKo": "ANCHOR-RE: LLM 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬다.",
-      "method": "논문은 비전-언어 모델과 그라운딩 또는 시간 추론을 결합해 주행 장면의 위험을 해석 가능하게 만드는 방식을 제안한다.",
-      "takeaway": "안전 관련 응용에서는 설명 가능성이 유용하지만, 실제 도로 일반화와 작은 객체 인식 실패를 별도로 봐야 한다."
+      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
+      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
+      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.02358v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02358v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.03154v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03154v1.pdf"
   },
   {
-    "id": "2608.02177",
-    "title": "GSRAIN: Physically Calibrated High-/Low-Frequency Rainfall Synthesis for 3D Gaussian Driving Scenes",
-    "authors": "Fanyu Wang, Longgao Zhang, Junyi Chen",
-    "published": "2026-08-03",
-    "category": "cv",
+    "id": "2608.03691",
+    "title": "Pattern over Pixels: Measuring Pattern Completion Bias in Multimodal Code Generation",
+    "authors": "Khai-Nguyen Nguyen, Oscar Chaparro, Antonio Mastropaolo",
+    "published": "2026-08-04",
+    "category": "multimodal",
     "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "diffusion",
-      "3d",
-      "autonomous-driving",
-      "detection"
-    ],
-    "summaryKo": "GSRAIN: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
-      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
-      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.02177v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02177v1.pdf"
-  },
-  {
-    "id": "2608.02217",
-    "title": "VC-Tooler: Learning Compositional and Adaptive Visual Tool Use",
-    "authors": "Yizheng Wu et al.",
-    "published": "2026-08-03",
-    "category": "cv",
-    "categories": [
+      "cs.SE",
+      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "multimodal"
+      "multimodal",
+      "code-generation",
+      "generation"
     ],
-    "summaryKo": "VC-Tooler: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
+    "summaryKo": "Pattern over Pixels: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
-      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
-      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.02217v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02217v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.03691v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03691v1.pdf"
   },
   {
-    "id": "2608.02392",
-    "title": "GROVE: Growing and Reasoning over Temporally Stratified Memory from Streaming Video Experience",
-    "authors": "Sitong Gong et al.",
-    "published": "2026-08-03",
+    "id": "2608.03358",
+    "title": "ArtECulture: Benchmarking Culture-Conditioned Visual Emotion Understanding in Multimodal Large Language Models",
+    "authors": "Xiaolin Chen et al.",
+    "published": "2026-08-04",
     "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "ArtECulture: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
+      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
+      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03358v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03358v1.pdf"
+  },
+  {
+    "id": "2608.03450",
+    "title": "Balancing Efficiency and Efficacy: Training-Free Attention-Guided Switching Between Explicit and Latent Thoughts for MLLMs",
+    "authors": "Haoqian Kang et al.",
+    "published": "2026-08-04",
+    "category": "multimodal",
+    "categories": [
+      "cs.MM",
+      "cs.AI",
+      "cs.CL",
+      "cs.CV"
+    ],
+    "tags": [
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "Balancing Efficiency and Efficacy: 멀티모달 분야의 최근 연구로, 텍스트, 이미지, 비디오 같은 여러 입력을 함께 다룰 때 추론과 근거 제시가 어려운 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "텍스트, 이미지, 비디오 같은 여러 입력을 함께 다룰 때 추론과 근거 제시가 어려운 문제를 다룬다.",
+      "method": "논문은 비전-언어 모델이나 멀티모달 학습 구조를 이용해 장면 이해, 생성, 질의응답을 개선한다.",
+      "takeaway": "멀티모달 모델은 그럴듯한 설명을 만들 수 있으므로, 정답뿐 아니라 시각적 근거와 오류 유형을 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03450v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03450v1.pdf"
+  },
+  {
+    "id": "2608.03817",
+    "title": "UHP Detection: LVLMs have their Unique Hallucination Pattern in the Consistency Space",
+    "authors": "Amir Mohammad Ezzati et al.",
+    "published": "2026-08-04",
+    "category": "cv",
     "categories": [
       "cs.CV",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "video",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "UHP Detection: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03817v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03817v1.pdf"
+  },
+  {
+    "id": "2608.03826",
+    "title": "Geo-Embed: Towards Unified Multimodal Embeddings for Urban Understanding",
+    "authors": "Jiapeng Li et al.",
+    "published": "2026-08-04",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "embedding",
+      "multimodal",
+      "detection"
+    ],
+    "summaryKo": "Geo-Embed: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
+      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
+      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03826v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03826v1.pdf"
+  },
+  {
+    "id": "2608.03700",
+    "title": "When Agents Learn to Be You: Benchmarking Privacy Leakage, Impersonation Risk, and Defenses in Persona Skills",
+    "authors": "Yongli Xiang et al.",
+    "published": "2026-08-04",
+    "category": "llm",
+    "categories": [
+      "cs.CR",
+      "cs.CL",
+      "cs.CY"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "privacy",
       "retrieval"
     ],
-    "summaryKo": "GROVE: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "When Agents Learn to Be You: LLM 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
+      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
+      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.02392v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.02392v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.03700v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03700v1.pdf"
+  },
+  {
+    "id": "2608.03508",
+    "title": "From Multi-Resolution Cells to Gigapixel Whole Slide Images Foundation Model for Computational Pathology",
+    "authors": "Basit Alawode et al.",
+    "published": "2026-08-04",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "embedding",
+      "multimodal",
+      "benchmark"
+    ],
+    "summaryKo": "From Multi-Resolution Cells to Gigapixel Whole Slide Images Foundation Model for Computational Pathology: 컴퓨터 비전 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
+      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
+      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03508v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03508v1.pdf"
+  },
+  {
+    "id": "2608.03275",
+    "title": "MoEGen: Mixture-of-Experts for Instance-Adaptive LoRA Generation",
+    "authors": "Yiming Zeng et al.",
+    "published": "2026-08-04",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "medical",
+      "generation"
+    ],
+    "summaryKo": "MoEGen: LLM 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
+      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
+      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03275v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03275v1.pdf"
+  },
+  {
+    "id": "2608.03794",
+    "title": "Evaluating LLMs in Database Scenarios: A Lifecycle Benchmark for Assessing Their Potential in Core Database Tasks",
+    "authors": "Shunfan Zheng et al.",
+    "published": "2026-08-04",
+    "category": "llm",
+    "categories": [
+      "cs.DB",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "autonomous-driving"
+    ],
+    "summaryKo": "Evaluating LLMs in Database Scenarios: LLM 분야의 최근 연구로, 자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬다.",
+      "method": "논문은 비전-언어 모델과 그라운딩 또는 시간 추론을 결합해 주행 장면의 위험을 해석 가능하게 만드는 방식을 제안한다.",
+      "takeaway": "안전 관련 응용에서는 설명 가능성이 유용하지만, 실제 도로 일반화와 작은 객체 인식 실패를 별도로 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03794v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03794v1.pdf"
+  },
+  {
+    "id": "2608.03859",
+    "title": "Beyond Representational Similarity: Source-Conditioned Description-Length Gain for Generative Plagiarism Detection and Candidate Source Reranking",
+    "authors": "Peijia Guo et al.",
+    "published": "2026-08-04",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "detection"
+    ],
+    "summaryKo": "Beyond Representational Similarity: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
+      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
+      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.03859v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.03859v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-08-04T03:28:43.803Z",
+  "collectedAt": "2026-08-05T03:23:37.447Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
