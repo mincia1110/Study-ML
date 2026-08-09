@@ -3,10 +3,62 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2608.05069",
-    "title": "VQ-VAD: Vector-quantized Motion Representation Learning for Human-centric Video Anomaly Detection",
-    "authors": "Narges Rashvand et al.",
-    "published": "2026-08-05",
+    "id": "2608.05729",
+    "title": "Unified Agent: Managing Interactions across Devices",
+    "authors": "Xinshuang Liu et al.",
+    "published": "2026-08-06",
+    "category": "multimodal",
+    "categories": [
+      "cs.AI",
+      "cs.CL",
+      "cs.CV",
+      "cs.HC"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "multimodal"
+    ],
+    "summaryKo": "Unified Agent: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.05729v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05729v1.pdf"
+  },
+  {
+    "id": "2608.06292",
+    "title": "NeSy-RAG: Neuro-Symbolic RAG for Explainable Question Answering",
+    "authors": "Jonas Gann, Michael Gertz",
+    "published": "2026-08-06",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.SC"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "embedding",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "NeSy-RAG: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
+      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
+      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.06292v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.06292v1.pdf"
+  },
+  {
+    "id": "2608.05960",
+    "title": "Big, Bright, or Invisible: A Frozen-Feature Benchmark of 3D CT Foundation Models",
+    "authors": "Maulik Chevli et al.",
+    "published": "2026-08-06",
     "category": "cv",
     "categories": [
       "cs.CV",
@@ -14,51 +66,141 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "privacy",
-      "video",
-      "generation",
-      "detection"
+      "3d",
+      "embedding"
     ],
-    "summaryKo": "VQ-VAD: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "Big, Bright, or Invisible: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
+      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
+      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.05069v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.05069v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.05960v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05960v1.pdf"
   },
   {
-    "id": "2608.04426",
-    "title": "Predict, Then Retrieve: Cross-Instance Future-State Retrieval from Video Prefixes",
-    "authors": "Quynh Vo et al.",
-    "published": "2026-08-05",
+    "id": "2608.06170",
+    "title": "Prior-SG: Task and Prior Driven Region Segmentation for Scene Graphs in Arbitrarily-Structured Environments",
+    "authors": "Giorgio Tonetti et al.",
+    "published": "2026-08-06",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
+      "cs.RO",
+      "cs.CV"
+    ],
+    "tags": [
+      "3d",
+      "autonomous-driving",
+      "benchmark",
+      "generation"
+    ],
+    "summaryKo": "Prior-SG: 멀티모달 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
+      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
+      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.06170v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.06170v1.pdf"
+  },
+  {
+    "id": "2608.05817",
+    "title": "M$^3$R-Bench: A Unified Benchmark for Evidence-Grounded Multimodal Metaphor Understanding",
+    "authors": "Hong Jiang et al.",
+    "published": "2026-08-06",
+    "category": "multimodal",
+    "categories": [
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "retrieval",
-      "multimodal",
+      "multimodal"
+    ],
+    "summaryKo": "M$^3$R-Bench: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.05817v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05817v1.pdf"
+  },
+  {
+    "id": "2608.05823",
+    "title": "Decomposed Entailment for Factuality Checking and Hallucination Detection",
+    "authors": "Achir Oukelmoun, Nasredine Semmar, Gaël De Chalendar",
+    "published": "2026-08-06",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "embedding",
+      "generation",
+      "detection"
+    ],
+    "summaryKo": "Decomposed Entailment for Factuality Checking and Hallucination Detection: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.05823v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05823v1.pdf"
+  },
+  {
+    "id": "2608.05891",
+    "title": "AppDeltaWorld: Transition-Grounded Delta Code World Model for Mobile GUI Agents",
+    "authors": "Weikai Xu et al.",
+    "published": "2026-08-06",
+    "category": "multimodal",
+    "categories": [
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "agents",
+      "privacy",
       "generation"
     ],
-    "summaryKo": "Predict, Then Retrieve: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "AppDeltaWorld: 멀티모달 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
+      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
+      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.05891v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05891v1.pdf"
+  },
+  {
+    "id": "2608.05747",
+    "title": "GST-Bench: Can VLMs Develop Global Spatial Awareness from Video?",
+    "authors": "Qifeng Zhang et al.",
+    "published": "2026-08-06",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "video"
+    ],
+    "summaryKo": "GST-Bench: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
     "detail": {
       "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
       "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.04426v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04426v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.05747v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05747v1.pdf"
   },
   {
-    "id": "2608.04902",
-    "title": "Visual Representation Matters: Exploiting Temporal Differences in Video-to-Audio Generation",
-    "authors": "Zehua Chen et al.",
-    "published": "2026-08-05",
+    "id": "2608.05798",
+    "title": "KVAE: Family of Tokenizers for Multimodal Generative Models",
+    "authors": "Andrey Shutkin et al.",
+    "published": "2026-08-06",
     "category": "cv",
     "categories": [
       "cs.CV",
@@ -66,247 +208,95 @@ window.PAPERS = [
       "cs.SD"
     ],
     "tags": [
-      "benchmark",
       "diffusion",
+      "3d",
       "video",
       "multimodal",
       "generation"
     ],
-    "summaryKo": "Visual Representation Matters: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "KVAE: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
     "detail": {
       "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
       "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.04902v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04902v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.05798v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05798v1.pdf"
   },
   {
-    "id": "2608.04515",
-    "title": "CARVE: Cross-Slice Anisotropic Reallocation of Visual Evidence for Efficient 3D Medical Volume Understanding",
-    "authors": "Zhenyu Yi et al.",
-    "published": "2026-08-05",
-    "category": "multimodal",
+    "id": "2608.05844",
+    "title": "Curia-MAE: Multi-Modal Multi-Anatomy MAE Pre-Training for 3D Medical Image Segmentation",
+    "authors": "Théo Danielou et al.",
+    "published": "2026-08-06",
+    "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "3d",
-      "medical",
-      "video",
-      "generation"
+      "medical"
     ],
-    "summaryKo": "CARVE: 멀티모달 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
+    "summaryKo": "Curia-MAE: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
     "detail": {
       "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
       "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
       "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.04515v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04515v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.05844v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05844v1.pdf"
   },
   {
-    "id": "2608.04709",
-    "title": "EmpaAva: An Open-source Agentic 3D-Avatar Empathetic Live Chatbot",
-    "authors": "Jie Yang et al.",
-    "published": "2026-08-05",
+    "id": "2608.06060",
+    "title": "Learning from Failures: Retrieval-Centric CoT via Hard Negatives for Unified Multimodal Retrieval",
+    "authors": "Zelong Sun et al.",
+    "published": "2026-08-06",
     "category": "multimodal",
     "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "agents",
-      "3d",
-      "video",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "EmpaAva: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.04709v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04709v1.pdf"
-  },
-  {
-    "id": "2608.04452",
-    "title": "Q-CueGraph: Query-Conditioned Visual Evidence Graphs for Multimodal Reasoning",
-    "authors": "Pengcheng Pan, Xinfang Zhang",
-    "published": "2026-08-05",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
+      "retrieval",
       "multimodal"
     ],
-    "summaryKo": "Q-CueGraph: 멀티모달 분야의 최근 연구로, 텍스트, 이미지, 비디오 같은 여러 입력을 함께 다룰 때 추론과 근거 제시가 어려운 문제를 다룬 논문이다.",
+    "summaryKo": "Learning from Failures: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "텍스트, 이미지, 비디오 같은 여러 입력을 함께 다룰 때 추론과 근거 제시가 어려운 문제를 다룬다.",
-      "method": "논문은 비전-언어 모델이나 멀티모달 학습 구조를 이용해 장면 이해, 생성, 질의응답을 개선한다.",
-      "takeaway": "멀티모달 모델은 그럴듯한 설명을 만들 수 있으므로, 정답뿐 아니라 시각적 근거와 오류 유형을 확인해야 한다."
+      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
+      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
+      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.04452v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04452v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.06060v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.06060v1.pdf"
   },
   {
-    "id": "2608.04759",
-    "title": "Trace, Verify, and Correct: A Training-Free Framework for Spatial Reasoning in Multimodal LLMs",
-    "authors": "Yang Yang et al.",
-    "published": "2026-08-05",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.CL"
-    ],
-    "tags": [
-      "multimodal",
-      "benchmark"
-    ],
-    "summaryKo": "Trace, Verify, and Correct: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.04759v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04759v1.pdf"
-  },
-  {
-    "id": "2608.04761",
-    "title": "InsightEmb: Learning Action-Intent Embeddings for Agentic Insight Retrieval",
-    "authors": "Tsz Ting Chung et al.",
-    "published": "2026-08-05",
+    "id": "2608.05695",
+    "title": "DreamGuard: Efficient Runtime Guardrail for LLM Agents via Risk-Aware World Model",
+    "authors": "Wenhao Lin et al.",
+    "published": "2026-08-06",
     "category": "llm",
     "categories": [
+      "cs.AI",
       "cs.CL",
-      "cs.AI"
+      "cs.CR"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "retrieval",
-      "embedding"
+      "agents"
     ],
-    "summaryKo": "InsightEmb: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "summaryKo": "DreamGuard: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
     "detail": {
       "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
       "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
       "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.04761v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04761v1.pdf"
-  },
-  {
-    "id": "2608.04622",
-    "title": "DAC-Pose: Dual-Agent Collaborative Framework for Pose-Guided Human Generation",
-    "authors": "Haotian Yang et al.",
-    "published": "2026-08-05",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "autonomous-driving",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "DAC-Pose: 멀티모달 분야의 최근 연구로, 자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬다.",
-      "method": "논문은 비전-언어 모델과 그라운딩 또는 시간 추론을 결합해 주행 장면의 위험을 해석 가능하게 만드는 방식을 제안한다.",
-      "takeaway": "안전 관련 응용에서는 설명 가능성이 유용하지만, 실제 도로 일반화와 작은 객체 인식 실패를 별도로 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.04622v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04622v1.pdf"
-  },
-  {
-    "id": "2608.04655",
-    "title": "CSGen: A Multi-Domain Curvilinear Structure Generation Model via Hierarchical Multimodal Diffusion",
-    "authors": "Zhe Shan et al.",
-    "published": "2026-08-05",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "diffusion",
-      "multimodal",
-      "benchmark",
-      "generation"
-    ],
-    "summaryKo": "CSGen: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.04655v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04655v1.pdf"
-  },
-  {
-    "id": "2608.04698",
-    "title": "Teaching MLLMs to Say No: Generalized Referring Expression Comprehension via Refusal Calibrated GRPO",
-    "authors": "Xuzheng Yang et al.",
-    "published": "2026-08-05",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "Teaching MLLMs to Say No: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
-      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
-      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.04698v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04698v1.pdf"
-  },
-  {
-    "id": "2608.04701",
-    "title": "UniWorld-View: Large-Baseline View Synthesis via Video Diffusion Models",
-    "authors": "Haiyang Zhou et al.",
-    "published": "2026-08-05",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "3d",
-      "video",
-      "generation"
-    ],
-    "summaryKo": "UniWorld-View: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.04701v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.04701v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.05695v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.05695v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-08-06T03:26:45.439Z",
+  "collectedAt": "2026-08-09T02:21:31.133Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
