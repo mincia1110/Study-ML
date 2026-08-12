@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { collectCitationRecommendations, extractArxivIdFromWork, buildOpenAlexUrl } from './lib/openalex.mjs';
 import { CITATION_MODES, citationWindow, selectCitationPapers } from './lib/recommend.mjs';
 import { parsePreviousPapers, readPreviousPapers, reusableSummary } from './lib/paper-cache.mjs';
+import { createArxivClient } from './lib/arxiv-client.mjs';
 
 /**
  * collect-papers.mjs — arXiv daily paper collector.
@@ -51,6 +52,12 @@ function positiveInteger(value, fallback) {
 }
 
 const LLM_TIMEOUT_MS = positiveInteger(process.env.OPENCODE_GO_TIMEOUT_MS, DEFAULT_LLM_TIMEOUT_MS);
+const ARXIV_REQUEST_TIMEOUT_MS = positiveInteger(process.env.ARXIV_REQUEST_TIMEOUT_MS, 60_000);
+const ARXIV_MAX_RETRIES = positiveInteger(process.env.ARXIV_MAX_RETRIES, 3);
+const arxivClient = createArxivClient({
+  requestTimeoutMs: ARXIV_REQUEST_TIMEOUT_MS,
+  maxRetries: ARXIV_MAX_RETRIES,
+});
 
 // ponytail: read key from env first, fall back to opencodex config so local runs
 // "just work" without manual export. CI sets OPENCODE_GO_API_KEY as a secret.
@@ -251,8 +258,7 @@ async function summarizeWithLLM(paper, options = {}) {
 
 async function fetchEntries(query) {
   const url = `${ARXIV_API}?search_query=${encodeURIComponent(query)}&sortBy=submittedDate&sortOrder=descending&max_results=${MAX_RESULTS}`;
-  const res = await fetch(url);
-  if (!res.ok) throw new Error(`arXiv API error ${res.status} for query=${query}`);
+  const res = await arxivClient.fetch(url, `query=${query}`);
   const xml = await res.text();
   return xml.split('<entry>').slice(1);
 }
@@ -262,8 +268,7 @@ async function fetchEntriesByIds(ids) {
   for (let offset = 0; offset < ids.length; offset += 50) {
     const batch = ids.slice(offset, offset + 50);
     const params = new URLSearchParams({ id_list: batch.join(','), max_results: String(batch.length) });
-    const res = await fetch(`${ARXIV_API}?${params}`);
-    if (!res.ok) throw new Error(`arXiv API error ${res.status} for citation metadata`);
+    const res = await arxivClient.fetch(`${ARXIV_API}?${params}`, 'citation metadata');
     entries.push(...(await res.text()).split('<entry>').slice(1));
   }
   return entries;
@@ -534,6 +539,40 @@ async function main() {
       }),
       /LLM API timed out after 5ms/,
     );
+    let clock = 0;
+    const delays = [];
+    const statuses = [429, 200, 200];
+    const retryClient = createArxivClient({
+      fetcher: async () => {
+        const status = statuses.shift();
+        return {
+          ok: status === 200,
+          status,
+          headers: { get: name => name === 'retry-after' && status === 429 ? '7' : null },
+        };
+      },
+      sleep: async ms => { delays.push(ms); clock += ms; },
+      now: () => clock,
+      requestTimeoutMs: 50,
+      minIntervalMs: 3000,
+      baseRetryMs: 5000,
+      maxRetries: 2,
+      logger: { warn() {} },
+    });
+    assert.equal((await retryClient.fetch('test:first')).status, 200);
+    assert.equal((await retryClient.fetch('test:second')).status, 200);
+    assert.deepEqual(delays, [7000, 3000]);
+    let badRequestCalls = 0;
+    const noRetryClient = createArxivClient({
+      fetcher: async () => { badRequestCalls += 1; return { ok: false, status: 400, headers: { get: () => null } }; },
+      sleep: async () => {},
+      minIntervalMs: 0,
+      requestTimeoutMs: 50,
+      maxRetries: 2,
+      logger: { warn() {} },
+    });
+    await assert.rejects(noRetryClient.fetch('test:bad-request'), /arXiv API error 400/);
+    assert.equal(badRequestCalls, 1);
     console.log('self-test passed');
     return;
   }

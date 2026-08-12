@@ -71,6 +71,8 @@ Citation 수는 OpenAlex 기준이며 제공자별로 다를 수 있습니다. �
 `OPENCODE_GO_API_KEY`가 있으면 `opencode-go/deepseek-v4-flash`로 한국어 요약을 생성합니다. 키가 없으면 휴리스틱 템플릿으로 요약합니다.
 LLM 요청은 기본 60초 후 중단되고 해당 논문만 템플릿 요약으로 대체됩니다. `OPENCODE_GO_TIMEOUT_MS`로 제한 시간을 조정할 수 있습니다.
 
+arXiv API 요청은 정책에 맞춰 최소 3초 간격으로 직렬 실행합니다. HTTP 429나 일시적인 서버 오류가 발생하면 `Retry-After`를 우선해 최대 3회 재시도하며, `ARXIV_REQUEST_TIMEOUT_MS`와 `ARXIV_MAX_RETRIES`로 제한을 조정할 수 있습니다.
+
 ```bash
 cp .env.example .env
 node --env-file=.env scripts/collect-papers.mjs
