@@ -56,7 +56,7 @@ jobs:
           RESULT: ${{ needs.collect.result }}
           CHANGES_DETECTED: ${{ needs.collect.outputs.changes_detected }}
           COMMIT_HASH: ${{ needs.collect.outputs.commit_hash }}
-          RUN_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          SITE_URL: https://mincia1110.github.io/Study-ML/
         run: |
           if [ -z "$NTFY_TOPIC" ]; then
             echo "::error::NTFY_TOPIC secret is not configured"
@@ -76,13 +76,13 @@ jobs:
           message="Result: ${RESULT}
           Data changed: ${CHANGES_DETECTED:-unknown}
           Commit: ${COMMIT_HASH:-none}
-          Run: ${RUN_URL}"
+          Site: ${SITE_URL}"
 
           curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 \
             --output /dev/null \
             -H "Title: ${title}" \
             -H "Tags: ${tags}" \
             -H "Priority: ${priority}" \
-            -H "Click: ${RUN_URL}" \
+            -H "Click: ${SITE_URL}" \
             --data-binary "$message" \
             "https://ntfy.sh/${NTFY_TOPIC}"
