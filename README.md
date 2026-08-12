@@ -82,12 +82,13 @@ node --env-file=.env scripts/collect-papers.mjs
 
 ## 자동 갱신
 
-GitHub Actions 워크플로가 매일 09:07 KST에 실행됩니다.
+GitHub Actions 워크플로가 매일 17:00 KST에 실행됩니다. GitHub 예약 실행은 정각의 높은 부하로 몇 분 지연될 수 있습니다.
 
 - 워크플로: `.github/workflows/daily-papers.yml`
 - 출력 파일: `data/papers.js`
 - 필수 secret: `OPENALEX_API_KEY`
 - 선택 secret: `OPENCODE_GO_API_KEY`
+- 완료 알림: `NTFY_TOPIC` secret에 저장된 비공개 ntfy topic으로 성공·실패 결과와 실행 링크를 전송
 
 ## 구조
 
