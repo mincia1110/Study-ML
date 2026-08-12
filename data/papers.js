@@ -3,27 +3,30 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2608.11051",
-    "title": "HUI360: A 360° Egocentric Dataset and Baselines for Human-Robot Interaction Anticipation",
-    "authors": "Raphael Lorenzo-Louis et al.",
+    "id": "2608.10949",
+    "title": "StreamFlow: Dynamic Memory Flows for Streaming Video Understanding",
+    "authors": "Muxin Fu et al.",
     "published": "2026-08-11",
     "category": "multimodal",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "video"
+      "video",
+      "retrieval",
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "HUI360: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "summaryKo": "스트리밍 비디오 이해를 위한 동적 시각 메모리 프레임워크 StreamFlow를 제안하여, 시각 정보를 효율적으로 필터링하고 필요 시 과거 시각 정보에 동적으로 접근함으로써 성능과 효율성을 동시에 개선한다.",
     "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+      "problem": "기존 스트리밍 비디오 이해 방법은 모델 기반 방식은 백본 수정이 필요하고, 메모리 기반 방식은 시간적으로 중복된 콘텐츠에 많은 계산을 낭비하며 시각 기록에 대한 접근이 경직되어 있다.",
+      "method": "StreamFlow는 시각 인코딩 전에 시간적 중복을 필터링하는 경량의 역학 인식 중기 메모리와, 과거 비디오 콘텐츠를 시각 잠재 변수로 통합하는 잠재 장기 메모리를 결합하고, 생성 중 주의 기반 검색 메커니즘으로 관련 시각 잠재 변수를 주입한다.",
+      "takeaway": "StreamFlow는 StreamingBench에서 67.73% 정확도로 최고 성능을 달성하고, 오프라인 장기 비디오 벤치마크에서도 강력한 성능을 보인다. 또한 시각 주의 점수(VAS)를 59.1% 개선하고 종단 간 지연 시간과 최대 메모리를 각각 50.4%, 21.1% 줄여 보다 시각적으로 근거한 효율적 추론을 가능하게 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11051v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11051v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10949v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10949v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -32,28 +35,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.11076",
-    "title": "Foundation Model-Enabled Efficient Data Sampling (FEEDS): A label-efficient training strategy for pan-cancer, multi-tracer PET/CT datasets",
-    "authors": "Biratal Raj Wagle et al.",
+    "id": "2608.10932",
+    "title": "Temporally Grounded Compositional Camera Motion Understanding via Geometric Knowledge Distillation",
+    "authors": "Dazhao Du et al.",
     "published": "2026-08-11",
     "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
-      "medical",
-      "embedding",
       "benchmark",
-      "detection"
+      "3d",
+      "video",
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "Foundation Model-Enabled Efficient Data Sampling (FEEDS): 컴퓨터 비전 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
+    "summaryKo": "카메라 모션 이해를 클립 수준 레이블링이 아닌 시간적으로 근거한 구성적 인식으로 재정의하고, 경량 카메라 토큰으로 3D 기하 지식을 증류하는 CamDistill과 전문가 주석 벤치마크 CamChoreo를 제안한다.",
     "detail": {
-      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
-      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
-      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
+      "problem": "기존 MLLM 기반 카메라 모션 인식은 클립 전체에 하나 이상의 레이블을 할당하여, 샷 내에서 모션이 변하거나 여러 움직임이 동시에 발생하는 실제 특성을 간과한다.",
+      "method": "CamChoreo는 4,229개의 실제 단일 샷 클립에 시간 구간과 20개 방향 인식 라벨로 구성된 구성적 모션 주석을 제공한다. CamDistill은 훈련 중 3D 파운데이션 모델의 기하 지식을 경량 카메라 토큰으로 증류하여 추론 시 3D 모델 없이 직접 특징 주입(CamInject)에 필적하는 정확도를 달성한다.",
+      "takeaway": "CamDistill은 추론 시 3D 교사 모델을 실행하지 않으면서 직접 특징 주입과 동일한 정확도를 보였으며, CamChoreo와 함께 카메라 모션 이해를 클립 수준에서 시간적으로 근거한 구성적 인식으로 발전시킨다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11076v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11076v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10932v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10932v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -62,26 +67,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.11135",
-    "title": "Is There Really a Camouflaged Object? Towards Realistic Camouflaged Object Detection",
-    "authors": "Huafeng Chen et al.",
+    "id": "2608.10954",
+    "title": "Evidence-Grounded Trustworthy Multimodal Reasoning and Evaluation Benchmark in Complex Urban Scenes",
+    "authors": "Zhaoyang Wei et al.",
     "published": "2026-08-11",
     "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "detection"
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "Is There Really a Camouflaged Object? Towards Realistic Camouflaged Object Detection: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "본 논문은 복잡한 도시 장면에서 다중모달 대규모 언어 모델의 인지 신뢰성 저하 문제를 해결하기 위해 증거 기반 추론 벤치마크(AD2-Bench)와 방법(EGVOR)을 제안한다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "기존 MLLM은 열악한 조건의 복잡한 장면에서 시각적 증거 없이 암묵적 추론에 의존하여 인식과 추론이 분리된다. 또한 기존 벤치마크는 최종 예측만 평가하여 추론 과정의 실패를 진단하지 못한다.",
+      "method": "저자들은 계층적 시각 진단 프레임워크를 갖춘 AD2-Bench를 제안하고, 공간적 모호성과 의미적 불확실성이라는 두 가지 추론 실패 원인을 식별한다. 이를 해결하기 위해 증거 원자(Evidence Atoms)를 명시적으로 생성하는 EGVOR을 제안하고, 반성적 감독 구성부터 강화 학습까지의 계층적 커리큘럼으로 훈련한다.",
+      "takeaway": "EGVOR은 열악한 조건에서 추론 안정성을 크게 향상시켜 신뢰할 수 있는 다중모달 인지를 위한 더 견고한 프레임워크를 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11135v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11135v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10954v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10954v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -90,26 +97,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.11150",
-    "title": "CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting",
-    "authors": "Jiayu Ding et al.",
+    "id": "2608.10964",
+    "title": "CARE: Confidence-Aware Reasoning for Reliable Medical VQA",
+    "authors": "Yuetian Du et al.",
     "published": "2026-08-11",
     "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "3d"
+      "medical",
+      "multimodal"
     ],
-    "summaryKo": "CausalSplat: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
+    "summaryKo": "의료 MLLM의 신뢰도 보정 문제를 해결하기 위해 정확도와 보정을 함께 최적화하는 CARE 프레임워크를 제안한다.",
     "detail": {
-      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
-      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
-      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
+      "problem": "의료 MLLM은 강화 미세조정을 통해 CoT 추론을 생성하지만, 표현된 확신과 실제 진단 정확도 사이의 체계적 차이인 신뢰도 오보정이 발생하여 임상적 신뢰를 저해한다.",
+      "method": "CARE는 의료 CoT 데이터 합성으로 SFT를 수행하고, 신뢰도 보정 보상 메커니즘을 적용한 GRPO를 통해 모델의 자신감과 진단 정확성을 보상 신호로 연결하는 2단계 파이프라인을 사용한다.",
+      "takeaway": "세 의료 VQA 벤치마크에서 가장 높은 진단 정확도와 가장 낮은 기대 보정 오차 및 환각률을 달성했으며, 초록에 명시된 한계는 없다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11150v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11150v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10964v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10964v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -118,28 +127,31 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.10315",
-    "title": "Is This Your Final Answer? Cross-Contextual Consistency as a Measure of LLM Credibility",
-    "authors": "Siyang Wu, Yibo Jiang, Bryon Aragam",
-    "published": "2026-08-10",
-    "category": "llm",
+    "id": "2608.11017",
+    "title": "R4DSG: Relative 4D Scene Graph Memory for Object-Centric Question Answering in Long Egocentric Video",
+    "authors": "Ke Ma et al.",
+    "published": "2026-08-11",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.CV",
+      "cs.AI",
+      "cs.HC",
+      "cs.MM"
     ],
     "tags": [
-      "benchmark",
-      "code-generation",
-      "generation"
+      "agents",
+      "3d",
+      "video",
+      "retrieval"
     ],
-    "summaryKo": "Is This Your Final Answer? Cross-Contextual Consistency as a Measure of LLM Credibility: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "R4DSG는 장시간 자기중심적 비디오에서 객체 중심 질의응답을 위해 상대적 4D 장면 그래프 메모리를 도입하여, 시간·장소·객체·앵커 상대 변화·상호작용 맥락으로 검색 가능한 메모리 항목을 생성한다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "캡션이나 대본 기반 메모리는 지속적 객체 정체성과 구조적 공간 변화를 보존하지 못해, 물건 이동·상태 변화·위치 이유 같은 객체 중심 질문이 어렵다. 기존 3D 장면 그래프 방법은 자유로운 움직임의 웨어러블 RGB 비디오에 없는 강한 기하 정보(포인트 클라우드, RGB-D, 자세, 재구성 등)를 요구한다.",
+      "method": "비디오를 시간·장소·지속 객체·앵커 상대 변화·로컬 상호작용 맥락으로 색인된 압축 질의 가능 메모리로 변환한다. 안정적 앵커와 동적 객체를 분리하고, 프레임 간 객체 정체성을 유지하며, 전역 정렬 없이 앵커 상대 전이로 객체 상태를 표현하고, RGB 전용 비디오 분할·시간 전파·상대 3D 리프팅을 활용한다.",
+      "takeaway": "EgoLifeQA의 255개 객체 관련 질문에서 질문 전용 검색 시 EgoRAG-Text 대비 전체 6.7점, when 질문에서 12.5점 향상을 보여, 상대 4D 장면 그래프가 웨어러블 어시스턴트·AR·구현형 멀티미디어 에이전트의 실용적 메모리 기반이 될 수 있음을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.10315v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10315v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.11017v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.11017v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -148,28 +160,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.10628",
-    "title": "InSight-doc: Agentic Visual Perception for Long-Document Understanding",
-    "authors": "Kaican Li et al.",
+    "id": "2608.11191",
+    "title": "Test-Time Self-Evolving GUI Visual Grounding via Reflection-Guided On-Policy Self-Distillation",
+    "authors": "Shiyu Xuan, Zechao Li",
     "published": "2026-08-11",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.CL",
-      "cs.LG"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
       "agents"
     ],
-    "summaryKo": "InSight-doc: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "summaryKo": "배포 후 동결되는 GUI 비주얼 그라운딩 모델이 미지의 인터페이스에 적응하도록, 반성 가이드 온폴리시 자기 증류 기반 테스트 타임 자기 진화 프레임워크를 제안한다.",
     "detail": {
-      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
-      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
-      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+      "problem": "기존 GUI 비주얼 그라운딩 모델은 배포 후 파라미터가 고정되어 보지 못한 인터페이스에 적응하지 못한다. 최근 테스트 타임 강화학습 방법은 실패한 탐색에 대해 반성하지 못하는 한계가 있다.",
+      "method": "탐색, 평가, 반성, 내면화의 폐루프를 구성하며, MLLM 기반 Reflector로 생성 결과를 평가하고 반성 지식을 모델에 주입한다. 또한 잘못된 자동회귀 접두사가 감독 신호를 오염시키지 않도록 Contrastive Calibration을 설계한다.",
+      "takeaway": "여섯 개 벤치마크 실험에서 기본 모델 대비 평균 정확도 7.4% 향상을 보였으며, GUI 비주얼 그라운딩의 테스트 타임 적응에 온폴리시 자기 증류를 적용한 첫 연구이다. 코드는 공개 예정이다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.10628v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10628v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.11191v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.11191v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -178,27 +190,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.10908",
-    "title": "Order Matters: LVLMs as Judges for Temporal Reasoning in Image Sequences",
-    "authors": "Martina Ianaro et al.",
+    "id": "2608.10827",
+    "title": "MIRA: Medical Image Reflection for Agentic Diagnosis",
+    "authors": "Shengzhi Wang et al.",
     "published": "2026-08-11",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.CL"
+      "cs.AI"
     ],
     "tags": [
-      "embedding",
-      "multimodal"
+      "benchmark",
+      "agents",
+      "medical",
+      "autonomous-driving"
     ],
-    "summaryKo": "Order Matters: 멀티모달 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "MIRA는 의료 영상 진단 에이전트가 도구 사용의 필요성과 획득한 증거의 일관성을 반성적으로 검증하며 자율적으로 증거를 탐색하고 진단하는 프레임워크이다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "의료 시각 에이전트가 도구를 사용해 영상을 검사하고 외부 지식을 검색할 수 있지만, 무분별한 도구 사용은 노이즈나 오해를 불러일으키는 증거를 도입할 수 있다. 따라서 추가 관찰을 얻는 것뿐 아니라, 도구 동작이 필요한지와 그 증거가 현재 가설을 지지하는지 검증하는 과정이 필요하다.",
+      "method": "MIRA는 확대, 그라운딩, 포인팅, 회전, 측정, 웹 검색 등의 이미지 처리 도구를 동적으로 호출하면서 획득한 증거의 관련성과 일관성을 평가한다. 개발은 두 단계로 이루어지며, 먼저 도구가 강화된 몬테카를로 트리 탐색 데이터 엔진이 다양한 진단 가설을 탐색하고 시각적 그라운딩 정확도와 의미적 일관성을 함께 검증해 지도 미세조정 궤적을 구축하고, 이후 강화학습이 온라인 반성적 원리 진화를 통해 의사결정을 개선한다.",
+      "takeaway": "9개 의료 시각 추론 벤치마크에서 평균 64.73점을 기록해 Qwen3-VL-8B 백본 대비 7.44점 향상시켰고, 유용한 도구 사용 판단은 56.2%에서 73.8%로 증가했으며 유해 판단은 8.9%에서 1.6%로 감소했다. 질적 분석에서도 증거 재검토, 성급한 결론 수정, 도구 사용 전략 적응이 확인되었으며, 초록에 명시된 한계는 보고되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.10908v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10908v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10827v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10827v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -207,9 +221,9 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.10692",
-    "title": "SPIEval: Evaluating Large Language Models as Mobile Assistants over Scattered Personal Information",
-    "authors": "Junjie Ye et al.",
+    "id": "2608.10444",
+    "title": "From Reasoning Depth to Reasoning Breadth: Evaluating Multi-Point Associative Reasoning in Large Language Models",
+    "authors": "Si'an Xie et al.",
     "published": "2026-08-11",
     "category": "llm",
     "categories": [
@@ -218,16 +232,18 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "retrieval"
+      "agents",
+      "embedding",
+      "generation"
     ],
-    "summaryKo": "SPIEval: LLM 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "summaryKo": "대규모 언어 모델의 추론 깊이는 발전했지만, 여러 의미 방향을 병렬로 탐색하고 통합하는 추론 폭은 제대로 평가되지 않아, 이를 검증하기 위한 이중언어 벤치마크 MPAR-Bench를 제안하고 실험을 통해 추론 깊이가 추론 폭의 견고성을 자동으로 보장하지 않음을 보였다.",
     "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+      "problem": "기존 평가는 길고 복잡한 추론 사슬(추론 깊이)에 초점을 맞췄으나, 여러 의미적 단서를 병렬로 통합하는 추론 폭은 거의 다루지 않았다.",
+      "method": "협력 게임 Just One에서 착안한 다중 지점 연상 추론 과제인 MPAR-Bench를 제안하고, 다중 에이전트 단서 생성 파이프라인, 임베딩 기반 다양성 필터링, 인간 검증으로 1,000개 항목을 구축했다. 정확도, ANLS, 임베딩 유사도, 추론 과정 검증과 네 가지 변형 실험(단서 마스킹, 순서 섞기, 방해물 주입, 다단계 단서)으로 모델을 평가했다.",
+      "takeaway": "변형 실험에서 영어 9~18%포인트, 중국어 5~12%포인트의 정확도 하락이 관찰됐고, 생각 모드가 표준 정확도를 향상시키지만 변형 민감성은 줄이지 못했다. 사례 분석에서는 긴 추론이 초기 정답을 뒤집을 수 있음을 보여, 추론 깊이가 추론 폭의 견고성을 보장하지 않으며 현재 벤치마크가 추론 폭을 충분히 다루지 못함을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.10692v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10692v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10444v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10444v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -236,28 +252,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.10916",
-    "title": "FaithformBench: Benchmarking Faithfulness of Mathematical Chain-of-Thought Autoformalisation",
-    "authors": "Rob Cornish et al.",
+    "id": "2608.10503",
+    "title": "Every Token Counts: Exact Likert-Scale Distributions for Measuring LLM Attitudes and Biases",
+    "authors": "Davood Wadi, Mohsen Ghodrat, Matthew Philp",
     "published": "2026-08-11",
     "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LO"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "embedding"
+      "agents",
+      "autonomous-driving"
     ],
-    "summaryKo": "FaithformBench: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "LLM의 태도와 편향을 정확히 측정하기 위해 완전 교차 요인 실험과 토큰 수준 확률 질량 함수를 활용한 분석적 평가 프레임워크를 제안한다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "기존의 대규모 비구조적 벤치마크는 집계된 편향을 감지할 수 있지만, 그 편향이 기본 특성, 맥락 혼란 변수, 복잡한 상호작용 중 어디에서 비롯되는지 분리하지 못한다.",
+      "method": "무작위 프롬프트 대신 완전 교차 요인 실험으로 주 효과와 상호작용 효과를 분리하고, Monte Carlo 텍스트 샘플링을 제거한 정확한 토큰 수준 PMF를 사용하며, 다변량 서열 합의 지표와 분포적 ANOVA를 도입해 이를 분석한다.",
+      "takeaway": "다섯 개 LLM의 소비자 자민족중심주의 사례 연구를 통해 제안된 프레임워크가 집계 벤치마크가 가리는 체계적인 원산지 편향을 분리해 냄을 보여준다. 초록에 명시된 한계는 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.10916v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10916v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10503v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10503v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -266,28 +281,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.11027",
-    "title": "Mapping and Measuring the Behavioral Evolution of Large Language Models",
-    "authors": "Dong Qiao, Chris Ding, Jicong Fan",
+    "id": "2608.10756",
+    "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+    "authors": "Huosen Ou et al.",
     "published": "2026-08-11",
-    "category": "llm",
+    "category": "cv",
     "categories": [
-      "cs.LG",
-      "cs.CL"
+      "cs.RO",
+      "cs.CV"
     ],
     "tags": [
-      "benchmark",
-      "embedding",
-      "generation"
+      "diffusion",
+      "3d",
+      "multimodal"
     ],
-    "summaryKo": "Mapping and Measuring the Behavioral Evolution of Large Language Models: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "본 논문은 능동적 다중 시점 Semantic 3D Gaussian Splatting과 도달 가능한 베이스 배치 및 확산 기반 VLA 정책을 통합한 프레임워크를 통해 개방형 어휘 모바일 조작에서 목표물 접지와 소수 샷 조작을 해결한다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "임베디드 모바일 조작은 실행 전에 언어, 시각 관찰, 3D 장면 구조, 동작 가능성을 함께 정렬해야 하는 문제를 다룬다. 특히 가정용 로컬 작업 공간에서 개방형 어휘 목표 접지와 소수 샷 조작을 목표로 한다.",
+      "method": "능동적 다중 시점 Semantic-3DGS, 도달 가능성 기반 베이스 위치 결정, 확산 기반 비전-언어-행동 정책을 통합한다. 작업 중심 로컬 Semantic-3DGS를 공유 인터페이스로 사용하며, 사전 훈련된 동작 사전을 보존하기 위해 3D 의미 큐를 후기 action-expert 블록에만 주입한다.",
+      "takeaway": "50회 실험에서 전체 시스템은 장기 과제 60% 성공(PointVLA 40%, DexVLA 28%), 심한 잡음 조작 74%(단일 시점 52%, PointVLA 46%)를 달성하고, 75cm 높이 변화에서도 75% 성공을 유지하며 사진 유발 오그랩을 제거했다. 이는 명시적이고 갱신 가능한 3D 의미 접지가 잡음, 폐색, 시점 변화, 로봇 제약에서 강건성을 높임을 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11027v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11027v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10756v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10756v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -296,29 +311,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.11030",
-    "title": "Self-Knowledge Retrieval Augmented Generation Framework for Patent Matching",
-    "authors": "Jian Zhang et al.",
+    "id": "2608.10765",
+    "title": "Compositional Benchmark Synthesis for Hierarchical Human Action Recognition",
+    "authors": "Farnaz Soleimani et al.",
     "published": "2026-08-11",
-    "category": "llm",
+    "category": "cv",
     "categories": [
-      "cs.IR",
-      "cs.CL"
+      "cs.AI",
+      "cs.CV"
     ],
     "tags": [
-      "autonomous-driving",
-      "retrieval",
       "benchmark",
       "generation"
     ],
-    "summaryKo": "Self-Knowledge Retrieval Augmented Generation Framework for Patent Matching: LLM 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
+    "summaryKo": "본 논문은 평면적 단일-라벨 행동 코퍼스로부터 4단계 계층적 의도 벤치마크를 합성하고, 생성 규칙과 평가 규칙을 분리하여 순환 감독 위험을 설계적으로 해결하는 프레임워크를 제안한다.",
     "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
+      "problem": "계층적 인간 행동 인식은 원자적 행동부터 장기 의도까지 다양한 추상화 수준의 데이터가 필요하지만, 기존 대규모 코퍼스는 시간적 구성이 없는 단일 행동 클립만 제공하고 복합 활동 코퍼스는 얕고 고정된 도메인 한정 계층만 제공한다.",
+      "method": "단일-라벨 행동 코퍼스에서 실제 사전 추출된 특징을 유지한 채 행동, 활동, 저수준 의도(LLI), 고수준 의도(HLI)의 4단계 계층적 의도 벤치마크를 합성한다. 에피소드는 주제 일관성 제약 아래 전이 모델로 구성되고, 적용 범위를 고려한 샘플러가 주제 사용 지니 계수를 0.566에서 0.248로 줄인다. 평가 시 사용되는 1차 논리 규칙과 시퀀스 생성 규칙을 분리함으로써 벤치마크의 타당성을 설계적으로 확보한다.",
+      "takeaway": "제안된 방법으로 15,002개의 에피소드를 생성했다. 네 가지 기준 모델 모두에서 0.13~0.17의 매크로-F1 조성적 held-out 격차가 나타났으며, 그래프 인지 모델이 가장 좋은 성능을 보이면서도 격차를 닫지 못해 이는 모델 아티팩트가 아닌 벤치마크의 구조적 속성임을 시사한다. 논리 없는 기준선은 내재적 데이터 비율 이상으로 held-out 의미 규칙을 위반했고, 순서 파괴 제어는 시드 변동 내에서 매크로-F1을 변화시켜 생성기 일관성 검증을 수행했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11030v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11030v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10765v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10765v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -327,30 +340,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.11200",
-    "title": "ConVAWG: A Retrieval-Grounded Framework for Controlled Synthetic Dialogue Generation in Violence Against Women and Girls",
-    "authors": "Chen Lyu et al.",
+    "id": "2608.10985",
+    "title": "PEAK: Precise and Persistent Concept Erasure via k-Sparse Autoencoders",
+    "authors": "Man Jiang et al.",
     "published": "2026-08-11",
-    "category": "llm",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
+      "cs.CV"
     ],
     "tags": [
-      "privacy",
-      "retrieval",
       "benchmark",
-      "generation"
+      "diffusion",
+      "privacy",
+      "generation",
+      "detection"
     ],
-    "summaryKo": "ConVAWG: LLM 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
+    "summaryKo": "PEAK는 k-Sparse Autoencoders를 이용해 diffusion 기반 텍스트-이미지 생성 모델에서 개념을 정밀하고 지속적으로 삭제하는 프레임워크이다.",
     "detail": {
-      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
-      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
-      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
+      "problem": "기존 개념 삭제 방법은 관련 표현의 부정확한 위치 파악으로 의도치 않은 의미 간섭을 일으키거나, 개념 지식이 완전히 제거되지 않아 적대적 복구가 가능하다는 문제가 있다.",
+      "method": "PEAK는 확산 잡음 제거 네트워크의 내부 활성화에 kSAE를 학습시켜 희소 특징을 분해하고, 대상/비대상 프롬프트의 활성화 대비를 통해 대상 특이적 특징을 찾아 파라미터 최적화로 억제하면서 비대상 특징은 보존한다.",
+      "takeaway": "I2P 벤치마크에서 NudeNet 검출을 582건에서 6건으로 줄이고 평균 공격 성공률을 96.52%에서 5.63%로 낮췄으며, MS-COCO에서 KID가 거의 0으로 일반 생성 품질을 유지했다. 초록에는 별도 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.11200v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11200v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.10985v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10985v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -390,7 +402,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 18,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W7159969865"
     }
   },
@@ -423,7 +435,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 2,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4417081111"
     }
   },
@@ -454,7 +466,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4414492506"
     }
   },
@@ -496,7 +508,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 67,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4416043407"
     }
   },
@@ -533,7 +545,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 8,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4407423003"
     }
   },
@@ -575,7 +587,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 2,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4405030472"
     }
   },
@@ -613,7 +625,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 5,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4406302004"
     }
   },
@@ -647,7 +659,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 6,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4400611540"
     }
   },
@@ -681,7 +693,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 12,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4399115643"
     }
   },
@@ -716,7 +728,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 6,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4399061435"
     }
   },
@@ -750,7 +762,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 25,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4398796380"
     }
   },
@@ -788,7 +800,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 37,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4391377095"
     }
   },
@@ -825,7 +837,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 38,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4390730779"
     }
   },
@@ -861,7 +873,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 5,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4387724736"
     }
   },
@@ -893,7 +905,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 132,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4387355843"
     }
   },
@@ -929,7 +941,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 93,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4382618722"
     }
   },
@@ -966,7 +978,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1465,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -1000,7 +1012,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 79,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4353007132"
     }
   },
@@ -1033,7 +1045,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 18,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W4313443534"
     }
   },
@@ -1066,14 +1078,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 181,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-12T13:18:05.137Z",
+      "citationUpdatedAt": "2026-08-12T13:30:26.829Z",
       "openAlexId": "W3158013077"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-08-12T13:18:07.526Z",
+  "collectedAt": "2026-08-12T13:32:01.857Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
