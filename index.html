@@ -59,14 +59,32 @@
           <p id="recommendation-note" class="recommendation-note" aria-live="polite"></p>
         </div>
 
+        <span class="filter-label">보기</span>
+        <div class="view-filters" aria-label="논문 보기" role="group">
+          <button class="chip view-chip active" type="button" data-view="recommendations" aria-pressed="true">추천 논문</button>
+          <button class="chip view-chip" type="button" data-view="favorites" aria-pressed="false">즐겨찾기 <span id="favorite-count" class="favorite-count">0</span></button>
+        </div>
+
         <span class="filter-label">분야</span>
         <div class="filters" aria-label="분야 필터" role="group">
-          <button class="chip active" type="button" data-filter="all">전체</button>
-          <button class="chip" type="button" data-filter="cv">CV</button>
-          <button class="chip" type="button" data-filter="llm">LLM</button>
-          <button class="chip" type="button" data-filter="multimodal">Multimodal</button>
-          <button class="chip" type="button" data-filter="saved">저장한 논문</button>
+          <button class="chip category-chip active" type="button" data-category="all" aria-pressed="true">전체</button>
+          <button class="chip category-chip" type="button" data-category="cv" aria-pressed="false">CV</button>
+          <button class="chip category-chip" type="button" data-category="llm" aria-pressed="false">LLM</button>
+          <button class="chip category-chip" type="button" data-category="multimodal" aria-pressed="false">Multimodal</button>
         </div>
+
+        <section id="favorite-tools" class="favorite-tools" aria-label="즐겨찾기 백업" hidden>
+          <div>
+            <strong>즐겨찾기 라이브러리</strong>
+            <p>논문 정보와 즐겨찾기 날짜가 포함됩니다. 브라우저 데이터를 삭제하기 전에 JSON으로 백업하세요.</p>
+          </div>
+          <div class="favorite-tool-actions">
+            <button id="favorite-export" class="button ghost compact" type="button">내보내기</button>
+            <button id="favorite-import-trigger" class="button ghost compact" type="button">가져오기</button>
+            <input id="favorite-import" type="file" accept="application/json,.json" hidden>
+          </div>
+          <p id="library-status" class="library-status" aria-live="polite"></p>
+        </section>
 
         <div id="paper-grid" class="paper-grid">
           <!-- rendered by app.js -->
@@ -101,7 +119,14 @@
       <span>교육용 요약입니다. Thank you to arXiv for use of its open access interoperability.</span>
     </footer>
 
+    <div id="toast" class="toast" role="status" aria-live="polite" aria-hidden="true" hidden>
+      <span id="toast-message"></span>
+      <button id="toast-undo" type="button" hidden>실행 취소</button>
+      <button id="toast-close" type="button" aria-label="알림 닫기">×</button>
+    </div>
+
     <script src="data/papers.js"></script>
+    <script src="favorites.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

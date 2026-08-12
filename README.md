@@ -24,7 +24,8 @@ python3 -m http.server 8000
 - 제목, 저자, 태그, 요약, arXiv ID 검색
 - 최신 및 최근 1주, 1달, 6개월, 1년 citation 추천
 - CV, LLM, Multimodal 분야 필터
-- 브라우저 `localStorage` 기반 논문 저장
+- 데이터 갱신과 무관하게 유지되는 브라우저 즐겨찾기 라이브러리
+- 즐겨찾기 JSON 내보내기·가져오기
 - 논문별 문제, 방법, 시사점 상세 요약
 
 ## 논문 데이터 갱신
@@ -46,6 +47,7 @@ node scripts/collect-papers.mjs --dry-run
 간단한 자체 검사는:
 
 ```bash
+node scripts/favorites-self-test.cjs
 node scripts/collect-papers.mjs --self-test
 ```
 

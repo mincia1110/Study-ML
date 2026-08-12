@@ -173,8 +173,42 @@ h2 {
 
 .filters { margin-bottom: 22px; }
 
+.view-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.favorite-count {
+  display: inline-flex;
+  min-width: 22px;
+  min-height: 22px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-size: 12px;
+}
+
+.view-chip.active .favorite-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
 .recommendation-controls {
   margin: 22px 0 18px;
+}
+
+.recommendation-controls.disabled .periods {
+  opacity: 0.52;
+}
+
+.period-chip:disabled {
+  cursor: not-allowed;
 }
 
 .filter-label {
@@ -222,6 +256,65 @@ h2 {
   color: var(--muted);
   text-align: center;
 }
+
+.empty-state strong,
+.empty-state span {
+  display: block;
+}
+
+.empty-state strong {
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.empty-state span + span {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.favorite-tools {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: -4px 0 22px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.favorite-tools[hidden] { display: none; }
+
+.favorite-tools strong { display: block; }
+
+.favorite-tools p {
+  max-width: 660px;
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.favorite-tool-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.button.compact {
+  min-height: 36px;
+  padding: 6px 11px;
+  font-size: 13px;
+}
+
+.library-status {
+  flex-basis: 100%;
+  min-height: 0;
+  margin: 0 !important;
+}
+
+.library-status:empty { display: none; }
+.library-status.error { color: #a1261d; font-weight: 700; }
 
 .grid {
   display: grid;
@@ -462,6 +555,7 @@ tbody tr:nth-child(even) {
 
 .paper-card.cv { border-left-color: var(--amber); }
 .paper-card.multimodal { border-left-color: #8b5cf6; }
+.paper-card.unknown { border-left-color: var(--muted); }
 .paper-card.hidden { display: none; }
 
 .card-header {
@@ -488,6 +582,11 @@ tbody tr:nth-child(even) {
 .paper-card.multimodal .card-category {
   background: #ede9fe;
   color: #6d28d9;
+}
+
+.paper-card.unknown .card-category {
+  background: var(--paper);
+  color: var(--muted);
 }
 
 .paper-id {
@@ -586,6 +685,24 @@ tbody tr:nth-child(even) {
 .save-btn:hover { color: #eab308; }
 .save-btn.saved { color: #eab308; }
 
+.save-btn:focus-visible,
+.details-toggle:focus-visible,
+.button:focus-visible,
+.chip:focus-visible,
+.period-chip:focus-visible,
+.toast button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--amber) 55%, white);
+  outline-offset: 3px;
+}
+
+.favorite-date {
+  display: block;
+  margin: -5px 0 10px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+}
+
 .paper-details {
   margin-top: 12px;
   padding-top: 12px;
@@ -640,6 +757,51 @@ tbody tr:nth-child(even) {
   opacity: 0.8;
 }
 
+.toast {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 30;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  max-width: min(460px, calc(100vw - 32px));
+  padding: 13px 14px;
+  border-radius: 8px;
+  background: var(--ink);
+  color: white;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.24);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.16s, transform 0.16s;
+}
+
+.toast[hidden] { display: none; }
+
+.toast.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.toast button {
+  border: 0;
+  padding: 4px 7px;
+  background: transparent;
+  color: #f5cf78;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+#toast-close {
+  margin-left: auto;
+  color: white;
+  font-size: 20px;
+  line-height: 1;
+}
+
 @media (max-width: 880px) {
   .paper-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -649,5 +811,20 @@ tbody tr:nth-child(even) {
 @media (max-width: 640px) {
   .paper-grid {
     grid-template-columns: 1fr;
+  }
+
+  .favorite-tools {
+    align-items: stretch;
+  }
+
+  .favorite-tool-actions,
+  .favorite-tool-actions .button {
+    flex: 1;
+  }
+
+  .toast {
+    right: 16px;
+    bottom: 16px;
+    left: 16px;
   }
 }
