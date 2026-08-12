@@ -26,7 +26,13 @@ window.PAPERS = [
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10949v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10949v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10949v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 1
+    }
   },
   {
     "id": "2608.10932",
@@ -52,7 +58,13 @@ window.PAPERS = [
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10932v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10932v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10932v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 2
+    }
   },
   {
     "id": "2608.10954",
@@ -76,7 +88,13 @@ window.PAPERS = [
       "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10954v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10954v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10954v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 3
+    }
   },
   {
     "id": "2608.10964",
@@ -100,7 +118,13 @@ window.PAPERS = [
       "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10964v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10964v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10964v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 4
+    }
   },
   {
     "id": "2608.11017",
@@ -127,7 +151,13 @@ window.PAPERS = [
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.11017v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11017v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.11017v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 5
+    }
   },
   {
     "id": "2608.11191",
@@ -151,7 +181,13 @@ window.PAPERS = [
       "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.11191v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.11191v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.11191v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 6
+    }
   },
   {
     "id": "2608.10827",
@@ -176,7 +212,13 @@ window.PAPERS = [
       "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10827v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10827v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10827v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 7
+    }
   },
   {
     "id": "2608.10444",
@@ -201,7 +243,13 @@ window.PAPERS = [
       "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10444v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10444v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10444v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 8
+    }
   },
   {
     "id": "2608.10503",
@@ -224,7 +272,13 @@ window.PAPERS = [
       "takeaway": "안전 관련 응용에서는 설명 가능성이 유용하지만, 실제 도로 일반화와 작은 객체 인식 실패를 별도로 봐야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10503v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10503v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10503v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 9
+    }
   },
   {
     "id": "2608.10756",
@@ -248,7 +302,13 @@ window.PAPERS = [
       "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10756v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10756v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10756v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 10
+    }
   },
   {
     "id": "2608.10765",
@@ -271,7 +331,13 @@ window.PAPERS = [
       "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10765v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10765v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10765v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 11
+    }
   },
   {
     "id": "2608.10985",
@@ -296,7 +362,681 @@ window.PAPERS = [
       "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2608.10985v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.10985v1.pdf"
+    "pdfUrl": "https://arxiv.org/pdf/2608.10985v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 12
+    }
+  },
+  {
+    "id": "2505.03451",
+    "title": "Detecting Quishing Attacks with Machine Learning Techniques Through QR Code Analysis",
+    "authors": "Fouad Trad, Ali Chehab",
+    "published": "2025-05-06",
+    "category": "cv",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "detection"
+    ],
+    "summaryKo": "QR 코드의 구조와 픽셀 패턴을 직접 분석하여 피싱 여부를 탐지하는 머신러닝 기반 퀴싱(Quishing) 탐지 프레임워크를 제안하였으며, XGBoost 모델이 AUC 0.9133의 성능을 달성했다.",
+    "detail": {
+      "problem": "기존 탐지 방법은 URL 분석에 의존하여 QR 코드 페이로드 추출이 필요하므로 사용자를 악성 콘텐츠에 노출시킬 수 있으며, Wi-Fi 자격 증명이나 결제 정보 등 URL 외의 다양한 데이터 유형을 인코딩하는 QR 코드에는 대응이 어렵다.",
+      "method": "내용 추출 없이 QR 코드의 구조와 픽셀 패턴을 직접 분석하는 최초의 퀴싱 탐지 프레임워크를 제안하고, 피싱 및 정상 QR 코드 데이터셋을 생성하여 로지스틱 회귀, 의사결정 나무, 랜덤 포레스트, 나이브 베이즈, LightGBM, XGBoost 등 여러 머신러닝 모델을 학습시켰다. 최고 성능 모델인 XGBoost는 AUC 0.9106을 기록했으며, 비정보성 픽셀을 제거한 특징 공간 축소 후 AUC 0.9133으로 개선되었다.",
+      "takeaway": "QR 코드의 구조적 특징이 피싱 위험과 강하게 연관되어 있음을 밝혔으며, 직접 QR 분석이 현대 피싱 방어의 중요한 계층이 될 가능성을 제시했다. 이 연구는 퀴싱 완화를 위한 기초를 마련했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2505.03451v1",
+    "pdfUrl": "https://arxiv.org/pdf/2505.03451v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 6
+    },
+    "metrics": {
+      "citationCount": 0,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4415248111"
+    }
+  },
+  {
+    "id": "2504.04062",
+    "title": "QE-RAG: A Robust Retrieval-Augmented Generation Benchmark for Query Entry Errors",
+    "authors": "Kepu Zhang et al.",
+    "published": "2025-04-05",
+    "category": "llm",
+    "categories": [
+      "cs.IR"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "generation"
+    ],
+    "summaryKo": "QE-RAG는 실제 사용자 질의 입력 오류에 대한 RAG의 강건성을 평가하는 최초의 벤치마크이며, 오류 완화를 위한 대조 학습 기반 검색기 훈련 및 검색 증강 질의 보정 방법을 제안한다.",
+    "detail": {
+      "problem": "현재 RAG 벤치마크는 사용자 질의에 오류가 없다고 가정하지만, 실제 환경에서는 키보드 근접, 시각적 유사성, 철자 오류 등의 질의 입력 오류가 빈번하며, 이러한 오류가 RAG 방법에 미치는 영향이 탐구되지 않았다.",
+      "method": "여섯 개의 데이터셋에 세 가지 유형의 오류를 20%, 40% 비율로 주입하여 QE-RAG 벤치마크를 구축하고, 대조 학습 기반의 강건한 검색기 훈련 방법과 검색 증강 질의 보정 방법을 제안한다.",
+      "takeaway": "기존 최신 RAG 방법들(순차적, 분기적, 반복적 방법)은 질의 입력 오류에 대해 강건성이 낮으며, 제안하는 방법은 오류 상황에서 RAG의 강건성을 크게 향상시키고 기존 방법과도 호환되어 추가로 강건성을 개선할 수 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2504.04062v1",
+    "pdfUrl": "https://arxiv.org/pdf/2504.04062v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 4
+    },
+    "metrics": {
+      "citationCount": 1,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4416125245"
+    }
+  },
+  {
+    "id": "2504.02636",
+    "title": "A Framework for Developing University Policies on Generative AI Governance: A Cross-national Comparative Study",
+    "authors": "Ming Li et al.",
+    "published": "2025-04-03",
+    "category": "llm",
+    "categories": [
+      "cs.CY"
+    ],
+    "tags": [],
+    "summaryKo": "본 연구는 미국, 일본, 중국 주요 대학들의 생성형 AI 가이드라인을 비교 분석하고 확장된 기술수용모델을 기반으로 대학 정책 개발 프레임워크(UPDF-GAI)를 제안한다.",
+    "detail": {
+      "problem": "생성형 AI가 고등교육에 통합됨에 따라 대학들은 책임 있는 사용을 위한 거버넌스를 모색하고 있으나, 국가별로 다양한 수준과 방향성을 보인다.",
+      "method": "확장된 기술수용모델의 다섯 영역을 채택하여 미국, 일본, 중국의 110개 대학에서 수집한 124개 정책 문서에 대해 질적 내용 분석을 수행하고 주제 코딩을 통해 20개의 핵심 주제를 도출하였다. 이를 바탕으로 UPDF-GAI 프레임워크를 구축하였다.",
+      "takeaway": "분석 결과, 미국 대학은 교수 자율성·실용적 응용·정책 적응성을, 일본 대학은 정부 규제 접근 방식과 윤리·위험 관리를, 중국 대학은 중앙 정부 주도 모델과 기술 응용을 각각 중시하는 등 국가별 차이가 나타났다. 제안된 프레임워크는 가치와 위험의 균형, 다층적 지원, 사회적 영향 대응, 자기 효능감 강화를 통해 지속 가능하고 맥락에 민감한 정책 수립을 가능하게 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2504.02636v1",
+    "pdfUrl": "https://arxiv.org/pdf/2504.02636v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 1
+    },
+    "metrics": {
+      "citationCount": 5,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4410313713"
+    }
+  },
+  {
+    "id": "2502.09494",
+    "title": "Communicating Likelihoods with Normalising Flows",
+    "authors": "Jack Y. Araz et al.",
+    "published": "2025-02-13",
+    "category": "llm",
+    "categories": [
+      "hep-ph",
+      "cs.LG",
+      "hep-ex",
+      "physics.data-an"
+    ],
+    "tags": [],
+    "summaryKo": "본 연구는 정규화 흐름을 사용하여 샘플로부터 언빈드 우도를 모델링하고, 결합 분포에 대한 Kolmogorov-Smirnov 검정과 같은 엄격한 통계적 검정을 통해 학습된 우도를 검증하는 머신러닝 기반 워크플로우를 제시한다.",
+    "detail": {
+      "problem": "기존 접근법은 학습된 우도에 대한 엄격한 검증이 부족하여, 샘플로부터 모델링된 언빈드 우도의 신뢰성 있는 전달이 어려웠다.",
+      "method": "정규화 흐름을 기반으로 샘플로부터 언빈드 우도를 모델링하고, 결합 분포의 Kolmogorov-Smirnov 검정과 같은 통계적 검정을 통해 학습된 우도를 검증함으로써 실험 및 현상학적 우도의 신뢰할 수 있는 전달을 가능하게 한다.",
+      "takeaway": "고에너지 물리학의 세 가지 사례 연구를 통해 방법의 효과를 입증하였으며, 오픈소스 참조 구현인 nabu를 제공하여 더 폭넓은 채택을 지원한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2502.09494v1",
+    "pdfUrl": "https://arxiv.org/pdf/2502.09494v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 5
+    },
+    "metrics": {
+      "citationCount": 1,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4407590346"
+    }
+  },
+  {
+    "id": "2408.10547",
+    "title": "Semi-on-Demand Off-Peak Transit Services with Shared Autonomous Vehicles -- Service Planning, Simulation, and Analysis in Munich, Germany",
+    "authors": "Max T. M. Ng et al.",
+    "published": "2024-08-20",
+    "category": "llm",
+    "categories": [
+      "eess.SY",
+      "math.OC"
+    ],
+    "tags": [
+      "agents",
+      "autonomous-driving"
+    ],
+    "summaryKo": "이 연구는 뮌헨의 10개 버스 노선을 대상으로 공유 자율주행 차량(SAV)을 활용한 반-온디맨드(SoD) 하이브리드 노선 서비스의 계획 및 운영을 분석하고, SAV의 낮은 운영 비용이 서비스 품질을 개선하며 전환기에는 제약이 있음을 보여준다.",
+    "detail": {
+      "problem": "반-온디맨드(SoD) 하이브리드 노선 서비스를 공유 자율주행 차량(SAV)으로 구현할 때의 최적 차량 규모와 운행 계획 문제를 다룬다. 특히 피크 시간대 고정 노선, 전환기 시나리오, 비피크 시간대 SoD 서비스 계획 및 적합한 사용 사례를 식별하는 것을 목표로 한다.",
+      "method": "분석적 모델링으로 서비스 계획을 수립하고 에이전트 기반 시뮬레이션으로 운영을 분석한다. 뮌헨의 10개 버스 노선을 대상으로 완전 SAV 시나리오와 운전자 비율이 다른 전환 시나리오를 평가한다.",
+      "takeaway": "SAV의 낮은 운영 비용이 더 작은 차량과 증가된 운행 빈도를 통해 서비스 품질을 개선하고 대기 시간을 줄여 SoD의 유연 노선 운영을 촉진한다. 최적 SoD 설정은 완전 유연 노선부터 하이브리드 노선까지 다양하며, 전환기에는 제한된 차량 규모와 긴 배차 간격이 유연 노선의 이점을 제한한다. 시뮬레이션 결과는 적절한 유연 노선 길이에서 과도한 우회 없이 더 많은 승객을 유인할 수 있음을 확인하고 분석 모델을 검증한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2408.10547v1",
+    "pdfUrl": "https://arxiv.org/pdf/2408.10547v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 6
+    },
+    "metrics": {
+      "citationCount": 3,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4403007104"
+    }
+  },
+  {
+    "id": "2407.06312",
+    "title": "Adversarial dynamical systems characterize when data-driven learning succeeds or fails",
+    "authors": "Matthew J. Colbrook, Igor Mezić, Alexei Stepanenko",
+    "published": "2024-07-08",
+    "category": "llm",
+    "categories": [
+      "math.DS",
+      "cs.LG",
+      "math.NA",
+      "math.OC",
+      "math.SP"
+    ],
+    "tags": [],
+    "summaryKo": "적대적 동역학계를 활용하여 데이터 기반 동역학 학습의 성공 및 실패 조건을 규명하고, 쿠프만 연산자 학습에 대한 수렴 이론과 불가능성 결과를 증명한 논문.",
+    "detail": {
+      "problem": "많은 시스템이 분석적 모델링이 어려워 데이터 기반 동역학 추론이 중요하지만, 데이터 기반 방법이 수렴하지 않거나 일반화되지 못할 수 있다. 따라서 시스템 행동을 데이터로부터 신뢰성 있게 학습할 수 있는 조건과 학습이 불가능한 조건을 밝히는 것이 문제이다.",
+      "method": "적대적 동역학계를 구성하여 접근 가능한 영역과 불가능한 영역의 경계를 식별한다. 쿠프만 연산자 학습에서 물리계에 널리 나타나는 조건 하에 수렴 및 인증을 보장하는 최적의 데이터 기반 스펙트럼 알고리즘을 설계하고, 반대로 동일한 조건이 없을 때는 어떤 단일 수열 절차도 학습을 보장할 수 없음을 증명한다.",
+      "takeaway": "쿠프만 연산자 근사의 수렴 이론을 정립하고 오랜 미해결 문제를 해결했으며, 데이터 기반 스펙트럼 학습의 성공 및 실패 조건을 명확히 규명했다. 또한 진동자, 혼돈 유체 흐름, 북극 해빙 농도 예측에 적용하여, 특히 북극 해빙에서 숨겨진 감소 모드를 발견하고 최신 동역학 및 딥러닝 모델보다 낮은 계산 비용으로 우수한 장기 예측 성능을 달성했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2407.06312v1",
+    "pdfUrl": "https://arxiv.org/pdf/2407.06312v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 2
+    },
+    "metrics": {
+      "citationCount": 4,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4400518612"
+    }
+  },
+  {
+    "id": "2405.14022",
+    "title": "I2I-Mamba: Multi-modal medical image synthesis via selective state space modeling",
+    "authors": "Omer F. Atli et al.",
+    "published": "2024-05-22",
+    "category": "cv",
+    "categories": [
+      "eess.IV",
+      "cs.CV"
+    ],
+    "tags": [
+      "medical"
+    ],
+    "summaryKo": "I2I-Mamba는 상태 공간 모델링과 나선 스캔 기반의 새로운 SSM 연산자를 활용하여 다중 모드 의료 영상 합성을 수행하는 방법이다.",
+    "detail": {
+      "problem": "다중 모드 의료 영상 합성에서 CNN은 국소적 정밀도는 높지만 장거리 맥락에 취약하고, 트랜스포머는 장거리와 단거리 맥락 민감도 사이에 불리한 균형 문제가 있다.",
+      "method": "I2I-Mamba는 상태 공간 모델링(SSM) 프레임워크를 기반으로 하며, 하이브리드 잔차 구조에서 고수준 표현을 활용하고, 이미지 및 푸리에 도메인에서 상호 보완적인 맥락 모델링을 위한 이중 도메인 Mamba(ddMamba) 블록을 도입한다. 또한 기존의 래스터 스캔 대신 나선 스캔 궤적을 따르는 SSM 연산자와 채널 혼합 계층을 사용하여 맥락을 학습한다.",
+      "takeaway": "다중 대비 MRI 및 MRI-CT 프로토콜에 대한 포괄적인 실험 결과, I2I-Mamba는 최신 CNN, 트랜스포머, SSM 방법들을 능가하는 성능을 보였다. 초록에서는 별도의 한계를 언급하지 않았다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2405.14022v1",
+    "pdfUrl": "https://arxiv.org/pdf/2405.14022v1.pdf",
+    "recommendationModes": [
+      "year"
+    ],
+    "recommendationRanks": {
+      "year": 6
+    },
+    "metrics": {
+      "citationCount": 25,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4398796380"
+    }
+  },
+  {
+    "id": "2402.01411",
+    "title": "CodePori: Large-Scale System for Autonomous Software Development Using Multi-Agent Technology",
+    "authors": "Zeeshan Rasheed et al.",
+    "published": "2024-02-02",
+    "category": "llm",
+    "categories": [
+      "cs.SE"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "autonomous-driving",
+      "code-generation",
+      "generation"
+    ],
+    "summaryKo": "본 연구는 LLM 기반 다중 에이전트 시스템 CodePori를 개발하고 참가자 기반 평가를 통해 자율 소프트웨어 개발의 잠재력과 한계를 실증적으로 조사하였다.",
+    "detail": {
+      "problem": "기존 연구는 이진 합격/불합격 결과만 제공하는 벤치마크 데이터셋에 의존하여 실제 적용 가능성에 대한 통찰이 부족하다.",
+      "method": "코드 자동 생성을 위한 다중 에이전트 시스템 CodePori를 개발하고, 참가자 기반 평가를 통해 실제 성능을 측정하는 두 단계 접근법을 사용했다.",
+      "takeaway": "참가자 피드백을 통해 표준 코드 생성 벤치마크가 놓친 주요 강점, 도전 과제 및 개선 영역이 식별되었다. LLM 기반 다중 에이전트 시스템은 대규모 소프트웨어 개발에 잠재력을 보이지만, 메모리 한계, 할루시네이션, 코드 스멜 등의 문제를 해결해야 하며 실무자 중심의 관점이 필요하다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2402.01411v1",
+    "pdfUrl": "https://arxiv.org/pdf/2402.01411v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 4
+    },
+    "metrics": {
+      "citationCount": 6,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4391556095"
+    }
+  },
+  {
+    "id": "2402.01138",
+    "title": "Graph Neural Networks in EEG-based Emotion Recognition: A Survey",
+    "authors": "Chenyu Liu et al.",
+    "published": "2024-02-02",
+    "category": "llm",
+    "categories": [
+      "eess.SP",
+      "cs.LG"
+    ],
+    "tags": [
+      "survey"
+    ],
+    "summaryKo": "이 논문은 EEG 기반 감정 인식에서 그래프 신경망(GNN)을 사용한 연구들에 대한 체계적인 개요를 제공하며, 그래프 구축의 통합된 프레임워크 하에서 방법들을 분류하고 분석하여 지침을 제공한다.",
+    "detail": {
+      "problem": "EEG 기반 감정 인식은 뇌 영역 간 의존성과 밀접하므로 GNN이 주목받고 있지만, 생리학적 기반으로 인해 다른 시계열 분야와 구별되며, 이 분야에서 GNN 구축에 대한 종합적인 리뷰나 지침이 부족하다.",
+      "method": "본 설문 조사는 그래프 구축 과정을 세 단계로 나누는 통합된 프레임워크를 제시하고, 기존 방법들을 해당 프레임워크에 따라 분석 및 분류하여 EEG 기반 감정 인식에서 GNN을 구축하는 명확한 지침을 제공한다.",
+      "takeaway": "이러한 분류는 기존 접근 방식들의 공통점과 차이점을 밝혀주며, 시간적 완전 연결 그래프(Temporal full-connected graph)와 그래프 응축(Graph condensation) 같은 미래 연구 방향과 개방된 과제들을 논의한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2402.01138v1",
+    "pdfUrl": "https://arxiv.org/pdf/2402.01138v1.pdf",
+    "recommendationModes": [
+      "month",
+      "sixMonths"
+    ],
+    "recommendationRanks": {
+      "month": 3,
+      "sixMonths": 6
+    },
+    "metrics": {
+      "citationCount": 12,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4391555785"
+    }
+  },
+  {
+    "id": "2401.16407",
+    "title": "Is K-fold cross validation the best model selection method for Machine Learning?",
+    "authors": "Juan M Gorriz et al.",
+    "published": "2024-01-29",
+    "category": "llm",
+    "categories": [
+      "stat.ML",
+      "cs.LG",
+      "eess.IV",
+      "eess.SP"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "본 논문은 K-fold 교차 검증(CV)의 문제점을 해결하기 위해 실제 위험의 상한을 사용하는 새로운 통계적 검정법(K-fold CUBV)을 제안하고, 시뮬레이션 및 신경영상 데이터에서 과도한 거짓 양성 없이 효과를 탐지하는 강건한 방법임을 입증한다.",
+    "detail": {
+      "problem": "K-fold 교차 검증은 기계학습 모델 선택에 널리 사용되지만, 작은 표본 크기와 이질적 데이터 소스에서 데이터 분할 시 발생하는 문제로 인해 거짓 양성 증가와 재현성 저하가 발생한다.",
+      "method": "제안된 K-fold CUBV는 농도 부등식을 활용하여 교차 검증의 불확실한 예측을 최악의 경우로 제한하며, 선형 분류기를 위한 Probably Approximately Correct-Bayesian 상한을 유도하여 실제 위험을 추정한다.",
+      "takeaway": "시뮬레이션 및 신경영상 데이터 실험에서 K-fold CUBV는 과도한 거짓 양성을 피하면서 효과를 탐지하고 기계학습 정확도를 검증하는 강건한 기준임을 보여주었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2401.16407v1",
+    "pdfUrl": "https://arxiv.org/pdf/2401.16407v1.pdf",
+    "recommendationModes": [
+      "sixMonths",
+      "year"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 5,
+      "year": 5
+    },
+    "metrics": {
+      "citationCount": 32,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4391377095"
+    }
+  },
+  {
+    "id": "2312.00819",
+    "title": "Large Language Models for Travel Behavior Prediction",
+    "authors": "Baichuan Mo et al.",
+    "published": "2023-11-30",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "embedding"
+    ],
+    "summaryKo": "이 논문은 대규모 언어 모델(LLM)을 활용하여 여행 행동 예측을 수행하는 두 가지 프레임워크를 제안하고, 전통적 모델과 견줄 만한 성능을 보여 LLM이 유연하고 데이터 효율적인 대안이 될 수 있음을 실증한다.",
+    "detail": {
+      "problem": "여행 행동 예측은 교통 수요 관리의 핵심 문제로, 기존에는 관측 데이터로 보정된 수치 모델이 주로 사용되었으나, LLM의 발전으로 자연어 추론을 통한 인간 의사 결정 모델링의 새로운 가능성이 열렸다.",
+      "method": "첫 번째 프레임워크는 제로샷 프롬프트를 사용하여 예측 과제, 여행자 속성 및 도메인 지식을 텍스트로 기술함으로써 별도의 학습 데이터 없이 LLM이 예측을 생성하도록 한다. 두 번째 프레임워크는 LLM이 생성한 텍스트 임베딩을 고수준 여행 시나리오 표현으로 활용하여 기존 지도 학습 모델과 결합함으로써 소표본 환경에서의 예측을 지원한다.",
+      "takeaway": "실증 결과 두 접근법 모두 다항 로짓, 랜덤 포레스트, 신경망과 같은 고전적 모델과 비교하여 유사하거나 경쟁력 있는 성능을 보였으며, 이는 LLM이 여행 행동 예측을 위한 유연하고 데이터 효율적인 대안임을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2312.00819v1",
+    "pdfUrl": "https://arxiv.org/pdf/2312.00819v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 5
+    },
+    "metrics": {
+      "citationCount": 6,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4389362512"
+    }
+  },
+  {
+    "id": "2310.10196",
+    "title": "Large Models for Time Series and Spatio-Temporal Data: A Survey and Outlook",
+    "authors": "Ming Jin et al.",
+    "published": "2023-10-16",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "survey"
+    ],
+    "summaryKo": "본 논문은 시계열 및 시공간 데이터 분석을 위한 대규모 모델에 관한 포괄적 최신 리뷰를 제시하며, 네 가지 차원으로 분류하고 일반 및 도메인 특화 모델을 구분하며 관련 자원을 정리한다.",
+    "detail": {
+      "problem": "시계열 및 시공간 데이터는 실제 응용에서 방대하게 생성되며 이를 효과적으로 분석하는 것이 중요하나, 최근 대규모 모델의 활용이 급증하면서 체계적인 리뷰가 필요해졌다.",
+      "method": "본 리뷰는 데이터 유형, 모델 범주, 모델 범위, 응용 분야/과제의 네 가지 차원으로 기존 연구를 분류하고, LM4TS와 LM4STD로 나누어 일반 목적 모델과 도메인 특화 모델을 구분한다. 또한 주요 응용 분야별로 데이터셋, 모델 구현, 도구 등의 자원을 정리한다.",
+      "takeaway": "이 설문은 최근 발전을 통합하고, 대규모 모델 중심 시계열 데이터 분석의 기초, 응용, 자원, 공개 연구 기회를 제시하여 향후 연구 방향을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2310.10196v1",
+    "pdfUrl": "https://arxiv.org/pdf/2310.10196v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 1
+    },
+    "metrics": {
+      "citationCount": 35,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4387724855"
+    }
+  },
+  {
+    "id": "2310.01728",
+    "title": "Time-LLM: Time Series Forecasting by Reprogramming Large Language Models",
+    "authors": "Ming Jin et al.",
+    "published": "2023-10-03",
+    "category": "multimodal",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "summaryKo": "Time-LLM은 대규모 언어 모델을 재프로그래밍하여 시계열 예측을 수행하는 프레임워크로, 최첨단 특화 예측 모델을 능가하며 few-shot 및 zero-shot 학습에서도 뛰어난 성능을 보인다.",
+    "detail": {
+      "problem": "기존 시계열 예측 모델은 대부분 특화되어 다양한 작업에 일반화가 어렵고, 대규모 사전 학습 모델을 시계열에 적용할 때 데이터 희소성과 양식 간 정렬이 문제가 된다.",
+      "method": "Time-LLM은 입력 시계열을 텍스트 프로토타입으로 재프로그래밍하여 고정된 LLM에 주입해 양식을 정렬하고, Prompt-as-Prefix를 통해 입력 컨텍스트를 강화하여 변환된 패치를 예측에 사용한다.",
+      "takeaway": "Time-LLM은 최첨단 특화 예측 모델을 능가하며, 적은 데이터와 제로샷 학습 상황에서도 뛰어난 성능을 보인다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2310.01728v1",
+    "pdfUrl": "https://arxiv.org/pdf/2310.01728v1.pdf",
+    "recommendationModes": [
+      "sixMonths"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 3
+    },
+    "metrics": {
+      "citationCount": 132,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4387355843"
+    }
+  },
+  {
+    "id": "2306.16092",
+    "title": "Chatlaw: A Multi-Agent Legal Assistant based on a Role-Aligned Mixture-of-Experts Architecture",
+    "authors": "Jiaxi Cui et al.",
+    "published": "2023-06-28",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents"
+    ],
+    "summaryKo": "Chatlaw는 중국 법률 시스템에 대한 지식 부족과 환각 문제를 해결하기 위해 역할 정렬 혼합 전문가(RA-MoE) 아키텍처를 기반으로 한 다중 에이전트 법률 어시스턴트로, 법률 벤치마크에서 GPT-4를 능가하는 성능을 보였다.",
+    "detail": {
+      "problem": "대형 언어 모델(LLM)은 중국 법률 시스템에 대한 지식이 제한적이고 환각 현상에 취약하여 법률 서비스에 적용하기 어려운 문제가 있다.",
+      "method": "본 논문은 실제 로펌의 표준 운영 절차(SOP)를 모방한 다중 에이전트 프레임워크 Chatlaw를 제안하며, 역할 정렬 혼합 전문가(RA-MoE) 아키텍처를 통해 각 에이전트 역할(예: 조수, 연구원, 선임 변호사)의 작업에 맞춰 학습된 전문가 모듈이 협업하도록 설계되었다.",
+      "takeaway": "Chatlaw는 LawBench 벤치마크에서 7.73% 향상된 정확도, 통합 법률 전문가 시험에서 11점 높은 점수를 기록하며 GPT-4를 포함한 일반 목적 AI 모델을 능가했다. 실제 사례 연구와 전문가 평가를 통해 강건함이 확인되었으며, 법률 서비스의 접근성과 신뢰성을 향상시킨다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2306.16092v1",
+    "pdfUrl": "https://arxiv.org/pdf/2306.16092v1.pdf",
+    "recommendationModes": [
+      "sixMonths",
+      "year"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 4,
+      "year": 4
+    },
+    "metrics": {
+      "citationCount": 92,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4382618722"
+    }
+  },
+  {
+    "id": "2306.10356",
+    "title": "MATNet: Multi-Level Fusion Transformer-Based Model for Day-Ahead PV Generation Forecasting",
+    "authors": "Matteo Tortora et al.",
+    "published": "2023-06-17",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.AI",
+      "eess.SP"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "MATNet은 일일 사전 태양광 발전량 예측을 위해 변환기 기반 다중 모달 아키텍처를 제안하며, 과거 PV 데이터와 기상 데이터를 다단계 융합하여 높은 예측 성능과 강건성을 달성한다.",
+    "detail": {
+      "problem": "인공지능 기반 태양광 발전 예측 모델은 복잡한 패턴을 포착하지만 물리적 사전 지식을 무시한다. 재생 에너지 통합을 위해서는 정확한 예측이 필수적이다.",
+      "method": "MATNet은 변환기 기반 다중 모달 아키텍처로, 과거 PV 데이터와 과거 및 예측 기상 데이터를 다단계 연합 융합 방식으로 입력받고 여러 융합 단계에서 소프트 어텐션 메커니즘을 사용한다.",
+      "takeaway": "Ausgrid 데이터셋에서 RMSE 0.0445로 최고 기준 모델 대비 약 65% 상대적 개선을 보였으며, 결측 데이터에 대한 강건성, 도메인 변화에 대한 제로샷 일반화 능력, 계산 효율성과 예측 정확도 간의 균형을 확인했다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2306.10356v1",
+    "pdfUrl": "https://arxiv.org/pdf/2306.10356v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 3
+    },
+    "metrics": {
+      "citationCount": 3,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4381551729"
+    }
+  },
+  {
+    "id": "2303.18223",
+    "title": "A Survey of Large Language Models",
+    "authors": "Wayne Xin Zhao et al.",
+    "published": "2023-03-31",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "survey",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 대규모 언어 모델(LLM)의 배경과 핵심 발견, 주요 기술을 소개하고, 사전 학습, 적응 튜닝, 활용, 능력 평가의 네 가지 측면에 초점을 맞추어 최근 발전을 검토하며, 사용 가능한 자원과 미래 방향을 논의하는 서베이 논문이다.",
+    "detail": {
+      "problem": "언어 모델의 규모 확장이 성능 향상뿐만 아니라 작은 규모에서는 나타나지 않는 특별한 능력을 유발하는 현상이 관찰되면서, LLM에 대한 체계적인 이해와 종합적인 정리가 필요해졌다.",
+      "method": "LLM의 최근 발전을 배경, 핵심 발견, 주요 기술 측면에서 검토하고, 특히 사전 학습, 적응 튜닝, 활용, 능력 평가의 네 가지 주요 측면을 중점적으로 다루며, 관련 자원을 정리하고 미래 방향을 논의하는 서베이를 수행했다.",
+      "takeaway": "LLM은 일정 규모 이상에서 성능이 크게 향상되고 특별한 능력을 보이며, 본 서베이는 이러한 LLM의 전반적인 현황을 정리하고 향후 연구를 위한 방향성을 제시한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2303.18223v1",
+    "pdfUrl": "https://arxiv.org/pdf/2303.18223v1.pdf",
+    "recommendationModes": [
+      "sixMonths",
+      "year"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 2,
+      "year": 2
+    },
+    "metrics": {
+      "citationCount": 1420,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4362515116"
+    }
+  },
+  {
+    "id": "2302.12772",
+    "title": "FLSea: Underwater Visual-Inertial and Stereo-Vision Forward-Looking Datasets",
+    "authors": "Yelena Randall, Tali Treibitz",
+    "published": "2023-02-24",
+    "category": "cv",
+    "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "tags": [
+      "3d",
+      "autonomous-driving",
+      "benchmark"
+    ],
+    "summaryKo": "본 논문은 지중해와 홍해에서 수집한 전방향 수중 스테레오 비전 및 시각-관성 데이터셋(FLSea)을 제시하며, 이는 지상 실측 정보를 포함한 최초의 공개 데이터셋이다.",
+    "detail": {
+      "problem": "수중 전방향(forward-looking) 비전은 거리 증가에 따라 가시성이 저하되어 어려움이 있으며, 이러한 방향의 지상 실측 데이터를 갖춘 공개 데이터셋이 전무하다.",
+      "method": "저자들은 동기화된 스테레오 이미지와 IMU 측정값, 알려진 크기의 물체를 활용하여 데이터를 수집하고, 사진측량법으로 지상 실측 깊이 맵을 생성하여 검증하였다.",
+      "takeaway": "5개의 스테레오 및 8개의 시각-관성 데이터셋(총 수천 장)으로 다양한 수중 환경과 동적 움직임을 포함하며, 장애물 회피, SLAM, 깊이 추정 등 자율 수중 차량 연구에 기여할 것으로 기대된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2302.12772v1",
+    "pdfUrl": "https://arxiv.org/pdf/2302.12772v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 2
+    },
+    "metrics": {
+      "citationCount": 15,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W4322718420"
+    }
+  },
+  {
+    "id": "2005.11401",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": "Patrick Lewis et al.",
+    "published": "2020-05-22",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.LG"
+    ],
+    "tags": [
+      "retrieval",
+      "generation"
+    ],
+    "summaryKo": "본 논문은 사전 학습된 seq2seq 모델과 위키백과 밀집 벡터 인덱스를 검색하여 결합한 검색 증강 생성(RAG) 모델을 제안하고, 다양한 지식 집약적 NLP 작업에서 최첨단 성능을 달성했으며, 언어 생성에서 더 사실적이고 다양한 텍스트를 생성함을 보여준다.",
+    "detail": {
+      "problem": "대규모 사전 학습 언어 모델은 파라미터에 지식을 저장하지만, 지식 집약적 작업에서 성능이 부족하고 출력의 출처 제공 및 지식 업데이트가 어렵다.",
+      "method": "본 연구는 검색 증강 생성(RAG)을 위한 일반 목적의 미세 조정 방법을 탐구하며, 파라미터 메모리(seq2seq 모델)와 비파라미터 메모리(위키백과 밀집 인덱스, 신경 검색기로 접근)를 결합한다. 전체 시퀀스에 동일한 구절을 조건으로 하는 방식과 토큰별로 다른 구절을 사용하는 방식 두 가지를 비교한다.",
+      "takeaway": "RAG 모델은 세 가지 오픈 도메인 질의응답 작업에서 최첨단 성능을 달성했고, 언어 생성에서 파라미터 전용 모델보다 더 구체적이고 다양한 사실적 언어를 생성했다. 그러나 출력의 출처 제공과 세계 지식 업데이트는 여전히 해결되지 않은 과제이다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2005.11401v1",
+    "pdfUrl": "https://arxiv.org/pdf/2005.11401v1.pdf",
+    "recommendationModes": [
+      "sixMonths",
+      "year"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 1,
+      "year": 1
+    },
+    "metrics": {
+      "citationCount": 3026,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W3027879771"
+    }
+  },
+  {
+    "id": "1712.03080",
+    "title": "A path to AI",
+    "authors": "Ion Dronic",
+    "published": "2017-12-04",
+    "category": "llm",
+    "categories": [
+      "cs.CY"
+    ],
+    "tags": [
+      "agents"
+    ],
+    "summaryKo": "이 논문은 안전하고 인간 수준 이상의 지능을 가진 시스템 구축을 위해 목표, 에이전트, 인지라는 세 가지 기본 모듈을 제안하고, 각 모듈의 구성 요소와 현재 기술을 분석하며 구체적인 해결책보다는 대체 연구 방향을 제시한다.",
+    "detail": {
+      "problem": "인간 수준 이상의 지능을 안전하게 복제 또는 초월할 수 있는 시스템을 구축하는 문제와, 시스템이 인류의 이익에 부합하도록 하는 가치 정렬 및 실존적 위협 완화 문제를 다룬다.",
+      "method": "목표 모듈(가치 정렬을 위한 머신러닝 에이전트 네트워크와 분산 원장), 에이전트 모듈(Dyna 개념과 사회학을 활용한 세계 시뮬레이터), 인지 모듈(기존 머신러닝 알고리즘과 양자 컴퓨터)을 제안한다.",
+      "takeaway": "이 논문은 제안된 시스템의 구축 방안과 현재 기술 수준을 분석하지만, 구체적이고 산업적으로 바로 적용 가능한 해결책을 제공하기보다는 대체 연구 방향을 제시하는 데 중점을 둔다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/1712.03080v1",
+    "pdfUrl": "https://arxiv.org/pdf/1712.03080v1.pdf",
+    "recommendationModes": [
+      "year"
+    ],
+    "recommendationRanks": {
+      "year": 3
+    },
+    "metrics": {
+      "citationCount": 180,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-07-18T00:58:47.534Z",
+      "openAlexId": "W3158013077"
+    }
   }
 ];
 
@@ -304,5 +1044,13 @@ window.PAPER_METADATA = {
   "collectedAt": "2026-08-12T02:34:37.878Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
-  "summarizer": "llm"
+  "summarizer": "llm",
+  "recommendationVersion": 1,
+  "citation": {
+    "source": "OpenAlex",
+    "status": "missing-key",
+    "queryCount": 0,
+    "windows": {},
+    "fallbackModes": []
+  }
 };
