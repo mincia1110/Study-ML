@@ -3,37 +3,36 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2608.06865",
-    "title": "Multi-Agent Forensic Reasoning for Generalizable Deepfake Video Detection",
-    "authors": "Xuechao Zou et al.",
-    "published": "2026-08-07",
+    "id": "2608.10949",
+    "title": "StreamFlow: Dynamic Memory Flows for Streaming Video Understanding",
+    "authors": "Muxin Fu et al.",
+    "published": "2026-08-11",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.AI",
-      "cs.MA"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
       "video",
+      "retrieval",
       "multimodal",
-      "detection"
+      "generation"
     ],
-    "summaryKo": "Multi-Agent Forensic Reasoning for Generalizable Deepfake Video Detection: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "StreamFlow: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
     "detail": {
       "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
       "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.06865v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.06865v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.10949v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10949v1.pdf"
   },
   {
-    "id": "2608.07176",
-    "title": "Representation-driven Endoscopic Visual Embedding Alignment for Latent Generation",
-    "authors": "Francisco Caetano et al.",
-    "published": "2026-08-07",
+    "id": "2608.10932",
+    "title": "Temporally Grounded Compositional Camera Motion Understanding via Geometric Knowledge Distillation",
+    "authors": "Dazhao Du et al.",
+    "published": "2026-08-11",
     "category": "cv",
     "categories": [
       "cs.CV",
@@ -41,267 +40,268 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "embedding",
-      "generation",
-      "detection"
+      "3d",
+      "video",
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "Representation-driven Endoscopic Visual Embedding Alignment for Latent Generation: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "Temporally Grounded Compositional Camera Motion Understanding via Geometric Knowledge Distillation: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "detail": {
+      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
+      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
+      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.10932v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10932v1.pdf"
+  },
+  {
+    "id": "2608.10954",
+    "title": "Evidence-Grounded Trustworthy Multimodal Reasoning and Evaluation Benchmark in Complex Urban Scenes",
+    "authors": "Zhaoyang Wei et al.",
+    "published": "2026-08-11",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "Evidence-Grounded Trustworthy Multimodal Reasoning and Evaluation Benchmark in Complex Urban Scenes: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
       "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
       "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
       "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.07176v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07176v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.10954v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10954v1.pdf"
   },
   {
-    "id": "2608.07006",
-    "title": "Does More Retrieved Evidence Help Visual Retrieval-Augmented Generation with Diffusion Language Models?",
-    "authors": "Jiankun Wang et al.",
-    "published": "2026-08-07",
-    "category": "multimodal",
+    "id": "2608.10964",
+    "title": "CARE: Confidence-Aware Reasoning for Reliable Medical VQA",
+    "authors": "Yuetian Du et al.",
+    "published": "2026-08-11",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "retrieval",
-      "multimodal",
-      "generation"
+      "medical",
+      "multimodal"
     ],
-    "summaryKo": "Does More Retrieved Evidence Help Visual Retrieval-Augmented Generation with Diffusion Language Models?: 멀티모달 분야의 최근 연구로, LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.",
-      "method": "논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.",
-      "takeaway": "검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.07006v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07006v1.pdf"
-  },
-  {
-    "id": "2608.07418",
-    "title": "ResidencyRL: Reinforcement Learning in Simulated Clinical Environments",
-    "authors": "Valentin Liévin et al.",
-    "published": "2026-08-07",
-    "category": "llm",
-    "categories": [
-      "cs.AI",
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "medical"
-    ],
-    "summaryKo": "ResidencyRL: LLM 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
+    "summaryKo": "CARE: 컴퓨터 비전 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
     "detail": {
       "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
       "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
       "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.07418v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07418v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.10964v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10964v1.pdf"
   },
   {
-    "id": "2608.07036",
-    "title": "CAS2UML: A Handwritten Sketch-to-PlantUML Dataset for Class and Activity Diagrams",
-    "authors": "Simon Scholz, Mersedeh Sadeghi",
-    "published": "2026-08-07",
-    "category": "cv",
-    "categories": [
-      "cs.SE",
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "video",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "CAS2UML: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.07036v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07036v1.pdf"
-  },
-  {
-    "id": "2608.07267",
-    "title": "WNM-3D: A World Navigation Model with 3D Scene Conditioning for Closed-Loop VLN",
-    "authors": "Yuehao Huang et al.",
-    "published": "2026-08-07",
+    "id": "2608.11017",
+    "title": "R4DSG: Relative 4D Scene Graph Memory for Object-Centric Question Answering in Long Egocentric Video",
+    "authors": "Ke Ma et al.",
+    "published": "2026-08-11",
     "category": "multimodal",
     "categories": [
-      "cs.AI",
       "cs.CV",
-      "cs.RO"
+      "cs.AI",
+      "cs.HC",
+      "cs.MM"
     ],
     "tags": [
-      "diffusion",
       "agents",
       "3d",
       "video",
-      "generation"
+      "retrieval"
     ],
-    "summaryKo": "WNM-3D: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "R4DSG: 멀티모달 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
     "detail": {
       "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
       "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
       "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.07267v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07267v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.11017v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.11017v1.pdf"
   },
   {
-    "id": "2608.07417",
-    "title": "I Seek You in Videos: Identity-Conditioned Queries for Person-Centric Video Reasoning",
-    "authors": "Shibo Gao et al.",
-    "published": "2026-08-07",
-    "category": "cv",
+    "id": "2608.11191",
+    "title": "Test-Time Self-Evolving GUI Visual Grounding via Reflection-Guided On-Policy Self-Distillation",
+    "authors": "Shiyu Xuan, Zechao Li",
+    "published": "2026-08-11",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.AI",
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents"
+    ],
+    "summaryKo": "Test-Time Self-Evolving GUI Visual Grounding via Reflection-Guided On-Policy Self-Distillation: 멀티모달 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.11191v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.11191v1.pdf"
+  },
+  {
+    "id": "2608.10827",
+    "title": "MIRA: Medical Image Reflection for Agentic Diagnosis",
+    "authors": "Shengzhi Wang et al.",
+    "published": "2026-08-11",
+    "category": "multimodal",
     "categories": [
       "cs.CV",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "multimodal"
+      "agents",
+      "medical",
+      "autonomous-driving"
     ],
-    "summaryKo": "I Seek You in Videos: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "MIRA: 멀티모달 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
+      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
+      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.07417v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07417v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.10827v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10827v1.pdf"
   },
   {
-    "id": "2608.06930",
-    "title": "AVCap: Reinforcing Audio-Video Joint Caption with Detail-Aware Reward",
-    "authors": "Mingyang Wu et al.",
-    "published": "2026-08-07",
+    "id": "2608.10444",
+    "title": "From Reasoning Depth to Reasoning Breadth: Evaluating Multi-Point Associative Reasoning in Large Language Models",
+    "authors": "Si'an Xie et al.",
+    "published": "2026-08-11",
+    "category": "llm",
+    "categories": [
+      "cs.CL",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "embedding",
+      "generation"
+    ],
+    "summaryKo": "From Reasoning Depth to Reasoning Breadth: LLM 분야의 최근 연구로, 에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.",
+      "method": "논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.",
+      "takeaway": "에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.10444v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10444v1.pdf"
+  },
+  {
+    "id": "2608.10503",
+    "title": "Every Token Counts: Exact Likert-Scale Distributions for Measuring LLM Attitudes and Biases",
+    "authors": "Davood Wadi, Mohsen Ghodrat, Matthew Philp",
+    "published": "2026-08-11",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "autonomous-driving"
+    ],
+    "summaryKo": "Every Token Counts: LLM 분야의 최근 연구로, 자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬다.",
+      "method": "논문은 비전-언어 모델과 그라운딩 또는 시간 추론을 결합해 주행 장면의 위험을 해석 가능하게 만드는 방식을 제안한다.",
+      "takeaway": "안전 관련 응용에서는 설명 가능성이 유용하지만, 실제 도로 일반화와 작은 객체 인식 실패를 별도로 봐야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.10503v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10503v1.pdf"
+  },
+  {
+    "id": "2608.10756",
+    "title": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting",
+    "authors": "Huosen Ou et al.",
+    "published": "2026-08-11",
     "category": "cv",
     "categories": [
+      "cs.RO",
+      "cs.CV"
+    ],
+    "tags": [
+      "diffusion",
+      "3d",
+      "multimodal"
+    ],
+    "summaryKo": "Embodied Multimodal Grounding for Open-Vocabulary Mobile Manipulation via Semantic 3D Gaussian Splatting: 컴퓨터 비전 분야의 최근 연구로, 이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬 논문이다.",
+    "detail": {
+      "problem": "이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.",
+      "method": "논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.",
+      "takeaway": "3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.10756v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10756v1.pdf"
+  },
+  {
+    "id": "2608.10765",
+    "title": "Compositional Benchmark Synthesis for Hierarchical Human Action Recognition",
+    "authors": "Farnaz Soleimani et al.",
+    "published": "2026-08-11",
+    "category": "cv",
+    "categories": [
+      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "multimodal",
       "generation"
     ],
-    "summaryKo": "AVCap: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "Compositional Benchmark Synthesis for Hierarchical Human Action Recognition: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
+      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
+      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.06930v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.06930v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.10765v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10765v1.pdf"
   },
   {
-    "id": "2608.07463",
-    "title": "MirrorWorld: Taming Video Diffusion Models for Mirror Reflection Generation",
-    "authors": "Youjun Zhao et al.",
-    "published": "2026-08-07",
+    "id": "2608.10985",
+    "title": "PEAK: Precise and Persistent Concept Erasure via k-Sparse Autoencoders",
+    "authors": "Man Jiang et al.",
+    "published": "2026-08-11",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.LG"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "diffusion",
-      "video",
-      "generation"
-    ],
-    "summaryKo": "MirrorWorld: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
-    "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.07463v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07463v1.pdf"
-  },
-  {
-    "id": "2608.06938",
-    "title": "Debias in Text, Believe Your Eyes: Text-Anchored Cross-Modal Transfer for Visual Counter-Commonsense Reasoning",
-    "authors": "Chen Ling et al.",
-    "published": "2026-08-07",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "Debias in Text, Believe Your Eyes: 컴퓨터 비전 분야의 최근 연구로, 컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.",
-      "method": "논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.",
-      "takeaway": "CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.06938v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.06938v1.pdf"
-  },
-  {
-    "id": "2608.06972",
-    "title": "Generative Embedding Benchmark: How Much Information Survives in a Dense Embedding?",
-    "authors": "Yun Li et al.",
-    "published": "2026-08-07",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding"
-    ],
-    "summaryKo": "Generative Embedding Benchmark: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2608.06972v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.06972v1.pdf"
-  },
-  {
-    "id": "2608.07015",
-    "title": "Understand Before Detect: Vision--Language Learning for Omni-Domain Infrared Small Target Detection",
-    "authors": "Haoyang Yuan et al.",
-    "published": "2026-08-07",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal",
+      "privacy",
+      "generation",
       "detection"
     ],
-    "summaryKo": "Understand Before Detect: 컴퓨터 비전 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
+    "summaryKo": "PEAK: 컴퓨터 비전 분야의 최근 연구로, 대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬 논문이다.",
     "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
+      "problem": "대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.",
+      "method": "논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.",
+      "takeaway": "프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.07015v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.07015v1.pdf"
+    "sourceUrl": "https://arxiv.org/abs/2608.10985v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.10985v1.pdf"
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-08-10T02:26:08.841Z",
+  "collectedAt": "2026-08-12T02:34:37.878Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm"
