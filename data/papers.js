@@ -3,32 +3,30 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2608.15869",
-    "title": "Beyond Visual CoT: Internalized Visual Thinking for Proactive Video Reasoning",
-    "authors": "Xiaoyu Zhu et al.",
-    "published": "2026-08-16",
+    "id": "2608.18076",
+    "title": "From Corpora to Co-Evolving Capabilities: Capability-Centric Data Design for Generalist Image Generation",
+    "authors": "Xingjian Wang et al.",
+    "published": "2026-08-18",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.AI",
-      "cs.CL",
-      "cs.LG",
-      "cs.MM"
+      "cs.AI"
     ],
     "tags": [
-      "video",
-      "embedding",
+      "diffusion",
+      "retrieval",
       "multimodal",
+      "benchmark",
       "generation"
     ],
-    "summaryKo": "멀티모달 대형 언어모델의 비주얼 CoT가 추론 시 미래 프레임을 생성하며 발생하는 오버헤드를 줄이기 위해, 학습 중 시각적 사고를 내재화하는 IVT 프레임워크를 제안하여 추론 경로는 유지하면서 정확성과 효율성을 개선했다.",
+    "summaryKo": "초록은 생성 능력 간 의존성을 반영한 능력 중심 데이터 인프라와 다단계 커리큘럼을 통해 대규모 일반 이미지 생성 모델을 처음부터 학습시키는 방법을 제시한다.",
     "detail": {
-      "problem": "비주얼 CoT는 중간 추론 이미지를 생성하여 공간·시간·임베디드 추론에 도움을 주지만 추론 오버헤드가 커서 능동적 비디오 추론에 특히 문제가 된다.",
-      "method": "IVT는 레이블 없는 비디오를 대상으로 텍스트 예측과 다음 임베딩 예측을 공동 최적화하는 후학습 프레임워크로, 부분 관측된 비디오에서 미래 프레임의 잠재 표현과 텍스트 답변을 함께 예측한다. 추론 시에는 미래 프레임을 합성하거나 재인코딩하지 않고 답변을 직접 생성한다.",
-      "takeaway": "IVT는 직접 답변 파인튜닝 대비 여섯 가지 평가 설정 모두에서 성능이 향상되었고, 명시적 비주얼 CoT 대비 동등하거나 더 나은 성능을 보이면서 평균 end-to-end 지연 시간을 5배 이상 줄였다. 초록에는 별도의 한계가 명시되어 있지 않다."
+      "problem": "기존 파이프라인은 태스크별 데이터셋을 개별적으로 최적화하여 생성 능력 간 의존성을 고려한 데이터 구성을 어려워한다. 능력별 감독 데이터 구축과 커리큘럼 구성을 통합하는 것이 핵심 문제다.",
+      "method": "텍스트-이미지 grounding, 이미지 간 변환, 이미지-지식 연관을 위한 세 가지 데이터 엔진과 캡션 전문가를 활용해 이질적 감독을 구성하고, 능력 습득 순서에 따라 태스크 구성, 시각 개념 분포, 데이터 품질, 해상도를 공동으로 진화시키는 다단계 커리큘럼을 제안한다. 능력 인지 평가를 통해 표적 검색, 전문가 구축, 격차 기반 재표집으로 폐루프를 구성한다.",
+      "takeaway": "440M T2I 말뭉치, 120M 편집 쌍, 27M 이미지-개체 쌍을 구축하고 3B·6B 크기의 다중 모달 확산 모델을 처음부터 학습해 CPI-Bench 및 다양한 T2I·편집 평가에서 광범위한 시각 커버리지와 생성 능력 간 전이를 확인했다. 초록에는 명시적 한계가 보고되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.15869v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.15869v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.18076v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.18076v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -37,30 +35,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16513",
-    "title": "MLLM-Guided Semantic Correction for Text-to-Video Generation",
-    "authors": "Junhao Chen et al.",
-    "published": "2026-08-17",
-    "category": "multimodal",
+    "id": "2608.17328",
+    "title": "MS-MFAD : Multimodal large language models for Face Anti-spoofing Detection",
+    "authors": "Xiaoyong Yu et al.",
+    "published": "2026-08-18",
+    "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "video",
       "multimodal",
-      "generation"
+      "detection"
     ],
-    "summaryKo": "텍스트-비디오 생성 과정 중 의미 오류를 탐지하고 수정하기 위해, 학습 없이 MLLM 피드백을 확산 샘플링 루프에 통합하는 중간 생성 교정 프레임워크를 제안한다.",
+    "summaryKo": "MS-MFAD는 생성 AI와 고충실도 물리적 스푸핑이 결합된 복합 위협에 대응하기 위해, 미세 픽셀-시맨틱 앵커링을 통해 다중모달 대규모 언어모델의 내재적 추론 능력을 활성화하는 설명 가능한 얼굴 안티스푸핑 탐지 시스템을 제안한다.",
     "detail": {
-      "problem": "확산 모델과 Transformer 기반 텍스트-비디오 생성 모델은 객체 누락, 속성 오류, 행동 불일치 같은 의미적 오류를 자주 보인다. 기존 방법은 샘플링 전 최적화나 샘플링 후 정제에 그치며, 생성 과정 중 의미 편차를 탐지하고 수정하는 문제는 충분히 다뤄지지 않았다.",
-      "method": "제안하는 프레임워크는 학습 없이 MLLM 피드백을 확산 샘플링 루프에 직접 통합하여, 중간 프리뷰 프레임을 생성해 의미 평가와 편차 진단을 수행하는 Semantic Assessment Supervisor와 추론 중 의미 표류를 교정하는 Semantic Modification Assistant를 통해 확산 궤적을 수정한다.",
-      "takeaway": "제안 방법은 모델 파라미터를 수정하지 않고도 의미 정합성, 시각 충실도, 시간적 일관성을 개선하며, 여러 벤치마크에서 효과를 검증했다. 다만 초록에 한계에 대한 구체적 언급은 없다."
+      "problem": "기존 얼굴 생체인식 방어는 일반화 부족, 감사 불가능한 추론, 대규모 저품질 데이터 의존 등의 체계적 병목을 겪고 있다.",
+      "method": "MFAD는 MLLM의 추론 능력을 활용하되, 공격 범주당 1,000개의 정밀 마스크만 주석하여 스푸핑 영역에 대응하는 증거 체인을 생성하는 시맨틱 수준 통합 주석 패러다임을 도입한다.",
+      "takeaway": "제한된 고품질 샘플로 도메인 내 ACER를 40-50% 상대적으로 줄이고, 교차 도메인 성능 저하를 11.62%/5.23% 이내로 제한하며, 화이트박스 적대적 공격에서 정확도 하락이 3.2%에 그친다. 실시간 추론 지연을 만족하고 실무자의 증거 신뢰도는 4.57/5였으나, 초록에 명시된 별도 한계는 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16513v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16513v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17328v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17328v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -69,28 +64,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16259",
-    "title": "Defake-o3: From Speculative Rationales to Verifiable Evidence for Explainable AIGI Detection",
-    "authors": "Bowen Deng et al.",
-    "published": "2026-08-17",
-    "category": "cv",
+    "id": "2608.17536",
+    "title": "CoAL-RAG: A Complexity-Aware Legal Retrieval-Augmented Generation Method",
+    "authors": "Jin Su et al.",
+    "published": "2026-08-18",
+    "category": "llm",
     "categories": [
-      "cs.CV",
+      "cs.CL",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "generation",
-      "detection"
+      "retrieval",
+      "generation"
     ],
-    "summaryKo": "Defake-o3는 추측적 근거 대신 검증 가능한 증거를 제공하는 설명 가능한 AIGI 탐지기로, 반복적 시각 검색과 증거 검증자 강화학습을 결합하고 GroundFake 데이터셋과 FakeFrontier 벤치마크를 통해 탐지 정확도와 설명 품질을 개선한다.",
+    "summaryKo": "CoAL-RAG는 법률 상담 질문의 복잡도를 인식하여 검색 전략을 적응적으로 선택하는 검색 증강 생성 방법으로, 중국어 및 영어 법률 벤치마크에서 기존 방법 대비 우수한 성능을 보였다.",
     "detail": {
-      "problem": "기존 MLLM 기반 AIGI 탐지기는 정확하지만 설명이 추측적이며, 모호하거나 환각된 근거에 의존하고 최신 생성기의 미세한 국소 결함을 놓친다.",
-      "method": "Defake-o3는 의심 영역을 반복적으로 확대하여 세부를 검사하는 대화형 시각 검색과, 인간 검증 주석으로 학습된 Evidence Verifier가 강화학습 보상을 통해 근거 있는 증거를 선호하고 근거 없는 주장에 페널티를 주는 증거 정렬을 결합한다. 또한 GroundFake 데이터셋과 FakeFrontier 벤치마크를 구축했다.",
-      "takeaway": "GroundFake, FakeFrontier 및 추가 out-of-distribution 벤치마크 실험에서 탐지 정확도와 설명 품질을 모두 개선하여 더 국소화되고 검증 가능하며 설득력 있는 증거를 생성했다."
+      "problem": "법률 상담 질문은 다양한 수준의 복잡도를 가지며, 단일 검색 전략은 단순 질문에 과잉 추론을 유발하고 복잡한 질문에 해석 가능성이 낮아 고위험 상황에서 품질과 효율성을 모두 충족하기 어렵다.",
+      "method": "질문 본질과 검색 일관성에 기반한 다차원 평가 메커니즘을 통해 검색 전략을 적응적으로 라우팅하는 CoAL-RAG를 제안한다. 질문의 논리 구조로 추론 요구량을 정량화하고, 의미 검색과 키워드 검색 간의 차이를 활용해 복잡도를 반영하여 최적의 검색 전략을 선택하고 맥락 정보를 동적으로 필터링한다.",
+      "takeaway": "중국어 벤치마크(SocialLawQA, LawBench)에서 BLEU가 42.5% 향상되고 ROUGE-L이 지식 그래프 기반 방법의 3.6배에 달했으며, 영어 데이터셋(LexGLUE, CaseHold)에서도 강한 교차 관할 일반화와 경쟁력 있는 정확도를 보여 생성 품질, 심층 논리 추론, 시스템 효율성 간의 균형을 달성했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16259v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16259v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17536v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17536v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -99,29 +94,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16354",
-    "title": "DriveCache: Action-Aware Caching for Driving World Model Inference",
-    "authors": "Jianchun Yang et al.",
-    "published": "2026-08-17",
-    "category": "cv",
+    "id": "2608.17556",
+    "title": "Reflex-Guard: A Low-Latency Guardrail for LLM Prompt Safety Using Dense Semantic Embeddings",
+    "authors": "Istiaque Ahmed et al.",
+    "published": "2026-08-18",
+    "category": "multimodal",
     "categories": [
-      "cs.AI",
-      "cs.CV"
+      "cs.CR",
+      "cs.CL",
+      "cs.LG"
     ],
     "tags": [
-      "diffusion",
-      "video",
-      "autonomous-driving",
-      "generation"
+      "privacy",
+      "embedding",
+      "benchmark",
+      "detection"
     ],
-    "summaryKo": "Diffusion 기반 주행 비디오 생성 모델의 추론 비용을 줄이기 위해, 계획된 주행 운동 정보를 활용하는 훈련 없는 캐시 제어 기법 DriveCache를 제안한다.",
+    "summaryKo": "Reflex-Guard는 로컬에서 실행되는 경량 가드레일로, 기존 방식보다 훨씬 낮은 지연시간으로 LLM 프롬프트 안전성을 필터링한다.",
     "detail": {
-      "problem": "Diffusion 기반 주행 비디오 생성 모델은 여러 denoising 단계에서 큰 백본을 반복 평가하여 생성 처리량이 제한된다. 기존 확산 가속 방법들은 생성 전에 얻을 수 있는 주행 신호(자아 속도, 계획된 궤적 등)를 활용하지 않는다.",
-      "method": "DriveCache는 계획된 운동을 사용해 장면 간 캐시 재사용을 할당하고, 동적 프로그래밍으로 denoising 단계에 배치한다. 인과적 드리프트 검사가 특징을 갱신하고 생성이 보정에서 벗어나면 남은 일정을 재계획한다.",
-      "takeaway": "세 가지 생성기 구성에서 평가된 캐시 방법들 대비 전체 충실도-효율 트레이드오프를 개선했다. 코드는 공개 예정이다."
+      "problem": "LLM-as-a-judge나 클라우드 기반 안전 API 같은 기존 가드레일은 유해 콘텐츠를 탐지할 수 있지만 요청당 약 250~900ms의 지연을 추가해 100ms 이내 응답이 필요한 실시간 애플리케이션에는 너무 느리다. 또한 외부 중재 엔드포인트로 프롬프트를 보내는 것은 데이터 프라이버시 우려를 낳는다.",
+      "method": "Reflex-Guard는 로컬에서 실행되는 경량 가드레일로, jailbreak 인식 전처리, 컴팩트한 sentence-transformer 임베딩, 7개의 빠른 이진 분류기를 결합하여 프롬프트 안전성을 필터링한다.",
+      "takeaway": "전략적으로 균형 잡힌 30,568개 샘플 평가에서 유해 프롬프트에 대해 95.9% 재현율을 37.6ms 종단 간 지연시간으로 달성했으며, 이는 Llama Guard 2(255ms)와 SafeDecoding(723ms)보다 빠르다. GCG 접미사 공격과 Base64 인코딩 프롬프트는 기본 임계값으로 100% 탐지했지만, DrAttack 구조적 프롬프트는 최적 탐지를 위해 임계값을 0.03으로 낮춰야 했다. Reflex Efficiency Score는 최대 16.79로 Llama Guard 2(11.90)와 SafeDecoding(9.80)을 크게 앞질렀다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16354v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16354v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17556v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17556v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -130,26 +126,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16614",
-    "title": "Beyond Accuracy: Assessing Calibration of Geospatial Foundation Models and Their Sensitivity to Distribution Shifts",
-    "authors": "Nils Lehmann et al.",
-    "published": "2026-08-17",
-    "category": "cv",
+    "id": "2608.17605",
+    "title": "Multi-turn Conversational AI from Text to Multimodal Interaction: Data, Models, Evaluation, and Open Challenges",
+    "authors": "Syeda Faiza Ahmed et al.",
+    "published": "2026-08-18",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI",
+      "cs.SD"
     ],
     "tags": [
       "benchmark",
-      "embedding"
+      "agents",
+      "multimodal",
+      "survey"
     ],
-    "summaryKo": "지리공간 기반 모델(GeoFM)의 평가는 정확도뿐 아니라 보정(calibration)과 분포 변화에 대한 민감성을 포함해야 하며, 기존의 평균 순위 기반 벤치마크는 실제 배포를 평가하기에 너무 좁다.",
+    "summaryKo": "이 논문은 다중 턴 대화형 AI가 텍스트를 넘어 멀티모달 상호작용으로 확장되는 현황을 데이터, 모델, 평가, 과제 측면에서 검토하고, 지속적이고 일관된 대화를 위한 연구 의제를 제시한다.",
     "detail": {
-      "problem": "GeoFM은 일반적으로 평균 순위 기반의 정확도 지표로만 평가되는데, 이는 신뢰도와 정확도의 일치(보정)를 무시하여 실제 EO 작업 배포에 필요한 평가 기준을 놓친다.",
-      "method": "16개의 동결 인코더, 4개 분류·5개 분할 데이터셋, 두 가지 스트레스 축에서 보정과 분포 변화 하의 성능을 분석하고, CKA로 표현 변화를 확인하며, 온도 스케일링·앙상블·가우시안 프로세스 탐침 등 UQ 방법과 신뢰도 기반 선택적 예측을 평가한다.",
-      "takeaway": "EO 사전학습은 깨끗한 데이터에서 ImageNet 사전학습과 정확도·보정에서 차이가 없고, 분포 변화 하에서는 오히려 과신이 더 심해진다. 기존 UQ 방법은 성능 저하를 막지 못하며, 벤치마크는 다양한 조건과 지표를 통해 평가되어야 한다."
+      "problem": "실제 대화에서는 사용자가 목표를 명확히 하고, 요청을 수정하며, 응답을 중단하고, 주제를 바꾸고, 새 증거를 도입하는 등 맥락 유지가 필요하지만, 현재 시스템은 지속적 메모리, 턴 간 접지, 전이중 상호작용, 견고한 평가, 문화적 정렬에 어려움을 겪는다.",
+      "method": "텍스트 전용 대화, 오디오 LLM 및 음성 중심 시스템, 멀티모달 및 옴니모달 시스템, 도구 증강 에이전트를 아우르는 다중 턴 대화형 AI 연구를 데이터셋·벤치마크, 모델링 패러다임, 훈련 전략, 평가 설정, 교차적 과제로 분류하여 검토한다.",
+      "takeaway": "멀티모달 지원 능력은 빠르게 발전했지만 세션 전반에 걸쳐 일관된 상호작용을 유지하는 능력은 상대적으로 뒤처져 있으며, 기억·수정·접지·발화·청취·행동·적응이 가능한 시스템을 위한 연구 의제를 제안한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16614v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16614v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17605v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17605v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -158,29 +158,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16316",
-    "title": "Deep Thought Alignment: Trajectory-Level Latent Distillation for Video Reasoning",
-    "authors": "Ao Shen et al.",
-    "published": "2026-08-17",
+    "id": "2608.17950",
+    "title": "Do Large Language Models Play Six Degrees of Separation? Measuring Topological Compression in Long-Context Manifolds",
+    "authors": "Md. Faiyaz Abdullah Sayeedi",
+    "published": "2026-08-18",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.AI",
       "cs.CL"
     ],
     "tags": [
+      "retrieval",
       "benchmark",
-      "video",
-      "multimodal"
+      "generation",
+      "detection"
     ],
-    "summaryKo": "대형 멀티모달 모델의 비디오 추론 능력을 소형 모델로 증류할 때 궤적 수준의 잠재 표현 정렬을 추가한 Latent-OPD를 제안하며, 여섯 개 비디오 추론 벤치마크에서 출력 전용 OPD보다 일관되게 우수한 성능을 보였다.",
+    "summaryKo": "본 논문은 주의 가중치를 배제하고 은닉 상태 매니폴드의 기하학을 분석하여 LLM의 심층 잠재 공간이 작은 세상 네트워크로 조직화되며, 추론 계층에서 개념적 거리가 6홉 이하로 압축되는 위상 전이를 발견하고, 이를 RAG의 제로샷 환각 탐지에 적용한다.",
     "detail": {
-      "problem": "비디오 추론을 위한 대형 멀티모달 모델은 높은 계산 비용 때문에 소형 모델로의 지식 증류가 필요하지만, 기존 On-Policy Distillation은 출력 토큰 분포만 일치시켜 추론 중 형성되는 잠재 표현을 직접 제약하지 못한다.",
-      "method": "Latent-OPD는 학생 생성 궤적의 끝 위치에서 누적된 시각 증거와 추론 맥락을 요약한 은닉 상태를 교사와 정렬하고, 점진적 교사 선행 전략을 통해 중간~후반 학생 층을 점점 더 깊은 교사 층에 정렬한다.",
-      "takeaway": "여섯 개 비디오 추론 벤치마크에서 출력 전용 OPD보다 우수했으며, 특히 프레임 수가 적거나 영상이 길거나 복잡한 증거 통합이 필요한 작업에서 개선이 두드러졌다. 초록에 명시된 한계는 제시되지 않았다."
+      "problem": "장기 문맥에서 LLM의 다중 홉 추론 능력은 알려져 있으나 내부 메커니즘은 잘 이해되지 않으며, 기존 주의 가중치 기반 해석은 attention sink 같은 라우팅 artifact로 인해 진정한 의미적 근접성을 포착하기 어렵다.",
+      "method": "주의 가중치를 사용하지 않고 장기 문맥 표현의 유사도 행렬을 희소화하여 무가중 그래프로 변환한 뒤, 은닉 상태 매니폴드의 동적 기하학을 분석해 두 아키텍처에서 분리된 의미 앵커 간 연결성을 추적한다.",
+      "takeaway": "초기 구문 계층은 단절되지만 심층 추론 계층은 개념적 거리를 6홉 이하로 압축하는 위상 전이가 나타난다. RAG 환각 탐지에 적용했을 때 사실 기반 생성은 약 3홉의 구조적 무결성을 유지하고 환각은 심각한 위상 붕괴를 보이며, 초록에 명시적 한계는 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16316v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16316v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17950v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17950v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -189,29 +188,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16285",
-    "title": "Audio-Visual Segmentation via Depth-Guided Collaborative Modeling",
-    "authors": "Zhaojin Fu et al.",
-    "published": "2026-08-17",
+    "id": "2608.17291",
+    "title": "B-Spline Embedded Structure Learning for 3D Tooth Segmentation",
+    "authors": "Xianghan Wei et al.",
+    "published": "2026-08-18",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
-      "video",
-      "autonomous-driving",
-      "multimodal",
-      "benchmark"
+      "benchmark",
+      "3d",
+      "embedding"
     ],
-    "summaryKo": "본 논문은 오디오-비주얼 분할에서 기하학적 단서인 깊이 정보를 명시적으로 활용하는 삼중 모달 프레임워크 DGCM-AVS를 제안하여 기존 방법 대비 AVSS 데이터셋에서 성능을 향상시켰다.",
+    "summaryKo": "본 논문은 치열의 연속적 구조를 B-스플라인 임베딩과 구조 인식 동적 분류기로 학습하여 3D 치아 분할의 정확도와 강건성을 향상시키는 프레임워크를 제안한다.",
     "detail": {
-      "problem": "기존 오디오-비주얼 분할(AVS) 방법들은 상대 거리 및 가림(occlusion)과 같은 기하학적 단서를 명시적으로 모델링하지 않아 교차 모달 정렬의 강건성이 제한된다.",
-      "method": "깊이를 공간 구조 단서로 통합하는 DGCM-AVS를 제안하며, Depth-Aware Dynamic Modulator로 인접 객체 분리를 개선하고 Depth-Guided Progressive Fusion을 통해 깊이를 중간 다리로 사용해 오디오와 시각 특징을 점진적으로 정렬한다.",
-      "takeaway": "AVSS 데이터셋에서 최신 방법 대비 M_J 10.2%, M_F 8.7%의 상대적 향상을 보였으며, 깊이가 AVS에서 유망하지만 덜 탐구된 양식임을 강조한다."
+      "problem": "실제 치열의 복잡성(밀집, 비정렬, 인접 치아 간 높은 형태 유사성)으로 인해 정확한 3D 치아 분할이 어렵다.",
+      "method": "치아 중심에 B-스플라인 궤적을 맞춰 전역 치열 구조를 연속적 임베딩으로 표현하고, 구조 인식 동적 분류기(SADC)가 가우시안 근접 게이트와 어텐션 블록을 통해 적응적 결정 경계를 생성한다.",
+      "takeaway": "3DTeethSeg22 벤치마크에서 최신 정확도를 달성했으며, 구조적 강건성과 계산 효율성이 뛰어나 복잡한 치열 구성을 처리하는 능력을 크게 향상시킨다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16285v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16285v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17291v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17291v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -220,29 +217,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16320",
-    "title": "StreamOPD: A Post-Training Recipe with Spatio-Temporal Cue Gating for Streaming Video Understanding",
-    "authors": "Keming Wu et al.",
-    "published": "2026-08-17",
-    "category": "multimodal",
+    "id": "2608.17414",
+    "title": "REChart: Reasoning-Efficient Chart Editing with Large Reasoning Models",
+    "authors": "Yuanbang Liu et al.",
+    "published": "2026-08-18",
+    "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.PL"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "retrieval",
-      "generation",
-      "detection"
+      "agents",
+      "multimodal"
     ],
-    "summaryKo": "스트리밍 비디오 이해에서 메모리 없는 최근-윈도우 프로토콜을 고정하고 순수 사후 학습만으로 성능을 극대화하는 StreamOPD 레시피를 제안하여 여러 벤치마크에서 큰 폭의 향상을 달성했다.",
+    "summaryKo": "REChart는 차트 편집에서 과도한 추론으로 인한 성능 저하(overthinking)를 해결하기 위해, 중간 추론 단계에 프로세스 수준의 감독을 제공하는 두 단계 훈련 프레임워크를 제안한다.",
     "detail": {
-      "problem": "스트리밍 비디오 이해에서 인퍼런스 시 메모리·검색·압축을 추가한 기존 시스템들이 훈련 없는 슬라이딩 윈도우 기준선과 비슷한 성능을 보인다. 이에 메모리 없는 최근-윈도우 프로토콜을 고정하고 사후 학습만으로 어디까지 올릴 수 있는지 탐구한다.",
-      "method": "검증 가능한 보상을 쓰는 강화학습 대신, 검증 가능한 스트리밍 비디오 데이터, thinking 모드의 온-폴리시 증류(OPD), instruct 모드 배포를 결합한 StreamOPD를 제안한다. 추가로 교사 특권 확장으로 시공간 큐 게이트(ST-CueGate)를 도입해 큐 유무별 교사 우도비를 그룹 상대 응답 점수로 집계해 OPD를 재가중한다.",
-      "takeaway": "StreamingBench를 77.9%에서 83.9%로 올려 9B 교사와 0.3%p 차이를 보였고, OVO-Bench(HLD 제외)에서 추론 변경 없이 9.1점 향상했다. ST-CueGate는 OVO-Bench(HLD 제외) 71.9%, Video-MME 64.9%를 달성했으며, 교사를 학생 초기 정책의 동결 사본으로 바꾼 온-폴리시 자가 증류도 대부분의 이득을 유지하고 HLD를 57.0%로 끌어올렸다."
+      "problem": "차트 편집은 참조 차트 이미지와 편집 지시로부터 시각화 코드를 추론하고 수정하는 복잡한 다중 모달 작업으로, 대규모 추론 모델(LRM)의 긴 사고 과정이 오히려 환각이나 반복적 추론으로 이어지는 '역U자' 관계를 보인다.",
+      "method": "REChart는 먼저 200k개의 고품질 추론 궤적을 합성해 지도 미세조정하고, 이후 코드 정확성·시각적 충실도·구조 일관성을 평가하는 충실도 보상과 무작위 사고 예산으로 추론을 절단하는 효율성 보상을 결합한 강화학습으로 모델을 최적화한다.",
+      "takeaway": "ChartEdit와 ChartMIMIC 벤치마크에서 동급 규모의 오픈소스 모델 중 최고 성능을 달성했으며, 최대 16,384 토큰 사고 예산 하에서 평균 추론 토큰 사용량을 기본 모델 대비 79.0% 줄였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16320v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16320v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17414v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17414v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -251,28 +247,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16480",
-    "title": "RISE: Roadside Infrastructure Sequence Understanding across 3D Tracking and Structured Vision-Language Reasoning",
-    "authors": "Yanbo Jiang et al.",
-    "published": "2026-08-17",
+    "id": "2608.17420",
+    "title": "SPVC: Structured and Panoptic Video Fixing for Cross-Dataset Driving Scene Rendering",
+    "authors": "Gen Li et al.",
+    "published": "2026-08-18",
     "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
+      "diffusion",
       "3d",
       "video",
+      "autonomous-driving",
       "benchmark"
     ],
-    "summaryKo": "RISE는 도로변 인프라 시퀀스에서 3D 추적과 구조화된 비전-언어 추론을 결합한 프레임워크로, 이미지만으로 다중 시점 교차로의 3D 트랙을 복구하고 고품질 비디오 QA 데이터셋과 벤치마크를 구축한다.",
+    "summaryKo": "SPVC는 자율주행 장면 렌더링에서 발생하는 블러, 시간적 깜빡임, 전경-배경 정렬 오류를 구조적·파놉틱·비디오·교차 데이터셋 방식으로 수정하는 비디오 복구 프레임워크이다.",
     "detail": {
-      "problem": "도로변 인프라 시퀀스에서 LiDAR나 작업별 3D 학습 없이도 다중 시점 카메라의 3D 추적과, 미래 정보를 노출하지 않는 구조화된 비전-언어 추론 평가를 가능하게 하는 것이 목표다.",
-      "method": "SAM3 비디오 ID와 캘리브레이션 기반 마스크 정합을 이용한 이미지 전용 방법으로 다중 시점 ID 연관을 수행하고, 제약된 전체 맥락 Oracle 기반 MLLM 파이프라인으로 고가치 클립을 선별해 bbox 기반 예측 QA를 구성한다.",
-      "takeaway": "20개 클립에서 66.9 MOTA를 달성했고, RISE-VQA는 557개 클립·33,910 QA 쌍으로 구성되었으며, 도메인 적응과 시간적 맥락의 이점을 보였지만 공간적 근거, 미래 위치, 상호작용 추론에 어려움이 남았다."
+      "problem": "3D 가우시안 스플래팅 기반 주행 장면 렌더링은 외삽된 자아 궤적이나 장면 편집에서 화질 저하가 발생하며, 기존 정제 방법은 특정 설정에만 맞춰져 있다.",
+      "method": "카메라 포즈, 3D 바운딩 박스, HD 맵 같은 명시적 공간 조건을 사용해 복구를 안내하고, 전경과 배경 아티팩트를 함께 수정하며, 비디오 시퀀스 단위로 동작하는 공유 네트워크를 학습한다. 열화-정상 쌍 데이터를 구성해 2단계 제어 가능한 비디오 확산 모델을 훈련한다.",
+      "takeaway": "단일 공유 네트워크로 여러 주행 데이터셋에 적용 가능한 교차 데이터셋 복구를 제안하며, 비디오 수준 외형 복구와 구조적 제어를 통한 레이아웃 정제를 순차적으로 수행한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16480v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16480v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17420v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17420v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -281,29 +278,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16484",
-    "title": "Remote-Sensing City Layout Extraction with MLLM",
-    "authors": "Zigan Zhou, Kai Li, Yupeng Deng",
-    "published": "2026-08-17",
-    "category": "multimodal",
+    "id": "2608.17426",
+    "title": "SemComp-Bench: Benchmarking Semantic Task Completion in Video Generation",
+    "authors": "Keyu Tu et al.",
+    "published": "2026-08-18",
+    "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
-      "3d",
-      "multimodal",
-      "code-generation",
-      "generation",
-      "detection"
+      "benchmark",
+      "video",
+      "generation"
     ],
-    "summaryKo": "원격 탐사 단일 탑뷰 이미지에서 도시 레이아웃을, 객체 정체성·관계·토폴로지·재생성 규칙을 보존하는 실행 가능한 제약 코드 생성 문제로 정의하고 MLLM으로 해결하는 프레임워크를 제안한다.",
+    "summaryKo": "SemComp-Bench는 비디오 생성에서 의미론적 작업 완료를 평가하기 위한 벤치마크로, 생성된 결과가 의도된 결과를 달성하고 참조 이미지와의 의미론적 정합성을 유지하는지를 측정한다.",
     "detail": {
-      "problem": "기존 원격 탐사 시스템은 검출 박스, 의미 분할 마스크, 벡터 경계만 출력하여 객체 클래스 위치와 평면 스코어링은 지원하지만, 객체 정체성·관계·토폴로지·재생성 규칙을 유지하는 실행 가능한 레이아웃을 제공하지 못한다.",
-      "method": "Code-as-City는 이미지 모델로 5클래스 의미 레이아웃 사전정보를 만들고, 세 차례의 순차적 MLLM 패스를 통해 도로, 토지피복 영역·관계, 건물을 복원한다. 결정적 정규화로 도시 그래프와 제한된 레이아웃 프로그램을 생성하며, 프로그램 실행으로 렌더링 가능한 3D 도시 레이아웃과 공유 지오메트리 위의 직교 의미 투영을 만든다.",
-      "takeaway": "CityLayout-100의 100개 장면 평가에서 평균 IoU 41.1%, 전역 IoU 48.3%를 달성하여, 시각 관측이 평면 및 3D 출력이 결합된 검사·편집 가능한 도시 코드로 변환될 수 있다는 정량적 증거를 제시한다."
+      "problem": "기존 비디오 생성 평가는 중간 단계나 외형 일관성에 초점을 맞추지만, 의도된 결과의 달성 여부와 작업 관련 의미론적 정합성을 평가하는 과업 정의가 부족하다.",
+      "method": "의미론적 작업 완료 비디오 생성 과업을 정의하고, 6개 도메인을 포함하는 SemComp-Data 데이터셋을 4단계 큐레이션 파이프라인으로 구축한 뒤, VLM을 활용한 구조화된 이진 질문 기반 평가 프로토콜 SemComp-Bench를 제안한다.",
+      "takeaway": "대표적인 비디오 생성 모델 실험에서 의도된 결과를 달성하면서 참조 이미지의 작업 관련 의미론적 정합성을 유지하는 것이 여전히 어려운 과제임을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16484v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16484v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17426v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17426v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -312,28 +308,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16717",
-    "title": "PersonaShot: Benchmarking Person-Centric Narrative Continuity in Multi-Shot Video Generation",
-    "authors": "Yuji Wang et al.",
-    "published": "2026-08-17",
-    "category": "cv",
+    "id": "2608.17535",
+    "title": "GroupForward: Building Referable 3D Scenes via Instance-Grouped Feed-Forward Gaussian Splatting",
+    "authors": "Qijian Tian et al.",
+    "published": "2026-08-18",
+    "category": "multimodal",
     "categories": [
       "cs.CV"
     ],
     "tags": [
-      "benchmark",
-      "video",
-      "multimodal",
-      "generation"
+      "agents",
+      "3d",
+      "embedding"
     ],
-    "summaryKo": "PersonaShot은 다중 샷 비디오 생성에서 인물 중심 내러티브 연속성을 평가하는 최초의 벤치마크로, 약 1,000개의 다중 샷 세그먼트와 16개 지표를 통해 물리적 연속성, 감정 역학, 영화적 문법을 체계적으로 측정한다.",
+    "summaryKo": "GroupForward는 희소한 다중 뷰 이미지에서 기하, 외관, 인스턴스 구조, 의미를 재구성하는 인스턴스 그룹 기반 피드포워드 가우시안 스플래팅 모델을 제안하고, 이를 바탕으로 복잡한 3D 지시 분할을 위한 참조적 장면 추론 프레임워크(RSRF)를 도입한다.",
     "detail": {
-      "problem": "기존 벤치마크는 등장인물 외모나 개별 샷 품질만 평가할 뿐, 컷을 넘나들며 물리적·감정적 상태가 일관되게 유지되는지 측정하지 못한다. 또한 지표별로 필요한 시각적·시간적·관계적 증거가 다른데도 기준별 평가 방법을 거의 제공하지 않는다.",
-      "method": "인물 중심 내러티브 연속성 벤치마크 PersonaShot을 도입하여 샷 내 상태, 샷 간 전환, 시퀀스 수준 궤적의 세 가지 시간 수준에서 캐릭터 일관성을 평가한다. 대형 멀티모달 교사 모델의 추론을 경량화한 지표별 전문 평가자들을 증류하여 각 지표에 필요한 증거에 기반해 평가하고 전문가 인간 판단과 정렬한다.",
-      "takeaway": "최신 모델들은 지각 품질과 교차 샷 내러티브 연속성 사이에 뚜렷한 격차를 보이며, 시각적으로 매력적인 비디오에서도 물리적 상태 리셋, 급격한 감정 전환, 장면 간 영화적 관계 붕괴가 자주 발생한다. 인간 연구에서 제안한 평가자들이 전문가 판단과 강한 일치를 보였다."
+      "problem": "기존 피드포워드 의미론적 3D 가우시안 스플래팅은 명시적 인스턴스 구분이 없고 범주나 구문 기반의 의미 질의만 지원한다.",
+      "method": "GroupForward는 각 가우시안에 고차원 의미 특징을 붙이는 대신, 크로스 뷰 일관된 3D 인스턴스로 가우시안을 그룹화하는 컴팩트 인스턴스 임베딩을 학습한다. RSRF는 인스턴스 그룹 기반 3D 장면 그래프를 구성하고, 비전-언어 모델이 후보 인스턴스 중 지시된 인스턴스를 추론하게 한다.",
+      "takeaway": "의미 재구성 및 참조적 추론 실험을 통해 인스턴스 그룹 기반 재구성 및 추론 프레임워크의 효과성을 입증했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16717v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16717v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17535v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17535v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -342,28 +337,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2608.16721",
-    "title": "GenRouter: Unified Workflow Routing for Agentic Image Generation",
-    "authors": "Harold Haodong Chen et al.",
-    "published": "2026-08-17",
+    "id": "2608.17926",
+    "title": "PerFact: Perception-Derived Fact Prompting for 3D Brain MRI Report Generation",
+    "authors": "Jianyu Sun et al.",
+    "published": "2026-08-18",
     "category": "multimodal",
     "categories": [
       "cs.CV"
     ],
     "tags": [
-      "benchmark",
-      "agents",
+      "3d",
+      "medical",
       "retrieval",
       "generation"
     ],
-    "summaryKo": "GenRouter는 에이전틱 이미지 생성 워크플로우를 통합 라우팅하여 계산 비용과 지연 시간을 크게 줄이는 최초의 프레임워크이다.",
+    "summaryKo": "3D 뇌 MRI 보고서 생성에서 모델 크기보다 프롬프트에 주입되는 지각 기반 사실 정보가 보고서 품질을 결정하며, PerFact 방법이 이를 활용한다.",
     "detail": {
-      "problem": "기존 에이전틱 이미지 생성 워크플로우는 고정된 one-size-fits-all 토폴로지로 인해 단순한 요청도 과도한 계산 파이프라인을 거치는 compute-mismatch 문제가 있다.",
-      "method": "GenCanvas로 다양한 에이전틱 파이프라인을 표준화하고, demand profiling, experience matching, Pareto filtering을 통해 이질적인 프롬프트를 최적 워크플로우에 적응적으로 라우팅한다.",
-      "takeaway": "다양한 벤치마크에서 무거운 정적 파이프라인 대비 실행 비용을 95% 이상, 지연 시간을 65% 줄이면서 우수한 시각적 정합성을 달성했고, 축적된 경험을 통한 제로샷 일반화로 성능을 높이고 계산 오버헤드를 절반으로 줄인다."
+      "problem": "기존 2D 흉부 X-ray 중심의 보고서 생성에서 모델 확장이 성능 향상의 기본 경로였으나, 3D 뇌 MRI에서는 모델 선택이 보고서 품질에 미치는 영향이 미미하다는 것을 발견했다.",
+      "method": "업스트림 3D 분할 및 분류를 통해 지각 정보를 추출하고, 이를 구조화된 사실 문장으로 만들어 LoRA 적응된 비전-언어 모델에 프롬프트로 주입하는 PerFact를 제안한다.",
+      "takeaway": "지각 기반 사실이 검색된 이전 보고서보다 우수하고, 사실이 있으면 검색이 중복되며, 예측 사실도 효과적이다. 잔여 격차는 사실의 세분성에 기인하며, VQA는 보고서 품질에 비용 없이 가능하지만 근거 소스는 VQA에 거의 영향을 미치지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2608.16721v1",
-    "pdfUrl": "https://arxiv.org/pdf/2608.16721v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2608.17926v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.17926v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -399,7 +394,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W7134176015"
     }
   },
@@ -435,30 +430,34 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 18,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W7159969865"
     }
   },
   {
-    "id": "2510.13123",
-    "title": "From Adaptation to Intelligence: A Systematic Review of Data, Strategies, and Impact in Personalized VR",
-    "authors": "Tangyao Li et al.",
-    "published": "2025-10-15",
-    "category": "llm",
+    "id": "2511.05967",
+    "title": "Adapted Foundation Models for Breast MRI Triaging in Contrast-Enhanced and Non-Contrast Enhanced Protocols",
+    "authors": "Tri-Thien Nguyen et al.",
+    "published": "2025-11-08",
+    "category": "cv",
     "categories": [
-      "cs.HC"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
-      "multimodal"
+      "diffusion",
+      "medical",
+      "benchmark",
+      "detection"
     ],
-    "summaryKo": "본 논문은 VR 개인화 연구를 체계적으로 검토하여, 사용자 데이터가 적응형 전략을 통해 경험을 향상시키는 방식을 5단계 개념 프레임워크로 통합하고, 향후 연구 방향을 제시한다.",
+    "summaryKo": "DINOv2 기반 Medical Slice Transformer(MST)를 사용하여 조영증강 및 비조영증강 유방 MRI에서 BI-RADS >=4 병변을 선별할 때, 97.5% 민감도에서 조영증강 프로토콜(T1sub+T2w)은 19% 특이도, 비조영증강(DWI1500+T2w)은 17% 특이도를 달성했으며, 외부 검증에서 AUC 0.77을 보였다.",
     "detail": {
-      "problem": "VR 시스템은 개별 사용자의 상태, 능력, 선호도에 지능적으로 적응할 것이 요구되지만, 기존 리뷰들은 사용자 상태 감지와 적응형 상호작용 설계를 분리된 주제로 다루어 왔다.",
-      "method": "몰입 중 수집된 사용자 데이터가 적응형 전략을 어떻게 구동하는지에 초점을 맞춰 다양한 응용 분야의 적응형 기법 연구들을 종합하고, 적응 메커니즘을 통합하는 다섯 단계 개념 프레임워크를 제안한다.",
-      "takeaway": "주요 동향으로 멀티모달 센서 통합, 순수 반응형에서 하이브리드 적응 시스템으로의 전환, 인공지능 접근법 채택이 확인되었으며, 데이터·모델링·평가 관련 과제와 사용자 중심 VR 시스템을 위한 향후 방향이 제시되었다."
+      "problem": "유방 MRI는 해석에 시간이 많이 소요되며, AI 기반 사전 선별이 도움이 될 수 있다. 본 연구는 조영증강 및 비조영증강 단축 유방 MRI에서 BI-RADS >=4 소견을 배제하기 위한 MST 프레임워크의 성능을 평가하고자 한다.",
+      "method": "내부 데이터셋 1,847건과 외부 데이터셋 924건의 단일 유방 MRI를 사용하여 4가지 단축 프로토콜(T1sub, DWI1500, DWI1500+T2w, T1sub+T2w)을 테스트하고, 90%, 95%, 97.5% 민감도에서 5겹 교차검증과 AUC 분석을 수행했다.",
+      "takeaway": "T1sub+T2w는 AUC 0.77, DWI1500+T2w는 0.74를 기록했으며, 97.5% 민감도에서 각각 19%와 17%의 특이도를 보였다. 놓친 병변은 주로 10mm 미만의 비종괴 조영증강이었고, 외부 검증에서 AUC 0.77과 88%의 양호한 주의 지도를 확인했다. 임상 적용 전 추가 연구가 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2510.13123v1",
-    "pdfUrl": "https://arxiv.org/pdf/2510.13123v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2511.05967v1",
+    "pdfUrl": "https://arxiv.org/pdf/2511.05967v1.pdf",
     "recommendationModes": [
       "week"
     ],
@@ -468,8 +467,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
-      "openAlexId": "W4415274663"
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
+      "openAlexId": "W4416156985"
     }
   },
   {
@@ -510,7 +509,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 69,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4416043407"
     }
   },
@@ -541,12 +540,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 3
+      "month": 2
     },
     "metrics": {
       "citationCount": 12,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4406603968"
     }
   },
@@ -581,7 +580,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 3,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4406692391"
     }
   },
@@ -612,7 +611,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4405627548"
     }
   },
@@ -641,12 +640,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 4
+      "month": 3
     },
     "metrics": {
       "citationCount": 12,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4399115643"
     }
   },
@@ -680,7 +679,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 25,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4398796380"
     }
   },
@@ -714,7 +713,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 4,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4398796415"
     }
   },
@@ -752,7 +751,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 39,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4391377095"
     }
   },
@@ -789,7 +788,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 4,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4391212405"
     }
   },
@@ -821,13 +820,50 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 2
+      "month": 1
     },
     "metrics": {
       "citationCount": 38,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4390730779"
+    }
+  },
+  {
+    "id": "2312.17670",
+    "title": "The TopCoW Challenge -- Topology-Aware Circle of Willis Segmentation for CT and MR Angiography",
+    "authors": "Kaiyuan Yang et al.",
+    "published": "2023-12-29",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.LG",
+      "q-bio.QM",
+      "q-bio.TO"
+    ],
+    "tags": [
+      "benchmark",
+      "detection"
+    ],
+    "summaryKo": "TopCoW 챌린지는 뇌동맥환(CoW) 분할 및 변이 분류를 위한 최초의 벤치마크를 제공하며, 125쌍의 MRA/CTA 데이터와 226개 스캔의 내부/외부 테스트 세트를 통해 최고 성능 알고리즘이 높은 정확도를 달성했음을 보여주었다.",
+    "detail": {
+      "problem": "뇌동맥환(CoW)의 해부학적 변이는 신경혈관 질환의 위험과 결과에 영향을 미치지만, 이를 수동으로 분석하는 것은 시간이 많이 걸리고 전문가가 필요하다. 또한 주석이 달린 CoW 데이터셋과 분할 알고리즘 비교를 위한 벤치마크가 부족했다.",
+      "method": "TopCoW 챌린지를 조직하고, 가상 현실 기술로 13개 혈관 구성요소를 주석한 125쌍의 MRA/CTA 데이터셋을 공개했다. 참가자들은 CoW 분할, 구성요소 검출, 변이 분류 및 두 가지 임상 응용 작업을 수행하는 알고리즘을 제출했다.",
+      "takeaway": "250명 이상의 참가자가 참여했으며, 최고 성능 팀은 CoW 분할에서 90% 이상의 Dice, 주요 혈관 구성요소 검출에서 80% 이상의 F1, 변이 분류에서 70% 이상의 균형 정확도를 달성했다. 또한 태아형 후대뇌동맥 분류와 동맥류 위치 파악 같은 임상 작업에서 유용성을 보였지만, 한계는 명시되지 않았다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2312.17670v1",
+    "pdfUrl": "https://arxiv.org/pdf/2312.17670v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 4
+    },
+    "metrics": {
+      "citationCount": 12,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
+      "openAlexId": "W4390528002"
     }
   },
   {
@@ -863,7 +899,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 9,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4388093160"
     }
   },
@@ -895,7 +931,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 132,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4387355843"
     }
   },
@@ -931,7 +967,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 93,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4382618722"
     }
   },
@@ -966,44 +1002,10 @@ window.PAPERS = [
       "year": 1
     },
     "metrics": {
-      "citationCount": 1475,
+      "citationCount": 1480,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W4362515116"
-    }
-  },
-  {
-    "id": "2303.10894",
-    "title": "M$^{2}$SNet: Multi-scale in Multi-scale Subtraction Network for Medical Image Segmentation",
-    "authors": "Xiaoqi Zhao et al.",
-    "published": "2023-03-20",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "medical",
-      "benchmark"
-    ],
-    "summaryKo": "M$^{2}$SNet: 컴퓨터 비전 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
-      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
-      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2303.10894v1",
-    "pdfUrl": "https://arxiv.org/pdf/2303.10894v1.pdf",
-    "recommendationModes": [
-      "month"
-    ],
-    "recommendationRanks": {
-      "month": 1
-    },
-    "metrics": {
-      "citationCount": 80,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
-      "openAlexId": "W4353007132"
     }
   },
   {
@@ -1035,14 +1037,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 181,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-08-18T08:31:16.543Z",
+      "citationUpdatedAt": "2026-08-19T08:31:53.121Z",
       "openAlexId": "W3158013077"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-08-18T08:32:48.230Z",
+  "collectedAt": "2026-08-19T08:33:34.651Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -1053,20 +1055,20 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-08-12",
-        "to": "2026-08-18"
+        "from": "2026-08-13",
+        "to": "2026-08-19"
       },
       "month": {
-        "from": "2026-07-20",
-        "to": "2026-08-18"
+        "from": "2026-07-21",
+        "to": "2026-08-19"
       },
       "sixMonths": {
-        "from": "2026-02-20",
-        "to": "2026-08-18"
+        "from": "2026-02-21",
+        "to": "2026-08-19"
       },
       "year": {
-        "from": "2025-08-19",
-        "to": "2026-08-18"
+        "from": "2025-08-20",
+        "to": "2026-08-19"
       }
     },
     "fallbackModes": []
