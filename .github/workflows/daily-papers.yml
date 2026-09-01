@@ -2,8 +2,8 @@ name: Daily arXiv paper collection
 
 on:
   schedule:
-    # Run daily at 17:00 KST, after the latest arXiv announcement has settled.
-    - cron: '0 17 * * *'
+    # Run daily at 17:30 KST, away from GitHub Actions' peak load at the top of the hour.
+    - cron: '30 17 * * *'
       timezone: 'Asia/Seoul'
   workflow_dispatch:
 
