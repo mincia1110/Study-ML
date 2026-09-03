@@ -3,27 +3,29 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2609.01361",
-    "title": "Investigating Linear Probe Robustness to Linguistic Register, Medical Specialty, and Corpus Shifts in Medical QA",
-    "authors": "Nishant Mishra, Ameen Abu-Hanna, Iacer Calixto",
-    "published": "2026-09-01",
+    "id": "2609.01971",
+    "title": "NS-Copilot: An LLM-Driven Agent System for Autonomous Neuroscience Analysis",
+    "authors": "Wuche Liu et al.",
+    "published": "2026-09-02",
     "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.LG"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "medical"
+      "agents",
+      "autonomous-driving",
+      "code-generation",
+      "generation"
     ],
-    "summaryKo": "Investigating Linear Probe Robustness to Linguistic Register, Medical Specialty, and Corpus Shifts in Medical QA: LLM 분야의 최근 연구로, 의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬 논문이다.",
+    "summaryKo": "NS-Copilot은 LLM 기반 다중 에이전트 시스템으로, 자연어 인터페이스를 통해 EEG 및 세포외 스파이크 데이터를 포함한 신경과학 분석의 종단간 워크플로우를 자동으로 지원한다.",
     "detail": {
-      "problem": "의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.",
-      "method": "논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.",
-      "takeaway": "의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다."
+      "problem": "신경과학 분야는 학제 간 장벽으로 AI 활용이 어렵고, 생리신호 사전학습 모델들의 이질적 구조와 양식 제약으로 통합·선택·평가가 어렵다. 기존 LLM 기반 에이전트 시스템은 신경과학 도메인 전문성이 부족하다.",
+      "method": "NS-Copilot은 도메인 특화 사전학습 모델을 통합하고 EEG와 세포외 스파이크 데이터를 자연어 인터페이스로 지원한다. 계획, 적응 제어, 코드 생성, 결과 합성의 전문화된 역할을 가진 에이전트들을 조율하여 데이터셋 특정 휴리스틱 없이 분석을 수행한다.",
+      "takeaway": "알츠하이머병, 파킨슨병, 작업기억 스파이크 디코딩 벤치마크에서 각 작업당 8회 시행 동안 강력한 기준선보다 주 평가지표에서 일관되게 우수한 성능을 보였다. 이는 효과적이고 확장 가능한 신경과학 분석 능력을 입증한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01361v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01361v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.01971v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.01971v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -32,27 +34,31 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01548",
-    "title": "SDARE-Bench: Evaluating Large Language Models on Conversational Stigma Detection and Response in Dyadic and Group Dialogue",
-    "authors": "Stephanie Fong et al.",
-    "published": "2026-09-01",
+    "id": "2609.02649",
+    "title": "Loom: Weaving Diagnostic Strands into Free-Text Consensus via Embedding-Space Reweighting",
+    "authors": "Ron Begleiter et al.",
+    "published": "2026-09-02",
     "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.AI",
+      "cs.CL",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "generation",
+      "agents",
+      "autonomous-driving",
+      "embedding",
       "detection"
     ],
-    "summaryKo": "대화형 맥락에서 낙인 감지 및 응답 생성을 평가하는 최초의 시나리오 기반 벤치마크 SDARE-Bench를 제안하고, 여러 LLM이 특히 집단 대화에서 낙인을 제대로 식별하지 못하고 낙인 표현에 취약함을 실증적으로 보여준다.",
+    "summaryKo": "Loom은 임베딩 공간 재가중치와 단일 경량 LLM 합성 단계를 통해 모듈식 휴리스틱의 개방형 가설을 집계하여 근본 원인 분석(RCA)에서 정확도-효율 Pareto 최적을 달성하는 생성적 합의 프레임워크이다.",
     "detail": {
-      "problem": "기존 일반 도메인 평가는 정적 프롬프트와 고정 형식 작업에 의존하여 일상 대화의 맥락과 청중 효과를 간과하며, 낙인 관련 벤치마크가 부족하다.",
-      "method": "1,138개의 이인 대화 질의와 1,388개의 집단 대화로 구성된 SDARE-Bench를 도입하여 LLM의 낙인 감지와 개방형 응답 생성을 평가하고, 1,392개의 인간 주석 응답으로 학습된 분류기를 사용해 응답을 평가한다.",
-      "takeaway": "8개 LLM에서 낙인 구성 요소 식별 성능이 전반적으로 낮았고, 집단 설정에서 낙인 표현이 더 높았으며, 집단 압력 조건에서는 평균 97.5%의 높은 낙인 표현률을 보여 낙인 응답이 반복적인 안전 취약점임을 확인했다."
+      "problem": "실제 산업 환경에서 NLP 시스템을 배포할 때 잡음이 많고 상충하는 텍스트 가설을 신뢰할 수 있는 합의로 집계하는 것이 근본적인 과제이다. 거대 LLM 에이전트는 표현력이 뛰어나지만 컨텍스트 한계, 환각 누적, 추론 지연이 크고, 전통적 약한 감독은 이산 클래스로 수학적으로 제한된다.",
+      "method": "Loom은 진단 템플릿에서 동적으로 생성된 개방형 가설들을 연속 임베딩 공간에 투영하고, 반복적 중심 기반 재가중치 알고리즘으로 상충 신호를 해결한다. 그 결과로 얻은 합의 가중치가 단일 경량 LLM 합성 단계를 뒷받침한다.",
+      "takeaway": "OpenRCA 벤치마크에서 Loom은 Bank와 Market-2에서 최첨단 자율 에이전트와 정확도가 같았고 Market-1과 Telecom에서는 뒤졌지만, 네 데이터셋 모두에서 인시던트당 단일 LLM 호출만 사용해 약 26배(8B 파라미터 합성기 사용 시 약 33배) 빨랐다. 배포 경험에서 에이전트 깊이와 추론 지연 간의 절충, 중복 탐지의 부정적 결과, 결정론적 합의가 SME의 신뢰를 높이는 점 등을 논의했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01548v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01548v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02649v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02649v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -61,28 +67,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01567",
-    "title": "Selective Agent Guidance via Entropy: Learning Autonomous Policies from Imperfect VLM Teachers",
-    "authors": "Matteo Merler et al.",
-    "published": "2026-09-01",
+    "id": "2609.02486",
+    "title": "ViSAR: Training-Free Adaptive-$k$ Retrieval for Visual Document Question Answering",
+    "authors": "Adrien Mialland et al.",
+    "published": "2026-09-02",
     "category": "multimodal",
     "categories": [
+      "cs.IR",
       "cs.AI",
       "cs.CL",
-      "cs.LG"
+      "cs.CV"
     ],
     "tags": [
-      "agents",
-      "autonomous-driving"
+      "retrieval",
+      "embedding",
+      "generation"
     ],
-    "summaryKo": "VLM을 매 단계 정책으로 사용하는 대신, 학습자가 불확실할 때만 VLM의 조언을 받아 경량 RL 정책으로 증류하는 SAGE 프레임워크를 제안하며, 평가 시 VLM 없이도 작동하고 일부 환경에서는 교사보다 나은 성과를 낸다.",
+    "summaryKo": "ViSAR은 학습 없이 late-interaction 기반 시각 문서 검색에서 쿼리 조건부 페이지 유사도 행렬을 이용해 적응형 k로 페이지를 검색하여 RAG 지연 시간을 줄이고 정확도를 유지/개선하는 방법이다.",
     "detail": {
-      "problem": "VLM을 직접 정책으로 사용하면 매 단계 비용이 들고 환경 상호작용으로 개선되지 않으며 체계적 오류를 반복한다. 따라서 비싸고 불완전하지만 유용한 VLM 교사로부터 저비용 자율 정책을 학습하는 문제를 다룬다.",
-      "method": "SAGE는 학습자가 불확실할 때만 VLM을 쿼리하고, 제안된 행동을 실행한 뒤, 환경에서 얻은 이점(advantage)으로 가중치를 둔 증류를 통해 경량 RL 정책에 안내를 내재화한다. 모든 제안을 동등하게 취급하지 않는다.",
-      "takeaway": "희소 보상 시각 추론 및 내비게이션 작업에서 SAGE는 평가 시 VLM 없이 행동하며, 여러 환경에서 비지도 RL보다 개선되었고 교사 VLM을 능가하는 경우도 있었다. 선택적 안내는 VLM이 높은 보상 궤적 발견을 도울 때 가장 유용하며, 비지도 탐색이 이미 성공하거나 교사 행동이 정보를 주지 못하면 덜 유용하다. 또한 훈련 중 일부 단계에서만 VLM을 사용하고 배포 시에는 호출이 없다."
+      "problem": "DocVQA의 RAG에서 쿼리 복잡도와 무관하게 고정된 top-k 페이지를 검색하여 LVLM 지연 시간이 늘어나고 답변 정확도가 저하될 수 있다.",
+      "method": "ViSAR는 임베딩 공간에서 쿼리 조건부 페이지 수준 유사도 행렬을 구성해 관련 의미를 강조하고, 검색할 페이지 수를 동적으로 결정하는 training-free 적응형 k 검색 방법을 제안한다.",
+      "takeaway": "여러 인코더와 LVLM에서 ViSAR는 RAG 지연 시간을 최대 58.7% 줄이면서도 정확도를 유지하거나 개선했다. 또한 유사도 행렬 구조가 답변 정확도와 연관되어 품질 인식 문서 이해의 가능성을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01567v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01567v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02486v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02486v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -91,29 +99,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.00920",
-    "title": "VerNav: Verifier-First Low-Latency Vision-and-Language Navigation",
-    "authors": "Zhixin Wang et al.",
-    "published": "2026-09-01",
+    "id": "2609.02780",
+    "title": "ShallowStream: Index Shallow then Answer Deep for Streaming Video Understanding",
+    "authors": "Jitai Hao et al.",
+    "published": "2026-09-02",
     "category": "multimodal",
     "categories": [
-      "cs.RO",
-      "cs.CV"
+      "cs.CV",
+      "cs.CL"
     ],
     "tags": [
-      "benchmark",
-      "agents",
-      "3d",
-      "generation"
+      "video",
+      "autonomous-driving",
+      "retrieval",
+      "multimodal"
     ],
-    "summaryKo": "VerNav는 검증기 우선 방식으로 매 단계 자동회귀 생성을 대체하여 지연을 줄이면서도 경쟁력 있는 VLN 성능을 달성한 프레임워크이다.",
+    "summaryKo": "ShallowStream은 MLLM의 얕은 계층을 활용해 스트리밍 비디오 이해에서 프레임 인코딩과 검색 인덱스 구축을 동시에 수행하여 계산 비용을 크게 줄이는 프레임워크이다.",
     "detail": {
-      "problem": "자연어 지시에 따라 3D 환경을 탐색하는 VLN에서, 매 단계 자동회귀 생성은 다단계 탐색 동안 의사결정 지연을 누적시킨다.",
-      "method": "VerNav는 배치 동작 검증으로 매 단계 자동회귀 생성을 대체하고, 불확실한 결정에만 엔트로피 기반 적응 생성기를 사용한다. 또한 VPO와 단계별 강화 미세조정의 2단계 정렬을 통해 검증기 성능을 높인다.",
-      "takeaway": "R2R 벤치마크에서 VerNav의 검증기 전용 경로는 대표적인 LLM 기반 VLN 에이전트들과 비교해 경쟁력 있는 탐색 성능을 보였고, 단계당 평균 의사결정 LLM 지연을 자동회귀 방식 대비 10배 이상 줄였다. 초록에는 별도의 한계가 명시되지 않았다."
+      "problem": "스트리밍 비디오 이해는 실시간 응용에 중요하지만, MLLM으로 연속 비디오 스트림을 처리하는 것은 계산 비용이 매우 높다. 기존 방법들은 다양한 오버헤드 감소 기법을 탐구했지만 모델 깊이 차원은 간과했다.",
+      "method": "ShallowStream은 MLLM의 얕은 계층을 사용하여 프레임 인코딩과 검색 인덱스 구축을 동시에 수행하고, 얕은 계층의 KV 캐시로 항상 켜진 경량 인덱스를 유지한다. 질의 응답 시 얕은 계층의 어텐션 점수로 컨텍스트 프레임을 점수화하고 다양성 인식 선택 전략으로 정확하고 포괄적인 증거를 검색한다.",
+      "takeaway": "ShallowStream은 기존 최강 스트리밍 방법과 동등한 성능을 달성하면서 프레임당 프리필 지연 시간과 10초 엔드투엔드 지연 시간을 각각 최대 52.1배, 11.9배 줄였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.00920v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.00920v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02780v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02780v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -122,28 +130,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01059",
-    "title": "Dyn-3D: Unveiling and Resolving Ego-Motion Ambiguity in Vision-Language Models",
-    "authors": "Jiayu Ding et al.",
-    "published": "2026-09-01",
-    "category": "cv",
+    "id": "2609.02253",
+    "title": "APEx: Distillation of Agent Procedural Experience for Adaptive Deep Research Question Answering",
+    "authors": "Jie Ding et al.",
+    "published": "2026-09-02",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "3d",
-      "video",
-      "embedding"
+      "agents",
+      "generation"
     ],
-    "summaryKo": "본 논문은 VLM의 동적 3D 공간 추론에서 발생하는 운동학적 붕괴(Kinematic Collapse) 문제를 해결하기 위해 Dyn-3D 벤치마크와 TempoVista 프레임워크를 제안한다.",
+    "summaryKo": "딥 리서치 에이전트의 경험을 계층적으로 활용하여 적응형 질의응답 성능을 향상시키는 APEx 프레임워크를 제안한다.",
     "detail": {
-      "problem": "현재 VLM은 실제 물리적 움직임을 이해하기보다 매끄러운 궤적 사전에 과적합되어, 큰 변위에서 공간 추론 성능이 심각하게 저하되는 Kinematic Collapse 현상을 보인다. 이는 자연 영상의 허위 시각-운동 상관관계와 명시적 물리적 감독 부족에서 비롯된다.",
-      "method": "Dyn-3D 벤치마크는 반사실적 3D 렌더링을 통해 시각적 변화와 실제 운동학적 속성을 분리한다. TempoVista 프레임워크는 Kinematic-GSPO 알고리즘을 통해 정량적 물리적 실제값을 정책 최적화에 포함시켜 시각 표현을 3D 공간에 명시적으로 grounding한다.",
-      "takeaway": "실험 결과, 제안 방법은 카메라 역학을 기하학적 보정 신호로 활용하여 운동 추정과 강건한 공간 추론을 크게 개선함을 보여준다. 초록에는 별도의 한계가 명시되어 있지 않다."
+      "problem": "기존 방법은 방대한 작업별 추적을 사용하거나 정책 적응과 분리된 절차적 스킬을 증류하여, 장기 추론 질문에 답하는 딥 리서치 에이전트의 지속적 개선에 한계가 있다.",
+      "method": "APEx는 인스턴스 수준 궤적 메모리와 범주 수준 절차적 스킬을 계층적으로 구성하고, Executor-Distiller-Planner의 폐쇄 루프 구조와 3단계 교대 GRPO 훈련, 스킬 기반 테스트 타임 강화학습을 통해 보상 기반 스킬 증류와 정책 적응을 결합한다.",
+      "takeaway": "7개 벤치마크에서 GPT-5.4 대비 14.7점, 최강 메모리 증강 베이스라인 대비 3.0점 높은 최첨단 성능을 달성했으나, 스킬 정렬 정규화에도 정책 드리프트 방지의 일반적 한계가 존재할 수 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01059v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01059v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02253v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02253v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -152,26 +160,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01344",
-    "title": "ExBind: A Controlled Diagnostic Benchmark for Visual-to-Executable Correspondence",
-    "authors": "Ziqian Wang et al.",
-    "published": "2026-09-01",
-    "category": "cv",
+    "id": "2609.02343",
+    "title": "SonicCaps: Large-Scale Diverse and Fine-Grained Captioning for Improved Audio-Retrieval",
+    "authors": "Zineb Lahrichi et al.",
+    "published": "2026-09-02",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.SD",
+      "cs.CL",
+      "cs.MM",
+      "eess.AS"
     ],
     "tags": [
       "benchmark",
-      "multimodal"
+      "retrieval",
+      "generation"
     ],
-    "summaryKo": "ExBind는 다중모달 코딩/편집 시스템에서 시각적 또는 의미적 참조를 정확한 실행 가능 객체에 매핑하는 대응 계층을 통제된 방식으로 진단하는 벤치마크이다.",
+    "summaryKo": "대규모 오디오-언어 모델링을 위해 다양하고 세부적인 오디오 캡션을 생성하는 SonicCaps 데이터셋을 제안하고, 이를 통해 오디오 검색 및 분류 성능을 개선했다.",
     "detail": {
-      "problem": "다중모달 코딩 및 편집 시스템은 보이는 또는 의미적 참조를 편집 가능한 정확한 실행 객체에 매핑해야 하지만, 잘못된 참조는 유효하지만 틀린 DOM 노드, SVG 요소, 그래프 엔드포인트, 계층 구성원, 테이블 셀을 선택할 수 있다. 최종 실행 성공만으로는 실패 원인을 알 수 없다.",
-      "method": "ExBind는 의미적 위치 파악과 실행 사이의 시각-실행 대응 계층을 분리한 통제된 진단 벤치마크이다. 표현 독립적인 잠재 바인딩 인스턴스를 샘플링하여 SVG, DOM, 캔버스, 트리, 그래프, 테이블 사례로 컴파일하고, 모델은 엄격한 참조만 출력하며 평가자는 이를 잠재 구조로 매핑하여 구조적 제약을 채점한다.",
-      "takeaway": "Qwen2.5-VL-3B는 후보 유효성 98.4%지만 정확도 76.4%였고, Qwen3-VL-4B는 유효성 100.0%, 정확도 98.8%였다. 표적 테이블 스위트에서 Qwen2.5-VL-3B의 잔여 오류는 모두 올바른 행/잘못된 열 선택이었으며, ExBind는 모집단 규모 순위나 종단 간 편집 평가가 아닌 통제된 진단을 위해 설계되었다."
+      "problem": "기존 오디오 캡셔닝 데이터셋은 의미 다양성이 낮고, 음향 세부 정보가 부족하며, 오디오-캡션 일대일 매핑이 청각 인식의 모호성을 반영하지 못한다.",
+      "method": "멀티모달 대규모 언어 모델(Qwen3-Omni)을 오디오와 텍스트에 조건화하여 약 70만 개 오디오 클립에 대해 약 1500만 개의 캡션을 생성하고, 구조화된 프롬프트 엔지니어링과 퓨샷 생성을 통해 오디오당 약 24개의 다양한 캡션을 만든다.",
+      "takeaway": "인간 평가에서 기존 데이터셋보다 높은 품질을 받았고, SonicCaps로 CLAP 모델을 학습하면 오디오 검색과 제로샷 분류 성능이 향상된다. 초록에 한계는 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01344v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01344v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02343v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02343v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -180,27 +192,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01427",
-    "title": "Pix2Rep-v2: Data-Efficient Representation Learning for Dense Medical Imaging Applications",
-    "authors": "S. Sifaoui et al.",
-    "published": "2026-09-01",
-    "category": "cv",
+    "id": "2609.02366",
+    "title": "NE-R1: Enhancing Named Entity Recognition Model via Reinforcement Learning",
+    "authors": "Meixuan Chen et al.",
+    "published": "2026-09-02",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
-      "3d",
-      "medical",
-      "benchmark"
+      "benchmark",
+      "retrieval",
+      "generation"
     ],
-    "summaryKo": "PixRep-v2는 주석 없이 픽셀/복셀 수준의 표현을 학습하는 밀집 자기 지도 학습 프레임워크로, few-shot 의료 영상 작업에서 데이터 효율성을 크게 향상시킨다.",
+    "summaryKo": "NE-R1은 개체명 인식에서 파라메트릭 지식과 외부 지식 간의 적응형 검색을 강화 학습으로 최적화하여 다양한 벤치마크에서 최고 성능을 달성한 프레임워크이다.",
     "detail": {
-      "problem": "주석 없이 밀집 의료 영상 작업에 필요한 로컬 표현을 학습하는 것은 어렵다. 기존 밀집 자기 지도 학습은 3D 또는 넓은 시야각 응용으로 확장하는 데 한계가 있다.",
-      "method": "픽셀 수준의 중복 감소 목적과 표현의 등변성 원리를 사용하여 밀집 SSL을 수행하며, 3D 및 넓은 시야각에 효율적으로 확장된다. 또한 다운스트림 학습 없이 밀집 프로토타입 기반의 인컨텍스트 변형을 제안한다.",
-      "takeaway": "네 개의 데이터셋, 다양한 작업/모달리티/백본에서 평가했으며, few-shot 시나리오에서 완전 지도 기준선보다 데이터 효율성이 훨씬 높고, M&Ms-2 데이터셋의 one-shot 분할에서 +9.3 Dice 포인트로 최신 기술과 경쟁력이 있다."
+      "problem": "대규모 언어 모델 기반 개체명 인식은 파라메트릭 지식 부족으로 긴 꼬리 및 도메인 특화 개체 인식이 어렵고, 검색 증강 생성은 익숙한 경우에도 노이즈와 불필요한 비용을 초래한다.",
+      "method": "개체명 인식을 위한 '필요시 검색' 메커니즘을 설계하고, 다중 작업 지시 튜닝 초기화와 사고 사슬을 이용한 종단간 강화 학습 최적화의 2단계 훈련으로 통합하며, 정확도와 검색 이득을 고려한 다차원 보상을 사용한다.",
+      "takeaway": "NE-R1은 다양한 벤치마크에서 최고 성능을 보였으며, 도메인 내 평가에서 평균 F1 2.52%, 제로샷 교차 도메인 평가에서 1.18% 향상되었다. 초록에 명시된 한계는 없다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01427v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01427v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02366v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02366v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -209,27 +222,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01515",
-    "title": "TempCloze: Can Video-LLMs Identify the Missing Middle?",
-    "authors": "Wenqi Pei et al.",
-    "published": "2026-09-01",
+    "id": "2609.02531",
+    "title": "Spatially Aware World Action Model via Geometric Latent Diffusion",
+    "authors": "Javier Alejandro Lopetegui Gonzalez, Paul Pacaud, Cordelia Schmid",
+    "published": "2026-09-02",
     "category": "cv",
     "categories": [
       "cs.CV",
-      "cs.AI"
+      "cs.RO"
     ],
     "tags": [
       "benchmark",
+      "diffusion",
+      "3d",
       "video"
     ],
-    "summaryKo": "TempCloze: 컴퓨터 비전 분야의 최근 연구로, 비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬 논문이다.",
+    "summaryKo": "SA-WAM은 사전 학습된 비디오 확산 모델을 RGB와 깊이(depth) 예측 및 행동 예측에 함께 사용하는 3D 인지 세계 행동 모델로, 로봇 정책 학습에서 최신 성능을 달성한다.",
     "detail": {
-      "problem": "비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.",
-      "method": "논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.",
-      "takeaway": "긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다."
+      "problem": "기존 World Action Model(WAM)은 대규모 비디오 확산 모델을 활용해 미래 관측과 행동을 예측하지만, RGB 관측만 사용하여 3D 기하 정보를 활용하지 못한다.",
+      "method": "SA-WAM은 비선형 인코딩을 통해 무한한 깊이 신호를 사전 학습된 VAE 토크나이저의 유한 입력 범위로 매핑하여, 3D 특화 미세조정 없이 기존 토크나이저를 재사용하면서 단일 확산 백본에서 행동, RGB, 깊이 예측을 공동으로 수행한다.",
+      "takeaway": "RoboCasa와 LIBERO-Plus 벤치마크에서 최신 성능을 달성하고 미래 상태 예측도 개선했으며, UR5 로봇 실세계 평가에서 특히 무작위 환경에서 강력한 성능 향상을 보였다. 또한 세계 모델 예측 품질과 롤아웃 성공 간의 상관관계를 분석하여 WAM 성능에 대한 통찰을 제공한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01515v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01515v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02531v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02531v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -238,27 +253,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.00949",
-    "title": "Calibration is the Bottleneck: An Action-Class Diagnostic of Multi-Turn Tool-Calling",
-    "authors": "Kangjia Zhao et al.",
-    "published": "2026-09-01",
-    "category": "llm",
+    "id": "2609.02565",
+    "title": "MARS: What Retrieval Signals Are Hidden in Multimodal Large Language Models for Text-Video Retrieval?",
+    "authors": "Uicheol Jung et al.",
+    "published": "2026-09-02",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "agents"
+      "video",
+      "retrieval",
+      "embedding",
+      "multimodal"
     ],
-    "summaryKo": "본 논문은 다중 턴 도구 호출 평가에서 집계 정확도가 숨기는 행동 클래스 오보정을 드러내는 진단 프레임워크를 제안하고, 모델 계열별로 보정 효과가 이질적임을 보인다.",
+    "summaryKo": "MARS는 다중 레이어와 다중 슬롯 임베딩을 활용하여 텍스트-비디오 검색에서 미세한 정합 신호를 포착하는 최신 기법을 제안한다.",
     "detail": {
-      "problem": "기존 다중 턴 도구 호출 벤치마크는 집계 정확도만 사용하여 다양한 상황에서의 진행 균형을 가리고, 상태 평가자가 볼 수 없는 행동 클래스 오보정을 은폐한다.",
-      "method": "TOOL_CALL/ASK/REFUSE/CONFIRM의 네 가지 행동 클래스 공간과 상한 Acc <= GAR을 활용해 행동 클래스 오보정(상한 위반)과 실행 실패(상한 여유)를 분리하는 진단 프레임워크를 제안하고, 여러 모델과 벤치마크에서 검증한다.",
-      "takeaway": "행동 클래스 오보정은 상태 평가자가 감지하지 못하는 주요 실패 모드이며, 도구 훈련이 많은 모델 계열의 점수를 부풀린다. 컨텍스트만 바꾸는 섭동으로 보정이 바뀌지만 효과는 계열에 따라 최대 +11.5pp에서 -21.0pp까지 반대 방향으로 나타나, 평가에 행동 클래스 진단이 보완되어야 한다."
+      "problem": "최근 멀티모달 대형 언어 모델을 임베딩 모델로 사용할 때 입력을 마지막 레이어의 단일 토큰으로 압축하여 다양한 비디오-텍스트 신호를 잃고 세밀한 검색이 어렵다.",
+      "method": "MARS는 여러 디코더 레이어의 은닉 상태를 결합해 적응형 표현 슬롯을 만들고, 대응하는 텍스트와 비디오 슬롯을 비교해 유사도를 집계한다. 또한 헷갈리는 후보를 구분하도록 하드 네거티브를 고려한 슬롯 전문화 목적 함수를 도입한다.",
+      "takeaway": "네 개의 텍스트-비디오 검색 벤치마크에서 직접 유사도 기반 검색과 재랭킹 설정 모두 최신 성능을 달성했으며, 다중 레이어 융합, 다중 슬롯, 하드 네거티브 슬롯 전문화가 상호 보완적 이득을 준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.00949v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.00949v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02565v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02565v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -267,28 +284,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.00982",
-    "title": "Disclosure-Gated User Simulation for Companion-Agent Evaluation",
-    "authors": "Yao Liu, Yu He",
-    "published": "2026-09-01",
-    "category": "llm",
+    "id": "2609.02813",
+    "title": "GDB-Reward: From Evaluation Metrics to Training Rewards for Graphic Design",
+    "authors": "Adrienne Deganutti et al.",
+    "published": "2026-09-02",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.HC"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "agents"
+      "diffusion",
+      "generation"
     ],
-    "summaryKo": "동반 에이전트 평가에서 과도하게 협조적인 사용자 시뮬레이션 문제를 해결하기 위해, 정보 공개를 다섯 단계 게이트로 조건화하는 사용자 시뮬레이터를 제안하고 검증했다.",
+    "summaryKo": "텍스트-이미지 모델은 그래픽 디자인에서 요구되는 정밀한 제약을 충족하지 못하므로, 디자인 평가 지표를 강화학습 보상으로 변환하는 GDB-Reward 프레임워크를 제안한다.",
     "detail": {
-      "problem": "LLM 기반 사용자 시뮬레이터는 과도하게 협조적이어서, 시스템이 사용자의 발화 의지를 높이는 대신 질문 수만으로 점수를 얻을 수 있다. 이를 막기 위해 정보 공개를 에이전트 행동에 조건화하는 장치가 필요하다.",
-      "method": "정보 공개를 다섯 개의 순서적 게이트로 구성하고 이를 세 개의 관찰 가능한 깊이 층으로 통합한 disclosure gate를 명세화하고, 합성 데이터로 게이트 행동을 학습하면서 실제 데이터로 발화 방식을 학습하는 사용자 시뮬레이터를 훈련했다. 또한 순위 보존과 절대 점수 안정성이라는 두 가지 수용 기준을 제시했다.",
-      "takeaway": "공개한 시뮬레이터만 두 기준을 모두 통과했으며, 벤치마크 원래 시뮬레이터와 리더보드 상관계수 0.993을 보였다. 반면 최첨단 모델을 프롬프트한 시뮬레이터는 순위를 거의 바꾸지 않으면서 모든 점수를 상향 이동시켰고, 이는 순위만 확인하면 드러나지 않는다. 개별 시스템 점수 변화는 감지되지 않았지만 순위 변동은 잡음 범위를 넘었다."
+      "problem": "텍스트-이미지 모델은 자연 이미지 생성에는 뛰어나지만, 타이포그래피, 레이아웃, 색상, 시각적 커뮤니케이션에 대한 정밀한 제약이 필요한 그래픽 디자인에는 어려움을 겪는다. 생성 과정이 비미분 가능하므로 강화학습이 필요하며, 후보 출력을 평가할 수 있는 스칼라 보상이 요구된다.",
+      "method": "GDB-Reward는 이질적인 그래픽 디자인 평가 지표들을 통합된 강화학습 보상으로 체계적으로 변환하는 프레임워크를 제안한다. 이미지 생성기를 완전히 고정한 상태에서 디자인 평가 지표 자체를 강화학습 보상으로 사용한다.",
+      "takeaway": "실험 결과 GDB-Reward는 지각 품질, 렌더링 충실도, 공간 정확도에서 디자인 명세 준수를 크게 개선했다. 이는 비미분 가능한 평가 지표가 수동적 벤치마킹을 넘어 강화학습의 효과적인 최적화 목표가 될 수 있음을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.00982v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.00982v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02813v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02813v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -297,25 +313,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01195",
-    "title": "CaRL-EM: Cost-Aware Reinforcement Learning for Entity Matching with LLMs",
-    "authors": "Chaohui Guo, Michel Klein, Zhisheng Huang",
-    "published": "2026-09-01",
+    "id": "2609.02054",
+    "title": "A Tri-Agent Framework for Evaluating and Aligning Question Clarification Capabilities of Large Language Models",
+    "authors": "Yikai Zhao, Saurabh Pandey, Pradeep Kumar Misra",
+    "published": "2026-09-02",
     "category": "llm",
     "categories": [
       "cs.CL"
     ],
     "tags": [
-      "benchmark"
+      "benchmark",
+      "agents",
+      "generation"
     ],
-    "summaryKo": "CaRL-EM은 비용을 고려한 강화학습 컨트롤러로, LLM 기반 엔티티 매칭에서 후보 집합과 비용 상태에 따라 연산자와 모델 용량을 동적으로 선택하여 품질-비용 목표를 최적화한다.",
+    "summaryKo": "대규모 언어 모델의 질문 명료화 능력을 평가하고 정렬하기 위해 세 가지 에이전트로 구성된 프레임워크를 제안한 논문.",
     "detail": {
-      "problem": "엔티티 매칭은 미세한 문맥 이해와 도메인 지식이 필요한데, 기존 LLM 기반 방법은 독립적인 쌍별 판단이나 수동 설계 파이프라인에 의존해 다중 후보 상황에서 유연하지 못하고 추론 비용을 무시한다.",
-      "method": "LLM 기반 엔티티 매칭을 비용 인식 순차 결정 문제로 공식화하고, 강화학습 컨트롤러 CaRL-EM이 Match/Compare/Select/Decide 연산자와 모델 용량을 상태에 따라 적응적으로 선택한다. 정책은 추상 연산자와 상호작용하므로 학습 없이도 다른 LLM 백엔드로 재사용할 수 있다.",
-      "takeaway": "7개 벤치마크 실험에서 CaRL-EM은 작업 복잡도에 따라 저비용·고비용 연산자를 동적으로 계획하고, 다양한 데이터셋과 도메인에 강건한 제로샷 전이를 보였으며, 강력한 LLM 기반 및 수동 설계 파이프라인 대비 더 나은 품질-비용 절충을 달성했다. 초록에 명시된 한계는 없다."
+      "problem": "대화형 시스템에서 사용자 의도를 정확히 파악하는 것이 중요하지만, 질의가 모호하거나 불충분할 때 효과적인 질문 명료화 능력을 평가하기 어렵다.",
+      "method": "질문 명료화 에이전트(QCA), 응답자 에이전트(RA), 평가자 에이전트(EA)로 구성된 삼중 에이전트 프레임워크를 제안하고, 공급망 도메인의 합성 데이터 생성 방법론과 모호성 처리, 질문 품질, 대화 효율성, 언어 적절성, 최종 의도 정렬 등의 평가 지표를 제시한다.",
+      "takeaway": "제안된 프레임워크는 대화형 LLM 애플리케이션의 명료화 능력을 벤치마킹하고 검증하며 개선하기 위한 구조적 접근법을 제공한다. 초록에는 구체적 실험 결과가 포함되지 않았고, 평가자 에이전트의 인간 판단 대비 검증은 간략히 논의된다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01195v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01195v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02054v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02054v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -324,31 +342,65 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.01246",
-    "title": "Ready to Speak: Aligning LLMs for TTS-Friendly Text Generation",
-    "authors": "Thibaut Thonet, Jos Rozen, Laurent Besacier",
-    "published": "2026-09-01",
+    "id": "2609.02421",
+    "title": "UTP-Bench: Uncertainty-aware Travel Planning Benchmark",
+    "authors": "Etcharla Revanth Rao et al.",
+    "published": "2026-09-02",
     "category": "llm",
     "categories": [
+      "cs.AI",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
       "generation"
     ],
-    "summaryKo": "대형 언어 모델이 TTS에 적합한 텍스트를 생성하도록 선호도 정렬을 통해 직접 정렬하는 방법을 연구하고, 다양한 평가 지표와 실험을 통해 제안된 FaST 프레임워크가 유용성과 TTS 친화성 사이에서 최상의 균형을 달성함을 보였다.",
+    "summaryKo": "UTP-Bench는 불확실성을 고려한 여행 계획 벤치마크로, 실제 교통 지연과 혼잡 패턴을 반영해 LLM 생성 일정의 견고성을 평가한다.",
     "detail": {
-      "problem": "현재 LLM은 주로 서면 텍스트에 최적화되어 있어 문법적으로 정확하지만 TTS 음성 합성에 부적합한 출력을 생성한다. 이를 해결하기 위해 다운스트림 재작성 모듈 없이 LLM이 TTS 친화적인 텍스트를 생성하도록 직접 정렬하는 것을 선호도 정렬 문제로 다룬다.",
-      "method": "CORA와 Recipe라는 두 개의 대상 도메인에 걸쳐 TTS 친화적/비친화적 응답 쌍으로 구성된 선호도 데이터셋을 도입하고, 패턴 기반 휴리스틱 지표, TTS→ASR 평가 파이프라인, MUSHRA 청취 실험을 포함한 평가 스위트를 제안한다. 해석 가능한 특징을 활용하는 FaST 프레임워크를 다양한 정렬 기준선과 비교한다.",
-      "takeaway": "FaST가 다양한 설정에서 TTS 친화성과 유용성 사이의 최상의 전체 균형을 달성했으며, 지표들 간 강한 상관관계를 확인하여 효율적인 휴리스틱으로 TTS 친화성을 안정적으로 평가할 수 있음을 보였다."
+      "problem": "기존 TravelPlanner, TripCraft 같은 벤치마크는 결정적 환경만 가정하여 정적 제약 충족만 평가하고, 교통 지연이나 군중 변동 같은 실제 불확실성 하에서 계획이 견고한지 평가하지 못한다.",
+      "method": "인도 504개 도시의 실제 여행 데이터와 실증적 지연 분포 및 군중 밀도 패턴을 통합한 UTP-Bench를 제안하고, Buffer Adequacy Score(BAS), Crowd-Aware Timing Score(CATS), Transport Delay Absorption Score(TDAS) 세 가지 평가 지표를 도입한다.",
+      "takeaway": "GPT-5, Qwen3, Mistral, Phi-4 등 최신 LLM 실험에서 모델 생성 계획과 인간 작성 계획 간 상당한 격차가 확인되었으며, 특히 시간 버퍼, 지연 인식 교통 스케줄링, 군중 민감 계획에서 두드러진다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.01246v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.01246v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.02421v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.02421v1.pdf",
     "recommendationModes": [
       "latest"
     ],
     "recommendationRanks": {
       "latest": 12
+    }
+  },
+  {
+    "id": "2608.23714",
+    "title": "Integer Natural Evolution Strategies",
+    "authors": "Jacob de Nobel et al.",
+    "published": "2026-08-24",
+    "category": "llm",
+    "categories": [
+      "cs.NE"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "본 논문은 정수 격자에 자연스러운 ℓ1 노름과 이중 기하(DG) 분포에 기반한 정수 자연 진화 전략(INES)을 제안하고, DG 분포의 통계적 구조에서 직접 유도된 보폭 적응 메커니즘을 제시한다.",
+    "detail": {
+      "problem": "기존 진화 전략은 정수 최적화를 효과적으로 다루지만 적응 메커니즘이 ℓ2 기반 가우시안 모델에 의존하여 정수 격자에 자연스럽지 않다.",
+      "method": "ℓ1 노름을 정수 격자의 자연스러운 변위 측도로 보고 이중 기하(DG) 분포를 표준 돌연변이 연산자로 사용한다. DG 분포가 지수족에 속하며 충분통계량 |z|가 분산 적응을 위한 자연경사 신호를 제공함을 보이고, 이를 진화 경로로 누적하여 보폭을 적응시키는 INES를 제안한다.",
+      "takeaway": "정수 이차 벤치마크 실험에서 INES는 의미 있는 좌표별 보폭을 학습하며 정수 처리 CMA-ES와 경쟁적이다. 장점은 고차원 Ellipsoidal 문제와 큰 차원에서의 강건한 수렴에서 가장 두드러진다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2608.23714v1",
+    "pdfUrl": "https://arxiv.org/pdf/2608.23714v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 6
+    },
+    "metrics": {
+      "citationCount": 0,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
+      "openAlexId": "W7204500088"
     }
   },
   {
@@ -375,113 +427,84 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 3
-    },
-    "metrics": {
-      "citationCount": 0,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
-      "openAlexId": "W7168433912"
-    }
-  },
-  {
-    "id": "2510.06935",
-    "title": "PyCFRL: A Python library for counterfactually fair offline reinforcement learning via sequential data preprocessing",
-    "authors": "Jianhan Zhang et al.",
-    "published": "2025-10-08",
-    "category": "llm",
-    "categories": [
-      "stat.ML",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "PyCFRL은 오프라인 강화학습에서 반사실적 공정성을 보장하기 위한 Python 라이브러리로, 순차 데이터 전처리 알고리즘을 통해 공정한 정책을 학습하고 평가하는 도구를 제공한다.",
-    "detail": {
-      "problem": "강화학습 정책은 전체 인구의 이익을 최대화하도록 학습되지만, 소수 집단이나 사회경제적 취약 집단에게 불리한 결정을 초래할 수 있다.",
-      "method": "PyCFRL은 오프라인 데이터셋으로부터 반사실적으로 공정한 강화학습 정책을 학습하는 새로운 데이터 전처리 알고리즘을 구현하고, 정책의 가치와 반사실적 불공정성 수준을 평가하는 도구를 제공한다.",
-      "takeaway": "라이브러리는 PyPI와 GitHub에 공개되어 있으며, 데이터 예시를 통해 주요 사용 사례를 시연한다. 초록에는 명시된 한계가 없다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2510.06935v1",
-    "pdfUrl": "https://arxiv.org/pdf/2510.06935v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 6
-    },
-    "metrics": {
-      "citationCount": 0,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
-      "openAlexId": "W4415097529"
-    }
-  },
-  {
-    "id": "2504.01951",
-    "title": "The LLM Wears Prada: Analysing Gender Bias and Stereotypes through Online Shopping Data",
-    "authors": "Massimiliano Luca et al.",
-    "published": "2025-04-02",
-    "category": "llm",
-    "categories": [
-      "cs.AI",
-      "cs.CL",
-      "cs.CY"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "The LLM Wears Prada: LLM 분야의 최근 연구로, 새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬 논문이다.",
-    "detail": {
-      "problem": "새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.",
-      "method": "논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.",
-      "takeaway": "벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2504.01951v1",
-    "pdfUrl": "https://arxiv.org/pdf/2504.01951v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
       "week": 5
     },
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
-      "openAlexId": "W4417220084"
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
+      "openAlexId": "W7168433912"
     }
   },
   {
-    "id": "2503.20210",
-    "title": "Fast and Noise-aware Machine Learning Variational Quantum Eigensolver Optimiser",
-    "authors": "Akib Karim, Shaobo Zhang, Muhammad Usman",
-    "published": "2025-03-26",
+    "id": "2510.08317",
+    "title": "Iterated Agent for Symbolic Regression",
+    "authors": "Zhuo-Yang Song et al.",
+    "published": "2025-10-09",
     "category": "llm",
     "categories": [
-      "quant-ph"
+      "physics.comp-ph",
+      "astro-ph.IM",
+      "cs.AI",
+      "cs.LG",
+      "hep-ph"
     ],
-    "tags": [],
-    "summaryKo": "VQE의 중간 파라미터와 측정 데이터를 지도 학습에 활용해 최종 최적 파라미터를 예측함으로써, 기존 방식보다 훨씬 빠르고 적은 반복으로 화학적으로 정확한 바닥 상태 에너지를 얻는 노이즈에 강한 VQE 최적화 기법을 제안한다.",
+    "tags": [
+      "agents"
+    ],
+    "summaryKo": "본 논문은 대규모 언어 모델을 의미론적 연산자로 활용한 진화 탐색 기반의 기호 회귀 프레임워크 IdeaSearchFitter를 제안한다.",
     "detail": {
-      "problem": "VQE의 고전 최적화 과정은 중간 파라미터 값들에 대해 많은 측정을 필요로 하지만, 그 중간 단계 데이터는 일반적으로 버려진다.",
-      "method": "중간 파라미터와 측정 데이터를 지도 기계 학습에 사용하여 최적의 최종 파라미터를 예측한다. 이 기법은 노이즈가 있는 장치에서 훈련될 경우 결맞음 오류에 대한 회복력도 보인다.",
-      "takeaway": "IBM 양자 장치에서 H2(1,2큐비트), H3(3큐비트), HeH+(4큐비트)의 바닥 상태 에너지를 모델 데이터로만 훈련해 최적 각도를 찾았으며, 기존 기법보다 훨씬 적은 반복으로 화학적으로 정확한 에너지를 얻었다."
+      "problem": "기호 회귀는 데이터에서 수학적 표현식을 자동으로 발견하는 작업이지만, 탐색 공간의 조합 폭발과 과적합 경향으로 어려움을 겪는다. 기존 유전 프로그래밍 기반 방법은 구문적으로 탐색하여 과도하게 복잡하고 해석이 어려운 모델을 생성하는 경우가 많다.",
+      "method": "IdeaSearchFitter는 대규모 언어 모델을 진화 탐색 내 의미론적 연산자로 사용하여, 자연어 근거에 따라 후보 표현식을 생성한다. 이를 통해 정확할 뿐만 아니라 개념적으로 일관되고 해석 가능한 모델을 발견하도록 유도한다.",
+      "takeaway": "Feynman 기호 회귀 데이터베이스에서 여러 강력한 기준선을 능가하는 경쟁력 있고 노이즈에 강건한 성능을 보였으며, 실제 데이터에서 정확성-복잡성 균형이 좋은 기계론적 모델을 발견했다. 또한 고에너지 물리 응용에서 파톤 분포 함수에 대한 간결하고 물리적으로 동기가 부여된 매개변수화를 도출했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2503.20210v1",
-    "pdfUrl": "https://arxiv.org/pdf/2503.20210v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2510.08317v1",
+    "pdfUrl": "https://arxiv.org/pdf/2510.08317v1.pdf",
     "recommendationModes": [
       "week"
     ],
     "recommendationRanks": {
-      "week": 2
+      "week": 4
+    },
+    "metrics": {
+      "citationCount": 0,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
+      "openAlexId": "W4416384488"
+    }
+  },
+  {
+    "id": "2504.09754",
+    "title": "Integrating Large Language Models for Automated Structural Analysis",
+    "authors": "Haoran Liang, Mohammad Talebi Kalaleh, Qipei Mei",
+    "published": "2025-04-13",
+    "category": "llm",
+    "categories": [
+      "cs.SE",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "대규모 언어 모델(LLM)을 구조 해석 소프트웨어와 통합하여 텍스트 기반 구조 설명으로부터 자동으로 구조 해석을 수행하는 프레임워크를 제안한다.",
+    "detail": {
+      "problem": "구조 해석 자동화를 위한 체계적인 LLM 기반 프레임워크가 부재하며, 기존 AI 기반 방법은 반복 작업 효율화에 한계가 있다.",
+      "method": "LLM을 핵심 엔진으로 사용하여 구조 설명을 파싱하고 실행 가능한 Python 스크립트로 변환하며, OpenSeesPy 같은 코드 기반 유한요소 도구와 결합한다. 도메인 특화 프롬프트와 문맥 내 학습 전략을 활용해 LLM의 문제 해결 능력과 생성 안정성을 향상시킨다.",
+      "takeaway": "20개 구조 해석 문장제 벤치마크에서 GPT-4o 기반 프레임워크가 100% 정확도를 달성했고, GPT-4(85%), Gemini 1.5 Pro(80%), Llama-3.3(30%)보다 우수했다. 도메인 특화 지침은 비대칭 구조 문제에서 성능을 30% 향상시켰지만, 벤치마크 규모가 작고 특정 LLM에 의존한다는 한계가 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2504.09754v1",
+    "pdfUrl": "https://arxiv.org/pdf/2504.09754v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 3
     },
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
-      "openAlexId": "W4409035860"
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
+      "openAlexId": "W4415158109"
     }
   },
   {
@@ -511,12 +534,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 3
+      "month": 2
     },
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4406603968"
     }
   },
@@ -544,12 +567,12 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 1
+      "week": 2
     },
     "metrics": {
       "citationCount": 3,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4403816277"
     }
   },
@@ -579,47 +602,13 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 2
+      "month": 1
     },
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4392677943"
-    }
-  },
-  {
-    "id": "2402.14183",
-    "title": "Parking of Connected Automated Vehicles: Vehicle Control, Parking Assignment, and Multi-agent Simulation",
-    "authors": "Xu Shen et al.",
-    "published": "2024-02-22",
-    "category": "llm",
-    "categories": [
-      "eess.SY"
-    ],
-    "tags": [
-      "agents",
-      "benchmark"
-    ],
-    "summaryKo": "이 논문은 연결 및 자동화 차량(CAV) 차량군의 주차 효율을 최적화하기 위한 종합적 접근법을 제시한다.",
-    "detail": {
-      "problem": "대규모 지상 차량군의 주차 전략을 평가할 수 있는 시뮬레이터와 효율적인 주차 공간 할당을 통해 총 주차 시간을 최소화하는 문제를 다룬다.",
-      "method": "계층적 경로 계획과 충돌 회피 기능을 갖춘 다중 차량 주차 시뮬레이터를 제안하고, 다양한 전략적 주차 공간 할당 방식을 비교하여 집단 비용을 최소화한다. 실험에서는 총 주차 시간을 목적 함수로 사용한다.",
-      "takeaway": "실제 주차장 데이터 기반 평가에서 주차 시간을 최대 43.8% 줄였다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2402.14183v1",
-    "pdfUrl": "https://arxiv.org/pdf/2402.14183v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 4
-    },
-    "metrics": {
-      "citationCount": 0,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
-      "openAlexId": "W4392120457"
     }
   },
   {
@@ -650,14 +639,51 @@ window.PAPERS = [
       "year"
     ],
     "recommendationRanks": {
-      "sixMonths": 5,
-      "year": 5
+      "sixMonths": 6,
+      "year": 6
     },
     "metrics": {
       "citationCount": 39,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4391377095"
+    }
+  },
+  {
+    "id": "2401.12455",
+    "title": "Multi-agent deep reinforcement learning with centralized training and decentralized execution for transportation infrastructure management",
+    "authors": "M. Saifullah et al.",
+    "published": "2024-01-23",
+    "category": "llm",
+    "categories": [
+      "cs.MA",
+      "cs.AI",
+      "cs.LG",
+      "eess.SY"
+    ],
+    "tags": [
+      "benchmark",
+      "agents"
+    ],
+    "summaryKo": "본 논문은 대규모 교통 인프라의 수명주기 관리 문제를 제약이 있는 부분 관측 마르코프 결정 과정(POMDP)으로 정식화하고, 중앙 집중식 훈련과 분산 실행(CTDE) 기반의 다중 에이전트 심층 강화학습 아키텍처(DDMAC-CTDE)를 제안하여 기존 방법보다 나은 정책을 도출한다.",
+    "detail": {
+      "problem": "대규모 교통 시스템의 검사 및 유지보수 결정 순서를 최적화하여 장기적 위험과 비용을 최소화해야 하는 문제. 기존 방법은 최적성, 확장성, 불확실성 처리에 한계가 있고, 중요한 운영 제약을 간과하는 경우가 많다.",
+      "method": "제약이 있는 POMDP로 최적화 문제를 정식화하고, 고차원 상태·행동 공간을 다루기 위해 CTDE 기반의 DDMAC-CTDE 다중 에이전트 강화학습 아키텍처를 제안한다. 또한 버지니아 주의 실제 교통 네트워크를 반영한 벤치마크 환경을 구축해 예산, 성능, 교통 지연, 위험 등의 제약을 포함한다.",
+      "takeaway": "DDMAC-CTDE는 표준 교통 관리 기준선보다 일관되게 더 나은 정책을 산출했다. 제안된 프레임워크와 벤치마크는 확장 가능하고 제약을 고려한 방법론과 현실적인 평가 환경을 제공한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2401.12455v1",
+    "pdfUrl": "https://arxiv.org/pdf/2401.12455v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 6
+    },
+    "metrics": {
+      "citationCount": 4,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
+      "openAlexId": "W4391212405"
     }
   },
   {
@@ -682,19 +708,17 @@ window.PAPERS = [
     "sourceUrl": "https://arxiv.org/abs/2311.10260v1",
     "pdfUrl": "https://arxiv.org/pdf/2311.10260v1.pdf",
     "recommendationModes": [
-      "month",
       "sixMonths",
       "year"
     ],
     "recommendationRanks": {
-      "month": 1,
-      "sixMonths": 6,
-      "year": 6
+      "sixMonths": 5,
+      "year": 5
     },
     "metrics": {
-      "citationCount": 37,
+      "citationCount": 39,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4388843329"
     }
   },
@@ -724,12 +748,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 4
+      "month": 3
     },
     "metrics": {
       "citationCount": 9,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4388093160"
     }
   },
@@ -761,8 +785,43 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 132,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4387355843"
+    }
+  },
+  {
+    "id": "2307.10655",
+    "title": "A Survey of What to Share in Federated Learning: Perspectives on Model Utility, Privacy Leakage, and Communication Efficiency",
+    "authors": "Jiawei Shao et al.",
+    "published": "2023-07-20",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.CR"
+    ],
+    "tags": [
+      "privacy",
+      "survey"
+    ],
+    "summaryKo": "연합 학습에서 무엇을 공유할지에 대한 새로운 관점의 체계적 조사로, 모델 유틸리티, 프라이버시 누출, 통신 효율성을 종합적으로 분석한다.",
+    "detail": {
+      "problem": "기존 연합 학습 서베이는 주로 모델 파라미터를 공유하는 방법에 집중했으며, 합성 데이터나 지식 등 다른 형태의 로컬 정보 공유 가능성을 간과했다.",
+      "method": "모델, 합성 데이터, 지식의 세 가지 공유 방식에 따른 새로운 분류법을 제시하고, 각 방식의 프라이버시 공격 취약성과 방어 메커니즘을 분석한다. 또한 다양한 공유 방식의 학습 성능과 통신 오버헤드를 비교하는 실험을 수행하고, 모델 역전 및 멤버십 추론 공격을 통해 프라이버시 누출 가능성을 평가한다.",
+      "takeaway": "각 공유 방식의 학습 성능, 통신 비용, 프라이버시 위험을 비교하고 여러 방어 기법의 효과를 평가했으며, 이를 바탕으로 향후 연구 방향을 제시한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2307.10655v1",
+    "pdfUrl": "https://arxiv.org/pdf/2307.10655v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 1
+    },
+    "metrics": {
+      "citationCount": 12,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
+      "openAlexId": "W4385002547"
     }
   },
   {
@@ -797,7 +856,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 94,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4382618722"
     }
   },
@@ -828,12 +887,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 6
+      "month": 5
     },
     "metrics": {
       "citationCount": 6,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4367628192"
     }
   },
@@ -868,9 +927,9 @@ window.PAPERS = [
       "year": 2
     },
     "metrics": {
-      "citationCount": 1511,
+      "citationCount": 1515,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -898,12 +957,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 5
+      "month": 4
     },
     "metrics": {
       "citationCount": 7,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W4308828222"
     }
   },
@@ -938,9 +997,9 @@ window.PAPERS = [
       "year": 1
     },
     "metrics": {
-      "citationCount": 3058,
+      "citationCount": 3059,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W3027879771"
     }
   },
@@ -973,14 +1032,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 182,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-02T12:50:33.819Z",
+      "citationUpdatedAt": "2026-09-03T08:31:14.508Z",
       "openAlexId": "W3158013077"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-09-02T12:52:55.897Z",
+  "collectedAt": "2026-09-03T08:33:51.569Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -991,20 +1050,20 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-08-27",
-        "to": "2026-09-02"
+        "from": "2026-08-28",
+        "to": "2026-09-03"
       },
       "month": {
-        "from": "2026-08-04",
-        "to": "2026-09-02"
+        "from": "2026-08-05",
+        "to": "2026-09-03"
       },
       "sixMonths": {
-        "from": "2026-03-07",
-        "to": "2026-09-02"
+        "from": "2026-03-08",
+        "to": "2026-09-03"
       },
       "year": {
-        "from": "2025-09-03",
-        "to": "2026-09-02"
+        "from": "2025-09-04",
+        "to": "2026-09-03"
       }
     },
     "fallbackModes": []
