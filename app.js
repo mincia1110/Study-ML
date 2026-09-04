@@ -7,8 +7,25 @@
     if (!paper.recommendationRanks) paper.recommendationRanks = {};
   });
 
+  function unavailableStorage() {
+    var message = '브라우저 저장공간을 사용할 수 없어 즐겨찾기를 변경하지 않았습니다.';
+    return {
+      getItem: function() { throw new Error(message); },
+      setItem: function() { throw new Error(message); },
+      removeItem: function() { throw new Error(message); },
+    };
+  }
+
+  function getStorage() {
+    try {
+      return window.localStorage || unavailableStorage();
+    } catch (_) {
+      return unavailableStorage();
+    }
+  }
+
   var paperById = new Map(papers.map(function(paper) { return [paper.id, paper]; }));
-  var favorites = window.FavoriteLibrary.createStore({ storage: localStorage, papers: papers });
+  var favorites = window.FavoriteLibrary.createStore({ storage: getStorage(), papers: papers });
   var catLabel = { cv: 'CV', llm: 'LLM', multimodal: 'Multimodal', unknown: 'arXiv' };
   var currentView = 'recommendations';
   var currentCategory = 'all';
@@ -324,11 +341,23 @@
   document.getElementById('toast-close').addEventListener('click', hideToast);
 
   window.addEventListener('storage', function(event) {
-    if (event.key !== favorites.storageKey && event.key !== favorites.legacyKey) return;
-    if (event.key === favorites.legacyKey) favorites.syncLegacy(papers);
-    else favorites.reload(papers);
-    render();
-    showToast('다른 탭의 즐겨찾기 변경을 반영했습니다.');
+    if (event.key !== null && event.key !== favorites.storageKey && event.key !== favorites.legacyKey) return;
+    try {
+      if (event.key === favorites.legacyKey) favorites.syncLegacy(papers);
+      else favorites.reload(papers);
+      render();
+      if (favorites.warning()) {
+        setStatus(favorites.warning(), 'error');
+        showToast(favorites.warning(), { duration: 8000 });
+      } else {
+        setStatus('');
+        showToast('다른 탭의 즐겨찾기 변경을 반영했습니다.');
+      }
+    } catch (error) {
+      render();
+      setStatus(error.message, 'error');
+      showToast(error.message, { duration: 8000 });
+    }
   });
 
   if (window.PAPER_METADATA) {

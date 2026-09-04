@@ -112,8 +112,68 @@ assert.equal(JSON.stringify(importStore.list()), beforeInvalid);
 const corruptStorage = memoryStorage({ [STORAGE_KEY]: '{not-json' });
 const corruptStore = createStore({ storage: corruptStorage, papers: [paper('2608.00005')], now });
 assert.match(corruptStore.warning(), /덮어쓰지 않았습니다/);
-assert.throws(() => corruptStore.add(paper('2608.00005')), /손상된 즐겨찾기 데이터/);
+assert.throws(() => corruptStore.add(paper('2608.00005')), { code: 'corrupt' });
 assert.equal(corruptStorage.dump(STORAGE_KEY), '{not-json');
+
+// Invalid legacy data is preserved and cannot be migrated into an empty modern library.
+const invalidLegacyRaw = '["2608.00005", {"id":"2608.00006"}]';
+const invalidLegacyStorage = memoryStorage({ [LEGACY_KEY]: invalidLegacyRaw });
+const invalidLegacyStore = createStore({ storage: invalidLegacyStorage, papers: [paper('2608.00005')], now });
+assert.match(invalidLegacyStore.warning(), /마이그레이션하지 않았습니다/);
+assert.equal(invalidLegacyStore.size(), 0);
+assert.throws(() => invalidLegacyStore.add(paper('2608.00005')), /마이그레이션하지 않았습니다/);
+assert.equal(invalidLegacyStorage.dump(LEGACY_KEY), invalidLegacyRaw);
+assert.equal(invalidLegacyStorage.dump(STORAGE_KEY), undefined);
+
+// Invalid legacy sync must never turn a populated modern library into an empty one.
+for (const raw of ['{bad', 'null', '{}', '[false]', '']) {
+  const storage = memoryStorage();
+  const store = createStore({ storage, now });
+  store.add(paper('2608.00005'));
+  const before = storage.dump(STORAGE_KEY);
+  storage.setItem(LEGACY_KEY, raw);
+  assert.throws(() => store.syncLegacy(), { code: 'corrupt' });
+  assert.equal(store.size(), 1);
+  assert.equal(storage.dump(STORAGE_KEY), before);
+  assert.equal(storage.dump(LEGACY_KEY), raw);
+}
+
+const unreadableLegacyStorage = memoryStorage();
+let legacyReadFails = false;
+const unreadableLegacyStore = createStore({ storage: {
+  getItem(key) {
+    if (legacyReadFails && key === LEGACY_KEY) throw new Error('unavailable');
+    return unreadableLegacyStorage.getItem(key);
+  },
+  setItem: unreadableLegacyStorage.setItem,
+}, now });
+unreadableLegacyStore.add(paper('2608.00005'));
+const beforeUnreadable = unreadableLegacyStorage.dump(STORAGE_KEY);
+legacyReadFails = true;
+assert.throws(() => unreadableLegacyStore.syncLegacy(), { code: 'storage' });
+assert.equal(unreadableLegacyStore.size(), 1);
+assert.equal(unreadableLegacyStorage.dump(STORAGE_KEY), beforeUnreadable);
+
+// A repaired or removed corrupt modern value lets a later reload recover writes.
+const repairStorage = memoryStorage({ [STORAGE_KEY]: '{not-json' });
+const repairStore = createStore({ storage: repairStorage, papers: [paper('2608.000051')], now });
+repairStorage.removeItem(STORAGE_KEY);
+repairStore.reload();
+assert.equal(repairStore.warning(), '');
+repairStore.add(paper('2608.000051'));
+assert.equal(repairStore.size(), 1);
+assert.equal(JSON.parse(repairStorage.dump(STORAGE_KEY)).items.length, 1);
+
+// Reloading corrupt data keeps the current in-memory library and stored value intact.
+const reloadCorruptStorage = memoryStorage();
+const reloadCorruptStore = createStore({ storage: reloadCorruptStorage, papers: [paper('2608.000052')], now });
+reloadCorruptStore.add(paper('2608.000052'));
+const persistedBeforeCorruptReload = reloadCorruptStorage.dump(STORAGE_KEY);
+reloadCorruptStorage.setItem(STORAGE_KEY, '{still-not-json');
+reloadCorruptStore.reload();
+assert.deepEqual(reloadCorruptStore.list().map(item => item.id), ['2608.000052']);
+assert.equal(reloadCorruptStorage.dump(STORAGE_KEY), '{still-not-json');
+assert.notEqual(persistedBeforeCorruptReload, reloadCorruptStorage.dump(STORAGE_KEY));
 
 // Changes from a tab running the legacy app are promoted into the snapshot library.
 const compatibilityStorage = memoryStorage();

@@ -15,6 +15,14 @@ function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+async function disposeResponse(response) {
+  try {
+    await response?.body?.cancel?.();
+  } catch (_) {
+    // The body may already be locked or closed; the response is still disposable.
+  }
+}
+
 export function createArxivClient(options = {}) {
   const fetcher = options.fetcher || fetch;
   const sleep = options.sleep || wait;
@@ -26,7 +34,7 @@ export function createArxivClient(options = {}) {
   const baseRetryMs = options.baseRetryMs ?? 5000;
   let nextRequestAt = 0;
 
-  async function fetchWithRetry(url, context = url) {
+  async function requestWithRetry(url, context, consumeBody) {
     let lastError;
 
     for (let attempt = 0; attempt <= maxRetries; attempt += 1) {
@@ -37,24 +45,32 @@ export function createArxivClient(options = {}) {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), requestTimeoutMs);
       let response;
+      let body;
+      let attemptError;
       try {
         response = await fetcher(url, { signal: controller.signal });
+        if (response?.ok && consumeBody) body = await response.text();
       } catch (error) {
-        lastError = controller.signal.aborted
+        attemptError = controller.signal.aborted
           ? new Error(`arXiv API timed out after ${requestTimeoutMs}ms for ${context}`, { cause: error })
           : error;
+        lastError = attemptError;
       } finally {
         clearTimeout(timeout);
       }
 
-      if (response?.ok) return response;
+      if (response?.ok && (!consumeBody || body !== undefined)) return consumeBody ? body : response;
 
       const status = response?.status;
-      const retryable = response ? RETRYABLE_STATUS.has(status) : true;
+      const retryable = response ? (attemptError ? true : RETRYABLE_STATUS.has(status)) : true;
       if (!retryable || attempt === maxRetries) {
+        if (response && body === undefined) await disposeResponse(response);
+        if (response && attemptError) throw attemptError;
         if (response) throw new Error(`arXiv API error ${status} for ${context}`);
         throw new Error(`arXiv API request failed for ${context}: ${lastError?.message || 'unknown error'}`, { cause: lastError });
       }
+
+      if (response && body === undefined) await disposeResponse(response);
 
       const exponentialWait = baseRetryMs * (2 ** attempt);
       const serverWait = response ? retryAfterMs(response, now()) : 0;
@@ -66,5 +82,8 @@ export function createArxivClient(options = {}) {
     throw lastError;
   }
 
-  return { fetch: fetchWithRetry };
+  return {
+    fetch: (url, context = url) => requestWithRetry(url, context, false),
+    fetchText: (url, context = url) => requestWithRetry(url, context, true),
+  };
 }

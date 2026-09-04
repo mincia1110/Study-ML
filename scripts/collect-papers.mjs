@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import assert from 'node:assert/strict';
 import { collectCitationRecommendations, extractArxivIdFromWork, buildOpenAlexUrl } from './lib/openalex.mjs';
 import { CITATION_MODES, citationWindow, selectCitationPapers } from './lib/recommend.mjs';
-import { parsePreviousPapers, readPreviousPapers, reusableSummary } from './lib/paper-cache.mjs';
+import { normalizeSummary, parsePreviousPapers, readPreviousPapers, reusableSummary } from './lib/paper-cache.mjs';
 import { createArxivClient } from './lib/arxiv-client.mjs';
 
 /**
@@ -17,7 +17,7 @@ import { createArxivClient } from './lib/arxiv-client.mjs';
  * - detail.problem, detail.method, detail.takeaway: 1-2 Korean sentences each.
  * - Concrete and cautious, no hype, mention limitations when evident.
  * - Uses opencode-go/deepseek-v4-flash when a key is available.
- * - Falls back to template-generated summaries when no key is available.
+ * - Falls back to a source-directed unavailable-summary when no valid LLM summary is available.
  * - Manual review and refinement welcomed when quality matters.
  *
  * Node 18+ only (built-in fetch). No dependencies.
@@ -29,7 +29,7 @@ import { createArxivClient } from './lib/arxiv-client.mjs';
  *   node --env-file=.env scripts/collect-papers.mjs   # project .env
  *   OPENCODE_GO_API_KEY=sk-... node scripts/...       # inline
  *   # or set OPENCODE_GO_API_KEY as a GitHub Actions secret
- *   # without a key, falls back to template summaries + ~/.opencodex/config.json
+ *   # without a key, uses a source-directed unavailable-summary
  */
 
 const ARXIV_API = 'https://export.arxiv.org/api/query';
@@ -40,7 +40,8 @@ const CAT_QUERIES = [
 const MAX_RESULTS = 50;
 const MAX_PAPERS = 12;
 const OUTPUT_PATH = 'data/papers.js';
-const OPENALEX_API_KEY = process.env.OPENALEX_API_KEY || '';
+const IS_SELF_TEST = process.argv.includes('--self-test');
+const OPENALEX_API_KEY = IS_SELF_TEST ? '' : (process.env.OPENALEX_API_KEY || '');
 
 const OPENCODE_GO_URL = process.env.OPENCODE_GO_BASE_URL || 'https://opencode.ai/zen/go/v1/chat/completions';
 const OPENCODE_GO_MODEL = process.env.OPENCODE_GO_MODEL || 'deepseek-v4-flash';
@@ -62,6 +63,7 @@ const arxivClient = createArxivClient({
 // ponytail: read key from env first, fall back to opencodex config so local runs
 // "just work" without manual export. CI sets OPENCODE_GO_API_KEY as a secret.
 function resolveApiKey() {
+  if (IS_SELF_TEST) return '';
   if (process.env.OPENCODE_GO_API_KEY) return process.env.OPENCODE_GO_API_KEY;
   try {
     const cfg = JSON.parse(readFileSync(join(homedir(), '.opencodex', 'config.json'), 'utf-8'));
@@ -165,44 +167,17 @@ function inferCategory(categories, title, abstract) {
   return 'llm';
 }
 
-/* ── template-based Korean summary generation ── */
-
-function inferTopic(title, abstract, category) {
-  const text = (title + ' ' + abstract).toLowerCase();
-  if (hasTerm(text, 'video')) return 'video';
-  if (hasTerm(text, '3d') || hasTerm(text, 'gaussian')) return '3d';
-  if (hasTerm(text, 'medical') || hasTerm(text, 'cancer') || hasTerm(text, 'biomedical')) return 'medical';
-  if (hasTerm(text, 'autonomous') || hasTerm(text, 'driving')) return 'driving';
-  if (hasTerm(text, 'privacy')) return 'privacy';
-  if (hasTerm(text, 'agent') || hasTerm(text, 'agents')) return 'agent';
-  if (hasTerm(text, 'retrieval') || hasTerm(text, 'rag')) return 'retrieval';
-  if (hasTerm(text, 'benchmark') || hasTerm(text, 'dataset') || hasTerm(text, 'evaluation')) return 'benchmark';
-  if (category === 'cv') return 'vision';
-  if (category === 'multimodal') return 'multimodal';
-  return 'llm';
-}
+/* ── unavailable Korean summary fallback ── */
 
 function generateSummary(title, abstract, categories, category) {
-  const topic = inferTopic(title, abstract, category);
-  const titleMain = title.replace(/:.*$/, '').trim();
-  const categoryLabel = { cv: '컴퓨터 비전', llm: 'LLM', multimodal: '멀티모달' }[category] || 'ML';
-  const templates = {
-    video: ['비디오 이해 모델이 답만 맞히는 수준을 넘어, 시간적 근거와 장면 변화를 얼마나 안정적으로 잡는지 다룬다.', '논문은 비디오 입력에서 질문, 증거 구간, 설명 또는 압축 표현을 함께 다루는 평가·모델링 방식을 제안한다.', '긴 영상과 복잡한 사건 흐름을 다루는 모델의 신뢰성을 보려면 정답률뿐 아니라 근거 위치와 실패 사례를 함께 확인해야 한다.'],
-    '3d': ['이미지나 텍스트에서 3D 장면을 만들 때 품질, 속도, 3D 일관성을 동시에 맞추기 어렵다는 문제를 다룬다.', '논문은 3D 표현과 생성 모델을 결합해 더 적은 자원으로 장면 구조와 외형을 보존하는 방법을 제안한다.', '3D 생성은 실제 제품화에서 렌더링 비용과 품질 편차가 크므로, 벤치마크와 예시 장면의 범위를 같이 확인해야 한다.'],
-    medical: ['의료 영상 AI가 평균 성능은 높아 보여도 환자군, 촬영 장비, 프로토콜이 달라질 때 성능이 흔들리는 문제를 다룬다.', '논문은 데이터 하위집단이나 임상 조건을 나눠 모델을 평가하거나 적응시키는 방식을 제안한다.', '의료 AI는 작은 성능 향상보다 조건별 실패를 드러내는 평가가 중요하며, 실제 임상 적용 전 별도 검증이 필요하다.'],
-    driving: ['자율주행 장면에서 위험 객체를 찾는 것뿐 아니라 왜 위험한지 설명하고 위치를 근거로 제시하는 문제를 다룬다.', '논문은 비전-언어 모델과 그라운딩 또는 시간 추론을 결합해 주행 장면의 위험을 해석 가능하게 만드는 방식을 제안한다.', '안전 관련 응용에서는 설명 가능성이 유용하지만, 실제 도로 일반화와 작은 객체 인식 실패를 별도로 봐야 한다.'],
-    retrieval: ['LLM이 외부 지식을 쓸 때 검색 품질, 개인정보, 맥락 보존 사이의 균형을 맞추는 문제를 다룬다.', '논문은 검색 임베딩, RAG 전처리, 의미 재작성 등 검색 기반 워크플로를 개선하는 방식을 제안한다.', '검색 기반 시스템은 모델 자체보다 데이터 품질과 검색 실패가 결과를 좌우하므로, 도메인별 평가가 필요하다.'],
-    agent: ['에이전트가 장기 기억, 환경 모델, 코드 수정 같은 다단계 작업을 안정적으로 수행하는 문제를 다룬다.', '논문은 에이전트의 메모리, 진단, 시뮬레이션 또는 계획 단계를 분리해 더 검증 가능한 구조로 만드는 방법을 제안한다.', '에이전트 연구는 데모보다 실패 복구와 비용이 중요하므로, 벤치마크 조건과 실제 작업 전이를 함께 봐야 한다.'],
-    privacy: ['대규모 모델이나 RAG 시스템에서 학습 데이터와 민감 정보가 노출될 수 있는 문제를 다룬다.', '논문은 공격 분석, 의미 재작성, 감사 프레임워크 등으로 노출 위험을 측정하거나 줄이는 방법을 제안한다.', '프라이버시 보호는 정확도와 함께 운영 요구사항이므로, 공격 가정과 데이터 접근 권한을 확인해야 한다.'],
-    benchmark: ['새 모델의 평균 점수만으로는 실제 강점과 약점을 판단하기 어렵다는 평가 문제를 다룬다.', '논문은 데이터셋, 벤치마크, 세부 지표를 만들어 모델 성능을 더 구체적인 조건에서 비교한다.', '벤치마크 논문은 점수보다 평가 설계가 중요하므로, 데이터 구성과 누락된 사용 사례를 함께 확인해야 한다.'],
-    vision: ['컴퓨터 비전 모델이 이미지·장면·객체 관계를 더 안정적으로 이해하거나 생성하는 문제를 다룬다.', '논문은 표현 학습, 생성, 검출, 평가 방식 중 하나를 개선해 시각 정보 처리 성능을 높이려 한다.', 'CV 모델은 데이터 분포 변화에 민감하므로, 공개 벤치마크 성능과 실제 환경 성능을 구분해 봐야 한다.'],
-    multimodal: ['텍스트, 이미지, 비디오 같은 여러 입력을 함께 다룰 때 추론과 근거 제시가 어려운 문제를 다룬다.', '논문은 비전-언어 모델이나 멀티모달 학습 구조를 이용해 장면 이해, 생성, 질의응답을 개선한다.', '멀티모달 모델은 그럴듯한 설명을 만들 수 있으므로, 정답뿐 아니라 시각적 근거와 오류 유형을 확인해야 한다.'],
-    llm: ['LLM이 추론, 검색, 코드, 평가 같은 실제 작업에서 안정적으로 동작하도록 만드는 문제를 다룬다.', '논문은 모델 구조, 학습 목표, 평가 프로토콜 또는 에이전트 워크플로를 개선하는 방법을 제안한다.', 'LLM 논문은 벤치마크 성능이 실제 사용성을 모두 보장하지 않으므로, 비용과 실패 조건을 같이 봐야 한다.'],
-  };
-  const [problem, method, takeaway] = templates[topic];
+  const unavailable = '자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.';
   return {
-    summaryKo: `${titleMain}: ${categoryLabel} 분야의 최근 연구로, ${problem.replace(/다룬다\.$/, '다룬 논문이다.')}`,
-    detail: { problem, method, takeaway },
+    summaryKo: unavailable,
+    detail: {
+      problem: '자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.',
+      method: '자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.',
+      takeaway: '자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요.',
+    },
   };
 }
 
@@ -244,8 +219,9 @@ async function summarizeWithLLM(paper, options = {}) {
     const match = raw.match(/\{[\s\S]*\}/);
     if (!match) throw new Error('no JSON in LLM response');
     const parsed = JSON.parse(match[0]);
-    if (!parsed.summaryKo || !parsed.detail?.problem) throw new Error('missing fields in LLM JSON');
-    return { summaryKo: parsed.summaryKo, detail: parsed.detail };
+    const summary = normalizeSummary(parsed);
+    if (!summary) throw new Error('missing or invalid fields in LLM JSON');
+    return summary;
   } catch (error) {
     if (controller.signal.aborted) throw new Error(`LLM API timed out after ${timeoutMs}ms`, { cause: error });
     throw error;
@@ -258,8 +234,7 @@ async function summarizeWithLLM(paper, options = {}) {
 
 async function fetchEntries(query) {
   const url = `${ARXIV_API}?search_query=${encodeURIComponent(query)}&sortBy=submittedDate&sortOrder=descending&max_results=${MAX_RESULTS}`;
-  const res = await arxivClient.fetch(url, `query=${query}`);
-  const xml = await res.text();
+  const xml = await arxivClient.fetchText(url, `query=${query}`);
   return xml.split('<entry>').slice(1);
 }
 
@@ -268,8 +243,8 @@ async function fetchEntriesByIds(ids) {
   for (let offset = 0; offset < ids.length; offset += 50) {
     const batch = ids.slice(offset, offset + 50);
     const params = new URLSearchParams({ id_list: batch.join(','), max_results: String(batch.length) });
-    const res = await arxivClient.fetch(`${ARXIV_API}?${params}`, 'citation metadata');
-    entries.push(...(await res.text()).split('<entry>').slice(1));
+    const xml = await arxivClient.fetchText(`${ARXIV_API}?${params}`, 'citation metadata');
+    entries.push(...xml.split('<entry>').slice(1));
   }
   return entries;
 }
@@ -312,9 +287,12 @@ function restorePreviousCitationPapers(selectedById, previousPapers) {
     const current = selectedById.get(previous.id);
     if (current) {
       for (const mode of modes) addRecommendation(current, mode, previous.recommendationRanks?.[mode] || 999);
-      if (!current.metrics && previous.metrics) current.metrics = previous.metrics;
+      if (!current.metrics && previous.metrics) current.metrics = structuredClone(previous.metrics);
     } else {
-      selectedById.set(previous.id, structuredClone(previous));
+      const restored = structuredClone(previous);
+      restored.recommendationModes = modes;
+      restored.recommendationRanks = Object.fromEntries(modes.map(mode => [mode, previous.recommendationRanks?.[mode] || 999]));
+      selectedById.set(previous.id, restored);
     }
   }
 }
@@ -425,9 +403,14 @@ async function collectPapers(options = {}) {
     p.tags = [...tagSet].slice(0, 5);
   }
 
-  // Summarize: LLM if key present, template fallback otherwise
+  // Summarize with the LLM; otherwise retain a transparent unavailable-summary.
   for (const p of sorted) {
-    if (p.summaryKo && p.detail?.problem) continue;
+    const currentSummary = normalizeSummary(p);
+    if (currentSummary) {
+      p.summaryKo = currentSummary.summaryKo;
+      p.detail = currentSummary.detail;
+      continue;
+    }
     const category = p.category;
     const templateSum = generateSummary(p.title, p.abstract, p.categories, category);
     if (USE_LLM) {
@@ -513,6 +496,45 @@ async function main() {
     assert.deepEqual(Object.keys(fixtureResult.byMode), Object.keys(CITATION_MODES));
     assert.equal(fixtureResult.byMode.week.length, 6);
     assert.deepEqual(fixtureResult.byMode.week.map(p => p.category), ['cv', 'cv', 'llm', 'llm', 'multimodal', 'multimodal']);
+
+    // Citation restoration filters stale latest metadata and preserves current latest ranks.
+    const overlap = { id: 'overlap', recommendationModes: ['latest'], recommendationRanks: { latest: 1 } };
+    const mixedPrevious = {
+      id: 'overlap',
+      recommendationModes: ['latest', 'week'],
+      recommendationRanks: { latest: 9, week: 3 },
+      metrics: { citationCount: 4 },
+    };
+    const citationOnlyPrevious = {
+      id: 'citation-only',
+      recommendationModes: ['month', 'year'],
+      recommendationRanks: { month: 4, year: 7 },
+      summaryKo: '이전 요약',
+    };
+    const previousForRestore = structuredClone([mixedPrevious, citationOnlyPrevious]);
+    const restoredSelection = new Map([[overlap.id, overlap]]);
+    restorePreviousCitationPapers(restoredSelection, [mixedPrevious, citationOnlyPrevious]);
+    assert.deepEqual(overlap.recommendationRanks, { latest: 1, week: 3 });
+    assert.deepEqual(overlap.recommendationModes, ['latest', 'week']);
+    assert.deepEqual(restoredSelection.get('citation-only').recommendationModes, ['month', 'year']);
+    assert.deepEqual(restoredSelection.get('citation-only').recommendationRanks, { month: 4, year: 7 });
+    assert.deepEqual([mixedPrevious, citationOnlyPrevious], previousForRestore);
+    const staleMixedSelection = new Map();
+    restorePreviousCitationPapers(staleMixedSelection, [mixedPrevious]);
+    assert.deepEqual(staleMixedSelection.get('overlap').recommendationModes, ['week']);
+    assert.deepEqual(staleMixedSelection.get('overlap').recommendationRanks, { week: 3 });
+    assert.deepEqual(mixedPrevious, previousForRestore[0]);
+
+    // Cached summaries use the same strict shape as fresh LLM responses.
+    assert.equal(reusableSummary({ summaryKo: 7, detail: { problem: '문제', method: '방법', takeaway: '시사점' } }), null);
+    assert.equal(reusableSummary({ summaryKo: '요약', detail: ['문제', '방법', '시사점'] }), null);
+    assert.equal(reusableSummary({ summaryKo: '  ', detail: { problem: '문제', method: '방법', takeaway: '시사점' } }), null);
+    assert.equal(reusableSummary({ summaryKo: '요약', detail: { problem: '문제', method: null, takeaway: '시사점' } }), null);
+    assert.deepEqual(
+      reusableSummary({ summaryKo: '  요약  ', detail: { problem: ' 문제 ', method: '방법', takeaway: '시사점', extra: '제외' }, tags: ['tag'] }),
+      { tags: ['tag'], summaryKo: '요약', detail: { problem: '문제', method: '방법', takeaway: '시사점' } },
+    );
+
     const summaryFixture = {
       summaryKo: '테스트 요약',
       detail: { problem: '테스트 문제', method: '테스트 방법', takeaway: '테스트 시사점' },
@@ -527,6 +549,38 @@ async function main() {
       }),
       summaryFixture,
     );
+    const fencedSummary = await summarizeWithLLM({ title: 'Fenced test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
+      timeoutMs: 50,
+      fetcher: async () => ({
+        ok: true,
+        json: async () => ({ choices: [{ message: { content: `\`\`\`json\n${JSON.stringify({ ...summaryFixture, extra: 'ignored', detail: { ...summaryFixture.detail, extra: 'ignored' } })}\n\`\`\`` } }] }),
+      }),
+    });
+    assert.deepEqual(fencedSummary, summaryFixture);
+    for (const invalidSummary of [
+      { summaryKo: summaryFixture.summaryKo, detail: { problem: '문제' } },
+      { summaryKo: summaryFixture.summaryKo, detail: null },
+      { summaryKo: 7, detail: summaryFixture.detail },
+      { summaryKo: summaryFixture.summaryKo, detail: { problem: '문제', method: null, takeaway: '시사점' } },
+      { summaryKo: summaryFixture.summaryKo, detail: ['문제', '방법', '시사점'] },
+      { summaryKo: '  ', detail: summaryFixture.detail },
+      { summaryKo: summaryFixture.summaryKo, detail: { problem: '문제', method: '  ', takeaway: '시사점' } },
+    ]) {
+      await assert.rejects(
+        summarizeWithLLM({ title: 'Invalid test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
+          timeoutMs: 50,
+          fetcher: async () => ({
+            ok: true,
+            json: async () => ({ choices: [{ message: { content: JSON.stringify(invalidSummary) } }] }),
+          }),
+        }),
+        /missing or invalid fields in LLM JSON/,
+      );
+    }
+    const unavailableSummary = generateSummary('Video proposal', 'video abstract', ['cs.CV'], 'cv');
+    assert.match(unavailableSummary.summaryKo, /원문과 초록/);
+    assert.deepEqual(Object.keys(unavailableSummary.detail).sort(), ['method', 'problem', 'takeaway']);
+    assert.ok(Object.values(unavailableSummary.detail).every(value => typeof value === 'string' && value.trim()));
     await assert.rejects(
       summarizeWithLLM({ title: 'Timeout test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
         timeoutMs: 5,
@@ -562,6 +616,39 @@ async function main() {
     assert.equal((await retryClient.fetch('test:first')).status, 200);
     assert.equal((await retryClient.fetch('test:second')).status, 200);
     assert.deepEqual(delays, [7000, 3000]);
+
+    // A response whose headers arrive before a stalled body is still bounded and retried.
+    let bodyCalls = 0;
+    let bodyAborted = false;
+    const bodyClient = createArxivClient({
+      fetcher: async (_url, request) => {
+        bodyCalls += 1;
+        if (bodyCalls === 1) {
+          return {
+            ok: true,
+            status: 200,
+            headers: { get: () => null },
+            text: () => new Promise((resolve, reject) => {
+              request.signal.addEventListener('abort', () => {
+                bodyAborted = true;
+                reject(new Error('body aborted'));
+              }, { once: true });
+            }),
+          };
+        }
+        return { ok: true, status: 200, headers: { get: () => null }, text: async () => '<feed />' };
+      },
+      sleep: async () => {},
+      minIntervalMs: 0,
+      baseRetryMs: 0,
+      requestTimeoutMs: 5,
+      maxRetries: 1,
+      logger: { warn() {} },
+    });
+    assert.equal(await bodyClient.fetchText('test:body'), '<feed />');
+    assert.equal(bodyCalls, 2);
+    assert.equal(bodyAborted, true);
+
     let badRequestCalls = 0;
     const noRetryClient = createArxivClient({
       fetcher: async () => { badRequestCalls += 1; return { ok: false, status: 400, headers: { get: () => null } }; },
@@ -580,7 +667,7 @@ async function main() {
   const dryRun = process.argv.includes('--dry-run');
   const latestOnly = process.argv.includes('--latest-only');
 
-  console.error(USE_LLM ? `Using LLM: ${OPENCODE_GO_MODEL} (timeout ${LLM_TIMEOUT_MS}ms)` : 'No API key found; using template summaries');
+  console.error(USE_LLM ? `Using LLM: ${OPENCODE_GO_MODEL} (timeout ${LLM_TIMEOUT_MS}ms)` : 'No API key found; using source-directed unavailable summaries');
 
   if (!OPENALEX_API_KEY && !latestOnly) console.error('No OPENALEX_API_KEY found; preserving cached citation recommendations');
 

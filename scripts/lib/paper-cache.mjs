@@ -19,11 +19,28 @@ export function readPreviousPapers(path) {
   }
 }
 
+function isPlainObject(value) {
+  if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+  const prototype = Object.getPrototypeOf(value);
+  return prototype === Object.prototype || prototype === null;
+}
+
+export function normalizeSummary(value) {
+  const detail = value?.detail;
+  if (typeof value?.summaryKo !== 'string' || !value.summaryKo.trim() || !isPlainObject(detail)) return null;
+  const fields = ['problem', 'method', 'takeaway'];
+  if (fields.some(field => typeof detail[field] !== 'string' || !detail[field].trim())) return null;
+  return {
+    summaryKo: value.summaryKo.trim(),
+    detail: Object.fromEntries(fields.map(field => [field, detail[field].trim()])),
+  };
+}
+
 export function reusableSummary(paper) {
-  if (!paper?.summaryKo || !paper?.detail?.problem || !paper?.detail?.method || !paper?.detail?.takeaway) return null;
+  const summary = normalizeSummary(paper);
+  if (!summary) return null;
   return {
     tags: Array.isArray(paper.tags) ? paper.tags : [],
-    summaryKo: paper.summaryKo,
-    detail: paper.detail,
+    ...summary,
   };
 }

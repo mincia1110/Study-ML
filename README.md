@@ -70,8 +70,8 @@ Citation 수는 OpenAlex 기준이며 제공자별로 다를 수 있습니다. �
 
 ## LLM 요약
 
-`OPENCODE_GO_API_KEY`가 있으면 `opencode-go/deepseek-v4-flash`로 한국어 요약을 생성합니다. 키가 없으면 휴리스틱 템플릿으로 요약합니다.
-LLM 요청은 기본 60초 후 중단되고 해당 논문만 템플릿 요약으로 대체됩니다. `OPENCODE_GO_TIMEOUT_MS`로 제한 시간을 조정할 수 있습니다.
+`OPENCODE_GO_API_KEY`가 있으면 `opencode-go/deepseek-v4-flash`로 한국어 요약을 생성합니다. 키가 없거나 응답 형식이 올바르지 않으면 원문과 초록을 확인하라는 안내를 표시합니다.
+LLM 요청은 기본 60초 후 중단되고 해당 논문만 안내 문구로 대체됩니다. `OPENCODE_GO_TIMEOUT_MS`로 제한 시간을 조정할 수 있습니다.
 
 arXiv API 요청은 정책에 맞춰 최소 3초 간격으로 직렬 실행합니다. HTTP 429나 일시적인 서버 오류가 발생하면 `Retry-After`를 우선해 최대 3회 재시도하며, `ARXIV_REQUEST_TIMEOUT_MS`와 `ARXIV_MAX_RETRIES`로 제한을 조정할 수 있습니다.
 
@@ -84,7 +84,7 @@ node --env-file=.env scripts/collect-papers.mjs
 
 ## 자동 갱신
 
-GitHub Actions 워크플로가 매일 17:00 KST에 실행됩니다. GitHub 예약 실행은 정각의 높은 부하로 몇 분 지연될 수 있습니다.
+GitHub Actions 워크플로는 현재 수동 `workflow_dispatch` 실행을 지원합니다. 실행하면 논문 데이터를 수집하고 변경된 `data/papers.js`만 자동 커밋합니다.
 
 - 워크플로: `.github/workflows/daily-papers.yml`
 - 출력 파일: `data/papers.js`

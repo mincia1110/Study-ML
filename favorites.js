@@ -168,6 +168,8 @@
     var warning = '';
     var items = [];
     var writeBlocked = false;
+    var blockedCode = '';
+    var blockedMessage = '';
 
     function nowIso() {
       return new Date(now()).toISOString();
@@ -184,7 +186,7 @@
 
     function persist(nextItems) {
       if (writeBlocked) {
-        throw libraryError('corrupt', '손상된 즐겨찾기 데이터가 있어 변경하지 않았습니다. 브라우저 데이터를 복구하거나 초기화하기 전에 원본을 백업해 주세요.');
+        throw libraryError(blockedCode || 'corrupt', blockedMessage || '손상된 즐겨찾기 데이터가 있어 변경하지 않았습니다. 브라우저 데이터를 복구하거나 초기화하기 전에 원본을 백업해 주세요.');
       }
       var payload = { schemaVersion: SCHEMA_VERSION, items: nextItems };
       try {
@@ -197,15 +199,47 @@
     }
 
     function readLegacyIds() {
+      var raw;
+      try { raw = storage.getItem(LEGACY_KEY); }
+      catch (_) {
+        return { state: 'invalid', code: 'storage', message: '브라우저 저장공간을 읽을 수 없어 즐겨찾기를 변경하지 않았습니다.' };
+      }
+      if (raw === null || raw === undefined) return { state: 'absent', ids: [] };
+
       var rawIds;
-      try { rawIds = JSON.parse(storage.getItem(LEGACY_KEY) || '[]'); }
-      catch (_) { rawIds = []; }
-      if (!Array.isArray(rawIds)) return [];
-      return rawIds.filter(validId).filter(function(id, index, all) { return all.indexOf(id) === index; }).slice(0, MAX_ITEMS);
+      try { rawIds = JSON.parse(raw); }
+      catch (_) {
+        return { state: 'invalid', code: 'corrupt', message: '기존 즐겨찾기 데이터가 손상되어 마이그레이션하지 않았습니다. 원본을 백업한 뒤 복구해 주세요.' };
+      }
+      if (!Array.isArray(rawIds) || rawIds.some(function(id) { return !validId(id); })) {
+        return { state: 'invalid', code: 'corrupt', message: '기존 즐겨찾기 데이터 형식이 올바르지 않아 마이그레이션하지 않았습니다. 원본을 백업한 뒤 복구해 주세요.' };
+      }
+      return {
+        state: 'valid',
+        ids: rawIds.filter(function(id, index, all) { return all.indexOf(id) === index; }).slice(0, MAX_ITEMS),
+      };
+    }
+
+    function blockWrites(code, message) {
+      warning = message;
+      writeBlocked = true;
+      blockedCode = code;
+      blockedMessage = message;
+    }
+
+    function clearWriteBlock() {
+      writeBlocked = false;
+      blockedCode = '';
+      blockedMessage = '';
     }
 
     function migrateLegacy() {
-      var ids = readLegacyIds();
+      var legacy = readLegacyIds();
+      if (legacy.state === 'invalid') {
+        blockWrites(legacy.code, legacy.message);
+        return items;
+      }
+      var ids = legacy.ids;
       var base = new Date(now()).getTime() - ids.length * 1000;
       var migrated = ids.map(function(id, index) {
         var timestamp = new Date(base + index * 1000).toISOString();
@@ -213,7 +247,7 @@
       });
       if (migrated.length) {
         try { persist(migrated); }
-        catch (error) { warning = error.message; writeBlocked = true; }
+        catch (error) { blockWrites(error.code || 'storage', error.message); }
       }
       return migrated;
     }
@@ -222,19 +256,20 @@
       var raw;
       try { raw = storage.getItem(STORAGE_KEY); }
       catch (_) {
-        warning = '브라우저 저장공간을 읽을 수 없어 즐겨찾기를 변경하지 않았습니다.';
-        writeBlocked = true;
-        return [];
+        blockWrites('storage', '브라우저 저장공간을 읽을 수 없어 즐겨찾기를 변경하지 않았습니다.');
+        return items;
       }
-      if (!raw) return migrateLegacy();
+      if (raw === null || raw === undefined) {
+        clearWriteBlock();
+        return migrateLegacy();
+      }
       try {
         var loaded = validatePayload(JSON.parse(raw), false);
-        writeBlocked = false;
+        clearWriteBlock();
         return loaded;
       } catch (error) {
-        warning = '저장된 즐겨찾기 데이터를 읽지 못했습니다. 기존 데이터는 덮어쓰지 않았습니다.';
-        writeBlocked = true;
-        return [];
+        blockWrites('corrupt', '저장된 즐겨찾기 데이터가 손상되어 읽지 못했습니다. 기존 데이터는 덮어쓰지 않았습니다.');
+        return items;
       }
     }
 
@@ -256,7 +291,12 @@
 
     function syncFromLegacy() {
       if (writeBlocked) return items;
-      var ids = readLegacyIds();
+      var legacy = readLegacyIds();
+      if (legacy.state === 'invalid') {
+        blockWrites(legacy.code, legacy.message);
+        throw libraryError(legacy.code, legacy.message);
+      }
+      var ids = legacy.ids;
       var currentIds = orderedIds(items);
       if (JSON.stringify(ids) === JSON.stringify(currentIds)) return items;
       var byId = new Map(items.map(function(item) { return [item.id, item]; }));
@@ -268,7 +308,11 @@
         var timestamp = new Date(nextTimestamp + index).toISOString();
         return { id: id, savedAt: timestamp, updatedAt: timestamp, paper: snapshotPaper(currentPapers.get(id) || fallbackPaper(id), id) };
       });
-      persist(nextItems);
+      try { persist(nextItems); }
+      catch (error) {
+        warning = error.message;
+        throw error;
+      }
       items = nextItems;
       return items;
     }
