@@ -3,27 +3,29 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2609.04071",
-    "title": "TAP-Path: Task-Adaptive Structural and Token Pruning for Efficient and Trustworthy Pathology Foundation Models",
-    "authors": "Mehedi Hasan, Ashfak Yeafi, Md Khairul Islam",
-    "published": "2026-09-03",
-    "category": "cv",
+    "id": "2609.04842",
+    "title": "MMTClinic: Multimodal, Multilingual Time Series Question Answering and Reasoning Benchmark for Clinical Domain",
+    "authors": "Sourav Malakar et al.",
+    "published": "2026-09-04",
+    "category": "multimodal",
     "categories": [
-      "cs.CV",
+      "cs.CL",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
+      "medical",
+      "multimodal",
       "detection"
     ],
-    "summaryKo": "TAP-Path는 병리 파운데이션 모델의 과제 적응형 구조 및 토큰 가지치기를 통해 대형 병리 기반 모델의 정확도-효율성 균형을 개선하는 압축 프레임워크이다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "병리 파운데이션 모델은 최근 성능 향상을 위해 수억 개의 파라미터를 가진 인코더와 높은 추론 비용에 의존한다.",
-      "method": "TAP-Path는 사전 훈련된 Virchow2 인코더를 별도의 학생 모델로 증류하지 않고 직접 재구성한다. 검증 기반 트랜스포머 블록 선택, 중복 블록의 물리적 제거, 입력 적응형 패치 토큰 가지치기, 다중 깊이 특징 복구, 경량 게이트 태스크 헤드를 결합한다.",
-      "takeaway": "최종 모델은 32개 중 24개 트랜스포머 블록과 70% 패치 토큰을 유지하여 인코더 파라미터를 24.96%, 연산량을 35.20% 줄였다. 32클래스 벤치마크에서 정확도 87.98%, 균형 정확도 81.26%, 매크로 F1 82.38%를 달성했고, Brier score 0.1800, 실패 검출 AUROC 0.9047을 보였다. 외부 CPTAC 평가에서도 정확도 91.22%를 기록했다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04071v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04071v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04842v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04842v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -32,28 +34,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.04131",
-    "title": "Beyond Retrieval: Progressive Latent Memory Evolution for Streaming Video Understanding",
-    "authors": "Hongyu Qu et al.",
-    "published": "2026-09-03",
+    "id": "2609.04598",
+    "title": "PetQA: Benchmarking Veterinary Knowledge and Clinical Reasoning",
+    "authors": "Taegyun Kim et al.",
+    "published": "2026-09-04",
     "category": "multimodal",
     "categories": [
+      "cs.CL",
+      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "video",
       "retrieval",
-      "multimodal"
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "본 논문은 스트리밍 비디오 이해를 위해 기존의 저장-검색 방식에서 벗어나, 과거 시각 정보를 점진적으로 내재화하는 잠재 메모리 프레임워크 LatentStream을 제안한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "스트리밍 비디오 이해에서 MLLM은 연속적인 시각 입력을 처리하면서 엄격한 인과성과 제한된 메모리 하에 사용자 질의에 응답해야 한다. 기존 방법은 과거 관측을 외부 메모리 뱅크로 압축하고 질의 관련 증거를 검색하지만, 이를 내재화된 잠재 메모리로 전환하지 못한다.",
-      "method": "LatentStream은 저장-검색 패러다임을 검색-내재화로 전환하는 점진적 잠재 작업 메모리 프레임워크이다. 질의 비의존적 계층적 스트리밍 메모리, 계층적 잠재 메모리 진화, 점진적 신뢰도 기반 잠재 메모리 최적화의 세 구성 요소를 통해 고정 메모리 예산에서 과거 증거를 검색하고 압축된 잠재 메모리로 내재화한다.",
-      "takeaway": "제안된 LatentStream은 기존 온라인 및 오프라인 비디오 벤치마크에서 새로운 최고 성능을 달성했다. 초록에는 명시된 한계가 없다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04131v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04131v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04598v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04598v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -62,28 +66,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.04034",
-    "title": "Editable Visual Design",
-    "authors": "Junyan Ye et al.",
-    "published": "2026-09-03",
+    "id": "2609.05224",
+    "title": "First Things First: Teaching LLM-Based Agents to Prioritize Must-Haves before Nice-to-Haves",
+    "authors": "Tianjie Ju et al.",
+    "published": "2026-09-04",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
-      "diffusion",
       "agents",
-      "generation"
+      "autonomous-driving",
+      "multimodal",
+      "benchmark"
     ],
-    "summaryKo": "확산 기반 이미지 생성 모델의 미적 표현력과 코드 기반 생성의 편집 가능성을 결합하여, 코딩 에이전트가 레이어 분리된 편집 가능한 시각 디자인 산출물을 생성하는 새로운 패러다임을 제안한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "확산 기반 모델은 텍스트 오류가 있는 평면 비트맵을 생성하여 레이어 단위 사후 편집이 불가능하고, 코드 기반 생성은 전역적 미적 직관 부족과 복잡한 시각 자산 코딩의 어려움이 있다.",
-      "method": "VLM을 창의적 두뇌로, 이미지 생성 모델을 주문형 시각 세계 시뮬레이터로 활용하는 코딩 에이전트 기반의 '상상 먼저, 행동 나중' 폐루프 워크플로우를 통해 독립 자산을 생성하고 HTML/CSS를 작성하며 렌더링 피드백으로 반복 개선한다.",
-      "takeaway": "포스터와 인포그래픽 등에서 정교한 미적 품질과 생산급 편집 가능성을 동시에 달성했으며, 사용자는 GUI에서 마우스 드래그로 레이아웃을 조정할 수 있다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04034v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04034v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05224v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05224v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -92,31 +96,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03677",
-    "title": "Understanding Autonomous Driving Datasets by Describing Differences between Image Subsets in Natural Language",
-    "authors": "Julian Truetsch et al.",
-    "published": "2026-09-03",
+    "id": "2609.04645",
+    "title": "Latent-Aligned Reasoning for Multimodal Recommendation",
+    "authors": "Jiarui Jin, Anyang Ji",
+    "published": "2026-09-04",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
+      "cs.IR",
       "cs.CL",
-      "cs.LG",
-      "cs.NE",
-      "cs.RO"
+      "cs.CV",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "autonomous-driving",
-      "detection"
+      "embedding",
+      "multimodal"
     ],
-    "summaryKo": "대규모 자율주행 데이터셋의 구성을 이해하기 위해 두 이미지 부분집합 간 차이를 자연어로 설명하는 set difference captioning을 자율주행에 맞게 적응시키고, 이를 평가하기 위한 벤치마크 AD-Diff Bench를 도입한 논문이다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "기존 데이터 분석 파이프라인은 메타데이터, 사전 정의된 라벨, 또는 수동 검사에 의존하여 의미론적 통찰이 제한적이거나 확장성이 부족하다. 특히 위치 간 도메인 변화는 운영 환경이 학습 데이터와 어긋나 잠재적으로 위험한 성능 저하를 초래할 수 있다.",
-      "method": "두 이미지 부분집합(대상 집합과 참조 집합) 간 차이를 설명하는 자연어 가설을 생성하는 set difference captioning을 연구한다. 객체 검출에서 얻은 객체 중심 패치에 초점을 맞춰 두 단계 방식을 자율주행에 적응시켰으며, 이를 통해 차이를 특정 객체 인스턴스나 범주에 귀속시킬 수 있다.",
-      "takeaway": "자율주행 도메인 내 평가를 위해 AD-Diff Bench 벤치마크를 도입하고, 저농도 실험을 통해 희소하고 실제적인 차이에 대한 접근법의 적합성을 평가했다. 실험은 오픈웨이트 모델로 제한하여 재현성과 배포 용이성을 확보했으며, 인간이 해석 가능한 데이터셋 분석을 위한 실질적인 한 걸음을 제공한다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03677v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03677v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04645v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04645v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -125,28 +128,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03742",
-    "title": "KnowVis: Knowledge-Centric Visual Summarization for Video Lectures",
-    "authors": "Yi Xu, Yifan Hou, Xiaoyu Zhang",
-    "published": "2026-09-03",
-    "category": "multimodal",
+    "id": "2609.05152",
+    "title": "Compression Beyond the Uncompressed: A Two-Stage Training Recipe for Soft Context Compression in RAG",
+    "authors": "Shuyu Guo, Shuo Zhang, Zhaochun Ren",
+    "published": "2026-09-04",
+    "category": "llm",
     "categories": [
-      "cs.CV",
       "cs.CL"
     ],
     "tags": [
-      "video",
-      "multimodal",
-      "benchmark"
+      "benchmark",
+      "retrieval",
+      "embedding",
+      "generation"
     ],
-    "summaryKo": "KnowVis는 비디오 강의를 개념 지도 기반의 시각적 내러티브로 변환하여 초보 학습자의 인지 부하를 줄이고 학습 효과를 높이는 프레임워크이다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "비디오 강의는 선형적으로 정보를 전달하지만, 인간의 학습은 상호 연결된 인지 네트워크 구성을 요구하므로 사전 지식이 없는 초보 학습자에게 인지 과부하를 유발한다. 기존 요약 방법은 텍스트 중심의 선형 요약을 생성하여 이 문제를 해결하지 못한다.",
-      "method": "KnowVis는 멀티모달 비디오 콘텐츠에서 상세한 개념 지도를 추출하여 중요하고 도전적인 문턱 개념을 식별하고, 구조화된 지식 단위를 구성한 후, 학습에 효과적인 시각적 요약을 생성한다. 또한 10개 학문 분야의 125개 교육 비디오와 1,079개의 생성된 시각적 요약으로 구성된 데이터셋을 도입한다.",
-      "takeaway": "자동 평가와 인간 연구에서 KnowVis는 최신 기준선보다 더 정확하고 명확한 시각 자료를 생성하여 인지 부하를 줄이고 학습 효과와 지식 유지력을 크게 향상시켰다. 초록에는 명시적 한계가 제시되지 않았다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03742v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03742v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05152v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05152v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -155,28 +158,32 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03773",
-    "title": "RealCADBench: Benchmarking Parametric CAD Modeling from Industrial Design Intents",
-    "authors": "JoyIndustrial VisCAD Team et al.",
-    "published": "2026-09-03",
+    "id": "2609.04921",
+    "title": "One Diffusion Model, Two Roles: Guided Trajectory Planning and Safety-Critical Scenario Generation in Closed-Loop Simulation",
+    "authors": "Arka Pal et al.",
+    "published": "2026-09-04",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.CL"
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
     ],
     "tags": [
       "benchmark",
+      "diffusion",
       "agents",
-      "3d"
+      "autonomous-driving",
+      "generation"
     ],
-    "summaryKo": "RealCADBench는 실제 산업 설계 의도에서 파라메트릭 CAD 모델링을 평가하기 위한 벤치마크로, 12,632개 작업과 1,770개 평가 슬라이스를 통해 실행 가능성, IoU, 시각-의미 정체성 등 다양한 지표로 프론티어 모델들을 평가한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "기존 CAD 벤치마크는 합성 또는 CAD 고유 환경에 치우치고 입력 양식이 제한적이며 실행 가능성과 IoU만 강조하여 실제 산업 설계 의도 기반의 CAD 모델링을 평가하기 어렵다.",
-      "method": "19개 공장 자동화 범주의 12,632개 작업으로 구성된 RealCADBench를 도입하고, 텍스트 설명, 2D 엔지니어링 도면, 실제 제품 이미지, 렌더링 이미지를 입력으로 사용하여 Part 및 Assembly 모델링을 평가한다. 각 방법은 FreeCAD API Python을 생성하고 공유 런타임이 실행하여 3D 모델을 내보내며, 실행 가능성, Solid IoU, Surface IoU, 루브릭 기반 시각-의미 정체성 Judge로 평가한다.",
-      "takeaway": "9개 독립형 프론티어 모델 중 어떤 모델도 네 지표 모두에서 선두를 차지하지 못했고, 6개 프론티어 모델의 실행 가능성은 0.565~0.812, Solid IoU는 0.2841~0.5379, Surface IoU는 0.112~0.217이었다. RCB-Assm25에서 Codex with GPT-5.5는 실행 가능성과 IoU를 개선했지만 Judge 점수는 6.98%p 낮췄고, 미세 구조 누락, 부품 정체성 상실, 잘못된 조립 배치 같은 반복적 실패 모드가 관찰되어 실행만으로는 실제 CAD 모델링을 특성화하기에 불충분함을 보여준다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03773v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03773v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04921v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04921v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -185,27 +192,25 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03811",
-    "title": "VisCAD: A Foundation Model Suite with Multimodal Industrial CAD Intelligence",
-    "authors": "JoyIndustrial VisCAD Team et al.",
-    "published": "2026-09-03",
-    "category": "multimodal",
+    "id": "2609.04648",
+    "title": "ConsensusBench: Benchmark of Consensus Nodes for LLM Reasoning via Outcome Reward Densifying",
+    "authors": "Shi-Qi Yan et al.",
+    "published": "2026-09-04",
+    "category": "llm",
     "categories": [
-      "cs.CV",
       "cs.CL"
     ],
     "tags": [
-      "multimodal",
-      "generation"
+      "benchmark"
     ],
-    "summaryKo": "VisCAD는 산업용 CAD 생성을 위한 멀티모달 기반 모델 제품군으로, VisCAD-M1 27B 모델과 도메인 특화 하네스를 통해 부품 및 조립체 수준 설계에서 강력한 성능을 보인다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "산업 제품의 AI 지원 CAD는 부품 수준 생성과 조립체 수준 생성의 두 단계로 나뉘며, 기존 전문 CAD 모델은 좁은 입력 도메인에 학습되어 일반화가 어렵고 범용 모델은 CAD 도메인에서 일관되지 않은 성능을 보인다.",
-      "method": "VisCAD는 중간 학습과 후속 학습을 거친 27B 규모의 VisCAD-M1을 핵심으로 하여 부품 수준 설계 생성을 수행하고, 테스트 시 검증기로도 활용한다. 또한 복잡한 조립체 생성을 위해 범용 모델을 활용하는 도메인 특화 하네스를 포함한다.",
-      "takeaway": "VisCAD-M1은 PubCADBench와 RealCADBench에서 평균 부품 수준 점수 0.5540으로 가장 강한 범용 모델(0.5496)을 능가했고, 테스트 시 검증기로 재사용하면 0.5797로 기존 최고 대비 약 5% 상대 향상되었다. 조립체 생성에서도 일반 목적 하네스보다 정량·정성 평가에서 우위를 보였다. 초록에 명시된 한계는 없다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03811v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03811v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04648v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04648v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -214,28 +219,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03293",
-    "title": "PACE: Towards Surfacing Hidden Conflicts in User Requests",
-    "authors": "Yoojin Kim, Jihyoung Jang, Hyounghun Kim",
-    "published": "2026-09-03",
-    "category": "multimodal",
+    "id": "2609.05314",
+    "title": "Large Language Models for HVAC Operations in Building Energy Systems: A Critical Review of Methods, Applications, and Deployment Readiness",
+    "authors": "Alexander Neubauer et al.",
+    "published": "2026-09-04",
+    "category": "llm",
     "categories": [
-      "cs.CL"
+      "cs.AI",
+      "cs.CL",
+      "eess.SY"
     ],
     "tags": [
-      "agents",
-      "retrieval",
       "benchmark",
-      "detection"
+      "agents",
+      "autonomous-driving"
     ],
-    "summaryKo": "개인화 어시스턴트가 사용자 요청의 적절성을 판단하기 위해 암묵적 지식베이스 제약을 찾아내는 과제(PACE)와 이를 해결하는 다중 에이전트 프레임워크(PaceMaker)를 제안한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "기존 연구는 요청 실행 정확도에 집중해 사용자 상황에 따른 갈등 기반 거절을 간과했고, 안전 탐지 연구는 명시적 요인에 의존해 실제 환경의 암묵적 요인을 다루지 못한다.",
-      "method": "PACE 데이터셋은 사용자 페르소나와 자기중심적 지식베이스 사실을 연결해 잠재 제약을 찾도록 요구하며, PaceMaker는 질의 재구성, 다중 홉 그래프 탐색, 갈등 인식 필터링을 수행하는 전문화된 에이전트들이 협력하여 결정적 증거를 검색한다.",
-      "takeaway": "실험에서 PaceMaker는 증거 검색 품질과 갈등 판단 정확도 모두에서 기존 접근법보다 일관되게 우수했지만, 암묵적 검색 설정의 어려움으로 인해 모델들이 사용자 특정 사실을 찾는 데 여전히 어려움을 겪는다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03293v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03293v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05314v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05314v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -244,26 +250,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03370",
-    "title": "FrameBench:A Language Understanding Benchmark Based on Frame Semantics",
-    "authors": "Chihiro Yano, Ryohei Sasano",
-    "published": "2026-09-03",
-    "category": "llm",
+    "id": "2609.04802",
+    "title": "Linguistic Trajectory Encoding for Efficient Long-Horizon Spatial Memory in Embodied Agents",
+    "authors": "Tianyidan Xie et al.",
+    "published": "2026-09-04",
+    "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "agents",
+      "video",
+      "retrieval",
+      "embedding"
     ],
-    "summaryKo": "FrameBench는 프레임 의미론에 기반하여 동일한 동사가 문맥에 따라 유발하는 프레임을 모델이 구분할 수 있는지 평가하는 다지선다형 벤치마크이다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "대규모 언어 모델이 다양한 과제에서 강력한 성능을 보이지만, 인간이 문장 이해 시 자연스럽게 수행하는 암묵적 의미 보충을 재현할 수 있는지는 불분명하다.",
-      "method": "FrameNet 스타일 자원과 원어민 판단을 포함한 생성-검증 파이프라인을 통해 영어와 일본어로 된 다지선다형 문제를 구성하여, 동일한 동사가 문맥에 따라 유발하는 프레임을 구분하는지 평가한다.",
-      "takeaway": "다양한 모델 실험에서 소형 모델은 어려움을 보였고, 여러 대형 모델은 인간 참조 점수를 넘어섰다. 데이터셋과 코드는 공개되었다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03370v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03370v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04802v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04802v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -272,26 +282,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03410",
-    "title": "To What Extent Do Large Language Models Understand Bangla Idioms?",
-    "authors": "Mousumi Akter et al.",
-    "published": "2026-09-03",
+    "id": "2609.05324",
+    "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
+    "authors": "Zhenxuan Fan et al.",
+    "published": "2026-09-04",
     "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.RO",
+      "cs.AI",
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "detection"
+      "agents"
     ],
-    "summaryKo": "방글라 관용어에 대한 최초의 대규모 벤치마크 데이터셋과 합성 MCQ 데이터셋을 구축하고, 여러 LLM을 세 가지 관용어 관련 과제에서 평가하여 모델별로 강점이 다름을 보였다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "관용어는 문화적 뉘앙스를 담고 있어 저자원 언어인 방글라어에서 컴퓨터 모델이 이해하기 어려운 문제를 해결하고자 한다.",
-      "method": "방글라 관용어 대규모 벤치마크 데이터셋과 합성 MCQ 데이터셋을 만들고, 최신 LLM들을 zero-shot 및 few-shot 프롬프트로 패러프레이징, 관용구 범위 탐지, 의미 식별 세 과제에서 평가했다.",
-      "takeaway": "단일 LLM이 모든 과제에서 일관되게 우수하지 않았으며, Phi-4-mini-instruct는 패러프레이징, Kimi-K2-32b-instruct는 범위 탐지, Gemini-2.5-flash는 의미 식별에서 가장 좋은 성능을 보였다. 이 데이터셋과 분석이 향후 저자원 언어 관용어 이해 연구에 도움이 될 것으로 기대한다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03410v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03410v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05324v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05324v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -300,28 +312,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03467",
-    "title": "When Users Don't Ask: Benchmarking Context-Driven Memory Retrieval in Conversational Agents",
-    "authors": "Wen-Yu Chang, Yun-Nung Chen",
-    "published": "2026-09-03",
+    "id": "2609.04755",
+    "title": "Vectorizing Classical Tamil: Representation Learning for Verse-Commentary Pairs",
+    "authors": "Amrit Gopinath, Sangeetha Sivanesan",
+    "published": "2026-09-04",
     "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.CL"
     ],
     "tags": [
-      "benchmark",
-      "agents",
-      "retrieval"
+      "retrieval",
+      "generation"
     ],
-    "summaryKo": "본 논문은 기존 QA 방식의 메모리 벤치마크가 실제 대화에서의 메모리 검색 성능을 제대로 평가하지 못함을 지적하고, 대화형 메모리 벤치마크 LOCOMO-CONV를 도입하여 다섯 가지 메모리 시스템의 검색 재현율과 응답 품질을 평가한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "기존 메모리 벤치마크는 QA 스타일의 프로빙으로 평가하여 실제 대화 상황에서의 메모리 활용을 반영하지 못한다. 특히 암시적(implicit) 및 복합(composed) 질의에서 검색 격차가 두드러진다.",
-      "method": "LoCoMo에서 파생된 LOCOMO-CONV 벤치마크를 제안하고, dialog, implicit, counterfactual, composed 네 가지 질의 스타일로 다섯 개의 대표 메모리 시스템을 평가한다. 검색 재현율과 응답 품질을 모두 측정하며, 추가로 supportive_memory 주석을 공개한다.",
-      "takeaway": "대화형 프레이밍이 QA 벤치마크가 놓친 검색 격차를 드러내며, 다중 측면 질의 재작성은 raw-turn 메모리에는 효과적이나 추상적 메모리에는 효과가 없다. 강한 검색이 응답 품질로 완전히 이어지지 않고, 암시적 질의에서는 메모리가 명시적 사실 없이 맥락적 근거를 향상시키는 침묵 근거(silent grounding)가 나타난다. 이에 따라 추론 기반 메모리 정교화가 유망한 방향으로 제시된다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03467v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03467v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04755v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04755v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -330,11 +340,11 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.03619",
-    "title": "Remember and Reweight: Enhancing Multi-Agent Debate with Experience Memory and Confidence Estimation",
-    "authors": "Xuanfa Jin et al.",
-    "published": "2026-09-03",
-    "category": "llm",
+    "id": "2609.04841",
+    "title": "MABPD: Multi-Agent Bias Probing &amp; Detection via Structured Argument Debate",
+    "authors": "Garvit Joshi et al.",
+    "published": "2026-09-04",
+    "category": "multimodal",
     "categories": [
       "cs.CL",
       "cs.AI"
@@ -342,16 +352,16 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "retrieval"
+      "detection"
     ],
-    "summaryKo": "다중 에이전트 토론의 공유 오개념 문제를 해결하기 위해 경험 메모리와 신뢰도 가중치를 활용하는 R^2-MAD 프레임워크를 제안한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "다중 에이전트 토론(MAD)은 다수 에이전트가 초기에 오답에 수렴하면 토론 과정이 오류를 수정하기보다 증폭시키는 공유 오개념(shared misconception)에 취약하다. 기존 방법은 주로 에이전트 간 의견 편향(peer skew)을 다루지만, 에이전트가 가진 편향된 개념 사전(concept prior)은 다루지 못한다.",
-      "method": "R^2-MAD는 과거 토론에서 축적한 경험 메모리를 에이전트에 장착한다. 토론 상태를 인식하는 검색 정책이 현재 합의 수준에 따라 관련 역사적 증거를 검색하여 개념 사전을 동적으로 보정하고, 검색된 경험을 바탕으로 에이전트별 신뢰도를 추정하여 동료 영향력을 조절하는 신뢰도 가중치를 생성한다.",
-      "takeaway": "다양한 벤치마크 실험에서 R^2-MAD는 기존 단일 에이전트 및 다중 에이전트 토론 기준선 대비 일관된 성능 향상을 달성했다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.03619v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.03619v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04841v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04841v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -387,7 +397,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4416256081"
     }
   },
@@ -419,8 +429,40 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4415057337"
+    }
+  },
+  {
+    "id": "2507.18153",
+    "title": "When Noisy Labels Meet Class Imbalance on Graphs: A Graph Augmentation Method with LLM and Pseudo Label",
+    "authors": "Riting Xia et al.",
+    "published": "2025-07-24",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.AI"
+    ],
+    "tags": [],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2507.18153v1",
+    "pdfUrl": "https://arxiv.org/pdf/2507.18153v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 4
+    },
+    "metrics": {
+      "citationCount": 1,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "openAlexId": "W4417262424"
     }
   },
   {
@@ -453,42 +495,80 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4414855698"
     }
   },
   {
-    "id": "2504.09754",
-    "title": "Integrating Large Language Models for Automated Structural Analysis",
-    "authors": "Haoran Liang, Mohammad Talebi Kalaleh, Qipei Mei",
-    "published": "2025-04-13",
+    "id": "2502.11266",
+    "title": "The Shrinking Landscape of Linguistic Diversity in the Age of Large Language Models",
+    "authors": "Zhivar Sourati et al.",
+    "published": "2025-02-16",
     "category": "llm",
     "categories": [
-      "cs.SE",
-      "cs.LG"
+      "cs.CL"
     ],
     "tags": [
       "benchmark"
     ],
-    "summaryKo": "대규모 언어 모델(LLM)을 구조 해석 소프트웨어와 통합하여 텍스트 기반 구조 설명으로부터 자동으로 구조 해석을 수행하는 프레임워크를 제안한다.",
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
-      "problem": "구조 해석 자동화를 위한 체계적인 LLM 기반 프레임워크가 부재하며, 기존 AI 기반 방법은 반복 작업 효율화에 한계가 있다.",
-      "method": "LLM을 핵심 엔진으로 사용하여 구조 설명을 파싱하고 실행 가능한 Python 스크립트로 변환하며, OpenSeesPy 같은 코드 기반 유한요소 도구와 결합한다. 도메인 특화 프롬프트와 문맥 내 학습 전략을 활용해 LLM의 문제 해결 능력과 생성 안정성을 향상시킨다.",
-      "takeaway": "20개 구조 해석 문장제 벤치마크에서 GPT-4o 기반 프레임워크가 100% 정확도를 달성했고, GPT-4(85%), Gemini 1.5 Pro(80%), Llama-3.3(30%)보다 우수했다. 도메인 특화 지침은 비대칭 구조 문제에서 성능을 30% 향상시켰지만, 벤치마크 규모가 작고 특정 LLM에 의존한다는 한계가 있다."
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2504.09754v1",
-    "pdfUrl": "https://arxiv.org/pdf/2504.09754v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2502.11266v1",
+    "pdfUrl": "https://arxiv.org/pdf/2502.11266v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 5
+    },
+    "metrics": {
+      "citationCount": 4,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "openAlexId": "W4407695828"
+    }
+  },
+  {
+    "id": "2502.05151",
+    "title": "Transforming Science with Large Language Models: A Survey on AI-assisted Scientific Discovery, Experimentation, Content Generation, and Evaluation",
+    "authors": "Steffen Eger et al.",
+    "published": "2025-02-07",
+    "category": "multimodal",
+    "categories": [
+      "cs.CL",
+      "cs.AI",
+      "cs.CV",
+      "cs.LG"
+    ],
+    "tags": [
+      "multimodal",
+      "benchmark",
+      "survey",
+      "generation"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2502.05151v1",
+    "pdfUrl": "https://arxiv.org/pdf/2502.05151v1.pdf",
     "recommendationModes": [
       "week"
     ],
     "recommendationRanks": {
-      "week": 4
+      "week": 2
     },
     "metrics": {
-      "citationCount": 1,
+      "citationCount": 7,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
-      "openAlexId": "W4415158109"
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "openAlexId": "W4407310674"
     }
   },
   {
@@ -523,41 +603,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4406603968"
-    }
-  },
-  {
-    "id": "2409.20508",
-    "title": "NUTRIVISION: A System for Automatic Diet Management in Smart Healthcare",
-    "authors": "Madhumita Veeramreddy et al.",
-    "published": "2024-09-30",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "detection"
-    ],
-    "summaryKo": "NutriVision은 컴퓨터 비전과 딥러닝을 활용하여 음식 인식, 양 추정, 영양 정보 제공 및 개인 맞춤형 식이 권장을 수행하는 스마트 헬스케어 시스템을 제안한다.",
-    "detail": {
-      "problem": "비전염성 질환 예방을 위해 균형 잡힌 식단이 중요하지만, 기존의 영양 및 식이 관리에는 어려움이 있다.",
-      "method": "Faster R-CNN 기반 딥러닝 알고리즘으로 음식 항목을 식별하고, 스마트폰 이미지 캡처를 통해 즉각적인 영양 데이터(탄수화물, 칼로리, 미량영양소 등)를 제공하며, 사용자 데이터를 통합한 맞춤형 식이 권장을 수행한다.",
-      "takeaway": "NutriVision은 정확한 음식 탐지와 영양 평가를 지원하여 더 건강한 식습관을 촉진할 수 있는 실용적이고 고급스러운 영양 관리 솔루션을 제시하며, 본 논문에서 설계, 성능 평가 및 응용 가능성을 논의한다. (한계는 초록에 명시되지 않음)"
-    },
-    "sourceUrl": "https://arxiv.org/abs/2409.20508v1",
-    "pdfUrl": "https://arxiv.org/pdf/2409.20508v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 2
-    },
-    "metrics": {
-      "citationCount": 3,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
-      "openAlexId": "W4403816277"
     }
   },
   {
@@ -591,7 +638,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4392677943"
     }
   },
@@ -629,7 +676,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 39,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4391377095"
     }
   },
@@ -666,7 +713,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 4,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4391212405"
     }
   },
@@ -702,7 +749,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 40,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4388843329"
     }
   },
@@ -737,7 +784,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 9,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4388093160"
     }
   },
@@ -769,7 +816,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 132,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4387355843"
     }
   },
@@ -804,7 +851,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 12,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4385002547"
     }
   },
@@ -840,44 +887,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 94,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4382618722"
-    }
-  },
-  {
-    "id": "2304.14802",
-    "title": "ResiDual: Transformer with Dual Residual Connections",
-    "authors": "Shufang Xie et al.",
-    "published": "2023-04-28",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG",
-      "cs.NE"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "Transformer의 두 잔여 연결 방식인 Post-LN과 Pre-LN의 장점을 결합하고 단점을 보완하는 새로운 Pre-Post-LN 구조인 ResiDual을 제안한다.",
-    "detail": {
-      "problem": "Post-LN은 깊은 Transformer 학습 시 기울기 소실 문제가 있고, Pre-LN은 표현 붕괴로 모델 용량이 제한된다.",
-      "method": "ResiDual은 Post-LN과 Pre-LN의 잔여 연결을 융합한 Pre-Post-LN(PPLN) 구조를 사용하여 두 방식의 장점을 계승하고 한계를 피한다.",
-      "takeaway": "이론적으로 기울기 하한과 다양한 표현을 보장하며, 여러 기계 번역 벤치마크에서 Post-LN과 Pre-LN을 능가한다. 코드는 공개되어 있다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2304.14802v1",
-    "pdfUrl": "https://arxiv.org/pdf/2304.14802v1.pdf",
-    "recommendationModes": [
-      "month"
-    ],
-    "recommendationRanks": {
-      "month": 5
-    },
-    "metrics": {
-      "citationCount": 7,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
-      "openAlexId": "W4367628192"
     }
   },
   {
@@ -911,9 +922,9 @@ window.PAPERS = [
       "year": 2
     },
     "metrics": {
-      "citationCount": 1519,
+      "citationCount": 1521,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -946,7 +957,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 7,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W4308828222"
     }
   },
@@ -983,7 +994,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 3062,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W3027879771"
     }
   },
@@ -1016,14 +1027,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 182,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-06T08:31:53.397Z",
+      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
       "openAlexId": "W3158013077"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-09-06T08:34:18.634Z",
+  "collectedAt": "2026-09-07T08:33:01.603Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -1034,20 +1045,20 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-08-31",
-        "to": "2026-09-06"
+        "from": "2026-09-01",
+        "to": "2026-09-07"
       },
       "month": {
-        "from": "2026-08-08",
-        "to": "2026-09-06"
+        "from": "2026-08-09",
+        "to": "2026-09-07"
       },
       "sixMonths": {
-        "from": "2026-03-11",
-        "to": "2026-09-06"
+        "from": "2026-03-12",
+        "to": "2026-09-07"
       },
       "year": {
-        "from": "2025-09-07",
-        "to": "2026-09-06"
+        "from": "2025-09-08",
+        "to": "2026-09-07"
       }
     },
     "fallbackModes": []
