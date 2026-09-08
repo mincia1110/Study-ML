@@ -3,20 +3,19 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2609.04842",
-    "title": "MMTClinic: Multimodal, Multilingual Time Series Question Answering and Reasoning Benchmark for Clinical Domain",
-    "authors": "Sourav Malakar et al.",
+    "id": "2609.04971",
+    "title": "BeaconKV: Key-Value Cache Compression Guided by Beacon Queries for Efficient Large Reasoning Model Inference",
+    "authors": "Janghyeon Kim et al.",
     "published": "2026-09-04",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.LG",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "medical",
-      "multimodal",
-      "detection"
+      "embedding",
+      "generation"
     ],
     "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
@@ -24,8 +23,8 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04842v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04842v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04971v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04971v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -34,20 +33,19 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.04598",
-    "title": "PetQA: Benchmarking Veterinary Knowledge and Clinical Reasoning",
-    "authors": "Taegyun Kim et al.",
+    "id": "2609.04999",
+    "title": "BIT.UA at BioASQ 14B: Modular Retrieval with pg_textsearch and Qdrant, and Agent-Based Answer Generation",
+    "authors": "André Ribeiro et al.",
     "published": "2026-09-04",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.CV"
+      "cs.CL"
     ],
     "tags": [
-      "benchmark",
+      "agents",
+      "medical",
       "retrieval",
-      "multimodal",
+      "embedding",
       "generation"
     ],
     "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
@@ -56,8 +54,8 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04598v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04598v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04999v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04999v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -66,18 +64,18 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.05224",
-    "title": "First Things First: Teaching LLM-Based Agents to Prioritize Must-Haves before Nice-to-Haves",
-    "authors": "Tianjie Ju et al.",
+    "id": "2609.05069",
+    "title": "A Structured Debate-Mixture-of-Agents Framework for Complex Clinical Diagnostic Decision Support",
+    "authors": "Chang Xia et al.",
     "published": "2026-09-04",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
       "agents",
-      "autonomous-driving",
-      "multimodal",
+      "medical",
       "benchmark"
     ],
     "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
@@ -86,8 +84,8 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.05224v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.05224v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05069v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05069v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -96,138 +94,14 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.04645",
-    "title": "Latent-Aligned Reasoning for Multimodal Recommendation",
-    "authors": "Jiarui Jin, Anyang Ji",
-    "published": "2026-09-04",
-    "category": "multimodal",
-    "categories": [
-      "cs.IR",
-      "cs.CL",
-      "cs.CV",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding",
-      "multimodal"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
-    "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2609.04645v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04645v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 4
-    }
-  },
-  {
-    "id": "2609.05152",
-    "title": "Compression Beyond the Uncompressed: A Two-Stage Training Recipe for Soft Context Compression in RAG",
-    "authors": "Shuyu Guo, Shuo Zhang, Zhaochun Ren",
-    "published": "2026-09-04",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark",
-      "retrieval",
-      "embedding",
-      "generation"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
-    "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2609.05152v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.05152v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 5
-    }
-  },
-  {
-    "id": "2609.04921",
-    "title": "One Diffusion Model, Two Roles: Guided Trajectory Planning and Safety-Critical Scenario Generation in Closed-Loop Simulation",
-    "authors": "Arka Pal et al.",
-    "published": "2026-09-04",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.LG",
-      "cs.RO"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "agents",
-      "autonomous-driving",
-      "generation"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
-    "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2609.04921v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04921v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 6
-    }
-  },
-  {
-    "id": "2609.04648",
-    "title": "ConsensusBench: Benchmark of Consensus Nodes for LLM Reasoning via Outcome Reward Densifying",
-    "authors": "Shi-Qi Yan et al.",
-    "published": "2026-09-04",
-    "category": "llm",
-    "categories": [
-      "cs.CL"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
-    "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2609.04648v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04648v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 7
-    }
-  },
-  {
-    "id": "2609.05314",
-    "title": "Large Language Models for HVAC Operations in Building Energy Systems: A Critical Review of Methods, Applications, and Deployment Readiness",
-    "authors": "Alexander Neubauer et al.",
+    "id": "2609.05079",
+    "title": "TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents",
+    "authors": "Zhibo Yang et al.",
     "published": "2026-09-04",
     "category": "llm",
     "categories": [
       "cs.AI",
-      "cs.CL",
-      "eess.SY"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
@@ -240,28 +114,26 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.05314v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.05314v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05079v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05079v1.pdf",
     "recommendationModes": [
       "latest"
     ],
     "recommendationRanks": {
-      "latest": 8
+      "latest": 4
     }
   },
   {
-    "id": "2609.04802",
-    "title": "Linguistic Trajectory Encoding for Efficient Long-Horizon Spatial Memory in Embodied Agents",
-    "authors": "Tianyidan Xie et al.",
+    "id": "2609.04800",
+    "title": "Intrinsic Temporal Adaptation of CLIP for Partially Relevant Video Retrieval",
+    "authors": "Hyun Seok Seong et al.",
     "published": "2026-09-04",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.AI"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "agents",
       "video",
       "retrieval",
       "embedding"
@@ -272,8 +144,129 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04802v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04802v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04800v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04800v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 5
+    }
+  },
+  {
+    "id": "2609.04860",
+    "title": "Mitigating Performance Discrepancy in Cross-Domain 3D Class-Incremental Learning",
+    "authors": "Jinge Ma et al.",
+    "published": "2026-09-04",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "3d",
+      "video",
+      "autonomous-driving"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2609.04860v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04860v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 6
+    }
+  },
+  {
+    "id": "2609.04958",
+    "title": "MINT: A Unified Model for World-Space Camera and Hand Motion Estimation from Scalable Egocentric Pipeline Supervision",
+    "authors": "Zijie Zhu et al.",
+    "published": "2026-09-04",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.RO"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2609.04958v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04958v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 7
+    }
+  },
+  {
+    "id": "2609.05066",
+    "title": "Adaptive Multi-Granularity Temporal Modeling for Weakly Supervised Video Anomaly Detection",
+    "authors": "Changyi Li, Yu Xiao",
+    "published": "2026-09-04",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "detection"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2609.05066v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05066v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 8
+    }
+  },
+  {
+    "id": "2609.05171",
+    "title": "WeAgent-MMGenEdit: A Full-Stack Recipe for Multimodal Agentic Image Generation and Editing",
+    "authors": "Hui Zhang et al.",
+    "published": "2026-09-04",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "retrieval",
+      "multimodal",
+      "generation"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2609.05171v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05171v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -282,19 +275,21 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.05324",
-    "title": "RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?",
-    "authors": "Zhenxuan Fan et al.",
+    "id": "2609.05415",
+    "title": "UniMate: One Unified Model to Animate Diverse Skeletons",
+    "authors": "Linzhan Mou et al.",
     "published": "2026-09-04",
-    "category": "multimodal",
+    "category": "cv",
     "categories": [
-      "cs.RO",
-      "cs.AI",
-      "cs.CV"
+      "cs.CV",
+      "cs.GR",
+      "cs.LG"
     ],
     "tags": [
-      "benchmark",
-      "agents"
+      "diffusion",
+      "3d",
+      "embedding",
+      "benchmark"
     ],
     "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
     "detail": {
@@ -302,8 +297,8 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.05324v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.05324v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.05415v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05415v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -312,15 +307,46 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.04755",
-    "title": "Vectorizing Classical Tamil: Representation Learning for Verse-Commentary Pairs",
-    "authors": "Amrit Gopinath, Sangeetha Sivanesan",
+    "id": "2609.05416",
+    "title": "WorldSculpt: Generating Compositional Worlds from Grounded Videos",
+    "authors": "Muyao Niu et al.",
     "published": "2026-09-04",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "3d",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2609.05416v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.05416v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 11
+    }
+  },
+  {
+    "id": "2609.04511",
+    "title": "LentEx: Generalizable Latent Entity Extraction via Synthetic Data and Instruction-Tuned LLMs",
+    "authors": "Umesh Bodhwani et al.",
+    "published": "2026-09-03",
     "category": "llm",
     "categories": [
       "cs.CL"
     ],
     "tags": [
+      "benchmark",
       "retrieval",
       "generation"
     ],
@@ -330,38 +356,8 @@ window.PAPERS = [
       "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
       "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.04755v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04755v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 11
-    }
-  },
-  {
-    "id": "2609.04841",
-    "title": "MABPD: Multi-Agent Bias Probing &amp; Detection via Structured Argument Debate",
-    "authors": "Garvit Joshi et al.",
-    "published": "2026-09-04",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "detection"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
-    "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2609.04841v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.04841v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.04511v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.04511v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -397,7 +393,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4416256081"
     }
   },
@@ -429,8 +425,44 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4415057337"
+    }
+  },
+  {
+    "id": "2508.02184",
+    "title": "Retrieval-augmented Decoding for Improving Truthfulness in Open-ended Generation",
+    "authors": "Manh Nguyen, Sunil Gupta, Hung Le",
+    "published": "2025-08-04",
+    "category": "llm",
+    "categories": [
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "retrieval",
+      "embedding",
+      "generation"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2508.02184v1",
+    "pdfUrl": "https://arxiv.org/pdf/2508.02184v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 5
+    },
+    "metrics": {
+      "citationCount": 0,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
+      "openAlexId": "W4417102261"
     }
   },
   {
@@ -461,42 +493,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4417262424"
-    }
-  },
-  {
-    "id": "2505.24002",
-    "title": "DGIQA: Depth-guided Feature Attention and Refinement for Generalizable Image Quality Assessment",
-    "authors": "Vaishnav Ramesh et al.",
-    "published": "2025-05-29",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "multimodal"
-    ],
-    "summaryKo": "본 논문은 깊이 정보를 활용한 교차 주의와 정제 메커니즘 및 Transformer-CNN 브리지를 통해 무참조 이미지 품질 평가의 일반화 성능을 향상시킨 DGIQA 모델을 제안한다.",
-    "detail": {
-      "problem": "인간의 주관적 인식으로부터 학습하는 무참조 이미지 품질 평가(NR-IQA)는 보지 못한 자연 왜곡에 대한 객관적 일반화가 부족하다는 문제를 해결하려 한다.",
-      "method": "장면 깊이와 공간 특징을 구조 인식 표현으로 증류하는 Depth-Guided cross-attention and refinement(Depth-CAR) 메커니즘을 통합하고, Transformer 백본의 전역 문맥 의존성과 CNN 계층의 국소 공간 특징을 융합하는 TCB(Transformer-CNN Bridge)를 도입한다. 또한 이들을 다중 모달 어텐션 기반 투영 함수로 구현하여 가장 유용한 특징을 선택하고 훈련 시간과 추론 효율도 개선한다.",
-      "takeaway": "제안된 DGIQA 모델은 합성 및 실제 벤치마크 데이터셋에서 최고 수준(SOTA) 성능을 달성했고, 교차 데이터셋 평가와 저조도, 안개, 렌즈 플레어 같은 자연 이미지 왜곡 평가에서도 SOTA 모델들을 능가했다. 초록에 명시된 한계는 없다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2505.24002v1",
-    "pdfUrl": "https://arxiv.org/pdf/2505.24002v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 5
-    },
-    "metrics": {
-      "citationCount": 1,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
-      "openAlexId": "W4414855698"
     }
   },
   {
@@ -528,7 +526,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 4,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4407695828"
     }
   },
@@ -562,12 +560,12 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 2
+      "week": 1
     },
     "metrics": {
       "citationCount": 7,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4407310674"
     }
   },
@@ -603,8 +601,45 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4406603968"
+    }
+  },
+  {
+    "id": "2407.15558",
+    "title": "Few-Shot Neuromorphic Vision in a Nonlinear Photonic Network Laser",
+    "authors": "Wai Kit Ng et al.",
+    "published": "2024-07-22",
+    "category": "cv",
+    "categories": [
+      "cond-mat.dis-nn",
+      "cond-mat.mes-hall",
+      "cond-mat.mtrl-sci",
+      "physics.optics"
+    ],
+    "tags": [
+      "benchmark",
+      "detection"
+    ],
+    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "detail": {
+      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
+      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
+      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2407.15558v1",
+    "pdfUrl": "https://arxiv.org/pdf/2407.15558v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 2
+    },
+    "metrics": {
+      "citationCount": 2,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
+      "openAlexId": "W4401300974"
     }
   },
   {
@@ -638,7 +673,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4392677943"
     }
   },
@@ -676,7 +711,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 39,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4391377095"
     }
   },
@@ -713,7 +748,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 4,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4391212405"
     }
   },
@@ -749,7 +784,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 40,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4388843329"
     }
   },
@@ -784,7 +819,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 9,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4388093160"
     }
   },
@@ -816,43 +851,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 132,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4387355843"
-    }
-  },
-  {
-    "id": "2307.10655",
-    "title": "A Survey of What to Share in Federated Learning: Perspectives on Model Utility, Privacy Leakage, and Communication Efficiency",
-    "authors": "Jiawei Shao et al.",
-    "published": "2023-07-20",
-    "category": "llm",
-    "categories": [
-      "cs.LG",
-      "cs.CR"
-    ],
-    "tags": [
-      "privacy",
-      "survey"
-    ],
-    "summaryKo": "연합 학습에서 무엇을 공유할지에 대한 새로운 관점의 체계적 조사로, 모델 유틸리티, 프라이버시 누출, 통신 효율성을 종합적으로 분석한다.",
-    "detail": {
-      "problem": "기존 연합 학습 서베이는 주로 모델 파라미터를 공유하는 방법에 집중했으며, 합성 데이터나 지식 등 다른 형태의 로컬 정보 공유 가능성을 간과했다.",
-      "method": "모델, 합성 데이터, 지식의 세 가지 공유 방식에 따른 새로운 분류법을 제시하고, 각 방식의 프라이버시 공격 취약성과 방어 메커니즘을 분석한다. 또한 다양한 공유 방식의 학습 성능과 통신 오버헤드를 비교하는 실험을 수행하고, 모델 역전 및 멤버십 추론 공격을 통해 프라이버시 누출 가능성을 평가한다.",
-      "takeaway": "각 공유 방식의 학습 성능, 통신 비용, 프라이버시 위험을 비교하고 여러 방어 기법의 효과를 평가했으며, 이를 바탕으로 향후 연구 방향을 제시한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2307.10655v1",
-    "pdfUrl": "https://arxiv.org/pdf/2307.10655v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 1
-    },
-    "metrics": {
-      "citationCount": 12,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
-      "openAlexId": "W4385002547"
     }
   },
   {
@@ -887,7 +887,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 94,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4382618722"
     }
   },
@@ -922,9 +922,9 @@ window.PAPERS = [
       "year": 2
     },
     "metrics": {
-      "citationCount": 1521,
+      "citationCount": 1523,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -957,7 +957,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 7,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W4308828222"
     }
   },
@@ -992,9 +992,9 @@ window.PAPERS = [
       "year": 1
     },
     "metrics": {
-      "citationCount": 3062,
+      "citationCount": 3064,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W3027879771"
     }
   },
@@ -1027,14 +1027,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 182,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-07T08:32:59.159Z",
+      "citationUpdatedAt": "2026-09-08T08:31:44.751Z",
       "openAlexId": "W3158013077"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-09-07T08:33:01.603Z",
+  "collectedAt": "2026-09-08T08:31:46.763Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -1045,20 +1045,20 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-09-01",
-        "to": "2026-09-07"
+        "from": "2026-09-02",
+        "to": "2026-09-08"
       },
       "month": {
-        "from": "2026-08-09",
-        "to": "2026-09-07"
+        "from": "2026-08-10",
+        "to": "2026-09-08"
       },
       "sixMonths": {
-        "from": "2026-03-12",
-        "to": "2026-09-07"
+        "from": "2026-03-13",
+        "to": "2026-09-08"
       },
       "year": {
-        "from": "2025-09-08",
-        "to": "2026-09-07"
+        "from": "2025-09-09",
+        "to": "2026-09-08"
       }
     },
     "fallbackModes": []
