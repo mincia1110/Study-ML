@@ -23,7 +23,7 @@ jobs:
           package-manager-cache: false
 
       - name: Collect papers
-        run: node scripts/collect-papers.mjs
+        run: node scripts/collect-papers.mjs --require-summaries
         env:
           OPENCODE_GO_API_KEY: ${{ secrets.OPENCODE_GO_API_KEY }}
           OPENCODE_GO_TIMEOUT_MS: '60000'
