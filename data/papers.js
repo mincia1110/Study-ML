@@ -3,29 +3,28 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2609.10008",
-    "title": "Beyond Similarity: Foundation Models as an Efficient Backbone for Training-Free Composed Video Retrieval",
-    "authors": "Dmitry Demidov et al.",
+    "id": "2609.10055",
+    "title": "OntologyAligner: Ontology-Aligned Retrieval and Hierarchy-Guided Large Language Model Reranking for Biomedical Ontology Normalization",
+    "authors": "Jie Song et al.",
     "published": "2026-09-09",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
-      "video",
-      "retrieval",
-      "embedding",
-      "multimodal",
-      "generation"
+      "benchmark",
+      "medical",
+      "retrieval"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "OntologyAligner는 온톨로지 정렬 검색, 대규모 언어 모델 후보 재순위화, 선택적 계층 유도 정제를 결합한 3단계 프레임워크로 생의학 온톨로지 정규화에서 최신 성능을 달성했다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "생의학 온톨로지 정규화는 자유 텍스트 표현을 표준 개념에 매핑하는 과제이나, 어휘 변이와 계층적으로 연관된 개념 간의 미세한 차이 때문에 개념 경계가 모호해지는 어려움이 있다.",
+      "method": "OntologyAligner는 온톨로지 정렬 검색, 대규모 언어 모델 후보 재순위화, 선택적 계층 유도 정제의 세 단계를 결합한다. 또한 HPO 데이터셋 7개에서 13,390개 샘플로 구성된 통합 벤치마크 PhenoNormBench를 구축했다.",
+      "takeaway": "HPO 정규화에서 Macro Top-1 88.78%, Micro Top-1 86.75%로 최신 성능을 달성해 가장 강한 기준선을 각각 4.85%p, 5.07%p 초과했다. 절제 분석은 세 단계의 상보적 기여를 보였고, 후보 집합 크기와 모델 백본에 걸친 민감도 분석에서 안정성을 보였으며, MONDO, MEDIC, NCBITaxon에도 적용 가능성을 보였고, 초록에는 별도의 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.10008v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.10008v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.10055v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.10055v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -34,29 +33,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09790",
-    "title": "LogiScope-VQA: Benchmarking Vision-Language Models for Logistics Hazard Identification in Industrial Scenarios",
-    "authors": "Hanjing Zhou et al.",
+    "id": "2609.10237",
+    "title": "The Answer Path and the Grounding Instruction in LLM Question Answering over Knowledge Graphs",
+    "authors": "Arquimedes Canedo",
     "published": "2026-09-09",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
+      "cs.CL",
+      "cs.IR"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "multimodal"
+      "retrieval",
+      "generation"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "지식 그래프 기반 LLM 질의응답에서 그래프 RAG 파이프라인의 트리플 선택, 문법, 순서, grounding instruction을 6개 LLM과 2개 KGQA 벤치마크에서 변화시킨 결과, 답 경로 포함 여부와 grounding instruction이 답을 움직이고 문법·트리플 순서·서브그래프 크기는 다중 홉 깊이에서 측정 가능한 효과가 없었다고 보고한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "지식 그래프 QA용 graph RAG에서 프롬프트에 어떤 트리플을 넣고, 어떤 문법과 순서로 쓰며, 모델에 어떻게 지시할지가 성능에 미치는 영향을 분리해 이해하는 문제를 다룬다.",
+      "method": "gold SPARQL에서 만든 서브그래프를 사용해 검색기는 제외하고, 6개 LLM과 2개 KGQA 벤치마크에서 트리플 선택(답 경로 포함 여부), 문법, 트리플 순서, grounding instruction을 변화시켜 비교한다.",
+      "takeaway": "답 경로가 프롬프트에 있으면 중요하며, 트리플 수를 고정한 채 답 경로가 아닌 트리플을 무관한 엔터티 자료로 바꿔도 F1 변화는 +0.003인 반면 답 경로 제거는 그래프가 제공하던 이득 대부분을 없앴고, 검색 예산은 recall에 두어야 하며 테스트 범위의 precision은 이득이 없다(검색기는 없고 gold SPARQL 서브그래프를 사용하므로 precision은 시스템 설정이 아니라 구축한 문맥을 설명한다). 사실이 없는 프롬프트에서 제공된 사실만 사용하라는 grounding instruction은 F1을 0.299에서 0.035로 떨어뜨렸지만(8.63배) 이는 빈 컨텍스트 arm 평가의 한계가 있으며, 문맥 arm에만 지시를 적용하고 no-context baseline에는 적용하지 않는 실험은 그래프 문맥이 깊이에서 해롭다는 허위 발견을 만들 수 있어 저자들은 자신들의 결과에서 그러한 발견 하나를 철회했고, 형식 민감 scorer 때문에 grounding instruction과 올바른 컨텍스트의 비교는 수치가 아닌 open contrast로 남긴다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09790v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09790v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.10237v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.10237v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -65,30 +63,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.10355",
-    "title": "Why Is Video Still So Expensive? A Survey of Inference-Efficiency Mechanisms in Video and Audiovisual LLMs",
-    "authors": "Killian Steunou, Yannis Tevissen, Mounîm A. El Yacoubi",
+    "id": "2609.10335",
+    "title": "From Symbolic Perception to Logical Deduction: A Framework for Guiding Language Models in Geometric Reasoning",
+    "authors": "Weichen Dai et al.",
     "published": "2026-09-09",
     "category": "multimodal",
     "categories": [
-      "cs.CV",
-      "cs.CL",
-      "cs.MM"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
-      "video",
-      "retrieval",
-      "survey",
-      "generation"
+      "benchmark",
+      "multimodal"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "기하학적 도형을 기호 형태로 변환하는 Geometric Vision Parser와 형식적 연역을 수행하는 Symbolic Solver를 결합해, 순수 LLM이 복잡한 기하 문제에서 최신 LMM에 필적하는 성능을 낼 수 있음을 보인 프레임워크다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "평면 기하학은 시각적 지각과 수학적 추론의 통합을 요구한다. 기존 Large Multimodal Models는 이러한 입력을 다루지만 계산 집약적이고 불투명한 경우가 많다.",
+      "method": "Geometric Vision Parser로 도형을 기호 형태로 번역하고, Symbolic Solver로 형식적 연역을 수행하는 프레임워크를 제안한다. 이를 통해 환각을 완화하고 해석 가능한 추론을 촉진한다. 또한 2025년 중국 중카오 시험의 어려운 문제로 벤치마크를 구성해 엄격히 평가한다.",
+      "takeaway": "실험에서 제안 방법은 Gemini 2.5 Pro와 필적하는 성능을 달성하면서 더 명확하고 인간다운 해법을 제공한다고 보고한다. 초록에는 명시적인 한계가 언급되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.10355v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.10355v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.10335v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.10335v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -97,28 +92,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09985",
-    "title": "VLX-VR: An Agentic-Aware Video Reasoning Model",
-    "authors": "Sheng Li et al.",
+    "id": "2609.10441",
+    "title": "ConvMem: Convolutional Memory for Long-Context Reasoning",
+    "authors": "Hongming Zhang et al.",
     "published": "2026-09-09",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.CV"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
       "agents",
-      "video",
-      "multimodal"
+      "benchmark"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "ConvMem은 긴 문맥 추론을 계층적 합성곱으로 재구성한 훈련 불필요·고병렬화 프레임워크로, 순차적 메모리 갱신의 높은 지연과 RL 훈련 필요성을 피하고 RULER-HotpotQA 및 RULER-2WikiMultiHopQA에서 훈련 불필요 베이스라인을 능가한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "LLM은 고정된 컨텍스트 한계 때문에 매우 긴 문맥 처리에 어려움을 겪는다. MemAgent 같은 순차적 접근은 텍스트를 분할해 고정 크기 메모리를 반복 갱신하지만, 높은 지연과 비용이 큰 RL 훈련, 특정 데이터셋 과적합 문제가 있다.",
+      "method": "ConvMem은 훈련 없이 높은 병렬화가 가능하며, 특정 쿼리로 프롬프트된 LLM을 합성곱 커널로 취급해 텍스트 세그먼트를 계층적으로 요약한다. Configurable Strides, Skip Connections, Multi-Kernel Convolution을 통합해 증거 포착·전파를 돕고 복잡한 쿼리를 분리된 의미 채널로 분해하며, 추론 경로를 선형 체인에서 로그 트리로 단축한다.",
+      "takeaway": "RULER-HotpotQA와 RULER-2WikiMultiHopQA 실험에서 ConvMem은 훈련 불필요 베이스라인을 능가하고, RL 훈련 모델이 OOD 작업에서 보이는 파라메트릭 사전지식 과적합 위험을 피한다. 초록에는 ConvMem 자체의 한계는 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09985v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09985v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.10441v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.10441v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -127,27 +121,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09766",
-    "title": "CARRE: Counterfactual Action Retrieval and Reason Evaluation for Explainable Churn Prescription",
-    "authors": "MinJoo Kim, SanJin Park, SeungHwan Cho",
+    "id": "2609.10322",
+    "title": "Geometry Without Coordinates: LiDAR Diffusion as a 3D Feature Bridge",
+    "authors": "Samed Doğan, Nico Leuze, Alfred Schöttl",
     "published": "2026-09-09",
-    "category": "llm",
+    "category": "cv",
     "categories": [
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
-      "retrieval",
-      "benchmark",
-      "generation"
+      "diffusion",
+      "3d"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "이 논문은 2D 기반 모델의 의사 라벨로 학습한 LiDAR 조건부 확산 모델이 2D 감독만으로 구조화된 3D 특징 표현을 유도할 수 있음을 보인다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "대규모 2D 기반 모델의 사전 지식을 희소한 3D LiDAR로 전이하는 것은 어렵다. 비슷한 규모의 네이티브 3D 기반 모델 학습은 데이터와 주석 부족으로 제한된다.",
+      "method": "저자들은 상용 2D 기반 모델의 의사 라벨로 학습된 LiDAR 조건부 확산 모델을 제안한다. 이 모델은 텍스트 작업 프롬프트로 깊이, 의미론적 분할, 인스턴스 예측 등 여러 출력 양식을 선택할 수 있으며, LiDAR에 조건화되어 출력과 중간 UNet 특징을 입력 포인트 클라우드에 역투영할 수 있다. 또한 원시 공간 좌표를 제외하고 포인트 클라우드 공간에서 표현을 직접 분석한다.",
+      "takeaway": "선형 프로브는 3D 의미 클래스에서 최대 약 23% MIoU를 회복했고, 대응하는 가우시안 노이즈 대조군은 약 3.5%였다. 모달리티별 특징 스트림은 초기 인코더에서 약하게 정렬되고 중간층에서 공유 표현으로 수렴한 뒤 디코더에서 재전문화되는 계층적 구조를 보였으며, 초록에는 별도의 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09766v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09766v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.10322v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.10322v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -156,27 +149,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09852",
-    "title": "$S^3$-Bench: Evaluating Speech Interaction Models as Scientific Voice Assistants",
-    "authors": "Heyang Liu et al.",
-    "published": "2026-09-09",
-    "category": "llm",
+    "id": "2609.09528",
+    "title": "MotionBlind: Probing the Illusion of Motion Understanding in Video-LLMs",
+    "authors": "Dhairya Bhatia et al.",
+    "published": "2026-09-08",
+    "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
-      "agents",
-      "multimodal",
-      "generation"
+      "benchmark",
+      "video"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "Video-LLM이 물리적 운동(속도·크기·방향)을 실제로 읽는지 평가하는 contrastive benchmark MotionBlind를 제안하고, 대부분 모델이 우연 수준이며 프레임 증가나 선택 전략으로도 개선되지 않음을 보인다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "Video-LLM은 world model의 지각 front end로 가정되지만, 논문은 이들이 같은 방 안 같은 사람의 두 클립에서 어느 쪽이 더 빠른지도 구분하지 못함을 보인다.",
+      "method": "MotionBlind는 운동만 다른 near-identical self-recorded video 쌍으로 구성된 contrastive benchmark로, 각 인스턴스에 네 개 yes/no 항목을 두고 모두 맞혀야 credit을 주며 IAcc(우연 바닥 6.25%)로 평가한다. 여섯 open 및 두 frontier Video-LLM을 대상으로 video 유무, temporal order, frame sampling(1~24 frames, 네 전략)을 통제해 실험한다.",
+      "takeaway": "Open 모델은 6.25% 바닥 근처이고 scale도 도움이 안 되며, video 제거 시 IAcc 0, frame shuffling 시 chance로 떨어져 video가 순서대로 필요함을 보인다. 더 많은/더 나은 frame 선택도 격차를 닫지 못했고, Gemini3.1 Pro만 전체 benchmark를 통과하지만 speed에서는 실패하므로 같은 행동의 두 속도를 구분 못하는 frontend는 world model의 supervision, reward, evaluation source로 아직 신뢰할 수 없다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09852v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09852v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09528v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09528v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -185,28 +177,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.10226",
-    "title": "$Φ$-Bench: Can Large Language Models Engineer the Infrastructure That Powers Them?",
-    "authors": "Leilei Ding et al.",
+    "id": "2609.09899",
+    "title": "Strangers to Themselves: What Language Models Say About Themselves Is Generic",
+    "authors": "Phil Blandfort, Urja Pawar",
     "published": "2026-09-09",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.LG",
+      "cs.AI",
+      "cs.CL",
+      "cs.CV",
+      "cs.CY"
     ],
     "tags": [
-      "benchmark",
-      "autonomous-driving",
-      "code-generation",
-      "generation"
+      "agents"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "언어 모델의 자기 행동 설명은 자기 자신에 대한 특권적 지식보다 일반적인 AI 보조자 이론과 자기에게 유리한 편향을 주로 반영한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "언어 모델이 푸시백, 도구 오용, 압박 속 거짓말 등 자신의 행동을 유창하게 설명하지만, 그 설명이 실제로 해당 모델 자신에 대한 것인지 불분명하다.",
+      "method": "자기 지식을 예측 테스트로 바꾸어, 아홉 개 행동 평가에서 조건별 행동률을 측정하고 모델이 그 비율을 예측하게 하며, 질문에서 자기(self)를 제거한 통제 조건과 비교한다.",
+      "takeaway": "직접 자기보고는 예측력이 약하고(r=+0.04), 항목을 보여줘도 +0.24에 그쳤으며, '일반적인 유능한 AI 에이전트' 질문(+0.28)이나 다른 모델의 자기 답변이 적어도 비슷하게 예측했다. 프런티어 규모도 이 패턴을 감지 가능하게 바꾸지 않았고, 1인칭 프레이밍은 해로운 행동을 과소평가하는 유리한 편향을, 자기 기록 파인튜닝은 행동 자체를 바꾸고 넓게 전이되지 않는 좁은 자기예측을 낳았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.10226v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.10226v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09899v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09899v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -215,30 +208,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.10293",
-    "title": "GANDR: Claim Auditing for Verifiable Legal Answer Generation",
-    "authors": "Chen Qian et al.",
+    "id": "2609.09949",
+    "title": "Vague2Detect: Handling Ambiguous Prompts in Knowledge-Based Open-World Detection",
+    "authors": "Ibrohimjon Muminov, Jihie Kim",
     "published": "2026-09-09",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
+      "cs.CV",
       "cs.CL",
-      "cs.AI",
-      "cs.IR"
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "retrieval",
-      "generation"
+      "detection"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "Vague2Detect는 모호한 프롬프트를 구조화된 가정 지식베이스 검색과 YOLO-World 검증, 필요 시 GPT-3.5-turbo 폴백으로 처리하여 YOLO-World 단독보다 Vague Prompt Success Rate(VPSR)를 향상시키는 하이브리드 파이프라인이다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "YOLO 같은 기존 검출기는 고정된 클래스 목록에 제한되고, YOLO-World 같은 오픈 어휘 모델도 모호한 언어를 의도된 객체와 자주 잘못 정렬한다. 이 연구는 작업 주도 질의를 그라운딩하는 YOLO-World의 한계를 해결하려 한다.",
+      "method": "Vague2Detect는 파인튜닝된 Sentence-BERT가 구조화된 가정 지식베이스(KB)에서 후보를 검색하고 YOLO-World가 이미지 내 존재를 검증하는 하이브리드 파이프라인이다. KB 밖의 프롬프트에 대해서는 GPT-3.5-turbo가 후보 설명을 생성해 KB를 동적으로 확장한다.",
+      "takeaway": "커스텀 이미지와 Open Images V7 하위 집합을 사용한 가정 장면 벤치마크에서 YOLO-World 단독은 32% VPSR에 그쳤지만, Vague2Detect는 높은 정밀도로 61% VPSR을 달성했고 GPT 폴백을 더하면 최대 85%까지 향상되었다. 초록에는 Vague2Detect 자체의 명시적 한계는 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.10293v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.10293v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09949v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09949v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -247,28 +238,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09895",
-    "title": "Can We Trust Video Hallucination Detectors? VidHalLoc for Evaluating the Evaluators",
-    "authors": "Xinyu Chen, Adnan Mahmood, Mark Dras",
+    "id": "2609.09578",
+    "title": "CityPlanner: A Sandbox Agent for Executable Urban Planning",
+    "authors": "Wentao Zhang et al.",
     "published": "2026-09-09",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.AI",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "video",
-      "detection"
+      "agents"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "CityPlanner는 파일 기반 UrbanSandbox 환경에서 계획 생성·평가·수정 과정을 실행 가능한 피드백으로 수행하고, 이를 BuildPlan과 ImprovePlan의 원자적 과제로 분해해 학습하는 샌드박스 에이전트 프레임워크다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "도시 계획은 비용과 서비스 품질 같은 실용적 목표 아래 큰 후보 공간에서 실행 가능한 행동을 선택해야 하는 실제 공간 최적화 문제다. 기존 최적화 및 강화학습 방법은 고정된 정식화에는 효과적이지만 과제별 표현과 제약 처리에 의존하는 경우가 많다.",
+      "method": "CityPlanner는 에이전트가 과제 파일을 검사하고 계획을 생성하며 평가기를 실행하고 실행 가능한 피드백에 따라 결정을 수정하는 통합 파일 기반 환경 UrbanSandbox를 도입한다. 또한 긴 샌드박스 궤적을 초기 구축용 BuildPlan과 피드백 기반 개선용 ImprovePlan으로 분해하는 atomic-task 강화학습을 제안한다.",
+      "takeaway": "실제 벤치마크 실험에서 CityPlanner는 휴리스틱, 과제별 강화학습, 일반 LLM 에이전트 베이스라인을 일관되게 능가했고, 절제 실험은 UrbanSandbox, atomic-task RL, 반복적 배포의 기여를 검증했다. 초록에는 명시적 한계가 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09895v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09895v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09578v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09578v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -277,29 +267,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.10540",
-    "title": "Programmable World Model",
-    "authors": "Zheng-Hui Huang et al.",
+    "id": "2609.09672",
+    "title": "SEA-SpeechBench: A Large-Scale Multitask Benchmark for Speech Understanding Across Southeast Asia",
+    "authors": "Jingyi Liao et al.",
     "published": "2026-09-09",
-    "category": "multimodal",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "3d",
-      "video",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "SEA-SpeechBench는 11개 동남아시아 언어의 음성 이해를 평가하기 위한 97,194개 샘플, 99개 평가 세트, 597시간 오디오 기반의 대규모 다중 과제 벤치마크다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "오디오 및 멀티모달 대규모 언어 모델의 발전에도 평가 프레임워크는 주로 영어 중심이라 동남아시아 언어는 크게 underrepresented 상태다.",
+      "method": "11개 SEA 언어에서 음성 처리, 준언어 분석, 최대 3분 오디오 내 시간적 이해를 포함한 3개 범주 9개 과제를 평가하며, 원어 SEA 언어와 영어로 멀티링구얼 프롬프팅을 수행한다.",
+      "takeaway": "선도 오픈소스 및 상용 시스템 평가에서 모든 모델은 시간적 이해, 감정 인식, 음성 번역에서 전반적으로 낮은 성능을 보였다. 버마어와 타밀어 같은 저자원 언어 프롬프트는 영어보다 최대 41%포인트 뒤처져 모델 한계와 포용적 모델 개발의 필요성을 드러낸다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.10540v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.10540v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09672v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09672v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -308,29 +295,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09628",
-    "title": "Who Are They to Each Other? Multi-Agent Reasoning for Speaker Relationship Inference",
-    "authors": "Yaohan Guan et al.",
+    "id": "2609.09696",
+    "title": "When Auditors Fabricate: Batch-Size Degradation and Confident Hallucination in LLM Detection of Planted Document Contamination",
+    "authors": "Karan Parekh et al.",
     "published": "2026-09-09",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.MA",
       "cs.CL",
-      "cs.SD"
+      "cs.AI"
     ],
     "tags": [
-      "agents",
-      "multimodal",
-      "benchmark"
+      "medical",
+      "detection"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "LLM 기반 문서 감사는 배치 크기가 커질수록 심어진 오류 탐지가 붕괴하고, 불완전 처리를 보고하는 대신 그럴듯한 허위 오염을 만들어낼 수 있음을 보여준다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "LLM을 문서 품질의 자동 감사자로 제안하는 사례가 늘고 있지만, 심어진 오류 탐지자로서의 신뢰성은 잘 규명되지 않았다.",
+      "method": "공급망 관리와 의학 연구 논문 150편에 오타/활자 손상, 의미 반전, 맥락 밖 부조리 삽입의 세 유형으로 450개 오염을 주입하고, 60개 문서의 180개 오염 정답 키 부분집합에 대해 Google Gemini 3.0 Pro를 단일 문서, 소배치, 대배치 프롬프팅으로 평가했다.",
+      "takeaway": "탐지율은 단일 문서 50%, 소배치 60%, 대배치 2.8%였고, 대규모 실패는 기권이 아니라 'telepathic squirrel' 같은 문서에 없는 오염을 자신 있게 만들어내는 허위 생성이었다. 완료된 평가에서 부조리 삽입은 75% 회수됐지만 의미 반전과 오타/활자 손상은 각각 50%만 회수되어 그럴듯한 오염이 더 자주 놓쳤으며, 저자들은 기만적 성능 저하를 막기 위해 제한된 배치 크기, 직접 콘텐츠 주입, 보고된 모든 발견의 원문 대조 기계적 검증이 필요하다고 결론내린다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09628v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09628v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09696v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09696v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -339,30 +324,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2609.09662",
-    "title": "PELM: Power Efficient On-Device LLM Inference with Speculative Decoding and Dynamic Voltage Frequency Scaling",
-    "authors": "Weisi Yang, Stephen Xia",
+    "id": "2609.09764",
+    "title": "SocialRL: Refining LLMs' Social Intelligence through Multi-turn Reinforcement Learning and Reward Design",
+    "authors": "Jianing Wang et al.",
     "published": "2026-09-09",
     "category": "llm",
     "categories": [
-      "cs.LG",
-      "cs.CL",
-      "cs.OS",
-      "cs.PF"
+      "cs.CL"
     ],
     "tags": [
-      "privacy",
       "benchmark",
-      "generation"
+      "agents",
+      "autonomous-driving"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "SocialRL은 다중 턴 강화학습과 보상 설계를 통해 LLM의 사회적 지능을 개선하는 프레임워크로, 사회적 대화 벤치마크에서 목표 달성률을 Base 모델 대비 평균 9.2%p 향상시켰다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "기존 강화학습 방법은 단일 턴 발화와 희소한 결과 보상을 최적화해, 다중 턴 상호작용에서 목표-관계 긴장을 관리하지 못하는 근시안적 정책을 만든다. 이 논문은 이러한 문제를 해결하려 한다.",
+      "method": "SocialRL은 지연된 결과 보상을 각 턴으로 전파하는 PPO 기반 다중 턴 강화학습을 적용하고, 목표 진전·관계적 조율·맥락 일관성 등 6개 과정 보상 차원을 설계한다. 보상 모델이 각 차원의 세밀한 평가 기준을 동적으로 생성하며, 단계 인식 가중치 스케줄로 초반 관계 형성, 중반 목표 진전, 후반 균형적 마무리를 우선한다.",
+      "takeaway": "여러 사회적 대화 벤치마크에서 SocialRL은 해당 Base 모델보다 Goal Achievement를 평균 9.2%p 향상시켰고, 합성 및 실제 사회 장면과 표준·도전적 사회 시나리오에서 효과를 보였다. 초록에는 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2609.09662v1",
-    "pdfUrl": "https://arxiv.org/pdf/2609.09662v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2609.09764v1",
+    "pdfUrl": "https://arxiv.org/pdf/2609.09764v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -385,11 +367,11 @@ window.PAPERS = [
       "agents",
       "multimodal"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "이 논문은 LLM 기반 에이전트의 마이크로서비스 장애 진단을 최종 답안 중심이 아니라 추론 과정까지 평가하기 위해 AIOps2025와 RCA100 두 대규모 데이터셋을 제안한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "기존 벤치마크는 주로 최종 답안만 평가하여 멀티모달 관측 데이터를 이용한 장애 진단의 체계적 추론 과정을 평가하지 못한다.",
+      "method": "Localization, Identification, Reason의 세 차원으로 진단 능력을 평가하는 추론 과정 평가 패러다임 아래, HipsterShop과 OpenTelemetry Demo Store를 대상으로 500개 이상의 전문가 라벨링 장애 사례를 포함한 AIOps2025와 RCA100을 제안한다.",
+      "takeaway": "두 데이터셋은 자원, 네트워크, 런타임, 미들웨어/데이터베이스, 애플리케이션 로직 등 다양한 장애 시나리오와 세밀한 인과 증거를 제공하며, 6,000개 이상 팀이 참여한 대규모 대회를 통해 검증되었다. 초록에는 별도의 한계가 명시되지 않았다."
     },
     "sourceUrl": "https://arxiv.org/abs/2606.29193v1",
     "pdfUrl": "https://arxiv.org/pdf/2606.29193v1.pdf",
@@ -402,7 +384,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W7166901903"
     }
   },
@@ -418,11 +400,11 @@ window.PAPERS = [
     "tags": [
       "agents"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "이 논문은 미시적 교통 시뮬레이션에서 동적 OD 행렬 추정(DODE)을 마르코프 결정 과정으로 정식화하고, 모델 없는 심층 강화학습 프레임워크를 제안하여 credit assignment 문제를 다룬다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "미시적 시뮬레이션에서 DODE는 복잡한 시간적 동학과 개별 차량 동학의 내재적 불확실성 때문에 특정 차량이 언제 어느 링크를 통과하는지 정확히 파악하기 어렵게 한다. 이로 인해 OD 행렬과 링크 흐름에 대한 기여 간 관계가 복잡하고 모호해지며, 이는 credit assignment 문제로 이어진다.",
+      "method": "DODE 문제를 마르코프 결정 과정(MDP)으로 정식화하고, 에이전트가 시뮬레이션 환경과 직접 상호작용하며 OD 행렬을 순차적으로 생성하는 최적 정책을 학습하는 모델 없는 심층 강화학습(DRL) 기반 프레임워크를 제안한다.",
+      "takeaway": "Nguyen-Dupuis 네트워크 toy 실험과 Santa Clara 및 San Jose에 걸친 실제 고속도로 하위 네트워크 사례 연구에서 제안 방법은 가장 강한 기존 베이스라인보다 보정 성능을 일관되게 개선해 링크 흐름 MSE를 toy 실험에서 23.7%, 실제 사례에서 59.2-88.3% 감소시켰고, DODE를 순차적 의사결정 문제로 재정의해 학습된 정책으로 credit assignment 문제를 다루는 새 프레임워크를 제공한다; 초록에는 별도의 한계가 명시되지 않았다."
     },
     "sourceUrl": "https://arxiv.org/abs/2511.06229v1",
     "pdfUrl": "https://arxiv.org/pdf/2511.06229v1.pdf",
@@ -435,7 +417,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4416157221"
     }
   },
@@ -453,11 +435,11 @@ window.PAPERS = [
       "privacy",
       "survey"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "클라우드 LLM과 엣지 SLM이 추론과 학습에서 협력하는 패러다임을 알고리즘, 실행, 응용 관점에서 체계적으로 정리한 서베이이다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "LLM을 클라우드에만 배포하거나 엣지 기기용으로 압축하는 방식은 지연, 프라이버시, 비용, 개인화 측면에서 불충분하다. 이 서베이는 클라우드 LLM과 엣지 SLM의 추론 및 학습 협업을 탐구한다.",
+      "method": "추론 협업을 작업 할당, 작업 분할, 작업/토큰 단위의 혼합 기반 협업으로 분류하고 적응형 스케줄링, 자원 인식 오프로딩, 추측 디코딩, 모듈식 라우팅을 다룬다. 학습에서는 파라미터 정렬, 프루닝, 양방향 증류, 소형 모델 유도 최적화 등 분산 적응 기법과 데이터셋, 벤치마크, 배포 사례, 프라이버시 보존 방법, 버티컬 응용을 검토한다.",
+      "takeaway": "이 서베이는 LLM-SLM 협업에 대한 최초의 체계적 기반을 제공하며, 시스템과 알고리즘의 공동 설계를 통해 효율적이고 확장 가능하며 신뢰할 수 있는 엣지-클라우드 지능을 가능하게 하는 것을 목표로 한다. 초록에는 구체적 한계나 정량적 결과는 명시되지 않았다."
     },
     "sourceUrl": "https://arxiv.org/abs/2507.16731v1",
     "pdfUrl": "https://arxiv.org/pdf/2507.16731v1.pdf",
@@ -465,12 +447,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 5
+      "month": 4
     },
     "metrics": {
-      "citationCount": 4,
+      "citationCount": 5,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4417440855"
     }
   },
@@ -485,11 +467,11 @@ window.PAPERS = [
       "gr-qc"
     ],
     "tags": [],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "두 LIGO 관측소가 2023년 11월 23일 검출한 GW231123은 질량 137^{+23}_{-18} M⊙와 101^{+22}_{-50} M⊙, 높은 스핀을 가진 두 블랙홀의 병합 신호이며, 이론적 질량갭 및 중간질량 블랙홀 형성에 시사점을 준다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "GW231123과 같은 고질량 블랙홀 병합이 이론적 질량갭(60-130 M⊙) 및 중간질량 블랙홀 형성과 어떻게 관련되는지 이해하는 것이 문제다.",
+      "method": "두 LIGO 관측소의 중력파 검출과 신호 모델 비교, 독립적 ringdown 분석을 통해 병합 매개변수를 추정했다.",
+      "takeaway": "관측은 주 블랙홀이 질량갭 안 또는 위에, 이차 블랙홀이 질량갭을 가로지르는 것을 보여주며, 일부 매개변수는 신호 모델 간 차이로 큰 계통 불확실성이 있다. 이는 표준 항성 붕괴를 넘어선 블랙홀 형성 경로와 ~200 M⊙ 중간질량 블랙홀이 중력파 병합으로 형성될 가능성을 시사한다."
     },
     "sourceUrl": "https://arxiv.org/abs/2507.08219v1",
     "pdfUrl": "https://arxiv.org/pdf/2507.08219v1.pdf",
@@ -497,12 +479,12 @@ window.PAPERS = [
       "year"
     ],
     "recommendationRanks": {
-      "year": 4
+      "year": 3
     },
     "metrics": {
       "citationCount": 121,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4415620163"
     }
   },
@@ -522,11 +504,11 @@ window.PAPERS = [
       "multimodal",
       "generation"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "SEAL은 장기 꼬리(long-tail) 및 협력 자율주행 상황에서 강건한 자율주행을 위한 비전-언어 모델 기반 적응형 멀티모달 학습 프레임워크를 제안한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "자율주행은 희귀하고 다양한 시각적 열화 날씨 상황에서 안전 문제를 겪으며, 차량과 인프라가 함께 인지·추론하는 협력 환경에서는 더욱 중요해진다.",
+      "method": "SEAL은 프롬프트 기반 long-tail 시나리오 생성·평가 파이프라인, 시나리오 사전 정보로 시각 스트림을 조정하는 gated multi-scenario adaptive attention 모듈, 멀티태스크 시나리오 인식 대조 학습 목표를 도입한다.",
+      "takeaway": "실험에서 SEAL은 복잡하고 도전적인 주행 조건에서 기존 베이스라인보다 추론, 안전, 계획 정확도에서 크게 앞섰다. 초록에는 한계가 명시되지 않았다."
     },
     "sourceUrl": "https://arxiv.org/abs/2506.21041v1",
     "pdfUrl": "https://arxiv.org/pdf/2506.21041v1.pdf",
@@ -539,45 +521,40 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 0,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4415343292"
     }
   },
   {
-    "id": "2505.13995",
-    "title": "ELEPHANT: Measuring and understanding social sycophancy in LLMs",
-    "authors": "Myra Cheng et al.",
-    "published": "2025-05-20",
-    "category": "multimodal",
+    "id": "2506.11552",
+    "title": "Learning Encodings by Maximizing State Distinguishability: Variational Quantum Error Correction",
+    "authors": "Nico Meyer et al.",
+    "published": "2025-06-13",
+    "category": "llm",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.CY"
+      "quant-ph",
+      "cs.LG"
     ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "tags": [],
+    "summaryKo": "양자 오류 정정을 위해 잡음 채널 이후 양자 상태 간 구별 가능성을 최대화하는 목적 함수를 제안하고, 이를 변분 기법(VarQEC)으로 구현해 주어진 잡음 특성에 최적화된 자원 효율적 인코딩 회로를 학습한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "기존 표면 코드 등 전통적 양자 오류 정정 코드는 상당한 오버헤드를 요구해 근시일의 초기 내결함성 장치에 실용적이지 않다.",
+      "method": "잡음 구조에 맞춰 오류 정정 코드를 조정하기 위해 잡음 채널 후 양자 상태 간 구별 가능성을 최대화하는 구별 가능성 손실 함수를 목적 함수로 공식화하고, 이를 기계학습 목표로 사용해 자원 효율적 인코딩 회로를 찾는 변분 양자 오류 정정(VarQEC)을 제안한다.",
+      "takeaway": "제안 방법은 바람직한 이론적·실용적 성질을 가진 코드를 산출하고 여러 시나리오에서 표준 코드보다 우수하며, IBM 및 IQM 하드웨어 장치에서 개념 증명 시연을 제공한다. 초록에는 구체적 한계가 명시되어 있지 않다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2505.13995v1",
-    "pdfUrl": "https://arxiv.org/pdf/2505.13995v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2506.11552v1",
+    "pdfUrl": "https://arxiv.org/pdf/2506.11552v1.pdf",
     "recommendationModes": [
-      "sixMonths",
-      "year"
+      "month"
     ],
     "recommendationRanks": {
-      "sixMonths": 3,
-      "year": 5
+      "month": 6
     },
     "metrics": {
-      "citationCount": 108,
+      "citationCount": 2,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
-      "openAlexId": "W7140705274"
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
+      "openAlexId": "W4415068907"
     }
   },
   {
@@ -599,11 +576,11 @@ window.PAPERS = [
       "medical",
       "generation"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "Co-Scientist는 Gemini 기반 다중 에이전트 AI 시스템으로, 테스트 시간 컴퓨팅 확장과 토너먼트 진화 과정을 통해 과학적 가설을 생성·비판·정제하며 생의학 응용에서 실험적으로 검증된 가설을 도출해 과학적 발견을 가속할 가능성을 보여준다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "과학적 발견은 과학자들이 복잡한 문제에 대한 새로운 가설을 생성하고 엄격한 실험 검증을 거치는 과정에서 이루어지며, 이 과정을 증강할 필요가 있다.",
+      "method": "연구 목표와 기존 과학적 증거에 조건화된 Co-Scientist는 Gemini 기반 다중 에이전트 AI 시스템으로, 비동기 작업 실행 프레임워크를 갖춘 다중 에이전트 아키텍처와 자기개선 가설 생성을 위한 토너먼트 진화 과정을 사용하며 테스트 시간 컴퓨팅 확장으로 가설 생성·비판·정제를 가속한다.",
+      "takeaway": "자동 평가는 테스트 시간 컴퓨팅 확장의 지속적 이점과 시간에 따른 가설 품질 향상을 보였고, 세 가지 생의학 응용에서 검증되었으며 특히 급성 골수성 백혈병의 신약 재창출 후보와 상승작용 병용 요법이 in vitro 실험으로 검증되었다. 일반 목적이지만 검증은 약물 재창출, 신규 표적 발견, 항생제 내성 기전 설명에 집중되었다."
     },
     "sourceUrl": "https://arxiv.org/abs/2502.18864v1",
     "pdfUrl": "https://arxiv.org/pdf/2502.18864v1.pdf",
@@ -612,13 +589,13 @@ window.PAPERS = [
       "year"
     ],
     "recommendationRanks": {
-      "sixMonths": 5,
-      "year": 6
+      "sixMonths": 4,
+      "year": 5
     },
     "metrics": {
       "citationCount": 85,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4416043407"
     }
   },
@@ -634,11 +611,11 @@ window.PAPERS = [
     "tags": [
       "benchmark"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "세 편의 연구와 7개 데이터셋, 88만 개 이상의 텍스트를 통해 LLM writing assistant의 광범위한 사용이 언어적 다양성 감소와 연관되어 있으며, LLM이 텍스트를 다듬고 재작성할 때 핵심 내용은 유지되지만 문체가 동질화되고 쓰기 복잡성 분산이 21-50% 통계적으로 유의하게 감소하는 등 동질성과 순응을 강조하는 경향이 나타났다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "언어는 개인의 정체성, 심리 상태, 사회적 맥락에 대한 정보를 담고 있어 심리학, 마케팅, 의료 등 여러 분야에 통찰을 제공한다. 그러나 LLM writing assistant의 광범위한 사용은 언어적 다양성 감소와 연결되어 이러한 사회적·심리적 통찰을 방해할 수 있다.",
+      "method": "서로 다른 도메인의 7개 데이터셋과 880,000개 이상의 텍스트를 아우르는 세 편의 연구를 수행하여 LLM이 텍스트를 다듬고 재작성할 때 나타나는 영향을 분석했다.",
+      "takeaway": "LLM이 텍스트를 다듬고 재작성하면 핵심 내용은 유지되지만 문체가 동질화되고 쓰기 복잡성 분산이 데이터셋과 모델 전반에서 통계적으로 유의하게 21-50% 감소하며, 지배적 특성 관련 패턴은 증폭되고 다른 특성은 억제되어 개성보다 순응이 강조되는 경향이 여러 LLM, 프롬프트, 맥락에서 나타났다. 초록에는 명시적 한계가 제시되지 않았으나, 이러한 경향은 진단 과정, 개인화, 채용 평가, 문화 보존에 잠재적 함의를 가진다."
     },
     "sourceUrl": "https://arxiv.org/abs/2502.11266v1",
     "pdfUrl": "https://arxiv.org/pdf/2502.11266v1.pdf",
@@ -646,12 +623,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 4
+      "month": 5
     },
     "metrics": {
       "citationCount": 4,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4407695828"
     }
   },
@@ -673,11 +650,11 @@ window.PAPERS = [
       "survey",
       "generation"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "대규모 멀티모달 언어모델의 등장으로 AI 기반 과학 연구 혁신이 임박한 가운데, 본 서베이는 과학 연구 전 주기를 지원하는 AI-assisted scientific discovery의 핵심 기법, 평가 관행, 신흥 동향을 정리한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "대규모 멀티모달 언어모델로 과학이 AI 기반 기술 전환의 문턱에 있으며, 과학 연구 전 주기를 지원하는 모델과 도구 생태계가 등장하고 있다. 이에 대한 대표 문헌과 핵심 기법, 평가, 동향에 대한 정리가 필요하다.",
+      "method": "문헌 검색, 연구 아이디어 생성과 실험 수행, 텍스트 콘텐츠 생성, 그림·다이어그램 등 멀티모달 산출물 생성, 동료심사와 같은 과학 연구 평가의 다섯 과제를 중심으로 데이터셋, 방법, 결과, 평가 전략, 한계, 윤리적 우려를 논의한다.",
+      "takeaway": "본 서베이는 해당 분야 신규 진입자에게 접근 가능하고 구조화된 안내를 제공하고, 향후 AI4Science 시스템으로의 통합과 새로운 AI 기반 이니셔티브를 촉진하는 것을 목표로 한다. 생성 모델 오용으로 인한 연구 진실성 위험 등 한계와 윤리적 우려도 다룬다."
     },
     "sourceUrl": "https://arxiv.org/abs/2502.05151v1",
     "pdfUrl": "https://arxiv.org/pdf/2502.05151v1.pdf",
@@ -685,12 +662,12 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 1
+      "week": 2
     },
     "metrics": {
       "citationCount": 8,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4407310674"
     }
   },
@@ -708,64 +685,59 @@ window.PAPERS = [
       "benchmark",
       "autonomous-driving"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "이 논문은 개방 해역 항해에서 해사 교통 규칙을 준수하며 다른 교통 참여자에게 반응하고 웨이포인트 기반 운동 계획을 수행하는 최초의 지능형 항해 모델(ISM)을 제안하고 두 환경에서 평가한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "자율 선박 개발에는 다른 선박과의 현실적인 상호작용을 모델링하는 시뮬레이션이 필요하지만, 비구조적 환경, 대략적으로만 명시된 교통 규칙, 크게 다양한 선박 유형 때문에 현실적인 상호작용 해사 교통 모델링이 어렵다. 또한 상호작용 해사 환경을 시뮬레이션하여 자율 선박 알고리즘을 엄격히 벤치마킹할 표준이 없다.",
+      "method": "저자들은 개방 해역 항해에서 규칙을 준수하는 선박을 시뮬레이션하는 최초의 지능형 항해 모델(ISM)을 소개한다. ISM 선박은 해사 교통 규칙에 따라 다른 교통 참여자에게 반응하는 동시에 웨이포인트로 특징지어지는 운동 계획 문제를 해결하며, 적용 가능한 규칙을 모니터링하고 규칙 준수 웨이포인트를 생성하며 모델 예측 제어로 이를 추종한다.",
+      "takeaway": "ISM 선박만 있는 상호작용 교통과 실제 해사 교통 데이터 또는 임계성을 위해 수작업된 궤적이 일부 포함된 혼합 교통에서 평가했으며, 다양한 선박 유형의 많은 ISM 선박을 사용한 시뮬레이션이 규칙을 준수하고 확장 가능함을 보였다. 4,049개의 임계 교통 시나리오를 테스트했고, ISM 선박만 있는 상호작용 교통에서 충돌이 발생하지 않았으며 약 97%의 목표 도달률을 달성했으며, 초록에는 한계가 명시되지 않았다."
     },
     "sourceUrl": "https://arxiv.org/abs/2501.04988v1",
     "pdfUrl": "https://arxiv.org/pdf/2501.04988v1.pdf",
     "recommendationModes": [
-      "week",
-      "month"
+      "week"
     ],
     "recommendationRanks": {
-      "week": 3,
-      "month": 6
+      "week": 3
     },
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4406272269"
     }
   },
   {
-    "id": "2407.15558",
-    "title": "Few-Shot Neuromorphic Vision in a Nonlinear Photonic Network Laser",
-    "authors": "Wai Kit Ng et al.",
-    "published": "2024-07-22",
-    "category": "cv",
+    "id": "2406.14315",
+    "title": "AI-coupled HPC Workflow Applications, Middleware and Performance",
+    "authors": "Wes Brewer et al.",
+    "published": "2024-06-20",
+    "category": "llm",
     "categories": [
-      "cond-mat.dis-nn",
-      "cond-mat.mes-hall",
-      "cond-mat.mtrl-sci",
-      "physics.optics"
+      "cs.DC"
     ],
     "tags": [
       "benchmark",
-      "detection"
+      "survey"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "이 논문은 AI가 HPC 시뮬레이션에 통합되며 중요해지는 AI 기반 HPC 워크플로를 이해하기 위한 공통 개념 기반을 제공하고, 실행 모티프와 성능 과제를 조사한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "AI 통합은 HPC 시뮬레이션의 지형을 변화시키고 AI 기반 HPC 워크플로의 중요성, 사용, 성능을 높이고 있지만, 이 분야는 다양하고 빠르게 발전하여 공통된 개념적 기반과 성능 이해가 필요하다.",
+      "method": "이 논문은 AI를 HPC 워크플로에 결합하는 여러 방식에서 얻은 통찰을 사용해 과학 응용에서 가장 흔히 발견되는 여섯 가지 실행 모티프를 제안하고, 이를 통해 AI 기반 HPC 워크플로의 주요 성능 과제를 분석한다. 또한 공개 과제, 연구 문제, 조사 영역을 제시한다.",
+      "takeaway": "제안된 실행 모티프 집합은 정의상 불완전하고 발전 중이지만, AI 기반 HPC 워크플로의 주요 성능 과제를 분석할 수 있게 한다. 논문은 AI 기반 HPC 워크플로의 실행을 평가하고 개선하는 데 도움이 될 특정 벤치마크의 필요성을 포함한 공개 과제를 나열한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2407.15558v1",
-    "pdfUrl": "https://arxiv.org/pdf/2407.15558v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2406.14315v1",
+    "pdfUrl": "https://arxiv.org/pdf/2406.14315v1.pdf",
     "recommendationModes": [
       "week"
     ],
     "recommendationRanks": {
-      "week": 2
+      "week": 1
     },
     "metrics": {
-      "citationCount": 2,
+      "citationCount": 11,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
-      "openAlexId": "W4401300974"
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
+      "openAlexId": "W4399911698"
     }
   },
   {
@@ -799,8 +771,44 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4392677943"
+    }
+  },
+  {
+    "id": "2401.16407",
+    "title": "Is K-fold cross validation the best model selection method for Machine Learning?",
+    "authors": "Juan M Gorriz et al.",
+    "published": "2024-01-29",
+    "category": "llm",
+    "categories": [
+      "stat.ML",
+      "cs.LG",
+      "eess.IV",
+      "eess.SP"
+    ],
+    "tags": [
+      "benchmark"
+    ],
+    "summaryKo": "K-fold 교차검증 기반 기계학습의 불확실한 예측을 최악의 경우로 상한하는 K-fold CUBV 통계 검정을 제안하고, 모의 및 신경영상 데이터셋에서 효과 탐지와 정확도 검증에 강건하며 과도한 위양성을 피할 수 있음을 시사한다.",
+    "detail": {
+      "problem": "K-fold 교차검증은 기계학습 결과가 우연히 생성되었을 가능성을 평가하는 데 널리 쓰이지만, 소규모 표본 데이터셋의 분할과 이질적 데이터 소스 학습의 내재적 문제를 완전히 해결하지 못하며, 학습 파라미터와 폴드별 데이터 분포에 크게 의존하여 과도한 위양성 및 재현성 문제가 발생할 수 있다.",
+      "method": "K-fold 교차검증과 실제 위험의 상한(Upper Bound)에 기반한 K-fold CUBV 통계 검정을 제안하며, 집중 부등식 평가를 통해 CV를 사용한 기계학습의 불확실한 예측을 최악의 경우로 상한하고, 선형 분류기에 대한 PAC-Bayesian 상한을 K-fold CV와 결합하여 실제 위험을 추정한다.",
+      "takeaway": "모의 및 신경영상 데이터셋에서의 성능은 K-fold CUBV가 기계학습과 고전적 CV 방식에서 얻은 정확도 값을 검증하고 효과를 탐지하는 강건한 기준이 되며 과도한 위양성을 피할 수 있음을 시사한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2401.16407v1",
+    "pdfUrl": "https://arxiv.org/pdf/2401.16407v1.pdf",
+    "recommendationModes": [
+      "sixMonths"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 6
+    },
+    "metrics": {
+      "citationCount": 39,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
+      "openAlexId": "W4391377095"
     }
   },
   {
@@ -825,15 +833,17 @@ window.PAPERS = [
     "sourceUrl": "https://arxiv.org/abs/2311.10260v1",
     "pdfUrl": "https://arxiv.org/pdf/2311.10260v1.pdf",
     "recommendationModes": [
-      "sixMonths"
+      "sixMonths",
+      "year"
     ],
     "recommendationRanks": {
-      "sixMonths": 6
+      "sixMonths": 5,
+      "year": 6
     },
     "metrics": {
       "citationCount": 40,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4388843329"
     }
   },
@@ -868,7 +878,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 9,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4388093160"
     }
   },
@@ -892,17 +902,15 @@ window.PAPERS = [
     "sourceUrl": "https://arxiv.org/abs/2310.01728v1",
     "pdfUrl": "https://arxiv.org/pdf/2310.01728v1.pdf",
     "recommendationModes": [
-      "sixMonths",
-      "year"
+      "sixMonths"
     ],
     "recommendationRanks": {
-      "sixMonths": 2,
-      "year": 3
+      "sixMonths": 2
     },
     "metrics": {
       "citationCount": 132,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4387355843"
     }
   },
@@ -920,11 +928,11 @@ window.PAPERS = [
       "privacy",
       "survey"
     ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
+    "summaryKo": "본 논문은 연합학습에서 무엇을 공유할지(model, synthetic data, knowledge)의 관점에서 모델 유용성, 프라이버시 유출, 통신 효율성을 중심으로 기존 연구를 체계적으로 조사한다.",
     "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
+      "problem": "기존 연합학습 서베이들은 주로 학습 과정에서 모델 파라미터를 공유하는 방법에 집중하여, 다른 형태로 로컬 정보를 공유할 가능성을 간과해 왔다.",
+      "method": "연합학습 방법을 모델, 합성 데이터, 지식 공유의 세 가지로 분류하는 새 taxonomy를 제시하고, 각 공유 방법의 프라이버시 공격 취약성과 방어 기법을 분석하며, 학습 성능·통신 오버헤드와 모델 역전 및 멤버십 추론을 통한 프라이버시 유출을 실험적으로 비교한다.",
+      "takeaway": "다양한 공유 방법의 학습 성능, 통신 비용, 프라이버시 유출 및 방어 효과를 비교하고 향후 연구 방향을 제시한다. 초록에는 구체적 결과 수치나 명시적 한계는 제시되지 않는다."
     },
     "sourceUrl": "https://arxiv.org/abs/2307.10655v1",
     "pdfUrl": "https://arxiv.org/pdf/2307.10655v1.pdf",
@@ -937,8 +945,44 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 12,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4385002547"
+    }
+  },
+  {
+    "id": "2306.16092",
+    "title": "Chatlaw: A Multi-Agent Legal Assistant based on a Role-Aligned Mixture-of-Experts Architecture",
+    "authors": "Jiaxi Cui et al.",
+    "published": "2023-06-28",
+    "category": "llm",
+    "categories": [
+      "cs.CL"
+    ],
+    "tags": [
+      "benchmark",
+      "agents"
+    ],
+    "summaryKo": "Chatlaw는 실제 법률 사무소의 SOP를 모방한 다중 에이전트 협업 구조와 역할 정렬 전문가 혼합(RA-MoE) 아키텍처를 통해 중국 법률 지식 부족과 환각 문제를 완화하려는 법률 보조 시스템이다.",
+    "detail": {
+      "problem": "LLM은 법률 서비스에 큰 잠재력이 있지만 중국 법률 체계에 대한 지식이 제한적이고 환각에 취약하다는 두 가지 주요 문제가 있다.",
+      "method": "Chatlaw는 assistant, researcher, senior lawyer 등 역할이 사건을 협업하는 실제 로펌 SOP를 모방하며, 각 에이전트 역할의 질의, 분석, 초안 작성 등 작업에 정렬된 내부 전문가로 구성된 RA-MoE 아키텍처를 제안한다. RA-MoE는 상호작용, 법률 지식 검색, 사건 분석, 상담 생성 등의 계산을 해당 전담 전문가로 라우팅한다.",
+      "takeaway": "평가에서 Chatlaw는 GPT-4를 포함한 범용 AI 모델을 능가하여 LawBench 정확도 7.73% 향상, 법률 전문가 통합 자격시험에서 11점 높은 점수를 달성했고, 실제 사례 연구와 전문가 평가도 견고성을 확인했다. 초록에는 명시적 한계가 제시되지 않았다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2306.16092v1",
+    "pdfUrl": "https://arxiv.org/pdf/2306.16092v1.pdf",
+    "recommendationModes": [
+      "sixMonths",
+      "year"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 3,
+      "year": 4
+    },
+    "metrics": {
+      "citationCount": 94,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
+      "openAlexId": "W4382618722"
     }
   },
   {
@@ -974,41 +1018,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1526,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W4362515116"
-    }
-  },
-  {
-    "id": "2202.07082",
-    "title": "Graph Neural Networks for Graphs with Heterophily: A Survey",
-    "authors": "Xin Zheng et al.",
-    "published": "2022-02-14",
-    "category": "llm",
-    "categories": [
-      "cs.LG"
-    ],
-    "tags": [
-      "survey"
-    ],
-    "summaryKo": "자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.",
-    "detail": {
-      "problem": "자동 요약을 제공할 수 없습니다. 연구가 다루는 문제는 논문 원문과 초록에서 확인해 주세요.",
-      "method": "자동 요약을 제공할 수 없습니다. 제안 방법은 논문 원문과 초록에서 확인해 주세요.",
-      "takeaway": "자동 요약을 제공할 수 없습니다. 결과와 한계는 논문 원문과 초록에서 확인해 주세요."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2202.07082v1",
-    "pdfUrl": "https://arxiv.org/pdf/2202.07082v1.pdf",
-    "recommendationModes": [
-      "sixMonths"
-    ],
-    "recommendationRanks": {
-      "sixMonths": 4
-    },
-    "metrics": {
-      "citationCount": 104,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
-      "openAlexId": "W4221150249"
     }
   },
   {
@@ -1040,14 +1051,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 182,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-09-10T08:31:58.437Z",
+      "citationUpdatedAt": "2026-09-10T11:00:41.202Z",
       "openAlexId": "W3158013077"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-09-10T08:32:02.854Z",
+  "collectedAt": "2026-09-10T11:03:58.210Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -1075,5 +1086,11 @@ window.PAPER_METADATA = {
       }
     },
     "fallbackModes": []
+  },
+  "summary": {
+    "total": 32,
+    "available": 32,
+    "unavailable": 0,
+    "status": "ok"
   }
 };
