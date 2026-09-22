@@ -49,6 +49,7 @@ and improve when quality matters.
 ## Automation note
 
 - OpenCode Go requests identify this collector with `User-Agent: Study-ML-paper-collector/1.0` and a new `x-opencode-session` UUID for each paper's standalone summary conversation. See [Go client requirements](https://opencode.ai/docs/go/#where-can-i-use-it); Go is designed primarily for coding-agent traffic, so these headers alone do not guarantee suitability or continued service for paper summarization.
+- arXiv requests are serialized at least three seconds apart and identify the collector with a project URL in `User-Agent`. HTTP 429 responses use a longer exponential cooldown (30 seconds by default) and honor a longer `Retry-After` value; `ARXIV_MAX_RETRIES` and `ARXIV_RATE_LIMIT_RETRY_MS` tune CI behavior.
 - Cached failure notices and fields without Korean text are rejected. Failed cached summaries are regenerated, fetching the arXiv abstract again when needed; an unavailable notice is never used as the source abstract.
 - `PAPER_METADATA.summary` reports `total`, `available`, `unavailable`, and `status` (`ok`, `partial`, `failed`, or `empty`). `summarizer` is `mixed` or `unavailable` when valid summaries are missing; cached valid summaries count as available.
 - GitHub Actions uses `--require-summaries`: incomplete or empty results fail before overwriting data, so the existing commit step is skipped and the failure notification runs. A normal local run can still write explicit failure notices; use `--dry-run` to inspect output without writing.

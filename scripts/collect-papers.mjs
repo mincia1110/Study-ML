@@ -55,10 +55,12 @@ function positiveInteger(value, fallback) {
 
 const LLM_TIMEOUT_MS = positiveInteger(process.env.OPENCODE_GO_TIMEOUT_MS, DEFAULT_LLM_TIMEOUT_MS);
 const ARXIV_REQUEST_TIMEOUT_MS = positiveInteger(process.env.ARXIV_REQUEST_TIMEOUT_MS, 60_000);
-const ARXIV_MAX_RETRIES = positiveInteger(process.env.ARXIV_MAX_RETRIES, 3);
+const ARXIV_MAX_RETRIES = positiveInteger(process.env.ARXIV_MAX_RETRIES, 4);
+const ARXIV_RATE_LIMIT_RETRY_MS = positiveInteger(process.env.ARXIV_RATE_LIMIT_RETRY_MS, 30_000);
 const arxivClient = createArxivClient({
   requestTimeoutMs: ARXIV_REQUEST_TIMEOUT_MS,
   maxRetries: ARXIV_MAX_RETRIES,
+  rateLimitRetryMs: ARXIV_RATE_LIMIT_RETRY_MS,
 });
 
 // ponytail: read key from env first, fall back to opencodex config so local runs
@@ -633,7 +635,9 @@ async function main() {
     const delays = [];
     const statuses = [429, 200, 200];
     const retryClient = createArxivClient({
-      fetcher: async () => {
+      fetcher: async (_url, request) => {
+        assert.equal(request.headers.Accept, 'application/atom+xml');
+        assert.match(request.headers['User-Agent'], /^Study-ML-paper-collector\/1\.0/);
         const status = statuses.shift();
         return {
           ok: status === 200,
@@ -646,12 +650,34 @@ async function main() {
       requestTimeoutMs: 50,
       minIntervalMs: 3000,
       baseRetryMs: 5000,
+      rateLimitRetryMs: 5000,
       maxRetries: 2,
       logger: { warn() {} },
     });
     assert.equal((await retryClient.fetch('test:first')).status, 200);
     assert.equal((await retryClient.fetch('test:second')).status, 200);
     assert.deepEqual(delays, [7000, 3000]);
+
+    // A shared-IP 429 without Retry-After receives a longer cooldown than
+    // ordinary transient failures, matching the GitHub Actions failure mode.
+    let limitedClock = 0;
+    const limitedDelays = [];
+    const limitedStatuses = [429, 429, 200];
+    const limitedClient = createArxivClient({
+      fetcher: async () => {
+        const status = limitedStatuses.shift();
+        return { ok: status === 200, status, headers: { get: () => null } };
+      },
+      sleep: async ms => { limitedDelays.push(ms); limitedClock += ms; },
+      now: () => limitedClock,
+      requestTimeoutMs: 50,
+      minIntervalMs: 0,
+      rateLimitRetryMs: 30_000,
+      maxRetries: 2,
+      logger: { warn() {} },
+    });
+    assert.equal((await limitedClient.fetch('test:shared-ip-limit')).status, 200);
+    assert.deepEqual(limitedDelays, [30_000, 60_000]);
 
     // A response whose headers arrive before a stalled body is still bounded and retried.
     let bodyCalls = 0;

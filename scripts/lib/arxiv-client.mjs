@@ -1,4 +1,8 @@
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
+const DEFAULT_HEADERS = Object.freeze({
+  Accept: 'application/atom+xml',
+  'User-Agent': 'Study-ML-paper-collector/1.0 (+https://github.com/mincia1110/Study-ML)',
+});
 
 function retryAfterMs(response, nowMs) {
   const value = response.headers?.get?.('retry-after');
@@ -28,10 +32,12 @@ export function createArxivClient(options = {}) {
   const sleep = options.sleep || wait;
   const now = options.now || Date.now;
   const logger = options.logger || console;
+  const headers = { ...DEFAULT_HEADERS, ...options.headers };
   const minIntervalMs = options.minIntervalMs ?? 3000;
   const requestTimeoutMs = options.requestTimeoutMs ?? 60_000;
-  const maxRetries = options.maxRetries ?? 3;
+  const maxRetries = options.maxRetries ?? 4;
   const baseRetryMs = options.baseRetryMs ?? 5000;
+  const rateLimitRetryMs = options.rateLimitRetryMs ?? 30_000;
   let nextRequestAt = 0;
 
   async function requestWithRetry(url, context, consumeBody) {
@@ -48,7 +54,7 @@ export function createArxivClient(options = {}) {
       let body;
       let attemptError;
       try {
-        response = await fetcher(url, { signal: controller.signal });
+        response = await fetcher(url, { signal: controller.signal, headers });
         if (response?.ok && consumeBody) body = await response.text();
       } catch (error) {
         attemptError = controller.signal.aborted
@@ -72,7 +78,11 @@ export function createArxivClient(options = {}) {
 
       if (response && body === undefined) await disposeResponse(response);
 
-      const exponentialWait = baseRetryMs * (2 ** attempt);
+      // A 429 on the first request usually means the runner's shared IP is
+      // already rate-limited. Give that window substantially longer to clear
+      // than a transient network or server failure.
+      const retryBaseMs = status === 429 ? rateLimitRetryMs : baseRetryMs;
+      const exponentialWait = retryBaseMs * (2 ** attempt);
       const serverWait = response ? retryAfterMs(response, now()) : 0;
       const retryWait = Math.max(minIntervalMs, exponentialWait, serverWait);
       logger.warn(`arXiv request failed${status ? ` with HTTP ${status}` : ''}; retrying ${context} in ${Math.ceil(retryWait / 1000)}s (${attempt + 1}/${maxRetries})`);
