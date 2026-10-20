@@ -17,7 +17,7 @@ import { createArxivClient } from './lib/arxiv-client.mjs';
  * SUMMARY GUIDELINES (see also docs/summary-guidelines.md):
  * - detail.problem, detail.method, detail.takeaway: 1-2 Korean sentences each.
  * - Concrete and cautious, no hype, mention limitations when evident.
- * - Uses opencode-go/deepseek-v4-flash when a key is available.
+ * - Uses opencode-go/deepseek-v4.1-flash when a key is available.
  * - Falls back to a source-directed unavailable-summary when no valid LLM summary is available.
  * - Manual review and refinement welcomed when quality matters.
  *
@@ -26,7 +26,7 @@ import { createArxivClient } from './lib/arxiv-client.mjs';
  *   node scripts/collect-papers.mjs          # writes data/papers.js
  *   node scripts/collect-papers.mjs --dry-run  # prints to stdout, no write
  *
- * API key (optional, enables LLM summaries via opencode-go/deepseek-v4-flash):
+ * API key (optional, enables LLM summaries via opencode-go/deepseek-v4.1-flash):
  *   node --env-file=.env scripts/collect-papers.mjs   # project .env
  *   OPENCODE_GO_API_KEY=sk-... node scripts/...       # inline
  *   # or set OPENCODE_GO_API_KEY as a GitHub Actions secret
@@ -45,7 +45,7 @@ const IS_SELF_TEST = process.argv.includes('--self-test');
 const OPENALEX_API_KEY = IS_SELF_TEST ? '' : (process.env.OPENALEX_API_KEY || '');
 
 const OPENCODE_GO_URL = process.env.OPENCODE_GO_BASE_URL || 'https://opencode.ai/zen/go/v1/chat/completions';
-const OPENCODE_GO_MODEL = process.env.OPENCODE_GO_MODEL || 'deepseek-v4-flash';
+const OPENCODE_GO_MODEL = process.env.OPENCODE_GO_MODEL || 'deepseek-v4.1-flash';
 const DEFAULT_LLM_TIMEOUT_MS = 60_000;
 
 function positiveInteger(value, fallback) {
@@ -184,7 +184,7 @@ function generateSummary(title, abstract, categories, category) {
   };
 }
 
-/* ── LLM summary via opencode-go (deepseek-v4-flash) ── */
+/* ── LLM summary via opencode-go ── */
 
 async function summarizeWithLLM(paper, options = {}) {
   if (!paper.abstract?.trim()) throw new Error('Missing source abstract for Korean summary');
@@ -223,7 +223,10 @@ async function summarizeWithLLM(paper, options = {}) {
       const type = body?.error?.type;
       // Keep useful error codes without logging arbitrary provider response text.
       const suffix = typeof type === 'string' && /^[A-Za-z0-9_-]{1,80}$/.test(type) ? ` (${type})` : '';
-      throw new Error(`LLM API ${res.status}${suffix}`);
+      const hint = res.status === 401
+        ? '; check OPENCODE_GO_API_KEY for expiry or revocation in OpenCode Console and replace the local key / GitHub Actions secret if needed'
+        : '';
+      throw new Error(`LLM API ${res.status}${suffix}${hint}`);
     }
     const data = await res.json();
     const raw = data?.choices?.[0]?.message?.content || '';
@@ -571,6 +574,7 @@ async function main() {
         timeoutMs: 50,
         fetcher: async (_url, request) => {
           assert.equal(request.headers['User-Agent'], 'Study-ML-paper-collector/1.0');
+          assert.equal(JSON.parse(request.body).model, process.env.OPENCODE_GO_MODEL || 'deepseek-v4.1-flash');
           assert.match(request.headers['x-opencode-session'], /^[0-9a-f-]{36}$/);
           return {
             ok: true,
@@ -617,6 +621,11 @@ async function main() {
     await assert.rejects(summarizeWithLLM({ title: 'API error', authors: 'Test', categories: ['cs.CL'], abstract: 'Source abstract' }, {
       fetcher: async () => ({ ok: false, status: 400, json: async () => ({ error: { type: 'MissingSessionID', message: 'private response text' } }) }),
     }), error => error.message === 'LLM API 400 (MissingSessionID)');
+    await assert.rejects(summarizeWithLLM({ title: 'Expired key', authors: 'Test', categories: ['cs.CL'], abstract: 'Source abstract' }, {
+      fetcher: async () => ({ ok: false, status: 401, json: async () => ({ error: { type: 'authentication_error', message: 'private response text' } }) }),
+    }), error => error.message.includes('LLM API 401 (authentication_error)')
+      && error.message.includes('OPENCODE_GO_API_KEY')
+      && !error.message.includes('private response text'));
     assert.deepEqual(Object.keys(unavailableSummary.detail).sort(), ['method', 'problem', 'takeaway']);
     assert.ok(Object.values(unavailableSummary.detail).every(value => typeof value === 'string' && value.trim()));
     await assert.rejects(

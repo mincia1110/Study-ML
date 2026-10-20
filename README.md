@@ -70,7 +70,8 @@ Citation 수는 OpenAlex 기준이며 제공자별로 다를 수 있습니다. �
 
 ## LLM 요약
 
-`OPENCODE_GO_API_KEY`가 있으면 `opencode-go/deepseek-v4-flash`로 한국어 요약을 생성합니다. 키가 없거나 응답 형식이 올바르지 않으면 원문과 초록을 확인하라는 안내를 표시합니다.
+`OPENCODE_GO_API_KEY`가 있으면 `opencode-go/deepseek-v4.1-flash`로 한국어 요약을 생성합니다. `OPENCODE_GO_MODEL` 환경변수로 API 모델 ID를 변경할 수 있습니다. 키가 없거나 응답 형식이 올바르지 않으면 원문과 초록을 확인하라는 안내를 표시합니다.
+`401 authentication_error`가 발생하면 OpenCode Console에서 키 만료·폐기 여부를 확인하고, 필요하면 새 키를 생성해 로컬 설정과 GitHub Actions의 `OPENCODE_GO_API_KEY` secret을 교체합니다. 만료된 키는 재로그인으로 갱신되지 않습니다. 모델 ID는 [Go 모델 목록 API](https://opencode.ai/zen/go/v1/models)에서 확인할 수 있습니다. `--require-summaries` 실행은 요약이 누락되면 기존 데이터를 덮어쓰지 않고 실패합니다.
 LLM 요청은 기본 60초 후 중단되고 해당 논문만 안내 문구로 대체됩니다. `OPENCODE_GO_TIMEOUT_MS`로 제한 시간을 조정할 수 있습니다.
 
 arXiv API 요청은 식별 가능한 `User-Agent`를 보내고, 정책에 맞춰 최소 3초 간격으로 직렬 실행합니다. HTTP 429는 공유 IP 제한이 풀릴 시간을 확보하도록 기본 30초부터, 다른 일시적 오류는 5초부터 지수 backoff하며 `Retry-After`가 더 길면 이를 우선합니다. 기본 최대 4회 재시도하며 `ARXIV_REQUEST_TIMEOUT_MS`, `ARXIV_MAX_RETRIES`, `ARXIV_RATE_LIMIT_RETRY_MS`로 제한을 조정할 수 있습니다.
