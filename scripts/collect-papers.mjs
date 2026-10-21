@@ -54,6 +54,9 @@ function positiveInteger(value, fallback) {
 }
 
 const LLM_TIMEOUT_MS = positiveInteger(process.env.OPENCODE_GO_TIMEOUT_MS, DEFAULT_LLM_TIMEOUT_MS);
+const configuredRetries = Number(process.env.OPENCODE_GO_MAX_RETRIES ?? 2);
+const LLM_MAX_RETRIES = Number.isInteger(configuredRetries) && configuredRetries >= 0
+  ? Math.min(3, configuredRetries) : 2;
 const ARXIV_REQUEST_TIMEOUT_MS = positiveInteger(process.env.ARXIV_REQUEST_TIMEOUT_MS, 60_000);
 const ARXIV_MAX_RETRIES = positiveInteger(process.env.ARXIV_MAX_RETRIES, 4);
 const ARXIV_RATE_LIMIT_RETRY_MS = positiveInteger(process.env.ARXIV_RATE_LIMIT_RETRY_MS, 30_000);
@@ -187,6 +190,32 @@ function generateSummary(title, abstract, categories, category) {
 /* ── LLM summary via opencode-go ── */
 
 async function summarizeWithLLM(paper, options = {}) {
+  const maxRetries = options.maxRetries ?? LLM_MAX_RETRIES;
+  const sleep = options.sleep || (ms => new Promise(resolve => setTimeout(resolve, ms)));
+  const logger = options.logger || console;
+  const sessionId = randomUUID();
+  for (let attempt = 0; ; attempt += 1) {
+    try {
+      return await summarizeWithLLMAttempt(paper, { ...options, sessionId });
+    } catch (error) {
+      // Only retry explicit transient HTTP failures. Authentication, invalid JSON,
+      // network errors and timeouts retain their existing failure behavior.
+      if (![429, 500, 502, 503, 504].includes(error.status) || attempt >= maxRetries) throw error;
+      const retryAfter = error.retryAfter;
+      const seconds = Number(retryAfter);
+      const serverWait = retryAfter && Number.isFinite(seconds) && seconds >= 0
+        ? seconds * 1000
+        : Math.max(0, (Date.parse(retryAfter) || 0) - (options.now || Date.now)());
+      const delay = Math.max((error.status === 429 ? 10_000 : 5000) * 2 ** attempt, serverWait);
+      // Do not retry earlier than Retry-After, or let one paper stall the job.
+      if (delay > 60_000) throw error;
+      logger.warn(`LLM API ${error.status}; retrying in ${delay / 1000}s (${attempt + 1}/${maxRetries})`);
+      await sleep(delay);
+    }
+  }
+}
+
+async function summarizeWithLLMAttempt(paper, options = {}) {
   if (!paper.abstract?.trim()) throw new Error('Missing source abstract for Korean summary');
   const prompt = `다음 arXiv 논문을 한국어로 요약해라. JSON만 반환해라. 과장하지 말고 초록에 없는 내용은 만들지 마라.
 
@@ -209,7 +238,7 @@ async function summarizeWithLLM(paper, options = {}) {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${API_KEY}`,
         'User-Agent': 'Study-ML-paper-collector/1.0',
-        'x-opencode-session': randomUUID(),
+        'x-opencode-session': options.sessionId,
       },
       body: JSON.stringify({
         model: OPENCODE_GO_MODEL,
@@ -226,7 +255,10 @@ async function summarizeWithLLM(paper, options = {}) {
       const hint = res.status === 401
         ? '; check OPENCODE_GO_API_KEY for expiry or revocation in OpenCode Console and replace the local key / GitHub Actions secret if needed'
         : '';
-      throw new Error(`LLM API ${res.status}${suffix}${hint}`);
+      const error = new Error(`LLM API ${res.status}${suffix}${hint}`);
+      error.status = res.status;
+      error.retryAfter = res.headers?.get?.('retry-after');
+      throw error;
     }
     const data = await res.json();
     const raw = data?.choices?.[0]?.message?.content || '';
@@ -569,6 +601,54 @@ async function main() {
       summaryKo: '테스트 요약',
       detail: { problem: '테스트 문제', method: '테스트 방법', takeaway: '테스트 시사점' },
     };
+    const retryPaper = { title: 'Retry test', authors: 'Test', categories: ['cs.CL'], abstract: 'Source abstract' };
+    for (const status of [429, 500, 502, 503, 504]) {
+      const waits = [];
+      const requests = [];
+      const recovered = await summarizeWithLLM(retryPaper, {
+        maxRetries: 2,
+        logger: { warn() {} },
+        sleep: async ms => waits.push(ms),
+        fetcher: async (_url, request) => {
+          requests.push(request);
+          return requests.length < 3
+            ? Response.json({ error: { type: 'server_error' } }, { status })
+            : Response.json({ choices: [{ message: { content: JSON.stringify(summaryFixture) } }] });
+        },
+      });
+      assert.deepEqual(recovered, summaryFixture);
+      assert.deepEqual(waits, status === 429 ? [10_000, 20_000] : [5000, 10_000]);
+      assert.equal(new Set(requests.map(r => r.headers['x-opencode-session'])).size, 1);
+      assert.equal(new Set(requests.map(r => r.signal)).size, 3);
+    }
+    for (const { status, retryAfter, retries, calls, waits } of [
+      { status: 503, retries: 2, calls: 3, waits: [5000, 10_000] },
+      { status: 503, retries: 0, calls: 1, waits: [] },
+      { status: 401, retries: 2, calls: 1, waits: [] },
+      { status: 403, retries: 2, calls: 1, waits: [] },
+      { status: 400, retries: 2, calls: 1, waits: [] },
+      { status: 429, retryAfter: '15', retries: 1, calls: 2, waits: [15_000] },
+      { status: 503, retryAfter: 'Wed, 21 Oct 2026 08:30:20 GMT', retries: 1, calls: 2, waits: [20_000] },
+      { status: 503, retryAfter: 'invalid', retries: 1, calls: 2, waits: [5000] },
+      { status: 429, retryAfter: '120', retries: 2, calls: 1, waits: [] },
+    ]) {
+      let count = 0;
+      const actualWaits = [];
+      await assert.rejects(summarizeWithLLM(retryPaper, {
+        maxRetries: retries,
+        now: () => Date.parse('2026-10-21T08:30:00Z'),
+        logger: { warn() {} },
+        sleep: async ms => actualWaits.push(ms),
+        fetcher: async () => {
+          count += 1;
+          return Response.json({ error: { type: 'test_error' } }, {
+            status, headers: retryAfter ? { 'Retry-After': retryAfter } : {},
+          });
+        },
+      }), error => error.status === status);
+      assert.equal(count, calls);
+      assert.deepEqual(actualWaits, waits);
+    }
     assert.deepEqual(
       await summarizeWithLLM({ title: 'Success test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
         timeoutMs: 50,
