@@ -48,7 +48,7 @@ and improve when quality matters.
 
 ## Automation note
 
-- LLM HTTP 429/500/502/503/504 responses retry twice by default (three requests total), with 5s/10s backoff for server errors and 10s/20s for rate limits. Longer `Retry-After` values are honored; waits above 60s fail instead of retrying early. `OPENCODE_GO_MAX_RETRIES` accepts 0–3. Each attempt has its own timeout; retries for one paper share its session ID. Authentication, malformed summaries, network errors, and timeouts are not retried.
+- LLM HTTP 429/500/502/503/504 responses and per-attempt timeouts retry three times by default (four requests total), with 5s/10s/20s backoff for server errors and timeouts and 10s/20s/40s for rate limits. Longer `Retry-After` values are honored; waits above 60s fail instead of retrying early. `OPENCODE_GO_MAX_RETRIES` accepts 0–3. Each attempt has its own timeout; retries for one paper share its session ID. Authentication, malformed summaries, and other network errors are not retried.
 
 - OpenCode Go requests identify this collector with `User-Agent: Study-ML-paper-collector/1.0` and a new `x-opencode-session` UUID for each paper's standalone summary conversation. See [Go client requirements](https://opencode.ai/docs/go/#where-can-i-use-it); Go is designed primarily for coding-agent traffic, so these headers alone do not guarantee suitability or continued service for paper summarization.
 - arXiv requests are serialized at least three seconds apart and identify the collector with a project URL in `User-Agent`. HTTP 429 responses use a longer exponential cooldown (30 seconds by default) and honor a longer `Retry-After` value; `ARXIV_MAX_RETRIES` and `ARXIV_RATE_LIMIT_RETRY_MS` tune CI behavior.

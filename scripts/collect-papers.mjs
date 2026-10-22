@@ -54,9 +54,9 @@ function positiveInteger(value, fallback) {
 }
 
 const LLM_TIMEOUT_MS = positiveInteger(process.env.OPENCODE_GO_TIMEOUT_MS, DEFAULT_LLM_TIMEOUT_MS);
-const configuredRetries = Number(process.env.OPENCODE_GO_MAX_RETRIES ?? 2);
+const configuredRetries = Number(process.env.OPENCODE_GO_MAX_RETRIES ?? 3);
 const LLM_MAX_RETRIES = Number.isInteger(configuredRetries) && configuredRetries >= 0
-  ? Math.min(3, configuredRetries) : 2;
+  ? Math.min(3, configuredRetries) : 3;
 const ARXIV_REQUEST_TIMEOUT_MS = positiveInteger(process.env.ARXIV_REQUEST_TIMEOUT_MS, 60_000);
 const ARXIV_MAX_RETRIES = positiveInteger(process.env.ARXIV_MAX_RETRIES, 4);
 const ARXIV_RATE_LIMIT_RETRY_MS = positiveInteger(process.env.ARXIV_RATE_LIMIT_RETRY_MS, 30_000);
@@ -198,9 +198,10 @@ async function summarizeWithLLM(paper, options = {}) {
     try {
       return await summarizeWithLLMAttempt(paper, { ...options, sessionId });
     } catch (error) {
-      // Only retry explicit transient HTTP failures. Authentication, invalid JSON,
-      // network errors and timeouts retain their existing failure behavior.
-      if (![429, 500, 502, 503, 504].includes(error.status) || attempt >= maxRetries) throw error;
+      // Retry transient HTTP failures and our per-attempt timeout. Authentication,
+      // invalid JSON and other network errors retain their failure behavior.
+      const timedOut = error.code === 'LLM_TIMEOUT';
+      if ((!timedOut && ![429, 500, 502, 503, 504].includes(error.status)) || attempt >= maxRetries) throw error;
       const retryAfter = error.retryAfter;
       const seconds = Number(retryAfter);
       const serverWait = retryAfter && Number.isFinite(seconds) && seconds >= 0
@@ -209,7 +210,7 @@ async function summarizeWithLLM(paper, options = {}) {
       const delay = Math.max((error.status === 429 ? 10_000 : 5000) * 2 ** attempt, serverWait);
       // Do not retry earlier than Retry-After, or let one paper stall the job.
       if (delay > 60_000) throw error;
-      logger.warn(`LLM API ${error.status}; retrying in ${delay / 1000}s (${attempt + 1}/${maxRetries})`);
+      logger.warn(`${timedOut ? 'LLM API timeout' : `LLM API ${error.status}`}; retrying in ${delay / 1000}s (${attempt + 1}/${maxRetries})`);
       await sleep(delay);
     }
   }
@@ -270,7 +271,11 @@ async function summarizeWithLLMAttempt(paper, options = {}) {
     if (!summary) throw new Error('missing or invalid fields in LLM JSON');
     return summary;
   } catch (error) {
-    if (controller.signal.aborted) throw new Error(`LLM API timed out after ${timeoutMs}ms`, { cause: error });
+    if (controller.signal.aborted) {
+      const timeoutError = new Error(`LLM API timed out after ${timeoutMs}ms`, { cause: error });
+      timeoutError.code = 'LLM_TIMEOUT';
+      throw timeoutError;
+    }
     throw error;
   } finally {
     clearTimeout(timeout);
@@ -606,23 +611,23 @@ async function main() {
       const waits = [];
       const requests = [];
       const recovered = await summarizeWithLLM(retryPaper, {
-        maxRetries: 2,
+        maxRetries: 3,
         logger: { warn() {} },
         sleep: async ms => waits.push(ms),
         fetcher: async (_url, request) => {
           requests.push(request);
-          return requests.length < 3
+          return requests.length < 4
             ? Response.json({ error: { type: 'server_error' } }, { status })
             : Response.json({ choices: [{ message: { content: JSON.stringify(summaryFixture) } }] });
         },
       });
       assert.deepEqual(recovered, summaryFixture);
-      assert.deepEqual(waits, status === 429 ? [10_000, 20_000] : [5000, 10_000]);
+      assert.deepEqual(waits, status === 429 ? [10_000, 20_000, 40_000] : [5000, 10_000, 20_000]);
       assert.equal(new Set(requests.map(r => r.headers['x-opencode-session'])).size, 1);
-      assert.equal(new Set(requests.map(r => r.signal)).size, 3);
+      assert.equal(new Set(requests.map(r => r.signal)).size, 4);
     }
     for (const { status, retryAfter, retries, calls, waits } of [
-      { status: 503, retries: 2, calls: 3, waits: [5000, 10_000] },
+      { status: 503, retries: 3, calls: 4, waits: [5000, 10_000, 20_000] },
       { status: 503, retries: 0, calls: 1, waits: [] },
       { status: 401, retries: 2, calls: 1, waits: [] },
       { status: 403, retries: 2, calls: 1, waits: [] },
@@ -708,18 +713,50 @@ async function main() {
       && !error.message.includes('private response text'));
     assert.deepEqual(Object.keys(unavailableSummary.detail).sort(), ['method', 'problem', 'takeaway']);
     assert.ok(Object.values(unavailableSummary.detail).every(value => typeof value === 'string' && value.trim()));
-    await assert.rejects(
-      summarizeWithLLM({ title: 'Timeout test', authors: 'Test', categories: ['cs.CL'], abstract: 'Test abstract' }, {
-        timeoutMs: 5,
-        fetcher: async (_url, request) => ({
-          ok: true,
-          json: () => new Promise((resolve, reject) => {
-            request.signal.addEventListener('abort', () => reject(new Error('aborted')), { once: true });
-          }),
-        }),
-      }),
-      /LLM API timed out after 5ms/,
-    );
+    // Both connection and response-body stalls must get a fresh timeout on retry.
+    for (const phase of ['fetch', 'body']) {
+      for (const { maxRetries, recover, expectedCalls } of [
+        { maxRetries: 3, recover: true, expectedCalls: 4 },
+        { maxRetries: 3, recover: false, expectedCalls: 4 },
+        { maxRetries: 0, recover: false, expectedCalls: 1 },
+      ]) {
+        const requests = [];
+        const waits = [];
+        const warnings = [];
+        const result = summarizeWithLLM(retryPaper, {
+          maxRetries,
+          timeoutMs: 5,
+          sleep: async ms => {
+            assert.equal(requests.at(-1).signal.aborted, true);
+            waits.push(ms);
+          },
+          logger: { warn: message => warnings.push(message) },
+          fetcher: async (_url, request) => {
+            requests.push(request);
+            assert.equal(request.signal.aborted, false);
+            if (recover && requests.length === 4) {
+              return Response.json({ choices: [{ message: { content: JSON.stringify(summaryFixture) } }] });
+            }
+            const stall = () => new Promise((resolve, reject) => {
+              request.signal.addEventListener('abort', () => reject(new Error('aborted')), { once: true });
+            });
+            return phase === 'fetch' ? stall() : { ok: true, json: stall };
+          },
+        });
+        if (recover) {
+          assert.deepEqual(await result, summaryFixture);
+        } else {
+          await assert.rejects(result, error => error.code === 'LLM_TIMEOUT'
+            && error.message === 'LLM API timed out after 5ms');
+        }
+        assert.equal(requests.length, expectedCalls);
+        assert.deepEqual(waits, maxRetries ? [5000, 10_000, 20_000] : []);
+        assert.equal(warnings.length, maxRetries);
+        assert.ok(warnings.every(message => message.startsWith('LLM API timeout; retrying')));
+        assert.equal(new Set(requests.map(r => r.signal)).size, expectedCalls);
+        assert.equal(new Set(requests.map(r => r.headers['x-opencode-session'])).size, 1);
+      }
+    }
     let clock = 0;
     const delays = [];
     const statuses = [429, 200, 200];
