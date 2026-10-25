@@ -3,27 +3,28 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2610.30946",
-    "title": "Tracing Hallucinations in LLM Reasoning for UML Class Diagram Generation: An Empirical Taxonomy and Mitigation Study",
-    "authors": "Mojdeh Rahmanian et al.",
+    "id": "2610.31668",
+    "title": "Reading, Writing, Sharing, and Interacting with the World through Video",
+    "authors": "Shengqiong Wu et al.",
     "published": "2026-10-22",
-    "category": "llm",
+    "category": "cv",
     "categories": [
-      "cs.SE",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
+      "video",
+      "survey",
       "generation"
     ],
-    "summaryKo": "LLM이 자연어 요구사항으로 UML 클래스 다이어그램을 생성할 때 추론 과정의 환각을 11개 하위 유형과 3개 차원으로 분류하고, 모델별 환각 양상과 프롬프트 기반 완화 효과를 실증적으로 분석한 논문이다.",
+    "summaryKo": "이 서베이는 관측 비디오를 잠재적 시간적 세계의 부분적이고 손실적이며 시간 순서를 가진 투영으로 보고, 읽기·쓰기·공유·상호작용의 네 연산을 중심으로 비디오 기반 모델과 비디오 세계 모델 연구를 통합적으로 정리한다.",
     "detail": {
-      "problem": "LLM 기반 UML 클래스 다이어그램 생성에서 환각이 정확성과 완전성을 훼손할 수 있지만, 기존 평가는 최종 다이어그램만 평가해 추론 가능 LLM의 중간 추론 흔적에서 환각이 어디서 발생하는지 잘 드러내지 못한다.",
-      "method": "DeepSeek-R1 추론 흔적 60개를 수동 주석해 Prompt Faithfulness, Code Faithfulness, Reasoning Quality의 3개 차원과 11개 하위 유형으로 구성된 경험적 분류 체계를 도출하고, 이를 이중 LLM 주석 파이프라인으로 추가 120개 DeepSeek-R1 흔적과 20개 DeepSeek-V4-Pro 흔적에 적용했다. 또한 13개 Golden UML ModelSet 사례와 3개 Qwen3 기반 모델로 완화 실험을 수행했다.",
-      "takeaway": "DeepSeek-R1에서는 Code Faithfulness가 가장 빈번했고 DeepSeek-V4-Pro에서는 Prompt Faithfulness가 우세해 모델 의존적 실패 양상이 나타났다. 수동 주석 흔적에서 추론 흔적 길이는 환각 빈도와 유의한 단조 연관성이 없었고 요구사항 복잡도는 음의 연관성을 보였으며, 완화 실험에서 Prompt Faithfulness와 Reasoning Quality 제약을 생성 프롬프트에 추가하자 통합 평균 F1이 4.0%p 상승했지만 사후 Code Faithfulness 검토는 일관된 추가 이점이 없었고 관계 모델링은 계속 가장 낮은 점수를 보였다. 이러한 결과가 DeepSeek 및 Qwen3 모델군 밖으로 일반화되는지는 추가 검증이 필요하다."
+      "problem": "비디오 파운데이션 모델은 시각 시퀀스의 이해와 생성에서 빠르게 발전했고, 비디오 세계 모델은 영상이 보여주는 세계의 역학을 포착하려 한다. 목표는 다르지만 둘 다 비디오 관측과 변화하는 세계의 관계를 다룬다.",
+      "method": "관측 비디오를 잠재 시간적 세계의 부분적·손실적·시간 순서적 투영으로 간주하고, 읽기(관측에서 세계 속성 추론), 쓰기(지정되거나 학습된 세계 조건으로부터 비디오 합성), 공유(공통 모델링 메커니즘으로 이해와 생성 통합), 상호작용(행동과 변화하는 관측 아래 세계 상태 예측·갱신)의 네 연산으로 문헌을 조직한다.",
+      "takeaway": "작업·표현·모델·데이터셋·벤치마크를 가로질러 클립 수준 인식과 지각적 충실도에서 지속 상태, 제어 가능한 진화, 물리·인과적 타당성, 상호작용과 다운스트림 결정에 기반한 평가로의 강조 이동을 추적하고 열린 과제를 정리한다. 초록에는 구체적 성능 수치나 특정 한계는 제시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.30946v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.30946v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31668v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31668v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -32,29 +33,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31606",
-    "title": "How Ground Truth Shapes Retrieval Scores: Evidence-Aware Evaluation of a Retrieval-Augmented Generation System for Breast Lesions",
-    "authors": "Miguel Mochizuki Silva et al.",
+    "id": "2610.31158",
+    "title": "Beyond Watching and Searching: Benchmarking Agents for Video-centered Deep Research Reports",
+    "authors": "Jiahao Meng et al.",
     "published": "2026-10-22",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.AI"
+      "cs.CV",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "embedding",
+      "agents",
+      "video",
+      "multimodal",
       "generation"
     ],
-    "summaryKo": "유방 병변 관리 문헌을 대상으로 한 임상 RAG 시스템에서 검색 점수가 주석 범위에 의존하는 문제를 다루기 위해 근거 인식 검색 평가 프로토콜을 제시하고 하이브리드 검색과 교차 인코더 재순위화를 평가한 연구다.",
+    "summaryKo": "이 논문은 비디오를 중심으로 외부 멀티모달 증거를 검색해 상호작용형 딥리서치 보고서를 생성하는 과제와 OmniDR-Bench 벤치마크를 제안한다.",
     "detail": {
-      "problem": "검색 점수가 정답·근거 주석의 범위에 따라 달라질 수 있다는 문제를 다루고자 했다. 유방 병변 관리 문헌에 대한 임상 RAG 시스템의 근거 인식 검색 평가 프로토콜을 설명하는 것이 목적이다.",
-      "method": "18개 문서 코퍼스와 문서당 하나의 Yes/No 또는 WH 질문으로 된 18개 질의 개발 벤치마크에서 dense embeddings, BM25, cross-encoder reranking을 결합하고 128~1024 토큰 청크, 0~20% 중첩, 네 가지 retriever 설정을 평가했으며, 근거 span이 포함된 모든 청크를 관련으로 매핑해 R-Precision, Recall@K, MRR, nDCG@K로 검색을 평가했다. 생성은 512토큰 인덱스에서 K=1~5로 DeepEval claim-level 지표와 BLEU/ROUGE로 평가했다.",
-      "takeaway": "cross-encoder reranking이 가장 높은 검색 점수를 보였고, 선택된 하이브리드 retriever는 384토큰 청크와 20% 중첩에서 18개 질의 중 17개에서 상위 3개 결과 안에 수용된 근거를 검색했으며 Recall@3, R-Precision, MRR@3, nDCG@3가 각각 0.94였다. 정답 주석 큐레이션은 근거 span을 25개에서 37개로, 수용된 청크 타깃을 36개에서 51개로 늘렸으나 검색 순위는 바꾸지 않았고, 작은 개발 세트와 검색에 기반한 큐레이션 때문에 독립 검증과 방사선과 전문의의 근거 충분성 평가가 필요하다."
+      "problem": "기존 벤치마크는 소스 비디오를 중심으로 한 딥리서치 보고서 생성을 평가하지 않는다. 이 과제에서는 비디오와 사용자 요청이 주어졌을 때 에이전트가 연구 질문을 식별하고 외부 멀티모달 증거를 검색해 관련 비디오 장면과 연결된 상호작용형 보고서를 만들어야 한다.",
+      "method": "스킬 기반 워크플로와 OmniDR-Bench를 제시하고, 평가를 위해 3개 차원, 23개 공통 방향, 과제별 원자적 이진 기준을 담은 Omni Atomic Rubric Trees(Omni-ARTs)를 제안한다. 이 기준 트리는 독립적 증거 수집, 자동 점검, 행동 보정, 반복적 인간 검토를 통해 구축된다.",
+      "takeaway": "OmniDR-Bench는 19개 실제 하위 범주에 걸친 50개 중국어·영어 과제와 6,414개 기준을 포함하며, 18개 에이전트 구성 중 최고 시스템은 100점 만점에 63.3점을 기록했다. 현재 에이전트는 더 넓은 내용 커버리지, 모달리티 전반의 더 강한 인과·논리 분석, 더 정확한 인용 지원이 필요하다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31606v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31606v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31158v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31158v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -63,28 +65,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.30926",
-    "title": "Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation",
-    "authors": "Songlin Yang et al.",
+    "id": "2610.30705",
+    "title": "ULME: Predictive Coupling for Mutually Reinforcing Embedding and Language Modeling",
+    "authors": "Yang Liu et al.",
     "published": "2026-10-22",
-    "category": "cv",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
-      "diffusion",
-      "video",
-      "multimodal",
+      "benchmark",
+      "agents",
+      "retrieval",
+      "embedding",
       "generation"
     ],
-    "summaryKo": "FAPL은 MLLM 잠재 표현을 비디오 생성에 효과적으로 활용하는 것을 공통 전제로 삼고, factor-aware 제어와 제한된 입력에서의 시간적 추론을 상보적 학습 신호로 훈련해 시네마틱 비디오 생성을 개선하는 방법이다.",
+    "summaryKo": "ULME는 causal decoder-only LLM에서 예측적 결합을 통해 임베딩과 언어 모델링이 서로를 강화하도록 통합하는 후학습 프레임워크다.",
     "detail": {
-      "problem": "시네마틱 비디오 생성은 희소 입력으로부터의 시간적 추론과 캐릭터·장면·행동·카메라에 대한 factor-aware 제어를 모두 요구한다. MLLM이 유용한 사전 지식을 제공하지만 그 표현이 비디오 생성에 자동으로 실행 가능하지 않고, DiT가 이를 우회할 수 있으며 factor-aware 제어나 생성 호환 시간 예측을 보장하지 않는다.",
-      "method": "FAPL은 MLLM 잠재의 효과적 사용을 공통 전제로 확립한 뒤 상보적 학습 신호를 사용한다: 고정된 MLLM과 connector로 latent-only generator grounding을 수행하고, paired videos로 target-factor 변화와 non-target 보존을 지정하는 factor-span replacement를 훈련하며, text-only와 text-plus-complete-video 관측이 비디오 타깃을 공유하도록 훈련된 DiT를 고정하고 MLLM/connector를 최적화한다. 이때 완전 관측 재구성을 상보적 훈련 모드로 유지한다.",
-      "takeaway": "광범위한 실험에서 FAPL은 sparse-to-video, factor-aware editing, multi-shot generation의 세 시네마틱 비디오 생성 작업에서 베이스라인보다 일관되게 더 나은 성능을 보였고, MLLM 특징 사용, 시간 제어, factor 조정에 대한 기여를 검증했다. 초록에는 한계가 명시되지 않았다."
+      "problem": "기존에는 임베딩과 생성이 별도 전문화 모델 또는 호환되지 않는 목적함수로 운영되거나, GritLM처럼 파라미터를 공유해도 모드 전환이나 병렬 목적함수로만 공존해 서로를 형성하지 못했다.",
+      "method": "ULME는 질의와 응답 사이에 학습 가능한 슬롯 체인을 삽입하고 두 지정 슬롯에서 의미 임베딩과 추론 임베딩을 읽으며, 공유 causal backbone 위에서 대조 손실, 언어모델링 손실, stop-gradient 예측 손실을 학습한다. 예측 손실은 추론 슬롯을 응답의 풀링된 요약과 정렬해 생성이 임베딩 표현을 적극적으로 형성하도록 한다.",
+      "takeaway": "Qwen2.5와 Qwen3 두 모델군, 0.5B-8B의 8개 규모에서 단일 ULME 체크포인트가 MTEB를 최강 오픈소스 베이스라인 대비 3.3-4.1점 향상시키고 BRIGHT와 AdvBench-IR을 동시에 개선했으며, MMLU, GSM8K, MMLU-Pro, HumanEval에서 생성 전용 파인튜닝과 대등했다. 초록에는 별도의 한계 분석은 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.30926v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.30926v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.30705v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.30705v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -93,30 +97,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.30942",
-    "title": "GateFormer: Forecast-Space Decomposition for Intra-Hour Solar Irradiance Prediction from Sky Images",
-    "authors": "David Hamlyn et al.",
+    "id": "2610.31494",
+    "title": "AgentVQA: A Unified Benchmark for Agentic Visual Understanding",
+    "authors": "Advait Gupta et al.",
     "published": "2026-10-22",
-    "category": "cv",
+    "category": "multimodal",
     "categories": [
-      "eess.IV",
-      "cs.AI",
-      "cs.CV",
-      "cs.LG"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "multimodal",
-      "generation"
+      "agents",
+      "3d",
+      "video"
     ],
-    "summaryKo": "GateFormer는 하늘 영상과 관측 GHI를 결합하고 예측 공간 분해를 통해 시간 내 GHI 예측을 수행하는 GHI 조건부 이중 디코더 ViT로, NREL-TSI에서 +30분 RMSE 125.01 W/m^2를 달성했다.",
+    "summaryKo": "AgentVQA는 웹 에이전트, 로봇공학, 자기중심 영상, 게임, 공간 계획의 다섯 에이전트 영역에서 VLM의 실제적 에이전트 시나리오 수행을 평가하기 위한 오프라인 벤치마크다.",
     "detail": {
-      "problem": "시간 내 태양광 발전의 급격한 변동을 예측하려면 구름 동역학과 최근 GHI 상태를 결합하고 단기 변동 체제에 적응하는 정확한 예보가 필요하다.",
-      "method": "GateFormer는 관측 GHI를 비전 토큰 스트림에 임베딩해 하늘 영상 패치 특징과 self-attention으로 상호작용시키고, 공유 표현에서 Trajectory Head는 미래 GHI 시퀀스를, Delta Head는 최종 지평선의 변화량을 예측한다. 두 최종 지평선 예측은 예측 공간에서 적응적으로 가중되며 크기 및 방향 감독이 잔차 오차를 대상으로 한다.",
-      "takeaway": "NREL-TSI에서 +30분 RMSE 125.01 W/m^2로 paired-timestamp 평가에서 SOTA transformer 기준선보다 9.6% 개선했고, NREL-TSI·Chilbolton·SIRTA에서 평가 기준선 중 최저 최종 지평선 RMSE와 smart persistence 대비 22.97–28.86% forecast skill을 보였다. 초록에는 명시적 한계가 제시되지 않았다."
+      "problem": "에이전트 맥락에서 VLM의 성능은 아직 잘 이해되지 않았고, 시뮬레이터와 실제 환경에서의 온라인 평가는 비용이 크고 확장하기 어렵다. 기존 오프라인 VQA 벤치마크는 제한적이고 분절되어 있다.",
+      "method": "23개 원천 데이터셋에서 1000개의 어려운 실제 에이전트 예시를 수동으로 선택해 오프라인 평가에 적합하게 변환했다. 이 벤치마크는 다섯 영역의 상호작용 환경에서 온 실제적 시나리오를 보존하며, 모델 순위가 대응하는 온라인 평가의 순위를 추적한다.",
+      "takeaway": "평가된 22개 모델 중 최고 성능은 58.5% 정확도였다. 교차영역 분석에 따르면 오류는 주로 과제 오해나 후속 논리 추론보다 현재 및 변화하는 시각 상태를 정확히 표상하고 유지하는 실패, 즉 관련 UI 요소 위치 파악, 움직임 해석, 시간에 따른 상태 변화 추적, 3D 공간 관계 추론의 실패에서 비롯되었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.30942v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.30942v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31494v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31494v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -125,28 +127,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31123",
-    "title": "WildDepth-v2: A Synchronized RGB--LiDAR--Radar Dataset and Benchmark for Metric Depth, Motion, and Tracking of Wildlife",
-    "authors": "Muhammad Aamir et al.",
+    "id": "2610.31117",
+    "title": "Through a PRISM, Clearly: Step-Sequence Reasoning for Mistake Recognition in Procedural Videos",
+    "authors": "Olga Loginova, Oleksandr Bezrukov, Frank Keller",
     "published": "2026-10-22",
-    "category": "cv",
+    "category": "multimodal",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "3d",
-      "video",
-      "detection"
+      "video"
     ],
-    "summaryKo": "WildDepth-v2는 동기화된 RGB-LiDAR 야생동물 데이터셋을 이미징 레이더, 숨겨진 테스트 벤치마크, 메트릭 3D 궤적 및 추적으로 확장하고, 레이더 보정이 추론 시 LiDAR 없이 단안 깊이와 거리 추정을 개선하지만 동물 수준 LiDAR보다 덜 정확하며 레이더 도플러 속도는 약 50% 과소추정됨을 보인다.",
+    "summaryKo": "PRISM은 벤치마크가 제공한 단계 경계를 가진 비디오에서 완료 후 절차적 실수 인식을 위해 비디오 세그먼트를 언어에 그라운딩하고 경량 HMM으로 절차 상태에 매핑하는 방법을 제안한다.",
     "detail": {
-      "problem": "단안 비디오는 메트릭 스케일이 없고 야생동물 데이터셋에는 메트릭 정답이 부족하여 동물 거리와 운동을 미터 단위로 측정하기 어렵다.",
-      "method": "RGB-LiDAR 데이터셋을 37개 RGB-LiDAR-4D 레이더 시퀀스(19,716 프레임)와 점별 도플러 속도 및 측정 오차 예산, RGB-only 거리 추정 및 RGB+sparse-LiDAR 깊이 완성용 동결·체크섬 숨김 테스트 세트, LiDAR·레이더·단안 깊이로 2D 트랙을 리프팅한 메트릭 3D 궤적 및 추적 벤치마크로 확장한다.",
-      "takeaway": "48,723개 동물 프레임에서 객체 수준 레이더 보정은 추론 시 LiDAR 없이 단안 깊이를 개선했지만(AbsRel 0.120 vs. 0.198) 동물 수준 LiDAR(0.052)보다 덜 정확했다. 431개 트랙에서 트랙당 1회 레이더 스케일링은 3D 위치 오차를 2.20→0.58 m로, 거리 샘플링 탐지함수 편향을 -13%→-2%로 줄였고, 레이더 도플러를 LiDAR에 전이하면 운동 마스크 밀도와 정밀도 및 축적 오차를 개선하고 방사 속도를 추정(r=0.60)했으나 약 50% 과소추정이 있었다."
+      "problem": "절차적 실수 인식은 유효한 다단계 활동에서의 이탈을 식별해야 하며, 이 논문은 벤치마크 제공 단계 경계를 사용한 비디오의 완료 후 인식을 연구한다.",
+      "method": "PRISM은 비디오 세그먼트를 언어로 그라운딩하고 설명을 정상 실행으로 학습된 경량 hidden Markov model을 통해 절차 상태에 매핑하며, 참조 정렬과 의미 검사로 단계 내용 및 순서의 오류를 식별한다. 또한 데이터셋별 주석을 insertion, deletion, substitution, transposition의 네 가지 편집 기반 오류 유형으로 매핑해 이질적 벤치마크 평가를 지원한다.",
+      "takeaway": "세 벤치마크에서 gold 및 VLM 생성 설명을 raw, semantic-role, action-object 형태로 비교한 결과, 학습된 local decoder가 nearest-candidate matching보다 일관된 이득을 보였고 sequence decoding의 추가 이득은 데이터셋에 의존했다. Semantic role labeling은 6개의 일치된 grounded 비교 모두에서 Any-F1을 개선했지만 데이터셋별 편차가 있었고 별도 구성 선택에서는 일률적 개선으로 이어지지 않았으며, 결과는 언어 그라운딩이 명시적 절차적 실수 추론을 위한 효과적 인터페이스임을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31123v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31123v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31117v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31117v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -155,27 +156,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31293",
-    "title": "RecallGS: Geometry-Grounded Recall for Online Semantic Gaussian Splatting",
-    "authors": "Thanh-Khoi Nguyen, Thien-Phuc Tran, Minh-Triet Tran",
+    "id": "2610.31385",
+    "title": "A Task-Centric Survey of Long-Document Visual Question Answering: Taxonomy, Evolution, and Future Directions",
+    "authors": "Yufei Tong et al.",
     "published": "2026-10-22",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.AI"
+      "cs.CL",
+      "cs.IR"
     ],
     "tags": [
-      "agents",
-      "3d"
+      "retrieval",
+      "multimodal",
+      "survey"
     ],
-    "summaryKo": "RecallGS는 온라인 시맨틱 3D Gaussian Splatting에서 추가 학습된 3D 네트워크 없이 과거 관측을 비모수적 기하-시맨틱 사전으로 활용해 기하-시맨틱 맥락을 회수하는 경량·학습 불필요 기법이다.",
+    "summaryKo": "이 논문은 긴 문서 시각적 질의응답(long-document VQA)을 문서 파싱, 근거 조직·검색, 생성기 조직·학습, 평가의 네 구성요소로 분해하고 세분화된 분류체계와 시간적 변화를 통해 연구 우선순위와 향후 방향을 정리한 과제 중심 서베이이다.",
     "detail": {
-      "problem": "기존 온라인 시맨틱 3DGS 방법은 이미지에서 얻은 시맨틱 특징에 없는 기하 맥락을 추가로 학습한 3D 네트워크로 복구하여 추가 학습 및 런타임 오버헤드가 발생한다.",
-      "method": "RecallGS는 과거 관측을 비모수적 기하-시맨틱 사전으로 취급하며, CLIP으로 관련 관측을 검색하고 alpha-compositing 가중치로 기하적으로 지지되는 뷰를 식별한 뒤 각 Gaussian의 렌더링 footprint에 걸쳐 시맨틱 특징을 집계하는 recall-ground-fuse 파이프라인을 사용한다.",
-      "takeaway": "ScanNet과 ScanNet++에서 RecallGS는 2.48 FPS로 강한 시맨틱 분할 성능을 보여, 추가 학습된 3D 브랜치 없이 관측 이력에서 기하-시맨틱 맥락을 효과적으로 회수할 수 있음을 입증했다. 초록에는 별도 한계가 명시되지 않았다."
+      "problem": "기존 서베이는 아키텍처나 기술 접근에 치중하여 과제 병목이 기술 선택과 연구 우선순위를 어떻게 형성하는지에 대한 관심이 제한적이다.",
+      "method": "저자들은 긴 문서 VQA를 문서 파싱, 근거 조직 및 검색, 생성기 조직 및 학습, 평가로 나누고 각 구성요소에 대해 세분화된 분류체계를 만들며 동기, 기술적 대응, 구성요소 간 연결을 추적한다. 명시적 검색에 초점을 두면서 직접 읽기도 다루고, 시간적 분석으로 연구 우선순위의 확장을 추적한다.",
+      "takeaway": "분석은 다중모달 내용 이해에서 충분하고 높은 충실도의 근거 획득 및 지속적 근거 관리로 우선순위가 확장되는 흐름을 보여주고, 근거 충분성, 검증·교정 가능한 이해, 예산 인식 조정과 지속적 문서 이해를 향후 방향으로 제시한다. 초록에는 성능 검증 결과나 명시적 한계는 제시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31293v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31293v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31385v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31385v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -184,29 +187,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31478",
-    "title": "MoG-VLM: Efficient Video Anomaly Detection through Motion-Guided Vision-Language Models",
-    "authors": "Khaled Waleed Dawoud et al.",
+    "id": "2610.30947",
+    "title": "RetiJev: Fast and Source-Grounded Ophthalmic Decision Models",
+    "authors": "Bo Liu et al.",
     "published": "2026-10-22",
-    "category": "cv",
+    "category": "llm",
     "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.LG"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "video",
-      "detection"
+      "privacy",
+      "generation"
     ],
-    "summaryKo": "MoG-VLM은 움직임을 경량 제어 신호로 사용해 필요한 구간에만 VLM 추론을 집중함으로써 영상 이상 탐지를 효율화하는 모션 적응형 프레임워크이다.",
+    "summaryKo": "RetiJev는 PubMed Central과 MeSH 기반의 안과 의사결정 데이터로 학습해 자동회귀 디코딩 없이 후보 답안을 직접 점수화하는 0.8B–9B 모델군으로, 지침 등급 및 임상 결정에서 기준 모델보다 높은 정확도와 낮은 지연을 보고했다.",
     "detail": {
-      "problem": "VLM은 영상 이상 탐지에 유망하지만 조밀한 프레임 단위 추론 때문에 실시간 배포가 어렵다. 기존 가속은 주로 균일 샘플링에 의존해 콘텐츠 역학을 무시하고 정적 구간에 계산을 낭비하거나 국소적 이상을 놓칠 수 있다.",
-      "method": "MoG-VLM은 Temporal Gradient Magnitude(TGM)로 콘텐츠 인식 샘플링을 수행해 정보가 많은 영역에 계산을 집중한다. 또한 이상 가능성이 높은 프레임 주변에서만 앵커 트리거 문맥 창 확장과 조기 종료를 통해 조밀한 다중 프레임 VLM 추론을 활성화하는 계층적 이중 스트림 설계와, 순간적 의미 단서와 시간적 행동 역학을 조화시키는 융합 모듈을 제안한다.",
-      "takeaway": "XD-Violence, UCF-Crime, MSAD, ShanghaiTech에서 각각 91.91%, 84.30%, 87.88%, 78.96% AUC-ROC를 달성해 제로샷·학습 불필요 설정에서 세 벤치마크의 새로운 SOTA를 세웠다. XD-Violence에서는 이전 최고 결과보다 +0.57% 향상과 1.31x 추론 속도 향상을 보였으며, 초록에는 별도 한계가 명시되지 않았다."
+      "problem": "안과 임상 의사결정 지원에는 빠르고 정확하며 프라이버시를 보존하는 결정이 필요하지만, 사전 정의된 행동 중 선택에서 자동회귀 LLM은 지연과 계산 부담이 크다.",
+      "method": "PubMed Central 논문과 531개 안질환 MeSH 용어에서 도출한 78,158개 임상결정·진단 질문, 11개 등급체계의 50,074개 지침등급 질문, 24,662개 평가 벤치마크로 RetiJev-Data를 구축하고, 자동회귀 디코딩 없이 후보 답안을 직접 점수화하는 0.8B–9B RetiJev 모델군을 개발했다.",
+      "takeaway": "모든 크기에서 지침 등급 정확도가 27B LLM과 상용 Jev 1.13보다 10.4–23.0점 높았고, RetiJev-9B는 임상 결정에서 두 기준보다 5.4–6.5점 높으며 진단에서는 동등했고, 한 GPU에서 사례당 158ms로 LLM 생성보다 3.5배, 추론보다 470배 빨랐다; 초록에는 별도 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31478v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31478v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.30947v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.30947v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -215,26 +217,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.30900",
-    "title": "Silicon Samples Match the Answers but Not the Respondents",
-    "authors": "Yusuke Kumagae, Masahiro Kaneko",
+    "id": "2610.31256",
+    "title": "IndoNutriQA: An Indonesian Clinical Nutrition Question Answering Benchmark",
+    "authors": "Tirana Noor Fatyanosa et al.",
     "published": "2026-10-22",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.CY"
+      "cs.CL"
     ],
     "tags": [
-      "survey"
+      "benchmark",
+      "medical",
+      "retrieval"
     ],
-    "summaryKo": "이 논문은 LLM 기반 실리콘 샘플링이 개별 문항 분포는 맞출 수 있어도 인간 응답자의 전체 응답 프로필을 충분히 포괄하지 못함을 보이고, 이를 측정하는 respondent coverage gap(RCG)을 제안한다.",
+    "summaryKo": "IndoNutriQA는 실제 임상영양 보고서를 바탕으로 전문가가 큐레이션한 911개 질문-답변 쌍의 인도네시아어 임상 영양 QA 벤치마크로, 저자원 언어의 임상 QA 데이터 부재를 완화하기 위해 제안되었다.",
     "detail": {
-      "problem": "기존 평가는 개별 답 정확도, 문항별 답 분포, 문항 간 상관에 치우쳐 응답자 자체를 비교하지 않아, 인간에게 없는 답 조합을 가진 생성 응답자도 좋은 점수를 얻을 수 있다는 문제를 다룬다.",
-      "method": "각 응답자를 전체 응답 프로필로 정의한 점으로 표현하고, 각 인간 응답자에서 가장 가까운 생성 응답자까지의 거리를 인간 샘플 간 거리 대비로 측정하는 RCG를 제안한다.",
-      "takeaway": "미국 사회조사 두 개에서 평가한 6개 LLM 모두 인간 응답자를 포괄하지 못했고, 주요 설정에서는 인간 주변분포에서 각 답을 독립적으로 샘플링한 기준보다 뒤처졌으며, 테스트한 프롬프트·추론 설정 전반에서 모든 LLM의 RCG가 인간 데이터에 적합한 Gaussian copula보다 높았다."
+      "problem": "임상 QA는 임상 지능형 의사결정 지원 시스템의 기반이지만, 인도네시아어와 같은 저자원 언어에서는 공개된 도메인 특화 데이터가 없어 발전이 크게 제한된다.",
+      "method": "실제 임상영양 보고서에서 구축한 911개 질문-답변 쌍에 임상적으로 관련된 맥락과 구조화 메타데이터를 부여했고, Nutrition Care Process에 따른 8개 표준 질문 유형과 PES 진단 문장을 포함했다. 답변은 추출형 스팬이 아닌 자유 서술형 임상 문장이며, 전문가 검증에서 참조 답변의 6-10%가 논쟁 가능한 것으로 나타났다.",
+      "takeaway": "생성형·추출형·검색증강 QA와 zero-/few-shot LLM 평가를 지원하며, IndoBERT 변형, mT5, RAG의 파인튜닝 베이스라인과 8개 LLM을 zero-/five-shot으로 벤치마크했다. LLM-as-judge 루브릭은 전문가 3명과 비교 시 사실성과 완전성에서는 인간과 유사했으나 임상 안전성에서는 신뢰할 수 없었고, 인간 오류 분석에서 평가자가 식별한 미지원 내용을 놓쳤다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.30900v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.30900v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31256v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31256v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -243,28 +246,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.30989",
-    "title": "ColaBench: Evaluating Memory-Guided Knowledge Acquisition in Personal Agents",
-    "authors": "Wenjie Zhang et al.",
+    "id": "2610.31466",
+    "title": "AnyGameRenderer: Entity-Consistent Generative Rendering Across Games and an Entity-Level Benchmark",
+    "authors": "Ruicong Liu et al.",
     "published": "2026-10-22",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.AI",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
       "agents",
-      "retrieval"
+      "3d",
+      "video",
+      "generation"
     ],
-    "summaryKo": "ColaBench는 개인 에이전트가 장기 상호작용 이력에 기반해 외부 지식을 검색·적용하는 능력을 평가하기 위한 건강 및 일상생활 영역의 합성 벤치마크로, 349개 과제와 13,033개 문서, Evidence Graph를 제공하며 MemKB를 함께 제안한다.",
+    "summaryKo": "AnyGameRenderer는 AI 에이전트가 만든 게임의 회색 블록아웃·기하 도형·의미 맵·와이어프레임 같은 단순 영상을 고품질 영상으로 생성하면서 레이아웃, 카메라, 엔티티 위치와 타이밍을 유지하는 video-to-video 생성 렌더러다.",
     "detail": {
-      "problem": "기존 벤치마크는 기억 회상, 개인화 검색, 기억 기반 행동을 다루지만, 과거 조건으로 새 요청에 필요한 지식을 식별하고 이를 사용자 상황에 적용하는 두 문제의 결합 평가는 부족하다.",
-      "method": "건강·일상생활 영역에서 10개 프로필, 349개 과제, 13,033개 문서로 구성된 합성 벤치마크 ColaBench를 제안하고, Evidence Graph가 개인 조건의 공개 세션별 공개, 이전 문서 노출, 답변 요구사항과 개인·새로 획득한 문서 근거의 연결을 기록한다. 또한 상태 요약으로 질의와 규칙 적용을 안내하고 메모리-문서 연결로 사용자 이력과 관련된 지식을 검색하는 MemKB를 제안한다.",
-      "takeaway": "MemKB는 과제당 평균 4.07회 상호작용 라운드로 86.25% Accuracy를 달성했고, 여러 역사적 Fact를 통합하는 과제에서 더 큰 이득을 보였다. 오류 분석은 지원되지 않는 개인 가정과 규칙 오적용을 검색된 근거 활용의 장애로 식별했다."
+      "problem": "AI 코딩 에이전트가 짧은 시간에 플레이 가능한 소규모 게임을 만들 수 있지만 결과물은 흔히 회색 블록아웃, 색칠된 기하 도형, 평면적 의미 블롭 같은 프로그래머 아트처럼 보인다. 이 논문은 이런 영상을 고품질 시각 효과와 캐릭터·모션 디테일을 갖춘 영상으로 바꾸면서 레이아웃, 카메라, 각 엔티티의 위치와 타이밍을 보존하는 문제를 다룬다.",
+      "method": "AnyGameRenderer는 엔진 G-buffer, 객체별 클래스 라벨, 저폴리 프록시 같은 복잡한 표현 없이 일반 비디오를 게임 상태 입력으로 사용하는 video-to-video 생성 렌더러이며, 회색 블록아웃·색칠된 기본 도형·의미 맵·와이어프레임을 입력으로 받는다. 33B reference-video-conditioned 비디오 생성 모델 MiniMax-H3 ref2va를 LoRA로 미세조정하고, GEAR로 만든 38개 게임의 다중 스트림 렌더링 데이터, Unreal Engine의 2-스트림 렌더링 데이터, 3D-box 검출로 쌍을 재구성한 실제 게임플레이 녹화를 포함한 약 1만 개의 쌍 클립으로 학습한다.",
+      "takeaway": "엔티티 대응 평가를 위해 59개 held-out 사례와 753개 엔티티로 구성된 엔티티 수준 벤치마크를 제안했으며, 기본 모델 대비 시간적 매치는 50.9%에서 62.9%로, 놓친 개수 변화는 34.7%에서 21.3%로 개선되고 환각되거나 렌더링되지 않은 엔티티도 줄었다. 초록에는 별도의 한계가 명시되어 있지 않다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.30989v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.30989v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31466v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31466v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -273,28 +277,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31019",
-    "title": "Chunk Recomputation under Real Document Revisions: Measuring Update Cost and Retrieval Quality of Fixed, Recursive, and Content-Defined Chunking",
-    "authors": "Yuning Bian et al.",
+    "id": "2610.31640",
+    "title": "WorldForge V2: Eliciting Camera-Trajectory Alignment in Video Diffusion Models",
+    "authors": "Chenxi Song et al.",
     "published": "2026-10-22",
-    "category": "llm",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.IR"
+      "cs.CV"
     ],
     "tags": [
-      "retrieval",
-      "embedding",
+      "diffusion",
+      "3d",
+      "video",
+      "benchmark",
       "generation"
     ],
-    "summaryKo": "실제 위키백과 문서 수정 쌍에서 고정 크기, 재귀적, 내용 정의 청킹의 갱신 비용과 검색 품질을 측정해, 갱신 비용이 매개변수에 민감하고 정적 검색 평가가 드러내지 않는 차원임을 보인다.",
+    "summaryKo": "WorldForge V2는 사전학습된 비디오 확산 모델의 생성 능력을 유지하면서 목표 카메라 경로에 대한 정확한 카메라 제어를 달성하는 방법을 제안한다.",
     "detail": {
-      "problem": "RAG용 청킹은 보통 정적 스냅샷에서 평가되지만 지식베이스 문서는 계속 바뀌며, 경계가 이동하면 변경되지 않은 텍스트도 다시 임베딩해야 한다.",
-      "method": "중국어·영어 위키백과 인접 리비전 120쌍에서 세 가지 stateless 청커를 엄격한 바이트 동일 재사용 규칙과 고정 밀집 인코더로 비교하고, 갱신 비용과 고정 2048토큰 검색 예산에서의 증거 재현율을 측정했다.",
-      "takeaway": "공통 성공 116개 문서에서 고정 크기 청킹은 새 버전 임베딩 입력 작업의 57–68%, 재귀적 청킹은 38–56%, 내용 정의 청킹은 43–54%를 재계산했고(중국어 62개 중 4개 실패), 평균 증거 재현율은 언어별로 2퍼센트포인트 미만 차이였다. 비용만 본 매개변수 그리드에서는 내용 인식 청커 간 순위가 청크 길이에 따라 바뀌었고 길이를 맞춘 모든 조건에서 비중복 고정 크기 청킹이 가장 높은 재계산 비용을 보였으며, 저자들은 경계 이동이 기여한다는 진단적 증거를 제시하지만 결과는 특정 리비전 쌍과 설정에 기반한다."
+      "problem": "비디오 확산 모델은 풍부한 3D/4D 지식을 학습했지만, 부정확한 카메라 제어, 공간·시간적 불일치, 카메라 운동과 장면 역학의 얽힘 때문에 공간 작업에서 사용이 제한된다. 기존의 task-specific fine-tuning이나 post-process warping은 시각적 아티팩트, 낮은 일반화, 높은 계산 비용을 초래할 수 있다.",
+      "method": "훈련 없이 warped reference를 사용해 목표 카메라 경로를 따라 생성을 반복 정제하는 guidance framework를 개발하고, optical-flow 분석으로 운동 관련 latent channel을 선택해 motion control과 appearance를 분리한다. dual-path 전략으로 guided/unguided 예측을 비교해 불완전한 reference의 아티팩트를 보정하며, v-cache로 추가 모델 평가 없이 정제 비용을 줄이고, Trajectory LoRA와 two-stage training으로 적은 감독 및 훈련 데이터로 카메라 제어를 가능하게 한다.",
+      "takeaway": "여러 데이터셋의 정량·정성 평가에서 state-of-the-art 생성 품질과 궤적 정확도를 달성했고, 단일 훈련 장면만으로도 보지 못한 장면 일반화를 지원한다고 보고한다. 초록에는 별도의 한계가 명시되어 있지 않다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31019v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31019v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.31640v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.31640v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -303,28 +308,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31062",
-    "title": "SCOPE: Compiling Natural-Language Policies into Neurosymbolic Predicate Programs",
-    "authors": "Arnon Mazza, Elad Levi",
+    "id": "2610.30841",
+    "title": "TRIAD: Benchmarking Omni-Modal Ambiguity in Multimodal Large Language Models",
+    "authors": "Zhaolu Kang et al.",
     "published": "2026-10-22",
-    "category": "llm",
+    "category": "multimodal",
     "categories": [
-      "cs.AI",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "SCOPE는 자연어 정책을 소형 모델, 결정론적 추출기, 코드로 구성된 신경 술어 프로그램으로 컴파일하고 반례 생성으로 학습 데이터와 함께 최적화하여 LLM 에이전트의 복합 정책 집행을 안정적이고 해석 가능하며 효율적으로 수행하는 방법이다.",
+    "summaryKo": "TRIAD는 텍스트·이미지·오디오에 분산된 모호성을 해소하는 능력을 평가하는 옴니모달 벤치마크로, 14개 시스템 평가에서 항목 수준 성능이 장면 수준의 강건한 모호성 해소로 이어지지 않음을 보인다.",
     "detail": {
-      "problem": "LLM 에이전트 정책 집행이 다중 턴 대화와 도구 호출 궤적에 대한 복합·애플리케이션 특화 정책으로 확장되면서, 파인튜닝 가드레일은 복합 정책에서 성능이 저하되고 LLM-as-a-judge는 추론 비용이 높고 예측이 불안정하다. 기존 신경기호학적 방법의 기호 계층은 필요한 표현력을 갖추지 못하고 정책 자체가 아니라 고정 데이터에 최적화되어 있다.",
-      "method": "SCOPE는 정책을 소형 모델과 결정론적 추출기, 그리고 이들의 출력을 조합하는 코드로 실행되는 신경 술어 프로그램으로 컴파일한다. 이 프로그램은 정책에서 벗어나는 지점을 겨냥한 반례의 적대적 생성과 함께 학습 데이터와 공동 최적화된다.",
-      "takeaway": "실제 정책 과제 벤치마크에서 프롬프트 최적화, 과제 분해, 워크플로 생성 방법과 비교해 과제와 모델 전반에서 가장 높은 평균 정확도를 달성했고, 가장 약한 실행기로 최적화된 프로그램은 추가 최적화 없이 다른 모델로 전이되어 저비용 모델에서도 프런티어 추론 모델에 준하는 정확도를 보였다. SCOPE는 더 안정적인 예측과 술어 출력을 통한 판정 해석 가능성을 제공하며 절제 연구로 핵심 구성요소를 검증했으나, 초록에는 별도의 한계가 명시되어 있지 않다."
+      "problem": "기존 멀티모달 벤치마크는 주로 이미 확정된 입력에 대한 지각·인식·추론을 평가해, 텍스트·비전·오디오에 걸쳐 분산된 모호성을 옴니모달 대규모 언어 모델이 해소할 수 있는지 불분명하다.",
+      "method": "각 항목을 질문과 답안 선택지가 붙은 텍스트-이미지-오디오 삼중항으로 구성해, 전체 삼중항은 유일한 답을 결정하지만 어느 한 모달리티를 제거하면 일관된 선택지가 유일하지 않게 만들었다. TRIAD는 86개 장면 그룹의 수작업 쿼리 327개와 세 모달리티에 걸친 18개 모호성 범주를 포함하며, 14개 옴니모달 시스템을 평가하는 진단 프로토콜을 제공한다.",
+      "takeaway": "평가 결과 강한 항목 수준 성능은 강건한 장면 수준 모호성 해소로 이어지지 않았고, 최고 모델도 그룹 정확도에서 인간보다 20점 이상 뒤졌다. 답안 선택지를 제거하면 격차가 더 커져 모델 그룹 정확도는 한 자릿수에 이르렀으며, leave-one-out 및 전사/설명 반사실 실험은 텍스트와 이미지가 있을 때 현재 시스템이 오디오 단서를 자주 충분히 활용하지 않음을 보여준다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31062v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31062v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.30841v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.30841v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -333,26 +336,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2610.31199",
-    "title": "Investigating Multi-Cultural Value Selection Biases in LLMs",
-    "authors": "Siddhesh Pawar et al.",
+    "id": "2610.30933",
+    "title": "ReflectPO: Reflection-Guided Policy Optimization for Long-Horizon LLM Agents",
+    "authors": "Rumei Li, Xunliang Cai",
     "published": "2026-10-22",
     "category": "llm",
     "categories": [
       "cs.CL"
     ],
     "tags": [
-      "survey",
-      "generation"
+      "benchmark",
+      "agents",
+      "autonomous-driving"
     ],
-    "summaryKo": "이 논문은 LLM이 동시에 주어진 국가 페르소나와 사용자 발화의 국가명 또는 질의 언어 단서에 따라 문화적 가치 선택이 어떻게 달라지는지 WVS 다지선다 및 개방형 생성으로 분석한다.",
+    "summaryKo": "ReflectPO는 장기 호라이즌 LLM 에이전트의 오류 복구를 위해 반성 유도 샘플링과 트리 구조 크레딧 할당을 결합한 강화학습 프레임워크다.",
     "detail": {
-      "problem": "LLM 사용자의 문화 정체성은 다층적이지만, 기존 문화 평가는 흔히 정체성을 하나의 레이블로 축소한다. 이 작업은 동시적 정체성 단서 아래에서 LLM의 가치 선택 편향을 살펴본다.",
-      "method": "시스템 프롬프트에 국가 페르소나를 두고, 사용자 턴에서 국가명을 언급하는 명시적 단서 또는 질의 언어를 통한 암시적 단서를 함께 제시한다. World Values Survey 다지선다 프로빙과 개방형 사회정치 생성으로 평가한다.",
-      "takeaway": "다지선다에서는 언어 단서가 명시적 단서보다 약 3배 더 답변을 이동시키지만 해당 국가 분포에서는 멀어지고, 명시적 단서는 일관되게 해당 국가 쪽으로 답변을 이동시키지 않았다. 160만 개 개방형 응답에서는 국가명 제시가 모델 자체의 해당 국가 응답과의 격차를 30-44% 줄였고, 명시적 단서가 언어 단서보다 더 차별화된 가치 변화를 만들었다; 초록에는 별도의 한계가 명시되지 않았다."
+      "problem": "도구를 사용하는 LLM 에이전트가 장기 호라이즌 작업을 수행할 때 초기 실행 오류가 이후 상호작용 이력과 환경 상태에 누적되어 성능에 영향을 준다.",
+      "method": "ReflectPO는 상호작용 궤적의 분기 차이와 반복 방문을 이용해 오류 복구 힌트를 구성하는 반성 유도 샘플링과, 샘플링된 궤적을 트리로 조직해 부모-자식 보상 차이 및 복구 이득으로 행동 수준 크레딧을 할당하는 트리 구조 크레딧 할당으로 구성된다.",
+      "takeaway": "두 장기 호라이즌 도구 사용 벤치마크에서 ReflectPO는 대부분 영역에서 여러 기존 베이스라인을 능가하고 평균적으로 최고 성능을 보였으며, 에이전트가 자기 편차를 인식하고 오류 상태에서 복구해 과제 완료를 향해 계속 진행하는 능력을 향상시켰다. 초록에는 명시적 한계가 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2610.31199v1",
-    "pdfUrl": "https://arxiv.org/pdf/2610.31199v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2610.30933v1",
+    "pdfUrl": "https://arxiv.org/pdf/2610.30933v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -381,54 +385,16 @@ window.PAPERS = [
     "sourceUrl": "https://arxiv.org/abs/2610.25107v1",
     "pdfUrl": "https://arxiv.org/pdf/2610.25107v1.pdf",
     "recommendationModes": [
-      "week",
       "month"
     ],
     "recommendationRanks": {
-      "week": 1,
       "month": 1
     },
     "metrics": {
       "citationCount": 29,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.622Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W162364964"
-    }
-  },
-  {
-    "id": "2607.19153",
-    "title": "Breaking the Homogeneity Assumption: Specialized Multi-Generator Adversarial Learning for Rare Failure Detection in Predictive Maintenance",
-    "authors": "Alexis Lazanas, Georgios Kampouropoulos",
-    "published": "2026-07-21",
-    "category": "cv",
-    "categories": [
-      "cs.LG",
-      "cs.AI"
-    ],
-    "tags": [
-      "multimodal",
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "본 논문은 예측 유지보수에서 희귀 고장 데이터의 비동질적·다중모달 실패 유형을 고려한 전문화된 다중 생성기 GAN 기반 증강이 기존 불균형 처리법보다 더 나은 희귀 고장 탐지를 가능하게 하는지 평가한다.",
-    "detail": {
-      "problem": "예측 유지보수용 지도학습 모델은 고장이 드물게 발생하는 고도로 불균형한 산업 데이터로 학습되며, 고장 데이터는 서로 다른 물리적 과정에서 발생하는 여러 실패 모드로 인해 비동질적이고 다중모달 분포를 보인다. 전통적인 불균형 처리법은 소수 클래스가 동질적이라고 가정하므로 이러한 산업 현장의 다면적 조건에서 효과가 제한된다.",
-      "method": "논문은 실패 유형을 의식한 생성적 증강을 제안하며, 개별 실패 하위 유형을 학습하는 독립 생성기들을 가진 전문화된 다중 생성기 GAN 아키텍처를 사용한다. 누출 안전 실험 설계로 비용 민감 학습, 무작위 언더샘플링, SMOTE 오버샘플링, 단일 생성기 GAN 증강, 다중 생성기 GAN을 비교하고 PR-AUC를 주요 평가지표로 사용한다.",
-      "takeaway": "AI4I 2020 예측 유지보수 데이터셋 실험에서 제안된 다중 생성기 GAN 프레임워크는 더 현실적인 소수 샘플을 생성하여 전통적 리샘플링 방법과 단일 생성기 GAN 증강보다 높은 PR-AUC와 재현율을 보였다. 초록에는 별도의 한계가 명시되지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2607.19153v1",
-    "pdfUrl": "https://arxiv.org/pdf/2607.19153v1.pdf",
-    "recommendationModes": [
-      "sixMonths"
-    ],
-    "recommendationRanks": {
-      "sixMonths": 6
-    },
-    "metrics": {
-      "citationCount": 18,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
-      "openAlexId": "W7159969865"
     }
   },
   {
@@ -461,7 +427,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 2,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W7160926458"
     }
   },
@@ -493,7 +459,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 128,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4415620163"
     }
   },
@@ -523,13 +489,13 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "week": 3,
+      "week": 2,
       "month": 3
     },
     "metrics": {
       "citationCount": 27,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.622Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4417175683"
     }
   },
@@ -569,7 +535,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 153,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4416043407"
     }
   },
@@ -600,8 +566,75 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 120,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4415767100"
+    }
+  },
+  {
+    "id": "2411.11158",
+    "title": "Leveraging genomic deep learning models for the prediction of non-coding variant effects",
+    "authors": "Pooja Kathail, Ayesha Bajwa, Nilah M. Ioannidis",
+    "published": "2024-11-17",
+    "category": "llm",
+    "categories": [
+      "q-bio.GN"
+    ],
+    "tags": [],
+    "summaryKo": "이 리뷰는 비코딩 변이 효과 예측을 위해 지도학습 기반 서열-활성 모델과 자기지도학습 기반 게놈 언어 모델을 활용하는 연구 진전을 정리하고, 예측 시 실무적 고려사항과 평가용 ground truth 데이터 유형을 범주화한다.",
+    "detail": {
+      "problem": "인간 유전학에서 비코딩 변이의 기능을 규명하는 일은 여전히 중요한 과제이며, 게놈 딥러닝 모델이 변이 효과를 in silico로 예측하는 유망한 접근으로 부상했다.",
+      "method": "저자들은 DNA 서열로부터 전장 크로마틴 상태나 유전자 발현 수준 같은 분자 표현형을 직접 예측하는 지도학습 서열-활성 모델과 자기지도학습 게놈 언어 모델을 중심으로 관련 연구를 검토하고, 변이 효과 예측을 위한 실무적 고려사항과 평가에 사용되는 ground truth 데이터 유형을 정리한다.",
+      "takeaway": "이 리뷰는 현재 모델이 가장 유용하게 적용될 수 있는 설정에 대한 통찰을 제공하고, 실무자를 위한 핵심 고려사항과 모델 개발 및 평가에서의 개선 기회를 강조한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2411.11158v1",
+    "pdfUrl": "https://arxiv.org/pdf/2411.11158v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 4
+    },
+    "metrics": {
+      "citationCount": 5,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
+      "openAlexId": "W4404570578"
+    }
+  },
+  {
+    "id": "2411.06284",
+    "title": "A Comprehensive Survey and Guide to Multimodal Large Language Models in Vision-Language Tasks",
+    "authors": "Chia Xin Liang et al.",
+    "published": "2024-11-09",
+    "category": "cv",
+    "categories": [
+      "cs.AI"
+    ],
+    "tags": [
+      "video",
+      "multimodal",
+      "survey",
+      "generation"
+    ],
+    "summaryKo": "이 논문은 텍스트·이미지·비디오·오디오를 통합하는 멀티모달 대규모 언어 모델(MLLM)의 아키텍처, 훈련 방법, 응용, 과제, 윤리 및 향후 방향을 종합적으로 조사하고 실무 가이드를 제공하는 설문 논문이다.",
+    "detail": {
+      "problem": "MLLM의 빠른 발전 속에서 아키텍처, 훈련 방법, 응용, 확장성·견고성·교차모달 학습, 윤리적 고려를 체계적으로 정리할 필요를 다룬다.",
+      "method": "기초 개념부터 시작해 MLLM의 아키텍처 구성요소와 훈련 방법, 다양한 분야의 실제 응용, 대표 구현 사례와 기술 분석을 조사한다. 또한 윤리적 고려, 책임 있는 AI 개발, 미래 방향을 논의한다.",
+      "takeaway": "MLLM 개발·배포의 기회와 과제를 균형 있게 제시하는 이론적 틀과 실무적 통찰을 제공한다. 확장성·견고성·교차모달 학습과 윤리·책임 있는 AI 개발을 주요 과제로 논의한다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2411.06284v1",
+    "pdfUrl": "https://arxiv.org/pdf/2411.06284v1.pdf",
+    "recommendationModes": [
+      "sixMonths"
+    ],
+    "recommendationRanks": {
+      "sixMonths": 6
+    },
+    "metrics": {
+      "citationCount": 17,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
+      "openAlexId": "W4404401197"
     }
   },
   {
@@ -635,9 +668,9 @@ window.PAPERS = [
       "year": 4
     },
     "metrics": {
-      "citationCount": 201,
+      "citationCount": 202,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4416379250"
     }
   },
@@ -671,7 +704,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.622Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4402560383"
     }
   },
@@ -705,7 +738,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 13,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4400064820"
     }
   },
@@ -739,13 +772,13 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "week": 2,
+      "week": 1,
       "month": 2
     },
     "metrics": {
       "citationCount": 28,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.622Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4394866661"
     }
   },
@@ -777,7 +810,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 3,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.622Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W7221004523"
     }
   },
@@ -813,7 +846,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 18,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W7164501397"
     }
   },
@@ -847,7 +880,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 273,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4387355843"
     }
   },
@@ -879,9 +912,9 @@ window.PAPERS = [
       "year": 2
     },
     "metrics": {
-      "citationCount": 422,
+      "citationCount": 425,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4364320763"
     }
   },
@@ -916,9 +949,9 @@ window.PAPERS = [
       "year": 1
     },
     "metrics": {
-      "citationCount": 2068,
+      "citationCount": 2075,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -948,20 +981,20 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "week": 4,
+      "week": 3,
       "month": 5
     },
     "metrics": {
       "citationCount": 7,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-10-24T08:30:23.623Z",
+      "citationUpdatedAt": "2026-10-25T08:30:22.420Z",
       "openAlexId": "W2888645009"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-10-24T08:32:24.864Z",
+  "collectedAt": "2026-10-25T08:32:24.059Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -972,27 +1005,27 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-10-18",
-        "to": "2026-10-24"
+        "from": "2026-10-19",
+        "to": "2026-10-25"
       },
       "month": {
-        "from": "2026-09-25",
-        "to": "2026-10-24"
+        "from": "2026-09-26",
+        "to": "2026-10-25"
       },
       "sixMonths": {
-        "from": "2026-04-28",
-        "to": "2026-10-24"
+        "from": "2026-04-29",
+        "to": "2026-10-25"
       },
       "year": {
-        "from": "2025-10-25",
-        "to": "2026-10-24"
+        "from": "2025-10-26",
+        "to": "2026-10-25"
       }
     },
     "fallbackModes": []
   },
   "summary": {
-    "total": 29,
-    "available": 29,
+    "total": 30,
+    "available": 30,
     "unavailable": 0,
     "status": "ok"
   }
