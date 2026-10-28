@@ -360,6 +360,10 @@
     }
   });
 
+  var koreaToday = dateOnly(new Date().toISOString()).split('-');
+  document.getElementById('current-week').textContent = Number(koreaToday[0]) + '년 '
+    + Number(koreaToday[1]) + '월 ' + Math.ceil(Number(koreaToday[2]) / 7) + '주차';
+
   if (window.PAPER_METADATA) {
     var dataEl = document.getElementById('updated-data');
     if (dataEl && window.PAPER_METADATA.collectedAt) dataEl.textContent = dateOnly(window.PAPER_METADATA.collectedAt);

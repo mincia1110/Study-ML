@@ -6,6 +6,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: daily-paper-collection
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest
@@ -21,6 +25,11 @@ jobs:
         with:
           node-version: '24'
           package-manager-cache: false
+
+      - name: Check collector
+        run: |
+          node scripts/collect-papers.mjs --self-test
+          node scripts/summary-self-test.mjs
 
       - name: Collect papers
         run: node scripts/collect-papers.mjs --require-summaries
@@ -55,6 +64,7 @@ jobs:
           CHANGES_DETECTED: ${{ needs.collect.outputs.changes_detected }}
           COMMIT_HASH: ${{ needs.collect.outputs.commit_hash }}
           SITE_URL: https://mincia1110.github.io/Study-ML/
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
           if [ -z "$NTFY_TOPIC" ]; then
             echo "::error::NTFY_TOPIC secret is not configured"
@@ -74,7 +84,8 @@ jobs:
           message="Result: ${RESULT}
           Data changed: ${CHANGES_DETECTED:-unknown}
           Commit: ${COMMIT_HASH:-none}
-          Site: ${SITE_URL}"
+          Site: ${SITE_URL}
+          Run: ${RUN_URL}"
 
           curl --fail --silent --show-error --retry 3 --retry-all-errors --max-time 20 \
             --output /dev/null \

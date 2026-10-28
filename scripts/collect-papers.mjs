@@ -34,10 +34,13 @@ import { createArxivClient } from './lib/arxiv-client.mjs';
  */
 
 const ARXIV_API = 'https://export.arxiv.org/api/query';
-const CAT_QUERIES = [
-  'cat:cs.CV AND (all:"large language model" OR all:"vision-language" OR all:multimodal OR all:video OR all:3d OR all:benchmark)',
-  'cat:cs.CL AND (all:"large language model" OR all:reasoning OR all:agent OR all:retrieval OR all:RAG)',
+const ARXIV_DAILY_FEED = 'https://rss.arxiv.org/atom/cs.CV+cs.CL';
+const LATEST_SEARCHES = [
+  { category: 'cs.CV', terms: ['large language model', 'vision-language', 'multimodal', 'video', '3d', 'benchmark'] },
+  { category: 'cs.CL', terms: ['large language model', 'reasoning', 'agent', 'retrieval', 'RAG'] },
 ];
+const CAT_QUERIES = LATEST_SEARCHES.map(({ category, terms }) =>
+  `cat:${category} AND (${terms.map(term => `all:${/[ -]/.test(term) ? `"${term}"` : term}`).join(' OR ')})`);
 const MAX_RESULTS = 50;
 const MAX_PAPERS = 12;
 const OUTPUT_PATH = 'data/papers.js';
@@ -58,7 +61,8 @@ const configuredRetries = Number(process.env.OPENCODE_GO_MAX_RETRIES ?? 3);
 const LLM_MAX_RETRIES = Number.isInteger(configuredRetries) && configuredRetries >= 0
   ? Math.min(3, configuredRetries) : 3;
 const ARXIV_REQUEST_TIMEOUT_MS = positiveInteger(process.env.ARXIV_REQUEST_TIMEOUT_MS, 60_000);
-const ARXIV_MAX_RETRIES = positiveInteger(process.env.ARXIV_MAX_RETRIES, 4);
+const configuredArxivRetries = Number(process.env.ARXIV_MAX_RETRIES ?? 4);
+const ARXIV_MAX_RETRIES = Number.isInteger(configuredArxivRetries) && configuredArxivRetries >= 0 ? configuredArxivRetries : 4;
 const ARXIV_RATE_LIMIT_RETRY_MS = positiveInteger(process.env.ARXIV_RATE_LIMIT_RETRY_MS, 30_000);
 const arxivClient = createArxivClient({
   requestTimeoutMs: ARXIV_REQUEST_TIMEOUT_MS,
@@ -85,16 +89,22 @@ const USE_LLM = Boolean(API_KEY);
 /* ── helpers ── */
 
 function stripHtml(s) {
-  return s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const entities = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'" };
+  return s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g, '$1').replace(/<[^>]+>/g, '')
+    .replace(/&(#x[\da-f]+|#\d+|amp|lt|gt|quot|apos);/gi, (match, entity) => {
+      if (!entity.startsWith('#')) return entities[entity.toLowerCase()];
+      const point = entity[1].toLowerCase() === 'x' ? Number.parseInt(entity.slice(2), 16) : Number(entity.slice(1));
+      return point > 0 && point <= 0x10ffff && !(point >= 0xd800 && point <= 0xdfff) ? String.fromCodePoint(point) : match;
+    }).replace(/\s+/g, ' ').trim();
 }
 
 function extractArxivId(entry) {
-  const m = entry.match(/<id>[^<]*\/abs\/(\d+\.\d+)/);
+  const m = entry.match(/<id>\s*(?:https?:\/\/(?:export\.)?arxiv\.org\/abs\/|oai:arXiv\.org:)(\d{4}\.\d{4,5})(?:v\d+)?\s*<\/id>/i);
   return m ? m[1] : null;
 }
 
 function extractTag(entry, tag) {
-  const re = new RegExp(`<${tag}>([^<]+)</${tag}>`);
+  const re = new RegExp(`<${tag}(?:\\s[^>]*)?>([\\s\\S]*?)</${tag}>`);
   const m = entry.match(re);
   return m ? stripHtml(m[1]) : '';
 }
@@ -112,7 +122,7 @@ function extractAuthors(entry) {
   const re = /<author>[\s\S]*?<name>([^<]+)<\/name>/g;
   let m;
   while ((m = re.exec(entry)) !== null) names.push(stripHtml(m[1]));
-  if (names.length === 0) return 'Unknown';
+  if (names.length === 0) return extractTag(entry, 'dc:creator') || 'Unknown';
   if (names.length <= 3) return names.join(', ');
   return names[0] + ' et al.';
 }
@@ -284,10 +294,19 @@ async function summarizeWithLLMAttempt(paper, options = {}) {
 
 /* ── arXiv feed fetch & parse ── */
 
+function atomEntries(xml) {
+  if (!/<feed(?:\s|>)/.test(xml) || !/<\/feed>\s*$/.test(xml) || /<id>[^<]*api\/errors/.test(xml)) {
+    const error = new Error('Invalid arXiv Atom feed');
+    error.code = 'ARXIV_INVALID_FEED';
+    throw error;
+  }
+  return [...xml.matchAll(/<entry(?:\s[^>]*)?>([\s\S]*?)<\/entry>/g)].map(match => match[1]);
+}
+
 async function fetchEntries(query) {
   const url = `${ARXIV_API}?search_query=${encodeURIComponent(query)}&sortBy=submittedDate&sortOrder=descending&max_results=${MAX_RESULTS}`;
   const xml = await arxivClient.fetchText(url, `query=${query}`);
-  return xml.split('<entry>').slice(1);
+  return atomEntries(xml);
 }
 
 async function fetchEntriesByIds(ids) {
@@ -296,7 +315,7 @@ async function fetchEntriesByIds(ids) {
     const batch = ids.slice(offset, offset + 50);
     const params = new URLSearchParams({ id_list: batch.join(','), max_results: String(batch.length) });
     const xml = await arxivClient.fetchText(`${ARXIV_API}?${params}`, 'citation metadata');
-    entries.push(...xml.split('<entry>').slice(1));
+    entries.push(...atomEntries(xml));
   }
   return entries;
 }
@@ -323,6 +342,58 @@ function paperFromEntry(raw) {
     pdfUrl: `https://arxiv.org/pdf/${id}v1.pdf`,
     _score: computeScore(title, abstract, categories),
   };
+}
+
+function dailyFeedPapers(xml, now = new Date()) {
+  return atomEntries(xml).flatMap(raw => {
+    // Replacements and cross-listings have update dates, not submission dates.
+    if (extractTag(raw, 'arxiv:announce_type') !== 'new') return [];
+    const paper = paperFromEntry(raw);
+    if (!paper) return [];
+    const announced = Date.parse(extractTag(raw, 'published'));
+    const age = now.getTime() - announced;
+    if (!Number.isFinite(age) || age < -86_400_000 || age > 7 * 86_400_000) return [];
+    paper.abstract = paper.abstract.replace(/^arXiv:\d{4}\.\d{4,5}v\d+\s+Announce Type:\s*new\s+Abstract:\s*/i, '');
+    if (!paper.abstract.trim()) return [];
+    const text = `${paper.title} ${paper.abstract}`.toLowerCase();
+    if (!LATEST_SEARCHES.some(({ category, terms }) => paper.categories.includes(category)
+      && terms.some(term => hasTerm(text, term.toLowerCase())))) return [];
+    paper._score = computeScore(paper.title, paper.abstract, paper.categories);
+    return [paper];
+  });
+}
+
+async function collectLatestPapers(now) {
+  const seen = new Map();
+  try {
+    for (const query of CAT_QUERIES) {
+      for (const raw of await fetchEntries(query)) {
+        const paper = paperFromEntry(raw);
+        if (paper && !seen.has(paper.id)) seen.set(paper.id, paper);
+      }
+    }
+    if (!seen.size) throw new Error('No usable latest papers collected; existing data was not overwritten');
+    return { seen, metadata: { source: 'arxiv-api', status: 'ok', dateBasis: 'submitted' } };
+  } catch (error) {
+    if (![406, 429, 500, 502, 503, 504].includes(error.status)
+      && !['ARXIV_TIMEOUT', 'ARXIV_NETWORK', 'ARXIV_INVALID_FEED'].includes(error.code)) throw error;
+    console.warn(`Latest arXiv API collection failed: ${error.message}; trying the official daily Atom feed`);
+    try {
+      // The same client retains request spacing and the final Retry-After cooldown.
+      const papers = dailyFeedPapers(await arxivClient.fetchText(ARXIV_DAILY_FEED, 'daily Atom feed'), now);
+      if (!papers.length) throw new Error('Daily Atom feed contains no recent matching new papers');
+      // Discard partial API results so their submission dates are not mixed with announcement dates.
+      return {
+        seen: new Map(papers.map(paper => [paper.id, paper])),
+        metadata: {
+          source: 'arxiv-atom', status: 'fallback', dateBasis: 'announced',
+          fallbackReason: error.status ? `HTTP ${error.status}` : error.code,
+        },
+      };
+    } catch (feedError) {
+      throw new AggregateError([error, feedError], 'Latest collection failed via arXiv API and daily Atom feed; existing data was not overwritten');
+    }
+  }
 }
 
 function addRecommendation(paper, mode, rank) {
@@ -352,15 +423,8 @@ function restorePreviousCitationPapers(selectedById, previousPapers) {
 async function collectPapers(options = {}) {
   const previousPapers = readPreviousPapers(OUTPUT_PATH);
   const previousById = new Map(previousPapers.map(p => [p.id, p]));
-  const seen = new Map(); // id -> paper
-
-  for (const catQ of CAT_QUERIES) {
-    const entries = await fetchEntries(catQ);
-    for (const raw of entries) {
-      const paper = paperFromEntry(raw);
-      if (paper && !seen.has(paper.id)) seen.set(paper.id, paper);
-    }
-  }
+  const { seen, metadata: latestMetadata } = await collectLatestPapers(options.now);
+  console.error(`Latest candidates: ${seen.size}; source=${latestMetadata.source}; status=${latestMetadata.status}`);
 
   // Sort first, then prefer papers not shown in the previous generated page.
   const latest = selectFreshFirst(
@@ -374,7 +438,11 @@ async function collectPapers(options = {}) {
   let citationResult = { byMode: {}, windows: {}, queryCount: 0 };
   const citationFallbackModes = [];
 
-  if (!options.latestOnly && OPENALEX_API_KEY) {
+  if (!options.latestOnly && latestMetadata.status === 'fallback') {
+    citationStatus = 'stale-cache';
+    console.warn('arXiv API unavailable; preserving previous citation recommendations');
+    restorePreviousCitationPapers(selectedById, previousPapers);
+  } else if (!options.latestOnly && OPENALEX_API_KEY) {
     try {
       citationResult = await collectCitationRecommendations(OPENALEX_API_KEY, { now: options.now });
       for (const [mode, recommendations] of Object.entries(citationResult.byMode)) {
@@ -455,9 +523,12 @@ async function collectPapers(options = {}) {
     p.tags = [...tagSet].slice(0, 5);
   }
 
-  // Restored citation records have no abstract; fetch the source before retrying.
+  // Use already fetched sources before requesting abstracts for restored citations.
+  for (const paper of sorted) {
+    if (!paper.abstract?.trim() && seen.get(paper.id)?.abstract) paper.abstract = seen.get(paper.id).abstract;
+  }
   const missingAbstracts = sorted.filter(p => !normalizeSummary(p) && !p.abstract?.trim());
-  if (USE_LLM && missingAbstracts.length) {
+  if (USE_LLM && missingAbstracts.length && latestMetadata.status !== 'fallback') {
     try {
       const sources = new Map((await fetchEntriesByIds(missingAbstracts.map(p => p.id)))
         .map(paperFromEntry).filter(Boolean).map(p => [p.id, p.abstract]));
@@ -468,7 +539,7 @@ async function collectPapers(options = {}) {
   }
 
   // Summarize with the LLM; otherwise retain a transparent unavailable-summary.
-  for (const p of sorted) {
+  for (const [index, p] of sorted.entries()) {
     const currentSummary = normalizeSummary(p);
     if (currentSummary) {
       p.summaryKo = currentSummary.summaryKo;
@@ -478,6 +549,7 @@ async function collectPapers(options = {}) {
     const category = p.category;
     const templateSum = generateSummary(p.title, p.abstract, p.categories, category);
     if (USE_LLM) {
+      console.error(`Generating Korean summary for ${p.id} (${index + 1}/${sorted.length})`);
       try {
         const llmSum = await summarizeWithLLM(p);
         p.summaryKo = llmSum.summaryKo;
@@ -502,6 +574,7 @@ async function collectPapers(options = {}) {
   return {
     papers: sorted,
     metadata: {
+      latest: latestMetadata,
       citation: {
         source: 'OpenAlex',
         status: citationStatus,
@@ -762,7 +835,9 @@ async function main() {
     const statuses = [429, 200, 200];
     const retryClient = createArxivClient({
       fetcher: async (_url, request) => {
-        assert.equal(request.headers.Accept, 'application/atom+xml');
+        assert.match(request.headers.Accept, /application\/atom\+xml/);
+        assert.match(request.headers.Accept, /application\/xml/);
+        assert.match(request.headers.Accept, /\*\/\*/);
         assert.match(request.headers['User-Agent'], /^Study-ML-paper-collector\/1\.0/);
         const status = statuses.shift();
         return {
@@ -804,6 +879,83 @@ async function main() {
     });
     assert.equal((await limitedClient.fetch('test:shared-ip-limit')).status, 200);
     assert.deepEqual(limitedDelays, [30_000, 60_000]);
+
+    // A timeout between rate-limit responses must not shorten the cooldown.
+    let mixedClock = 0;
+    let mixedCalls = 0;
+    const mixedDelays = [];
+    const mixedWarnings = [];
+    const mixedClient = createArxivClient({
+      fetcher: async (_url, { signal }) => {
+        mixedCalls += 1;
+        if (mixedCalls === 2) return new Promise((resolve, reject) => {
+          signal.addEventListener('abort', () => reject(new Error('aborted')), { once: true });
+        });
+        return new Response('', { status: mixedCalls === 4 ? 200 : 429 });
+      },
+      sleep: async ms => { mixedDelays.push(ms); mixedClock += ms; },
+      now: () => mixedClock,
+      minIntervalMs: 0,
+      requestTimeoutMs: 5,
+      maxRetries: 3,
+      logger: { warn: message => mixedWarnings.push(message) },
+    });
+    assert.equal(await mixedClient.fetchText('test:mixed-failures'), '');
+    assert.deepEqual(mixedDelays, [30_000, 60_000, 120_000]);
+    assert.match(mixedWarnings[1], /timeout after 5ms/);
+
+    // A terminal error still delays the next request, including a fallback feed.
+    for (const { status, retryAfter, delay } of [
+      { status: 429, retryAfter: '90', delay: 90_000 },
+      { status: 429, retryAfter: null, delay: 30_000 },
+      { status: 503, retryAfter: 'Wed, 28 Oct 2026 08:31:00 GMT', delay: 60_000 },
+      { status: 406, retryAfter: null, delay: 3000 },
+    ]) {
+      let nextClock = Date.parse('2026-10-28T08:30:00Z');
+      let nextCalls = 0;
+      const nextDelays = [];
+      const nextClient = createArxivClient({
+        fetcher: async () => new Response('', {
+          status: ++nextCalls === 1 ? status : 200,
+          headers: retryAfter ? { 'Retry-After': retryAfter } : {},
+        }),
+        maxRetries: 0,
+        now: () => nextClock,
+        sleep: async ms => { nextDelays.push(ms); nextClock += ms; },
+      });
+      await assert.rejects(nextClient.fetchText('test:api'), error => error.status === status);
+      assert.equal(await nextClient.fetchText('test:fallback'), '');
+      assert.equal(nextCalls, 2);
+      assert.deepEqual(nextDelays, [delay]);
+    }
+
+    const dailyEntry = `<entry>
+      <id>oai:arXiv.org:2610.30001v1</id><title type="text">Vision &amp; benchmark &lt;1&gt; &#945;</title>
+      <published>2026-10-28T00:00:00-04:00</published>
+      <summary>arXiv:2610.30001v1 Announce Type: new\nAbstract: Actual video research &amp; evaluation.</summary>
+      <category term="cs.CV"/><arxiv:announce_type>new</arxiv:announce_type>
+      <dc:creator>First Author, Second Author</dc:creator>
+    </entry>`;
+    const feedNow = new Date('2026-10-28T08:30:00Z');
+    const [dailyPaper] = dailyFeedPapers(`<feed>${dailyEntry}</feed>`, feedNow);
+    assert.equal(dailyPaper.id, '2610.30001');
+    assert.equal(dailyPaper.title, 'Vision & benchmark <1> α');
+    assert.equal(dailyPaper.authors, 'First Author, Second Author');
+    assert.equal(dailyPaper.abstract, 'Actual video research & evaluation.');
+    assert.equal(dailyPaper.published, '2026-10-28');
+    assert.equal(dailyPaper.sourceUrl, 'https://arxiv.org/abs/2610.30001v1');
+    for (const excluded of [
+      dailyEntry.replace('<arxiv:announce_type>new', '<arxiv:announce_type>replace'),
+      dailyEntry.replace('<arxiv:announce_type>new', '<arxiv:announce_type>cross'),
+      dailyEntry.replace('2026-10-28T00:00:00-04:00', '2026-10-10T00:00:00-04:00'),
+      dailyEntry.replace('2026-10-28T00:00:00-04:00', 'invalid'),
+      dailyEntry.replace('term="cs.CV"', 'term="math.AP"'),
+      dailyEntry.replace(/<title[\s\S]*?<\/title>/, '<title>Irrelevant</title>')
+        .replace(/<summary>[\s\S]*?<\/summary>/, '<summary>Unrelated study</summary>'),
+    ]) assert.deepEqual(dailyFeedPapers(`<feed>${excluded}</feed>`, feedNow), []);
+    for (const invalidFeed of ['<html>maintenance</html>', '<feed><entry>', '<feed><entry><id>http://arxiv.org/api/errors#x</id></entry></feed>']) {
+      assert.throws(() => dailyFeedPapers(invalidFeed, feedNow), error => error.code === 'ARXIV_INVALID_FEED');
+    }
 
     // A response whose headers arrive before a stalled body is still bounded and retried.
     let bodyCalls = 0;

@@ -52,12 +52,15 @@ and improve when quality matters.
 
 - OpenCode Go requests identify this collector with `User-Agent: Study-ML-paper-collector/1.0` and a new `x-opencode-session` UUID for each paper's standalone summary conversation. See [Go client requirements](https://opencode.ai/docs/go/#where-can-i-use-it); Go is designed primarily for coding-agent traffic, so these headers alone do not guarantee suitability or continued service for paper summarization.
 - arXiv requests are serialized at least three seconds apart and identify the collector with a project URL in `User-Agent`. HTTP 429 responses use a longer exponential cooldown (30 seconds by default) and honor a longer `Retry-After` value; `ARXIV_MAX_RETRIES` and `ARXIV_RATE_LIMIT_RETRY_MS` tune CI behavior.
+- After a 429, timeouts and network failures retain the longer exponential cooldown. The last response's `Retry-After` also applies to a subsequent request, including the daily Atom fallback. `Accept` allows Atom, generic XML, and a default representation; invalid feed bodies are rejected.
+- If the latest search API is unavailable, the official cs.CV+cs.CL daily Atom feed supplies recent new announcements matching the same category and keyword criteria. Update/cross announcements and entries older than seven days are excluded. The date is the announcement date, recorded as `PAPER_METADATA.latest.dateBasis: announced`; normal API results use `submitted`. Failed or unusable fallback feeds preserve the existing file and fail the run. Citation recommendations retain their cache during this fallback, with `stale-cache` status.
 - Cached failure notices and fields without Korean text are rejected. Failed cached summaries are regenerated, fetching the arXiv abstract again when needed; an unavailable notice is never used as the source abstract.
 - `PAPER_METADATA.summary` reports `total`, `available`, `unavailable`, and `status` (`ok`, `partial`, `failed`, or `empty`). `summarizer` is `mixed` or `unavailable` when valid summaries are missing; cached valid summaries count as available.
 - GitHub Actions uses `--require-summaries`: incomplete or empty results fail before overwriting data, so the existing commit step is skipped and the failure notification runs. A normal local run can still write explicit failure notices; use `--dry-run` to inspect output without writing.
 - Run `node scripts/collect-papers.mjs --self-test` and `node scripts/summary-self-test.mjs`. The latter runs the CLI against mocked HTTP responses in a temporary directory, including a dry run and verification that summary failures preserve existing data.
 
 - Collection currently runs through manual `workflow_dispatch` in GitHub Actions (`.github/workflows/daily-papers.yml`).
+- Workflow concurrency serializes collection runs. Offline self-tests and mocked CLI integration checks run before live collection; notifications include the Actions run URL.
 - Generated data goes to `data/papers.js`.
 - No API keys or secrets are stored in the browser code.
 - The static site works by opening `index.html` directly.

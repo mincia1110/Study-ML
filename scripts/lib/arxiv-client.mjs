@@ -1,6 +1,6 @@
 const RETRYABLE_STATUS = new Set([429, 500, 502, 503, 504]);
 const DEFAULT_HEADERS = Object.freeze({
-  Accept: 'application/atom+xml',
+  Accept: 'application/atom+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.1',
   'User-Agent': 'Study-ML-paper-collector/1.0 (+https://github.com/mincia1110/Study-ML)',
 });
 
@@ -42,6 +42,7 @@ export function createArxivClient(options = {}) {
 
   async function requestWithRetry(url, context, consumeBody) {
     let lastError;
+    let rateLimited = false;
 
     for (let attempt = 0; attempt <= maxRetries; attempt += 1) {
       const rateLimitWait = Math.max(0, nextRequestAt - now());
@@ -59,7 +60,8 @@ export function createArxivClient(options = {}) {
       } catch (error) {
         attemptError = controller.signal.aborted
           ? new Error(`arXiv API timed out after ${requestTimeoutMs}ms for ${context}`, { cause: error })
-          : error;
+          : new Error(`arXiv API network failure for ${context}`, { cause: error });
+        attemptError.code = controller.signal.aborted ? 'ARXIV_TIMEOUT' : 'ARXIV_NETWORK';
         lastError = attemptError;
       } finally {
         clearTimeout(timeout);
@@ -68,12 +70,22 @@ export function createArxivClient(options = {}) {
       if (response?.ok && (!consumeBody || body !== undefined)) return consumeBody ? body : response;
 
       const status = response?.status;
+      if (status === 429) rateLimited = true;
+      const serverWait = response ? retryAfterMs(response, now()) : 0;
+      // Keep the final response's cooldown when the caller tries another feed.
+      if (serverWait > 0 || status === 429) {
+        nextRequestAt = Math.max(nextRequestAt, now() + Math.max(serverWait, status === 429 ? rateLimitRetryMs : 0));
+      }
       const retryable = response ? (attemptError ? true : RETRYABLE_STATUS.has(status)) : true;
       if (!retryable || attempt === maxRetries) {
         if (response && body === undefined) await disposeResponse(response);
         if (response && attemptError) throw attemptError;
-        if (response) throw new Error(`arXiv API error ${status} for ${context}`);
-        throw new Error(`arXiv API request failed for ${context}: ${lastError?.message || 'unknown error'}`, { cause: lastError });
+        if (response) {
+          const error = new Error(`arXiv API error ${status} for ${context}`);
+          error.status = status;
+          throw error;
+        }
+        throw lastError;
       }
 
       if (response && body === undefined) await disposeResponse(response);
@@ -81,11 +93,14 @@ export function createArxivClient(options = {}) {
       // A 429 on the first request usually means the runner's shared IP is
       // already rate-limited. Give that window substantially longer to clear
       // than a transient network or server failure.
-      const retryBaseMs = status === 429 ? rateLimitRetryMs : baseRetryMs;
+      // A timeout following a 429 does not mean the rate limit has cleared.
+      const retryBaseMs = rateLimited ? Math.max(rateLimitRetryMs, baseRetryMs) : baseRetryMs;
       const exponentialWait = retryBaseMs * (2 ** attempt);
-      const serverWait = response ? retryAfterMs(response, now()) : 0;
       const retryWait = Math.max(minIntervalMs, exponentialWait, serverWait);
-      logger.warn(`arXiv request failed${status ? ` with HTTP ${status}` : ''}; retrying ${context} in ${Math.ceil(retryWait / 1000)}s (${attempt + 1}/${maxRetries})`);
+      const reason = attemptError?.code === 'ARXIV_TIMEOUT'
+        ? ` (timeout after ${requestTimeoutMs}ms)`
+        : (status ? ` with HTTP ${status}` : ' (network error)');
+      logger.warn(`arXiv request failed${reason}; retrying ${context} in ${Math.ceil(retryWait / 1000)}s (${attempt + 1}/${maxRetries})`);
       nextRequestAt = Math.max(nextRequestAt, now() + retryWait);
     }
 
