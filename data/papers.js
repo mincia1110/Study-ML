@@ -3,28 +3,28 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2611.12305",
-    "title": "HumanSightBench: A Benchmark for Human Visual Perception in MLLMs",
-    "authors": "Zixin Su et al.",
-    "published": "2026-11-09",
-    "category": "multimodal",
+    "id": "2611.14420",
+    "title": "OnlyAct: Extracting Action Representations from Foundation Models for World Models",
+    "authors": "Runjia Li et al.",
+    "published": "2026-11-10",
+    "category": "cv",
     "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "multimodal"
+      "video",
+      "embedding",
+      "generation"
     ],
-    "summaryKo": "HumanSightBench는 사람에게는 쉽지만 MLLM에는 어려운 단답형 시각 질문 2,876개를 5개 포함 게이트로 선별해 MLLM과 인간 수준 시각 지각의 차이를 평가하는 벤치마크다.",
+    "summaryKo": "OnlyAct는 대규모 비디오 사전학습 기반 모델 V-JEPA 2의 프레임 쌍 임베딩에서 장면을 배제하고 행동 정보를 추출하는 레이블 없는 대조적 적응 프레임워크를 제안하고, 로봇 조작·카메라 항법·게임·주행 벤치마크에서 주석 없는 잠재 행동 방법보다 표현력이 높으면서 장면 불변성을 유지하고 행동 조건 비디오 생성의 전이를 개선함을 보인다.",
     "detail": {
-      "problem": "MLLM은 지식·추론 중심의 시각언어 벤치마크에서는 강하지만 사람이 쉽게 푸는 시각 질문에는 어려움을 겪는다. 기존 end-to-end 평가는 여러 능력이 섞이고 문항 타당성이 불확실해 지각 차이를 분리해 평가하기 어렵다.",
-      "method": "HumanSightBench는 질문 명확성, 정답 유일성, 시각적 근거, 사람 해결 가능성, 텍스트만으로 풀 수 있는 지름길 필터링의 다섯 포함 게이트를 통과한 2,876개 단답형 시각 질문으로 구성된다. 7개 상위 지각 범주와 21개 하위 범주를 포함한다.",
-      "takeaway": "평가된 8개 MLLM 중 최고 pass@3는 65.6%였고 Counting에서는 어떤 모델도 27.5%를 넘지 못해 전체 점수에 가려진 능력 격차를 드러냈다. 초록 기준으로 평가는 8개 MLLM에 한정되어 있다."
+      "problem": "비디오 월드 모델 훈련은 행동 감독이 부족하고 규격이 분산되어 확장이 어렵다. 기존에는 프레임 쌍을 잠재 행동으로 압축하고 다음 프레임을 재구성하는 공동 학습을 쓰지만, 행동 공간을 처음부터 학습하면 미학습 도메인 일반화가 제한되고 병목이 표현력과 장면 누출 사이의 트레이드오프를 만든다.",
+      "method": "OnlyAct는 행동을 처음부터 학습하지 않고 V-JEPA 2의 프레임 쌍 임베딩에 이미 상당한 행동 정보가 있다고 보고, 장면을 버리고 행동을 추출하는 레이블 없는 대조적 적응을 수행한다. 같은 운동의 다른 장면 쌍은 가깝게, 같은 장면의 다른 운동 쌍은 멀게 하여 사전학습 공간의 기하를 재형성하며 재구성 병목을 두지 않는다.",
+      "takeaway": "로봇 조작, 카메라 항법, 게임, 주행 벤치마크에서 주석 없는 잠재 행동 방법 대비 더 높은 표현력과 동등한 장면 불변성을 보이고, 월드 모델이 시연된 행동을 새 장면으로 더 충실히 전이한다. 초록에는 제안 방법의 명시적 한계는 언급되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12305v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12305v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.14420v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14420v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -33,26 +33,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12791",
-    "title": "Large Language Models as a Universal Searcher for Open-World Automated Machine Learning",
-    "authors": "Yuxuan Hu et al.",
-    "published": "2026-11-09",
-    "category": "multimodal",
+    "id": "2611.13426",
+    "title": "BioMem: Agentic Memory for Biomedical LLM Agents",
+    "authors": "Mingchen Li et al.",
+    "published": "2026-11-10",
+    "category": "llm",
     "categories": [
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "diffusion"
+      "agents",
+      "medical",
+      "retrieval"
     ],
-    "summaryKo": "이 논문은 다양한 AutoML 설계 선택을 통합 수치 인코딩인 NCode로 이산 시퀀스화하고 이를 순위화 문제로 재구성해, 과제별 미세조정 없이 아키텍처·학습 하이퍼파라미터·데이터 비율을 공동 최적화하는 LLM 기반 범용 AutoML 프레임워크를 제안한다.",
+    "summaryKo": "이 논문은 생의학 분야 LLM 에이전트의 메모리 시스템이 정보를 보존·검색·갱신·활용하는 방식을 체계적으로 조사하고, 훈련 없이 적용 가능한 HMRU 프레임워크를 제안한다.",
     "detail": {
-      "problem": "효과적인 머신러닝 모델 개발에는 복잡한 수동 튜닝이 필요하지만, 기존 AutoML 프레임워크는 도메인 특화되어 있고 모델 아키텍처, 학습 하이퍼파라미터, 데이터 비율 최적화를 분리해 다룬다.",
-      "method": "이 연구는 과제별 미세조정 없이 이들 구성을 처음으로 공동 최적화하는 LLM 기반 범용 AutoML 프레임워크를 제안한다. NCode는 다양한 AutoML 설계 선택을 범용 이산 시퀀스로 변환하고 최적화 과정을 통합 순위화 과제로 재구성한다.",
-      "takeaway": "제한된 단일 도메인 비전 과제의 최적화 궤적으로만 학습한 LLM 기반 탐색기는 이미지 분류·분할, 화자 검증, 텍스트-이미지 벤치마크에서 최신 최고 성능을 달성하고, 10억 파라미터 Diffusion Transformer의 대규모 학습·공동 최적화에서 896 GPU-days로 GenEval 0.91을 기록했다. 초록에는 명시적 한계가 제시되지 않았다."
+      "problem": "생의학 LLM 에이전트에서 메모리 시스템이 생의학 정보를 얼마나 효과적이고 신뢰성 있게 보존, 검색, 갱신, 활용하는지는 아직 핵심 질문으로 남아 있다. 이 연구는 생의학 영역에서 에이전트 메모리의 과제 효과성, 검색 품질, 정보 충실도, 장기 견고성을 조사한다.",
+      "method": "세 가지 대표 설정(생의학 지식 추론, 임상 예측, 장기 대화 메모리)에서 4개 LLM과 5개 메모리 접근법을 평가한다. 이 결과를 바탕으로 증거 접근성과 과제 인식 활용을 함께 향상시키는 훈련 불필요 프레임워크 HMRU(Hybrid Memory Retrieval and Utilization)를 제안한다.",
+      "takeaway": "HMRU는 생의학 질의응답 및 대화 메모리 벤치마크에서 평균 8.6% 상대 개선을 달성하고, 일부 임상 예측 과제에서도 추가 이득을 보이며, 대화 답변 오류를 24.9% 줄이고 전체 문맥 추론과의 성능 격차 중 48.0%를 줄인다. 초록에는 명시적 한계가 제시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12791v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12791v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13426v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13426v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -61,30 +63,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12087",
-    "title": "Compass 1: Towards Open-World and Persistent Embodied Navigation from Monocular RGB Videos",
-    "authors": "Hai Zhang et al.",
-    "published": "2026-11-09",
+    "id": "2611.13776",
+    "title": "DisasterAgent: An Evidence-Driven Agent for Verifiable Disaster Report Generation From Remote Sensing Imagery",
+    "authors": "Zhijian Li et al.",
+    "published": "2026-11-10",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.RO"
+      "cs.AI"
     ],
     "tags": [
-      "agents",
-      "video",
-      "retrieval",
       "benchmark",
+      "agents",
+      "multimodal",
       "generation"
     ],
-    "summaryKo": "Compass 1은 언어 이해와 비디오 생성을 통합하고 약 2분의 시각 이력에 대한 메모리 백트래킹을 가능하게 하는 체화형 내비게이션 기반 모델이다.",
+    "summaryKo": "DisasterAgent는 이시점 광학 영상으로부터 검증 가능한 재난 보고서를 생성하기 위해 Perception-Augmentation-Generation 워크플로와 Spatiotemporal Perception Graph, 인라인 인용 기반 증거 루프를 사용하는 에이전트이다.",
     "detail": {
-      "problem": "기존 내비게이션 구조는 개방형 환경에서 지속적 공간 인식과 장기 실행 안정성을 동시에 유지하기 어렵고, 최근 몇 프레임에서만 효과적이다.",
-      "method": "기본 구조를 바꾸지 않고 sparse visual keyframes와 explicit History Representation Map을 결합한 History Representation을 도입하고, task-stage grounding, exploration consistency, spatiotemporal target retrieval의 VQA supervision인 History Utilization을 제안한다. 또한 monocular RGB video annotation pipeline과 500시간 이상의 real-world interactions 및 2,000시간 이상의 annotated web videos 데이터셋을 공개한다.",
-      "takeaway": "개방형 평가에서 전체 성공률 79.4%로 최강 baseline 17.8%를 크게 앞섰고, foundational tasks zero-shot 90% 초과, exploration 250% 향상, persistent history backtracking 0%에서 58%로의 향상을 보고했다. 초록에는 명시적 한계가 제시되지 않았다."
+      "problem": "원격탐사 재난 평가가 보고서 수준 분석으로 확장되면서 응답자는 피해 설명뿐 아니라 고위험 검증에 필요한 증거를 요구하지만, 기존 VLM과 도구 증강 에이전트는 이를 충분히 제공하지 못한다.",
+      "method": "DisasterAgent는 지각 단계에서 전문 비전 툴킷으로 Spatiotemporal Perception Graph를 구축하고, Evidence-based Augmentation으로 STPG에서 증거를 추출해 각 진술에 인라인 인용을 붙여 시각 증거까지의 폐쇄 증거 루프를 형성한다.",
+      "takeaway": "DisasterM3와 RSCC 실험에서 일반 VLM, 원격탐사 특화 모델, 기존 원격탐사 에이전트보다 일관되게 우수했으며, DisasterM3 재난 보고서 생성 평균 점수 13.5% 및 RSCC ST5-SCS 15.34% 향상을 보고했다. 초록에는 별도의 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12087v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12087v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13776v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13776v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -93,10 +94,10 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12557",
-    "title": "WanderBench: Can World Models Explore Dynamic Worlds from Video?",
-    "authors": "Yuhang Chen et al.",
-    "published": "2026-11-09",
+    "id": "2611.13849",
+    "title": "Satellite Pretraining Is Not One Thing: A Matched-Pair Study of Generic and Earth-Observation Foundation Models for Scene Classification",
+    "authors": "Sandarbh Agrawal, Rakshith Sathish, Ashwathi Nambiar",
+    "published": "2026-11-10",
     "category": "multimodal",
     "categories": [
       "cs.CV",
@@ -104,18 +105,17 @@ window.PAPERS = [
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "video",
-      "generation"
+      "retrieval",
+      "embedding"
     ],
-    "summaryKo": "WanderBench는 입력 비디오로 동적 세계를 탐험하는 월드 모델을 평가하기 위한 벤치마크로, 기존 평가가 직접 다루지 않던 주체 정체성·사건 진행·재방문 시 장면 일관성을 평가하고, 훈련 없는 WanderLand가 여러 모델의 성능을 개선함을 보인다.",
+    "summaryKo": "이 논문은 사전학습 데이터를 분리한 매칭 쌍 비교를 통해 지구관측(EO) 파운데이션 모델 인코더가 적은 레이블의 장면 분류에서 강한 범용 인코더보다 항상 우수하지는 않으며 후보 체크포인트를 대상 데이터에서 검증해야 함을 보인다.",
     "detail": {
-      "problem": "비디오 조건부 월드 모델의 탐험은 녹화된 세계에 충실해야 하지만, 기존 벤치마크는 단일 이미지나 텍스트 프롬프트에서 시작하거나 주로 지각 품질과 카메라 추종을 평가해 주체 정체성, 사건 진행, 재방문 시 장면 일관성을 직접 평가하지 못한다.",
-      "method": "저자들은 실제 및 AI 생성 단일 샷 비디오 745개를 세 난이도 구간(3~25초)과 키보드 행동으로 주어진 카메라 경로로 구성하고 24개 인간 검증 하위 지표로 6개 차원을 평가하는 WanderBench를 제안한다. 또한 동결 모델의 각 프레임을 동일 시점의 원본과, 재방문 시에는 모델 자신의 이전 정적 콘텐츠에 조건화하는 훈련 없는 프레임워크 WanderLand를 제안한다.",
-      "takeaway": "8개 모델 평가에서 클립이 길어질수록 정적 장면과 시각 품질은 유지하지만 카메라 제어와 원본 동역학을 잃고, 재방문 장소 일관성은 어떤 모델도 유지하지 못했다. WanderLand는 다섯 모델의 모든 차원을 개선하며 원본 동역학 충실도에서 최대 8.3점 향상했다."
+      "problem": "위성·항공 영상으로 사전학습된 지구관측 파운데이션 모델이 적은 레이블의 토지이용/피복 매핑에서 강한 범용 인코더를 능가하는지는 불분명했고, 기존 비교는 사전학습 데이터를 잘 분리하지 못했다.",
+      "method": "목적함수와 구조를 공유하는 EO·범용 인코더 5쌍(DINO/SatDINO, DINOv3/DINOv3-SAT, MAE/SatMAE, MAE/Scale-MAE, CLIP/RemoteCLIP)을 포함한 14개 동결 인코더 벤치마크를 5개 RGB 장면 분류 데이터셋(0.06–30 m GSD)에서 평가하고, 원본 전처리로 k-NN·선형·attention probe와 이미지 검색을 6개 저레이블 분할에서 쌍별 이미지 단위 유의성 검정으로 비교했다.",
+      "takeaway": "EO 사전학습은 일관되게 유용하지 않아 세 쌍(SatDINO, Scale-MAE, RemoteCLIP)은 대부분 데이터셋·지표에서 유의하게 개선했지만 두 쌍은 선형 probe에서 유의하게 악화했으며(DINOv3-SAT 최대 22.5점, SatMAE 최대 8.8점), 같은 fMoW-RGB로 사전학습된 두 MAE도 상반된 결과를 보였다. 효과는 패치 토큰 풀링과 attentive probing에 강건했고 작은 인공 물체에 집중되며 1–5% 레이블에서 가장 컸고, 동결 임베딩의 silhouette 점수는 k-NN 정확도와 검색 mAP를 거의 완벽히 예측했으며(5개 데이터셋 중 4개에서 Spearman ρ≥0.96), 따라서 위성영상 사전학습은 신뢰할 수 있는 선택 기준이 아니다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12557v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12557v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13849v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13849v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -124,29 +124,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12856",
-    "title": "WorkflowArena: Benchmarking Executable Workflow Orchestration in LLM-Based Multi-Agent Systems",
-    "authors": "Zheng Jiang et al.",
-    "published": "2026-11-09",
-    "category": "multimodal",
+    "id": "2611.14018",
+    "title": "Interleaving anatomical inspection and diagnostic reasoning for explainable radiology report generation",
+    "authors": "Chentao Huang et al.",
+    "published": "2026-11-10",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.SE"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
-      "benchmark",
-      "agents",
-      "3d",
-      "autonomous-driving"
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "WorkflowArena는 LLM 기반 다중 에이전트 시스템에서 모델이 실행 가능한 워크플로를 작성하고 위임하는 능력을 8개 전문 도메인의 145개 장기 과제로 평가하는 벤치마크다.",
+    "summaryKo": "ARIVE는 해부학적 점검과 진단 추론을 교차시키는 설명 가능한 방사선 보고서 생성 프레임워크로, MIMIC-CXR 기반 다중모달 chain-of-thought 궤적으로 학습해 임상 효능과 진단 추적성을 높였다.",
     "detail": {
-      "problem": "기존 벤치마크는 종단 간 작업 완료를 측정하거나 미리 지정된 구조에서의 협업을 평가할 뿐, 모델이 런타임에 시스템 구조를 설계하는 능력을 별도로 측정하지 않는다.",
-      "method": "각 과제에 초기 작업공간과 상호의존 구성요소로 이루어진 통합 산출물을 제시하고 숨은 검증기로 평가하며, 모든 위임을 기록해 산출물 품질과 작업 조직을 함께 평가한다.",
-      "takeaway": "9개 모델 실험에서 모든 도메인에 가장 좋은 단일 구성은 없었고, 고노력 설정에서 Claude 모델은 더 큰 작업자 그룹으로 더 적게 위임하고 GPT 모델은 더 자주 작은 단위로 위임하는 등 서로 다른 위임 전략을 보였다. 어려운 과제 부분집합에서 실행 모델을 고정했을 때 Claude Opus 5.5가 작성한 워크플로가 더 약한 실행자를 개선해 워크플로 구성 자체가 측정 가능한 성과 결정 요인임을 시사했으며, 초록은 별도의 한계를 명시하지 않는다."
+      "problem": "자동 방사선 보고서 생성은 임상적으로 그럴듯한 보고서를 작성할 수 있지만, 시각적 근거에서 보고된 소견으로 이어지는 경로가 불투명해 진단 근거를 설명하기 어렵고 보고서를 검토하거나 수정하기 어렵다.",
+      "method": "ARIVE는 최종 보고서 작성 전에 해부학적 점검과 진단 추론을 교차시키며, MIMIC-CXR에서 구축한 159,416개의 다중모달 chain-of-thought 궤적으로 학습하고 해부학적 및 임상 내용 보상을 사용해 최적화한다.",
+      "takeaway": "MIMIC-CXR와 MIMIC-ABN에서 강한 baseline보다 우수한 임상 효능을 보였고, 블라인드 전문가 평가에서 경쟁력 있는 보고서를 생성했으며 MCoT 궤적은 높은 진단 추적성 평가를 받았다. 또한 paired review 평가는 MCoT 접근이 생성 보고서의 오류 식별에 도움이 될 수 있음을 시사했으며, 초록에는 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12856v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12856v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.14018v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14018v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -155,28 +153,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.11802",
-    "title": "HiddenPathQA: A Benchmark for Knowledge Graph Question Answering When Questions Hide Their Paths",
-    "authors": "Sumin Jo, Edward Choi",
-    "published": "2026-11-09",
-    "category": "llm",
+    "id": "2611.14113",
+    "title": "Looking One Step Ahead: An Anticipation-guided Agent for Object State Readout in Videos",
+    "authors": "Yuanhe Tian, Yan Song",
+    "published": "2026-11-10",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
+      "cs.CV",
       "cs.AI"
     ],
     "tags": [
-      "benchmark",
-      "medical",
-      "retrieval"
+      "agents",
+      "video",
+      "multimodal"
     ],
-    "summaryKo": "기존 KGQA 평가가 질문 표면 토큰이 정답 KG 경로를 어휘적으로 드러낸다는 가정에 의존하는 맹점을 지적하고, 경로를 숨긴 1,055개 질문 벤치마크 HiddenPathQA와 Holistic Path Selection을 제안한다.",
+    "summaryKo": "LASER는 다음 단계 변화 예측을 활용해 비디오 내 객체 상태를 판독하고, 이후 프레임 관찰과 대조해 상태 기록을 정교화하는 객체 상태 판독 에이전트이다.",
     "detail": {
-      "problem": "기존 KGQA 시스템은 질문의 표면 토큰이 정답 KG 경로를 어휘적으로 노출한다는 가정 위에서 평가되어 왔고, hop-by-hop exploration, plan-then-retrieve, similarity-based retrieval 같은 LLM-KG 패러다임도 이런 어휘 단서에 암묵적으로 의존한다. 저자들은 경로와 질문 정렬의 붕괴를 기존 평가의 사각지대로 규정한다.",
-      "method": "질문 문구가 정답 경로의 관계를 드러내지 않도록 구성한 수동 검증 벤치마크 HiddenPathQA(2–6 hop, 다중 도메인, 1,055문항)를 소개한다. 또한 지역 서브그래프의 후보 관계 체인과 질문을 전체 단위로 비교하는 Holistic Path Selection(TieredHolistic, FlatHolistic)을 제안하고, 개체명을 무의미한 자리표시자로 바꾸는 pseudoword stress test를 수행한다.",
-      "takeaway": "Holistic Path Selection은 두 LLM 백본과 원문 및 pseudoword 설정 모두에서 ToG, PoG, FiDeLiS, R2-KG, KAPING, KARPA 등 6개 베이스라인보다 8.8–17.9 정확도 포인트 높았다. pseudoword 대체에서도 우위가 나타나 이득이 개체 수준 암기만으로 설명되지는 않음을 보였으며, 초록에는 별도 한계가 명시되지 않았다."
+      "problem": "활동 진행을 이해하려면 영상에서 객체가 시간에 따라 어떻게 변하는지 추적해야 하지만, MLLM의 상세한 시각 설명만으로는 연속 상태를 구분하는 데 필요한 속성이 충분히 명시되지 않을 수 있다.",
+      "method": "LASER는 시간 순서가 있는 프레임과 대상 객체가 주어졌을 때 예상 변화를 표적 시각 질문으로 바꿔 현재 프레임의 속성값을 설정하고, 상태 판독과 예측을 이후 프레임의 독립 관찰과 대조해 상태 기록을 정교화한다. 재사용 가능한 텍스트 관찰 스킬을 사용하며, 참조 캡션과의 불일치를 책임 지시문에 추적해 후보 수정을 별도 비디오에서 선택한다.",
+      "takeaway": "OSCaR와 PLM RCap 실험 및 추가 분석에서 LASER는 강한 베이스라인과 기존 접근법 대비 일관된 성능 향상을 보였다. 모델 파라미터는 적응과 추론 전반에서 고정되고 수정된 스킬은 평가 중 고정되며, 초록에는 별도 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.11802v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.11802v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.14113v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14113v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -185,28 +183,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.11952",
-    "title": "BharatSynthQA: A Context-Grounded Question Answering Dataset on Indian Temples and Religious Heritage",
-    "authors": "Riya Naik, Shivam Sharma, Swati Agarwal",
-    "published": "2026-11-09",
-    "category": "llm",
+    "id": "2611.14519",
+    "title": "Medical Image Segmentation: Foundation Model Adaptation versus Task-Specific Training",
+    "authors": "Emre Kutlusan, Yongmin Li",
+    "published": "2026-11-10",
+    "category": "cv",
     "categories": [
-      "cs.CL",
+      "cs.CV",
       "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "generation"
+      "medical"
     ],
-    "summaryKo": "BharatSynthQA는 인도 사원과 관련 종교 유적을 다루는 passage 기반 QA 데이터셋으로, Wikipedia 크롤링·필터링과 few-shot LLM 생성 및 LLM 판정을 통해 구축되었고 현재 LLM들이 이 영역 지식을 잘 포착하지 못함을 벤치마크로 보인다.",
+    "summaryKo": "DINOv2 기반 파운데이션 모델을 다양한 적응 전략으로 조정한 결과, 외부 기관 데이터셋에서는 과제별로 처음부터 학습한 U-Net/ResU-Net보다 더 잘 일반화했지만, 학습 분포 내에서는 풍부한 데이터가 있을 때 과제별 모델이 경쟁력 있었고 경계를 더 정밀하게 구분했다.",
     "detail": {
-      "problem": "인도 사원과 예배 장소는 문화유산의 중요한 저장소이며 사람들이 AI assistant에 정보를 묻고 있지만, 현재 모델은 이 도메인에서 훈련되거나 평가되는 경우가 드물다.",
-      "method": "진짜 문화유산 출처에서 seed된 Wikipedia 토픽을 크롤링하고 주제 관련성과 인도 내 위치로 기사를 필터링한 뒤, few-shot LLM으로 Boolean, factoid, explanatory QA 쌍을 생성하고 LLM judge로 답 정확성을 필터링해 131,494개 중 98,677개를 유지했으며 300개 인간 주석 참조셋을 별도 공개했다.",
-      "takeaway": "이 데이터셋의 하위표본에 대한 인간 평가에서 89.83% 질문이 올바르게 형성되었고, 5개 현재 LLM 벤치마크에서 factoid token F1이 source passage 없이 0.18-0.30, 함께 0.73-0.77로 나타나 이 도메인이 모델 지식에 잘 포착되지 않음을 보였다. 초록에는 별도 한계가 명시되지 않았다."
+      "problem": "파운데이션 모델을 의료 영상 분할에 적응시키는 것이 과제별 모델을 대체할 수 있는지, 특히 새로운 임상 기관에서의 성능과 어느 정도까지 적응해야 하는지에 대한 증거가 제한적이다.",
+      "method": "DINOv2를 바이어스 항만 조정하는 전략부터 전체 미세조정까지 여러 방식으로 적응시키고, 처음부터 학습한 U-Net 및 ResU-Net과 대장내시경, 유방 초음파, 피부경 검사에서 비교했으며 학습 출처의 홀드아웃 데이터와 다른 기관의 독립 데이터셋에서 평가했다.",
+      "takeaway": "적응된 파운데이션 모델은 모든 외부 데이터셋에서 더 잘 일반화했고, 학습 분포 내에서는 데이터가 풍부할 때 과제별 모델이 경쟁력 있었으며 경계를 더 정밀하게 구분한 반면 파운데이션 모델은 작은 병변을 더 자주 놓쳤다. 파운데이션 모델의 적은 일부만 적응이 필요했고 필요한 용량은 적응 방법이 아니라 영상 도메인에 의해 결정되었으며, 널리 쓰이는 폴립 테스트 세트가 다른 벤치마크의 이미지를 중복 포함하는 것으로 발견되었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.11952v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.11952v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.14519v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14519v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -215,28 +212,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.11955",
-    "title": "CHO-Bench: How Do Context Hints Affect Ad Rankings in LLM Advertising?",
-    "authors": "Shiqi Zhang, Yang Fei, Xiaokui Xiao",
-    "published": "2026-11-09",
-    "category": "llm",
+    "id": "2611.13596",
+    "title": "Towards Reliable VLM Judges: State-Conditional Invariance and Presentation-Aware Diagnostics",
+    "authors": "Qinan Zhang et al.",
+    "published": "2026-11-10",
+    "category": "multimodal",
     "categories": [
-      "cs.IR",
-      "cs.CL"
+      "cs.AI",
+      "cs.CL",
+      "cs.CV",
+      "cs.LG"
     ],
     "tags": [
       "benchmark",
-      "embedding",
-      "generation"
+      "multimodal"
     ],
-    "summaryKo": "이 논문은 LLM 광고에서 주어진 예산 아래 광고 랭킹을 개선하기 위한 컨텍스트 힌트 최적화(CHO)를 정식화하고, What·Who·When을 포괄하는 7가지 생성 전략과 Unified 전략 및 CHO-Bench를 제안하며 119만 건 이상의 paired evaluation을 수행한다.",
+    "summaryKo": "VLM 판사가 올바른 이유로 판결을 바꾸는지 평가하기 위해 State-Conditional Invariance(SCI)와 GridWM-Judge 진단 벤치마크를 제안하고, 정답성·표현 안정성·인과 민감도를 함께 보고할 것을 주장한다.",
     "detail": {
-      "problem": "LLM 광고는 사용자 대화를 바탕으로 광고를 선택하며, 사용자 필요가 명시적 제품 검색을 넘어설 수 있다. 광고주가 자연어 컨텍스트 힌트를 제공할 수 있지만, 이러한 힌트를 효과적으로 구성하는 방법은 불명확하다.",
-      "method": "이 논문은 주어진 예산 아래 광고 랭킹을 개선하도록 컨텍스트 힌트를 구성하는 CHO 문제를 정식화한다. 마케팅 프레임워크에 기반해 What, Who, When을 다루는 7가지 전략과 이를 결합한 Unified 전략을 개발하고, 5개 데이터셋에서 embedding 기반 및 LLM 기반 ranker로 119만 건 이상의 paired evaluation을 수행하는 CHO-Bench를 도입한다.",
-      "takeaway": "평가된 오프라인 ranker들에서 컨텍스트 힌트는 광고 랭킹을 개선했지만, 개별 전략의 평균 이득은 유사했고 Unified의 일관된 우위는 없었으며 특정 generation-ranking 구성에서는 embedding 기반과 LLM 기반 ranker가 서로 다른 정보 차원을 선호했다. 또한 힌트 예산을 늘리면 랭킹은 개선되나 한계 이득은 감소했고, 이 연구는 오프라인 벤치마크와 평가된 ranker들에 기반한다."
+      "problem": "VLM이 멀티모달 및 체화 과제의 자동 판사로 사용되지만, 집계 정확도나 일관성만으로는 판사가 올바른 이유로 판결을 바꾸는지 알 수 없다.",
+      "method": "의미 보존적 표현 변화에는 안정적이고 과제 결과를 바꾸는 인과적 개입에는 반응해야 한다는 SCI 원칙을 제안하고, 결정론적 MiniGrid 궤적으로부터 Full·증거 제거·반사실 변형과 표현·표상 프로브를 갖춘 GridWM-Judge를 구축해 다섯 진단 과제로 평가한다.",
+      "takeaway": "진단 결과 증거 표현·인코딩 민감성, 성공 궤적에서 낮은 활성화, 약한 쌍별 반사실 판별 등 이질적 실패 모드가 나타났고, 지각 통제 분석은 시각적 근거와 목표 복원이 모델 의존적 병목임을 보였다. 따라서 단일 점수 대신 정답성·표현 안정성·인과 민감도를 함께 보고할 필요가 있다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.11955v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.11955v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13596v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13596v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -245,28 +243,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12269",
-    "title": "Agent4Crypto: A Dual-Reflective and Market-Feedback-Aligned LLM-Based Multi-Agent System for Cryptocurrency Trading",
-    "authors": "Guangyan Gan et al.",
-    "published": "2026-11-09",
+    "id": "2611.13595",
+    "title": "IFRS Compliance Verification: An Open Multi-LLM Benchmark and Content-Conditioned Ensemble Classifier",
+    "authors": "Aghoghomena Akasukpe et al.",
+    "published": "2026-11-10",
     "category": "llm",
     "categories": [
-      "cs.MA",
-      "cs.CL"
+      "cs.CL",
+      "cs.IR"
     ],
     "tags": [
-      "agents",
-      "autonomous-driving",
-      "retrieval"
+      "benchmark",
+      "retrieval",
+      "embedding"
     ],
-    "summaryKo": "Agent4Crypto는 암호화폐 거래를 위해 시장 피드백에 정렬되고 이중 반성 구조를 가진 LLM 기반 다중 에이전트 시스템을 제안한다.",
+    "summaryKo": "이 논문은 IFRS 준수 검증을 위해 19,998개의 규정-공시 쌍 벤치마크와 도메인 적응 임베딩 및 다중 LLM 확률 특징을 결합한 학습 기반 앙상블 분류기를 제안한다.",
     "detail": {
-      "problem": "암호화폐 시장은 자율 AI 에이전트의 테스트베드이지만, 기존 방법은 비정상적 시장 국면, 불투명한 의사결정, 고정된 집계 규칙에 어려움을 겪는다.",
-      "method": "Agent4Crypto는 데이터 수집, 분석, 위험 평가, 반성, 거래를 담당하는 전문 에이전트를 조정하고, Aggressive·Neutral·Conservative 거래자 에이전트가 생성한 후보 행동과 자연어 근거를 사용한다. PPO 기반 게이팅 정책이 이중 반성 피드백을 통해 거래자 가중치를 동적으로 할당하며, 한 반성 흐름은 거래 후 의사결정 품질을 Financial ReasoningBank로 증류하고 다른 흐름은 거래자 수준 반사실적 기여도를 추정한다.",
-      "takeaway": "BTC, ETH, XRP 실험에서 Agent4Crypto는 전통적 전략, 머신러닝·강화학습 기준선, 기존 LLM 기반 거래 시스템보다 총수익률과 샤프 비율을 개선했다. 초록에는 별도의 한계가 명시되지 않았다."
+      "problem": "기업 재무 공시를 수백 개의 세분화된 IFRS 규정과 대조하는 작업은 노동집약적이고 비용이 크며 오류가 발생하기 쉽다. 단일 LLM의 정확도는 고위험 사용에 불충분하고, 단순 앙상블은 모델별 체계적 편향으로 인해 가장 강한 단일 모델보다 낮은 집계 정확도를 보일 수 있다.",
+      "method": "다단계 프레임워크는 SEC EDGAR 공시에 대한 BERT 마스크 언어 모델링, 비지도 TSDAE·SimCSE 적응, 지도 대조 정렬로 구성된 3단계 도메인 적응 문장 임베딩 파이프라인과 GPT-4.1, Claude Sonnet 4, Gemini 2.5 Pro의 LLM 확률 특징 및 동결 임베딩을 TPE 최적화 그래디언트 부스팅 트리로 융합하는 학습된 앙상블 분류기를 결합한다. 또한 11,161개의 다중 LLM 만장일치 레이블과 LLM 불일치 항목에 대한 8,837개의 인간 주석으로 구성된 19,998개 IFRS 규정-공시 쌍 벤치마크를 제공한다.",
+      "takeaway": "불일치 세트에서 앙상블은 가중 F1 81.7%로 가장 강한 단일 LLM보다 10.4점, 다수결 투표보다 14.6점 높았고 11개 비지도 집계 기준선을 능가했으며, 검색 파이프라인은 보지 못한 규정에서 Recall@15 45.3%를 달성했다. 데이터셋, 모델 체크포인트, 주석 플랫폼, 분류기 구현은 공개될 예정이며, 초록에는 별도의 한계 분석이 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12269v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12269v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13595v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13595v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -275,26 +273,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12392",
-    "title": "More Than Just Style: Benchmarking Personality Influence in Large Language Models",
-    "authors": "Yuhao Liu et al.",
-    "published": "2026-11-09",
-    "category": "llm",
+    "id": "2611.13907",
+    "title": "EVAThink: Evidence Sufficiency-Guided Training for Adaptive Thinking in Video Understanding",
+    "authors": "Changti Wu et al.",
+    "published": "2026-11-10",
+    "category": "cv",
     "categories": [
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "video"
     ],
-    "summaryKo": "SPACE 벤치마크로 LLM의 내재적 성격 경향이 지시 효과 및 모델 능력 변화와 구분되어 과제 수행에 영향을 미치는지 평가한다.",
+    "summaryKo": "EVAThink은 동일 프레임 예산에서 증거 충분성에 따라 직접 응답과 추론을 선택하도록 훈련해 비디오 이해 성능을 향상시키는 방법을 제안한다.",
     "detail": {
-      "problem": "LLM 출력은 명시적 입력 프롬프트와 지시 외에도 인간 성격 성향과 유사한 내재적 행동 선호의 영향을 받지만, 이를 모델 능력이나 지시 효과와 분리하기 어렵다.",
-      "method": "SPACE는 통제된 평가 프로토콜과 성격 검증, 능력 평가, 계층적 상황 과제용 데이터셋을 결합한 벤치마크 프레임워크이며, 다양한 지도 조건의 통제 비교를 통해 성격 영향과 측정된 능력 변화 및 즉각적 지시 효과를 구분하려 한다.",
-      "takeaway": "프롬프팅은 생성 스타일을 바꿀 수 있지만 내재적 성격 경향은 지속되어 반대 지시로 쉽게 상쇄되지 않았고, 이러한 경향이 LLM 과제 수행에 관찰 가능한 영향을 미쳤다. 초록에는 구체적 한계가 명시되지 않았다."
+      "problem": "고정된 프레임 예산에서 비디오 이해 성능은 샘플링된 프레임이 질문에 충분한 증거를 제공하는지에 크게 좌우된다. 충분한 증거는 직접 응답에 유리하지만, 정보가 적은 관찰은 추론을 통해 단서를 연결하는 것이 도움이 될 수 있다.",
+      "method": "EVAThink는 먼저 Recoverable Evidence Gap Mining으로 같은 질문과 답을 공유하는 증거 밀집/희소 비디오 뷰를 구성하고, 희소 뷰가 직접 응답 정확도는 낮지만 추론에서 이득을 보는 쌍을 응답 모드 선택 지도로 사용한다. 이어 Evidence-Guided Two-Stage Reinforcement Learning에서 단계별 보상으로 증거 기반 모드 선호를 학습하고 응답 효율성을 개선하며, first-token advantage regularization으로 모드 붕괴를 완화한다.",
+      "takeaway": "6.7K개의 선별 샘플로만 훈련해도 32프레임과 64프레임 예산 모두에서 비디오 이해 벤치마크 전반에서 기본 모델을 일관되게 개선하고 평균적으로 강한 베이스라인을 능가한다. 초록에는 별도의 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12392v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12392v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13907v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13907v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -303,29 +301,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12040",
-    "title": "Leveraging Complementary Event Frame and Voxel Representations for RGB-Guided Multimodal Pre-training",
-    "authors": "Wentao Wu et al.",
-    "published": "2026-11-09",
+    "id": "2611.13970",
+    "title": "Counterfactual Analysis of Extent Leakage from Annotation-Derived Prompts in Vision-Language Medical Image Segmentation",
+    "authors": "Niran Nataraj et al.",
+    "published": "2026-11-10",
     "category": "cv",
     "categories": [
+      "eess.IV",
       "cs.CV",
-      "cs.AI"
+      "cs.LG"
     ],
     "tags": [
-      "diffusion",
-      "video",
-      "multimodal",
-      "generation"
+      "benchmark",
+      "medical"
     ],
-    "summaryKo": "CM3AE 2.0은 RGB 프레임과 이벤트 복셀/프레임을 통합한 사전학습 프레임워크로, ESMR과 HCG를 통해 멀티모달 시공간 표현 및 교차 모달 의존성을 학습하고 네 가지 다운스트림 과제에서 일관된 성능 향상을 보고한다.",
+    "summaryKo": "텍스트 유도 분할 모델이 주석에서 파생된 캡션의 병변 범위 정보를 활용해 성능이 부풀려질 수 있음을 반사실 분석으로 보인 논문이다.",
     "detail": {
-      "problem": "RGB 프레임과 이벤트 복셀/프레임을 결합한 멀티모달 사전학습에서 상호 보완 정보와 잠재적 교차 모달 의존성을 함께 모델링하는 문제를 다룬다. 이를 위해 멀티모달 정보 상호작용과 협력적 모델링 능력을 강화하려 한다.",
-      "method": "ESMR은 이벤트 반응을 이용해 동적으로 두드러지는 영역으로 마스킹을 유도하고 시공간 마스크 복원을 수행하며, 멀티모달 융합 복원과 교차 모달 대조 학습을 포함한다. HCG는 사전학습된 diffusion model을 사용한 event-conditioned RGB 생성과 joint RGB-Event 표현 기반 video-level text description 생성을 통해 시각 및 언어 수준에서 교차 모달 의존성을 학습한다.",
-      "takeaway": "네 가지 다양한 다운스트림 과제에서 CM3AE 2.0이 일관되게 성능을 향상시켜 제안 프레임워크의 효과와 일반화 가능성을 검증했다고 보고한다. 초록에는 구체적인 한계가 명시되어 있지 않다."
+      "problem": "공개 벤치마크에서 병변 캡션이 분할 정확도를 크게 높이지만, 대장내시경과 유방 초음파 캡션의 크기·개수·위치 단어는 예측을 채점하는 마스크에서 계산되었고 흉부 X선 캡션은 벤치마크 주석자가 작성했다. 이 연구는 두 공개 모델이 이런 캡션에서 무엇을 학습하는지 분석한다.",
+      "method": "대장내시경, 흉부 X선, 유방 초음파에서 캡션 요소를 유지·제거하는 반사실 실험과 세 데이터셋 재학습을 수행했다. 또한 모델 학습 없이 캡션 단어만으로 병변 면적을 예측해 누출을 측정하고, 캡션이 이미지에 대해 말하는 정보와 라벨에서 복사한 정보를 분리하는 평가 프로토콜을 제안한다.",
+      "takeaway": "대장내시경과 흉부 X선에서는 주로 병변 범위가 중요해 크기 단어나 폐 구역 표현만으로 빈 캡션 대비 개선의 84~98%를 회복했고, 제거하면 52~77%를 잃었으며 유방 초음파에서는 거의 절반의 캡션이 진단명을 포함해 이점의 일부를 담당했다. 재학습 결과 모델은 훈련 캡션에서 이 습관을 일부 배우며 이미지 단독 분할을 약화시켰고, 캡션 단어만으로 병변 면적을 예측한 결정계수는 7개 테스트 세트 중 6개에서 0.54~0.77이었으며, 테스트 마스크 없이 이미지에서 범위를 추정한 최선 방법은 대장내시경에서 74.59 Dice로 보고된 77.23에 못 미쳤다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12040v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12040v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.13970v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.13970v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -334,28 +331,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.12345",
-    "title": "TMT: Adapting CLIP to Infrared Imagery via Text-Derived Modality Knowledge Transfer",
-    "authors": "Ruofan Wang et al.",
-    "published": "2026-11-09",
-    "category": "multimodal",
+    "id": "2611.14074",
+    "title": "Obscured Wildfire Flame Detection by Spatio-temporal Analysis of Smoke Patterns Using Frame-wise Transformers",
+    "authors": "Uma Meleti, Abolfazl Razi, Fatemeh Afghah",
+    "published": "2026-11-10",
+    "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
+      "video",
       "benchmark",
-      "diffusion",
-      "retrieval",
-      "embedding"
+      "detection"
     ],
-    "summaryKo": "TMT는 적외선-텍스트 레이블 없이 짝지어진 적외선-가시광 이미지만으로 텍스트 임베딩 차이로 정의된 적외선→가시광 방향과 생성·지각 공동 감독을 이용해 CLIP 이미지 인코더를 적외선 영상에 적응시키는 방법이다.",
+    "summaryKo": "RGB 영상의 연속 프레임 간 공간·시간 분석을 통해 가시 및 가려진 산불 화염을 탐지하는 프레임 단위 트랜스포머 기반 방법을 제안한 논문이다.",
     "detail": {
-      "problem": "CLIP은 가시광 데이터 중심의 대규모 사전학습으로 인해 적외선 영상에서 이미지-텍스트 정렬 신뢰성이 낮다. 적외선-텍스트 레이블링 비용이 높아, 짝지어진 적외선-가시광 이미지만으로 모달리티 특유 지식을 고려하면서 장면 내용과 CLIP의 이미지-텍스트 정렬을 보존하는 적응이 필요하다.",
-      "method": "TMT는 텍스트 임베딩 차이의 방향을 적외선→가시광 지식 전이 지침으로 사용하고, 짝지어진 적외선-가시광 이미지 감독으로 CLIP 이미지 인코더를 적응시킨다. 또한 CLIP 가시광 이미지 인코더의 의미 정렬과 확산 노이즈 예측 피드백을 결합한 Generative-Perceptual Co-Supervision으로 적외선 영상의 의미와 세부 표현을 강화한다.",
-      "takeaway": "소스가 분리된 4개 적외선 분류 벤치마크에서 비교 방법 중 평균 제로샷 정확도 48.92%로 가장 높았고, 적응 중 적외선-텍스트 감독 없이도 비교 방법 중 최고의 적외선-텍스트 검색 결과를 보였다. CLIP 유사 방법 중 CART와 SemanticRT에서 최고의 오픈보캐뷸러리 분할 mIoU를 달성했으며, 초록에는 별도 한계가 명시되지 않았다."
+      "problem": "기존 접근은 이미지와 개별 영상 프레임을 독립적으로 분석해, 연속 프레임의 연기 움직임 시간 패턴이 가려진 화염을 나타낼 수 있다는 점을 충분히 활용하지 못한다.",
+      "method": "연속 프레임 사이에 어텐션을 적용하되 프레임 내 공간 정보를 보존하는 프레임 단위 트랜스포머를 제안하고, 공간 해상도에 따른 시간 패턴 길이를 최적화한다. FLAME2의 RGB/IR 영상에서 IR은 정답 추출에 사용하고 모델은 RGB만으로 학습해 저비용 상용 드론 적용 가능성을 조사한다.",
+      "takeaway": "제안 방법은 Segmentation Foreground Dice 92.61%, 객체 탐지 Precision/Recall 93.21%/91.73%, 클립 수준 분류 정확도 98.02%를 달성했으며, ablation study로 효과와 일반화 가능성을 조사했다. 초록에는 명시적 한계가 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.12345v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.12345v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.14074v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.14074v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -388,12 +385,12 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 4
+      "week": 5
     },
     "metrics": {
-      "citationCount": 40,
+      "citationCount": 41,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W7164026271"
     }
   },
@@ -422,13 +419,83 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 5
+      "week": 6
     },
     "metrics": {
       "citationCount": 39,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W7140875411"
+    }
+  },
+  {
+    "id": "2603.16666",
+    "title": "Fast-WAM: Do World Action Models Need Test-time Future Imagination?",
+    "authors": "Tianyuan Yuan et al.",
+    "published": "2026-03-17",
+    "category": "cv",
+    "categories": [
+      "cs.CV",
+      "cs.AI"
+    ],
+    "tags": [
+      "benchmark",
+      "video",
+      "generation"
+    ],
+    "summaryKo": "Fast-WAM은 학습 시 비디오 공동 학습은 유지하되 테스트 시 미래 예측을 생략해도 경쟁력 있는 행동 성능을 보이며, WAM의 이점이 테스트 시 미래 상상보다 학습 중 비디오 모델링에 있을 수 있음을 시사한다.",
+    "detail": {
+      "problem": "기존 WAM은 대부분 imagine-then-execute 방식으로 테스트 시 반복적 비디오 디노이징 지연이 크지만, 강한 행동 성능에 테스트 시 명시적 미래 상상이 실제로 필요한지는 불명확하다.",
+      "method": "Fast-WAM은 학습 중 비디오 공동 학습은 유지하면서 추론 시 미래 예측을 건너뛰고, 여러 변형을 통해 학습 시 비디오 모델링과 추론 시 미래 생성의 역할을 분리해 비교한다.",
+      "takeaway": "Fast-WAM은 imagine-then-execute 변형들과 경쟁력이 있었고, 비디오 공동 학습 제거 시 성능 하락이 더 컸다. LIBERO, RoboTwin 및 실제 과제에서 embodied pretraining 없이 경쟁력 있는 결과를 보였고 190ms 지연으로 기존 imagine-then-execute WAM보다 4배 이상 빨랐으며, 초록에 명시적 한계는 제시되지 않았다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2603.16666v1",
+    "pdfUrl": "https://arxiv.org/pdf/2603.16666v1.pdf",
+    "recommendationModes": [
+      "year"
+    ],
+    "recommendationRanks": {
+      "year": 6
+    },
+    "metrics": {
+      "citationCount": 490,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
+      "openAlexId": "W7138923929"
+    }
+  },
+  {
+    "id": "2602.06075",
+    "title": "MemGUI-Bench: Benchmarking Memory of Mobile GUI Agents in Dynamic Environments",
+    "authors": "Guangyi Liu et al.",
+    "published": "2026-02-03",
+    "category": "llm",
+    "categories": [
+      "cs.DC"
+    ],
+    "tags": [
+      "benchmark",
+      "agents"
+    ],
+    "summaryKo": "MemGUI-Bench는 모바일 GUI 에이전트의 단기 기억 유지와 장기 경험 축적을 평가하기 위한 메모리 중심 벤치마크로, 기존 벤치마크가 메모리 요구를 충분히 반영하지 못하고 교차 세션 학습을 평가하지 않던 공백을 겨냥한다.",
+    "detail": {
+      "problem": "현재 벤치마크는 메모리 관련 작업 비중이 5.2-11.8%에 그치고 교차 세션 학습을 평가하지 않아 모바일 GUI 에이전트의 기억 요구를 체계적으로 반영하지 못한다.",
+      "method": "MemGUI-Bench는 pass@k 프로토콜과 단계적 LLM-as-judge 평가로 단기 정보 유지와 장기 경험 축적을 평가하며, 26개 애플리케이션의 128개 작업을 64개 미러 쌍으로 구성하고 89.8%가 시간적·공간적 교차 유지를 요구한다. 또한 3단계 Progressive Scrutiny 파이프라인과 기억 충실도·학습 효과·실행 효율을 아우르는 7개 계층적 지표를 제공한다.",
+      "takeaway": "실험에서 모든 평가 시스템에 상당한 메모리 결함이 나타났고 메모리 집약 작업에서 4-10배의 능력 격차가 확인되었으며, 단기 기억은 필수적이고 명시적 장기 기억은 교차 세션 학습을 21.9%포인트 향상시켰다. 다만 교차 애플리케이션 전이와 계산 비용은 주요 병목으로 남아 있다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2602.06075v1",
+    "pdfUrl": "https://arxiv.org/pdf/2602.06075v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 6
+    },
+    "metrics": {
+      "citationCount": 23,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
+      "openAlexId": "W7128358391"
     }
   },
   {
@@ -459,9 +526,9 @@ window.PAPERS = [
       "month": 3
     },
     "metrics": {
-      "citationCount": 103,
+      "citationCount": 121,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W7125405089"
     }
   },
@@ -494,46 +561,10 @@ window.PAPERS = [
       "year": 3
     },
     "metrics": {
-      "citationCount": 1953,
+      "citationCount": 1973,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W7119523234"
-    }
-  },
-  {
-    "id": "2512.04529",
-    "title": "SlideGen: Collaborative Multimodal Agents for Scientific Slide Generation",
-    "authors": "Xin Liang et al.",
-    "published": "2025-12-04",
-    "category": "multimodal",
-    "categories": [
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "multimodal",
-      "generation"
-    ],
-    "summaryKo": "SlideGen은 논문에서 발표 슬라이드를 생성할 때 내러티브 기획, 멀티모달 근거 정렬, 레이아웃 구성을 협업하는 비전-언어 멀티에이전트 프레임워크를 제안한다.",
-    "detail": {
-      "problem": "논문에서 슬라이드를 만드는 일은 단순 요약이 아니라 긴 문맥과 레이아웃 민감한 디자인을 함께 추론해야 하는 멀티모달 과제이다. 기존 접근은 주로 텍스트 내용 선택에 치중해 시각적 균형, 내러티브 흐름, 멀티모달 근거의 일관된 통합이 부족한 슬라이드를 만들 수 있다.",
-      "method": "SlideGen은 발표 구조 개요 작성, 핵심 주장과 지원 그림·표 정렬, 발표자 노트 생성, 다양한 레이아웃 라이브러리를 통한 편집 가능한 PPTX 슬라이드 구성을 전담 에이전트들에 배정하고, 덱 수준에서 레이아웃을 개선한다. 또한 시각적 혼잡도·희소성·분절을 포착하는 geometry-aware density(GAD) 지표를 제안한다.",
-      "takeaway": "200편 논문 벤치마크에서 네 가지 상호보완적 차원으로 평가했을 때 SlideGen은 레이아웃 균형, 내용 커버리지, 텍스트 일관성을 일관되게 유의미하게 개선하며 경쟁 베이스라인을 능가했다. 초록에는 명시적 한계가 제시되지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2512.04529v1",
-    "pdfUrl": "https://arxiv.org/pdf/2512.04529v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 6
-    },
-    "metrics": {
-      "citationCount": 35,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
-      "openAlexId": "W7109032245"
     }
   },
   {
@@ -563,9 +594,9 @@ window.PAPERS = [
       "year": 5
     },
     "metrics": {
-      "citationCount": 1478,
+      "citationCount": 1496,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4417006854"
     }
   },
@@ -601,9 +632,9 @@ window.PAPERS = [
       "year": 2
     },
     "metrics": {
-      "citationCount": 5072,
+      "citationCount": 5143,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4416780398"
     }
   },
@@ -640,9 +671,9 @@ window.PAPERS = [
       "sixMonths": 6
     },
     "metrics": {
-      "citationCount": 155,
+      "citationCount": 156,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W7214900988"
     }
   },
@@ -678,7 +709,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 87,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4415055415"
     }
   },
@@ -715,9 +746,9 @@ window.PAPERS = [
       "sixMonths": 3
     },
     "metrics": {
-      "citationCount": 951,
+      "citationCount": 984,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4414687708"
     }
   },
@@ -751,10 +782,47 @@ window.PAPERS = [
       "sixMonths": 5
     },
     "metrics": {
-      "citationCount": 158,
+      "citationCount": 160,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4417175683"
+    }
+  },
+  {
+    "id": "2505.01146",
+    "title": "Retrieval-Augmented Generation in Biomedicine: A Survey of Technologies, Datasets, and Clinical Applications",
+    "authors": "Jiawei He et al.",
+    "published": "2025-05-02",
+    "category": "llm",
+    "categories": [
+      "q-bio.OT"
+    ],
+    "tags": [
+      "agents",
+      "privacy",
+      "medical",
+      "retrieval",
+      "multimodal"
+    ],
+    "summaryKo": "이 논문은 2020-2025년 생의학 RAG 연구를 정리하고, 추론 깊이·추론 지연·데이터 프라이버시 간의 생의학 RAG 삼중 딜레마와 멀티모달 RAG의 정렬 격차를 논의한다.",
+    "detail": {
+      "problem": "생의학 분야의 대규모 언어 모델은 정적인 파라미터 지식과 임상 근거의 동적 특성 사이의 근본적 충돌을 겪는다. RAG는 외부 데이터에 생성을 근거화하지만 지연과 아키텍처 측면의 새로운 복잡성을 도입한다.",
+      "method": "이 설문 연구는 2020-2025년 생의학 RAG 지형을 종합하고 시스템을 naive, advanced, modular 패러다임으로 분류한다. 또한 생의학 RAG 삼중 딜레마를 형식화하고, 에이전트형 워크플로, 프라이버시 제약, 멀티모달 RAG의 정렬 격차를 분석한다.",
+      "takeaway": "최근 에이전트형 워크플로는 진단 추론을 향상시킬 수 있으나 금지적 수준의 지연 위험이 있으며, 프라이버시 제약은 클라우드 기반 모델과 로컬 배포 사이의 선택을 좌우한다. 향후 방향으로 자기교정적이고 검증 가능한 임상 에이전트가 제시된다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2505.01146v1",
+    "pdfUrl": "https://arxiv.org/pdf/2505.01146v1.pdf",
+    "recommendationModes": [
+      "month"
+    ],
+    "recommendationRanks": {
+      "month": 5
+    },
+    "metrics": {
+      "citationCount": 27,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
+      "openAlexId": "W4417313874"
     }
   },
   {
@@ -791,9 +859,9 @@ window.PAPERS = [
       "sixMonths": 2
     },
     "metrics": {
-      "citationCount": 953,
+      "citationCount": 988,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4416043407"
     }
   },
@@ -824,12 +892,12 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 2
+      "week": 4
     },
     "metrics": {
       "citationCount": 55,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4407308519"
     }
   },
@@ -862,9 +930,9 @@ window.PAPERS = [
       "year": 4
     },
     "metrics": {
-      "citationCount": 1781,
+      "citationCount": 1829,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W7120088840"
     }
   },
@@ -891,52 +959,49 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 3
+      "week": 2
     },
     "metrics": {
-      "citationCount": 54,
+      "citationCount": 67,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4400222592"
     }
   },
   {
-    "id": "2405.09806",
-    "title": "A Generalist Model for Diverse Text-Guided Medical Image Synthesis",
-    "authors": "Joseph Cho et al.",
-    "published": "2024-05-16",
-    "category": "multimodal",
+    "id": "2405.17044",
+    "title": "Generating Interesting Scientific Ideas using Knowledge Graphs and LLMs: Evaluations with 100 Research Group Leaders",
+    "authors": "Xuemei Gu, Mario Krenn",
+    "published": "2024-05-27",
+    "category": "llm",
     "categories": [
-      "cs.CV",
       "cs.AI",
       "cs.CL",
+      "cs.DL",
       "cs.LG"
     ],
     "tags": [
-      "diffusion",
-      "privacy",
-      "medical",
       "benchmark"
     ],
-    "summaryKo": "MediSyn은 공개 데이터만으로 학습된 개방형 일반화 텍스트 유도 잠재 확산 모델로, 6개 의료 분야와 10개 영상 모달리티에 걸쳐 합성 의료 영상을 생성한다.",
+    "summaryKo": "SciMuse는 5,800만 편 논문 지식그래프와 LLM으로 개인화된 연구 아이디어를 생성하고, 100명 이상의 연구 그룹 리더가 4,400개 이상 아이디어의 흥미도를 평가한 연구로, 전문가 흥미도는 전반적으로 낮았으며 지식그래프 기반 개념쌍 제공이 기준선 대비 흥미도 개선을 보이지 않았다.",
     "detail": {
-      "problem": "의료 영상은 환자 프라이버시 등으로 데이터 확보가 제한되어 딥러닝의 견고한 성능 달성을 어렵게 한다. 기존 의료용 생성 모델은 대개 작업별로 특화되어 확장성이 낮고 비공개 데이터에 의존해 재현성도 제한된다.",
-      "method": "저자들은 공개 데이터만으로 학습한 개방형 일반화 텍스트 유도 잠재 확산 모델 MediSyn을 제안하고, 6개 의료 분야와 10개 영상 모달리티에서 합성 영상을 생성하도록 한다.",
-      "takeaway": "실험에서 시각적으로 다양한 의료 영상으로 학습해도 합성 품질이 저하되지 않았고, 일반화 모델이 작업별 모델군보다 계산 효율적이며, 전문의가 검증한 현실적이고 텍스트에 정렬된 합성 영상을 여러 모달리티에서 생성했다. 또한 합성 영상이 실제 환자 영상과 시각적으로 구별되어 암기 우려를 완화하고, 데이터 제한 환경에서 여러 분야의 분류기 성능을 향상시켰으며, 초록에는 명시적 한계가 제시되지 않았다."
+      "problem": "과학 문헌의 빠른 증가로 연구자들이 특히 학제 간에서 새롭고 영향력 있는 아이디어를 찾기 어려워지고 있다. AI 기반 과학적 아이디어 생성의 기회가 있지만, 생성된 아이디어가 얼마나 흥미로운지와 품질을 어떻게 개선할지가 불명확하다.",
+      "method": "5,800만 편 논문 지식그래프와 LLM을 사용해 개인화된 연구 아이디어를 생성하는 SciMuse를 제안한다. 자연과학부터 인문학까지 100명 이상의 연구 그룹 리더가 4,400개 이상의 개인화 아이디어를 5점 척도로 평가한 대규모 평가를 수행했다.",
+      "takeaway": "전문가 평가는 평균 2.40점, 최빈값 1점으로 전반적으로 낮았고 24.9%만 4점 또는 5점을 받았다. 지식그래프로 선택한 개념쌍은 제목만 사용한 GPT 기준선보다 흥미도를 개선하지 못했고, 고인용 예측 개념쌍은 무작위 개념쌍보다 낮은 흥미도를 향한 약한 경향(1.94σ)을 보였다. 그래프 특징으로 아이디어 속성을 제어할 수 있고, 그래프 특징 기반 지도 신경망과 LLM 기반 제로샷 순위화로 아이디어 흥미도를 예측할 수 있음을 보였다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2405.09806v1",
-    "pdfUrl": "https://arxiv.org/pdf/2405.09806v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2405.17044v1",
+    "pdfUrl": "https://arxiv.org/pdf/2405.17044v1.pdf",
     "recommendationModes": [
-      "month"
+      "week"
     ],
     "recommendationRanks": {
-      "month": 5
+      "week": 3
     },
     "metrics": {
-      "citationCount": 21,
+      "citationCount": 65,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
-      "openAlexId": "W4397289903"
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
+      "openAlexId": "W4399116274"
     }
   },
   {
@@ -971,9 +1036,9 @@ window.PAPERS = [
       "month": 4
     },
     "metrics": {
-      "citationCount": 103,
+      "citationCount": 116,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4394866661"
     }
   },
@@ -1003,47 +1068,10 @@ window.PAPERS = [
       "sixMonths": 1
     },
     "metrics": {
-      "citationCount": 1001,
+      "citationCount": 1048,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4387355843"
-    }
-  },
-  {
-    "id": "2308.10792",
-    "title": "Instruction Tuning for Large Language Models: A Survey",
-    "authors": "Shengyu Zhang et al.",
-    "published": "2023-08-21",
-    "category": "llm",
-    "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
-    ],
-    "tags": [
-      "benchmark",
-      "survey",
-      "generation"
-    ],
-    "summaryKo": "이 논문은 지도 미세조정(SFT) 또는 지시 튜닝(IT)이라 불리는 대규모 언어 모델의 능력과 제어 가능성을 향상하는 핵심 기법에 관한 연구들을 체계적으로 조사한다.",
-    "detail": {
-      "problem": "LLM의 다음 단어 예측 목표와 사용자의 인간 지시 준수 목표 사이의 간극을 해결하는 문제를 다룬다.",
-      "method": "SFT의 일반 방법론, SFT 데이터셋 구축, SFT 모델 훈련, 다양한 모달리티·도메인·응용으로의 적용, 그리고 SFT 결과에 영향을 미치는 요인을 체계적으로 검토한다.",
-      "takeaway": "SFT의 잠재적 함정과 비판, 기존 전략의 한계를 검토하고 유용한 연구 방향을 제시한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2308.10792v1",
-    "pdfUrl": "https://arxiv.org/pdf/2308.10792v1.pdf",
-    "recommendationModes": [
-      "year"
-    ],
-    "recommendationRanks": {
-      "year": 6
-    },
-    "metrics": {
-      "citationCount": 1207,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
-      "openAlexId": "W4416296080"
     }
   },
   {
@@ -1072,9 +1100,9 @@ window.PAPERS = [
       "sixMonths": 4
     },
     "metrics": {
-      "citationCount": 709,
+      "citationCount": 729,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4364320763"
     }
   },
@@ -1107,9 +1135,9 @@ window.PAPERS = [
       "year": 1
     },
     "metrics": {
-      "citationCount": 8095,
+      "citationCount": 8505,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -1141,52 +1169,16 @@ window.PAPERS = [
       "month": 1
     },
     "metrics": {
-      "citationCount": 282,
+      "citationCount": 299,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
+      "citationUpdatedAt": "2026-11-11T08:31:12.698Z",
       "openAlexId": "W4361020574"
-    }
-  },
-  {
-    "id": "2302.10883",
-    "title": "Blockchain and Biometrics: Survey, GDPR Analysis, and Future Directions",
-    "authors": "Mahdi Ghafourian et al.",
-    "published": "2023-02-21",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.CR",
-      "cs.DC",
-      "cs.LG"
-    ],
-    "tags": [
-      "survey"
-    ],
-    "summaryKo": "이 논문은 블록체인과 생체인식의 결합에 관한 연구 문헌을 조사하고 GDPR에 기반한 법적 분석을 포함해 응용 가능성과 과제를 정리한다.",
-    "detail": {
-      "problem": "블록체인과 생체인식의 결합은 연구와 산업에서 논의되고 있지만, 구체적 응용과 한계, GDPR상 쟁점을 포괄적으로 이해하기 어렵다.",
-      "method": "블록체인과 생체인식 결합 문헌을 조사하고 PKI, 분산 신뢰 서비스, 신원 관리 등의 응용 사례를 논의하며 GDPR의 책임성, 불변성, 익명성, 데이터 보호 요소를 분석한다.",
-      "takeaway": "이 결합은 아직 초기 단계이며, 현재의 블록체인 네트워크는 일부 실시간 생체인식 응용에 효율적이거나 경제적이지 않을 수 있다. 또한 향후 연구를 위한 과제와 주요 법적 쟁점이 제시된다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2302.10883v1",
-    "pdfUrl": "https://arxiv.org/pdf/2302.10883v1.pdf",
-    "recommendationModes": [
-      "month"
-    ],
-    "recommendationRanks": {
-      "month": 6
-    },
-    "metrics": {
-      "citationCount": 21,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-10T08:31:18.668Z",
-      "openAlexId": "W4321593793"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-11-10T08:33:56.689Z",
+  "collectedAt": "2026-11-11T08:35:26.323Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -1202,20 +1194,20 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-11-04",
-        "to": "2026-11-10"
+        "from": "2026-11-05",
+        "to": "2026-11-11"
       },
       "month": {
-        "from": "2026-10-12",
-        "to": "2026-11-10"
+        "from": "2026-10-13",
+        "to": "2026-11-11"
       },
       "sixMonths": {
-        "from": "2026-05-15",
-        "to": "2026-11-10"
+        "from": "2026-05-16",
+        "to": "2026-11-11"
       },
       "year": {
-        "from": "2025-11-11",
-        "to": "2026-11-10"
+        "from": "2025-11-12",
+        "to": "2026-11-11"
       }
     },
     "fallbackModes": []
