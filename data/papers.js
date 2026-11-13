@@ -3,30 +3,29 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2611.13997",
-    "title": "Specify Privacy Yourself: Assessing Inference-Time Personalized Privacy Preservation Ability of Large Vision-Language Models",
-    "authors": "Xingqi Wang et al.",
-    "published": "2026-11-10",
+    "id": "2611.16767",
+    "title": "Evaluating Video LLMs' Understanding of Corner Cases in Autonomous Driving",
+    "authors": "Gabriel Manalu et al.",
+    "published": "2026-11-12",
     "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.AI",
-      "cs.CL",
-      "cs.CY",
-      "cs.LG"
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "privacy"
+      "agents",
+      "video",
+      "autonomous-driving"
     ],
-    "summaryKo": "LVLM이 추론 시점에 사용자가 언어로 지정한 개인화 프라이버시 경계를 얼마나 잘 준수하는지 평가하는 ITP^3 과제와 SPY-Bench를 제안하고, 21개 SOTA 모델을 벤치마킹해 한계와 초기 정렬 방법을 제시한다.",
+    "summaryKo": "이 논문은 자율주행의 희귀하고 안전에 중요한 코너 케이스에 대한 Video LLM 이해도를 평가하는 DashBench를 제안하고 25개 모델의 성능 한계를 보인다.",
     "detail": {
-      "problem": "LVLM은 이미지에서 민감한 개인정보를 높은 정밀도로 추론할 수 있어 프라이버시 우려를 낳는다. 기존 모델은 보편적 프라이버시에는 비교적 정렬되어 있으나, 프라이버시는 본질적으로 개인화되고 맥락 의존적이라는 점을 문제로 삼는다.",
-      "method": "사용자가 언어 명세로 프라이버시 경계를 동적으로 지정할 수 있는 Inference-Time Personalized Privacy Protection(ITP^3) 능력을 평가하기 위해, 67개 범주와 24개 실제 시나리오에 걸친 32,700개 이미지-질문 쌍 및 개인화 프라이버시 지시문과 사용자 명세·맥락 인식 기반 새 지표로 구성된 SPY-Bench를 제시한다. 또한 21개 SOTA LVLM을 벤치마킹하고, Noise Contrastive Alignment 변형을 포함한 초기 ITP^3 정렬 방법을 구현한다.",
-      "takeaway": "대부분 모델은 성능이 낮아 최상위 o4-mini조차 약 24% 준수 정확도를 보였고, 맥락적 프라이버시 이해 능력도 제한적이었다. 제안된 정렬 변형은 96.88% 정확도를 달성하면서 합리적인 일반 성능을 유지했으며, 이는 더 통제 가능한 LVLM의 윤리적 배포를 위한 초기 단계로 제시된다."
+      "problem": "기존 자율주행 장면 벤치마크는 주로 일상적 교통 상황과 일반 이해 과제를 다루어, 가장 희귀하고 안전에 중요한 자율주행 이벤트인 코너 케이스에 대한 Video LLM 평가가 부족하다.",
+      "method": "DashBench는 충돌 관련 코너 케이스뿐 아니라 희귀한 비충돌 코너 케이스를 포함한 1,709개의 선별된 주행 비디오로 25개 Video LLM을 평가하며, 다양한 프롬프트와 개방형 질의응답을 사용한다.",
+      "takeaway": "평가된 모든 모델은 안전 필수 자율주행 응용에 필요한 기준을 크게 밑돌았고, 전방의 위험 이벤트를 자주 오판하거나 놓쳤으며 설명에서 존재하지 않는 객체나 행동을 환각했다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13997v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13997v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16767v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16767v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -35,27 +34,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13557",
-    "title": "Darmok: Championship Cryptic Crossword Solving via Constraint Tightening and Resilient Orchestration",
-    "authors": "Siddhartha Chatterjee",
-    "published": "2026-11-10",
-    "category": "llm",
+    "id": "2611.15809",
+    "title": "Fine-Grained Generative Hallucination Detection and Correction for Aerial Image Captioning",
+    "authors": "Debolena Basak, Somsubhra De, Maunendra Sankar Desarkar",
+    "published": "2026-11-11",
+    "category": "multimodal",
     "categories": [
+      "cs.CV",
       "cs.AI",
-      "cs.CL",
-      "cs.DC"
+      "cs.CL"
     ],
     "tags": [
-      "benchmark"
+      "multimodal",
+      "benchmark",
+      "generation",
+      "detection"
     ],
-    "summaryKo": "Darmok은 세 독립 모델의 교차 검증, 확인된 교차 문자 활용, 전체 퍼즐 모델과 사전 조회를 통한 보완으로 영국식 암호 십자말풀이에서 55회 Times Crossword Championship의 7개 퍼즐을 모두 오류 없이 풀고 모든 라운드에서 모든 인간 참가자보다 빨랐으며, 5개월 일일 평가에서도 거의 무오류 성능을 유지해 평균 성능보다 최악 상황의 복원력이 핵심임을 보였다.",
+    "summaryKo": "항공 이미지 캡션 생성에서 MLLM의 환각을 경량·참조 없는 방식으로 탐지하고 수정하는 프레임워크를 제안한 논문이다.",
     "detail": {
-      "problem": "영국식 암호 십자말풀이는 표면적 독해 아래에 표시 없는 정의와 조합적 말장난을 숨기고, 희소 격자 때문에 각 단어의 거의 절반 글자가 확인되지 않으며, 대회 규칙상 단 하나의 오답이나 빈칸만 있어도 오류 없는 해답보다 뒤로 순위가 밀린다. 최신 프런티어 AI 모델은 평균적으로 한 번에 전체 퍼즐을 비슷한 정확도와 속도로 풀 수 있지만, 클라우드 API 호출의 지연·시간 초과·안전 거부·추론 루프 문제가 남아 있다.",
-      "method": "Darmok은 단서들을 세 독립 모델에 걸쳐 여러 라운드로 교차 검증하고, 검증된 교차 문자를 이용해 더 어려운 단서를 풀며, 전체 퍼즐 모델과 사전 조회로 남은 빈칸을 채우되 확인된 단어는 덮어쓰지 않는다.",
-      "takeaway": "Darmok은 엘리트 인간 참가자들과 함께 경쟁해 7개 챔피언십 퍼즐을 모두 오류 없이 풀고 모든 라운드에서 모든 인간보다 빨랐으며, 결승 퍼즐은 6분 52초에 풀어 인간 챔피언보다 3분 13초 앞섰고 5개월 일일 평가에서도 거의 무오류 성능을 유지했다. 정상 벤치마크 조건에서는 백업 모델·대체 단계·정교한 프롬프트 지시를 제거해도 정확도가 거의 변해 과설계처럼 보였지만, 최악의 일상 운영일과 실제 결승에서 주 모델이 심하게 느려졌을 때 백업 경로가 해결을 이어갔다는 점이 한계와 핵심 교훈을 함께 보여준다."
+      "problem": "UAV 항공 이미지 캡셔닝은 수동 검사 부담을 줄이고 의사결정을 돕지만, MLLM은 시각 입력과 불일치하는 환각을 생성하며 항공 영역의 극단적 시점 변화, 작은 객체, 클래스 불균형, 모호한 시각 개체로 인해 문제가 커진다. 기존 탐지 방식은 GPT-4 같은 비용 큰 외부 모델에 의존해 항공 영역 성능이 낮거나, 모호한 경우의 불확실성을 무시한 이진 분류로 다룬다.",
+      "method": "저자들은 자유 형식 항공 이미지 캡셔닝을 위한 경량·참조 없는 환각 탐지 및 수정 프레임워크를 제안한다. 이 방법은 InternVL3와 Qwen2.5-VL을 활용해 최소한의 계산 오버헤드로 환각 내용을 탐지하고, 전용 refinement 모듈로 원본 캡션의 사실 일관성을 개선한다.",
+      "takeaway": "Labelled Illusion Dataset(LID) 실험에서 프레임워크는 환각률을 크게 줄이면서 자원 제약 환경의 실시간 배포에 실용적임을 보였다. 다만 초록에는 제안 방법의 구체적 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13557v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13557v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.15809v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.15809v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -64,26 +66,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13562",
-    "title": "An evidence-traceable benchmark of clinical reasoning in large language models",
-    "authors": "Zhiqun Zhao et al.",
-    "published": "2026-11-10",
-    "category": "llm",
+    "id": "2611.16727",
+    "title": "From Foundation VLM to Versatile Driving VLM: A Triplet Incremental Training Approach",
+    "authors": "Shengtao Wu et al.",
+    "published": "2026-11-12",
+    "category": "cv",
     "categories": [
-      "cs.CL"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "medical"
+      "3d",
+      "autonomous-driving",
+      "multimodal"
     ],
-    "summaryKo": "의료 LLM 점수를 임상 근거까지 추적 가능하게 설계한 Med Evidence Bench(MEB)로 평가한 결과, 지침 지식 회상이 실제 환자별 근거 활용을 보장하지 않았고 이는 임상 효과를 입증하지 않는다.",
+    "summaryKo": "일반 VLM에 자동 구성된 (이미지, 깊이, QA) 트리플릿을 이용한 비침습적 삼중 스트림 증분 학습으로 3D 기하 인식을 주입하고, 배포 시 추론 오버헤드 없이 다양한 자율주행 작업 성능을 향상시키는 프레임워크를 제안한다.",
     "detail": {
-      "problem": "의료 LLM의 벤치마크 점수는 평가 기준을 임상 근거로 추적할 수 없을 때 해석하기 어렵다.",
-      "method": "저자들은 지침 지식, 표준화 임상 시나리오, 실제 검사실 시나리오의 세 수준에 걸쳐 의사가 구성한 1,536개 문항으로 MEB를 개발했고, 각 의학적 주장 기준을 버전 관리된 원문 구간에 연결했다. 10개 LLM을 평가하고 1,296개 기준 수준 판단에서 자동 채점을 세 의사 다수결과 비교했다.",
-      "takeaway": "ETS는 지침 지식 0.975-0.997, 표준화 시나리오 0.292-0.658, 실제 시나리오 0.182-0.447이었고 수준별 순위가 달랐으며, 실제 시나리오에서 임상 정보 식별(평균 0.770)이 근거 매칭(0.165)이나 권고 형성(0.160)보다 높았다. 자동 채점은 세 의사 다수결과 macro-F1 0.930(95% CI 0.915-0.945)으로 일치했으나 근거 적용에서는 더 낮았고, 이 결과는 중국어 자료에 기반하며 임상 효과를 입증하지 않는다."
+      "problem": "일반 VLM을 자율주행에 적용하려면 3D 공간 사전지식이나 구조 개조가 필요하다고 여겨지지만, 초록은 정밀한 metric depth가 주된 결손 연결고리라고 본다.",
+      "method": "자동 구성된 (image, depth, QA pair) 트리플릿으로 unfrozen primary VLM, 깊이 유도 보조 스트림, frozen twin VLM의 logit-level KL distillation을 통합한 tri-stream training을 수행하고, 배포 시 depth branch를 제거한다.",
+      "takeaway": "4개 벤치마크에서 최신 driving VLM을 능가하고 3D 지각에서는 도메인 전문 모델에 필적하며 일반 추론 능력을 유지한다고 보고한다. 초록에는 명시적 한계가 제시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13562v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13562v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16727v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16727v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -92,27 +97,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13675",
-    "title": "OpticalRAG: Pixel-Space Compression for Token-Efficient Retrieval-Augmented Generation",
-    "authors": "Senhao Liu et al.",
-    "published": "2026-11-10",
-    "category": "multimodal",
+    "id": "2611.16748",
+    "title": "PhysLoop: Harnessing LLMs' Physics Awareness for Self-Improving Video Generation Models",
+    "authors": "Yuxuan Chen et al.",
+    "published": "2026-11-12",
+    "category": "cv",
     "categories": [
-      "cs.CL"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
+      "video",
       "generation"
     ],
-    "summaryKo": "OpticalRAG는 문서를 페이지 이미지로 렌더링해 시각 토큰으로 인코딩하고, 검색된 시각 토큰을 16개까지 증류해 LLM에 주입하는 토큰 효율적 RAG 프레임워크이다.",
+    "summaryKo": "PhysLoop는 LLM의 물리 지식을 영상 생성·선택·수정 과정에 활용해 물리적으로 일관된 영상 생성 모델의 자기개선을 지원하는 통합 하네스이다.",
     "detail": {
-      "problem": "긴 문서를 LLM 컨텍스트에 넣는 비용과, 텍스트 압축이 미세 정보를 일방향 토큰 시퀀스에서 되돌릴 수 없이 손실하는 문제가 RAG의 병목이다.",
-      "method": "문서를 페이지 이미지로 렌더링하고 고정된 비전 인코더로 인코딩하며, 텍스트 질의를 공유 투영으로 시각 특징 공간에 사상해 검색하는 Encoder-Bridged Retrieval과, 경량 cross-attention 압축기로 검색된 시각 토큰을 질의 조건부 prefix 토큰으로 증류하는 Query-Driven Distillation을 사용한다.",
-      "takeaway": "LongBench-v2, BAMBOO, LooGLE-v2에서 16개 토큰만 주입해 모든 벤치마크에서 최고 CAP를 달성했고, LongBench-v2에서 closed-book Qwen2.5-7B-Instruct 대비 5.17점 향상했다. 초록에는 한계가 명시되지 않았다."
+      "problem": "영상 생성 모델은 시각적으로 사실적인 영상을 만들지만 물리 역학과 인과적 일관성에는 여전히 어려움을 겪는다. 또한 생성 영상으로부터 학습하려면 세밀한 물리 감독이 필요하지만 신뢰할 수 있는 품질 판단, 수정 쌍, 통제된 변형을 얻기 어렵다.",
+      "method": "PhysLoop는 영상 생성, 선택, 수정 전반에서 LLM을 안내하고 제약하여 LLM의 물리 지식을 물리적으로 일관된 영상으로 증류하는 통합 하네스이다. 이 프레임워크는 통제 가능한 학습 데이터 구성과 추론 시 영상 수리를 지원한다.",
+      "takeaway": "PhysLoop는 실내외 다양한 장면의 10만 개 영상, 생성 도구, PhysLoop-Gen과 PhysLoop-Repair 두 평가 데이터셋을 공개한다. 초록에서는 이 데이터셋들로 통제 가능한 생성과 국소 수리를 평가하고 외부 Physics-IQ Verified 벤치마크에서 물리 행동을 평가한다고 밝히며, 명시적 한계는 제시하지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13675v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13675v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16748v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16748v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -121,30 +127,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13957",
-    "title": "AVCC: Audio-Visual Conversation Corpus for Turn-Taking Prediction with a Human Benchmark",
-    "authors": "Haotian Qi, Gabriel Skantze",
-    "published": "2026-11-10",
-    "category": "multimodal",
+    "id": "2611.16742",
+    "title": "Fog-FWL: A Large-Scale Full-Waveform LiDAR Dataset for Recovering Fog-Hidden Objects",
+    "authors": "Kazuma Ikeda et al.",
+    "published": "2026-11-12",
+    "category": "cv",
     "categories": [
-      "cs.CL",
-      "cs.HC",
-      "cs.SD"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "video",
-      "multimodal"
+      "3d",
+      "autonomous-driving",
+      "detection"
     ],
-    "summaryKo": "AVCC를 단일 고정 카메라·마이크로 녹음된 2·3인 온라인 대화 기반의 공개 next-speaker prediction 벤치마크로 전환하고, 동일 이벤트의 인간 기준과 두 모델(RoleVAP, MuVAP)을 평가할 수 있게 한 연구다.",
+    "summaryKo": "Fog-FWL은 안개로 가려진 물체 복구를 위한 대규모 full-waveform LiDAR 데이터셋으로, 실제 벤치마크 Fog-FWL-Real과 물리 기반 시뮬레이터로 생성한 Fog-FWL-Sim을 제공한다.",
     "detail": {
-      "problem": "다자간 next-speaker prediction은 화자별 센서가 있는 코퍼스에서 연구되어 왔고 이벤트 정의도 달라, 로봇이 가진 단일 카메라·마이크 환경을 위한 공개 벤치마크가 없었다. 또한 같은 예측을 사람이 얼마나 잘하는지와 모델을 비교한 사례도 없었다.",
-      "method": "31시간 분량의 AVCC 오디오-비주얼 코퍼스를 공개 NSP 벤치마크로 만들고, 상호 침묵 구간의 865개 hold 및 865개 shift 이벤트를 포함한 화자 분리 7비디오 테스트 파티션과 전체 코퍼스의 단어 단위 forced-aligned 전사, 동일 이벤트에서 수집한 인간 기준 벤치마크를 추가했다. 오디오 전용 Role-Relative VAP 모델(RoleVAP)과 멀티모달 MuVAP 모델을 평가했다.",
-      "takeaway": "레이블, 전사, 응답별 인간 데이터, 모든 수치를 재현하는 스크립트를 공개해 모델과 인간 기준을 같은 이벤트에서 비교할 수 있게 했다. 초록에는 모델 성능 수치나 일반화 한계가 제시되지 않았고, 범위는 단일 고정 카메라·마이크로 녹음된 2·3인 온라인 대화로 한정된다."
+      "problem": "LiDAR는 안개에 취약해 센서 근처의 강한 역산란과 물체 반사 약화로 약한 물체 반사가 피크 검출 과정에서 버려진다. 피크 검출 전 파형을 기록하는 FWL은 이를 보존하지만, 적절한 데이터 부재로 연구가 제한되어 왔다.",
+      "method": "저자들은 7,527개 실제 안개 FWL 프레임과 histogram-level Object/Fog/Noise 라벨, 10,719개 3D 바운딩 박스, 난이도 3단계를 포함한 Fog-FWL-Real과 12,000프레임의 물리 기반 합성 Fog-FWL-Sim을 제시한다. 두 데이터는 동일 센서 형식과 주석 프로토콜을 공유해 실제 파형을 학습에 쓰지 않는 strict sim-to-real 평가를 가능하게 한다.",
+      "takeaway": "가장 어려운 조건에서 물체 반사가 상위 3개 피크에 포함되는 비율이 34.9%에 불과해 파형 수준 복구의 필요성을 보였다. 초록에는 별도의 명시적 한계는 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13957v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13957v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16742v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16742v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -153,29 +157,27 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.14059",
-    "title": "HandsOnAid: Building and Evaluating an Offline First-Aid Assistant for Emergency Response Scenarios",
-    "authors": "Rezwan Islam Salvi, Saiyma Sittul Muna, Mushfiqur Rahman Mushfique",
-    "published": "2026-11-10",
-    "category": "llm",
+    "id": "2611.17048",
+    "title": "AURA 2.0: From User-Driven Responses to Model-Initiated Conversations in Streaming Video",
+    "authors": "Shuhan Li et al.",
+    "published": "2026-11-12",
+    "category": "multimodal",
     "categories": [
-      "cs.CL",
-      "cs.AI",
-      "cs.LG"
+      "cs.CV",
+      "cs.AI"
     ],
     "tags": [
-      "medical",
-      "retrieval",
-      "benchmark"
+      "benchmark",
+      "video"
     ],
-    "summaryKo": "HandsOnAid는 네트워크 없는 스마트폰 환경에서 안전하고 정확한 응급처치 조언을 제공하기 위해 FirstAidQA로 QLoRA 파인튜닝한 4비트 Gemma 2B 모델을 구축·평가한 오프라인 우선 응급처치 보조 시스템이다.",
+    "summaryKo": "AURA 2.0은 스트리밍 비디오 LLM에서 모델이 사용자 질의 없이 대화를 시작하고, 외부 도구를 호출하며, 입력과 출력의 시각적 근거를 제시할 수 있도록 확장한 모델이다.",
     "detail": {
-      "problem": "전화 신호와 구급차가 없는 응급 상황에서는 휴대폰의 소형 언어모델이 도움이 될 수 있지만, 그 조언은 안전하고 정확해야 한다.",
-      "method": "HandsOnAid는 5,550개 응급처치 질문-답변 쌍으로 구성된 FirstAidQA에서 QLoRA로 4비트 Gemma 2B를 파인튜닝했고, 기본·4비트/8비트 파인튜닝·길이 하한·안전 게이트·검색을 포함한 7개 구성을 비교했다. ANZCOR 지침을 따른 의료 검토 참조가 있는 41개 질문-답변 뱅크, 엄격한 0–5 점수 루브릭, 12개 안전 오버라이드, 4개 프런티어 LLM 판정자와 45개 숨은 대조를 사용했으며, 의료 전문가가 40개 답변을 블라인드 평가했다.",
-      "takeaway": "파인튜닝은 평균 점수를 기본 모델보다 +1.08 올려 2.34로 개선했고, 최고 구성은 검색을 결합한 4비트 파인튜닝 모델로 5점 만점에 2.51이었다. 의료 전문가 점수는 LLM 판정자 평균과 유사했으며, 키워드 감사에서 훈련 코퍼스가 루브릭이 요구하는 ANZCOR 세부사항 일부를 제한적으로 포함해 낮은 점수의 원인일 수 있음을 시사했고, Pixel 7 Pro에서 6개 CPU 스레드·네트워크 없이 평균 첫 표시 텍스트 6.86초, 완전한 답변 14.88초를 기록했다."
+      "problem": "대부분의 AI 어시스턴트는 프롬프트가 있을 때만 응답하며, 비디오 스트림의 사건이 의미 있는 대화 기회를 제공해도 침묵한다.",
+      "method": "AURA 2.0은 Model-Initiated Conversation(MIC), Stream-Aware Tool Calling(SATC), Interactive Visual Grounding(IVG)을 도입하고, 전용 스트리밍 상호작용 데이터셋과 3단계 학습 및 Long-Horizon Interaction Memory(LHIM)를 사용한다.",
+      "takeaway": "공개 스트리밍 벤치마크에서 오픈소스 스트리밍 모델 중 선도적 성능을 보였고, 표적 평가로 새로운 상호작용 능력을 검증했으며 모델 가중치와 추론 코드를 공개했다. 초록에는 명시적 한계가 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.14059v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.14059v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.17048v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17048v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -184,27 +186,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.14209",
-    "title": "Breakdown of Autoregressive Multi-Step Reasoning Under Concentrated vs. Diffuse Attention Head Dropout",
-    "authors": "Karol Struniawski",
-    "published": "2026-11-10",
-    "category": "llm",
+    "id": "2611.17146",
+    "title": "HiVE-VQA: Hierarchical Interaction via Volumetric Embedding for Video Quality Assessment",
+    "authors": "Robbie Hamilton, Fan Zhang, David Bull",
+    "published": "2026-11-12",
+    "category": "cv",
     "categories": [
-      "cs.AI",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "generation"
+      "3d",
+      "video",
+      "embedding"
     ],
-    "summaryKo": "8B 자기회귀 LLM 두 개에서 GSM8K 250개 쌍대 유도를 평가한 결과, 동일 예산의 분산 i.i.d. 드롭아웃보다 집중된 어텐션 헤드 드롭아웃 버스트가 추론 정확도를 더 크게 저하시켰다.",
+    "summaryKo": "HiVE-VQA는 고정된 단일 V-JEPA 2.1 비디오 인코더에서 여러 깊이의 토큰 그리드를 계층적 시공간 볼륨으로 쌓고 소형 3D 컨볼루션 헤드만 학습해 NR-VQA에서 17개 SOTA 방법보다 우수한 성능을 보인 프레임워크이다.",
     "detail": {
-      "problem": "자기회귀 LLM의 다단계 추론이 시간적·공간적으로 집중된 구조적 교란에 얼마나 취약한지, 분산된 동일 예산 교란과 비교해 검토하는 문제를 다룬다.",
-      "method": "Qwen3-8B와 LLaMA-3.1-8B-Instruct에서 GSM8K 250개 쌍대 유도를 대상으로, 클러스터형 어텐션 헤드 마스킹 버스트와 예산을 맞춘 분산 i.i.d. 드롭아웃을 비교하고, stratified quintile matching으로 동일 누적 예산을 생성 단계에 균등 분산하는 조건도 평가했다.",
-      "takeaway": "B=0.10에서 집중 버스트는 Qwen3-8B를 91.2%에서 78.8%로, LLaMA-3.1-8B-Instruct를 84.0%에서 76.8%로 떨어뜨렸고, 동일 예산을 생성 단계에 분산하면 각각 91.2%와 84.0%를 유지해 저하가 훨씬 완만했다. 탐색적 요인 분리에서는 단일 단계 드롭아웃 밀도의 급성 저하만 유의했고 다중 토큰 연속성의 누적 경향은 결론이 나지 않았다."
+      "problem": "사용자 생성 비디오 증가로 정확하고 견고한 NR-VQA가 중요하지만, 기존 연구는 복잡한 다중 브랜치 파이프라인이나 계산량이 큰 단일 브랜치 백본 파인튜닝에 의존한다.",
+      "method": "HiVE-VQA는 사전학습된 V-JEPA 2.1 인코더의 여러 깊이에서 토큰 그리드를 추출해 계층적 시공간 볼륨으로 구성하고, 컴팩트한 3D 컨볼루션 헤드가 레이어·공간·시간 축을 따라 융합한다. 인코더는 고정하고 헤드만 학습하며(5.2M 파라미터, 전체의 5.7%), 보조 다중모달 모델 없이 비디오 해상도에 불변한 추론 비용을 갖는다.",
+      "takeaway": "LSVQ만으로 학습하고 추가 파인튜닝 없이 평가했을 때, LSVQ-test·LSVQ-1080p 및 KoNViD-1k·LIVE-VQC에서 SROCC와 PLCC 기준 17개 SOTA 방법을 능가했다. 초록에는 별도의 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.14209v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.14209v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.17146v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17146v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -213,27 +216,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.14309",
-    "title": "MMDM: Measuring Massive Multitask Decision Making",
-    "authors": "Junhao Shen et al.",
-    "published": "2026-11-10",
-    "category": "llm",
+    "id": "2611.17318",
+    "title": "Spatial Foundry: A Multimodal Dataset for Spatial Intelligence",
+    "authors": "Ethan Lin, Yang Song",
+    "published": "2026-11-12",
+    "category": "cv",
     "categories": [
-      "cs.LG",
-      "cs.CL"
+      "cs.CV"
     ],
     "tags": [
+      "3d",
+      "video",
+      "multimodal",
       "benchmark",
-      "agents"
+      "generation"
     ],
-    "summaryKo": "MMDM은 기존 벤치마크의 사전 노출 문제와 긴 문맥·큰 선택지 공간·복잡한 논리 의존성을 함께 다루지 못하는 한계를 겨냥해, 16개 과제 범주에 걸친 5,448개 고품질 질문으로 단일 선택·다중 선택·소프트 라벨 의사결정을 평가하는 벤치마크다.",
+    "summaryKo": "Spatial Foundry는 5,280개의 가구가 배치된 주거용 3D 장면 구성과 편집 가능한 자산 및 정렬된 시각·기하·시간 데이터를 제공하는 멀티모달 데이터셋이다.",
     "detail": {
-      "problem": "기존 평가는 기존 벤치마크에 의존해 테스트 자료 사전 노출이 일반화를 가릴 수 있고, 실제 의사결정의 긴 문맥, 큰 선택지 공간, 복잡한 논리 의존성을 충분히 함께 포착하지 못한다.",
-      "method": "MMDM은 새로 구성한 과제와 출처 기반 재구성·재작성으로 단일 선택, 다중 선택, 소프트 라벨 의사결정을 새로운 문맥에서 평가하며, 16개 범주 5,448개 질문, 2~1,024개 선택지, 최대 64,817 토큰 입력을 포함한다. 이를 통해 28개 의사결정 모델을 정량 평가한다.",
-      "takeaway": "많은 모델이 상식 지식에서는 좋은 성능을 보이지만 상호의존적 선택지, 제약된 의사결정, 다중 선택 과제에서는 어려움을 보였고, 예로 Perplexity Decider-V1.2는 세계 지식 Hard Single-select Accuracy 78.75%이나 선택지 논리 53.95%, 제약 계획 47.95%였으며 전체 모델 최고 Hard Multi-select Accuracy는 36.81%였다. 이는 공동 추론, 제약 인식 선택, 완전한 다중 선택 복원이 핵심 과제임을 보여주며, 초록에는 별도의 한계가 명시되지 않았다."
+      "problem": "이미지만으로는 환경의 기하, 객체, 지속 상태 간 관계가 암시적으로 남고, 분리된 주석은 외관, 카메라 운동, 장면 변화를 공통 기준에서 연구하기 어렵게 한다.",
+      "method": "공유 장면 좌표로 여러 뷰와 시간을 연결하고, 평면도, 원근 및 파노라마 RGB, metric depth, 포인트 클라우드, 메시, 인스턴스 수준 3D 바운딩 박스, 카메라 궤적과 비디오 등을 포함한다. 편집 가능한 원본 장면을 통해 추가 카메라 경로와 통제된 객체 변화를 가능하게 한다.",
+      "takeaway": "평면도 조건 3D 생성, 기하 재구성, 인스턴스 수준 지각, 카메라 조건 비디오 생성, 공유 월드 모델링, 장면 편집 등에의 응용을 지원한다. 초록에는 정량적 성능 결과나 명시적 한계는 제시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.14309v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.14309v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.17318v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17318v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -242,26 +247,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.14515",
-    "title": "AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models",
-    "authors": "Zijian Zhang et al.",
-    "published": "2026-11-10",
-    "category": "llm",
+    "id": "2611.16500",
+    "title": "EvenVLM: A Text and Multimodal Dataset for the Even Language with Vision-Language Fine-Tuning",
+    "authors": "Daniil Makovetskii, Ivan Bondarenko",
+    "published": "2026-11-12",
+    "category": "multimodal",
     "categories": [
-      "cs.LG",
       "cs.CL"
     ],
     "tags": [
-      "generation"
+      "benchmark",
+      "multimodal"
     ],
-    "summaryKo": "AutoScaffold는 강화학습 중 학생의 훈련 경험을 고정된 교사가 주기적으로 진단해 전략과 힌트 형태의 적응형 스캐폴드를 설계하고, 평가 시 스캐폴드를 제거한 조건에서도 ALFWorld, 검색 기반 QA, 수학 추론, GPU 커널 생성에서 기존 RL 기준선보다 나은 성능을 보이는 AI-for-AI 프레임워크이다.",
+    "summaryKo": "EvenVLM은 시베리아의 소수 언어인 Even(Lamut)을 위한 최초의 텍스트 및 멀티모달(VQA) 데이터셋과 훈련 파이프라인을 제시한다.",
     "detail": {
-      "problem": "검증 가능한 보상 기반 강화학습(RLVR)은 풍부한 훈련 경험을 만들지만 결과 보상이 각 시도를 단일 숫자로 축소해 대부분의 정보를 활용하지 못한다. 훈련 중 전략이나 힌트 같은 스캐폴드는 이 정보를 지침으로 바꿀 수 있으나, 기존에는 주로 인간이 설계하고 특정 도메인에 맞춰 조정한다.",
-      "method": "AutoScaffold는 고정된 교사가 주기적으로 학생의 훈련 경험을 검토해 병목을 진단하고, 과제 클래스에 공유되는 전략과 개별 어려운 과제용 힌트를 설계하도록 한다. 교사는 학생이 학습함에 따라 지원 내용과 양을 조정하며, 스캐폴드는 평가 시 제거된다.",
-      "takeaway": "스캐폴드 없이 평가했을 때 AutoScaffold로 훈련한 학생은 ALFWorld 성공률 7.2점, 검색 기반 QA 평균 exact match 4.0점 향상을 포함해 네 도메인 모두에서 해당 RL 기준선을 앞섰고, GPU 커널 생성에서는 PyTorch 참조보다 빠르게 실행되는 정답 커널 과제 비율을 최대 5.0점 높였으며, 수학에서는 약 3분의 1의 학생 훈련 스텝으로 QuestA 보고 정확도를 넘었다. 초록에는 명시적 한계가 제시되지 않았으며, 분석상 교사는 과제 클래스별로 다른 실패를 식별하고 학생 향상에 따라 단계별 워크플로에서 표적 수정으로 스캐폴드를 전환했다."
+      "problem": "Even은 약 6,800명이 사용하는 북부 퉁구스계 소수 언어로, 텍스트 및 멀티모달 데이터가 부족하고 교착적 형태론으로 인한 토큰화 비효율 문제가 있다.",
+      "method": "사전과 회화집에서 GPT-4o Mini 기반 파싱으로 50,521개의 Even-러시아어 항목을 추출하고 107,543개의 합성 훈련 예시를 생성했으며, Even 전용 문자소·화이트리스트 어휘·BPE 병합을 추가하는 3단계 토크나이저 확장으로 단어당 평균 토큰 수를 27%(4.99→3.64) 줄였다. Qwen3-VL-4B를 LoRA로 텍스트 과제와 VQA에 각각 적응시켰다.",
+      "takeaway": "최적 구성은 텍스트 벤치마크에서 11.4% exact match와 13.6 weighted score, 문장 번역에서 0.1283 chrF, VQA에서 65% 정확도를 보고했으며(기본 모델 및 텍스트 전용 파인튜닝은 0%), 데이터셋·평가 벤치마크·훈련 파이프라인을 공개한다. 초록에는 별도의 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.14515v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.14515v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16500v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16500v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -270,26 +275,26 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13772",
-    "title": "RF3DGS: Reflection-Free 3D Gaussian Splatting with Self-Priors",
-    "authors": "Qiang Wen et al.",
-    "published": "2026-11-10",
-    "category": "cv",
+    "id": "2611.16662",
+    "title": "MuSeToM: Multi-Sensory Evaluation of Belief Revision with Textual Cues Across Six Senses",
+    "authors": "Chunkit Chan et al.",
+    "published": "2026-11-12",
+    "category": "llm",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
-      "benchmark",
-      "3d"
+      "benchmark"
     ],
-    "summaryKo": "RF3DGS는 다중 시점 영상의 최소 픽셀 강도가 반사 없는 정보와 강하게 연관된다는 광도적 사전을 3D Gaussian Splatting에 활용해 반사를 제거하는 방법이다.",
+    "summaryKo": "MuSeToM은 여섯 감각 범주를 아우르는 텍스트 단서로 타인의 믿음 수정 필요성과 갱신된 믿음 상태를 평가하는 인간 검증 기반 벤치마크로, 최신 LLM들이 믿음 변화 가능성은 자주 탐지하지만 갱신된 믿음을 식별하고 불충분한 단서에서 과도한 갱신을 피하는 데 어려움을 보임을 시사한다.",
     "detail": {
-      "problem": "3D 반사 제거는 박물관 전시처럼 고품질 시각화가 필요한 응용에서 중요하지만, 다중 시점 3D Gaussian Splatting 맥락으로 일반화하기는 쉽지 않다.",
-      "method": "먼저 기하학적 사전으로 vanilla 3DGS를 최적화해 각 뷰의 거친 반사 없는 깊이 맵을 추정하고, 깊이 맵과 광도적 사전을 이용한 3D warping으로 보조 뷰의 반사 없는 정보를 모아 참조 뷰의 clean transmission pseudo-label을 만든다. 이 pseudo-label을 self-supervised 신호로 사용하고 Adaptive Twin Rendering(ATR) loss로 원본 반사 저하 이미지의 고주파 세부를 보존하며 융합한다.",
-      "takeaway": "합성 및 실제 시나리오에서 최신 기술 수준의 반사 제거 성능을 보였고, Unity 렌더링 엔진 기반의 첫 3D 반사 제거 벤치마크를 구축했다. 초록에는 명시적 한계가 제시되지 않았다."
+      "problem": "기존 LLM의 Theory of Mind 평가는 주로 정적 믿음 귀속과 거짓 믿음 추론에 치우쳐, 지각적 증거가 타인의 믿음 수정을 정당화하기에 충분한지 판단하는 능력은 충분히 탐구되지 않았다.",
+      "method": "BigToM과 OpenToM에서 적응한 2,415개 인스턴스에 여섯 감각 범주의 텍스트 단서를 포함한 인간 검증 기반 벤치마크 MuSeToM을 제안하고, 직접 프롬프팅과 chain-of-thought 프롬프팅으로 최신 LLM을 체계적으로 평가한다.",
+      "takeaway": "모델들은 믿음이 바뀔 수 있음을 자주 탐지하지만 갱신된 믿음을 식별하는 데 어려움을 겪고, 지각적으로 두드러지지만 인식론적으로 불충분한 단서에서 과도하게 갱신하는 경향을 보였다. 초록에는 별도의 연구 한계가 명시되어 있지 않다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13772v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13772v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16662v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16662v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -298,26 +303,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13785",
-    "title": "The Target Is a Predicate: Predicate-State Grounding for Semantic-Level Video Reasoning Segmentation",
-    "authors": "Yuhuan Hong et al.",
-    "published": "2026-11-10",
-    "category": "cv",
+    "id": "2611.16929",
+    "title": "SPADE: Soft Prompts for Ai-text DEtection",
+    "authors": "Alex Jiang, Didier Schwab, Chuyuan Li",
+    "published": "2026-11-12",
+    "category": "multimodal",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "cs.AI"
     ],
     "tags": [
       "benchmark",
-      "video"
+      "generation",
+      "detection"
     ],
-    "summaryKo": "이 논문은 객체와 시간에 대한 동적 프레디케이트를 질의로 정의하는 PS-VRS를 제안하고, 활성/비활성 상태 주석을 포함한 PS-Bench와 상태 예측-정렬-마스크 방출 파이프라인 PSG를 통해 동적 비디오 추론 분할을 다룬다.",
+    "summaryKo": "SPADE는 프롬프트의 영향을 PMI로 측정해 AI 생성 텍스트 탐지에 활용하고, 클래스별 소프트 프롬프트로 분류하며 OOD 데이터셋에서 SOTA를 달성한 프레임워크다.",
     "detail": {
-      "problem": "기존 방법은 대상을 한 번 식별하면 영구적으로 활성 상태라고 간주하여, 대상이 없는 구간에서 마스크를 과도하게 출력하고 대상 전환을 처리하지 못한다.",
-      "method": "2,077개 비디오와 16,250개 질의에 활성/비활성 프레디케이트 상태, 시간 구간, 픽셀 마스크를 주석한 PS-Bench를 구축하고, [ACTIVE]/[VACANT] 상태 토큰 예측, 밀집 교차모달 유사도 기반 프레임 정렬, 활성 상태에만 SAM2로 마스크를 방출하는 PSG를 제안한다.",
-      "takeaway": "PSG는 PS-Bench에서 기존 베이스라인보다 J&F가 +9.32 높고 거짓 양성 마스크 방출을 크게 줄인다. 초록에는 명시적인 한계가 제시되지 않는다."
+      "problem": "LLM의 접근성 증가로 AI 생성 텍스트 탐지가 중요해졌으나, 기존 탐지기는 생성 텍스트만 보고 생성 과정의 프롬프트 영향은 무시해 개방형 환경에서 견고성이 제한된다.",
+      "method": "SPADE는 프롬프트가 텍스트를 얼마나 설명하는지 나타내는 PMI 항으로 프롬프트 영향을 특성화하고, 클래스별 소프트 프롬프트를 학습해 분리를 증폭한 뒤 후보 텍스트를 가장 잘 설명하는 프롬프트의 클래스로 예측한다.",
+      "takeaway": "여러 벤치마크에서 다양한 탐지기와 비교해 견고성과 효과를 보였고 OOD 데이터셋에서 SOTA를 달성했다. 초록에는 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13785v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13785v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.16929v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.16929v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -326,27 +333,31 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.13851",
-    "title": "Towards Text-Only Remote Sensing Scene Classification via Semantic Proxy",
-    "authors": "Xianping Ma et al.",
-    "published": "2026-11-10",
-    "category": "cv",
+    "id": "2611.17052",
+    "title": "Auditing AI peer reviewers: a benchmark on real scientific papers",
+    "authors": "Íñigo Zubeldia et al.",
+    "published": "2026-11-12",
+    "category": "multimodal",
     "categories": [
-      "cs.CV"
+      "cs.CL",
+      "astro-ph.IM",
+      "cs.AI",
+      "cs.DL"
     ],
     "tags": [
       "benchmark",
-      "embedding",
-      "generation"
+      "agents",
+      "retrieval",
+      "detection"
     ],
-    "summaryKo": "원격탐사 장면 분류를 이미지 없이 텍스트만으로 수행할 수 있는지 탐구하고, VLM으로 생성한 의미 프록시를 텍스트 임베딩으로 분류하는 SeProRS 벤치마크를 제안한다.",
+    "summaryKo": "실제 과학 논문에 네 유형·세 단계 심각도의 객관적이고 위치 특정 가능한 오류를 주입해 LLM 기반 동료심사 시스템의 오류 탐지율과 깨끗한 사본에서의 오탐률을 측정하는 벤치마크를 제안하고, 인용·수학·수치 검증을 수행하는 다중 에이전트 리뷰어 Skepthical을 평가한다.",
     "detail": {
-      "problem": "기존 RSSC가 이미지 기반 시각 표현에 의존한다는 전제를 재검토하며, 텍스트 의미 표현만으로 원격탐사 장면을 인식할 수 있는지 묻는 text-only RSSC 문제를 다룬다.",
-      "method": "VLM으로 원격탐사 이미지를 의미 프록시라 부르는 텍스트 설명으로 변환하고, 이를 텍스트 임베딩 모델로 인코딩해 장면 분류하는 SeProRS 파이프라인을 제안한다. 또한 대표 프롬프트 전략과 프록시 생성기, 분류 성능 영향, 텍스트 임베딩 특성, 생성기 간 전이성, 효율성을 분석한다.",
-      "takeaway": "세 RSSC 데이터셋 실험에서 의미 프록시가 상당한 판별 정보를 보존함을 보였으나 순수 텍스트 기반 장면 이해의 내재적 한계도 드러냈다. 이미지 기반 RSSC를 대체하려는 것이 아니라 의미 프록시 기반 장면 인식의 가능성과 경계를 정량화하는 새 연구 방향을 제시한다."
+      "problem": "LLM 기반 동료심사가 실제 규모로 사용되지만 그 평가는 제한적이다. 실제 논문에 통제된 오류를 주입해 리뷰어의 유형별·심각도별 탐지율과 오탐률을 측정할 필요가 있다.",
+      "method": "네 유형(일반 문제, 수학, 수치, 인용)과 세 심각도의 오류를 실제 논문에 주입하는 벤치마크를 만들고, 인용 주장은 인용 논문 검색으로, 수학은 컴퓨터 대수로, 수치 주장은 실행 코드로 검증하는 다중 에이전트 리뷰어 Skepthical을 제안한다. 천체물리학과 ML의 최근 arXiv 프리프린트 각 15편, 총 357개 오류에 대해 12개 리뷰어 시스템을 평가한다.",
+      "takeaway": "모델 선택이 탐지율에 가장 큰 영향을 주며 동일 프롬프트에서 프런티어 LLM 세 개가 두 코퍼스 모두 총 탐지율에서 약 50%포인트 차이를 보였다. 도구와 스캐폴딩은 모델이 스스로 제공하지 못하는 것을 보완할 때 도움이 되며, 천체물리학에서는 Claude Code가 수학·수치 탐지에서 단일 Claude 호출보다 나았고 강제 인용 검색은 Skepthical에 큰 차이로 가장 높은 인용 오류 탐지율을 주었다. 다만 이 인용 우위는 ML에서는 관찰되지 않아 최고 단일 LLM과 통계적으로 구분되지 않았고, 대부분 시스템의 오탐률은 10% 미만이지만 프롬프트·모델·스캐폴딩에 따라 달라지며 수학 플래그가 주요 오탐 원인이었다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.13851v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.13851v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.17052v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.17052v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -355,71 +366,39 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2606.08737",
-    "title": "Dream-Tac: A Unified Tactile World Action Model for Contact-Rich Robot Manipulation",
-    "authors": "Yunfan Lou et al.",
-    "published": "2026-06-07",
+    "id": "2611.10728",
+    "title": "3D Segmentation in the Clinic: A Grand Challenge",
+    "authors": "Bram van Ginneken, Tobias Heimann, Martin Styner",
+    "published": "2026-11-07",
     "category": "cv",
     "categories": [
-      "cs.RO"
+      "cs.CV"
     ],
     "tags": [
-      "diffusion",
-      "generation"
+      "3d",
+      "medical"
     ],
-    "summaryKo": "Dream-Tac은 접촉이 많은 로봇 조작을 위해 행동, 미래 시각 관측, 촉각 역학을 통합 모델링하는 Tactile-World Action Model이다.",
+    "summaryKo": "이 논문은 2007년 MICCAI 워크숍에서 열린 CT 간 및 뇌 MRI 미상핵 분할 경진대회의 구성과 데이터, 평가 방법을 설명한다.",
     "detail": {
-      "problem": "기존 월드 액션 모델은 주로 시각에 의존해, 물리적 상호작용의 핵심 단서가 중요한 접촉 중심 조작에서 실패하기 쉽다.",
-      "method": "Dream-Tac은 접촉 게이트 기반 시각-촉각 융합과 접촉 인지 어텐션 바이어스를 도입하고, 학습 시 융합 어텐션 경로를 보존하는 재구성과 추론 시 캐시 기반 확산 가속을 포함한 이중 레벨 가속 전략을 설계했다.",
-      "takeaway": "6개 접촉 중심 조작 과제에서 평균 31.7% 행동 정확도 향상을 보였고, 최대 2.9배 빠른 학습과 1.8배 빠른 추론을 달성했다. 초록에는 한계가 명시되지 않았다."
+      "problem": "CT 스캔에서 간을, 뇌 MRI 데이터에서 미상핵을 자동 및 반자동으로 추출하는 분할 문제를 다룬다.",
+      "method": "2007년 Medical Image Computing and Computer Assisted Intervention 학회의 워크숍 형태로 경진대회를 구성하고, 두 분할 과제의 학습 및 테스트 데이터 세트와 분할 평가에 사용한 점수 체계를 제시한다.",
+      "takeaway": "초록은 대회의 취지와 데이터, 평가 시스템을 설명하지만 경진대회 결과나 성능 수치는 제시하지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2606.08737v1",
-    "pdfUrl": "https://arxiv.org/pdf/2606.08737v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.10728v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.10728v1.pdf",
     "recommendationModes": [
-      "week"
+      "week",
+      "month"
     ],
     "recommendationRanks": {
-      "week": 3
+      "week": 1,
+      "month": 2
     },
     "metrics": {
-      "citationCount": 41,
+      "citationCount": 206,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
-      "openAlexId": "W7164026271"
-    }
-  },
-  {
-    "id": "2603.24581",
-    "title": "Latent-WAM: Latent World Action Modeling for End-to-End Autonomous Driving",
-    "authors": "Linbo Wang et al.",
-    "published": "2026-03-25",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.RO"
-    ],
-    "tags": [
-      "autonomous-driving"
-    ],
-    "summaryKo": "Latent-WAM은 공간 인식 및 동역학 정보를 반영한 잠재 세계 표현을 통해 효율적인 엔드투엔드 자율주행 궤적 계획을 수행하는 프레임워크다.",
-    "detail": {
-      "problem": "기존 세계 모델 기반 계획기는 표현 압축이 불충분하고 공간 이해가 제한되며 시간적 동역학 활용이 부족해, 데이터와 계산 예산이 제한된 환경에서 최적에 못 미치는 계획을 보인다.",
-      "method": "SCWE는 기초 모델의 기하학 지식을 증류하고 학습 가능한 쿼리로 다중 시점 이미지를 압축된 장면 토큰으로 변환하며, DLWM은 인과 Transformer로 과거 시각 및 ego 상태 표현을 조건으로 미래 세계 상태를 자기회귀적으로 예측한다.",
-      "takeaway": "NAVSIM v2에서 89.3 EPDMS, HUGSIM에서 28.9 HD-Score를 달성해 최고 기존 perception-free 방법보다 3.2 EPDMS 앞서며, 훨씬 적은 학습 데이터와 104M 파라미터 모델로 성능을 냈다. 초록에는 별도 한계는 명시되지 않았고, 결과는 NAVSIM v2와 HUGSIM 실험에 기반한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2603.24581v1",
-    "pdfUrl": "https://arxiv.org/pdf/2603.24581v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 4
-    },
-    "metrics": {
-      "citationCount": 39,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
-      "openAlexId": "W7140875411"
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
+      "openAlexId": "W2309471314"
     }
   },
   {
@@ -452,10 +431,43 @@ window.PAPERS = [
       "year": 6
     },
     "metrics": {
-      "citationCount": 490,
+      "citationCount": 493,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W7138923929"
+    }
+  },
+  {
+    "id": "2601.19854",
+    "title": "Banana Split: Improved Cosmological Constraints with Two Light-Curve-Shape and Color Populations Using Union3.1+UNITY1.8",
+    "authors": "David Rubin et al.",
+    "published": "2026-01-27",
+    "category": "llm",
+    "categories": [
+      "astro-ph.CO"
+    ],
+    "tags": [],
+    "summaryKo": "SNe Ia가 단일 모집단이라는 가정을 넘어 두 개의 광도곡선 모양 및 색 모집단을 허용하는 UNITY1.8 모델을 Union3.1에 적용해 우주론 제약을 개선했다.",
+    "detail": {
+      "problem": "기존 SNe Ia 표준화는 이들이 단일 모집단에 속한다고 가정하지만, 적어도 두 개의 핵심 모집단이 있다는 증거가 늘고 있다. 이 분석은 Union3+UNITY1.5 SN 우주론 분석을 갱신하려 한다.",
+      "method": "업데이트된 Union3.1 편성을 대상으로 두 개의 광도곡선 모양(x1) 및 색 모집단을 허용하는 UNITY1.8 모델을 적용하고, 단일 모드와 두 모드 가정을 같은 SNe 및 모의 데이터에 각각 적합해 비교했다.",
+      "takeaway": "두 모집단은 x1 및 색 분포, 광도곡선 모양/등급 표준화 관계, 호스트 은하 항성질량과 적색편이 분포가 다르며, 비적색화 SNe에서는 기존 호스트 질량 잔차 단차가 0과 일치한다. 두 모드 적합에서 우주론적 매개변수 불확실성이 줄었고, 평평한 ΛCDM에서 SNe만으로 Omega_m=0.334+0.025-0.024, 평평한 w0-wa에서 SNe+BAO+CMB로 w0=-0.760+0.084-0.082, w_a=-0.79+0.28-0.30을 얻었으며 단일 모드 UNITY 대비 평평한 ΛCDM과의 긴장은 0.1 sigma 감소해 약 3 sigma가 되었다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2601.19854v1",
+    "pdfUrl": "https://arxiv.org/pdf/2601.19854v1.pdf",
+    "recommendationModes": [
+      "week",
+      "month"
+    ],
+    "recommendationRanks": {
+      "week": 4,
+      "month": 6
+    },
+    "metrics": {
+      "citationCount": 25,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
+      "openAlexId": "W7125966085"
     }
   },
   {
@@ -483,12 +495,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 3
+      "month": 4
     },
     "metrics": {
       "citationCount": 121,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W7125405089"
     }
   },
@@ -518,12 +530,12 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 5
+      "week": 6
     },
     "metrics": {
       "citationCount": 22,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W7117165607"
     }
   },
@@ -556,9 +568,9 @@ window.PAPERS = [
       "year": 3
     },
     "metrics": {
-      "citationCount": 1984,
+      "citationCount": 1996,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W7119523234"
     }
   },
@@ -589,9 +601,9 @@ window.PAPERS = [
       "year": 5
     },
     "metrics": {
-      "citationCount": 1504,
+      "citationCount": 1508,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4417006854"
     }
   },
@@ -627,9 +639,9 @@ window.PAPERS = [
       "year": 2
     },
     "metrics": {
-      "citationCount": 5158,
+      "citationCount": 5187,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4416780398"
     }
   },
@@ -668,41 +680,8 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 156,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W7214900988"
-    }
-  },
-  {
-    "id": "2510.08727",
-    "title": "Statistical Benchmarking of Optimization Methods for Variational Quantum Eigensolver under Quantum Noise",
-    "authors": "Silvie Illésová et al.",
-    "published": "2025-10-09",
-    "category": "llm",
-    "categories": [
-      "quant-ph"
-    ],
-    "tags": [
-      "benchmark"
-    ],
-    "summaryKo": "이 논문은 다양한 양자 잡음 조건에서 H2 분자에 대한 State-Averaged Orbital-Optimized VQE에 적용된 최적화 알고리즘들의 안정성, 정확도, 계산 효율성을 통계적으로 비교한다.",
-    "detail": {
-      "problem": "NISQ 환경에서 변분 양자 아이겐솔버에 적용되는 최적화 전략의 안정성, 정확도, 계산 효율성을 평가하는 것이 목표이다. 이를 위해 H2 분자를 대상으로 이상적·확률적·결맞음 붕괴 잡음 모델에서 최적화기 성능을 조사한다.",
-      "method": "BFGS, SLSQP, Nelder-Mead, Powell, COBYLA, iSOMA의 여섯 대표 최적화기를 위상 감쇠, 편광, 열 완화 채널을 포함한 잡음 조건과 여러 잡음 강도 및 측정 설정에서 체계적으로 비교하여 수렴 거동과 잡음 민감도를 분석한다.",
-      "takeaway": "BFGS는 최소 평가 횟수로 가장 정확한 에너지를 보이며 중간 정도의 결맞음 붕괴에서도 견고성을 유지했다. COBYLA는 저비용 근사에 유용했고 SLSQP는 잡음 환경에서 불안정했으며, iSOMA 같은 전역 접근법은 가능성이 있으나 계산 비용이 컸다. 결과는 H2와 테스트된 잡음 모델 및 최적화기 범위에서 잡음 인식 최적화기 선택 지침을 제공한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2510.08727v1",
-    "pdfUrl": "https://arxiv.org/pdf/2510.08727v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 6
-    },
-    "metrics": {
-      "citationCount": 14,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
-      "openAlexId": "W4415280715"
     }
   },
   {
@@ -738,9 +717,9 @@ window.PAPERS = [
       "sixMonths": 2
     },
     "metrics": {
-      "citationCount": 996,
+      "citationCount": 1003,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4414687708"
     }
   },
@@ -770,48 +749,14 @@ window.PAPERS = [
       "sixMonths"
     ],
     "recommendationRanks": {
-      "month": 2,
+      "month": 3,
       "sixMonths": 5
     },
     "metrics": {
-      "citationCount": 161,
+      "citationCount": 163,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4417175683"
-    }
-  },
-  {
-    "id": "2506.05218",
-    "title": "MonkeyOCR: Document Parsing with a Structure-Recognition-Relation Triplet Paradigm",
-    "authors": "Zhang Li et al.",
-    "published": "2025-06-05",
-    "category": "cv",
-    "categories": [
-      "cs.CV"
-    ],
-    "tags": [
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "MonkeyOCR는 Structure-Recognition-Relation(SRR) 삼중 패러다임과 MonkeyDoc 데이터셋을 활용해 문서 파싱을 구조 탐지, 내용 인식, 관계 예측으로 나누어 수행하는 모델로, 기존 방법을 능가하고 단일 RTX 3090에서 추론 가능하다.",
-    "detail": {
-      "problem": "기존 문서 파싱은 복잡한 다중 도구 파이프라인이 필요하거나 거대한 종단간 모델로 전체 페이지를 처리하는 비효율이 있고, 기존 데이터셋은 단일 작업·언어·문서 유형에 치우치는 한계가 있다.",
-      "method": "문서 파싱을 '어디에 있는가'(구조), '무엇인가'(인식), '어떻게 조직되는가'(관계)로 추상화한 SRR 패러다임을 제안하고, 450만 개 이중언어 인스턴스와 10종 이상 문서 유형을 포함한 MonkeyDoc 데이터셋으로 3B 파라미터 문서 기초 모델을 학습했다. 또한 파라미터 중복성을 식별해 연속 파라미터 분해(CPD)로 0.6B–1.2B 모델을 구성한다.",
-      "takeaway": "MonkeyOCR는 이전 오픈소스·클로즈드소스 방법과 Gemini 2.5-Pro를 포함해 최고 수준 성능을 달성했고 단일 RTX 3090에서 효율적으로 추론할 수 있다. 초록은 별도 한계를 명시하지 않으며, CPD 기반 0.6B–1.2B 모델은 수용 가능한 성능 하락이 있다고 언급한다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2506.05218v1",
-    "pdfUrl": "https://arxiv.org/pdf/2506.05218v1.pdf",
-    "recommendationModes": [
-      "month"
-    ],
-    "recommendationRanks": {
-      "month": 5
-    },
-    "metrics": {
-      "citationCount": 115,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
-      "openAlexId": "W4416138682"
     }
   },
   {
@@ -842,12 +787,12 @@ window.PAPERS = [
       "month"
     ],
     "recommendationRanks": {
-      "month": 6
+      "month": 5
     },
     "metrics": {
       "citationCount": 27,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4417313874"
     }
   },
@@ -885,46 +830,10 @@ window.PAPERS = [
       "sixMonths": 3
     },
     "metrics": {
-      "citationCount": 995,
+      "citationCount": 1001,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4416043407"
-    }
-  },
-  {
-    "id": "2502.04424",
-    "title": "EmoBench-M: Benchmarking Emotional Intelligence for Multimodal Large Language Models",
-    "authors": "He Hu et al.",
-    "published": "2025-02-06",
-    "category": "multimodal",
-    "categories": [
-      "cs.CL",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "embedding",
-      "multimodal"
-    ],
-    "summaryKo": "EmoBench-M은 심리학 이론에 기반해 13개 평가 시나리오와 세 가지 계층적 차원으로 MLLM의 감정 지능을 평가하는 벤치마크로, 27개 최신 MLLM 평가에서 인간 수준과의 상당한 성능 격차를 보였다.",
-    "detail": {
-      "problem": "기존의 정적이고 텍스트 기반 또는 텍스트-이미지 벤치마크는 실제 상호작용의 멀티모달 복잡성과 감정 표현의 동적·맥락 의존적 특성을 반영하지 못해 MLLM의 감정 지능을 평가하기에 부적절하다.",
-      "method": "EmoBench-M은 확립된 심리학 이론에 기반한 체계적 벤치마크로, 기초 감정 인식(FER), 대화 감정 이해(CEU), 사회적으로 복잡한 감정 분석(SCEA)의 세 계층적 차원에 걸친 13개 평가 시나리오에서 27개 최신 MLLM을 객관적 과제별 지표와 LLM 기반 평가로 평가한다.",
-      "takeaway": "평가 결과 인간 수준의 능력에 비해 상당한 성능 격차가 드러났으며, 최고 성능 모델인 Gemini-3.0-Pro와 GPT-5.2도 각각 70.5점과 66.5점을 기록했다. AffectGPT 같은 특화 모델은 일부 시나리오에서는 강점을 보이지만 전반적으로 포괄적인 감정 지능이 부족하고 시나리오별 성능이 고르지 않다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2502.04424v1",
-    "pdfUrl": "https://arxiv.org/pdf/2502.04424v1.pdf",
-    "recommendationModes": [
-      "week"
-    ],
-    "recommendationRanks": {
-      "week": 2
-    },
-    "metrics": {
-      "citationCount": 55,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
-      "openAlexId": "W4407308519"
     }
   },
   {
@@ -956,10 +865,77 @@ window.PAPERS = [
       "year": 4
     },
     "metrics": {
-      "citationCount": 1835,
+      "citationCount": 1847,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W7120088840"
+    }
+  },
+  {
+    "id": "2409.17264",
+    "title": "No Request Left Behind: Tackling Heterogeneity in Long-Context LLM Inference with Medha",
+    "authors": "Amey Agrawal et al.",
+    "published": "2024-09-25",
+    "category": "llm",
+    "categories": [
+      "cs.LG",
+      "cs.DC"
+    ],
+    "tags": [],
+    "summaryKo": "Medha는 백만 토큰급 LLM 추론에서 짧은 질의와 긴 문서가 섞인 이질적 워크로드의 convoy effect를 줄이기 위해 세밀한 선점형 스케줄링을 도입한 서빙 시스템이다.",
+    "detail": {
+      "problem": "프로덕션 워크로드는 짧은 질의와 긴 문서가 혼재하고, attention의 이차 복잡도와 결합되어 긴 요청이 짧은 대화형 요청을 지연시키는 convoy effect와 응답성 저하를 만든다.",
+      "method": "Medha는 Adaptive Chunking, Stream Pipeline Parallel, KV-Cache Parallelism과 Length-Aware Relative Slack(LARS) 스케줄러를 결합해 선점형 스케줄링을 실용화하고, 지연·이질성을 고려해 convoy effect와 기아 상태를 방지한다.",
+      "takeaway": "이질적 워크로드에서 Medha는 최신 비선점 시스템 대비 처리량을 5.7배 높이고 중앙값 및 99백분위 지연을 각각 30배, 174배 줄였다. 초록에는 명시적 한계가 제시되지 않았다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2409.17264v1",
+    "pdfUrl": "https://arxiv.org/pdf/2409.17264v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 3
+    },
+    "metrics": {
+      "citationCount": 41,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
+      "openAlexId": "W4408955204"
+    }
+  },
+  {
+    "id": "2408.05025",
+    "title": "Rag and Roll: An End-to-End Evaluation of Indirect Prompt Manipulations in LLM-based Application Frameworks",
+    "authors": "Gianluca De Stefano, Lea Schönherr, Giancarlo Pellegrino",
+    "published": "2024-08-09",
+    "category": "llm",
+    "categories": [
+      "cs.CR",
+      "cs.AI"
+    ],
+    "tags": [
+      "retrieval",
+      "generation"
+    ],
+    "summaryKo": "RAG 애플리케이션의 종단 간 간접 프롬프트 조작에 대한 보안성을 평가한 결과, 기존 공격은 주로 검색 단계에서 악성 문서 순위를 높이는 데 최적화되어 있으며 다양한 설정에서 약 40%의 성공률을 보였다.",
+    "detail": {
+      "problem": "RAG는 유연하고 비용이 낮아 널리 쓰이지만 보안 영향이 충분히 연구되지 않았고, 공개 출처에서 수집된 데이터가 간접 프롬프트 주입을 통해 모델 응답을 조작할 수 있는 통로가 된다.",
+      "method": "기존 RAG 프레임워크 파이프라인을 검토해 원형 아키텍처와 핵심 파라미터를 도출하고, 선행 연구에서 공격 기법을 조사한 뒤 종단 간 RAG 애플리케이션 대상 공격 효과를 판단하는 Rag 'n Roll 프레임워크를 구현했다.",
+      "takeaway": "대부분의 공격은 다양한 설정에서 약 40% 성공률을 보였고 기대되는 정상 답변도 포함한 모호한 답변을 성공으로 간주하면 60%까지 상승했다. 최적화되지 않은 문서도 대상 질의에 2개 이상 배치하면 최적화 문서와 유사한 결과를 낼 수 있었으며, RAG 설정 공간 탐색은 공격 저지에 제한적이었고 가장 성공적인 조합은 기능을 심각하게 저하시켰다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2408.05025v1",
+    "pdfUrl": "https://arxiv.org/pdf/2408.05025v1.pdf",
+    "recommendationModes": [
+      "week"
+    ],
+    "recommendationRanks": {
+      "week": 5
+    },
+    "metrics": {
+      "citationCount": 25,
+      "citationSource": "openalex",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
+      "openAlexId": "W4402717393"
     }
   },
   {
@@ -989,51 +965,13 @@ window.PAPERS = [
       "week"
     ],
     "recommendationRanks": {
-      "week": 1
+      "week": 2
     },
     "metrics": {
-      "citationCount": 65,
+      "citationCount": 66,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4399116274"
-    }
-  },
-  {
-    "id": "2404.09516",
-    "title": "State Space Model for New-Generation Network Alternative to Transformers: A Survey",
-    "authors": "Xiao Wang et al.",
-    "published": "2024-04-15",
-    "category": "multimodal",
-    "categories": [
-      "cs.LG",
-      "cs.AI",
-      "cs.CL",
-      "cs.CV",
-      "cs.MM"
-    ],
-    "tags": [
-      "survey",
-      "generation"
-    ],
-    "summaryKo": "이 논문은 Transformer의 계산 부담을 줄이기 위한 대안으로 주목받는 State Space Model(SSM)에 대한 최초의 포괄적 리뷰를 제공하고, 원리 설명과 기존 SSM 및 다양한 응용 분야 리뷰, 실험적·통계적 비교 분석, 향후 연구점 제안을 제시한다.",
-    "detail": {
-      "problem": "Transformer 아키텍처는 강력한 성능을 보이지만 막대한 계산 요구량이 연구자들에게 부담이 되며, 이를 줄이기 위한 더 효율적인 방법이 필요하다.",
-      "method": "SSM의 원리를 상세히 설명하고, 기존 SSM들과 자연어 처리, 컴퓨터 비전, 그래프, 멀티모달·멀티미디어, 포인트 클라우드/이벤트 스트림, 시계열 등 다양한 응용을 리뷰하며 통계적 비교 분석을 제공한다.",
-      "takeaway": "SSM의 특징과 장점을 보여주는 실험적 비교와 분석을 제시하고 향후 연구점을 제안하지만, 초록에는 구체적인 한계가 명시되어 있지 않다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2404.09516v1",
-    "pdfUrl": "https://arxiv.org/pdf/2404.09516v1.pdf",
-    "recommendationModes": [
-      "month"
-    ],
-    "recommendationRanks": {
-      "month": 4
-    },
-    "metrics": {
-      "citationCount": 117,
-      "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
-      "openAlexId": "W4394866661"
     }
   },
   {
@@ -1064,7 +1002,7 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 1051,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4387355843"
     }
   },
@@ -1094,9 +1032,9 @@ window.PAPERS = [
       "sixMonths": 4
     },
     "metrics": {
-      "citationCount": 733,
+      "citationCount": 737,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4364320763"
     }
   },
@@ -1129,9 +1067,9 @@ window.PAPERS = [
       "year": 1
     },
     "metrics": {
-      "citationCount": 8529,
+      "citationCount": 8546,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4362515116"
     }
   },
@@ -1165,14 +1103,14 @@ window.PAPERS = [
     "metrics": {
       "citationCount": 300,
       "citationSource": "openalex",
-      "citationUpdatedAt": "2026-11-12T08:31:13.049Z",
+      "citationUpdatedAt": "2026-11-13T08:31:19.364Z",
       "openAlexId": "W4361020574"
     }
   }
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-11-12T08:34:46.208Z",
+  "collectedAt": "2026-11-13T08:34:12.991Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
@@ -1188,27 +1126,27 @@ window.PAPER_METADATA = {
     "queryCount": 12,
     "windows": {
       "week": {
-        "from": "2026-11-06",
-        "to": "2026-11-12"
+        "from": "2026-11-07",
+        "to": "2026-11-13"
       },
       "month": {
-        "from": "2026-10-14",
-        "to": "2026-11-12"
+        "from": "2026-10-15",
+        "to": "2026-11-13"
       },
       "sixMonths": {
-        "from": "2026-05-17",
-        "to": "2026-11-12"
+        "from": "2026-05-18",
+        "to": "2026-11-13"
       },
       "year": {
-        "from": "2025-11-13",
-        "to": "2026-11-12"
+        "from": "2025-11-14",
+        "to": "2026-11-13"
       }
     },
     "fallbackModes": []
   },
   "summary": {
-    "total": 35,
-    "available": 35,
+    "total": 33,
+    "available": 33,
     "unavailable": 0,
     "status": "ok"
   }
