@@ -125,6 +125,20 @@ assert.throws(() => invalidLegacyStore.add(paper('2608.00005')), /마이그레�
 assert.equal(invalidLegacyStorage.dump(LEGACY_KEY), invalidLegacyRaw);
 assert.equal(invalidLegacyStorage.dump(STORAGE_KEY), undefined);
 
+const legacyOverflowIds = Array.from({ length: MAX_ITEMS + 1 }, (_, index) => 'paper-' + index);
+const legacyOverflowRaw = JSON.stringify(legacyOverflowIds);
+const legacyOverflowStorage = memoryStorage({ [LEGACY_KEY]: legacyOverflowRaw });
+const legacyOverflowStore = createStore({ storage: legacyOverflowStorage, now });
+assert.match(legacyOverflowStore.warning(), /1,000편을 초과/);
+assert.deepEqual(legacyOverflowStore.exportLegacyOverflow(), legacyOverflowIds);
+assert.throws(() => legacyOverflowStore.add(paper('new-paper')), { code: 'limit' });
+assert.equal(legacyOverflowStorage.dump(LEGACY_KEY), legacyOverflowRaw);
+assert.equal(legacyOverflowStorage.dump(STORAGE_KEY), undefined);
+
+const emptyLegacyStorage = memoryStorage({ [LEGACY_KEY]: '[]' });
+assert.equal(createStore({ storage: emptyLegacyStorage, now }).size(), 0);
+assert.deepEqual(JSON.parse(emptyLegacyStorage.dump(STORAGE_KEY)).items, []);
+
 // Invalid legacy sync must never turn a populated modern library into an empty one.
 for (const raw of ['{bad', 'null', '{}', '[false]', '']) {
   const storage = memoryStorage();

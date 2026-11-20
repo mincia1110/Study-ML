@@ -25,7 +25,7 @@
   }
 
   var paperById = new Map(papers.map(function(paper) { return [paper.id, paper]; }));
-  var favorites = window.FavoriteLibrary.createStore({ storage: getStorage(), papers: papers });
+  var favorites;
   var catLabel = { cv: 'CV', llm: 'LLM', multimodal: 'Multimodal', unknown: 'arXiv' };
   var currentView = 'recommendations';
   var currentCategory = 'all';
@@ -36,6 +36,25 @@
   var undoTimer = null;
   var undoItem = null;
 
+  function requestFavoriteLock(action) {
+    var locks = window.navigator && window.navigator.locks;
+    return locks ? locks.request('study-ml-favorites', action) : action();
+  }
+
+  function withFavoriteLock(action) {
+    try {
+      var pending = requestFavoriteLock(action);
+      if (pending) return pending.catch(reportFavoriteError);
+    } catch (error) {
+      reportFavoriteError(error);
+    }
+  }
+
+  function reportFavoriteError(error) {
+    setStatus(error.message, 'error');
+    showToast(error.message, { duration: 8000 });
+  }
+
   function esc(value) {
     var div = document.createElement('div');
     div.appendChild(document.createTextNode(String(value == null ? '' : value)));
@@ -43,8 +62,10 @@
   }
 
   function titleHTML(title) {
-    return esc(title).replace(/\$\^\{([^{}$]+)\}\$|\$\^([^$\s]+)\$/g, function(_, braced, plain) {
-      return '<sup>' + (braced || plain) + '</sup>';
+    return esc(title).replace(/\$([^$\n]+)\$/g, function(math, expression) {
+      var simple = expression.replace(/\\text\{([^{}\\]+)\}/g, '$1');
+      var match = simple.match(/^([^{}\\^_]*)\^(?:\{([^{}\\]+)\}|([^{}\s\\^]+))$/);
+      return match ? match[1] + '<sup>' + (match[2] || match[3]) + '</sup>' : math;
     });
   }
 
@@ -133,6 +154,7 @@
   }
 
   function render() {
+    if (!favorites) return;
     var entries = filteredEntries();
     document.getElementById('paper-grid').innerHTML = entries.length
       ? entries.map(function(entry) { return cardHTML(entry.paper, entry.item); }).join('')
@@ -201,10 +223,21 @@
     render();
   }
 
-  function toggleFavorite(id) {
+  function toggleFavorite(id, remove) {
+    return withFavoriteLock(function() {
+      favorites.reload();
+      updateFavorite(id, remove);
+    });
+  }
+
+  function updateFavorite(id, remove) {
     var paper = paperById.get(id) || (favorites.get(id) || {}).paper;
+    if (!paper || remove !== favorites.has(id)) {
+      render();
+      return;
+    }
     try {
-      if (favorites.has(id)) {
+      if (remove) {
         undoItem = favorites.remove(id);
         showToast('즐겨찾기에서 제거했습니다.', { undo: true, duration: 6000 });
       } else {
@@ -244,30 +277,41 @@
   }
 
   function exportFavorites() {
-    var data = favorites.exportData();
-    var blob = new Blob([JSON.stringify(data, null, 2) + '\n'], { type: 'application/json' });
+    withFavoriteLock(function() {
+      favorites.reload();
+      var legacyIds = favorites.exportLegacyOverflow();
+      var data = favorites.exportData();
+      if (legacyIds) {
+        downloadBackup(legacyIds, 'study-ml-legacy-ids-', data.exportedAt);
+        if (data.items.length === 0) return;
+      }
+      downloadBackup(data, 'study-ml-favorites-', data.exportedAt);
+    });
+  }
+
+  function downloadBackup(data, prefix, exportedAt) {
+    var blob = new Blob([JSON.stringify(data) + '\n'], { type: 'application/json' });
     var url = URL.createObjectURL(blob);
     var link = document.createElement('a');
     link.href = url;
-    link.download = 'study-ml-favorites-' + dateOnly(data.exportedAt) + '.json';
+    link.download = prefix + dateOnly(exportedAt) + '.json';
     document.body.appendChild(link);
     link.click();
     link.remove();
     window.setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
-    showToast('즐겨찾기 ' + data.items.length + '편을 내보냈습니다.');
+    showToast('즐겨찾기 ' + (Array.isArray(data) ? data.length : data.items.length) + '편을 내보냈습니다.');
   }
 
   function importFavorites(file) {
     if (!file) return;
-    if (file.size > 5 * 1024 * 1024) {
-      setStatus('가져오기 파일은 5MB 이하여야 합니다.', 'error');
-      return;
-    }
-    file.text().then(function(text) {
+    return file.text().then(function(text) {
       var payload;
       try { payload = JSON.parse(text); }
       catch (_) { throw new Error('JSON 파일을 읽을 수 없습니다.'); }
-      return favorites.importData(payload);
+      return requestFavoriteLock(function() {
+        favorites.reload();
+        return favorites.importData(payload);
+      });
     }).then(function(result) {
       setStatus('');
       render();
@@ -310,7 +354,7 @@
     var button = event.target.closest('button');
     if (!button) return;
     if (button.classList.contains('save-btn')) {
-      toggleFavorite(button.dataset.id);
+      toggleFavorite(button.dataset.id, button.classList.contains('saved'));
       return;
     }
     if (button.classList.contains('details-toggle')) {
@@ -330,18 +374,27 @@
   });
   document.getElementById('toast-undo').addEventListener('click', function() {
     if (!undoItem) return;
-    try {
-      favorites.restore(undoItem);
-      render();
-      showToast('즐겨찾기를 복원했습니다.');
-    } catch (error) {
-      showToast(error.message, { duration: 8000 });
-    }
+    var item = undoItem;
+    withFavoriteLock(function() {
+      favorites.reload();
+      try {
+        favorites.restore(item);
+        render();
+        showToast('즐겨찾기를 복원했습니다.');
+      } catch (error) {
+        reportFavoriteError(error);
+      }
+    });
   });
   document.getElementById('toast-close').addEventListener('click', hideToast);
 
   window.addEventListener('storage', function(event) {
-    if (event.key !== null && event.key !== favorites.storageKey && event.key !== favorites.legacyKey) return;
+    var library = window.FavoriteLibrary;
+    if (event.key !== null && event.key !== library.STORAGE_KEY && event.key !== library.LEGACY_KEY) return;
+    return withFavoriteLock(function() { syncFavorites(event); });
+  });
+
+  function syncFavorites(event) {
     try {
       if (event.key === favorites.legacyKey) favorites.syncLegacy(papers);
       else favorites.reload(papers);
@@ -358,7 +411,7 @@
       setStatus(error.message, 'error');
       showToast(error.message, { duration: 8000 });
     }
-  });
+  }
 
   var koreaToday = dateOnly(new Date().toISOString()).split('-');
   document.getElementById('current-week').textContent = Number(koreaToday[0]) + '년 '
@@ -385,6 +438,9 @@
     });
   }
 
-  if (favorites.warning()) setStatus(favorites.warning(), 'error');
-  render();
+  withFavoriteLock(function() {
+    favorites = window.FavoriteLibrary.createStore({ storage: getStorage(), papers: papers });
+    if (favorites.warning()) setStatus(favorites.warning(), 'error');
+    render();
+  });
 })();

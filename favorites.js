@@ -184,7 +184,9 @@
       return nextItems.slice().sort(function(a, b) { return a.savedAt.localeCompare(b.savedAt); }).map(function(item) { return item.id; });
     }
 
-    function persist(nextItems) {
+    function persist(nextItems, snapshotOnly) {
+      var legacy = readLegacyIds();
+      if (legacy.code === 'limit') blockWrites(legacy.code, legacy.message);
       if (writeBlocked) {
         throw libraryError(blockedCode || 'corrupt', blockedMessage || '손상된 즐겨찾기 데이터가 있어 변경하지 않았습니다. 브라우저 데이터를 복구하거나 초기화하기 전에 원본을 백업해 주세요.');
       }
@@ -194,6 +196,7 @@
       } catch (error) {
         throw libraryError('storage', '브라우저 저장공간에 기록하지 못했습니다. JSON으로 내보낸 뒤 기존 항목을 정리해 주세요.');
       }
+      if (snapshotOnly) return;
       try { storage.setItem(LEGACY_KEY, JSON.stringify(orderedIds(nextItems))); }
       catch (_) {}
     }
@@ -214,10 +217,11 @@
       if (!Array.isArray(rawIds) || rawIds.some(function(id) { return !validId(id); })) {
         return { state: 'invalid', code: 'corrupt', message: '기존 즐겨찾기 데이터 형식이 올바르지 않아 마이그레이션하지 않았습니다. 원본을 백업한 뒤 복구해 주세요.' };
       }
-      return {
-        state: 'valid',
-        ids: rawIds.filter(function(id, index, all) { return all.indexOf(id) === index; }).slice(0, MAX_ITEMS),
-      };
+      var ids = Array.from(new Set(rawIds));
+      if (ids.length > MAX_ITEMS) {
+        return { state: 'invalid', code: 'limit', rawIds: rawIds, message: '기존 즐겨찾기가 1,000편을 초과합니다. 내보내기로 원본 ID 목록을 백업해 주세요.' };
+      }
+      return { state: 'valid', ids: ids };
     }
 
     function blockWrites(code, message) {
@@ -245,7 +249,7 @@
         var timestamp = new Date(base + index * 1000).toISOString();
         return { id: id, savedAt: timestamp, updatedAt: timestamp, paper: snapshotPaper(currentPapers.get(id) || fallbackPaper(id), id) };
       });
-      if (migrated.length) {
+      if (legacy.state === 'valid') {
         try { persist(migrated); }
         catch (error) { blockWrites(error.code || 'storage', error.message); }
       }
@@ -284,7 +288,7 @@
         return { id: item.id, savedAt: item.savedAt, updatedAt: nowIso(), paper: paper };
       });
       if (changed) {
-        try { persist(refreshed); } catch (error) { warning = error.message; return nextItems; }
+        try { persist(refreshed, true); } catch (error) { warning = error.message; return nextItems; }
       }
       return refreshed;
     }
@@ -296,6 +300,7 @@
         blockWrites(legacy.code, legacy.message);
         throw libraryError(legacy.code, legacy.message);
       }
+      if (legacy.state === 'absent') return items;
       var ids = legacy.ids;
       var currentIds = orderedIds(items);
       if (JSON.stringify(ids) === JSON.stringify(currentIds)) return items;
@@ -363,6 +368,7 @@
       exportData: function() {
         return { app: EXPORT_APP, schemaVersion: SCHEMA_VERSION, exportedAt: nowIso(), items: clone(items) };
       },
+      exportLegacyOverflow: function() { return readLegacyIds().rawIds; },
       importData: function(payload) {
         var incoming = validatePayload(payload, true);
         var nextById = new Map(items.map(function(item) { return [item.id, clone(item)]; }));
@@ -397,6 +403,8 @@
       },
       syncLegacy: function(papers) {
         if (papers) currentPapers = paperMap(papers);
+        warning = '';
+        items = load();
         items = refreshSnapshots(syncFromLegacy());
         return this.list();
       },

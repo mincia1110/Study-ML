@@ -1,4 +1,5 @@
 import { CITATION_MODES, citationWindow, selectCitationPapers, assignRecommendation } from './recommend.mjs';
+import { disposeResponse, retryAfterMs } from './arxiv-client.mjs';
 
 const OPENALEX_API = 'https://api.openalex.org/works';
 const ARXIV_SOURCE_ID = 'S4306400194';
@@ -14,24 +15,36 @@ function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function fetchJsonWithRetry(url, options = {}) {
+export async function fetchJsonWithRetry(url, options = {}) {
   const attempts = options.attempts || 4;
+  const sleep = options.sleep || wait;
+  const fetcher = options.fetcher || fetch;
+  const now = options.now || Date.now;
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), options.timeoutMs || 30000);
+    let response;
     try {
-      const response = await fetch(url, { signal: controller.signal });
+      response = await fetcher(url, { signal: controller.signal });
       if (response.ok) return await response.json();
-      if (response.status !== 429 && response.status < 500) {
-        throw new Error(`OpenAlex API ${response.status}: ${await response.text().catch(() => '')}`);
-      }
-      if (attempt === attempts - 1) throw new Error(`OpenAlex API ${response.status} after ${attempts} attempts`);
     } catch (error) {
-      if (attempt === attempts - 1) throw error;
+      if (attempt === attempts - 1) {
+        throw new Error('OpenAlex 응답을 읽지 못했습니다.', { cause: error });
+      }
     } finally {
       clearTimeout(timeout);
     }
-    await wait(2 ** attempt * 1000);
+    let serverWait = 0;
+    if (response && !response.ok) {
+      await disposeResponse(response);
+      const status = response.status;
+      const retryable = status === 429 || (status >= 500 && status <= 599);
+      serverWait = retryAfterMs(response, now());
+      if (!retryable || attempt === attempts - 1 || serverWait > 60_000) {
+        throw new Error(`OpenAlex API ${status}`);
+      }
+    }
+    await sleep(Math.max(2 ** attempt * 1000, serverWait));
   }
   throw new Error('OpenAlex request failed');
 }

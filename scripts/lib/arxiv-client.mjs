@@ -4,7 +4,7 @@ const DEFAULT_HEADERS = Object.freeze({
   'User-Agent': 'Study-ML-paper-collector/1.0 (+https://github.com/mincia1110/Study-ML)',
 });
 
-function retryAfterMs(response, nowMs) {
+export function retryAfterMs(response, nowMs) {
   const value = response.headers?.get?.('retry-after');
   if (!value) return 0;
 
@@ -19,7 +19,7 @@ function wait(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-async function disposeResponse(response) {
+export async function disposeResponse(response) {
   try {
     await response?.body?.cancel?.();
   } catch (_) {

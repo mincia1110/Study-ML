@@ -6,7 +6,7 @@ import { homedir } from 'node:os';
 import { join } from 'node:path';
 import assert from 'node:assert/strict';
 import { randomUUID } from 'node:crypto';
-import { collectCitationRecommendations, extractArxivIdFromWork, buildOpenAlexUrl } from './lib/openalex.mjs';
+import { collectCitationRecommendations, extractArxivIdFromWork, buildOpenAlexUrl, fetchJsonWithRetry } from './lib/openalex.mjs';
 import { CITATION_MODES, citationWindow, selectCitationPapers } from './lib/recommend.mjs';
 import { normalizeSummary, parsePreviousPapers, readPreviousPapers, reusableSummary } from './lib/paper-cache.mjs';
 import { createArxivClient } from './lib/arxiv-client.mjs';
@@ -147,29 +147,29 @@ function selectFreshFirst(papers, previousIds, limit = MAX_PAPERS) {
 
 function computeScore(title, abstract, categories) {
   const text = (title + ' ' + abstract).toLowerCase();
-  const catStr = categories.join(' ').toLowerCase();
+  const catSet = new Set(categories.map(category => category.toLowerCase()));
   let score = 0;
   const terms = [
     'foundation model', 'benchmark', 'diffusion', 'large language',
     'agent', 'retrieval', 'embedding', '3d', 'gaussian',
-    'privacy', 'medical', 'autonomous', 'video', 'multimodal',
+    'privacy', 'medical', 'autonomous driving', 'video', 'multimodal',
     'visual question answering', 'chain-of-thought', 'reasoning',
     'dataset', 'evaluation', 'survey', 'reinforcement learning',
     'representation learning', 'world model', 'code generation',
     'text-to-image', 'detection', 'segmentation', 'generation',
   ];
   for (const t of terms) {
-    if (text.includes(t)) score += 3;
+    if (hasKeyword(text, t)) score += 3;
   }
-  if (catStr.includes('cs.cv') && catStr.includes('cs.cl')) score += 5;
-  if (catStr.includes('cs.cv') && catStr.includes('cs.ai')) score += 3;
+  if (catSet.has('cs.cv') && catSet.has('cs.cl')) score += 5;
+  if (catSet.has('cs.cv') && catSet.has('cs.ai')) score += 3;
   return score;
 }
 
 /* ── category inference ── */
 
 function hasTerm(text, term) {
-  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\ /g, '\\s+');
+  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/ +/g, '\\s+');
   return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`).test(text);
 }
 
@@ -183,9 +183,30 @@ function inferCategory(categories, title, abstract) {
   return 'llm';
 }
 
+function hasKeyword(text, term) {
+  if (term === 'autonomous driving') return hasTerm(text, term) || hasTerm(text, 'autonomous-driving');
+  return hasTerm(text, term) || hasTerm(text, term + 's');
+}
+
+function generateTags(title, abstract) {
+  const text = (title + ' ' + (abstract || '')).toLowerCase();
+  const tags = new Set();
+  const tagMap = {
+    benchmark: 'benchmark', diffusion: 'diffusion', agent: 'agents',
+    '3d': '3d', privacy: 'privacy', medical: 'medical', video: 'video',
+    'autonomous driving': 'autonomous-driving', retrieval: 'retrieval',
+    embedding: 'embedding', multimodal: 'multimodal', 'code generation': 'code-generation',
+    dataset: 'benchmark', survey: 'survey', generation: 'generation', detection: 'detection',
+  };
+  for (const [keyword, tag] of Object.entries(tagMap)) {
+    if (hasKeyword(text, keyword)) tags.add(tag);
+  }
+  return [...tags].slice(0, 5);
+}
+
 /* ── unavailable Korean summary fallback ── */
 
-function generateSummary(title, abstract, categories, category) {
+function generateSummary() {
   const unavailable = '자동 한국어 요약을 생성하지 못했습니다. 논문 원문과 초록을 확인해 주세요.';
   return {
     summaryKo: unavailable,
@@ -497,30 +518,14 @@ async function collectPapers(options = {}) {
     return (aRank - bRank) || (b.published > a.published ? 1 : -1);
   });
 
-  // Generate tags (keyword-based) for each
+  // Restore cached summaries and tags before recovering source abstracts.
   for (const p of sorted) {
     const cached = reusableSummary(previousById.get(p.id));
     if (cached) {
       p.tags = cached.tags;
       p.summaryKo = cached.summaryKo;
       p.detail = cached.detail;
-      continue;
     }
-    const low = (p.title + ' ' + p.abstract).toLowerCase();
-    const tagSet = new Set();
-    const tagMap = {
-      'benchmark': ['benchmark'], 'diffusion': ['diffusion'], 'agent': ['agents'],
-      '3d': ['3d'], 'privacy': ['privacy'], 'medical': ['medical'],
-      'video': ['video'], 'autonomous': ['autonomous-driving'],
-      'retrieval': ['retrieval'], 'embedding': ['embedding'],
-      'multimodal': ['multimodal'], 'code generation': ['code-generation'],
-      'dataset': ['benchmark'], 'survey': ['survey'],
-      'generation': ['generation'], 'detection': ['detection'],
-    };
-    for (const [keyword, tags] of Object.entries(tagMap)) {
-      if (low.includes(keyword)) tags.forEach(t => tagSet.add(t));
-    }
-    p.tags = [...tagSet].slice(0, 5);
   }
 
   // Use already fetched sources before requesting abstracts for restored citations.
@@ -540,14 +545,14 @@ async function collectPapers(options = {}) {
 
   // Summarize with the LLM; otherwise retain a transparent unavailable-summary.
   for (const [index, p] of sorted.entries()) {
+    if (p.abstract?.trim() || !Array.isArray(p.tags)) p.tags = generateTags(p.title, p.abstract);
     const currentSummary = normalizeSummary(p);
     if (currentSummary) {
       p.summaryKo = currentSummary.summaryKo;
       p.detail = currentSummary.detail;
       continue;
     }
-    const category = p.category;
-    const templateSum = generateSummary(p.title, p.abstract, p.categories, category);
+    const templateSum = generateSummary();
     if (USE_LLM) {
       console.error(`Generating Korean summary for ${p.id} (${index + 1}/${sorted.length})`);
       try {
@@ -770,7 +775,32 @@ async function main() {
         /missing or invalid fields in LLM JSON/,
       );
     }
-    const unavailableSummary = generateSummary('Video proposal', 'video abstract', ['cs.CV'], 'cv');
+    const unavailableSummary = generateSummary();
+    assert.equal(computeScore('Microagent', 'Autonomous reasoning', []), computeScore('', 'Reasoning', []));
+    assert.deepEqual(generateTags('Microagent', 'Autonomous reasoning'), []);
+    assert.deepEqual(generateTags('Autonomous-driving agents', 'Traffic benchmark'), ['benchmark', 'agents', 'autonomous-driving']);
+    for (const status of [400, 401, 403, 429, 503]) {
+      const waits = [];
+      let calls = 0;
+      let canceled = false;
+      const fetchResult = fetchJsonWithRetry('https://api.openalex.org/works', {
+        sleep: async ms => { waits.push(ms); },
+        fetcher: async () => (++calls === 1 ? {
+          ok: false, status, headers: new Headers({ 'Retry-After': '3' }),
+          body: { cancel: async () => { canceled = true; } },
+        } : { ok: true, json: async () => ({ results: [] }) }),
+      });
+      if (status === 429 || status === 503) {
+        assert.deepEqual(await fetchResult, { results: [] });
+        assert.deepEqual(waits, [3000]);
+        assert.equal(calls, 2);
+      } else {
+        await assert.rejects(fetchResult, new RegExp(`OpenAlex API ${status}`));
+        assert.deepEqual(waits, []);
+        assert.equal(calls, 1);
+      }
+      assert.equal(canceled, true);
+    }
     assert.match(unavailableSummary.summaryKo, /원문과 초록/);
     assert.equal(normalizeSummary(unavailableSummary), null);
     assert.equal(reusableSummary(unavailableSummary), null);

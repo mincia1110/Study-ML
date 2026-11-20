@@ -26,10 +26,12 @@ jobs:
           node-version: '24'
           package-manager-cache: false
 
-      - name: Check collector
+      - name: Run self-tests
         run: |
           node scripts/collect-papers.mjs --self-test
           node scripts/summary-self-test.mjs
+          node scripts/favorites-self-test.cjs
+          node scripts/app-self-test.cjs
 
       - name: Collect papers
         run: node scripts/collect-papers.mjs --require-summaries
