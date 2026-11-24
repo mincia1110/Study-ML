@@ -3,30 +3,32 @@
 /* eslint-disable */
 window.PAPERS = [
   {
-    "id": "2611.27521",
-    "title": "PaMuk-Bench: A Parallel Multilingual Multitask Benchmark for Vision-Language Tasks",
-    "authors": "Silviu-Florin Gheorghe et al.",
-    "published": "2026-11-20",
-    "category": "multimodal",
+    "id": "2611.28129",
+    "title": "Urban State Representation for Autonomous Mobility: A Survey of Multimodal Perception, Architectures, Datasets, and Benchmarks",
+    "authors": "Binay Kumar Singh, Niels Da Vitoria Lobo",
+    "published": "2026-11-24",
+    "category": "cv",
     "categories": [
       "cs.CV",
       "cs.AI",
-      "cs.CL",
-      "cs.LG"
+      "cs.LG",
+      "cs.RO"
     ],
     "tags": [
       "benchmark",
-      "retrieval",
-      "generation"
+      "3d",
+      "autonomous-driving",
+      "multimodal",
+      "survey"
     ],
-    "summaryKo": "PaMuk-Bench는 10K개 이상의 영어 프롬프트를 6개 언어로 병렬 번역하고 생성·검색 이미지를 함께 제공하여 여러 비전-언어 과제에서 VLM을 비교 개발·평가할 수 있게 하는 병렬 다국어 다중과제 벤치마크이다.",
+    "summaryKo": "이 논문은 도시 상태 표현(USR)을 단일 렌즈로 삼아 멀티모달 센싱, 아키텍처, 데이터셋, 벤치마크를 정리하고 USR-5 평가 프로토콜과 여섯 가지 열린 문제를 제안하는 서베이다.",
     "detail": {
-      "problem": "비전-언어 모델은 영어 등 연구가 많이 된 언어에서는 두드러진 성능을 보이지만, 특히 주석 데이터셋 부족으로 일부 저자원 언어에서는 상당한 성능 하락을 보인다.",
-      "method": "PaMuk-Bench는 10K개 이상의 선별된 영어 프롬프트를 아랍어, 덴마크어, 프랑스어, 힌디어, 이탈리아어, 루마니아어로 반자동 번역한 병렬 번역과 생성·검색 이미지를 포함하며, 텍스트-이미지 생성, 이미지 캡셔닝, 내용 기반 이미지 검색, 이미지 생성 난이도 추정, 이미지 검색 난이도 추정 과제를 지원한다.",
-      "takeaway": "실험적으로 제로샷 영어 및 다국어 사전학습 VLM은 미세조정된 대응 모델보다 일관되게 더 나쁜 성능을 보였으며, 이는 PaMuk-Bench가 다양한 VLM 아키텍처와 과제에서 언어 격차를 줄이는 데 유용한 자원임을 확인한다. 초록에는 명시적인 한계가 언급되지 않았다."
+      "problem": "대부분의 학습된 표현이 단일 플랫폼, 단일 도시, 단일 과제에 맞춰져 있어 도시 규모의 이종 센싱을 통합하기 어렵다는 문제를 다룬다.",
+      "method": "지리참조·계층적·시간가변·불확실성 인식 상태인 USR을 형식화하고, 센서부터 의사결정까지 포괄하는 분류체계와 26개 데이터셋/시뮬레이터, 지표 용어집, 교차 벤치마크 스냅샷, 플랫폼 커버리지 격차 분석을 제시한다.",
+      "takeaway": "USR-5라는 다섯 가지 테스트 프로토콜과 집계 점수, 그리고 도시 간/센서 간 전이, 불확실성, 효율성, sim-to-real 평가, 거버넌스 등을 포함한 여섯 가지 열린 문제를 전망으로 제안한다. 초록에는 구체적 성능 결과나 한계는 명시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27521v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27521v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.28129v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.28129v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -35,29 +37,30 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27425",
-    "title": "TrojanMaxxing: One-shotting VLM Backdoors with Weight-Space Programming",
-    "authors": "Ahaan Dabholkar et al.",
-    "published": "2026-11-20",
+    "id": "2611.28800",
+    "title": "HighwayVerse: A Chain-of-Inspection Benchmark for Highway Infrastructure Anomaly Understanding",
+    "authors": "Junyi Yang, Zheng Si, Yilin Zhai, Pengpeng Ouyang, Hongxi Wang, Kangze Li, Mo Chen, Sicong Zhang, Hua Wang, Dongyuan Wu, Dong Chen, Mingliang Xu",
+    "published": "2026-11-24",
     "category": "multimodal",
     "categories": [
-      "cs.CR",
+      "cs.CV",
       "cs.AI",
-      "cs.CV"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "agents",
-      "medical"
+      "retrieval",
+      "multimodal",
+      "detection"
     ],
-    "summaryKo": "TrojanMaxxing은 VLM 백도어 삽입을 가중치 공간 프로그래밍(WSP) 작업으로 재구성해, 최적화나 학습 없이 LLM 에이전트가 가중치를 직접 편집하고 시각적 트리거를 공동 설계하도록 하는 전략이다.",
+    "summaryKo": "HighwayVerse는 고속도로 인프라 점검의 순차적 진단 추론을 평가하기 위한 HIIP-Chain 기반 벤치마크로, 14,143개 실제 점검 기록과 84,858개 전문가 검토 QA를 포함하며 12개 MLLM 평가에서 초기 이상 탐지는 비교적 높지만 최종 유지보수 결정 성능은 크게 낮음을 보이고, LaneRAG를 제안한다.",
     "detail": {
-      "problem": "이 논문은 VLM 백도어 삽입을 WSP 작업으로 재구성하는 문제를 다룬다. 최근 LLM이 다른 신경망의 가중치를 직접 추론하고 편집하는 WSP 능력이 제시되었으나, 이를 VLM 백도어에 적용하는 전략을 제안한다.",
-      "method": "Claude Opus 5.5와 Mythos 5.2 에이전트가 모델 가중치를 검사하고 표적 편집을 적용하며, 백도어를 활성화하는 보이지 않는 시각적 트리거를 공동 설계한다. 이 방식은 최적화나 학습 없이 백도어를 삽입한다.",
-      "takeaway": "content moderation에서 93%-100%, OCR에서 78%-100%의 공격 성공률을 보이면서 clean accuracy를 유지했고, 에이전트에게 요청하는 것만으로 학습 없이 백도어 삽입이 가능함을 보였다. 초록에 명시적 한계는 없으며 결과는 해당 벤치마크에서 보고되었다."
+      "problem": "기존 벤치마크는 개별 과제에 머물러 MLLM의 순차적 점검 단계 평가가 부족하고, 데이터셋은 주로 노면 결함에 치우쳐 가드레일, 방현막, 배수 시스템 등 다양한 인프라 구성요소를 포괄하지 못한다.",
+      "method": "HIIP-Chain(Anomaly Detection, Anomaly Recognition, Condition Analysis, Maintenance Resolution)을 정식화하고, 14,143개 실제 Ground/UAV 점검 기록(각 100/17개 이상 범주)과 84,858개 전문가 검토 QA를 갖춘 HighwayVerse를 제안한다. 또한 12개 MLLM을 Final 체인 지표로 평가하고, 훈련 없는 검색 증강 프레임워크 LaneRAG를 제안한다.",
+      "takeaway": "모델들은 이상 존재 여부 초기 판단 정확도는 비교적 높지만 Final 점수는 현저히 낮아 하위 인식·분석·의사결정에서 어려움을 보이며, 이는 표면적 초기 판단을 넘어선 고속도로 이상 패턴 이해가 부족함을 시사한다. LaneRAG는 다양한 MLLM에서 일관된 성능 향상을 보인다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27425v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27425v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.28800v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.28800v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -66,10 +69,103 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27750",
-    "title": "RoSci: Exploring Robustness in Science VLMs",
-    "authors": "Junying Wang et al.",
-    "published": "2026-11-20",
+    "id": "2611.29305",
+    "title": "CT-Navigator: Towards Interpretable and Generalizable CT Understanding through Agentic Perception and Tool-Invocation",
+    "authors": "Yibing Fu, Huidong Xie, Yihao Niu, Wei Ji, Heming Dong, Ziyue Wang, Jingyu Chen, Jun Zhao, Haoyuan Hu, Hongming Shan, Lai Jiang, Mai Xu, Yueming Jin",
+    "published": "2026-11-24",
+    "category": "cv",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "benchmark",
+      "3d",
+      "medical",
+      "multimodal"
+    ],
+    "summaryKo": "CT-Navigator는 범용 MLLM의 2D 시각 및 에이전트 능력을 활용해 계층적 시각 탐색과 방사선 도구 호출로 CT 해석을 추적 가능한 시각 근거에 점진적으로 연결하는 프레임워크이다.",
+    "detail": {
+      "problem": "기존 3D 의료 MLLM은 특화된 3D 시각 인코더를 언어 모델에 연결하는 방식으로, 범용 MLLM의 고유한 2D 시각 및 에이전트 능력을 충분히 활용하지 못한다. 또한 대규모 1-hop CT 명령 따르기 데이터로 학습되어 반복적 추론과 결론의 시각 근거 명시 능력이 제한되어 추적 가능한 CT 해석 지원이 어렵다.",
+      "method": "방사선사의 해석 워크플로에서 착안한 agentic perception 패러다임과, 계층적 시각 탐색 및 방사선 도구 호출을 통해 CT 해석을 명시적이고 추적 가능한 시각 근거에 점진적으로 연결하는 CT-Navigator를 제안한다. 콜드스타트 agentic 지도 미세조정을 위한 8,904개 V-CoT 궤적을 구축하고, 33,219개 질문에 대해 정보성 학습 신호를 우선하는 데이터 선택 및 동적 롤아웃 샘플링으로 강화학습 최적화를 수행하며, 7,000개 질문의 CTNavi-Bench를 도입한다.",
+      "takeaway": "CT-Navigator는 CTNavi-Bench에서 79.50% 정확도로 최강 베이스라인을 17.59% 상회하고 세 외부 CT 벤치마크에서 강한 일반화를 보인다. 초록에는 제안 방법의 명시적 한계는 언급되지 않는다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2611.29305v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.29305v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 3
+    }
+  },
+  {
+    "id": "2611.30240",
+    "title": "TriSegAgent: Context-Efficient 3D Annotation with MLLMs via Tri-Planes",
+    "authors": "Qingqiao Hu, Jialin Li, Meilong Xu, Kehan Qi, Yipeng Zhang, Lin Tian, Hongwei Bran Li, Klaus Mueller, Xiaoling Hu",
+    "published": "2026-11-24",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV",
+      "cs.LG"
+    ],
+    "tags": [
+      "benchmark",
+      "agents",
+      "3d",
+      "medical",
+      "multimodal"
+    ],
+    "summaryKo": "TriSegAgent는 3D 볼륨 주석에서 MLLM 에이전트가 tri-planes를 통해 반복적으로 3D 예측을 정교화하도록 하는 방법을 제안한다.",
+    "detail": {
+      "problem": "3D 볼륨 주석은 예측을 확인하고 다시 클릭하는 반복 루프이며, MLLM은 2D 이미지만 입력받으므로 3D 볼륨을 2D로 관찰해야 한다. 루프에서 MLLM을 여러 번 호출하므로 관찰은 토큰 효율적이면서도 3D 예측의 오류 영역을 보여줄 만큼 정보가 있어야 한다.",
+      "method": "TriSegAgent는 볼륨 내 한 점에서 교차하는 세 개의 직교 평면인 tri-planes로 3D 볼륨을 관찰하고, MLLM은 tri-planes 상의 예측만 판단하며 visual harness가 각 판단을 코드 기반 3D action으로 변환한다. harness는 클릭을 정확한 복셀에 배치하고 3D 예측 수용 여부를 검사해 루프의 신뢰성을 높인다.",
+      "takeaway": "35개 공개 의료 데이터셋, 3개 영상 모달리티의 690개 ROI 벤치마크에서 frontier MLLM 사용 시 최강 베이스라인보다 전체 Dice가 약 10점 높고, 3 cm 미만 타깃에서 격차가 더 크며, flash-level MLLM으로도 frontier MLLM 기반 최근 3D 분할 에이전트를 능가한다. 초록에는 명시적 한계가 제시되지 않는다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2611.30240v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.30240v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 4
+    }
+  },
+  {
+    "id": "2611.29167",
+    "title": "Decoupling Perception from Generation for Agentic 3D CT Report Generation",
+    "authors": "Chenyu Wang, Mingyu Chen, Wenchao Li, Kayhan Batmanghelich",
+    "published": "2026-11-24",
+    "category": "multimodal",
+    "categories": [
+      "cs.CV"
+    ],
+    "tags": [
+      "agents",
+      "3d",
+      "retrieval",
+      "embedding",
+      "generation"
+    ],
+    "summaryKo": "이 논문은 3D 흉부 CT 리포트 생성을 LLM 에이전트가 조정하는 시각적 질의응답 결정의 집합으로 재정식화하여 인식과 추론·리포트 작성을 분리하는 방법을 제안한다.",
+    "detail": {
+      "problem": "흉부 CT 리포트는 동일 해부학적 영역의 소견과 속성을 반복 평가하지만, 기존 CT 리포트 생성 모델은 개방형 텍스트 생성에 인식을 결합하는 일반적 비전-언어 모델링을 따라 학습 데이터가 제한될 때 미세한 이상을 놓칠 수 있다.",
+      "method": "제안 방법은 리포트 생성을 LLM 에이전트가 조정하는 시각적 질의응답 결정으로 보고, 인식을 판별적 비생성 과제로 학습하는 Rad-VL-JEPA를 도입한다. RL로 학습된 에이전트가 환자별 시각 증거를 수집하고 별도 편집기가 이를 최종 리포트에 반영하도록 분리한다.",
+      "takeaway": "Rad-VL-JEPA는 동일 CT 인코더와 VQA 데이터로 학습한 생성형 VLM 베이스라인보다 낮은 평균 질의당 추론 시간으로 미세 CT 이해 과제에서 강한 성능을 보였고, 최종 리포트 시스템은 강한 VLM 기반 및 에이전트 기반 베이스라인을 능가했다. 초록에는 명시적 한계가 제시되지 않았다."
+    },
+    "sourceUrl": "https://arxiv.org/abs/2611.29167v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.29167v1.pdf",
+    "recommendationModes": [
+      "latest"
+    ],
+    "recommendationRanks": {
+      "latest": 5
+    }
+  },
+  {
+    "id": "2611.31198",
+    "title": "ToolSmith: An Automatic Tool-Generation Framework for Multimodal Search Agents",
+    "authors": "Rui Sun, Junhua Huang, Luca Zancato, Md Mofijul Islam, Kai-Wei Chang",
+    "published": "2026-11-24",
     "category": "multimodal",
     "categories": [
       "cs.CL",
@@ -79,109 +175,17 @@ window.PAPERS = [
     "tags": [
       "benchmark",
       "agents",
-      "multimodal"
+      "multimodal",
+      "generation"
     ],
-    "summaryKo": "본 논문은 과학 분야 VLM의 취약성을 정보 오류와 정보 손실 측면에서 다루고, 1,220개 샘플의 RoSci-Bench와 Parse-Verify-Decide 파이프라인을 사용하는 RoSci-Agent를 제안한다.",
+    "summaryKo": "ToolSmith는 적은 기본 도구 라이브러리 위에서 도구를 자동 생성·재사용해 멀티모달 검색 에이전트의 도구 부족 문제를 완화하는 프레임워크다.",
     "detail": {
-      "problem": "기존 VLM은 과학 과제에서 완전하고 정확한 정보가 주어진다고 가정되어, 실제 환경의 오류 또는 누락 정보 문제를 간과한다. 이를 해결하기 위해 Scientific Model Robustness 개념을 도입한다.",
-      "method": "RoSci-Bench는 6가지 degradation type에 대해 seed-variant strategy로 구성된 1,220개 샘플의 진단 벤치마크이다. RoSci-Agent는 추론 전에 premises를 검증하는 Parse-Verify-Decide pipeline을 사용한다.",
-      "takeaway": "평가된 VLM은 전제가 유효하지 않거나 불완전한 경우에도 답하는 경우가 있었고, RoSci-Agent는 평가된 독립 VLM보다 더 높은 Overall Robustness Score를 달성했다. 초록에는 별도의 한계가 명시되어 있지 않다."
+      "problem": "멀티모달 검색 에이전트는 소규모 수작업 검색·시각 도구 라이브러리에 의존하는데, 이를 만들고 유지하기 어렵고 새로운 질의 유형·증거 형식·실패 모드에 대응하면 고정된다.",
+      "method": "ToolSmith는 lean base tool library 위에서 모듈을 자동으로 생성하고 재사용하는 자동 도구 생성 프레임워크로, 인간이 익숙한 부품으로 새 도구를 만들어 작업 간 재사용하는 방식에서 영감을 받았다.",
+      "takeaway": "세 개의 in-domain 멀티모달 검색 벤치마크와 열 개의 out-of-domain 벤치마크에서 VLM-as-a-Judge 프로토콜로 평가했을 때, ToolSmith는 다양한 규모의 배포 에이전트에서 기본 라이브러리보다 일관되게 개선되었고 더 큰 백본에서 더 큰 이득을 보여 확장성을 시사했다. 초록에는 구체적 한계가 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27750v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27750v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 3
-    }
-  },
-  {
-    "id": "2611.27780",
-    "title": "Search-RSI: Expanding Search Worlds Along Multimodal Agents' Capability Frontier",
-    "authors": "Chengchao Lv et al.",
-    "published": "2026-11-20",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "agents",
-      "retrieval",
-      "multimodal"
-    ],
-    "summaryKo": "Search-RSI는 멀티모달 검색 에이전트의 능력 경계를 따라 검색 세계를 확장하는 재귀적 자기개선 프레임워크로, 정적 과제 성장이 포화되는 구간에서도 9개 멀티모달 검색 벤치마크의 평균 정확도를 향상시킨다.",
-    "detail": {
-      "problem": "기존 멀티모달 검색 에이전트 학습은 검색 가능한 세계를 고정된 것으로 취급해, 질문은 형식상 타당하고 검증 가능하지만 검색 백엔드에 증거가 없어 도달 불가능한 부정 사례가 성장 라운드마다 누적되고 에이전트 정책의 잘못으로 벌점을 받는 문제가 있다.",
-      "method": "Search-RSI는 각 라운드에서 현재 정책이 hop depth, relation rarity, distractor density로 구성된 과제 공간에서 부분적으로 습득한 영역을 진단하고, 그 영역의 새 과제를 증거와 함께 생성하며, 같은 정책이 probe 불일치 후보는 강화학습에, 도달 불가능한 후보는 힌트 안내 자기 시연으로 사용하도록 결정한다.",
-      "takeaway": "9개 멀티모달 검색 벤치마크에서 정적 과제 성장이 포화되는 상황에서도 개선을 지속해 9B와 27B에서 기반 레시피의 평균 정확도를 각각 9.8점과 9.5점 높였고, 그중 7.0점은 단순히 일관되게 만든 세계로는 달성하기 어렵다. 외부 모델 없이 훈련 전 제거되는 특권적 과제 구조만 사용하지만 정적 성장 대비 1.27배 연산이 든다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2611.27780v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27780v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 4
-    }
-  },
-  {
-    "id": "2611.27876",
-    "title": "LesionAgent: Training-Free Agentic Tumor Tracking and Response Assessment in Longitudinal CT",
-    "authors": "Maximilian Rokuss et al.",
-    "published": "2026-11-20",
-    "category": "multimodal",
-    "categories": [
-      "cs.CV",
-      "cs.AI",
-      "cs.MA"
-    ],
-    "tags": [
-      "agents",
-      "3d",
-      "benchmark",
-      "detection"
-    ],
-    "summaryKo": "LesionAgent는 고정된 3D 모델들을 도구로 사용하는 학습 없는 LLM 에이전트로, 종단 CT에서 병변 추적과 치료 반응 판독을 레지스트리와 결정론적 지침 엔진을 통해 수행한다.",
-    "detail": {
-      "problem": "종단 CT에서 3D 기초 모델은 병변 검출·분할·정합·추적을 할 수 있지만, 영상의학과 의사처럼 어떤 소견이 병변이고 동일 병변인지, 새 병변이 진행인지 판단하며 임상 지침 규칙과 대조해 읽지는 못한다.",
-      "method": "LesionAgent는 과제별 학습 없이 고정된 3D 모델을 도구로 운용하며, 좌표 표지 뷰로 3D에서 행동하고, 방문 간 모든 병변을 레지스트리에 기억하며, 의존하는 모델 출력을 검증하고, 수치는 결정론적 지침 엔진에 맡긴다.",
-      "takeaway": "4개 공개 종단 CT 데이터셋에서 모든 자동 베이스라인보다 더 많은 병변을 추적하고 더 정확히 측정했으며, 고정 규칙으로 3D 모델을 연결한 경우 56회 추적 중 33회 허위 진행을 낸 곳에서 LesionAgent는 2회만 냈다. 임상 추적 CT 23회 중 20회에서 영상의학과 의사 반응과 일치했고(모든 반응 변화 포함), DeepLesion 미학습에도 89.0%로 해당 데이터로 학습한 모든 추적기(87.4%)보다 많은 병변을 검색했으며, 같은 LLM과 3D 모델에서 하네스가 없으면 Claude Code 검출 F1은 41%인 반면 LesionAgent는 78%, open-weight LLM은 6%에서 73%로 상승했다(초록에 별도 한계는 명시되지 않음)."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2611.27876v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27876v1.pdf",
-    "recommendationModes": [
-      "latest"
-    ],
-    "recommendationRanks": {
-      "latest": 5
-    }
-  },
-  {
-    "id": "2611.27963",
-    "title": "Non-penetrating World Models",
-    "authors": "Yuhang Dai et al.",
-    "published": "2026-11-20",
-    "category": "cv",
-    "categories": [
-      "cs.CV",
-      "cs.AI"
-    ],
-    "tags": [
-      "benchmark",
-      "diffusion",
-      "video"
-    ],
-    "summaryKo": "상호작용 비디오 월드 모델에서 객체 침투를 방지하는 문제를 연구하고, NoPeBench와 DiT 은닉 상태 기반 NoPeWorld를 제안해 평균 물리 위반율을 74%에서 16%로 줄였다.",
-    "detail": {
-      "problem": "기존 월드 모델이 물리적 장애물에 어떻게 반응하는지 평가하기 위해 NoPeBench를 도입했으며, 평가 결과 오픈소스 모델들은 이러한 침투 실패를 신뢰성 있게 방지하지 못했다.",
-      "method": "NoPeWorld는 고정된 DiT의 은닉 상태 위에 작은 예측 헤드를 학습해 후보 행동이 안전한지 판독하고, 안전하지 않은 행동을 원래 의도 보존에 가장 적합한 안전 행동으로 대체한다.",
-      "takeaway": "6개 비디오 월드 모델 평균에서 물리 위반율을 74%에서 16%로 크게 낮췄고, open-domain imagery, third-person viewpoints, moving obstacles에 zero-shot 일반화를 보였다. 초록에는 명시적 한계가 제시되지 않았다."
-    },
-    "sourceUrl": "https://arxiv.org/abs/2611.27963v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27963v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.31198v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.31198v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -190,28 +194,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27652",
-    "title": "Auditing Post-Training Unlearning in Diffusion Language Models using Sparse Autoencoders",
-    "authors": "Yunha Seo, Changhoon Kim",
-    "published": "2026-11-20",
-    "category": "llm",
+    "id": "2611.30617",
+    "title": "Auxiliary Clues Aware's Geometry Problem Solving",
+    "authors": "Qigong Lei, Qingsong Wang, Wang Lin, Qianyi Yang, Chang Yao, Jingyuan Chen",
+    "published": "2026-11-24",
+    "category": "multimodal",
     "categories": [
+      "cs.CV",
       "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "privacy",
+      "multimodal",
       "generation"
     ],
-    "summaryKo": "이 논문은 LLaDA-8B-Instruct에서 희소 오토인코더와 디노이징 상태 재생을 이용해 확산 언어 모델의 사후 학습 언러닝에서 정적 및 단계 적응적 특징 억제를 비교한 초기 실증 연구이다.",
+    "summaryKo": "AuxCA는 명시적 도형 생성 없이 보조 작도 전략을 학습하도록 GRPO를 개선한 강화학습 프레임워크로, 보조 작도가 필요한 평면기하 문제에서 성능 향상을 보인다.",
     "detail": {
-      "problem": "확산 언어 모델의 기계적 언러닝은 자동회귀 대형 언어 모델에 비해 덜 탐구되었으며, 디노이징 과정에서 부분 마스킹 상태의 내부 표현이 변한다는 점에서 단계별 선택적 망각 가능성을 검토할 필요가 있다.",
-      "method": "LLaDA-8B-Instruct에서 WMDP를 망각 도메인 벤치마크로 사용하고, top-k 희소 오토인코더와 디노이징 상태 재생을 통해 정적 특징 억제와 단계 적응적 특징 억제를 비교한다.",
-      "takeaway": "디노이징 단계에 따라 망각 데이터 연관 특징이 크게 변하지만, 이러한 역학을 추적하는 것만으로는 평가된 작동점에서 망각-유지 트레이드오프가 안정적으로 개선되지 않았다. 이 연구는 확산 언어 모델의 사후 학습 프라이버시 메커니즘으로서 언러닝을 개발하고 평가하기 위한 초기 경험적 기반을 제공한다."
+      "problem": "기하 문제 해결은 입력 도형에 없는 보조 작도가 필요할 때 MLLM의 복잡한 추론을 엄격히 시험한다. 기존 명시적 도형 작성법은 이미지 생성 품질 불안정과 연쇄 오류가 있고, 암묵적 어텐션 방식은 주로 가시 요소에 집중해 추가 작도가 필요한 추론 지원에 한계가 있다.",
+      "method": "AuxCA는 추론 시 명시적 도형 생성을 하지 않고 전이 가능한 보조 작도 전략을 학습하는 강화학습 프레임워크다. 보조 시각 단서가 토큰 생성에 미치는 영향을 정량화하는 Auxiliary Clues Dependency(ACD)를 GRPO에 세밀한 advantage weighting으로 통합하고, 정답 풀이에서 보조 기하 단서를 효과적으로 사용하도록 보조 인센티브 보상을 추가한다.",
+      "takeaway": "AuxCA-8B는 보조 작도 의존 평면기하 문제에서 명시적 도형 작성 베이스라인 Bagel-Canvas를 능가하고 선도적 독점 모델들과 경쟁력 있는 성능을 보였다. 해석기하·입체기하·외부 벤치마크 개선은 학습된 전략이 훈련 영역 밖으로 전이될 수 있음을 시사하며, 초록에는 구체적 한계가 명시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27652v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27652v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.30617v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.30617v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -220,26 +224,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27807",
-    "title": "Evaluating Prompting Strategies for Zero-Shot Multilingual Aspect-Based Sentiment Analysis with Large Language Models",
-    "authors": "Jakub Šm{í}d, Pavel Kr{á}l",
-    "published": "2026-11-20",
+    "id": "2611.28745",
+    "title": "Multimodal LLMs Know the Game but Assume the Real World",
+    "authors": "Jianxin Gao, Bohan Chen, Runze Li, Qi Zhang",
+    "published": "2026-11-24",
     "category": "multimodal",
     "categories": [
-      "cs.CL"
+      "cs.CL",
+      "cs.AI",
+      "cs.CV"
     ],
     "tags": [
-      "generation",
-      "detection"
+      "video",
+      "multimodal"
     ],
-    "summaryKo": "이 논문은 12개 언어와 3개 도메인에서 7개 instruction-tuned open-weight LLM(8B~35B, dense/MoE)을 대상으로 네 가지 프롬프트 패러다임을 비교하여 zero-shot multilingual TASD를 평가한다.",
+    "summaryKo": "RuleCraft를 통해 멀티모달 LLM이 게임 규칙을 알고 게임을 인식해도 게임 이름 없이 이미지만 주어지면 현실 세계 물리로 답하는 경향을 보였고, 게임 이름을 제시하면 현실과 다른 규칙에서 정확도가 크게 향상되었다.",
     "detail": {
-      "problem": "기존 ABSA 연구는 주로 영어나 fine-tuning된 task-specific 모델에 집중되어, zero-shot 다국어 환경에서 open-weight LLM이 복합 target-aspect-sentiment triplet 추출을 어떻게 수행하는지 충분히 알려지지 않았다.",
-      "method": "monolithic, chain-of-thought, sequential, sequential refine 네 가지 prompting을 12개 언어와 3개 도메인에서 체계적으로 평가하고, fine-grained error taxonomy와 step-level pipeline tracking, generation volume 분석을 수행한다.",
-      "takeaway": "직접 monolithic prompting이 multi-step pipeline보다 강한 zero-shot 성능을 보였고 dense 모델이 sparse MoE보다 일관되게 우수했다; 초기 aspect term recall이 병목이며 multi-step decomposition은 추출 품질을 저하시켰고, iterative refinement는 큰 모델에서만 부분 회복되며 작은 모델에서는 net-negative over-refinement를 유발했고 multi-step은 F1 이득 없이 최대 2.38배 token overhead를 초래했다. 평가 범위는 제시된 12개 언어·3개 도메인과 7개 open-weight 모델의 zero-shot TASD에 한정된다."
+      "problem": "멀티모달 LLM이 비디오 게임의 규칙을 말할 수는 있지만, 게임만 보여 주었을 때 그 규칙을 실제로 적용하는지는 불분명하다.",
+      "method": "Minecraft 규칙 155개에 대한 1,240개 이미지 질문을 게임 엔진에서 결과를 검증해 만들고, 텍스트, 게임 이름이 있는 이미지, 이미지만 있는 세 조건으로 질문해 6개 모델을 평가했다.",
+      "takeaway": "모델들은 규칙과 게임을 알지만 이미지만 있으면 현실 물리로 답했고, 게임 이름을 제시하면 현실과 다른 규칙에서 정확도가 주 세트 8.2-19.8점, 어려운 스트레스 테스트 세트 33.8-52.7점 올랐다. 이 패턴은 추론, 다른 두 게임, 모델이 게임 관련이라고 판단한 질문에서도 나타났으며, 게임 이름을 제시하는 평가는 규칙 지식은 측정해도 세계 선택은 측정하지 못한다는 한계를 시사한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27807v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27807v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.28745v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.28745v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -248,27 +254,29 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27398",
-    "title": "Taking Apart and Putting Together: Tracking Objects Through Physical Transformations",
-    "authors": "Davide Gardenal et al.",
-    "published": "2026-11-20",
-    "category": "cv",
+    "id": "2611.28649",
+    "title": "S-Mind: Internalizing Multi-View Geometry for Spatial Intelligence",
+    "authors": "Muxin Fu, Peike Yu, Guibin Zhang, Wenrui Zhou, Runze Liu, Lang Feng, Fuchao Yang, Feng Chen, Yixuan Li, Mengao Zhang, Shiying Zhang, Wen Shen, Ling Pan, Shuicheng Yan, Bo An",
+    "published": "2026-11-24",
+    "category": "multimodal",
     "categories": [
       "cs.CV",
-      "cs.AI"
+      "cs.CL"
     ],
     "tags": [
       "benchmark",
-      "video"
+      "agents",
+      "3d",
+      "multimodal"
     ],
-    "summaryKo": "이 논문은 물체가 물리적으로 조립·분해되는 환경에서도 물체를 추적하기 위해 TTU 문제를 정의하고, 학습 없이 변환을 추론하는 TIPO 프레임워크와 VISTA 데이터셋을 제안한다.",
+    "summaryKo": "S-Mind는 MLLM 내부에 공간 토큰을 통해 다시점 기하를 내재화하여 3D 장면 융합과 시점 변환 능력을 향상시키는 방법이다.",
     "detail": {
-      "problem": "기존 비디오 객체 추적은 외형 변화에는 추적을 유지할 수 있지만, 물체가 물리적으로 조립·분해되며 의미적 정체성이 바뀌는 상황은 충분히 다루지 못한다. 선행 연구는 분해만 다루고 추적 실패 시에만 비용이 큰 탐색을 수행한다.",
-      "method": "TIPO는 분리된 마스크 구성요소로부터 분할·병합 제안을 생성하고, 내부·외부 겹침을 이용해 마스크 디코더 사전과 비교해 점수화하며, 최상위 제안에 대해 MLLM에 질의해 시각적 검증과 의미 라벨링을 수행하는 generate-evaluate-judge 파이프라인을 사용한다.",
-      "takeaway": "VISTA에서 TIPO는 최신 추적 및 상태 그래프 정확도를 달성하면서 기존 방법보다 6배에서 15배 빠르다. 초록에는 명시적인 한계는 제시되지 않는다."
+      "problem": "MLLM은 각 시점을 지각하는 것을 넘어 여러 시점을 하나의 일관된 3D 장면으로 융합하고 추론 중 새 시점으로 정신적으로 변환하는 능력이 크게 부족하며, 공간 미세조정 후에도 그러하다.",
+      "method": "S-Mind는 소수의 압축된 공간 토큰을 통해 다시점 기하를 MLLM에 내재화한다. 이 토큰이 융합된 3D 장면을 담도록 감독하고, 추론이 채택하는 각 시점에서 장면을 다시 표현하도록 토큰을 재방출한다.",
+      "takeaway": "네 개 공간 벤치마크에서 Qwen3.5 백본을 최대 22.26점 향상시키고 GPT-6-Astra(+0.45), Kimi-K3.1-Pro(+1.97), GLM-5.3-Flash(+7.80)보다 평균 정확도가 높다. 융합 및 변환 정확도는 65.11%와 82.17%로 기준선 최대 16.02%와 37.28%를 넘었고, 동일 백본의 도구 기반 에이전트보다 추론이 약 100배 빠르며 토큰이 제거되어도 공간 능력이 유지되지만, 초록에는 명시적 한계가 제시되지 않는다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27398v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27398v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.28649v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.28649v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -277,27 +285,32 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27415",
-    "title": "Pose-based Co-speech Gesture Detection",
-    "authors": "Frances Yung, Ninlawat Phuangschoke",
-    "published": "2026-11-20",
+    "id": "2611.30836",
+    "title": "Can Multimodal Fusion MakeSense for Embodied Vision in Degraded Sensing?",
+    "authors": "Cheng-Ru Chou, Shih-Yu Lai, Pei-Lin Chiang, Shou-Po Tsai, Jing-Zhe Huang, Fukuharu Tanaka, Hirozumi Yamaguchi, Bing-Yu Chen, Yu-Lun Liu, Hsun-Ping Hsieh",
+    "published": "2026-11-24",
     "category": "cv",
     "categories": [
-      "cs.CV"
+      "cs.CV",
+      "cs.AI",
+      "cs.LG",
+      "cs.RO"
     ],
     "tags": [
+      "3d",
+      "autonomous-driving",
+      "multimodal",
       "benchmark",
-      "video",
       "detection"
     ],
-    "summaryKo": "이 논문은 동일한 교차 검증 분할과 세 데이터셋(MULTISIMO, GESRes, CABBS), 세 평가 수준(프레임, 제스처 구간, 윈도)으로 기존 co-speech 제스처 검출기를 벤치마크하고, CABBS에서 기존 최고 방법 MPSL을 능가하는 CTR-GCN + BiLSTM 모델을 제안한다.",
+    "summaryKo": "MakeSense는 열화된 센서 환경의 체화 시각에서 센서별 증거를 private 스트림에 보존하고 shared bottleneck tokens로 결합해 센서 추가로 인한 부정적 융합을 줄이는 멀티모달 융합 프레임워크이다.",
     "detail": {
-      "problem": "Co-speech 제스처 검출은 충분히 연구되지 않았고, 기존 방법들이 서로 다른 데이터셋·실험 설정·지표로 평가되어 성능을 비교하기 어렵다. 이에 따라 현재 최신 기술 수준도 명확하지 않다.",
-      "method": "기존 검출기들을 세 데이터셋에서 동일한 교차 검증 분할로 벤치마크하고 프레임, 제스처 구간, 윈도 수준에서 평가한다. 또한 CTR-GCN + BiLSTM 모델을 제안한다.",
-      "takeaway": "기존에 보고된 성능이 공통 평가 설정에서 일관되게 재현되지 않았고, 특히 제스처 빈도에 따라 데이터셋 간 성능 차이가 크며 과제는 아직 해결되지 않았다. 제안 모델은 CABBS에서 이전 최고 방법인 MPSL을 능가한다."
+      "problem": "체화 시각 시스템은 조건 변화에 따라 상보적 센서에 의존하지만, 임의의 센서 부분집합을 입력받는 모델도 센서를 추가하면 예측 오류가 증가하는 부정적 융합(negative fusion)을 보일 수 있다.",
+      "method": "MakeSense는 센서별 증거를 private 스트림에 유지하고 shared bottleneck tokens를 통해 정보를 결합한다. 동일한 열화 관측의 전체 뷰와 부분집합 뷰를 쌍으로 학습해 센서가 많을수록 오류가 커지는 경우에 페널티를 주며, 기하학적 조건이 허용될 때 거리 판독은 range 측정만 사용하고 나머지 예측은 모든 가용 입력을 사용한다.",
+      "takeaway": "다섯 데이터셋의 쌍별 테스트에서 센서 추가의 도움/해로움을 드러냈고 MakeSense는 MM-Fi의 negative fusion을 줄였으며, 경량 어댑터와 데이터셋별 학습으로 MMAUD UAV 위치추정, V2X-Real 협력 3D 검출, RELI11D few-shot pose transfer, Humanoid-Everyday 명령 예측을 개선했다. 또한 frozen core 출력으로 학습한 world model이 더 긴 테스트 지평에서 선형 베이스라인보다 미래 융합 상태를 더 정확히 예측했으며, 초록에는 명시적 한계가 제시되지 않았다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27415v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27415v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.30836v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.30836v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -306,28 +319,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27427",
-    "title": "Neurodegenerative Differential Diagnosis with Knowledge-enhanced Structural Reasoning",
-    "authors": "Mingxuan Wang et al.",
-    "published": "2026-11-20",
-    "category": "cv",
+    "id": "2611.30345",
+    "title": "SceneCast: Learning Indoor Scene Synthesis from Curated Synthetic Videos with LLM Reward",
+    "authors": "Ziyang Zong, Canming Xia, Haoran Xu, Guang Tan",
+    "published": "2026-11-24",
+    "category": "multimodal",
     "categories": [
-      "cs.CE",
-      "cs.AI",
       "cs.CV"
     ],
     "tags": [
-      "medical",
-      "multimodal"
+      "3d",
+      "video",
+      "benchmark",
+      "generation"
     ],
-    "summaryKo": "KnowSR은 문헌 기반 질병 프로토타입, 부호화된 증거 방향, 진단 간 관계를 활용해 다중모달 환자 표현을 정렬하고 구조적 추론을 수행하여 신경퇴행성 질환의 감별 진단을 개선하는 방법이다.",
+    "summaryKo": "SceneCast는 대규모 비라벨 비디오로부터 주석 없이 실내 3D 장면 합성을 학습하는 프레임워크로, LLM 보상 기반 강화학습과 합성 비디오 큐레이션을 통해 장면 품질을 향상시킨다.",
     "detail": {
-      "problem": "신경퇴행성 질환은 임상 양상이 겹치고 다중모달 관찰이 이질적이며 불완전할 수 있어 정확한 감별 진단이 어렵다. 기존 다중모달 모델은 영상과 임상 측정을 통합하지만 질병 특이적 증거 패턴과 경쟁 진단 간 쌍별 관계를 간과하는 경우가 많다.",
-      "method": "KnowSR은 다중모달 환자 표현을 문헌 기반 지식 은행의 질병 프로토타입, 부호화된 증거 방향, 쌍별 진단 관계와 정렬한다. 또한 환자별 지식 정렬과 대상 인식 풀링으로 구조화된 질병 증거를 주입하고, 희소 감별 그래프에서 앵커된 관계 추론으로 쌍별 진단 마진을 조정한다.",
-      "takeaway": "환자 분리 5겹 평가에서 환자 수준 6분류 진단에 대해 KnowSR이 19개 기저 모델보다 일관되게 우수한 성능을 보였다. 이는 구조화된 의학 지식에 환자 증거를 근거시키는 것이 단순한 다중모달 융합보다 효과적인 감별 진단을 가능하게 함을 보여주며, 초록에는 별도의 한계가 명시되지 않았다."
+      "problem": "기존 3D 실내 장면 합성은 수작업 주석 데이터셋에 의존해 비용이 높고 일반화가 제한된다. 또한 비디오는 장면의 일부만 보여주고 온라인 원본 비디오는 조건과 품질이 통제되지 않는다.",
+      "method": "Transformer 기반 모델이 객체를 순차적으로 예측하고, LLM이 공간 상식 평가자로서 사고 연쇄 추론과 코드 실행 가능한 기하 검사를 통해 보상 신호를 제공하는 강화학습으로 미세조정한다. 또한 제어 가능한 비디오 생성 모델로 학습 비디오를 만들고 다기준 품질 평가와 엔트로피 기반 가중치로 고품질 초반 클립만 유지하는 데이터 큐레이션을 도입한다.",
+      "takeaway": "큐레이션된 합성 비디오 세트에서 평가했을 때, 이 주석 불필요 접근은 장면 품질 면에서 최신 지도학습 방법을 능가했다. 초록 기준 평가는 큐레이션된 합성 비디오 세트에 한정된다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27427v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27427v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.30345v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.30345v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -336,29 +349,28 @@ window.PAPERS = [
     }
   },
   {
-    "id": "2611.27447",
-    "title": "Mechanism Parity for Simulation-Based Validation of Autonomous-Driving Perception",
-    "authors": "Danial Safaei et al.",
-    "published": "2026-11-20",
-    "category": "cv",
+    "id": "2611.30120",
+    "title": "AxE: Benchmarking Agent-Environment Generalization of Video World Models via Grounded Events",
+    "authors": "Haiyu Xu, Yiyang Chen, Jiayi Zhou, Jiaming Ji, Juntao Dai, Yaodong Yang, Boyuan Chen",
+    "published": "2026-11-24",
+    "category": "multimodal",
     "categories": [
-      "cs.RO",
-      "cs.AI",
       "cs.CV"
     ],
     "tags": [
       "benchmark",
-      "diffusion",
-      "autonomous-driving"
+      "agents",
+      "video",
+      "generation"
     ],
-    "summaryKo": "이 논문은 실제-합성 쌍 자율주행 인식에서 출력 일치만으로는 같은 결정적 근거 사용을 보장하지 못한다는 mechanism-parity gap을 다루는 검증 진단 프레임워크를 제시하고, 제한된 exact-geometry 벤치마크에서 출력·외관 충실도가 결정적 메커니즘 거리와 최대 약하고 불일관한 순위 상관을 보임을 보고한다.",
+    "summaryKo": "AxE Bench는 에이전트와 환경 조건 변화에 대한 비디오 월드 모델의 체계적 일반화를 평가하기 위한 벤치마크와 AxE Score 평가 체계를 제안한다.",
     "detail": {
-      "problem": "실제 장면과 합성 장면 사이의 시각적 사실감이나 출력 일치는 인식 시스템이 두 영역에서 같은 근거를 사용했음을 증명하지 못한다. 이 논문은 paired real-synthetic 자율주행 인식에서의 이러한 mechanism-parity gap을 다룬다.",
-      "method": "동결된 시스템(SUT)의 decisive evidence maps를 비교하는 Decisive-Feature Fidelity와 이를 의미 장면 개념으로 투영해 진단하는 Concept-Decisive Feature Fidelity를 통합한 검증 진단 프레임워크를 제안한다. 이는 단독 안전 인증이 아니라 출력 일관성이 인식 모델이 출력에 도달하는 메커니즘도 보존하는지 묻는 진단이다.",
-      "takeaway": "결정적 exact-geometry KITTI-Virtual KITTI 2 subset에서 재학습된 diffusion ControlNet 생성기 10개와 동결 SUT 3개로 평가한 결과, 출력·외관 충실도는 모든 SUT에서 decisive-mechanism distance와 최대 약하고 불일관한 순위 상관을 보였으며, 구성된 positive control에서는 출력 일치가 놓친 알려진 planted mechanism을 추정기가 탐지했다. 모든 수치 주장은 선언된 exact-geometry 벤치마크, 10개 생성기, 3개 동결 SUT에 제한된다."
+      "problem": "조건부 비디오 생성 평가는 시각적 품질, 프롬프트 정렬, 개별적 물리적 그럴듯함에 치중해 체계적 일반화를 측정하기 어렵다. 변화하는 환경, 신체, 객체, 과제에서 훈련 데이터에 없던 조합을 routinely 마주하는 구현 시스템에는 사전 지식 재사용과 결과 예측, 적응 능력이 필요하다.",
+      "method": "AxE Bench는 행위 에이전트와 환경의 8가지 요인에 따라 조건 변화를 조직하고, 각 원본 조건을 한쪽 또는 양쪽을 바꾼 통제 변형과 짝지으며, WBench-plus는 기존 다중 턴 벤치마크에 같은 구조를 적용한다. 평가 하네스는 비전-언어 추론과 표적 컴퓨터 비전 증거를 결합해 각 비디오를 시간적으로 국소화된 이벤트로 변환하고 생성 이벤트를 참조 이벤트와 시간 및 의미에서 비교하며, AxE Score는 원본-변형 쌍 전반의 Stability로 가중된 event Fidelity로 모델을 요약한다.",
+      "takeaway": "20개 모델 평가에서 생성 이벤트는 내용보다 타이밍에서 참조 이벤트와 더 자주 일치했고, 어떤 모델도 Fidelity 13.01을 넘지 못했으며 최고 Stability는 0.55, 최고 AxE Score는 7.10이었다. 이 구성요소들은 월드 모델 일반화를 실제 및 시뮬레이션 상호작용에 대한 반증 가능한 평가 프로그램으로 전환한다."
     },
-    "sourceUrl": "https://arxiv.org/abs/2611.27447v1",
-    "pdfUrl": "https://arxiv.org/pdf/2611.27447v1.pdf",
+    "sourceUrl": "https://arxiv.org/abs/2611.30120v1",
+    "pdfUrl": "https://arxiv.org/pdf/2611.30120v1.pdf",
     "recommendationModes": [
       "latest"
     ],
@@ -1196,38 +1208,22 @@ window.PAPERS = [
 ];
 
 window.PAPER_METADATA = {
-  "collectedAt": "2026-11-23T08:34:20.897Z",
+  "collectedAt": "2026-11-24T08:42:45.875Z",
   "source": "arXiv",
   "note": "Auto-collected by scripts/collect-papers.mjs. See docs/summary-guidelines.md.",
   "summarizer": "llm",
   "recommendationVersion": 1,
   "latest": {
-    "source": "arxiv-api",
-    "status": "ok",
-    "dateBasis": "submitted"
+    "source": "arxiv-atom",
+    "status": "fallback",
+    "dateBasis": "announced",
+    "fallbackReason": "HTTP 429"
   },
   "citation": {
     "source": "OpenAlex",
-    "status": "ok",
-    "queryCount": 12,
-    "windows": {
-      "week": {
-        "from": "2026-11-17",
-        "to": "2026-11-23"
-      },
-      "month": {
-        "from": "2026-10-25",
-        "to": "2026-11-23"
-      },
-      "sixMonths": {
-        "from": "2026-05-28",
-        "to": "2026-11-23"
-      },
-      "year": {
-        "from": "2025-11-24",
-        "to": "2026-11-23"
-      }
-    },
+    "status": "stale-cache",
+    "queryCount": 0,
+    "windows": {},
     "fallbackModes": []
   },
   "summary": {
